@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Логика комментирования Кальянова — Махабхарата</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1c1c1c;
+    --text-secondary: #555;
+    --bg: #ffffff;
+    --bg-alt: #f5f5f5;
+    --border: #ddd;
+    --accent: #2a5a8b;
+    --accent-light: #e8f0f9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PT Serif', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .page-header {
+    border-bottom: 2px solid var(--text);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+
+  .page-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .page-meta {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .summary-stat {
+    background: var(--bg-alt);
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .summary-stat .n {
+    font-family: 'PT Serif', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .summary-stat .l {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+  }
+
+  .toc {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 28px 32px;
+    margin-bottom: 56px;
+  }
+
+  .toc h2 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .toc ol { list-style: none; counter-reset: toc; }
+
+  .toc li {
+    counter-increment: toc;
+    border-bottom: 1px solid var(--border);
+  }
+  .toc li:last-child { border-bottom: none; }
+
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 17px;
+  }
+
+  .toc a:hover { color: var(--accent); }
+
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    min-width: 26px;
+  }
+
+  .toc-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-left: 40px;
+    margin-top: -4px;
+    padding-bottom: 8px;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  .section { margin-bottom: 64px; padding-top: 8px; }
+
+  .section-num {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+
+  h3 { font-size: 20px; font-weight: 700; margin: 32px 0 10px; }
+
+  p { margin-bottom: 16px; font-size: 18px; }
+
+  .lead {
+    font-size: 19px;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 17px;
+  }
+
+  thead th {
+    background: var(--text);
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 700;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) td { background: var(--bg-alt); }
+
+  .total-row td {
+    background: var(--accent-light) !important;
+    font-weight: 700;
+  }
+
+  td.num-cell {
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  td.pct-cell {
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .example {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    margin: 24px 0;
+    font-size: 17px;
+  }
+
+  .example-shloka {
+    background: var(--bg-alt);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .example-shloka .label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .example-shloka .text { font-style: italic; }
+
+  .example-comment { padding: 14px 20px; }
+
+  .example-comment .label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+
+  .example-comment .text { line-height: 1.65; }
+
+  .sanskrit { font-style: italic; color: #2a4a7a; }
+
+  .format-card {
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin: 24px 0 8px;
+  }
+
+  .format-card .tag {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .format-card h3 { margin-top: 0; font-size: 19px; margin-bottom: 10px; }
+
+  .format-card p { font-size: 17px; color: var(--text-secondary); margin: 0; }
+
+  .algo-step {
+    display: flex;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .algo-step:last-child { border-bottom: none; }
+
+  .algo-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-top: 2px;
+  }
+
+  .algo-content h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+
+  .algo-content p { font-size: 17px; color: var(--text-secondary); margin: 0; }
+
+  .highlight {
+    background: var(--accent-light);
+    border: 1px solid #9ab8d8;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 18px;
+  }
+
+  .highlight strong { color: var(--accent); }
+
+  .diff-box {
+    background: #fffbf0;
+    border: 1px solid #e0c870;
+    border-left: 4px solid #c8960a;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 17px;
+  }
+
+  .diff-box .diff-title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8a6a00;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    margin-top: 64px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-label">Аналитический отчёт</div>
+  <h1>Логика комментирования Кальянова</h1>
+  <div class="page-meta">В.И. Кальянов. Махабхарата. М., 1950–1992. Книги I, II, IV, V, VII, IX</div>
+</header>
+
+<div class="summary-stats">
+  <div class="summary-stat">
+    <div class="n">4 943</div>
+    <div class="l">Блоков шлок проанализировано</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">7 424</div>
+    <div class="l">Комментариев извлечено</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">56,4%</div>
+    <div class="l">Средняя плотность</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">160</div>
+    <div class="l">Средняя длина, символов</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <h2>Содержание</h2>
+  <ol>
+    <li>
+      <a href="#stats">Статистика по книгам</a>
+      <div class="toc-desc">Распределение 7 424 комментариев по шести книгам</div>
+    </li>
+    <li>
+      <a href="#key-feature">Ключевая особенность: комментирование диапазонов</a>
+      <div class="toc-desc">98,6% комментариев относятся к группам шлок, а не к одиночным стихам</div>
+    </li>
+    <li>
+      <a href="#formats">Два формульных типа комментария</a>
+      <div class="toc-desc">Вводная статья и контекстное пояснение</div>
+    </li>
+    <li>
+      <a href="#typology">Восемь тематических категорий</a>
+      <div class="toc-desc">Имена, лексика, мифология, реалии, параллели, текстология, право, флора</div>
+    </li>
+    <li>
+      <a href="#triggers">Что запускает комментарий</a>
+      <div class="toc-desc">Логика отбора блоков шлок для комментирования</div>
+    </li>
+    <li>
+      <a href="#silence">Что не комментируется</a>
+      <div class="toc-desc">43,6% блоков без примечаний</div>
+    </li>
+    <li>
+      <a href="#algorithm">Алгоритм для новой книги</a>
+      <div class="toc-desc">7 шагов для воспроизведения логики Кальянова</div>
+    </li>
+  </ol>
+</nav>
+
+<!-- 01 -->
+<section class="section" id="stats">
+  <div class="section-num">01 — Статистика</div>
+  <h2>Распределение по книгам</h2>
+  <p class="lead">Более половины всех блоков шлок получили комментарий. Плотность резко растёт от Адипарвы (28,8%) к военным книгам (70%+) — чем сложнее батальная топонимика и терминология, тем гуще примечания.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Книга</th>
+        <th>Блоков шлок</th>
+        <th>С комментарием</th>
+        <th>Доля</th>
+        <th>Комментариев</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>I. Адипарва</td>
+        <td class="num-cell">1 387</td>
+        <td>400</td>
+        <td class="pct-cell">28,8%</td>
+        <td>968</td>
+      </tr>
+      <tr>
+        <td>II. Сабхапарва</td>
+        <td class="num-cell">438</td>
+        <td>278</td>
+        <td class="pct-cell">63,5%</td>
+        <td>1 256</td>
+      </tr>
+      <tr>
+        <td>IV. Виратапарва</td>
+        <td class="num-cell">360</td>
+        <td>199</td>
+        <td class="pct-cell">55,3%</td>
+        <td>476</td>
+      </tr>
+      <tr>
+        <td>V. Удьйогапарва</td>
+        <td class="num-cell">1 006</td>
+        <td>691</td>
+        <td class="pct-cell">68,7%</td>
+        <td>1 866</td>
+      </tr>
+      <tr>
+        <td>VII. Дронапарва</td>
+        <td class="num-cell">1 219</td>
+        <td>863</td>
+        <td class="pct-cell">70,8%</td>
+        <td>1 929</td>
+      </tr>
+      <tr>
+        <td>IX. Шальяпарва</td>
+        <td class="num-cell">533</td>
+        <td>359</td>
+        <td class="pct-cell">67,4%</td>
+        <td>929</td>
+      </tr>
+      <tr class="total-row">
+        <td>Итого</td>
+        <td class="num-cell">4 943</td>
+        <td>2 790</td>
+        <td class="pct-cell">56,4%</td>
+        <td>7 424</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Средняя длина комментария — 160 символов (медиана 119). Это вдвое короче, чем у Гринцера. Более 1 100 комментариев — ультракороткие (до 50 симв.): чаще всего это однострочные именные глоссы вида «Ваю (vāyu) — бог ветра».</p>
+</section>
+
+<!-- 02 -->
+<section class="section" id="key-feature">
+  <div class="section-num">02 — Ключевая особенность</div>
+  <h2>Единица комментирования — диапазон шлок</h2>
+  <p class="lead">В отличие от Гринцера, который привязывает каждое примечание к конкретной шлоке, Кальянов комментирует блоки — группы стихов, объединённых смыслом или принадлежащих одной сцене.</p>
+
+  <div class="diff-box">
+    <div class="diff-title">Ключевое отличие от Гринцера</div>
+    <p style="margin:0;font-size:17px">98,6% комментариев Кальянова привязаны к диапазонам шлок (например, «1–7», «35–40», «109–124»). Одиночные шлоки комментируются в исключительных случаях (106 из 7 424, т.е. 1,4%). Средний диапазон охватывает 8 шлок.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Размер диапазона</th>
+        <th>Количество</th>
+        <th>Доля от всех комм.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Одна шлока</td>
+        <td class="num-cell">106</td>
+        <td class="pct-cell">1,4%</td>
+      </tr>
+      <tr>
+        <td>2–3 шлоки</td>
+        <td class="num-cell">289</td>
+        <td class="pct-cell">3,9%</td>
+      </tr>
+      <tr>
+        <td>4–10 шлок</td>
+        <td class="num-cell">5 993</td>
+        <td class="pct-cell">80,7%</td>
+      </tr>
+      <tr>
+        <td>Более 10 шлок</td>
+        <td class="num-cell">1 036</td>
+        <td class="pct-cell">14,0%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Привязка к диапазону означает: Кальянов комментирует <em>реалию или имя из любого стиха блока</em>, не уточняя, к которой именно шлоке относится пояснение. Нумерация комментария соответствует номеру сноски в переводе, а не номеру шлоки.</p>
+</section>
+
+<!-- 03 -->
+<section class="section" id="formats">
+  <div class="section-num">03 — Структура</div>
+  <h2>Два формульных типа комментария</h2>
+  <p class="lead">Кальянов использует значительно более простую форматную систему, чем Гринцер: по сути, два устойчивых шаблона открытия.</p>
+
+  <div class="format-card">
+    <div class="tag">Тип А · ~44%</div>
+    <h3>«Термин (санскрит) — краткое определение»</h3>
+    <p>Комментарий открывается именем, термином или словосочетанием из текста, в скобках — IAST-транслитерация, затем тире и пояснение. Может быть однострочным (глосса) или развёрнутым (вводная статья). Это главный инструмент именных и лексических примечаний.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок</div>
+      <div class="text">Шлоки 1–7: «Сын возницы Ломахаршаны Уграшравас, искушённый в пуранах сказитель-сута, однажды…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий — вводная статья</div>
+      <div class="text">Сута <span class="sanskrit">(sūta)</span> — возница, представитель воинской касты. Сопровождая своих повелителей на битву, возницы, или суты, бывали свидетелями их боевых подвигов и воспевали их.</div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок</div>
+      <div class="text">Шлоки 27–35: «…и тогда Ка наделил их…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий — глосса</div>
+      <div class="text">Ка <span class="sanskrit">(ka)</span> — букв. «кто», имя Праджапати.</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="tag">Тип Б · ~53%</div>
+    <h3>Контекстное пояснение без цитаты</h3>
+    <p>Комментарий открывается не именем термина, а сразу объяснением ситуации, мифа, географии или обряда. Часто начинается с «Согласно…», «По преданию…», «Здесь имеется в виду…», «Название народа/страны…». Применяется для разъяснения культурных реалий и мифологических сюжетов.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок</div>
+      <div class="text">Шлоки 15–21: «…и тогда Ганга сошла на землю…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий — мифологический контекст</div>
+      <div class="text">Согласно индийской мифологии, река Ганга, дочь Хималая, первоначально протекала на небесах. Как рассказывают легенды, однажды царь Сагара, правитель Айодхьи, решил совершить торжественное жертвоприношение коня, который и был выпущен на волю под охраной царского внука Аншумана…</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="tag">Тип В · ~2,5%</div>
+    <h3>«Ср.» / «См.» — отсылка</h3>
+    <p>Краткая перекрёстная ссылка на другое место Махабхараты или другой том перевода. Применяется при повторных упоминаниях уже объяснённых реалий.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок</div>
+      <div class="text">Шлоки 8–9 (Сабхапарва)</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий — отсылка</div>
+      <div class="text">Ср. шлоку 9 в гл. 65 (стр. 134).</div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="section" id="typology">
+  <div class="section-num">04 — Типология</div>
+  <h2>Восемь тематических категорий</h2>
+  <p class="lead">Тематически комментарии Кальянова концентрируются на именном и культурном пояснении. Текстологические замечания редки — это принципиальное отличие от Гринцера.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Категория</th>
+        <th>Доля</th>
+        <th>Логика применения</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num-cell">1</td>
+        <td><strong>Имена и эпитеты</strong></td>
+        <td class="pct-cell">~30%</td>
+        <td>Объяснение имени персонажа, его этимологии, происхождения, функции в эпосе. Самая частая категория.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">2</td>
+        <td><strong>Лексика: санскритский термин</strong></td>
+        <td class="pct-cell">~18%</td>
+        <td>Пояснение непереводимого или специфического санскритского слова. Буквальный перевод («букв. …») дан в ~18% всех комментариев.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">3</td>
+        <td><strong>Мифологический контекст</strong></td>
+        <td class="pct-cell">~6%</td>
+        <td>Изложение мифа или предания, на которое опирается шлока. Часто длинные нарративные комментарии.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">4</td>
+        <td><strong>География и этнонимы</strong></td>
+        <td class="pct-cell">~5%</td>
+        <td>Идентификация народа, страны, реки, горы. Особенно плотно в батальных книгах (Дронапарва).</td>
+      </tr>
+      <tr>
+        <td class="num-cell">5</td>
+        <td><strong>Реалии: обряды и институты</strong></td>
+        <td class="pct-cell">~3,5%</td>
+        <td>Варны, ритуалы, жертвоприношения, дхарма, право. Реже, чем у Гринцера.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">6</td>
+        <td><strong>Параллели и перекрёстные ссылки</strong></td>
+        <td class="pct-cell">~4,8%</td>
+        <td>«Ср.» или «см.» — отсылка к другой главе, другой парве или другому тому перевода.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">7</td>
+        <td><strong>Этика и право</strong></td>
+        <td class="pct-cell">~2,5%</td>
+        <td>Нормы дхармы, обязанности варн, правовые нормы. Часто со ссылкой на Законы Ману или другие шастры.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">8</td>
+        <td><strong>Текстология</strong></td>
+        <td class="pct-cell">~2,9%</td>
+        <td>Редкие замечания о рукописях или критических изданиях. Значительно реже, чем у Гринцера.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 05 -->
+<section class="section" id="triggers">
+  <div class="section-num">05 — Логика отбора</div>
+  <h2>Что запускает комментарий</h2>
+  <p class="lead">Кальянов решает комментировать блок шлок, если он содержит хотя бы один из следующих элементов. Один блок может получить несколько комментариев — по числу таких элементов.</p>
+
+  <h3>1. Имя или эпитет персонажа — впервые или редко</h3>
+  <p>Основной триггер. Любое имя собственное (бога, героя, мудреца, демона), появляющееся впервые в книге или редко, получает пояснение по формуле «Имя (транслит) — определение». Повторные упоминания часто без пояснения или с «см. примеч. выше».</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Адипарва 1–7</div>
+      <div class="text">«…сказитель-сута, однажды… пришёл в лес Наймиша к великим риши…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Лес Наймиша <span class="sanskrit">(naimiṣāraṇya)</span> — название места, где якобы впервые была рассказана Махабхарата. Наймиша отождествляется с нынешним Нимкхаром (Nimkhār) в Аудхе, в районе Ситапура.</div>
+    </div>
+  </div>
+
+  <h3>2. Географическое название или этноним</h3>
+  <p>Страна, народ, река, гора — всегда идентифицируются с указанием современного названия или области. Особенно плотно в Дронапарве с её перечнями воинов и племён.</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Дронапарва 10–18</div>
+      <div class="text">«Анги, ванги и калинги, магадхи, племена Каши и косалы…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Анги <span class="sanskrit">([aṅgāḥ])</span> — название народа древней страны Анга <span class="sanskrit">([aṅga])</span>, занимавшей область на правом берегу Ганги, около Бхагальпура, в Бенгале. Столицей Анги была Чампа (иначе называемая Ангапури), которая находилась на месте нынешнего Бхагалпура.</div>
+    </div>
+  </div>
+
+  <h3>3. Непереводимый санскритский термин</h3>
+  <p>Если слово не имеет точного русского аналога или выбранный перевод существенно уже оригинала — даётся глосса с транслитерацией и буквальным значением. В отличие от Гринцера, формула «Букв.:» используется относительно редко (~18%).</p>
+
+  <h3>4. Мифологический или нарративный сюжет</h3>
+  <p>Если блок шлок лишь упоминает миф или легенду, не излагая её, — Кальянов пересказывает её в комментарии. Такие комментарии самые длинные (300–1600 символов).</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Адипарва 15–21</div>
+      <div class="text">«…и тогда река Ганга, дочь Хималая, сошла на землю…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий — пересказ мифа</div>
+      <div class="text">Согласно индийской мифологии, река Ганга, дочь Хималая, первоначально протекала на небесах. Как рассказывают легенды, однажды царь Сагара, правитель Айодхьи, решил совершить торжественное жертвоприношение коня, который и был выпущен на волю под охраной царского внука Аншумана. Но в день жертвоприношения конь исчез…</div>
+    </div>
+  </div>
+
+  <h3>5. Культурная реалия</h3>
+  <p>Варновые нормы, ритуалы, обряды посвящения, дхарма. Реже, чем у Гринцера — Кальянов предпочитает именные и географические пояснения культурологическим.</p>
+
+  <h3>6. Повтор уже объяснённого — краткая отсылка</h3>
+  <p>При повторном появлении ранее объяснённого персонажа или реалии ставится «Ср.» или «См. примеч. к гл. X». Таких отсылок 183 — значительно меньше, чем у Гринцера (99), что говорит о меньшей систематичности перекрёстных ссылок.</p>
+</section>
+
+<!-- 06 -->
+<section class="section" id="silence">
+  <div class="section-num">06 — Принцип умолчания</div>
+  <h2>Что не комментируется</h2>
+  <p class="lead">43,6% блоков шлок остаются без примечаний. Поскольку единица — блок, а не одиночная шлока, «молчание» означает, что весь фрагмент сцены счёл ненуждающимся в пояснении.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Тип фрагмента</th>
+        <th>Почему без комментария</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Батальные сцены без именных перечней</strong></td>
+        <td>Динамичные описания сражений без имён племён или вождей остаются без примечаний.</td>
+      </tr>
+      <tr>
+        <td><strong>Диалоги с известными персонажами</strong></td>
+        <td>Если все участники диалога уже получили вводные статьи, блок не комментируется.</td>
+      </tr>
+      <tr>
+        <td><strong>Риторические и дидактические максимы</strong></td>
+        <td>Общие сентенции о дхарме, доблести, судьбе — без специфической терминологии — не получают примечаний.</td>
+      </tr>
+      <tr>
+        <td><strong>Повествовательные связки</strong></td>
+        <td>Переходные блоки («И тогда сказал…», «Услышав эти слова…») без реалий — без комментария.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 07 -->
+<section class="section" id="algorithm">
+  <div class="section-num">07 — Практика</div>
+  <h2>Алгоритм для новой книги</h2>
+  <p class="lead">Воспроизводимый алгоритм для создания комментариев в стиле Кальянова к новым парвам Махабхараты.</p>
+
+  <div class="highlight">
+    <strong>Целевая плотность: ~55–70% блоков шлок.</strong> В нарративных книгах (Адипарва) — ближе к 30%. В батальных с перечнями племён и вождей (Дронапарва) — до 70%. Единица — блок, а не одиночная шлока.
+  </div>
+
+  <div class="algo-step">
+    <div class="algo-num">1</div>
+    <div class="algo-content">
+      <h4>Определить границы блока шлок</h4>
+      <p>Сгруппировать шлоки по смысловым единицам так, как они разбиты в тексте. Комментарий привязывается к блоку целиком, а не к отдельному стиху.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">2</div>
+    <div class="algo-content">
+      <h4>Просканировать блок на именные триггеры</h4>
+      <p>Есть ли в блоке: имя персонажа, топоним, этноним, название реки, горы, страны? Если да — для каждого готовится пояснение по формуле «Имя (транслит) — определение».</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">3</div>
+    <div class="algo-content">
+      <h4>Первое или повторное упоминание?</h4>
+      <p>Первое → полная вводная статья. Повторное → «Ср. примеч. к гл. X» или без комментария. Система перекрёстных ссылок менее строгая, чем у Гринцера.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">4</div>
+    <div class="algo-content">
+      <h4>Есть ли в блоке непереводимый термин?</h4>
+      <p>Если да — глосса «Термин (транслит) — значение». Буквальный перевод («букв. …») давать, только если он существенно отличается от избранного.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">5</div>
+    <div class="algo-content">
+      <h4>Упоминается ли миф или предание?</h4>
+      <p>Если блок лишь отсылает к мифу, не излагая его, — дать краткий пересказ в контекстном комментарии (Тип Б). Это самые длинные примечания.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">6</div>
+    <div class="algo-content">
+      <h4>Есть ли перечень народов или племён?</h4>
+      <p>Каждый этноним в перечне получает отдельный комментарий с идентификацией страны и современного топонима. В батальных парвах это главный источник плотности.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">7</div>
+    <div class="algo-content">
+      <h4>Нет триггеров → нет комментария</h4>
+      <p>Блоки без имён, топонимов, непереводимых терминов и мифологических отсылок остаются без примечаний.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Анализ выполнен на основе 7 424 комментариев из книг I, II, IV, V, VII, IX · В.И. Кальянов. Махабхарата · Март 2026
+</footer>
+
+</body>
+</html>

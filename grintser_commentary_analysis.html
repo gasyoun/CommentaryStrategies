@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Логика комментирования Гринцера — Рамаяна I–III</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1c1c1c;
+    --text-secondary: #555;
+    --bg: #ffffff;
+    --bg-alt: #f5f5f5;
+    --border: #ddd;
+    --accent: #8b4513;
+    --accent-light: #f9f0e8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PT Serif', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  /* ─── HEADER ─── */
+  .page-header {
+    border-bottom: 2px solid var(--text);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+
+  .page-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-family: 'PT Serif', serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .page-meta {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  /* ─── SUMMARY STATS ─── */
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .summary-stat {
+    background: var(--bg-alt);
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .summary-stat .n {
+    font-family: 'PT Serif', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .summary-stat .l {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+  }
+
+  /* ─── TABLE OF CONTENTS ─── */
+  .toc {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 28px 32px;
+    margin-bottom: 56px;
+  }
+
+  .toc h2 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+  }
+
+  .toc li {
+    counter-increment: toc;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .toc li:last-child { border-bottom: none; }
+
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 17px;
+  }
+
+  .toc a:hover { color: var(--accent); }
+
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    min-width: 26px;
+  }
+
+  .toc-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-left: 40px;
+    margin-top: -4px;
+    padding-bottom: 8px;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    margin-bottom: 64px;
+    padding-top: 8px;
+  }
+
+  .section-num {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 32px 0 10px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  .lead {
+    font-size: 19px;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  /* ─── TABLES ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 17px;
+  }
+
+  thead th {
+    background: var(--text);
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 700;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) td { background: var(--bg-alt); }
+
+  .total-row td {
+    background: var(--accent-light) !important;
+    font-weight: 700;
+  }
+
+  td.num-cell {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  td.pct-cell {
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  /* ─── EXAMPLE BOXES ─── */
+  .example {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    margin: 24px 0;
+    font-size: 17px;
+  }
+
+  .example-shloka {
+    background: var(--bg-alt);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .example-shloka .label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .example-shloka .text { font-style: italic; }
+
+  .example-comment {
+    padding: 14px 20px;
+  }
+
+  .example-comment .label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+
+  .example-comment .text { line-height: 1.65; }
+
+  .sanskrit { font-style: italic; color: #2a4a7a; }
+
+  /* ─── FORMAT CARDS ─── */
+  .format-card {
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin: 24px 0 8px;
+  }
+
+  .format-card .tag {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .format-card h3 {
+    margin-top: 0;
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+
+  .format-card p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* ─── ALGORITHM STEPS ─── */
+  .algo-step {
+    display: flex;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .algo-step:last-child { border-bottom: none; }
+
+  .algo-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-top: 2px;
+  }
+
+  .algo-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .algo-content p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* ─── HIGHLIGHT BOX ─── */
+  .highlight {
+    background: var(--accent-light);
+    border: 1px solid #d4a47a;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 18px;
+  }
+
+  .highlight strong { color: var(--accent); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    margin-top: 64px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-label">Аналитический отчёт</div>
+  <h1>Логика комментирования Гринцера</h1>
+  <div class="page-meta">П.А. Гринцер. Рамаяна. М.: Ладомир, 2006. Книги I–III: Балаканда, Айодхьяканда, Аранья-канда</div>
+</header>
+
+<div class="summary-stats">
+  <div class="summary-stat">
+    <div class="n">9 022</div>
+    <div class="l">Шлок проанализировано</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">2 245</div>
+    <div class="l">Комментариев извлечено</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">24,6%</div>
+    <div class="l">Средняя плотность</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">254</div>
+    <div class="l">Средняя длина, символов</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <h2>Содержание</h2>
+  <ol>
+    <li>
+      <a href="#stats">Статистика по книгам</a>
+      <div class="toc-desc">Распределение 2 245 комментариев по трём книгам</div>
+    </li>
+    <li>
+      <a href="#formats">Три формульных типа комментария</a>
+      <div class="toc-desc">Цитата с транслитом, вводная статья, нарративное пояснение</div>
+    </li>
+    <li>
+      <a href="#typology">Восемь тематических категорий</a>
+      <div class="toc-desc">Лексика, имена, параллели, текстология, реалии, флора, поэтика</div>
+    </li>
+    <li>
+      <a href="#triggers">Что запускает комментарий</a>
+      <div class="toc-desc">7 устойчивых триггеров с примерами из корпуса</div>
+    </li>
+    <li>
+      <a href="#silence">Что не комментируется</a>
+      <div class="toc-desc">73,9% шлок без примечаний — система, а не пробел</div>
+    </li>
+    <li>
+      <a href="#algorithm">Алгоритм для новой книги</a>
+      <div class="toc-desc">7 шагов для воспроизведения логики Гринцера</div>
+    </li>
+  </ol>
+</nav>
+
+<!-- 01 -->
+<section class="section" id="stats">
+  <div class="section-num">01 — Статистика</div>
+  <h2>Распределение по книгам</h2>
+  <p class="lead">Каждая четвёртая шлока получила комментарий. Плотность варьируется: Айодхьяканда как наиболее нарративная книга комментируется реже, Аранья-канда — богаче реалиями леса — чаще.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Книга</th>
+        <th>Шлок</th>
+        <th>Глав</th>
+        <th>С комментарием</th>
+        <th>Доля</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Балаканда</td>
+        <td class="num-cell">2 268</td>
+        <td>77</td>
+        <td>593</td>
+        <td class="pct-cell">26,1%</td>
+      </tr>
+      <tr>
+        <td>Айодхьяканда</td>
+        <td class="num-cell">4 307</td>
+        <td>119</td>
+        <td>943</td>
+        <td class="pct-cell">21,9%</td>
+      </tr>
+      <tr>
+        <td>Аранья-канда</td>
+        <td class="num-cell">2 447</td>
+        <td>75</td>
+        <td>684</td>
+        <td class="pct-cell">28,0%</td>
+      </tr>
+      <tr class="total-row">
+        <td>Итого</td>
+        <td class="num-cell">9 022</td>
+        <td>271</td>
+        <td>2 220</td>
+        <td class="pct-cell">~24,6%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Большинство комментариев средней длины: медиана 205 символов, среднее 254. Случаев, когда одна шлока получает более одного комментария, единицы (11–4–10 по книгам).</p>
+</section>
+
+<!-- 02 -->
+<section class="section" id="formats">
+  <div class="section-num">02 — Структура</div>
+  <h2>Три формульных типа комментария</h2>
+  <p class="lead">Гринцер использует три устойчивые конструкции открытия. По первой фразе можно сразу определить характер пояснения.</p>
+
+  <div class="format-card">
+    <div class="tag">Тип А · ~45%</div>
+    <h3>«…цитата (санскрит)… — пояснение»</h3>
+    <p>Комментарий начинается с многоточия, цитирует фрагмент шлоки, в скобках — IAST-транслитерация оригинала, затем тире и объяснение. Основной инструмент лексических и текстологических замечаний.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлока</div>
+      <div class="text">Стройный, хорошо сложенный, / Тёмнокожий, полный силы, / Широкогрудый, долгоокий…</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">…Тёмнокожий <span class="sanskrit">(snigdha-varṇaḥ)</span>… — Букв.: «цвета масла», «глянцевитый». Эпитет может быть истолкован различно; некоторые комментаторы понимают его как «блестящий» или «светлый», но большинство — как «тёмнокожий», поскольку Рама (как и Кришна) в индийской иконографии изображается с тёмным (синего цвета) телом.</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="tag">Тип Б · ~9%</div>
+    <h3>«Термин (санскрит) — вводная статья»</h3>
+    <p>Комментарий открывается именем или термином с IAST в скобках. Это «энциклопедический» формат для первого упоминания персонажа, топонима или культурной реалии. Самые длинные комментарии корпуса.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлока</div>
+      <div class="text">Преданного аскезе и чтению вед, / Лучшего из знатоков речи, / Нараду, быка среди мудрецов…</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Нарада <span class="sanskrit">(nārada)</span> — божественный мудрец, причастность которого к созданию «Рамаяны» связана с рядом его характеристик в индийской традиции. Он рассматривается как посредник между богами и людьми и в то же время как поэт <span class="sanskrit">(kavi)</span>. Ему приписываются несколько гимнов «Ригведы» (см.: РВ VIII. 13; IX. 104, 105)…</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="tag">Тип В · ~43%</div>
+    <h3>Нарративное / контекстное пояснение</h3>
+    <p>Без цитирования шлоки. Открывается нейтрально: «Здесь…», «То есть…», «По-видимому…» — или сразу описанием ситуации. Применяется там, где важен не термин, а подтекст действия.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлока</div>
+      <div class="text">В щедрости равен Кубере, / В верности истине — Дхарме. / Этого воистину великого Раму…</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Здесь начинается первый каталог содержания «Рамаяны» (второй каталог — далее, в третьей песни), сходный с такого же рода каталогами «Махабхараты» (см.: Мбх. I. 1. 49—90; 2. 33—243). Подобного рода каталоги, только значительно более краткие, были известны и в греческой литературе.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="section" id="typology">
+  <div class="section-num">03 — Типология</div>
+  <h2>Восемь тематических категорий</h2>
+  <p class="lead">Внутри трёх формульных типов содержание распределяется по восьми категориям. Один комментарий нередко совмещает несколько — особенно часто лексика + параллели.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Категория</th>
+        <th>Доля</th>
+        <th>Логика применения</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num-cell">1</td>
+        <td><strong>Лексика: буквальный перевод</strong></td>
+        <td class="pct-cell">~22%</td>
+        <td>Русский перевод неизбежно теряет нюанс. Даётся «Букв.:» с транслитерацией оригинала.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">2</td>
+        <td><strong>Лексика: контекстное уточнение</strong></td>
+        <td class="pct-cell">~34%</td>
+        <td>Слово многозначно или неоднозначно в данном контексте; смысл уточняется через анализ ситуации или мнения индийских комментаторов.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">3</td>
+        <td><strong>Имена / реалии: вводная статья</strong></td>
+        <td class="pct-cell">~9%</td>
+        <td>Первое появление персонажа, топонима или культурного концепта. При повторном — только «см. примеч. к I.X.Y».</td>
+      </tr>
+      <tr>
+        <td class="num-cell">4</td>
+        <td><strong>Параллели с другими текстами</strong></td>
+        <td class="pct-cell">~5%</td>
+        <td>Шлока параллельна к месту из Махабхараты, Вед или Пуран. Формула: «Ср.:» с точной ссылкой.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">5</td>
+        <td><strong>Текстологические</strong></td>
+        <td class="pct-cell">~15%</td>
+        <td>Разночтения рукописных традиций или расходящиеся интерпретации традиционных комментаторов.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">6</td>
+        <td><strong>Реалии: обряды и институты</strong></td>
+        <td class="pct-cell">~7%</td>
+        <td>Варновая система, ритуалы, ашрамы жизни, дхарма, право. Нередко со ссылкой на Законы Ману.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">7</td>
+        <td><strong>Флора и фауна</strong></td>
+        <td class="pct-cell">~2%</td>
+        <td>Идентификация с латинским научным названием. Концентрируется в Аранья-канде.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">8</td>
+        <td><strong>Поэтика</strong></td>
+        <td class="pct-cell">~1%</td>
+        <td>Формульные повторы, смена метра, нарративные приёмы эпоса. Фиксируется одним предложением.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 04 -->
+<section class="section" id="triggers">
+  <div class="section-num">04 — Логика отбора</div>
+  <h2>Что запускает комментарий</h2>
+  <p class="lead">Почему одна шлока комментируется, а соседняя нет. Анализ выявляет семь устойчивых триггеров — условий, при которых Гринцер неизменно ставит примечание.</p>
+
+  <h3>1. Непереводимое или многозначное слово</h3>
+  <p>Главный триггер (~46%). Если русский эквивалент не отражает буквального смысла или семантически уже санскритского термина — даётся формула «Букв.:». Особенно часто: составные имена-эпитеты, философские термины (дхарма, майя, ахимса), названия ритуалов.</p>
+
+  <h3>2. Первое упоминание персонажа или топонима</h3>
+  <p>При первом появлении любого значимого персонажа (бог, мудрец, демон, царь) или места — вводная статья. При повторном — только «см. примеч. к I.X.Y». В корпусе зафиксировано 99 таких перекрёстных отсылок.</p>
+
+  <h3>3. Спор комментаторов или рукописное расхождение</h3>
+  <p>Если традиционные индийские комментаторы (Нагеша Бхатта, Говиндараджа, Махешваратиртха) дают разные интерпретации или существуют рукописные варианты — Гринцер обязательно это фиксирует: «По мнению X, …; Y, однако, полагает…»</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлока</div>
+      <div class="text">…в сравнении с Вишну <span class="sanskrit">(viṣṇunā sadṛśaḥ)</span>…</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">…подобен Вишну <span class="sanskrit">(viṣṇunā sadṛśaḥ)</span>… — Сравнение с Вишну, по мнению ряда исследователей, свидетельствует, что здесь Рама ещё не рассматривается как воплощение Вишну. Впрочем, это мнение весьма спорно.</div>
+    </div>
+  </div>
+
+  <h3>4. Параллельное место в других текстах</h3>
+  <p>Когда мотив или образ имеет явный аналог в Махабхарате, Ведах, Пуранах или другой части Рамаяны — ставится «Ср.:» с точной ссылкой (107 комментариев такого рода).</p>
+
+  <h3>5. Культурная реалия</h3>
+  <p>Варновая система, жертвоприношения, ашрамы жизни, космология, астрология, нормы дхармы. Всё, что требует культурного контекста — особенно нормы права со ссылкой на Законы Ману (ЗМ).</p>
+
+  <h3>6. Флора и фауна</h3>
+  <p>Любое названное растение или животное получает латинское научное название. Концентрируется в Аранья-канде: 48 из 109 подобных комментариев во всём корпусе.</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлока</div>
+      <div class="text">…и достигнув ашоковой рощи <span class="sanskrit">(aśoka-vanikā)</span>…</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Ашока <span class="sanskrit">(a-śoka</span> — «беспечальное») — дерево с оранжево-алыми цветами, <em>Jonesia asoka</em> или <em>Saraca indica</em>.</div>
+    </div>
+  </div>
+
+  <h3>7. Поэтический приём</h3>
+  <p>Формульный повтор, смена метра в конце книги, нарративный клише эпоса. Фиксируется лаконично, одним предложением: «Буквальный повтор строфы X.Y. Такого рода повторы характерны для стиля «Рамаяны»».</p>
+</section>
+
+<!-- 05 -->
+<section class="section" id="silence">
+  <div class="section-num">05 — Принцип умолчания</div>
+  <h2>Что не комментируется</h2>
+  <p class="lead">Понимание логики отказа от комментария не менее важно. 73,9% шлок остаются без примечания — и это не случайность, а система.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Тип шлоки</th>
+        <th>Почему без комментария</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Нарративное действие без реалий</strong></td>
+        <td>«Рама взял лук», «они пошли в лес» — если нет культурно значимого термина, комментарий не ставится.</td>
+      </tr>
+      <tr>
+        <td><strong>Сравнения с уже объяснёнными персонажами</strong></td>
+        <td>«Подобный Индре», «словно Кубера» — если персонаж уже получил вводную статью, дублирование исключено. Ставится «см. примеч.»</td>
+      </tr>
+      <tr>
+        <td><strong>Формульные обращения</strong></td>
+        <td>«О могучий», «о герой», «о великий» — стандартные эпические формулы слишком частотны и прозрачны для пояснения.</td>
+      </tr>
+      <tr>
+        <td><strong>Физические перемещения и жесты</strong></td>
+        <td>Описание движений, поз, мимики — без специфического санскритского термина остаётся без комментария.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 06 -->
+<section class="section" id="algorithm">
+  <div class="section-num">06 — Практика</div>
+  <h2>Алгоритм для новой книги</h2>
+  <p class="lead">На основе выявленных закономерностей — воспроизводимый алгоритм для Кишкиндхаканды, Сундараканды и других книг.</p>
+
+  <div class="highlight">
+    <strong>Целевая плотность: ~25% шлок.</strong> В книгах, богатых топонимами и персонажами (Кишкиндхаканда) — ближе к 28%. В нарративно насыщенных — ближе к 22%. Диапазон ±3% от среднего.
+  </div>
+
+  <div class="algo-step">
+    <div class="algo-num">1</div>
+    <div class="algo-content">
+      <h4>Просканировать шлоку на триггеры</h4>
+      <p>Проверить: (а) есть ли непереводимый санскритский термин, (б) упомянут ли персонаж/топоним/реалия, (в) есть ли растение или животное, (г) является ли шлока поэтическим повтором.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">2</div>
+    <div class="algo-content">
+      <h4>Первое или повторное упоминание?</h4>
+      <p>Первое → Тип Б (вводная статья). Повторное → только «см. примеч. к [книга].[глава].[шлока]». Никаких дублирований.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">3</div>
+    <div class="algo-content">
+      <h4>Буквальный смысл отличается от перевода?</h4>
+      <p>Если да — Тип А с «Букв.:» и санскритским оригиналом в IAST-транслитерации. Даже небольшое семантическое смещение требует фиксации.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">4</div>
+    <div class="algo-content">
+      <h4>Есть параллельное место?</h4>
+      <p>Проверить соответствие в Махабхарате, Ведах, Пуранах. Если есть — добавить «Ср.:» с точной ссылкой. Формульные шлоки часто кочуют между текстами.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">5</div>
+    <div class="algo-content">
+      <h4>Флора и фауна — всегда латинское название</h4>
+      <p>Любое упомянутое дерево, цветок, птица или зверь: латинское научное название обязательно.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">6</div>
+    <div class="algo-content">
+      <h4>Поэтический приём — лаконично</h4>
+      <p>Формульные повторы и смену метра фиксировать одним предложением.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">7</div>
+    <div class="algo-content">
+      <h4>Нет триггеров → нет комментария</h4>
+      <p>Чистое нарративное действие, формульные обращения, физические перемещения без реалий — комментарий не нужен. Умолчание — часть системы, а не пробел.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Анализ выполнен на основе 2 245 комментариев из книг I–III · Балаканда, Айодхьяканда, Аранья-канда · Март 2026
+</footer>
+
+</body>
+</html>

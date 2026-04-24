@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Логика комментирования Эрмана — Махабхарата. Бхишма-парва</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1c1c1c;
+    --text-secondary: #555;
+    --bg: #ffffff;
+    --bg-alt: #f5f5f5;
+    --border: #ddd;
+    --accent: #5a2d82;
+    --accent-light: #f2ecf9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PT Serif', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .page-header { border-bottom: 2px solid var(--text); padding-bottom: 32px; margin-bottom: 40px; }
+
+  .page-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+
+  .page-meta { font-family: 'PT Sans', sans-serif; font-size: 15px; color: var(--text-secondary); }
+
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .summary-stat { background: var(--bg-alt); padding: 20px 24px; text-align: center; }
+
+  .summary-stat .n {
+    font-family: 'PT Serif', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .summary-stat .l { font-family: 'PT Sans', sans-serif; font-size: 13px; color: var(--text-secondary); line-height: 1.3; }
+
+  .toc {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 28px 32px;
+    margin-bottom: 56px;
+  }
+
+  .toc h2 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; border-bottom: 1px solid var(--border); }
+  .toc li:last-child { border-bottom: none; }
+
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 17px;
+  }
+
+  .toc a:hover { color: var(--accent); }
+
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    min-width: 26px;
+  }
+
+  .toc-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-left: 40px;
+    margin-top: -4px;
+    padding-bottom: 8px;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  .section { margin-bottom: 64px; padding-top: 8px; }
+
+  .section-num {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  h2 { font-size: 28px; font-weight: 700; line-height: 1.25; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+  h3 { font-size: 20px; font-weight: 700; margin: 32px 0 10px; }
+  p { margin-bottom: 16px; font-size: 18px; }
+  .lead { font-size: 19px; color: var(--text-secondary); margin-bottom: 28px; font-style: italic; }
+
+  table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 17px; }
+
+  thead th {
+    background: var(--text);
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 700;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  tbody td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) td { background: var(--bg-alt); }
+  .total-row td { background: var(--accent-light) !important; font-weight: 700; }
+  td.num-cell { font-weight: 700; color: var(--accent); white-space: nowrap; }
+  td.pct-cell { font-weight: 700; color: var(--accent); white-space: nowrap; }
+
+  .example { border: 1px solid var(--border); border-left: 4px solid var(--accent); margin: 24px 0; font-size: 17px; }
+
+  .example-shloka { background: var(--bg-alt); padding: 12px 20px; border-bottom: 1px solid var(--border); }
+
+  .example-shloka .label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .example-shloka .text { font-style: italic; }
+  .example-comment { padding: 14px 20px; }
+
+  .example-comment .label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+
+  .example-comment .text { line-height: 1.65; }
+  .sanskrit { font-style: italic; color: #2a4a7a; }
+
+  .format-card { border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 24px 28px; margin: 24px 0 8px; }
+
+  .format-card .tag {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .format-card h3 { margin-top: 0; font-size: 19px; margin-bottom: 10px; }
+  .format-card p { font-size: 17px; color: var(--text-secondary); margin: 0; }
+
+  .algo-step { display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+  .algo-step:last-child { border-bottom: none; }
+
+  .algo-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-top: 2px;
+  }
+
+  .algo-content h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .algo-content p { font-size: 17px; color: var(--text-secondary); margin: 0; }
+
+  .highlight { background: var(--accent-light); border: 1px solid #b094d4; padding: 20px 24px; margin: 24px 0; font-size: 18px; }
+  .highlight strong { color: var(--accent); }
+
+  .diff-box {
+    background: #fffbf0;
+    border: 1px solid #e0c870;
+    border-left: 4px solid #c8960a;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 17px;
+  }
+
+  .diff-box .diff-title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8a6a00;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  footer { border-top: 1px solid var(--border); padding-top: 24px; margin-top: 64px; font-family: 'PT Sans', sans-serif; font-size: 14px; color: var(--text-secondary); }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-label">Аналитический отчёт</div>
+  <h1>Логика комментирования Эрмана</h1>
+  <div class="page-meta">В.Г. Эрман. Махабхарата. Книга VI: Бхишма-парва. М.: Наука, 1977</div>
+</header>
+
+<div class="summary-stats">
+  <div class="summary-stat">
+    <div class="n">1 337</div>
+    <div class="l">Блоков шлок проанализировано</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">758</div>
+    <div class="l">Комментариев извлечено</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">37,9%</div>
+    <div class="l">Средняя плотность</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">264</div>
+    <div class="l">Средняя длина, символов</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <h2>Содержание</h2>
+  <ol>
+    <li>
+      <a href="#stats">Статистика</a>
+      <div class="toc-desc">758 комментариев к 1 337 блокам шлок Бхишма-парвы</div>
+    </li>
+    <li>
+      <a href="#key-feature">Ключевая особенность: параллельный аппарат</a>
+      <div class="toc-desc">32,5% комментариев — ссылки на параллели и вторичную литературу</div>
+    </li>
+    <li>
+      <a href="#formats">Четыре формульных типа комментария</a>
+      <div class="toc-desc">Два цитатных, именной и контекстный</div>
+    </li>
+    <li>
+      <a href="#typology">Тематические категории</a>
+      <div class="toc-desc">Параллели, санскрит, поэтика, мифология, реалии, текстология</div>
+    </li>
+    <li>
+      <a href="#triggers">Что запускает комментарий</a>
+      <div class="toc-desc">Логика отбора блоков для примечаний</div>
+    </li>
+    <li>
+      <a href="#silence">Что не комментируется</a>
+      <div class="toc-desc">62,1% блоков без примечаний</div>
+    </li>
+    <li>
+      <a href="#algorithm">Алгоритм для новой книги</a>
+      <div class="toc-desc">7 шагов для воспроизведения логики Эрмана</div>
+    </li>
+  </ol>
+</nav>
+
+<!-- 01 -->
+<section class="section" id="stats">
+  <div class="section-num">01 — Статистика</div>
+  <h2>Общие показатели</h2>
+  <p class="lead">Бхишма-парва — единственный переведённый Эрманом том. Плотность комментирования (37,9%) близка к Вана-парве Василькова (36,9%), а средняя длина (264 симв.) — наивысшая среди всех проанализированных переводчиков.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Показатель</th>
+        <th>Значение</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Всего блоков шлок</td>
+        <td class="num-cell">1 337</td>
+      </tr>
+      <tr>
+        <td>Блоков с комментарием</td>
+        <td class="num-cell">507 (37,9%)</td>
+      </tr>
+      <tr>
+        <td>Всего комментариев</td>
+        <td class="num-cell">758</td>
+      </tr>
+      <tr>
+        <td>Комментариев к диапазонам шлок</td>
+        <td class="num-cell">455 (60,0%)</td>
+      </tr>
+      <tr>
+        <td>Комментариев к одиночным шлокам</td>
+        <td class="num-cell">303 (40,0%)</td>
+      </tr>
+      <tr>
+        <td>Средняя длина</td>
+        <td class="num-cell">264 симв.</td>
+      </tr>
+      <tr>
+        <td>Медиана длины</td>
+        <td class="num-cell">176 симв.</td>
+      </tr>
+      <tr>
+        <td>Очень длинных (>800 симв.)</td>
+        <td class="num-cell">33</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Соотношение диапазонов и одиночных шлок (60/40) близко к Василькову (68/32) и принципиально отличается от Кальянова (99/1). Эрман — единственный из четырёх переводчиков, у кого значительная часть комментариев привязана именно к отдельным стихам, а не к блокам.</p>
+</section>
+
+<!-- 02 -->
+<section class="section" id="key-feature">
+  <div class="section-num">02 — Ключевая особенность</div>
+  <h2>Развитый параллельный аппарат</h2>
+  <p class="lead">Главная отличительная черта Эрмана — систематические ссылки на вторичную литературу и параллельные места. 32,5% всех комментариев содержат отсылки к другим источникам.</p>
+
+  <div class="diff-box">
+    <div class="diff-title">Ключевое отличие от других переводчиков</div>
+    <p style="margin:0;font-size:17px">193 комментария (25,5%) содержат библиографические ссылки вида «Бхагавадгита 1999: 231» или «Индуизм 1996: 230–231». Ссылки на традиционных индийских комментаторов (Девабодха, Нилакантха) — ещё 17 примечаний. Это самый академический аппарат среди всех четырёх переводчиков.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Тип ссылки в комментарии</th>
+        <th>Количество</th>
+        <th>Доля</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Библиографические ссылки [Автор год: стр.]</td>
+        <td class="num-cell">193</td>
+        <td class="pct-cell">25,5%</td>
+      </tr>
+      <tr>
+        <td>Ссылки на параллели внутри Мбх и др. текстов</td>
+        <td class="num-cell">246</td>
+        <td class="pct-cell">32,5%</td>
+      </tr>
+      <tr>
+        <td>Ссылки на инд. комментаторов (Девабодха и др.)</td>
+        <td class="num-cell">17</td>
+        <td class="pct-cell">2,2%</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 03 -->
+<section class="section" id="formats">
+  <div class="section-num">03 — Структура</div>
+  <h2>Четыре формульных типа комментария</h2>
+  <p class="lead">Эрман использует четыре устойчивых шаблона. Два цитатных типа совпадают с Васильковым, но добавляется активное использование именного формата с IAST — как у Гринцера.</p>
+
+  <div class="format-card">
+    <div class="tag">Тип А · ~45%</div>
+    <h3>«…цитата из перевода… — пояснение»</h3>
+    <p>Комментарий начинается с многоточия, цитирует фразу из русского текста шлоки, затем тире и объяснение. Самый распространённый тип. Применяется для терминов, реалий и поэтических образов, локализованных в конкретной фразе.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлоки 3–6</div>
+      <div class="text">«…искушённые в чтении Вед…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">…искушённые в чтении Вед — Подразумевается ритуальное чтение священных текстов <span class="sanskrit">(adhyāyana)</span>, которому приписывается магическое действие. Согласно комментарию Девабодхи, здесь, кроме канонических четырёх Вед, имеется в виду также «Дханурведа», трактующая воинское искусство.</div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлоки 7–8</div>
+      <div class="text">«…как солнце опаляет круг Джамбудвипы…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">…как солнце опаляет круг Джамбудвипы… — употребительная в древнеиндийской поэзии метафора: собрание земных вод в тучи под воздействием солнечного зноя.</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="tag">Тип Б · ~16%</div>
+    <h3>«Цитата из перевода — пояснение»</h3>
+    <p>Без многоточия в начале. Применяется когда цитируется начало блока или цельная фраза. Аналог Типа А у Василькова, но значительно реже.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлоки 9–11</div>
+      <div class="text">«Йоджана…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Йоджана — мера длины, определяемая обычно как равная 13–14 км (см.: Араньякапарва 1987: 737).</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="tag">Тип В · ~8%</div>
+    <h3>«Термин (санскрит) — вводная статья»</h3>
+    <p>Комментарий открывается термином или именем с IAST-транслитерацией в скобках. Применяется для философских терминов и астрологических концептов Бхагавадгиты. Ближайший аналог Гринцера, но встречается реже.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлоки 10–17</div>
+      <div class="text">«…Белая планета…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Белая <span class="sanskrit">(śveta)</span> планета — так именуется в лексиконах Шукра (Венера), но здесь, возможно, имеется в виду Кету, спутник упомянутого непосредственно перед этим Раху, демона затмений, периодически поглощающего Солнце и Луну, которые почитаются одной из планет.</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="tag">Тип Г · ~30%</div>
+    <h3>Контекстное пояснение</h3>
+    <p>Без цитаты. Сразу объяснение реалии, мифа, философского концепта или структурного наблюдения о тексте. Особенно характерно для Бхагавадгиты — центрального раздела Бхишма-парвы, где комментарии нередко охватывают целые смысловые блоки.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлока 39</div>
+      <div class="text">«Эта мудрость… отринешь узы деяния…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий — переход Бхагавадгиты</div>
+      <div class="text">С этой строфы начинается развитие новой темы; от «рассуждения» <span class="sanskrit">(sāṃkhya)</span>, рационального объяснения истинной природы души, Кришна переходит собственно к йоге (мы переводим здесь и далее <span class="sanskrit">yoga</span> как «сопряжение», а не «путь», ибо значение последнего слова в русском языке сужено до смысла «способ действия»)…</div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="section" id="typology">
+  <div class="section-num">04 — Типология</div>
+  <h2>Тематические категории</h2>
+  <p class="lead">Эрман резко выделяется на фоне остальных переводчиков высокой долей параллелей и поэтических замечаний. Это связано со спецификой Бхишма-парвы: она содержит Бхагавадгиту — философский текст с богатой традицией комментирования.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Категория</th>
+        <th>Доля</th>
+        <th>Логика применения</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num-cell">1</td>
+        <td><strong>Параллели и ссылки</strong></td>
+        <td class="pct-cell">32,5%</td>
+        <td>Отсылки к другим частям Мбх, индологической литературе, словарям. Самая характерная черта стиля Эрмана. Библиографические ссылки — в 25,5% всех комментариев.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">2</td>
+        <td><strong>Санскритские термины</strong></td>
+        <td class="pct-cell">27,8%</td>
+        <td>IAST-транслитерация с этимологией. Особенно плотно в разделах Бхагавадгиты, где каждый философский термин требует разбора.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">3</td>
+        <td><strong>Поэтика</strong></td>
+        <td class="pct-cell">11,2%</td>
+        <td>Метафоры, образы, поэтические приёмы, клише эпоса. Уникальная для корпуса категория — у Гринцера, Кальянова и Василькова таких примечаний единицы.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">4</td>
+        <td><strong>Мифологический контекст</strong></td>
+        <td class="pct-cell">10,8%</td>
+        <td>Пояснение мифа или предания, подразумеваемого шлокой. Нередко совмещается со ссылкой на вторичную литературу.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">5</td>
+        <td><strong>Культурные реалии</strong></td>
+        <td class="pct-cell">9,2%</td>
+        <td>Варновая система, ритуалы, дхарма, карма, астрология. Менее часто, чем у Василькова (12,5%), но с более подробным библиографическим оснащением.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">6</td>
+        <td><strong>Лексика: буквальный перевод</strong></td>
+        <td class="pct-cell">6,7%</td>
+        <td>«Букв.: …» — встречается в 51 комментарии. Нередко включается внутрь более длинного примечания другого типа.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">7</td>
+        <td><strong>География и этнонимы</strong></td>
+        <td class="pct-cell">3,6%</td>
+        <td>Реже, чем у Кальянова. Бхишма-парва — не батальный перечень народов, а преимущественно Бхагавадгита и описание построения войск.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">8</td>
+        <td><strong>Текстология</strong></td>
+        <td class="pct-cell">2,9%</td>
+        <td>Ссылки на рукописные варианты и мнения других переводчиков. Реже Василькова, но более развёрнуто.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 05 -->
+<section class="section" id="triggers">
+  <div class="section-num">05 — Логика отбора</div>
+  <h2>Что запускает комментарий</h2>
+  <p class="lead">Эрман ставит примечание тогда, когда блок шлок требует одного из следующих видов пояснения. Особая зона плотности — Бхагавадгита (главы 25–42), где комментируется более 60% блоков.</p>
+
+  <h3>1. Санскритский термин с нетривиальным смыслом</h3>
+  <p>Главный триггер — прежде всего для Бхагавадгиты. Любой философский термин (<span class="sanskrit">dharma</span>, <span class="sanskrit">yoga</span>, <span class="sanskrit">karma</span>, <span class="sanskrit">ātman</span>, <span class="sanskrit">akṣara</span>) требует развёрнутого примечания с транслитерацией и разбором значений. Эрман часто указывает, почему выбран именно такой перевод, а не другой.</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлоки 9–14</div>
+      <div class="text">«…на чьей стороне правда…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">…на чьей стороне правда… — В подлиннике: <span class="sanskrit">dharma</span>. Это кардинальное понятие всей религиозно-этической системы индуизма охватывает чрезвычайно широкий диапазон значений; в индологической литературе понятие dharma принято, как правило, не переводить, а транслитерировать (Индуизм 1996: 430–431).</div>
+    </div>
+  </div>
+
+  <h3>2. Поэтический образ или метафора</h3>
+  <p>Уникальный триггер Эрмана — 11,2% комментариев посвящены поэтике. Если шлока содержит нетривиальную метафору, устойчивое эпическое сравнение или поэтический концепт — ставится объяснение его природы и контекста.</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлоки 7–8</div>
+      <div class="text">«…как солнце опаляет круг Джамбудвипы…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">…как солнце опаляет круг Джамбудвипы… — употребительная в древнеиндийской поэзии метафора: собрание земных вод в тучи под воздействием солнечного зноя.</div>
+    </div>
+  </div>
+
+  <h3>3. Параллель с другим местом Мбх или другим текстом</h3>
+  <p>Если мотив или формула встречаются в другой парве, Бхагавадгите или пуранах — ставится отсылка «см. примеч. N к текущ. разд.» или «ср. Бомб. 6.12.3». 32,5% всех комментариев содержат такие ссылки.</p>
+
+  <h3>4. Астрологический или космологический концепт</h3>
+  <p>Небесные тела, лунные стоянки, зловещие знамения перед битвой — всё это получает детальные примечания со ссылкой на астрологическую традицию. Особенно плотно в описаниях знамений (главы 2–17).</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Шлоки 15–33</div>
+      <div class="text">«…Шанайшчара…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Шанайшчара — планета Сатурн, почиталась особенно зловещей; её прохождение через накшатры, созвездия лунного зодиака (так называемые «лунные дома», или «лунные стоянки»), определяло предсказания будущего.</div>
+    </div>
+  </div>
+
+  <h3>5. Место с трудным или спорным текстом</h3>
+  <p>Если оригинал допускает несколько толкований или переводчик отступает от чтения Нилакантхи или Девабодхи — ставится текстологическое примечание с обоснованием выбора.</p>
+
+  <h3>6. Культурная реалия или мифологический сюжет</h3>
+  <p>Варновые нормы, ритуалы, мифы — по тем же принципам, что у Василькова, но с обязательной библиографической ссылкой на словарь или монографию.</p>
+</section>
+
+<!-- 06 -->
+<section class="section" id="silence">
+  <div class="section-num">06 — Принцип умолчания</div>
+  <h2>Что не комментируется</h2>
+  <p class="lead">62,1% блоков остаются без примечаний. Эрман не дублирует пояснения, уже данные в других томах серии, и не комментирует нарративные связки и стандартные эпические формулы.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Тип фрагмента</th>
+        <th>Почему без комментария</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Нарративные переходы и ремарки</strong></td>
+        <td>«Вайшампаяна сказал:», «Санджая сказал:» и прочие введения речи без реалий — без примечаний.</td>
+      </tr>
+      <tr>
+        <td><strong>Стандартные батальные описания</strong></td>
+        <td>Описания построений войск и хода боя без астрологических знамений или именных перечней.</td>
+      </tr>
+      <tr>
+        <td><strong>Диалоги с уже объяснёнными персонажами</strong></td>
+        <td>Реплики Арджуны, Кришны, Бхишмы без философских терминов и культурных реалий.</td>
+      </tr>
+      <tr>
+        <td><strong>Общие этические максимы</strong></td>
+        <td>Сентенции о долге воина, верности, мужестве — без специфических санскритских терминов.</td>
+      </tr>
+      <tr>
+        <td><strong>Уже прокомментированные реалии</strong></td>
+        <td>Повторные упоминания уже объяснённых терминов и персонажей — только отсылка «см. примеч. N».</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 07 -->
+<section class="section" id="algorithm">
+  <div class="section-num">07 — Практика</div>
+  <h2>Алгоритм для новой книги</h2>
+  <p class="lead">Воспроизводимый алгоритм для создания комментариев в стиле Эрмана к другим книгам Махабхараты.</p>
+
+  <div class="highlight">
+    <strong>Целевая плотность: ~38% блоков шлок.</strong> В разделах с плотной философской терминологией (Бхагавадгита) — до 60%. В нарративных разделах с описаниями войска и знамений — около 25–30%.
+  </div>
+
+  <div class="algo-step">
+    <div class="algo-num">1</div>
+    <div class="algo-content">
+      <h4>Определить тип шлоки: нарративная или философская</h4>
+      <p>Философские и дидактические блоки (особенно Бхагавадгита) комментируются принципиально плотнее нарративных. Решение о плотности принимается на уровне раздела, а не отдельного блока.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">2</div>
+    <div class="algo-content">
+      <h4>Есть ли санскритский термин с нетривиальным переводом?</h4>
+      <p>Если да — Тип В (с IAST) или Тип А/Б с вставкой транслитерации. Обязательно объяснить, почему избран именно данный русский эквивалент, если выбор неочевиден. Для Бхагавадгиты это главный триггер.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">3</div>
+    <div class="algo-content">
+      <h4>Есть ли поэтический образ или нетривиальная метафора?</h4>
+      <p>Если да — Тип А с объяснением поэтического приёма. Это уникальная практика Эрмана, которой нет у остальных переводчиков.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">4</div>
+    <div class="algo-content">
+      <h4>Есть ли параллельное место или библиографическая отсылка?</h4>
+      <p>Если мотив встречается в другой парве или прокомментирован в индологической литературе — добавить «см.» или «ср.» со ссылкой. Целевое соотношение: ссылки в ~30% всех комментариев.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">5</div>
+    <div class="algo-content">
+      <h4>Есть ли астрологический концепт или знамение?</h4>
+      <p>Небесные тела, лунные стоянки, зловещие знаки — обязательно пояснить с указанием традиционного значения. Особенно важно в батальных книгах с описаниями знамений.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">6</div>
+    <div class="algo-content">
+      <h4>Есть ли трудное или спорное место в тексте?</h4>
+      <p>Разное прочтение у комментаторов (Нилакантха, Девабодха) или у других переводчиков → текстологическое примечание с обоснованием выбора.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">7</div>
+    <div class="algo-content">
+      <h4>Нет триггеров → нет комментария</h4>
+      <p>Нарративные переходы, стандартные батальные описания без знамений и терминов, общие этические максимы без специфической лексики — без примечаний.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Анализ выполнен на основе 758 комментариев · В.Г. Эрман. Махабхарата. Книга VI: Бхишма-парва · Март 2026
+</footer>
+
+</body>
+</html>

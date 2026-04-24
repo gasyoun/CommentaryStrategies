@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Логика комментирования Сыркина — Упанишады</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1c1c1c;
+    --text-secondary: #555;
+    --bg: #ffffff;
+    --bg-alt: #f5f5f5;
+    --border: #ddd;
+    --accent: #7a3b00;
+    --accent-light: #faf0e6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PT Serif', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .page-header {
+    border-bottom: 2px solid var(--text);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+
+  .page-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+
+  .page-meta {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  /* Сводные статы */
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .summary-stat { background: var(--bg-alt); padding: 20px 24px; text-align: center; }
+
+  .summary-stat .n {
+    font-family: 'PT Serif', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .summary-stat .l {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+  }
+
+  /* Содержание */
+  .toc {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    padding: 24px 28px;
+    margin-bottom: 56px;
+  }
+
+  .toc-title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li {
+    counter-increment: toc;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    padding: 3px 0;
+  }
+  .toc li::before {
+    content: counter(toc) ". ";
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-right: 4px;
+  }
+  .toc a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .toc a:hover { border-color: var(--text); }
+
+  /* Разделы */
+  .section { margin-bottom: 56px; }
+
+  h2 { font-size: 26px; font-weight: 700; line-height: 1.25; margin-bottom: 20px; padding-top: 8px; }
+
+  h3 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    margin-top: 32px;
+  }
+
+  p { margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* Таблица упанишад */
+  .up-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+
+  .up-cell {
+    background: var(--bg);
+    padding: 14px 16px;
+  }
+
+  .up-cell .uname {
+    font-family: 'PT Serif', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+
+  .up-cell .ustats {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .up-cell .ustats .bn { font-weight: 700; color: var(--text); }
+
+  /* Категориальные бары */
+  .cat-bars { margin-bottom: 32px; }
+
+  .cat-bar-row {
+    display: grid;
+    grid-template-columns: 240px 1fr 50px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .cat-bar-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: right;
+  }
+
+  .cat-bar-track {
+    background: var(--bg-alt);
+    height: 20px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .cat-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    opacity: 0.82;
+  }
+
+  .cat-bar-pct {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* IAST бары */
+  .iast-bar-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 50px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .iast-bar-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: right;
+  }
+
+  .iast-bar-track {
+    background: var(--bg-alt);
+    height: 16px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .iast-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  .iast-bar-pct {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* Примеры */
+  .example-block {
+    border-left: 3px solid var(--accent);
+    padding: 12px 18px;
+    margin: 16px 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .example-source {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  /* Двойная таблица */
+  .two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+
+  .two-col-head {
+    padding: 12px 16px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+
+  .two-col-cell {
+    padding: 14px 16px;
+    background: var(--bg);
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  /* Сравнительная таблица */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .compare-table th {
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 14px;
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    color: var(--accent);
+  }
+
+  .compare-table th.plain {
+    background: var(--bg-alt);
+    color: var(--text-secondary);
+  }
+
+  .compare-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .compare-table tr:nth-child(even) td { background: var(--bg-alt); }
+
+  .compare-table td.label {
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  /* Разделитель */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* Сноска */
+  .footnote {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    margin-top: 48px;
+  }
+
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-label">А. Я. Сыркин · Корпусный анализ комментариев</div>
+  <h1>Логика комментирования Сыркина — Упанишады</h1>
+  <div class="page-meta">20 текстов · 1&thinsp;621 примечание · полный корпус переводов</div>
+</header>
+
+<!-- Сводные цифры -->
+<div class="summary-stats">
+  <div class="summary-stat">
+    <div class="n">20</div>
+    <div class="l">упанишад прокомментировано</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">1&thinsp;621</div>
+    <div class="l">примечаний извлечено</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">316</div>
+    <div class="l">средняя длина, символов</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">64%</div>
+    <div class="l">примечаний с транслитерацией</div>
+  </div>
+</div>
+
+<!-- Содержание -->
+<div class="toc">
+  <div class="toc-title">Содержание</div>
+  <ol>
+    <li><a href="#corpus">Состав корпуса</a></li>
+    <li><a href="#volume">Объём и распределение по текстам</a></li>
+    <li><a href="#length">Средняя длина примечания</a></li>
+    <li><a href="#iast">Использование санскритской транслитерации</a></li>
+    <li><a href="#categories">Тематические категории</a></li>
+    <li><a href="#style">Стилистические формулы</a></li>
+    <li><a href="#scholar">Научный аппарат и отсылки</a></li>
+    <li><a href="#algorithm">Алгоритм комментирования</a></li>
+  </ol>
+</div>
+
+<!-- 1. Состав корпуса -->
+<div class="section" id="corpus">
+  <h2>Состав корпуса</h2>
+  <p>Корпус охватывает 20 упанишад в переводе А. Я. Сыркина — от крупнейших прозаических текстов до малых стихотворных. Среди них как «главные» упанишады, входящие в канон Шанкары (Брихадараньяка, Чхандогья, Катха, Иша, Кена, Прашна, Мундака, Мандукья, Тайттирия, Айтарея, Каушитаки, Шветашватара), так и «второстепенные» (Майтри, Йогататтва, Махараяна и другие).</p>
+
+  <div class="up-grid">
+    <div class="up-cell">
+      <div class="uname">Брихадараньяка</div>
+      <div class="ustats"><span><span class="bn">348</span> прим.</span><span>ср. <span class="bn">442</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Чхандогья</div>
+      <div class="ustats"><span><span class="bn">464</span> прим.</span><span>ср. <span class="bn">397</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Йогататтва</div>
+      <div class="ustats"><span><span class="bn">145</span> прим.</span><span>ср. <span class="bn">105</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Шветашватара</div>
+      <div class="ustats"><span><span class="bn">104</span> прим.</span><span>ср. <span class="bn">174</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Катха</div>
+      <div class="ustats"><span><span class="bn">103</span> прим.</span><span>ср. <span class="bn">221</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Майтри</div>
+      <div class="ustats"><span><span class="bn">67</span> прим.</span><span>ср. <span class="bn">443</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Мундака</div>
+      <div class="ustats"><span><span class="bn">56</span> прим.</span><span>ср. <span class="bn">160</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Каушитаки</div>
+      <div class="ustats"><span><span class="bn">50</span> прим.</span><span>ср. <span class="bn">485</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Махараяна</div>
+      <div class="ustats"><span><span class="bn">49</span> прим.</span><span>ср. <span class="bn">100</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Тайттирия</div>
+      <div class="ustats"><span><span class="bn">44</span> прим.</span><span>ср. <span class="bn">336</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Прашна</div>
+      <div class="ustats"><span><span class="bn">42</span> прим.</span><span>ср. <span class="bn">153</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Айтарея</div>
+      <div class="ustats"><span><span class="bn">31</span> прим.</span><span>ср. <span class="bn">297</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Кена</div>
+      <div class="ustats"><span><span class="bn">27</span> прим.</span><span>ср. <span class="bn">165</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Иша</div>
+      <div class="ustats"><span><span class="bn">19</span> прим.</span><span>ср. <span class="bn">277</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Кайвалья</div>
+      <div class="ustats"><span><span class="bn">18</span> прим.</span><span>ср. <span class="bn">124</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Ашрамавасика</div>
+      <div class="ustats"><span><span class="bn">12</span> прим.</span><span>ср. <span class="bn">?</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Брахмабинду</div>
+      <div class="ustats"><span><span class="bn">12</span> прим.</span><span>ср. <span class="bn">98</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Субала</div>
+      <div class="ustats"><span><span class="bn">12</span> прим.</span><span>ср. <span class="bn">156</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Пайнгала</div>
+      <div class="ustats"><span><span class="bn">11</span> прим.</span><span>ср. <span class="bn">113</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Мандукья</div>
+      <div class="ustats"><span><span class="bn">11</span> прим.</span><span>ср. <span class="bn">155</span> симв.</span></div>
+    </div>
+    <div class="up-cell">
+      <div class="uname">Ваджрасучика</div>
+      <div class="ustats"><span><span class="bn">8</span> прим.</span><span>ср. <span class="bn">261</span> симв.</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- 2. Объём -->
+<div class="section" id="volume">
+  <h2>Объём и распределение по текстам</h2>
+  <p>Две крупнейшие упанишады — Чхандогья и Брихадараньяка — дают вместе <strong>812 примечаний</strong>, или 50% всего корпуса. Это ожидаемо: именно они считаются «главными» (mukhya) упанишадами и наиболее сложны текстологически.</p>
+
+  <p>Противоположный полюс — малые дидактические тексты (Брахмабинду, Пайнгала, Мандукья, Субала), где Сыркин ограничивается 8–12 примечаниями на весь текст. Здесь комментарий сжат до необходимого минимума: идентификация ключевых терминов и ссылки на параллельные места.</p>
+
+  <p>Йогататтва — исключение: 145 примечаний при средней длине всего 105 символов. Это единственный случай в корпусе, где объём достигается за счёт множества коротких глосс, а не развёрнутых статей.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th class="plain">Группа текстов</th>
+        <th class="plain">Примечаний</th>
+        <th class="plain">Ср. длина</th>
+        <th class="plain">Характер</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label">Крупные прозаические (Бр, Чх, Кау, Мт)</td>
+        <td>929</td>
+        <td>422 симв.</td>
+        <td>Развёрнутые статьи</td>
+      </tr>
+      <tr>
+        <td class="label">Средние (Шв, Катха, Мундака, Прашна)</td>
+        <td>305</td>
+        <td>177 симв.</td>
+        <td>Смешанный стиль</td>
+      </tr>
+      <tr>
+        <td class="label">Йогататтва (особый случай)</td>
+        <td>145</td>
+        <td>105 симв.</td>
+        <td>Многочисленные глоссы</td>
+      </tr>
+      <tr>
+        <td class="label">Малые тексты (остальные)</td>
+        <td>242</td>
+        <td>211 симв.</td>
+        <td>Избирательный минимум</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="section-divider">
+
+<!-- 3. Длина -->
+<div class="section" id="length">
+  <h2>Средняя длина примечания</h2>
+  <p>Средняя длина примечания по корпусу — <strong>316 символов</strong>. Это вдвое больше, чем у Кальянова (160 симв.) в переводах Махабхараты, и сопоставимо с Эрманом (266 симв.). Сыркин пишет не глоссу, а статью: даже краткое примечание содержит минимум одну смысловую подробность и, как правило, один-два библиографических указателя.</p>
+
+  <p>Рекорд объёма — Каушитаки (485 симв.) и Майтри (443 симв.). Обе упанишады поздние по составу и содержат богатый философский и ритуальный материал, требующий обширного контекста. Минимум — Йогататтва (105 симв.) и Брахмабинду (98 симв.), где текст достаточно прозрачен для читателя с базовой подготовкой.</p>
+
+  <div class="example-block">
+    <div class="example-source">Пример · краткая глосса (Йогататтва)</div>
+    …ровности состояние… — <em>samatāvastha</em>. Это дополняющее разъяснение позволяет уточнить содержание определения самадхи в традиции. <em>samatā</em> значит также «сходство», «безразличие», «равнодушие».
+  </div>
+
+  <div class="example-block">
+    <div class="example-source">Пример · развёрнутая статья (Каушитаки)</div>
+    Ума (<em>Umā</em>), также <em>Pārvatī</em> («горная»), дочь Химавата (<em>Himavat</em>) — супруга Шивы, почитавшаяся воплощением божественной мудрости. Ср. PU 589–590; UM I, 151, n. 1; прим. к Та I.1.1.
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- 4. IAST -->
+<div class="section" id="iast">
+  <h2>Использование санскритской транслитерации</h2>
+  <p>64% примечаний содержат хотя бы одно слово в IAST-транслитерации — это высокий показатель, сопоставимый с Кальяновым (66%) и значительно выше Василькова (23%). Транслитерация у Сыркина выполняет двойную функцию: лексикографическую (даёт оригинальную форму термина) и академическую (связывает с иностранной научной литературой, которая цитируется в латинской транслитерации).</p>
+
+  <h3>Доля примечаний с IAST по упанишадам (выборка)</h3>
+  <div class="cat-bars">
+    <div class="cat-bar-row"><div class="cat-bar-label">Субала</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:83%"></div></div><div class="cat-bar-pct">83%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Майтри</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:84%"></div></div><div class="cat-bar-pct">84%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Каушитаки</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:82%"></div></div><div class="cat-bar-pct">82%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Брихадараньяка</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:73%"></div></div><div class="cat-bar-pct">73%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Тайттирия</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:73%"></div></div><div class="cat-bar-pct">73%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Чхандогья</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:65%"></div></div><div class="cat-bar-pct">65%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Шветашватара</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:57%"></div></div><div class="cat-bar-pct">57%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Иша</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:47%"></div></div><div class="cat-bar-pct">47%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Кайвалья</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:33%"></div></div><div class="cat-bar-pct">33%</div></div>
+  </div>
+
+  <p>Чем сложнее философски и лингвистически текст, тем выше доля IAST. Малые поздние тексты (Кайвалья, Иша) — заметно ниже среднего: там терминология устойчива, читатель узнаёт понятия без транслитерации.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- 5. Категории -->
+<div class="section" id="categories">
+  <h2>Тематические категории</h2>
+  <p>Примечания распределены по восьми функциональным категориям. Главная особенность Сыркина в сравнении с переводчиками эпосов — доминирование категории «Текстология / толкования» (34%), что отражает академическую установку на диалог с исследовательской традицией.</p>
+
+  <div class="cat-bars">
+    <div class="cat-bar-row"><div class="cat-bar-label">Текстология / толкования</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:33.9%"></div></div><div class="cat-bar-pct">33,9%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Санскр. термин / перевод</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:20.7%"></div></div><div class="cat-bar-pct">20,7%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Отсылка (ср./см.)</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:14.6%"></div></div><div class="cat-bar-pct">14,6%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Контекст / нарратив</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:8.8%"></div></div><div class="cat-bar-pct">8,8%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Философия / метафизика</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:8.6%"></div></div><div class="cat-bar-pct">8,6%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Веды / традиция / школы</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:5.4%"></div></div><div class="cat-bar-pct">5,4%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Культурная реалия / обряд</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:5.2%"></div></div><div class="cat-bar-pct">5,2%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Мифология / теология</div><div class="cat-bar-track"><div class="cat-bar-fill" style="width:2.7%"></div></div><div class="cat-bar-pct">2,7%</div></div>
+  </div>
+
+  <p><strong>«Текстология / толкования»</strong> — крупнейшая категория (550 примечаний, 34%). В неё входят как варианты рукописных чтений, так и ссылки на интерпретации комментаторов — прежде всего Шанкары — и на мнения западных исследователей. Само слово «согласно» или «по толкованию» является надёжным маркером этой категории.</p>
+
+  <p><strong>«Санскр. термин / перевод»</strong> (21%) — второй по частоте тип. Включает этимологические объяснения, варианты перевода ключевых понятий, полемику с другими переводчиками. Здесь Сыркин часто уточняет свой собственный переводческий выбор.</p>
+
+  <p><strong>«Отсылка»</strong> (15%) — внутренние ссылки на другие примечания в том же или других текстах, а также ссылки на научные работы (PU, VN, UM и др.). Сыркин создаёт плотную сеть перекрёстных связей между упанишадами.</p>
+
+  <p><strong>«Философия / метафизика»</strong> (9%) — категория специфически упанишадская: объяснение понятий атман, брахман, майя, мокша, самадхи и их взаимоотношений. В переводах эпосов эта категория составляет менее 2%.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- 6. Стиль -->
+<div class="section" id="style">
+  <h2>Стилистические формулы</h2>
+  <p>Сыркин использует несколько устойчивых синтаксических шаблонов в зависимости от типа примечания.</p>
+
+  <div class="two-col">
+    <div class="two-col-head">Тип примечания</div>
+    <div class="two-col-head">Типичная формула открытия</div>
+
+    <div class="two-col-cell">Санскритский термин</div>
+    <div class="two-col-cell"><strong>Слово (<em>iast</em>)…</strong> — развёрнутое пояснение. Ср. PU…</div>
+
+    <div class="two-col-cell">Ссылка на комментатора</div>
+    <div class="two-col-cell"><strong>Согласно [толкованию] Шанкары / по мнению…</strong> — изложение интерпретации</div>
+
+    <div class="two-col-cell">Вариант перевода</div>
+    <div class="two-col-cell"><strong>Букв. «…»; ср. перевод … (PU / CS / UM)</strong></div>
+
+    <div class="two-col-cell">Нарративный контекст</div>
+    <div class="two-col-cell"><strong>Здесь говорится о… / Т. е.…</strong> — пояснение ситуации</div>
+
+    <div class="two-col-cell">Рукописный вариант</div>
+    <div class="two-col-cell"><strong>Возможны [и] другие [толкования / чтения]:</strong> …</div>
+
+    <div class="two-col-cell">Перекрёстная ссылка</div>
+    <div class="two-col-cell"><strong>Ср. ниже / выше, прим. [N.N.N];</strong> [сокращение издания, страница]</div>
+  </div>
+
+  <h3>Примеры основных типов</h3>
+
+  <div class="example-block">
+    <div class="example-source">Санскр. термин (Кена)</div>
+    Ума (<em>Umā</em>), также <em>Pārvatī</em> («горная»), дочь Химавата — супруга Шивы, почитавшаяся воплощением божественной мудрости. Ср. PU 589–590; UM I, 151, n. 1.
+  </div>
+
+  <div class="example-block">
+    <div class="example-source">Текстология / Шанкара (Чхандогья)</div>
+    Имя (<em>nāma</em>), согласно комментатору, означает здесь идею речи, выражения, за которыми лежат более глубокие сущности, постепенно восходящие к Брахману. Ср. CS, 486; CSe, 91, n. 2; UM, 110, n. 2.
+  </div>
+
+  <div class="example-block">
+    <div class="example-source">Философия / метафизика (Йогататтва)</div>
+    …ровности состояние… — <em>samatāvastha</em>. Это дополняющее разъяснение позволяет уточнить содержание определения самадхи в традиции, выраженной упанишадой. <em>samatā</em> значит также «сходство», «безразличие», «равнодушие».
+  </div>
+
+  <div class="example-block">
+    <div class="example-source">Культурная реалия (Йогататтва)</div>
+    Образ ладьи, лодки, на которой пересекают поток смерти, ведёт своё начало от ведийских текстов, где жертва сравнивалась с чёлном, везущим к обители бессмертия.
+  </div>
+
+  <div class="example-block">
+    <div class="example-source">Контекст / нарратив (Йогататтва)</div>
+    Ж. Варенн усматривает здесь возможную скрытую нападку на положения буддизма, для которого источник страдания — в желании (вожделении, жажде), а не в незнании (неведении).
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- 7. Научный аппарат -->
+<div class="section" id="scholar">
+  <h2>Научный аппарат и отсылки</h2>
+  <p>Одна из характерных черт Сыркина — активное использование западной и отечественной вторичной литературы прямо в тексте примечаний. Ссылки оформлены сокращениями, которые образуют устойчивый библиографический код корпуса.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Сокращение</th>
+        <th>Что обозначает</th>
+        <th>Роль в примечании</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>PU</strong></td>
+        <td>С. Радхакришнан, <em>The Principal Upanishads</em></td>
+        <td>Параллельный перевод и толкование</td>
+      </tr>
+      <tr>
+        <td><strong>VN</strong></td>
+        <td>А. Я. Сыркин, вспомогательные работы</td>
+        <td>Собственные наблюдения автора</td>
+      </tr>
+      <tr>
+        <td><strong>UM</strong></td>
+        <td>P. Deussen, <em>Sechzig Upanishad's des Veda</em></td>
+        <td>Немецкий перевод как эталон</td>
+      </tr>
+      <tr>
+        <td><strong>CS / CSe</strong></td>
+        <td>Издания Чхандогьи (Senart и др.)</td>
+        <td>Критическое издание и перевод</td>
+      </tr>
+      <tr>
+        <td><strong>БУ</strong></td>
+        <td>Брихадараньяка упанишада (собств. пер.)</td>
+        <td>Внутренний перекрёстный указатель</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Перекрёстные отсылки между упанишадами (Ср. Бр I.3.1; Кат II.1.8 и под.) — системный принцип: Сыркин трактует корпус упанишад как единую традицию, а не набор независимых текстов. Примечание к одному тексту нередко замыкается на три-четыре других, формируя «паутину» из взаимных ссылок.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- 8. Алгоритм -->
+<div class="section" id="algorithm">
+  <h2>Алгоритм комментирования</h2>
+  <p>На основе корпусного анализа реконструируется следующий алгоритм: какой тип элемента текста запускает примечание и в какой последовательности строится его содержание.</p>
+
+  <div class="two-col">
+    <div class="two-col-head">Триггер</div>
+    <div class="two-col-head">Содержание примечания</div>
+
+    <div class="two-col-cell"><strong>1. Философский термин</strong> — атман, брахман, майя, прана, самадхи и под.</div>
+    <div class="two-col-cell">Санскритская форма + буквальный перевод + основное значение в данном контексте + ссылка на интерпретацию Шанкары + ср. с западным переводом (PU / UM).</div>
+
+    <div class="two-col-cell"><strong>2. Переводческий выбор</strong> — нестандартный русский эквивалент</div>
+    <div class="two-col-cell">Объяснение выбора + альтернативный перевод других авторов + полемическое замечание, если термин «христианизирует» смысл.</div>
+
+    <div class="two-col-cell"><strong>3. Ритуальный или мифологический элемент</strong></div>
+    <div class="two-col-cell">Идентификация + контекст в традиции + параллели из других упанишад + библиографическая ссылка.</div>
+
+    <div class="two-col-cell"><strong>4. Расхождение с комментатором</strong> — Шанкара даёт иное толкование</div>
+    <div class="two-col-cell">«Согласно Шанкаре…» + мнение Радхакришнана (PU) или Дойссена (UM) + авторская оценка.</div>
+
+    <div class="two-col-cell"><strong>5. Текстовый вариант</strong> — рукописные расхождения</div>
+    <div class="two-col-cell">«Возможны другие чтения / толкования» + ссылка на критическое издание.</div>
+  </div>
+
+  <h3>Что не комментируется</h3>
+  <p>Сыркин, как правило, не объясняет нарративно прозрачные элементы, устойчивые эпитеты богов, известные мифологические сюжеты, не содержащие философской нагрузки, и числовые перечни (космогонические списки), если они не несут терминологической проблемы.</p>
+
+  <h3>Сравнение с переводчиками Махабхараты</h3>
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th class="plain">Параметр</th>
+        <th>Сыркин (Упанишады)</th>
+        <th class="plain">Кальянов (Мбх)</th>
+        <th class="plain">Васильков (Мбх)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label">Ср. длина, симв.</td>
+        <td><strong>316</strong></td>
+        <td>160</td>
+        <td>241</td>
+      </tr>
+      <tr>
+        <td class="label">Доля с IAST</td>
+        <td><strong>64%</strong></td>
+        <td>66%</td>
+        <td>23%</td>
+      </tr>
+      <tr>
+        <td class="label">Ведущая категория</td>
+        <td><strong>Текстология (34%)</strong></td>
+        <td>Санскр. термин (52%)</td>
+        <td>Нарратив (26%)</td>
+      </tr>
+      <tr>
+        <td class="label">Философия / метафизика</td>
+        <td><strong>9%</strong></td>
+        <td>0,2%</td>
+        <td>1%</td>
+      </tr>
+      <tr>
+        <td class="label">Академические ссылки</td>
+        <td><strong>Системно (PU, UM, VN…)</strong></td>
+        <td>Редко</td>
+        <td>Умеренно</td>
+      </tr>
+      <tr>
+        <td class="label">Читатель</td>
+        <td><strong>Специалист-индолог</strong></td>
+        <td>Широкий + специалист</td>
+        <td>Широкий гуманитарий</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footnote">
+  Корпус: 20 упанишад в переводе А. Я. Сыркина. Автоматическая категоризация 1&thinsp;621 примечания по восьми тематическим признакам; ручная верификация репрезентативной выборки. Сравнение с переводчиками Махабхараты приведено по данным отдельного корпусного анализа.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Логика комментирования Василькова — Махабхарата</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1c1c1c;
+    --text-secondary: #555;
+    --bg: #ffffff;
+    --bg-alt: #f5f5f5;
+    --border: #ddd;
+    --accent: #3a6b35;
+    --accent-light: #eaf2e8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PT Serif', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .page-header {
+    border-bottom: 2px solid var(--text);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+
+  .page-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+
+  .page-meta {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .summary-stat { background: var(--bg-alt); padding: 20px 24px; text-align: center; }
+
+  .summary-stat .n {
+    font-family: 'PT Serif', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .summary-stat .l {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+  }
+
+  .toc {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 28px 32px;
+    margin-bottom: 56px;
+  }
+
+  .toc h2 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; border-bottom: 1px solid var(--border); }
+  .toc li:last-child { border-bottom: none; }
+
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 17px;
+  }
+
+  .toc a:hover { color: var(--accent); }
+
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    min-width: 26px;
+  }
+
+  .toc-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-left: 40px;
+    margin-top: -4px;
+    padding-bottom: 8px;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  .section { margin-bottom: 64px; padding-top: 8px; }
+
+  .section-num {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+
+  h3 { font-size: 20px; font-weight: 700; margin: 32px 0 10px; }
+
+  p { margin-bottom: 16px; font-size: 18px; }
+
+  .lead {
+    font-size: 19px;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 17px; }
+
+  thead th {
+    background: var(--text);
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 700;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  tbody td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) td { background: var(--bg-alt); }
+
+  .total-row td { background: var(--accent-light) !important; font-weight: 700; }
+
+  td.num-cell { font-weight: 700; color: var(--accent); white-space: nowrap; }
+  td.pct-cell { font-weight: 700; color: var(--accent); white-space: nowrap; }
+
+  .example {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    margin: 24px 0;
+    font-size: 17px;
+  }
+
+  .example-shloka {
+    background: var(--bg-alt);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .example-shloka .label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .example-shloka .text { font-style: italic; }
+
+  .example-comment { padding: 14px 20px; }
+
+  .example-comment .label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+
+  .example-comment .text { line-height: 1.65; }
+
+  .sanskrit { font-style: italic; color: #2a4a7a; }
+
+  .format-card {
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    padding: 24px 28px;
+    margin: 24px 0 8px;
+  }
+
+  .format-card .tag {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .format-card h3 { margin-top: 0; font-size: 19px; margin-bottom: 10px; }
+  .format-card p { font-size: 17px; color: var(--text-secondary); margin: 0; }
+
+  .algo-step {
+    display: flex;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .algo-step:last-child { border-bottom: none; }
+
+  .algo-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-top: 2px;
+  }
+
+  .algo-content h4 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .algo-content p { font-size: 17px; color: var(--text-secondary); margin: 0; }
+
+  .highlight {
+    background: var(--accent-light);
+    border: 1px solid #8ab888;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 18px;
+  }
+
+  .highlight strong { color: var(--accent); }
+
+  .diff-box {
+    background: #fffbf0;
+    border: 1px solid #e0c870;
+    border-left: 4px solid #c8960a;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 17px;
+  }
+
+  .diff-box .diff-title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8a6a00;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    margin-top: 64px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-label">Аналитический отчёт</div>
+  <h1>Логика комментирования Василькова</h1>
+  <div class="page-meta">Я.В. Васильков и С.Л. Невелева. Махабхарата. Книги III, VIII, X, XI, XII(б), XIV, XV, XVI, XVII, XVIII</div>
+</header>
+
+<div class="summary-stats">
+  <div class="summary-stat">
+    <div class="n">11 088</div>
+    <div class="l">Блоков шлок проанализировано</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">5 574</div>
+    <div class="l">Комментариев извлечено</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">~47%</div>
+    <div class="l">Средняя плотность</div>
+  </div>
+  <div class="summary-stat">
+    <div class="n">260</div>
+    <div class="l">Средняя длина, символов</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <h2>Содержание</h2>
+  <ol>
+    <li>
+      <a href="#stats">Статистика по книгам</a>
+      <div class="toc-desc">Распределение 5 574 комментариев по десяти книгам</div>
+    </li>
+    <li>
+      <a href="#key-feature">Ключевая особенность: комментирование диапазонов</a>
+      <div class="toc-desc">67,9% комментариев к диапазонам, 32,1% — к одиночным шлокам</div>
+    </li>
+    <li>
+      <a href="#formats">Три формульных типа комментария</a>
+      <div class="toc-desc">Цитата с тире, цитата с многоточием, контекстное пояснение</div>
+    </li>
+    <li>
+      <a href="#typology">Тематические категории</a>
+      <div class="toc-desc">Реалии, текстология, мифология, параллели, санскрит, имена, география</div>
+    </li>
+    <li>
+      <a href="#triggers">Что запускает комментарий</a>
+      <div class="toc-desc">Логика отбора блоков для комментирования</div>
+    </li>
+    <li>
+      <a href="#silence">Что не комментируется</a>
+      <div class="toc-desc">~53% блоков без примечаний</div>
+    </li>
+    <li>
+      <a href="#algorithm">Алгоритм для новой книги</a>
+      <div class="toc-desc">7 шагов для воспроизведения логики Василькова</div>
+    </li>
+  </ol>
+</nav>
+
+<!-- 01 -->
+<section class="section" id="stats">
+  <div class="section-num">01 — Статистика</div>
+  <h2>Распределение по книгам</h2>
+  <p class="lead">Плотность комментирования сильно варьируется — от 19,8% в философской Мокшадхарме до 92,9% в короткой Маусала-парве. Малые по объёму книги комментируются почти целиком; крупные нарративные и дидактические — выборочно.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Книга</th>
+        <th>Блоков шлок</th>
+        <th>С комментарием</th>
+        <th>Доля</th>
+        <th>Комментариев</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>III. Вана-парва</td>
+        <td class="num-cell">2 033</td>
+        <td>750</td>
+        <td class="pct-cell">36,9%</td>
+        <td>1 319</td>
+      </tr>
+      <tr>
+        <td>VIII. Карна-парва</td>
+        <td class="num-cell">618</td>
+        <td>253</td>
+        <td class="pct-cell">40,9%</td>
+        <td>494</td>
+      </tr>
+      <tr>
+        <td>X. Сауптика-парва</td>
+        <td class="num-cell">85</td>
+        <td>72</td>
+        <td class="pct-cell">84,7%</td>
+        <td>290</td>
+      </tr>
+      <tr>
+        <td>XI. Стри-парва</td>
+        <td class="num-cell">122</td>
+        <td>92</td>
+        <td class="pct-cell">75,4%</td>
+        <td>224</td>
+      </tr>
+      <tr>
+        <td>XII(б). Мокшадхарма</td>
+        <td class="num-cell">7 455</td>
+        <td>1 477</td>
+        <td class="pct-cell">19,8%</td>
+        <td>1 685</td>
+      </tr>
+      <tr>
+        <td>XIV. Ашвамедхика-парва</td>
+        <td class="num-cell">517</td>
+        <td>299</td>
+        <td class="pct-cell">57,8%</td>
+        <td>883</td>
+      </tr>
+      <tr>
+        <td>XV. Ашрамавасика-парва</td>
+        <td class="num-cell">162</td>
+        <td>113</td>
+        <td class="pct-cell">69,8%</td>
+        <td>320</td>
+      </tr>
+      <tr>
+        <td>XVI. Маусала-парва</td>
+        <td class="num-cell">42</td>
+        <td>39</td>
+        <td class="pct-cell">92,9%</td>
+        <td>177</td>
+      </tr>
+      <tr>
+        <td>XVII. Махапрастханика-парва</td>
+        <td class="num-cell">26</td>
+        <td>21</td>
+        <td class="pct-cell">80,8%</td>
+        <td>61</td>
+      </tr>
+      <tr>
+        <td>XVIII. Сваргарохана-парва</td>
+        <td class="num-cell">28</td>
+        <td>25</td>
+        <td class="pct-cell">89,3%</td>
+        <td>121</td>
+      </tr>
+      <tr class="total-row">
+        <td>Итого</td>
+        <td class="num-cell">11 088</td>
+        <td>3 141</td>
+        <td class="pct-cell">~47%</td>
+        <td>5 574</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Средняя длина комментария — 260 символов (медиана 175). Это близко к Гринцеру (254/205) и значительно длиннее Кальянова (160/119). Очень длинных комментариев (более 800 символов) — 260, причём в Мокшадхарме и Карна-парве встречаются тексты от 3000 до 5800 символов.</p>
+</section>
+
+<!-- 02 -->
+<section class="section" id="key-feature">
+  <div class="section-num">02 — Ключевая особенность</div>
+  <h2>Единица комментирования — блок или шлока</h2>
+  <p class="lead">Васильков занимает промежуточное положение между Гринцером (почти только одиночные шлоки) и Кальяновым (почти только диапазоны): около трети комментариев привязаны к одиночным стихам.</p>
+
+  <div class="diff-box">
+    <div class="diff-title">Положение в системе трёх переводов</div>
+    <p style="margin:0;font-size:17px">67,9% комментариев привязаны к диапазонам шлок (средний размер — 9 стихов), 32,1% — к одиночным шлокам. Это принципиально отличает Василькова от Кальянова (98,6% диапазонов) и сближает с Гринцером, который почти всегда комментирует конкретную шлоку.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Единица комментирования</th>
+        <th>Количество</th>
+        <th>Доля</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Одиночная шлока</td>
+        <td class="num-cell">1 789</td>
+        <td class="pct-cell">32,1%</td>
+      </tr>
+      <tr>
+        <td>Диапазон 2–3 шлоки</td>
+        <td class="num-cell">~290</td>
+        <td class="pct-cell">~5%</td>
+      </tr>
+      <tr>
+        <td>Диапазон 4–10 шлок</td>
+        <td class="num-cell">~2 900</td>
+        <td class="pct-cell">~52%</td>
+      </tr>
+      <tr>
+        <td>Диапазон более 10 шлок</td>
+        <td class="num-cell">~595</td>
+        <td class="pct-cell">~11%</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 03 -->
+<section class="section" id="formats">
+  <div class="section-num">03 — Структура</div>
+  <h2>Три формульных типа комментария</h2>
+  <p class="lead">У Василькова три чётко различимых шаблона. Два из них — цитатные: один начинается с фрагмента перевода, второй — с многоточия. Это его главное отличие как от Гринцера, так и от Кальянова.</p>
+
+  <div class="format-card">
+    <div class="tag">Тип А · ~46%</div>
+    <h3>«Цитата из перевода — пояснение»</h3>
+    <p>Комментарий открывается фрагментом русского текста шлоки, затем тире и пояснение. Цитата не выделена многоточием — это прямое воспроизведение слов переводчика. Применяется когда цитируемая фраза точно локализует объект пояснения внутри блока.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Вана-парва 8–10</div>
+      <div class="text">«…выступили через городские ворота Вардхамана, держа путь на север…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Знак Вардхамана («возрастающий», «процветающий») — графический символ, эмблема благополучия. Поскольку север в системе пространственных координат мифологически ассоциировался с благополучием (в то время как юг — с царством мертвых, нечистотой), то двигаться на север — счастливая примета.</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="tag">Тип Б · ~30%</div>
+    <h3>«…цитата из перевода… — пояснение»</h3>
+    <p>Комментарий начинается с многоточия, затем цитата из русского текста, затем тире и пояснение. Многоточие подчёркивает, что цитируется фрагмент из середины блока. Ближайший аналог формулы Гринцера, но без IAST-транслитерации.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Вана-парва 1–7</div>
+      <div class="text">«…самому Индре равные пламенностью духа…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">…самому Индре равные пламенностью духа. – Текст «Араньякапарвы», как и всей Мбх, изобилует мифологическими сравнениями. Герои уподобляются богам-демоноборцам: богу грозы Индре, его помощнику Вишну; противники героев — врагам богов, демонам-асурам. Подчас сравнение переходит в отождествление.</div>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Вана-парва 1–7</div>
+      <div class="text">«…о достойнейший дваждырожденный…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий — с санскритским термином</div>
+      <div class="text">…о достойнейший дваждырожденный… – Термин «дваждырожденные» теоретически обозначал членов трёх высших варн, главных сословий древнеиндийского общества, «вторым рождением» которых считался обряд посвящения (упанаяна); эпос, однако, в большинстве случаев под «дваждырожденными» понимает только брахманов.</div>
+    </div>
+  </div>
+
+  <div class="format-card">
+    <div class="tag">Тип В · ~21%</div>
+    <h3>Контекстное пояснение</h3>
+    <p>Без цитаты. Начинается прямо с объяснения реалии, мифологического сюжета или филологического наблюдения. Применяется когда комментарий относится к общей теме блока, а не к конкретной фразе.</p>
+  </div>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Карна-парва 7–13</div>
+      <div class="text">«Смоковница, именуемая Говардхана, и площадь-перекрёсток под названием Субханда — вот что у них прямо при входе на царский двор…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий — контекстный (развёрнутый)</div>
+      <div class="text">Шлока содержит исключительно важную информацию о религии и социальном устройстве Аратты. Имя смоковницы «Говардхана» (<span class="sanskrit">govardhana</span>) — «умножающая коров» (или «воздающая почести корове») — указывает на её сакральную функцию: в Индии смоковница — дерево Вишну, ей поклонялись женщины, желавшие приплода скота и детей…</div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="section" id="typology">
+  <div class="section-num">04 — Типология</div>
+  <h2>Тематические категории</h2>
+  <p class="lead">Отличительная черта Василькова — высокая доля реалиеведческих и текстологических комментариев, редкость именных глосс (в отличие от Кальянова) и активное использование научного аппарата с библиографическими ссылками.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Категория</th>
+        <th>Доля</th>
+        <th>Логика применения</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num-cell">1</td>
+        <td><strong>Культурные реалии</strong></td>
+        <td class="pct-cell">~12,5%</td>
+        <td>Варновая система, ритуалы, обряды, дхарма, аскеза. Самая широкая категория — включает как краткие глоссы, так и развёрнутые этнографические статьи.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">2</td>
+        <td><strong>Текстология и источниковедение</strong></td>
+        <td class="pct-cell">~7,7%</td>
+        <td>Рукописные варианты, разночтения, отсылки к критическому изданию. Значительно активнее, чем у Кальянова. Часто содержит библиографические ссылки в квадратных скобках [123, с. 45].</td>
+      </tr>
+      <tr>
+        <td class="num-cell">3</td>
+        <td><strong>Санскритские термины</strong></td>
+        <td class="pct-cell">~5,9%</td>
+        <td>Транслитерация и этимология термина. В отличие от Кальянова, IAST ставится не всегда — часто Васильков ограничивается кириллицей и этимологией.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">4</td>
+        <td><strong>Мифологический контекст</strong></td>
+        <td class="pct-cell">~5,4%</td>
+        <td>Пересказ мифа или предания, на которое опирается шлока. Даётся в форме контекстного пояснения (Тип В), обычно длинного.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">5</td>
+        <td><strong>Параллели и перекрёстные ссылки</strong></td>
+        <td class="pct-cell">~5,2%</td>
+        <td>«Ср. далее», «ср. в нашем тексте», ссылки на Бомбейское издание. Более академический аппарат, чем у Кальянова и Гринцера.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">6</td>
+        <td><strong>Имена персонажей</strong></td>
+        <td class="pct-cell">~4,4%</td>
+        <td>Значительно реже, чем у Кальянова (~30%). Васильков предполагает, что читатель уже знаком с основными персонажами или они объяснены в другом томе.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">7</td>
+        <td><strong>Лексика: буквальный перевод</strong></td>
+        <td class="pct-cell">~4,4%</td>
+        <td>Применяется реже Гринцера. Часто встроено в комментарий другого типа, а не выделено отдельно.</td>
+      </tr>
+      <tr>
+        <td class="num-cell">8</td>
+        <td><strong>География и этнонимы</strong></td>
+        <td class="pct-cell">~4,3%</td>
+        <td>Идентификация народа или страны. Плотнее в Карна-парве с её этнографическими пассажами.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 05 -->
+<section class="section" id="triggers">
+  <div class="section-num">05 — Логика отбора</div>
+  <h2>Что запускает комментарий</h2>
+  <p class="lead">Васильков ставит примечание, когда блок шлок требует пояснения одного или нескольких из следующих элементов. Один блок может получить до 5–8 комментариев.</p>
+
+  <h3>1. Специфическая культурная реалия в тексте</h3>
+  <p>Главный триггер. Любая реалия — варновая норма, обряд, ритуал, специфический предмет быта, астрологический или космологический концепт — требует примечания. Оформляется как цитата из перевода (Тип А или Б) с последующим пояснением.</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Вана-парва 17–21</div>
+      <div class="text">«Почтительно сложив ладони, обратились они к сыновьям Кунти…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Почтительно сложив ладони… — Традиционное индийское приветствие, состоящее в поднесении сложенных вместе ладоней ко лбу.</div>
+    </div>
+  </div>
+
+  <h3>2. Мифологическое сравнение или отсылка к легенде</h3>
+  <p>Если блок содержит сравнение героя с богом или отсылает к мифу, не излагая его, — даётся объяснение: к какому мифу отсылает текст и в чём суть сравнения. Часто длинные развёрнутые комментарии (Тип В).</p>
+
+  <h3>3. Санскритский термин в переводе</h3>
+  <p>Если переведённое слово несёт специфическое значение, не передаваемое по-русски, — даётся транслитерация и этимология. В отличие от Гринцера, Васильков не всегда цитирует IAST, нередко ограничиваясь кириллицей.</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Вана-парва 67–70</div>
+      <div class="text">«…в Махакале…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий</div>
+      <div class="text">Махакала <span class="sanskrit">(mahākāla)</span> — знаменитый храм Шивы в Удджайини (совр. Уджайн).</div>
+    </div>
+  </div>
+
+  <h3>4. Текстологическая проблема</h3>
+  <p>Рукописные варианты, трудное место оригинала, несогласие с другими переводами или изданиями. Оформляется как контекстное пояснение с библиографической ссылкой. Это черта академического перевода, отличающая Василькова от Гринцера и Кальянова.</p>
+
+  <div class="example">
+    <div class="example-shloka">
+      <div class="label">Диапазон шлок · Карна-парва 71–84</div>
+      <div class="text">«…стихи о зловредных мадраках…»</div>
+    </div>
+    <div class="example-comment">
+      <div class="label">Комментарий — текстологический и этнографический</div>
+      <div class="text">…стихи о зловредных мадраках. — Далее следуют стихи, содержащие обличение во всевозможных пороках мадров («мадрака» — очевидно, уменьшительно-презрительная форма) и соседних с ними племён Северо-Западной Индии. Это место Мбх является уникальным источником для изучения культуры и социальной структуры данных племён, почти не отражённых в других письменных источниках.</div>
+    </div>
+  </div>
+
+  <h3>5. Параллель с другим местом Махабхараты или другим изданием</h3>
+  <p>«Ср. далее в нашем тексте, главы 206, шл. 20, а также Бомб. 12.330.21» — такие отсылки сигнализируют о формульном повторе или концептуальной связи между эпизодами.</p>
+
+  <h3>6. Значимое мифологическое имя или географическое название</h3>
+  <p>Топонимы идентифицируются с современными местностями; имена богов и мудрецов объясняются при первом появлении в книге. Плотность именных глосс значительно ниже, чем у Кальянова.</p>
+</section>
+
+<!-- 06 -->
+<section class="section" id="silence">
+  <div class="section-num">06 — Принцип умолчания</div>
+  <h2>Что не комментируется</h2>
+  <p class="lead">Около 53% блоков остаются без примечаний. Васильков не дублирует комментарии других томов серии и не поясняет то, что считает общеизвестным для читателя академического издания.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Тип фрагмента</th>
+        <th>Почему без комментария</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Переходные нарративные блоки</strong></td>
+        <td>Связки и ремарки типа «Вайшампаяна сказал:», «Юдхиштхира ответил:» без содержательных реалий не комментируются.</td>
+      </tr>
+      <tr>
+        <td><strong>Дидактические максимы без специфики</strong></td>
+        <td>Общие сентенции о дхарме, добродетели, судьбе, выраженные без специфических терминов, остаются без примечаний.</td>
+      </tr>
+      <tr>
+        <td><strong>Персонажи, объяснённые в других томах</strong></td>
+        <td>Васильков активно рассчитывает на другие тома серии — он не повторяет вводные статьи, данные в предшествующих книгах.</td>
+      </tr>
+      <tr>
+        <td><strong>Сражения без этнонимов</strong></td>
+        <td>Динамичные батальные описания без перечней народов и имён вождей не получают примечаний.</td>
+      </tr>
+      <tr>
+        <td><strong>Философские пассажи Мокшадхармы</strong></td>
+        <td>Большая часть Мокшадхармы (80,2% блоков) остаётся без комментариев — философские рассуждения считаются достаточно прозрачными или объяснёнными в предисловии.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 07 -->
+<section class="section" id="algorithm">
+  <div class="section-num">07 — Практика</div>
+  <h2>Алгоритм для новой книги</h2>
+  <p class="lead">Воспроизводимый алгоритм для создания комментариев в стиле Василькова к новым парвам Махабхараты.</p>
+
+  <div class="highlight">
+    <strong>Целевая плотность: ~47% блоков шлок в среднем.</strong> Для коротких финальных парв (XVI–XVIII) — до 90%. Для крупных философских текстов (Мокшадхарма) — около 20%. Для нарративных книг среднего объёма — 40–60%.
+  </div>
+
+  <div class="algo-step">
+    <div class="algo-num">1</div>
+    <div class="algo-content">
+      <h4>Определить формат единицы — шлока или диапазон</h4>
+      <p>Если пояснение относится к конкретному слову или фразе — привязать к одиночной шлоке. Если к теме или сцене в целом — к диапазону. Примерно треть комментариев Василькова — одиночные шлоки, две трети — диапазоны.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">2</div>
+    <div class="algo-content">
+      <h4>Выбрать формульный тип</h4>
+      <p>Цитируемая фраза в начале блока → Тип А (без многоточия). Цитируемая фраза из середины блока → Тип Б (с многоточием). Общее пояснение без привязки к фразе → Тип В (без цитаты).</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">3</div>
+    <div class="algo-content">
+      <h4>Есть ли культурная реалия?</h4>
+      <p>Обряд, ритуальный предмет, норма варны, аскетическая практика, космологический концепт → комментарий обязателен. Это главный триггер (~12,5% всех примечаний).</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">4</div>
+    <div class="algo-content">
+      <h4>Есть ли мифологическое сравнение или отсылка?</h4>
+      <p>Если текст отсылает к мифу, не излагая его → контекстный пересказ (Тип В). Если это стандартное эпическое сравнение с уже объяснённым богом → без комментария.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">5</div>
+    <div class="algo-content">
+      <h4>Есть ли текстологическая проблема?</h4>
+      <p>Трудное место, рукописный вариант, несогласие с Бомбейским изданием → текстологический комментарий с библиографической ссылкой [123, с. 45]. Это черта академического стиля.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">6</div>
+    <div class="algo-content">
+      <h4>Объяснён ли персонаж или топоним в других томах серии?</h4>
+      <p>Если да → без повторного пояснения или краткая отсылка «см. примеч. к книге X». Васильков активно рассчитывает на другие тома.</p>
+    </div>
+  </div>
+  <div class="algo-step">
+    <div class="algo-num">7</div>
+    <div class="algo-content">
+      <h4>Нет триггеров → нет комментария</h4>
+      <p>Переходные нарративные блоки, общие дидактические максимы, батальные описания без этнонимов — без примечаний.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Анализ выполнен на основе 5 574 комментариев из книг III, VIII, X, XI, XII(б), XIV, XV, XVI, XVII, XVIII · Я.В. Васильков и С.Л. Невелева. Махабхарата · Март 2026
+</footer>
+
+</body>
+</html>

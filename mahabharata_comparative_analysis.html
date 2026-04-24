@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Комментаторские стратегии трёх переводчиков Махабхараты (без кн. 12)</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1c1c1c;
+    --text-secondary: #555;
+    --bg: #ffffff;
+    --bg-alt: #f5f5f5;
+    --border: #ddd;
+    --k: #2a5a8b;
+    --k-l: #e8f0f9;
+    --v: #3a6b35;
+    --v-l: #eaf2e8;
+    --e: #5a2d82;
+    --e-l: #f2ecf9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PT Serif', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .page-header {
+    border-bottom: 2px solid var(--text);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+
+  .page-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+
+  .page-meta {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  /* Три бейджа переводчиков */
+  .translators-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .tr-badge { background: var(--bg-alt); padding: 20px 22px; }
+
+  .tr-badge .stripe {
+    height: 3px;
+    margin-bottom: 14px;
+  }
+
+  .tr-badge.k .stripe { background: var(--k); }
+  .tr-badge.v .stripe { background: var(--v); }
+  .tr-badge.e .stripe { background: var(--e); }
+
+  .tr-badge .name {
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .tr-badge.k .name { color: var(--k); }
+  .tr-badge.v .name { color: var(--v); }
+  .tr-badge.e .name { color: var(--e); }
+
+  .tr-badge .books {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .tr-badge .stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .tr-badge .stat-item .n {
+    font-family: 'PT Serif', serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .tr-badge.k .stat-item .n { color: var(--k); }
+  .tr-badge.v .stat-item .n { color: var(--v); }
+  .tr-badge.e .stat-item .n { color: var(--e); }
+
+  .tr-badge .stat-item .l {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+  }
+
+  /* Содержание */
+  .toc {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    padding: 24px 28px;
+    margin-bottom: 56px;
+  }
+
+  .toc-title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+  }
+
+  .toc li {
+    counter-increment: toc;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    padding: 3px 0;
+  }
+
+  .toc li::before {
+    content: counter(toc) ". ";
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-right: 4px;
+  }
+
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .toc a:hover { border-color: var(--text); }
+
+  /* Разделы */
+  .section {
+    margin-bottom: 56px;
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    padding-top: 8px;
+  }
+
+  h3 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    margin-top: 32px;
+  }
+
+  p { margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* Сравнительные таблицы */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .compare-table th {
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 14px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  .compare-table th.k { color: var(--k); background: var(--k-l); }
+  .compare-table th.v { color: var(--v); background: var(--v-l); }
+  .compare-table th.e { color: var(--e); background: var(--e-l); }
+
+  .compare-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .compare-table tr:nth-child(even) td { background: var(--bg-alt); }
+
+  .compare-table td.label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+  }
+
+  /* Книги по парвам */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+
+  .book-cell {
+    background: var(--bg);
+    padding: 14px 16px;
+  }
+
+  .book-cell .bnum {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 3px;
+  }
+
+  .book-cell .bname {
+    font-family: 'PT Serif', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .book-cell.k .bname { color: var(--k); }
+  .book-cell.v .bname { color: var(--v); }
+  .book-cell.e .bname { color: var(--e); }
+
+  .book-cell .bstats {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .book-cell .bstats .bn {
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  /* Бары категорий */
+  .cat-bars {
+    margin-bottom: 32px;
+  }
+
+  .cat-bar-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 50px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .cat-bar-label {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: right;
+  }
+
+  .cat-bar-track {
+    background: var(--bg-alt);
+    height: 20px;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .cat-bar-fill {
+    height: 100%;
+    transition: width 0.3s;
+  }
+
+  .cat-bar-fill.k { background: var(--k); opacity: 0.85; }
+  .cat-bar-fill.v { background: var(--v); opacity: 0.85; }
+  .cat-bar-fill.e { background: var(--e); opacity: 0.85; }
+
+  .cat-bar-pct {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* Трёхколоночный сравнитель */
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+
+  .three-col-head {
+    padding: 12px 16px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .three-col-head.k { background: var(--k-l); color: var(--k); }
+  .three-col-head.v { background: var(--v-l); color: var(--v); }
+  .three-col-head.e { background: var(--e-l); color: var(--e); }
+
+  .three-col-cell {
+    padding: 14px 16px;
+    background: var(--bg);
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  /* Цитаты примеров */
+  .example-block {
+    border-left: 3px solid var(--border);
+    padding: 12px 18px;
+    margin: 16px 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .example-block.k { border-color: var(--k); }
+  .example-block.v { border-color: var(--v); }
+  .example-block.e { border-color: var(--e); }
+
+  .example-source {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  .example-source.k { color: var(--k); }
+  .example-source.v { color: var(--v); }
+  .example-source.e { color: var(--e); }
+
+  /* Итоговая таблица */
+  .summary-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .summary-matrix th {
+    padding: 10px 14px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    border: 1px solid var(--border);
+    background: var(--bg-alt);
+    color: var(--text-secondary);
+  }
+
+  .summary-matrix td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .summary-matrix tr:nth-child(even) td { background: var(--bg-alt); }
+
+  .summary-matrix td.param {
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  .dot-k { color: var(--k); font-weight: 700; }
+  .dot-v { color: var(--v); font-weight: 700; }
+  .dot-e { color: var(--e); font-weight: 700; }
+
+  /* Разделитель */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* Числовой акцент */
+  .num { font-weight: 700; }
+  .num.k { color: var(--k); }
+  .num.v { color: var(--v); }
+  .num.e { color: var(--e); }
+
+  /* Сноска */
+  .footnote {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    margin-top: 48px;
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-label">Сравнительный анализ · Без книги 12</div>
+  <h1>Комментаторские стратегии трёх переводчиков Махабхараты</h1>
+  <div class="page-meta">Корпус: книги 1–11, 14–18 · Кальянов, Васильков &amp; Невелева, Эрман · 12&thinsp;089 примечаний</div>
+</header>
+
+<!-- Три бейджа -->
+<div class="translators-row">
+  <div class="tr-badge k">
+    <div class="stripe"></div>
+    <div class="name">Кальянов</div>
+    <div class="books">Кн. 1, 2, 4, 5, 7, 9<br>В.И. Кальянов</div>
+    <div class="stats">
+      <div class="stat-item"><div class="n">7&thinsp;424</div><div class="l">примечаний</div></div>
+      <div class="stat-item"><div class="n">160</div><div class="l">симв. ср.</div></div>
+      <div class="stat-item"><div class="n">66%</div><div class="l">с IAST</div></div>
+    </div>
+  </div>
+  <div class="tr-badge v">
+    <div class="stripe"></div>
+    <div class="name">Васильков</div>
+    <div class="books">Кн. 3, 8, 10, 11, 14–18<br>Я.В. Васильков и С.Л. Невелева</div>
+    <div class="stats">
+      <div class="stat-item"><div class="n">3&thinsp;889</div><div class="l">примечаний</div></div>
+      <div class="stat-item"><div class="n">241</div><div class="l">симв. ср.</div></div>
+      <div class="stat-item"><div class="n">23%</div><div class="l">с IAST</div></div>
+    </div>
+  </div>
+  <div class="tr-badge e">
+    <div class="stripe"></div>
+    <div class="name">Эрман</div>
+    <div class="books">Кн. 6 (Бхишмапарва)<br>В.Г. Эрман</div>
+    <div class="stats">
+      <div class="stat-item"><div class="n">776</div><div class="l">примечаний</div></div>
+      <div class="stat-item"><div class="n">266</div><div class="l">симв. ср.</div></div>
+      <div class="stat-item"><div class="n">50%</div><div class="l">с IAST</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Содержание -->
+<div class="toc">
+  <div class="toc-title">Содержание</div>
+  <ol>
+    <li><a href="#books">Какие книги переведены и прокомментированы</a></li>
+    <li><a href="#volume">Объём и плотность комментирования</a></li>
+    <li><a href="#length">Средняя длина примечания</a></li>
+    <li><a href="#iast">Использование санскритской транслитерации</a></li>
+    <li><a href="#categories">Тематические категории</a></li>
+    <li><a href="#style">Стилистические формулы</a></li>
+    <li><a href="#matrix">Все параметры одним взглядом</a></li>
+    <li><a href="#algorithm">Сравнительный алгоритм</a></li>
+  </ol>
+</div>
+
+<!-- 1. Книги -->
+<div class="section" id="books">
+  <h2>Какие книги переведены и прокомментированы</h2>
+  <p>Корпус охватывает 16 парв из 18. Книга 12 (Шантипарва) и книга 13 (Анушасанапарва) в корпусе отсутствуют. Каждая парва закреплена за одним переводчиком.</p>
+
+  <div class="books-grid">
+    <div class="book-cell k">
+      <div class="bnum">Книга 1</div>
+      <div class="bname">Адипарва</div>
+      <div class="bstats"><span><span class="bn">968</span> прим.</span><span>ср. <span class="bn">125</span> симв.</span></div>
+    </div>
+    <div class="book-cell k">
+      <div class="bnum">Книга 2</div>
+      <div class="bname">Сабхапарва</div>
+      <div class="bstats"><span><span class="bn">1 256</span> прим.</span><span>ср. <span class="bn">140</span> симв.</span></div>
+    </div>
+    <div class="book-cell v">
+      <div class="bnum">Книга 3</div>
+      <div class="bname">Ванапарва</div>
+      <div class="bstats"><span><span class="bn">1 319</span> прим.</span><span>ср. <span class="bn">258</span> симв.</span></div>
+    </div>
+    <div class="book-cell k">
+      <div class="bnum">Книга 4</div>
+      <div class="bname">Виратапарва</div>
+      <div class="bstats"><span><span class="bn">476</span> прим.</span><span>ср. <span class="bn">198</span> симв.</span></div>
+    </div>
+    <div class="book-cell k">
+      <div class="bnum">Книга 5</div>
+      <div class="bname">Удьйогапарва</div>
+      <div class="bstats"><span><span class="bn">1 866</span> прим.</span><span>ср. <span class="bn">185</span> симв.</span></div>
+    </div>
+    <div class="book-cell e">
+      <div class="bnum">Книга 6</div>
+      <div class="bname">Бхишмапарва</div>
+      <div class="bstats"><span><span class="bn">776</span> прим.</span><span>ср. <span class="bn">266</span> симв.</span></div>
+    </div>
+    <div class="book-cell k">
+      <div class="bnum">Книга 7</div>
+      <div class="bname">Дронапарва</div>
+      <div class="bstats"><span><span class="bn">1 929</span> прим.</span><span>ср. <span class="bn">157</span> симв.</span></div>
+    </div>
+    <div class="book-cell v">
+      <div class="bnum">Книга 8</div>
+      <div class="bname">Карнапарва</div>
+      <div class="bstats"><span><span class="bn">494</span> прим.</span><span>ср. <span class="bn">234</span> симв.</span></div>
+    </div>
+    <div class="book-cell k">
+      <div class="bnum">Книга 9</div>
+      <div class="bname">Шальяпарва</div>
+      <div class="bstats"><span><span class="bn">929</span> прим.</span><span>ср. <span class="bn">163</span> симв.</span></div>
+    </div>
+    <div class="book-cell v">
+      <div class="bnum">Книга 10</div>
+      <div class="bname">Сауптикапарва</div>
+      <div class="bstats"><span><span class="bn">290</span> прим.</span><span>ср. <span class="bn">156</span> симв.</span></div>
+    </div>
+    <div class="book-cell v">
+      <div class="bnum">Книга 11</div>
+      <div class="bname">Стрипарва</div>
+      <div class="bstats"><span><span class="bn">224</span> прим.</span><span>ср. <span class="bn">331</span> симв.</span></div>
+    </div>
+    <div class="book-cell v">
+      <div class="bnum">Книга 14</div>
+      <div class="bname">Ашвамедхикапарва</div>
+      <div class="bstats"><span><span class="bn">883</span> прим.</span><span>ср. <span class="bn">237</span> симв.</span></div>
+    </div>
+    <div class="book-cell v">
+      <div class="bnum">Книга 15</div>
+      <div class="bname">Ашрамавасикапарва</div>
+      <div class="bstats"><span><span class="bn">320</span> прим.</span><span>ср. <span class="bn">242</span> симв.</span></div>
+    </div>
+    <div class="book-cell v">
+      <div class="bnum">Книга 16</div>
+      <div class="bname">Маусалапарва</div>
+      <div class="bstats"><span><span class="bn">177</span> прим.</span><span>ср. <span class="bn">192</span> симв.</span></div>
+    </div>
+    <div class="book-cell v">
+      <div class="bnum">Книга 17</div>
+      <div class="bname">Махапрастханика</div>
+      <div class="bstats"><span><span class="bn">61</span> прим.</span><span>ср. <span class="bn">213</span> симв.</span></div>
+    </div>
+    <div class="book-cell v">
+      <div class="bnum">Книга 18</div>
+      <div class="bname">Сваргароханика</div>
+      <div class="bstats"><span><span class="bn">121</span> прим.</span><span>ср. <span class="bn">220</span> симв.</span></div>
+    </div>
+  </div>
+
+  <p>Кальянов охватил 6 книг, в том числе самые объёмные боевые парвы (Дронапарва — 1 929 примечаний, Удьйогапарва — 1 866). Васильков и Невелева прокомментировали 9 книг, но более коротких; их суммарный вклад вдвое меньше по числу примечаний. Эрман ограничился одной книгой.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- 2. Объём -->
+<div class="section" id="volume">
+  <h2>Объём и плотность комментирования</h2>
+  <p>Кальянов — безусловный лидер по абсолютному числу примечаний: <span class="num k">7 424</span> против <span class="num v">3 889</span> у Василькова и <span class="num e">776</span> у Эрмана. Однако прямое сравнение некорректно: Кальянов переводил значительно больше книг.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="k">Кальянов</th>
+        <th class="v">Васильков</th>
+        <th class="e">Эрман</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label">Книг в корпусе</td>
+        <td>6</td>
+        <td>9 (1 книга = 3)</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td class="label">Всего примечаний</td>
+        <td><strong>7 424</strong></td>
+        <td><strong>3 889</strong></td>
+        <td><strong>776</strong></td>
+      </tr>
+      <tr>
+        <td class="label">Примечаний / книга (ср.)</td>
+        <td>1 237</td>
+        <td>432</td>
+        <td>776</td>
+      </tr>
+      <tr>
+        <td class="label">Самая плотная книга</td>
+        <td>Дронапарва (1 929)</td>
+        <td>Ванапарва (1 319)</td>
+        <td>Бхишмапарва (776)</td>
+      </tr>
+      <tr>
+        <td class="label">Самая разреженная книга</td>
+        <td>Виратапарва (476)</td>
+        <td>Махапрастханика (61)</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>На уровне отдельных книг Ванапарва Василькова (1 319) превосходит Адипарву и Сабхапарву Кальянова — что указывает на сопоставимую плотность при схожем типе текста.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- 3. Длина -->
+<div class="section" id="length">
+  <h2>Средняя длина примечания</h2>
+  <p>Средняя длина примечания — надёжный индикатор стиля: глосса или статья. Здесь разрыв между переводчиками значителен.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="k">Кальянов</th>
+        <th class="v">Васильков</th>
+        <th class="e">Эрман</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label">Средняя длина, симв.</td>
+        <td><strong>160</strong></td>
+        <td><strong>241</strong></td>
+        <td><strong>266</strong></td>
+      </tr>
+      <tr>
+        <td class="label">Характер</td>
+        <td>Глосса — краткий термин или имя</td>
+        <td>Развёрнутая культурологическая справка</td>
+        <td>Развёрнутая статья с перекрёстными ссылками</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Кальянов в среднем пишет примечание в 1,5 раза короче Эрмана. Примечательно, что у Василькова отдельные книги дают очень разный результат: Стрипарва (331 симв.) — самая многословная книга всего корпуса, а Сауптикапарва (156 симв.) — почти как у Кальянова.</p>
+
+  <div class="example-block k">
+    <div class="example-source k">Кальянов · глосса</div>
+    Икшумати (<i>ikṣumatī</i>) — название реки Калинади, которая течёт через Камаон, Рохилькханд и район Канаудж и впадает в Гангу.
+  </div>
+
+  <div class="example-block v">
+    <div class="example-source v">Васильков · справка</div>
+    Питримедха — «обряд для питаров», усопших предков, включающий в себя комплекс жертвенных обрядов, связанных с кремацией.
+  </div>
+
+  <div class="example-block e">
+    <div class="example-source e">Эрман · статья</div>
+    Тройственное знание (<i>traividyā</i>) — три Веды; подразумеваются знатоки священного текста (см. примеч. 233 к текущ. разд.).
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- 4. IAST -->
+<div class="section" id="iast">
+  <h2>Использование санскритской транслитерации</h2>
+  <p>Доля примечаний, содержащих хотя бы одно слово в IAST-транслитерации, — показатель ориентации на читателя-специалиста против массового читателя.</p>
+
+  <h3>Доля примечаний с IAST</h3>
+  <div class="cat-bars">
+    <div class="cat-bar-row">
+      <div class="cat-bar-label">Кальянов</div>
+      <div class="cat-bar-track"><div class="cat-bar-fill k" style="width:65.9%"></div></div>
+      <div class="cat-bar-pct">65,9%</div>
+    </div>
+    <div class="cat-bar-row">
+      <div class="cat-bar-label">Васильков</div>
+      <div class="cat-bar-track"><div class="cat-bar-fill v" style="width:23.3%"></div></div>
+      <div class="cat-bar-pct">23,3%</div>
+    </div>
+    <div class="cat-bar-row">
+      <div class="cat-bar-label">Эрман</div>
+      <div class="cat-bar-track"><div class="cat-bar-fill e" style="width:49.9%"></div></div>
+      <div class="cat-bar-pct">49,9%</div>
+    </div>
+  </div>
+
+  <p>Кальянов систематически вводит оригинальную форму термина рядом с переводом — это структурный принцип его комментария: «русское слово (<i>iast-форма</i>) — краткое определение». Васильков избегает транслитерации почти в трёх четвертях случаев: его читатель — гуманитарий без знания санскрита. Эрман занимает промежуточную позицию.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- 5. Категории -->
+<div class="section" id="categories">
+  <h2>Тематические категории</h2>
+  <p>Примечания распределены по восьми функциональным категориям. Соотношение категорий наглядно показывает разные исследовательские приоритеты.</p>
+
+  <h3>Кальянов</h3>
+  <div class="cat-bars">
+    <div class="cat-bar-row"><div class="cat-bar-label">Санскр. термин / перевод</div><div class="cat-bar-track"><div class="cat-bar-fill k" style="width:51.5%"></div></div><div class="cat-bar-pct">51,5%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Миф / персонаж</div><div class="cat-bar-track"><div class="cat-bar-fill k" style="width:19.5%"></div></div><div class="cat-bar-pct">19,5%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Контекст / нарратив</div><div class="cat-bar-track"><div class="cat-bar-fill k" style="width:13.6%"></div></div><div class="cat-bar-pct">13,6%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Культурная реалия</div><div class="cat-bar-track"><div class="cat-bar-fill k" style="width:6.0%"></div></div><div class="cat-bar-pct">6,0%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">География / этноним</div><div class="cat-bar-track"><div class="cat-bar-fill k" style="width:4.2%"></div></div><div class="cat-bar-pct">4,2%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Отсылка (ср./см.)</div><div class="cat-bar-track"><div class="cat-bar-fill k" style="width:3.9%"></div></div><div class="cat-bar-pct">3,9%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Текстология</div><div class="cat-bar-track"><div class="cat-bar-fill k" style="width:1.2%"></div></div><div class="cat-bar-pct">1,2%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Философия / религия</div><div class="cat-bar-track"><div class="cat-bar-fill k" style="width:0.2%"></div></div><div class="cat-bar-pct">0,2%</div></div>
+  </div>
+
+  <h3>Васильков</h3>
+  <div class="cat-bars">
+    <div class="cat-bar-row"><div class="cat-bar-label">Контекст / нарратив</div><div class="cat-bar-track"><div class="cat-bar-fill v" style="width:26.3%"></div></div><div class="cat-bar-pct">26,3%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Миф / персонаж</div><div class="cat-bar-track"><div class="cat-bar-fill v" style="width:25.5%"></div></div><div class="cat-bar-pct">25,5%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Культурная реалия</div><div class="cat-bar-track"><div class="cat-bar-fill v" style="width:13.9%"></div></div><div class="cat-bar-pct">13,9%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Санскр. термин / перевод</div><div class="cat-bar-track"><div class="cat-bar-fill v" style="width:13.4%"></div></div><div class="cat-bar-pct">13,4%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Отсылка (ср./см.)</div><div class="cat-bar-track"><div class="cat-bar-fill v" style="width:9.4%"></div></div><div class="cat-bar-pct">9,4%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">География / этноним</div><div class="cat-bar-track"><div class="cat-bar-fill v" style="width:7.1%"></div></div><div class="cat-bar-pct">7,1%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Текстология</div><div class="cat-bar-track"><div class="cat-bar-fill v" style="width:3.4%"></div></div><div class="cat-bar-pct">3,4%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Философия / религия</div><div class="cat-bar-track"><div class="cat-bar-fill v" style="width:1.0%"></div></div><div class="cat-bar-pct">1,0%</div></div>
+  </div>
+
+  <h3>Эрман</h3>
+  <div class="cat-bars">
+    <div class="cat-bar-row"><div class="cat-bar-label">Санскр. термин / перевод</div><div class="cat-bar-track"><div class="cat-bar-fill e" style="width:40.2%"></div></div><div class="cat-bar-pct">40,2%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Контекст / нарратив</div><div class="cat-bar-track"><div class="cat-bar-fill e" style="width:20.6%"></div></div><div class="cat-bar-pct">20,6%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Миф / персонаж</div><div class="cat-bar-track"><div class="cat-bar-fill e" style="width:17.5%"></div></div><div class="cat-bar-pct">17,5%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Культурная реалия</div><div class="cat-bar-track"><div class="cat-bar-fill e" style="width:8.1%"></div></div><div class="cat-bar-pct">8,1%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Текстология</div><div class="cat-bar-track"><div class="cat-bar-fill e" style="width:4.3%"></div></div><div class="cat-bar-pct">4,3%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Отсылка (ср./см.)</div><div class="cat-bar-track"><div class="cat-bar-fill e" style="width:4.3%"></div></div><div class="cat-bar-pct">4,3%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">География / этноним</div><div class="cat-bar-track"><div class="cat-bar-fill e" style="width:3.0%"></div></div><div class="cat-bar-pct">3,0%</div></div>
+    <div class="cat-bar-row"><div class="cat-bar-label">Философия / религия</div><div class="cat-bar-track"><div class="cat-bar-fill e" style="width:2.1%"></div></div><div class="cat-bar-pct">2,1%</div></div>
+  </div>
+
+  <p>Главное расхождение: у Кальянова лексикографический приоритет — более половины примечаний идентифицируют санскритский термин. У Василькова центр тяжести смещён в нарративный и культурологический контекст: вместе «Контекст / нарратив» и «Культурная реалия» дают 40,2%. Эрман занимает промежуточную позицию, ближе к Кальянову по категории «Санскр. термин», но со значимым нарративным блоком.</p>
+
+  <p>Текстологические примечания редки у всех троих — наиболее активен здесь Васильков (3,4%), что соответствует роли Бомбейского и Пунского изданий в его работе.</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- 6. Стиль -->
+<div class="section" id="style">
+  <h2>Стилистические формулы</h2>
+  <p>Каждый переводчик пользуется устойчивыми синтаксическими формулами, которые задают ритм комментария.</p>
+
+  <div class="three-col">
+    <div class="three-col-head k">Кальянов</div>
+    <div class="three-col-head v">Васильков</div>
+    <div class="three-col-head e">Эрман</div>
+    <div class="three-col-cell">
+      <strong>Термин (iast) — определение.</strong> Именное предложение без глагола. Предельная сжатость. Если нужна отсылка: «Ср. выше, гл. N, шл. N».
+    </div>
+    <div class="three-col-cell">
+      <strong>Слово/Выражение. —</strong> Тире после термина, затем развёрнутый абзац. Активный голос, этнографические детали, сравнительный контекст.
+    </div>
+    <div class="three-col-cell">
+      <strong>…термин… — То есть…</strong> Тире после цитаты из текста, затем пояснение. Перекрёстные ссылки: «(см. примеч. N к текущ. разд.)».
+    </div>
+  </div>
+
+  <h3>Примеры — категория «Миф / персонаж»</h3>
+
+  <div class="example-block k">
+    <div class="example-source k">Кальянов</div>
+    Белый конь (<i>turaga pāṇḍura</i>), т. е. Уччайхшравас (<i>uccaiḥśravas</i>), конь Индры, который вышел из глубин при пахтании океана.
+  </div>
+
+  <div class="example-block v">
+    <div class="example-source v">Васильков</div>
+    Почётный напиток аргхья, как и вода для омовения ног (падья), входят в число вещных подношений почётному гостю-брахману.
+  </div>
+
+  <div class="example-block e">
+    <div class="example-source e">Эрман</div>
+    …миру Брахмы себя предав… — То есть стремясь достигнуть после смерти мира Брахмы (см. примеч. 71 к разд. «Протяжение…»).
+  </div>
+
+  <h3>Примеры — категория «Культурная реалия»</h3>
+
+  <div class="example-block k">
+    <div class="example-source k">Кальянов</div>
+    Сомасанстха (<i>somasaṃsthā</i>) — особый вид жертвоприношения, во время которого совершается возлияние сомы на пылающий огонь.
+  </div>
+
+  <div class="example-block v">
+    <div class="example-source v">Васильков</div>
+    Питримедха — «обряд для питаров», усопших предков, включающий в себя комплекс жертвенных обрядов, связанных с кремацией.
+  </div>
+
+  <div class="example-block e">
+    <div class="example-source e">Эрман</div>
+    Закон (<i>dharma</i>). — Подразумевается и «дхарма» как долг, определяемый принадлежностью к варне (см. предыдущее примеч.).
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- 7. Матрица -->
+<div class="section" id="matrix">
+  <h2>Все параметры одним взглядом</h2>
+
+  <table class="summary-matrix">
+    <thead>
+      <tr>
+        <th>Параметр</th>
+        <th><span class="dot-k">К</span> Кальянов</th>
+        <th><span class="dot-v">В</span> Васильков</th>
+        <th><span class="dot-e">Э</span> Эрман</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="param">Книг в корпусе</td>
+        <td>6</td>
+        <td>9</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td class="param">Примечаний всего</td>
+        <td>7 424</td>
+        <td>3 889</td>
+        <td>776</td>
+      </tr>
+      <tr>
+        <td class="param">Средняя длина, симв.</td>
+        <td>160</td>
+        <td>241</td>
+        <td>266</td>
+      </tr>
+      <tr>
+        <td class="param">Доля с IAST</td>
+        <td>65,9%</td>
+        <td>23,3%</td>
+        <td>49,9%</td>
+      </tr>
+      <tr>
+        <td class="param">Ведущая категория</td>
+        <td>Санскр. термин (51,5%)</td>
+        <td>Контекст / нарратив (26,3%)</td>
+        <td>Санскр. термин (40,2%)</td>
+      </tr>
+      <tr>
+        <td class="param">2-я категория</td>
+        <td>Миф / персонаж (19,5%)</td>
+        <td>Миф / персонаж (25,5%)</td>
+        <td>Контекст / нарратив (20,6%)</td>
+      </tr>
+      <tr>
+        <td class="param">Текстология</td>
+        <td>1,2%</td>
+        <td>3,4%</td>
+        <td>4,3%</td>
+      </tr>
+      <tr>
+        <td class="param">Формула открытия</td>
+        <td>Термин (iast) — …</td>
+        <td>Термин. — …</td>
+        <td>…цитата… — То есть…</td>
+      </tr>
+      <tr>
+        <td class="param">Читатель</td>
+        <td>Широкий + специалист</td>
+        <td>Широкий гуманитарий</td>
+        <td>Специалист</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="section-divider">
+
+<!-- 8. Алгоритм -->
+<div class="section" id="algorithm">
+  <h2>Сравнительный алгоритм</h2>
+  <p>На основании корпусного анализа можно реконструировать алгоритм принятия решений для каждого переводчика: какой тип элемента текста запускает комментарий и как строится его содержание.</p>
+
+  <div class="three-col">
+    <div class="three-col-head k">Кальянов</div>
+    <div class="three-col-head v">Васильков</div>
+    <div class="three-col-head e">Эрман</div>
+
+    <div class="three-col-cell">
+      <strong>1.</strong> Встречено санскритское имя или термин → глосса с IAST в скобках.<br><br>
+      <strong>2.</strong> Имя мифологического персонажа → краткая идентификация + генеалогия.<br><br>
+      <strong>3.</strong> Географическое название → идентификация с современным топонимом.<br><br>
+      <strong>4.</strong> Повтор → «Ср. выше, гл. N». Минимум слов.<br><br>
+      <strong>Не комментируется:</strong> нарративная логика, обрядовый контекст без термина, философские понятия в устойчивом переводе.
+    </div>
+
+    <div class="three-col-cell">
+      <strong>1.</strong> Культурная практика или обряд → развёрнутая этнографическая справка без IAST.<br><br>
+      <strong>2.</strong> Нарративная ситуация → контекстуализация в традиции.<br><br>
+      <strong>3.</strong> Мифологический персонаж → функция в системе, не только имя.<br><br>
+      <strong>4.</strong> Текстовые разночтения → чаще, чем у других.<br><br>
+      <strong>Не комментируется:</strong> прозрачная лексика, повторяющиеся формульные строфы.
+    </div>
+
+    <div class="three-col-cell">
+      <strong>1.</strong> Цитата из текста → дашировое пояснение со ссылкой.<br><br>
+      <strong>2.</strong> Санскритский термин → статья с перекрёстными ссылками на другие примечания.<br><br>
+      <strong>3.</strong> Философское понятие → проработанный экскурс.<br><br>
+      <strong>4.</strong> Рукописные варианты → при концептуальном расхождении.<br><br>
+      <strong>Не комментируется:</strong> бытовая лексика, стандартные эпитеты богов.
+    </div>
+  </div>
+</div>
+
+<div class="footnote">
+  Корпус: книги 1–11, 14–18 Махабхараты; книга 12 (Шантипарва) и книга 13 (Анушасанапарва) в анализ не включены. Автоматическая категоризация 12&thinsp;089 примечаний по восьми тематическим признакам; ручная верификация репрезентативной выборки.
+</div>
+
+</body>
+</html>
