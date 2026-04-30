@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стратегии комментирования — визуализации</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Georgia', serif; background: #faf9f6; color: #2c2c2a; padding: 2.5rem 1.5rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.6rem; font-weight: normal; letter-spacing: 0.02em; margin-bottom: 0.25rem; }
+.subtitle { font-size: 0.85rem; color: #888; margin-bottom: 3rem; font-style: italic; }
+.section { margin-bottom: 3.5rem; }
+.section-label { font-size: 0.68rem; font-family: 'Courier New', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: #bbb; margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 0.5px solid #e0ddd8; }
+.chart-wrap { position: relative; width: 100%; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; font-size: 12px; color: #666; font-family: 'Courier New', monospace; }
+.legend span { display: flex; align-items: center; gap: 5px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.note { font-size: 11px; color: #bbb; margin-top: 6px; font-style: italic; }
+</style>
+</head>
+<body>
+<h1>Стратегии комментирования</h1>
+<p class="subtitle">Сравнительный анализ пяти переводчиков «Махабхараты»</p>
+
+<div class="section">
+  <div class="section-label">1 — Объём, длина, IAST: три параметра одним взглядом</div>
+  <div class="chart-wrap" style="height:320px;"><canvas id="bubble" role="img" aria-label="Пузырьковая диаграмма"></canvas></div>
+  <div id="bleg" class="legend"></div>
+  <p class="note">Размер пузыря пропорционален числу примечаний</p>
+</div>
+
+<div class="section">
+  <div class="section-label">2 — Тематические категории: тепловая карта</div>
+  <div id="heat"></div>
+</div>
+
+<div class="section">
+  <div class="section-label">3 — Тематические категории: нормированные столбцы</div>
+  <div class="chart-wrap" style="height:280px;"><canvas id="stacked" role="img" aria-label="Нормированные столбцы"></canvas></div>
+  <div id="sleg" class="legend"></div>
+</div>
+
+<div class="section">
+  <div class="section-label">4 — Радар: профиль каждого переводчика</div>
+  <div class="chart-wrap" style="height:400px;"><canvas id="radar" role="img" aria-label="Радарная диаграмма"></canvas></div>
+  <div id="rleg" class="legend" style="justify-content:center;"></div>
+  <p class="note" style="text-align:center;">Все оси нормированы: 0 = минимум по корпусу, 100 = максимум</p>
+</div>
+
+<script>
+const T=["К Кальянов","В Васильков","Э Эрман","Г Гринцер","С Сыркин"];
+const C=["#534AB7","#1D9E75","#D85A30","#D4537E","#BA7517"];
+const CA=["rgba(83,74,183,0.18)","rgba(29,158,117,0.18)","rgba(216,90,48,0.18)","rgba(212,83,126,0.18)","rgba(186,117,23,0.18)"];
+
+new Chart(document.getElementById('bubble'),{type:'bubble',data:{datasets:[
+  {label:T[0],data:[{x:66,y:160,r:24}],backgroundColor:CA[0],borderColor:C[0],borderWidth:1.5},
+  {label:T[1],data:[{x:23,y:260,r:20}],backgroundColor:CA[1],borderColor:C[1],borderWidth:1.5},
+  {label:T[2],data:[{x:50,y:264,r:8}], backgroundColor:CA[2],borderColor:C[2],borderWidth:1.5},
+  {label:T[3],data:[{x:45,y:254,r:13}],backgroundColor:CA[3],borderColor:C[3],borderWidth:1.5},
+  {label:T[4],data:[{x:64,y:316,r:11}],backgroundColor:CA[4],borderColor:C[4],borderWidth:1.5},
+]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:20},
+  plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const n=[7424,5574,758,2245,1621];const d=ctx.raw;return `${ctx.dataset.label}: IAST ${d.x}%, ${d.y} симв., ${n[ctx.datasetIndex].toLocaleString()} прим.`;}}}},
+  scales:{x:{min:0,max:90,title:{display:true,text:'Доля примечаний с IAST, %',font:{size:11},color:'#888'},ticks:{font:{size:11}}},
+          y:{min:100,max:370,title:{display:true,text:'Средняя длина, симв.',font:{size:11},color:'#888'},ticks:{font:{size:11}}}}}});
+const bleg=document.getElementById('bleg');
+T.forEach((n,i)=>{const s=document.createElement('span');s.innerHTML=`<span class="legend-dot" style="background:${C[i]}"></span>${n}`;bleg.appendChild(s);});
+
+const CATS=["Санскр. термин","Миф / персонаж","Контекст / нарратив","Культурная реалия","Текстология","Отсылка / параллели","Философия / религия","География / этноним"];
+const HD=[[51.5,13.4,40.2,34.0,20.7],[19.5,25.5,17.5,9.0,2.7],[13.6,26.3,20.6,0.0,8.8],[6.0,13.9,8.1,7.0,5.2],[1.2,3.4,4.3,15.0,33.9],[3.9,9.4,32.5,5.0,14.6],[0.2,1.0,2.1,1.0,8.6],[4.2,7.1,0.0,0.0,0.0]];
+const cW=82,cH=36,lW=165,tH=30,svgW=lW+cW*5+10,svgH=tH+cH*8+8;
+let sv=`<svg viewBox="0 0 ${svgW} ${svgH}" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;font-family:'Courier New',monospace;">`;
+T.forEach((n,j)=>{sv+=`<text x="${lW+j*cW+cW/2}" y="${tH-8}" text-anchor="middle" font-size="11" fill="#888">${n.split(' ')[0]}</text>`;});
+HD.forEach((row,i)=>{const y=tH+i*cH;sv+=`<text x="${lW-8}" y="${y+cH/2+4}" text-anchor="end" font-size="11" fill="#666">${CATS[i]}</text>`;row.forEach((v,j)=>{const x=lW+j*cW,a=Math.min(0.85,v/55+0.05);sv+=`<rect x="${x+1}" y="${y+1}" width="${cW-2}" height="${cH-2}" rx="3" fill="${C[j]}" fill-opacity="${a}"/>`;sv+=`<text x="${x+cW/2}" y="${y+cH/2+4}" text-anchor="middle" font-size="11" font-weight="500" fill="${a>0.4?'#fff':'#333'}">${v>0?v.toFixed(1)+'%':'—'}</text>`;});});
+sv+=`</svg>`;document.getElementById('heat').innerHTML=sv;
+
+const CC=["#534AB7","#1D9E75","#D85A30","#D4537E","#BA7517","#888780","#639922","#EF9F27"];
+new Chart(document.getElementById('stacked'),{type:'bar',data:{labels:T,datasets:CATS.map((cat,i)=>({label:cat,data:HD[i],backgroundColor:CC[i],borderWidth:0}))},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.raw.toFixed(1)}%`}}},
+  scales:{x:{stacked:true,ticks:{font:{size:11}}},y:{stacked:true,max:100,ticks:{font:{size:11},callback:v=>v+'%'}}}}});
+const sleg=document.getElementById('sleg');
+CATS.forEach((c,i)=>{const sp=document.createElement('span');sp.innerHTML=`<span class="legend-dot" style="background:${CC[i]}"></span>${c}`;sleg.appendChild(sp);});
+
+const RL=["Длина прим.","Доля IAST","Плотность","Текстология","Философия","Библиография"];
+const RR=[[160,260,264,254,316],[66,23,50,45,64],[56,47,38,25,40],[1.2,3.4,4.3,15,33.9],[0.2,1.0,2.1,1.0,8.6],[5,30,50,30,80]];
+const norm=a=>{const mn=Math.min(...a),mx=Math.max(...a);return a.map(v=>Math.round((v-mn)/(mx-mn)*100));};
+const RN=RR.map(norm),RPT=T.map((_,j)=>RN.map(ax=>ax[j]));
+new Chart(document.getElementById('radar'),{type:'radar',data:{labels:RL,datasets:RPT.map((v,i)=>({label:T[i],data:v,borderColor:C[i],backgroundColor:CA[i],borderWidth:1.5,pointRadius:3}))},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{r:{min:0,max:100,ticks:{display:false},pointLabels:{font:{size:12},color:'#666'},grid:{color:'rgba(0,0,0,0.08)'},angleLines:{color:'rgba(0,0,0,0.08)'}}}}});
+const rleg=document.getElementById('rleg');
+T.forEach((n,i)=>{const sp=document.createElement('span');sp.innerHTML=`<span class="legend-dot" style="background:${C[i]}"></span>${n}`;rleg.appendChild(sp);});
+</script>
+</body>
+</html>
