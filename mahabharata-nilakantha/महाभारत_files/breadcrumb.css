@@ -1,0 +1,952 @@
+/* ═══════════════════════════════════════════════════════════
+   MAHABHARATA READER — Elegant Classic Theme
+   Upgraded CSS · All variables centralised in :root
+═══════════════════════════════════════════════════════════ */
+
+/* ── DESIGN TOKENS ─────────────────────────────────────── */
+:root {
+  --saffron:        #D4600A;
+  --saffron-light:  #F0924A;
+  --saffron-wash:   rgba(212, 96, 10, 0.07);
+  --indigo:         #2E5FA3;
+  --indigo-dark:    #1C3D70;
+  --indigo-wash:    rgba(46, 95, 163, 0.06);
+  --maroon:         #7A1E1E;
+  --maroon-soft:    #9E3A3A;
+  --amber:          #C97A1A;
+  --ink:            #1A1209;
+  --ink-secondary:  #4A3B2A;
+  --parchment:      #FDFAF4;
+  --parchment-mid:  #F5EFE2;
+  --rule:           rgba(180, 130, 60, 0.22);
+  --shadow:         0 2px 18px rgba(90, 50, 10, 0.08);
+  /* --font-devanagari: 'Tiro Devanagari Sanskrit', 'Siddhanta', 'Noto Sans Devanagari', serif; */
+  --font-roman:       'Junicode';
+}
+
+/* ── NAVBAR ─────────────────────────────────────────────── */
+.navbar-ontop { z-index: 1031; }
+
+/* ── BREADCRUMB ─────────────────────────────────────────── */
+
+/* Sticky container — parchment wash instead of glass */
+
+#breadcrumb-container {
+  background: var(--parchment);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(90, 50, 10, 0.06);
+}
+
+/* Saffron left-border accent line */
+#breadcrumb-container::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--saffron-light), var(--saffron));
+}
+
+/* Subtle parchment gradient wash from left */
+#breadcrumb-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--saffron-wash), transparent 50%);
+  pointer-events: none;
+}
+
+/* Breadcrumb list */
+.modern-breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 50px;
+  font-family: var(--font-devanagari);
+  font-size: 15px;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Every item — plain, no clip-path, no color pills */
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 4px 10px 10px;
+  background: none;
+  color: var(--ink-secondary);
+  margin-right: 0;
+  clip-path: none;
+  transition: color 0.2s ease;
+  font-size: 14.5px;
+  letter-spacing: 0.3px;
+}
+
+/* Remove all nth-child color overrides */
+.breadcrumb-item:nth-child(1),
+.breadcrumb-item:nth-child(2),
+.breadcrumb-item:nth-child(3),
+.breadcrumb-item:nth-child(4) {
+  background: none;
+  color: var(--ink-secondary);
+  padding-left: 10px;
+  clip-path: none;
+}
+
+/* Separator — slim amber diamond between items */
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background: linear-gradient(to bottom, transparent, var(--saffron-light), transparent);
+  margin: 0 12px;
+  flex-shrink: 0;
+}
+
+/* Links */
+.breadcrumb-item a {
+  color: var(--ink-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--saffron);
+  border-bottom-color: var(--saffron-light);
+}
+
+/* Active (current) item */
+.breadcrumb-item.active {
+  color: var(--saffron) !important;
+  font-weight: 700 !important;
+  background: none !important;
+  font-size: 15.5px;
+  position: relative;
+}
+
+/* Underline accent on active item */
+.breadcrumb-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 10%; right: 10%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--saffron-light), transparent);
+  border-radius: 2px;
+}
+
+/* Hover lift — removed, replaced with color transition only */
+.breadcrumb-item:hover {
+  filter: none;
+  transform: none;
+  color: var(--saffron);
+}
+
+
+
+/* ── LAYOUT ──────────────────────────────────────────────── */
+#maincontent {
+  background: var(--parchment);
+  min-height: 100vh;
+  overflow-y: scroll;
+  box-shadow: var(--shadow);
+}
+
+.content {
+  padding: 40px 60px;
+}
+
+@media (max-width: 700px) {
+  .content { padding: 24px 20px; }
+}
+
+/* ── PAGE TITLE ─────────────────────────────────────────── */
+h1.title.text-center {
+  font-family: var(--font-devanagari);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--saffron);
+  margin: 36px auto 8px !important;
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+h1.title.text-center::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--saffron-light), transparent);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ── HEADING BAR ────────────────────────────────────────── */
+.heading {
+  background: var(--saffron);
+  color: #fff;
+  padding: 12px 50px;
+  font-family: var(--font-devanagari);
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* ── AUTHORLINES ────────────────────────────────────────── */
+  .authorline {
+    font-family: var(--font-roman);
+    font-size: 1.05rem;
+    padding: 8px 0 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--ink-secondary);
+    border-bottom: 1px solid var(--rule);
+    font-style: italic;
+    letter-spacing: 0.3px;
+  }
+
+  .adhyaya_authorline {
+    font-family: var(--font-roman);
+    font-size: 1rem;
+    padding: 6px 0 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--ink-secondary);
+    font-style: italic;
+    letter-spacing: 0.3px;
+    
+  }
+
+  /* .adhyaya_authorline::after {
+    content: ' ✾';
+    
+  } */
+
+  /* Adhyaya ending — Design 1: Lotus centerpiece with fading rules */
+  .adhyaya_end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 28px 0 20px;
+  }
+
+  .adhyaya_end .rule {
+    flex: 1;
+    height: 1px;
+    max-width: 160px;
+  }
+
+  .adhyaya_end .rule-left {
+    background: linear-gradient(to right, transparent, #BF360C88, #BF360C);
+  }
+
+  .adhyaya_end .rule-right {
+    background: linear-gradient(to left, transparent, #BF360C88, #BF360C);
+  }
+
+  .adhyaya_end .center-symbol {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #BF360C;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .adhyaya_end .center-symbol .main {
+    font-size: 26px;
+  }
+
+  .adhyaya_end .center-symbol .side {
+    font-size: 16px;
+    opacity: 0.75;
+  }
+
+/* ── UPAPARVA TITLE ─────────────────────────────────────── */
+/* .upaparva_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px !important;
+  padding: 11px 22px;
+  color: var(--saffron);
+  margin: 28px 0 12px;
+  border-left: 4px solid var(--saffron-light);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5px;
+  background: var(--saffron-wash);
+  border-radius: 0 5px 5px 0;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.upaparva_title:hover {
+  background: rgba(212, 96, 10, 0.12);
+  border-color: var(--saffron);
+} */
+
+.upaparva_title_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  margin: 28px 0 12px;
+  background: var(--saffron-wash);
+}
+
+.upaparva_title_wrapper::before,
+.upaparva_title_wrapper::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--saffron-light));
+}
+
+.upaparva_title_wrapper::after {
+  background: linear-gradient(to left, transparent, var(--saffron-light));
+}
+
+.upaparva_danda {
+  font-size: 22px;
+  color: var(--saffron);
+  opacity: 0.7;
+  font-family: serif;
+  line-height: 1;
+  user-select: none;
+}
+
+.upaparva_title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--saffron);
+  letter-spacing: 0.5px;
+  margin: 0;
+  white-space: nowrap;
+  
+}
+
+.upaparva_title_wrapper:hover .upaparva_title {
+  color: var(--saffron-dark);
+}
+
+.upaparva_title_wrapper:hover .upaparva_danda {
+  opacity: 1;
+}
+
+/* ── ADHYAYA / CHAPTER HEADINGS ─────────────────────────── */
+.adhyaya_header {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 10px 0 16px;
+  position: relative;
+  /* text-decoration:underline; */
+}
+
+.adhyaya_header::before {
+  content: '✾ ';         /* flower/floral heart symbol */
+  color: #BF360C;          /* matches your theme orange-red */
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.adhyaya_header::after {
+  content: ' ✾';
+  color: #BF360C;
+  font-size: 30px;
+  font-weight: 400;
+  display: inline-block;
+  transform: scaleX(-1);   /* mirror it so it faces inward */
+}
+
+
+div.adhyaya {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 28px 0 0;
+  letter-spacing: 0.5px;
+  padding: 10px 0 16px;
+  position: relative;
+  background-color: (to right, transparent, var(--saffron-light), var(--saffron), var(--saffron-light), transparent);
+}
+
+/* Decorative bottom: fading rule + central diamond ornament */
+div.adhyaya::after {
+  content: '◈';
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: var(--saffron-light);
+  line-height: 0;
+  position: relative;
+  margin-top: 14px;
+}
+
+div.adhyaya::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--saffron-light), var(--saffron), var(--saffron-light), transparent);
+}
+
+.upaparva_chapter {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 18px 0 8px;
+  color: var(--saffron);
+  letter-spacing: 0.3px;
+}
+
+/* ── SHLOKA ─────────────────────────────────────────────── */
+.shloka {
+  padding: 18px 20px 14px;
+  line-height: 2.2;
+  border-top: 1px solid var(--rule);
+  border-radius: 6px;
+  margin-bottom: 6px;
+  transition: background 0.2s ease;
+}
+
+
+.shloka_text:hover {
+  background: rgba(212, 96, 10, 0.08);
+}
+
+.shloka > div {
+  margin-bottom: 8px;
+  padding: 4px 0;
+}
+
+.mangalacharana .shloka {
+  border: none;
+  background: none !important;
+}
+
+.shloka_text {
+  font-size: 1.45em !important;
+  padding: 8px 0;
+  line-height: 2.1;
+  font-weight: 600 !important;
+  color: var(--indigo);
+  padding-left: 35%;
+  max-width: 100%;
+  background: rgba(212, 96, 10, 0.04);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.quot_shloka {
+  font-size: 1em !important;
+  padding: 8px 0;
+  line-height: 2.0;
+  color: var(--maroon);
+  padding-left: 38%;
+  max-width: 100%;
+}
+
+/* ── UVACHA ─────────────────────────────────────────────── */
+.shloka .uvacha {
+  margin-left: 10%;
+  color: var(--amber);
+  display: block;
+  font-size: 0.85em !important;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+.shloka_text .uvacha {
+  margin-left: -10% !important;
+  color: var(--amber) !important;
+  font-weight: 600;
+  display: block;
+  font-size: 0.85em !important;
+  font-style: italic;
+}
+
+/* ── GADYA ──────────────────────────────────────────────── */
+.gadya {
+  display: inline-block;
+  font-size: 1.2em !important;
+  padding: 8px 0;
+  line-height: 2.0;
+  font-weight: 600 !important;
+  color: var(--indigo);
+  padding-left: 8%;
+  max-width: 100%;
+}
+
+.gadya .uvacha {
+  margin-left: -5%;
+  color: var(--amber);
+  display: block;
+  font-size: 0.85em !important;
+  font-style: italic;
+}
+
+/* ── BHAVADEEPA ─────────────────────────────────────────── */
+.bhavadeepa {
+  font-size: 1.4rem !important;
+  text-align: left;
+  color: var(--maroon);
+  line-height: 1.9;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.bhavadeepa_upodghatam {
+  font-size: 1.4rem !important;
+  line-height: 2.0;
+  color: var(--maroon);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ── MANGALACHARANA ─────────────────────────────────────── */
+.mangalacharana {
+  max-width: 860px;
+  margin: 36px auto;
+  padding: 0 0 0 14%;
+  line-height: 1.9;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.mangala {
+  color: var(--indigo);
+  font-size: 1.45rem;
+  text-align: start;
+  margin-bottom: 18px;
+  transition: color 0.2s ease;
+}
+
+.mangala_b {
+  color: var(--maroon-soft);
+  font-size: 1.45rem;
+  text-align: start;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+  font-weight: 400;
+  border-radius: 0 4px 4px 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+  .mangalacharana { margin: 10px; padding: 15px; }
+  .mangala        { font-size: 1.1rem; }
+}
+
+/* ── AUX INFORMATION ────────────────────────────────────── */
+.aux-information {
+  padding: 28px;
+  text-align: left;
+  margin-top: 18px;
+  color: var(--indigo-dark);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--indigo-wash);
+}
+
+.aux-information ul {
+  text-align: center;
+  font-size: 17px;
+  font-family: var(--font-devanagari);
+  color: var(--ink-secondary);
+  list-style: none;
+  padding: 0;
+}
+
+.aux-information.nirukta ul { text-align: left; }
+
+.aux-information > ul > li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.aux-information > ul > li:last-of-type { border-bottom: none; }
+
+.aux-information.nirukta > ul > li span.dt {
+  line-height: 28px;
+  font-size: 0.9em;
+}
+
+.aux-information > ul > li span.dd { font-weight: 700; }
+
+.aux-information a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--saffron-light);
+  transition: border-color 0.15s;
+}
+
+.aux-information a:hover { border-color: var(--saffron); }
+
+.aux-information i.playPause {
+  font-size: 48px;
+  color: #CCC;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.aux-information i.playPause:hover { color: var(--saffron-light); }
+
+.nirukta h3 {
+  font-size: 17px;
+  padding: 18px 0 8px;
+  color: var(--indigo-dark);
+}
+
+.nirukta p {
+  font-size: 17px;
+  line-height: 34px !important;
+}
+
+/* ── SIDEBAR ────────────────────────────────────────────── */
+#sidebar-nav-container {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 12px;
+}
+
+.collapse:not(.show) { display: none; }
+.nested-nav { padding-left: 18px; }
+
+#nirukta-sidebar a.nav-link.active { font-weight: bold; color: var(--indigo); }
+#nirukta-sidebar.affix { top: 0; }
+
+.bs-docs-sidebar .nav > li > a { transition: color 0.15s, background 0.15s; }
+
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus,
+.bs-docs-sidebar .nav > li > a.nav-link.active,
+.bs-docs-sidebar .nav > li > a.nav-link:hover,
+.bs-docs-sidebar .nav > li > a.nav-link:focus {
+  color: var(--indigo);
+  text-decoration: none;
+  background-color: transparent;
+  border-left-color: var(--indigo);
+  font-weight: 400;
+}
+
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a { font-weight: 700; }
+
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a { font-weight: 500; }
+
+.bs-docs-sidebar .nav ul.nav               { display: none; }
+.bs-docs-sidebar .nav > .active > ul.nav   { display: block; }
+.bs-docs-sidebar .nav > li > a.nav-link.active + ul.nav { display: block !important; }
+
+/* ── DECORATIVE IMAGE DIV ───────────────────────────────── */
+.my-image-div {
+  background-image: url('../images/pngegg.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  height: 40px;
+  margin: 22px 0;
+  opacity: 0.75;
+}
+
+/* ── HOME PAGE TEXT AREA ───────────────────────────────── */
+.intro-text {
+  /* max-width: 860px; */
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.intro-para {
+
+  line-height: 1.9;
+  color: var(--bs-body-color);
+  text-align: justify;
+  margin-bottom: 1.3rem;
+  
+}
+
+.intro-para::first-child::first-letter {
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.75;
+  margin: 4px 8px 0 0;
+  color: var(--saffron);
+  font-weight: 700;
+  
+}
+
+.intro-para:first-of-type::first-letter {
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.75;
+  margin: 4px 8px 0 0;
+  color: var(--saffron);
+  font-weight: 700;
+}
+
+.highlight-name {
+  color: var(--saffron);
+  font-style: italic;
+}
+
+.highlight-name-link {
+  color: var(--saffron);
+  font-style: italic;
+}
+
+.highlight-name-link:hover {
+  color: var(--indigo-dark);
+  font-style: italic;
+}
+
+.intro-pullquote {
+  border-left: 3px solid var(--saffron-light);
+  margin: 1.4rem 0;
+  padding: 12px 20px;
+  background: rgba(212, 96, 10, 0.06);
+  border-radius: 0 6px 6px 0;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #555;
+  font-style: italic;
+}
+
+.intro-sanskrit {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-size: 20px;
+  color: var(--saffron);
+  letter-spacing: 0.3px;
+}
+
+/* Section divider---------------------- */
+.section-divider {
+  width: 100%;
+  display: block;
+  line-height: 0;      /* removes phantom spacing under SVG */
+  margin: 2rem 0 2rem;
+}
+
+.section-divider svg {
+  display: block;      /* critical — removes inline-block gap */
+  width: 100%;
+}
+
+@media (max-width: 400px) {
+  .section-divider svg {
+    /* optionally add a min-height so mandala doesn't feel cramped */
+    min-height: 60px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE OVERRIDES
+   All rules scoped to max-width: 768px — desktop unaffected
+═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── LAYOUT ──────────────────────────────────────────────── */
+  .content {
+    padding: 16px 14px;
+  }
+
+  /* ── PAGE TITLE ─────────────────────────────────────────── */
+  h1.title.text-center {
+    font-size: 28px;
+    margin: 20px auto 6px !important;
+  }
+
+  /* ── UPAPARVA TITLE ─────────────────────────────────────── */
+  .upaparva_title {
+    font-size: 20px !important;
+    white-space: normal;
+  }
+
+  .upaparva_title_wrapper {
+    padding: 10px 0;
+    margin: 16px 0 8px;
+  }
+
+  /* ── ADHYAYA HEADER ─────────────────────────────────────── */
+  .adhyaya_header {
+    font-size: 16px;
+  }
+
+  /* ── SHLOKA TEXT — main culprit ─────────────────────────── */
+  .shloka_text {
+    padding-left: 0 !important;
+    font-size: 0.8em !important;
+    line-height: 2.0;
+    text-align: left;
+  }
+
+  .shloka {
+    padding: 12px 8px 10px;
+  }
+
+  /* ── GADYA ──────────────────────────────────────────────── */
+  .gadya {
+    padding-left: 0 !important;
+    font-size: 1.1em !important;
+    display: block;
+  }
+
+  .gadya .uvacha {
+    margin-left: 0;
+  }
+
+  /* ── QUOTED SHLOKA ──────────────────────────────────────── */
+  .quot_shloka {
+    padding-left: 0 !important;
+    font-size: 0.95em !important;
+  }
+
+  /* ── MANGALACHARANA ─────────────────────────────────────── */
+  .mangalacharana {
+    padding: 0 8px;
+    margin: 16px 0;
+  }
+
+  .mangala,
+  .mangala_b {
+    font-size: 1.2rem;
+  }
+
+  /* ── BHAVADEEPA ─────────────────────────────────────────── */
+  .bhavadeepa {
+    font-size: 1.1rem !important;
+    line-height: 1.8;
+  }
+
+  .bhavadeepa_upodghatam {
+    font-size: 1.1rem !important;
+  }
+
+  /* ── UVACHA ─────────────────────────────────────────────── */
+  .shloka_text .uvacha {
+    margin-left: 0 !important;
+  }
+
+  .shloka .uvacha {
+    margin-left: 0;
+  }
+
+  /* ── BREADCRUMB ─────────────────────────────────────────── */
+  .modern-breadcrumb {
+    margin: 0 8px;
+    font-size: 12px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0;
+    /* hide scrollbar but allow scroll */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .modern-breadcrumb::-webkit-scrollbar {
+    display: none;
+  }
+
+  .breadcrumb-item {
+    font-size: 12px;
+    padding: 8px 4px 8px 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    margin: 0 6px;
+  }
+
+  /* Adhyaya search input — compact on mobile */
+  .adhyaya-search-wrapper {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 4px;
+  }
+
+  .adhyaya-search-input {
+    width: 48px !important;
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+
+  .adhyaya-search-btn {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+
+  /* ── AUTHORLINES ────────────────────────────────────────── */
+  .authorline,
+  .adhyaya_authorline {
+    font-size: 0.9rem;
+    padding: 6px 0 16px;
+  }
+
+  /* ── ADHYAYA END ORNAMENT ───────────────────────────────── */
+  .adhyaya_end .rule {
+    max-width: 80px;
+  }
+
+  .adhyaya_end .center-symbol {
+    font-size: 16px;
+  }
+
+  .adhyaya_end .center-symbol .main {
+    font-size: 20px;
+  }
+
+  /* ── AUX INFORMATION ────────────────────────────────────── */
+  .aux-information {
+    padding: 16px;
+  }
+
+  .aux-information ul {
+    font-size: 15px;
+  }
+
+}
+
+/* ── Extra small screens (< 400px) ─────────────────────── */
+@media (max-width: 400px) {
+
+  .shloka_text {
+    font-size: 1.05em !important;
+  }
+
+  .mangala,
+  .mangala_b {
+    font-size: 1.05rem;
+  }
+
+  h1.title.text-center {
+    font-size: 22px;
+  }
+
+  .upaparva_title {
+    font-size: 17px !important;
+  }
+
+}

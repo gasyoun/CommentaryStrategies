@@ -1,0 +1,147 @@
+/* ══════════════════════════════════════════════
+   feedback.css
+   Form-only additions for the प्रतिक्रिया section.
+   All tokens, layout, typography, buttons, and
+   Sanskrit block styles come from sahayyam.css.
+   Do NOT duplicate anything already defined there.
+══════════════════════════════════════════════ */
+
+/* ── Divider between sahayyam content and feedback ── */
+.fb-divider {
+    border: none;
+    border-top: 2px solid var(--rule);
+    margin: 48px 0 0;
+}
+
+/* ── Form card shell ── */
+.fb-card {
+    background: var(--parchment-mid);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 28px 32px 24px;
+    margin: 24px 0 0;
+    position: relative;
+}
+
+/* Decorative fleuron corners */
+.fb-card::before,
+.fb-card::after {
+    content: '❧';
+    position: absolute;
+    color: var(--amber);
+    font-size: 1rem;
+    opacity: 0.4;
+    line-height: 1;
+}
+.fb-card::before { top: 0.7rem;    left:  1rem; }
+.fb-card::after  { bottom: 0.7rem; right: 1rem; transform: rotate(180deg); }
+
+/* ── Card internal heading ── */
+.fb-card-heading {
+    font-family: var(--font-roman);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 1.3rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+.fb-card-heading small {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--ink-secondary);
+    font-style: italic;
+    margin-top: 0.2rem;
+}
+
+/* ── Form labels ── */
+.fb-label {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.32rem;
+}
+
+/* ── Inputs / Textarea / Select ── */
+.fb-input,
+.fb-select,
+.fb-textarea {
+    width: 100%;
+    background: var(--parchment);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 0.58rem 0.9rem;
+    font-family: var(--font-roman);
+    font-size: 0.96rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+}
+
+.fb-input:focus,
+.fb-select:focus,
+.fb-textarea:focus {
+    border-color: var(--saffron-light);
+    box-shadow: 0 0 0 3px var(--saffron-wash);
+}
+
+.fb-textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* ── Custom select arrow ── */
+.fb-select-wrap { position: relative; }
+.fb-select-wrap::after {
+    content: '▾';
+    position: absolute;
+    right: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--amber);
+    pointer-events: none;
+    font-size: 0.8rem;
+}
+
+/* ── Two-column row ── */
+.fb-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 560px) {
+    .fb-row { grid-template-columns: 1fr; }
+}
+
+.fb-field { margin-bottom: 0.95rem; }
+
+/* ── Required asterisk ── */
+.req { color: var(--saffron); margin-left: 2px; }
+
+/* ── Centred button row ── */
+.fb-btn-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.3rem;
+}
+
+/* ── reCAPTCHA centering ── */
+.fb-recaptcha-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.25rem;
+}
+
+/* ── Extra top margin for second blessing ── */
+.fb-blessing { margin-top: 32px; }

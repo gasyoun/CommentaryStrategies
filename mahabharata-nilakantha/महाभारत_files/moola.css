@@ -1,0 +1,241 @@
+:root {
+  --saffron:        #D4600A;
+  --saffron-light:  #F0924A;
+  --saffron-wash:   rgba(212, 96, 10, 0.07);
+  --ink-secondary:  #4A3B2A;
+  --parchment:      #FDFAF4;
+  --parchment-mid:  #F5EFE2;
+  --rule:           rgba(180, 130, 60, 0.22);
+  /* --font-devanagari: 'Tiro Devanagari Sanskrit', serif; */
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+
+.demo h3 {
+  font-size: 13px;
+  font-family: serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 18px;
+}
+.hint {
+  margin-top: 18px;
+  font-family:  serif;
+  font-size: 12px;
+  color: #bbb;
+  font-style: italic;
+}
+
+/* ── parva grid ── */
+.parva-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  gap: 8px;
+}
+
+.parva-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  background: var(--parchment);
+  color: var(--ink-secondary);
+  text-decoration: none;
+  font-family: var(--font-devanagari);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s ease, border-color 0.2s ease,color 0.2s ease, width 0.2s ease, padding 0.2s ease;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.parva-card .parva-num {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: none;
+}
+
+/* Tooltip above the card */
+.parva-card .parva-name {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--saffron);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 20;
+}
+
+/* Arrow pointing down from tooltip */
+.parva-card .parva-name::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--saffron);
+}
+
+.parva-card:hover {
+  background: var(--saffron-wash);
+  border-color: var(--saffron-light);
+  color: var(--saffron);
+  z-index: 10;
+}
+
+.parva-card:hover .parva-name {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.parva-card.active {
+  background: var(--saffron);
+  border-color: var(--saffron);
+  color: #fff;
+}
+
+.parva-card.active .parva-num { color: #fff; }
+
+.parva-card.active:hover {
+  background: var(--saffron);
+  border-color: var(--saffron);
+}
+
+.parva-card.active:hover .parva-name { color: #fff; }
+
+/* Travelling underline for parva title */
+.parva-title-link {
+  position: relative;
+  text-decoration: none;
+  /* color: inherit; */
+  display: inline-block;
+}
+
+.parva-title-link::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  color:#F0924A;
+  background: currentColor;
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.parva-title-link:hover {
+  color: rgb(41, 54, 154);
+}
+
+.parva-title-link:hover::before {
+  width: 100%;
+}
+
+
+.upaparva-title-link {
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.upaparva-title-link::after {
+  content: '→';
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 0.5em;
+}
+
+.upaparva-title-link:hover { color: rgb(11, 22, 105); }
+
+.upaparva-title-link:hover::after {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* Secondary Nav-Bar [Search Bar] */
+
+/* ── Adhyaya search box inside breadcrumb ── */
+.adhyaya-breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+}
+
+.adhyaya-search-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: 6px;
+}
+
+.adhyaya-search-input {
+    width: 56px;
+    padding: 1px 5px;
+    font-size: 13px;
+    border: 1px solid #BF360C;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    color: #2e4144;
+    background: #fff8e1;
+    font-family: inherit;
+    -moz-appearance: textfield;  /* hide spinner Firefox */
+}
+
+/* Hide number input spinner arrows Chrome/Safari */
+.adhyaya-search-input::-webkit-outer-spin-button,
+.adhyaya-search-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.adhyaya-search-input:focus {
+    border-color: #da1c00;
+    background: #ffffff;
+}
+
+.adhyaya-search-btn {
+    padding: 1px 7px;
+    font-size: 13px;
+    background: #BF360C;
+    color: #fff;
+    border: 1px solid #BF360C;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    line-height: 1.6;
+    transition: background 0.2s;
+}
+
+.adhyaya-search-btn:hover {
+    background: #da1c00;
+}
+
+.breadcrumb-select {
+    padding: 1px 5px;
+    font-size: 13px;
+    border: 1px solid #BF360C;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    color: #2e4144;
+    background: #fff8e1;
+    font-family: inherit;
+    -moz-appearance: textfield;  /* hide spinner Firefox */
+}

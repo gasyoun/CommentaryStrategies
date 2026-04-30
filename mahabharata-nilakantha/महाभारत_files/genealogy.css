@@ -1,0 +1,242 @@
+:root {
+        --saffron:        #D4600A;
+        --saffron-light:  #F0924A;
+        --saffron-wash:   rgba(212, 96, 10, 0.07);
+        --indigo:         #2E5FA3;
+        --indigo-dark:    #1C3D70;
+        --maroon:         #7A1E1E;
+        --amber:          #C97A1A;
+        --ink:            #1A1209;
+        --ink-secondary:  #4A3B2A;
+        --parchment:      #FDFAF4;
+        --parchment-mid:  #F5EFE2;
+        --rule:           rgba(180, 130, 60, 0.22);
+        --shadow:         0 2px 18px rgba(90, 50, 10, 0.08);
+        --font-devanagari: 'Siddhanta';
+        --font-roman:      'Junicode';
+    }
+
+
+    .paper-content {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 40px 60px 60px;
+        background: var(--parchment);
+        box-shadow: var(--shadow);
+        min-height: 100vh;
+    }
+
+    @media (max-width: 768px) {
+        .paper-content { padding: 24px 20px; }
+    }
+
+    /* ── Title ── */
+    .paper-number {
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--amber);
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .paper-title {
+        text-align: center;
+        font-family: var(--font-roman);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--saffron);
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+
+    .paper-subtitle {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.88rem;
+        color: var(--ink-secondary);
+        font-style: italic;
+        margin-bottom: 32px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--rule);
+    }
+
+    /* ── Prose ── */
+    .prose {
+        font-family: var(--font-roman);
+        font-size: 1.05rem;
+        line-height: 1.85;
+        margin-bottom: 16px;
+        color: var(--ink);
+        text-align: justify;
+        hyphens: auto;
+    }
+
+    .prose em { color: var(--maroon); }
+
+    /* ── Headings ── */
+    .section-heading {
+        font-family: var(--font-roman);
+        color: var(--saffron);
+        font-weight: 700;
+        margin: 40px 0 16px;
+        padding: 8px 16px;
+        border-left: 4px solid var(--saffron-light);
+        background: var(--saffron-wash);
+        border-radius: 0 5px 5px 0;
+        font-size: 1.2rem;
+        scroll-margin-top: 80px;
+    }
+
+    .ps-heading {
+        font-family: var(--font-roman);
+        color: var(--indigo-dark);
+        font-weight: 600;
+        font-style: italic;
+        margin: 32px 0 12px;
+        font-size: 1.1rem;
+    }
+
+    /* ── Verse blocks (Sanskrit quotations) ── */
+    .verse-block {
+        font-family: var(--font-devanagari);
+        font-size: 1.1rem;
+        line-height: 2.0;
+        color: var(--indigo);
+        padding: 16px 24px;
+        margin: 16px 0 20px 32px;
+        border-left: 3px solid var(--saffron-light);
+        background: rgba(46, 95, 163, 0.04);
+        border-radius: 0 6px 6px 0;
+    }
+
+    /* ── Tree blocks (ASCII genealogy — preserved for non-SVG fallback) ── */
+    .tree-block {
+        font-family: 'Siddhanta', 'Noto Sans Devanagari', monospace;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 16px 20px;
+        margin: 16px 0;
+        background: var(--parchment-mid);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        overflow-x: auto;
+        white-space: pre;
+    }
+
+    /* ── Genealogy SVG figures ── */
+    .genealogy-figure {
+        margin: 32px 0;
+        text-align: center;
+    }
+
+    .genealogy-svg {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid var(--rule);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .genealogy-figure figcaption {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.85rem;
+        color: var(--ink-secondary);
+        font-style: italic;
+        margin-top: 10px;
+    }
+
+    /* ── Tables ── */
+    .table-responsive {
+        margin: 20px 0;
+        overflow-x: auto;
+    }
+
+    .ms-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: var(--font-roman);
+        font-size: 0.92rem;
+    }
+
+    .ms-table thead {
+        background: var(--saffron);
+        color: #fff;
+    }
+
+    .ms-table th {
+        padding: 10px 14px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.88rem;
+    }
+
+    .ms-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--rule);
+        vertical-align: top;
+    }
+
+    .ms-table tbody tr:nth-child(even) {
+        background: rgba(212, 96, 10, 0.03);
+    }
+
+    .ms-table tbody tr:hover {
+        background: rgba(212, 96, 10, 0.08);
+    }
+
+    /* ── Footnotes ── */
+    .fn-ref { font-size: 0.75em; vertical-align: super; line-height: 0; }
+    .fn-ref a {
+        color: var(--saffron);
+        text-decoration: none;
+        padding: 0 2px;
+        border-bottom: 1px dotted var(--saffron-light);
+    }
+    .fn-ref a:hover { color: var(--indigo); }
+
+    .footnotes-section {
+        margin: 48px 0 32px;
+        padding: 24px 28px;
+        background: var(--parchment-mid);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        font-size: 0.88rem;
+    }
+
+    .fn-title {
+        font-family: var(--font-roman);
+        color: var(--saffron);
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .footnotes-list {
+        padding-left: 24px;
+        margin: 0;
+    }
+
+    .footnote-item {
+        margin-bottom: 10px;
+        line-height: 1.7;
+        color: var(--ink-secondary);
+        scroll-margin-top: 80px;
+    }
+
+    .footnote-item:target {
+        background: rgba(212, 96, 10, 0.1);
+        border-radius: 4px;
+        padding: 4px 6px;
+        margin-left: -6px;
+    }
+
+    .fn-back {
+        color: var(--saffron-light);
+        text-decoration: none;
+        font-size: 0.85em;
+        margin-left: 4px;
+    }
+    .fn-back:hover { color: var(--saffron); }
+

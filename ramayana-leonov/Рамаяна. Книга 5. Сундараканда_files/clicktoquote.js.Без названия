@@ -1,0 +1,175 @@
+/*
+ * Изменения относительно исходной версии (2026-04-22):
+ *
+ * 1. Добавлена функция getSources() — читает словарь источников из:
+ *      <meta name="sources" content='{"1":"Название книги", ...}'>
+ *
+ * 2. Добавлена функция getRef(trigger) — определяет ссылку на источник.
+ *    Порядок проверки:
+ *      - новая структура: data-src + data-page на элементе → источник из <meta>
+ *      - старая структура: атрибут id на элементе (обратная совместимость)
+ *      - если ничего нет: возвращает null, далее используется title
+ *    Работает для .range и .comment_number.
+ *
+ * 3. clipRange: getRef() вместо прямого чтения id.
+ *
+ * 4. clipChapter: getRef() вместо прямого чтения id у rangeEl.
+ *    title остаётся запасным вариантом.
+ *
+ * 5. clipComment: селектор расширен с '.chapter .comment_item' до '.comment_item' —
+ *    комментарии вне блока .chapter (например, сноски в конце файла) теперь
+ *    тоже копируются по клику.
+ *    getRef() вместо прямого чтения title у .comment_number.
+ *    title остаётся запасным вариантом (обратная совместимость).
+ *
+ * Структура HTML (новая):
+ *   <head>
+ *     <meta name="sources" content='{"1":"Ригведа. Мандалы I-IV (Т.Я. Елизаренкова, 1989)", ...}'>
+ *   </head>
+ *   <div class="range" data-src="1" data-page="5">...</div>
+ *   <span class="comment_number" data-src="4" data-page="544" title="Аннотация: 544">...</span>
+ */
+
+(function ($) {
+
+  // === Словарь источников из <meta name="sources"> ===
+  var _sources = null;
+
+  function getSources() {
+    if (_sources === null) {
+      try {
+        _sources = JSON.parse($('meta[name="sources"]').attr('content') || '{}');
+      } catch (e) {
+        _sources = {};
+      }
+    }
+    return _sources;
+  }
+
+  // === Получение ссылки на источник ===
+  function getRef(trigger) {
+    var page = $(trigger).attr('data-page');
+    var srcKey = $(trigger).attr('data-src');
+    if (page && srcKey) {
+      var source = getSources()[srcKey];
+      if (source) {
+        return source + ': ' + page;
+      }
+    }
+    var id = $(trigger).attr('id');
+    if (id) {
+      return id;
+    }
+    return null;
+  }
+
+  // === Универсальное преобразование HTML → текст ===
+  function htmlToText(html) {
+    return (html || '')
+      .replace(/<\/p\s*>/gi, '\n')      // </p> → перенос строки
+      .replace(/<p\s*>/gi, '')          // <p> убираем
+      .replace(/<br\s*\/?>/gi, '\n')    // <br>, <br/> → перенос строки
+      .HTMLdecode()
+      .trim();
+  }
+
+  // === Копирование диапазона / номера стиха ===
+  var clipRange = new ClipboardJS('.chapter .range', {
+    text: function (trigger) {
+      var text = getRef(trigger);
+      return '(' + (text ? text : $(trigger).attr('title')) + ')';
+    }
+  });
+
+  var translationClasses = ['.translation', '.translation2', '.translation3'];
+
+  // === Копирование стиха + переводов ===
+  var clipChapter = new ClipboardJS('.chapter .chapter_content', {
+    text: function (trigger) {
+      if (isSelection()) return false;
+
+      // 1. Санскрит
+      var iast = htmlToText(
+        $(trigger).children('.iast').html()
+      );
+
+      // 2. Все переводы
+      var translations = translationClasses.map(function (cls) {
+        var el = $(trigger).children(cls);
+        if (el.length) {
+          return htmlToText(el.html());
+        }
+        return null;
+      }).filter(Boolean);
+
+      // 3. Определяем, где был клик
+      var clickedElement = window.event?.target;
+      var isTranslation2 = $(clickedElement).closest('.translation2').length > 0;
+
+      // 4. Источник (range)
+      var rangeEl = $(trigger).parents('.citation_block').find('.range');
+      var source = isTranslation2
+        ? (getRef(rangeEl[0]) || rangeEl.attr('title'))
+        : rangeEl.attr('title');
+
+      // 5. Итог
+      var result =
+        iast +
+        '\n\n' +
+        translations.join('\n\n') +
+        '\n\n\t(см.: ' + source + ').';
+
+      return result.trim();
+    }
+  });
+
+  // === Копирование комментариев ===
+  var clipComment = new ClipboardJS('.comment_item', {
+    text: function (trigger) {
+      if (isSelection()) return false;
+
+      var commentNum = $(trigger).children('.comment_number');
+      var commentNumber = commentNum.text().trim();
+      var commentNumberFormatted = commentNumber.endsWith('.') ? commentNumber + ' ' : commentNumber + '. ';
+      var ref = getRef(commentNum[0]) || commentNum.attr('title');
+      return (
+        commentNumberFormatted +
+        htmlToText(
+          $(trigger).children('.comment_text').html()
+        ) +
+        ' (' + ref + ').'
+      );
+    }
+  });
+
+  // === HTML decode ===
+  String.prototype.HTMLdecode = function () {
+    return $('<div/>').html(this).text();
+  };
+
+  // === Подсветка успешного копирования ===
+  function success(e) {
+    e.trigger.classList.add('clipboard-processed');
+    setTimeout(function () {
+      e.trigger.classList.remove('clipboard-processed');
+    }, 2000);
+  }
+
+  // === Проверка выделения текста ===
+  function isSelection() {
+    if (window.getSelection) {
+      return window.getSelection().toString().length;
+    } else if (document.getSelection) {
+      return document.getSelection().toString().length;
+    } else if (document.selection) {
+      return document.selection.createRange().text.length;
+    } else {
+      return null;
+    }
+  }
+
+  clipRange.on('success', success);
+  clipChapter.on('success', success);
+  clipComment.on('success', success);
+
+}(jQuery));

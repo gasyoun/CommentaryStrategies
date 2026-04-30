@@ -1,0 +1,352 @@
+// ScrollStart/ScrollStop events: http://james.padolsey.com/javascript/special-scroll-events-for-jquery/
+
+baseUrl = window.location.href.replace(/(.*)listing.*/, "$1");
+
+$(document).ready(function() {
+
+	// bindJumpToID();
+	// reformLinks();
+	// addPageNumber();
+
+
+
+	// $('#sidebar a').on('click', function(event){
+
+	// 	nextID = $(this).attr('href').replace('#', '');
+		
+	// 	if(!($('.maintext #' + nextID).length)) {
+
+	// 		bhashya = $('.maintext').attr('data-bhashyaID');
+	// 		page = parseInt(nextID.replace(/.*(\d\d)/, "$1"));
+	// 	    currentID = $('.chapter').last().attr('id');
+
+	// 	    $('#loader').fadeIn('slow');
+	// 		addPageLazilyAndJump(bhashya, page, currentID, nextID);
+    // 		$('#loader').fadeOut('slow');
+	// 	}
+	// 	else{
+	// 		var jumpLoc = $('#' + nextID).offset().top;
+	//         $("html, body").animate({scrollTop: jumpLoc}, 500);
+	// 	}
+	// });
+
+
+    // $( document )
+    // .ajaxStart(function() {
+    //     setTimeout( function(){$( "#ajaxLoader" ).fadeIn( 50 );}, 1);
+    // })
+    // .ajaxStop(function() {
+    //     setTimeout( function(){$( "#ajaxLoader" ).fadeOut( 250 );}, 1);
+    // });
+
+
+}); //document ready ends here
+
+(function(){var e=jQuery.event.special,t="D"+ +(new Date),n="D"+(+(new Date)+1);e.scrollstart={setup:function(){var n,r=function(t){var r=this,i=arguments;if(n){clearTimeout(n)}else{t.type="scrollstart";jQuery.event.handle.apply(r,i)}n=setTimeout(function(){n=null},e.scrollstop.latency)};jQuery(this).bind("scroll",r).data(t,r)},teardown:function(){jQuery(this).unbind("scroll",jQuery(this).data(t))}};e.scrollstop={latency:300,setup:function(){var t,r=function(n){var r=this,i=arguments;if(t){clearTimeout(t)}t=setTimeout(function(){t=null;n.type="scrollstop";jQuery.event.dispatch.apply(r,i)},e.scrollstop.latency)};jQuery(this).bind("scroll",r).data(n,r)},teardown:function(){jQuery(this).unbind("scroll",jQuery(this).data(n))}}})();
+
+
+function getUrlParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
+function getAddress(){
+
+	var verse = $('div.verse:in-viewport').first();
+
+	var address = '<span>' + $('.maintext').attr('data-bhashya') + '</span>';
+	
+	var chapter = verse.parents('.chapter').attr('data-name');
+	if(!(chapter)) chapter = verse.parents('.chapter').attr('data-title');
+	
+	var section = verse.parents('.section').attr('data-name');
+	if(!(section)) section = verse.parents('.section').attr('data-title');
+	
+	var subsection = verse.attr('data-adhikarana');
+	var sutra = verse.children('.versetext').children('p').html();
+	if(!(sutra)) sutra = verse.children('.versetext').html();
+	sutraNumber = getSutraNumber(sutra);
+
+	address += (chapter != null) ? '<span>' + chapter + '</span>' : '';
+	address += (section != null) ? '<span>' + section + '</span>' : '';
+	address += (subsection != null) ? '<span>' + subsection + '</span>' : '';
+	address += (sutraNumber != null) ? '<span>' + sutraNumber + '</span>' : '';
+
+	address = '<i class="fa fa-map-marker map-marker"></i>' + address;
+
+	return address;
+}
+
+function getAddressByID(id){
+
+	var verse = $( '#' + id);
+
+	var address = '<span>' + $('.maintext').attr('data-bhashya') + '</span>';
+	
+	var chapter = verse.parent().parent('.chapter').attr('data-name');
+	if(!(chapter)) chapter = verse.parent().parent('.chapter').attr('data-title');
+
+	var section = verse.parent('.section').attr('data-name');
+	if(!(section)) section = verse.parent('.section').attr('data-title');
+	
+	var subsection = verse.attr('data-adhikarana');
+	var sutra = getSutraNumber(verse.children('.versetext').children('p').html());
+	
+	address += (chapter != null) ? '<span>' + chapter + '</span>' : '';
+	address += (section != null) ? '<span>' + section + '</span>' : '';
+	address += (subsection != null) ? '<span>' + subsection + '</span>' : '';
+	address += (sutra != null) ? '<span>' + sutra + '</span>' : '';
+
+	address = '<i class="fa fa-map-marker map-marker"></i>' + address;
+
+	return address;
+}
+
+
+
+function bindJumpToID() {
+
+	var hloc = window.location.href;
+    if(hloc.match('id=')){
+
+
+    	var jumpID = getUrlParameter('id');
+    	var re = new RegExp('_B[0-9]+$');
+		jumpID = jumpID.replace(re, '');
+
+	    if(hloc.match('hl=')){
+
+    		var hlText = decodeURIComponent(getUrlParameter('hl'));
+    		var jumpLoc = $('#' + jumpID).offset().top - 40;
+        	$("html, body").animate({scrollTop: jumpLoc}, 1000, insertHlText(jumpID, hlText));
+    	}
+    	else if(hloc.match('hlBhashya=')){
+
+	    	var bhashyaID = getUrlParameter('id');
+
+    		var hlText = decodeURIComponent(getUrlParameter('hlBhashya'));
+    		insertHlTextBhashya(jumpID, bhashyaID, hlText);
+
+    		var jumpLoc = $('#' + bhashyaID).offset().top - 150;
+        	$("html, body").animate({scrollTop: jumpLoc}, 1000);
+    	}
+    	else if(hloc.match('hlUllekha=')){
+	
+	    	var ullekhaID = getUrlParameter('id');
+			$('#' + ullekhaID).addClass('highlight');
+			$('#' + ullekhaID).parents('.all-bhashya').removeClass('collapse');
+			
+    		var jumpLoc = $('#' + ullekhaID).offset().top - 150;
+        	$("html, body").animate({scrollTop: jumpLoc}, 1000);
+    	}
+    	else{
+
+    		var jumpLoc = $('#' + jumpID).offset().top - 40;
+        	$("html, body").animate({scrollTop: jumpLoc}, 1000);	
+    	}
+    }
+}
+
+function insertHlText(id, text) {
+
+	$('#' + id + ' .versetext').before('<div class="hl-text"><i class="fa fa-hand-o-right"></i> ' + text + '</div>');
+	$('#bhashya-' + id).removeClass('collapse');
+
+	// Highlight text
+
+	var verse = $('#' + id + ' .versetext p').html();
+	if(verse == null) verse = $('#' + id + ' .versetext').html();
+
+	var re = new RegExp('(' + text + '.*?) ', "g");
+	verse = verse.replace(re, '<span class="highlight">' + "$1" + '</span> ');
+
+	$('#' + id + ' .versetext p').html(verse);
+}
+
+function insertHlTextBhashya(id, bhashyaID, text) {
+
+
+	$('#' + bhashyaID).before('<div class="hl-text"><i class="fa fa-search"></i> ' + text + '</div>');
+	$('#bhashya-' + id).removeClass('collapse');
+
+	// Highlight text
+
+	// Remove word spans before highlighting
+	$('#' + bhashyaID + ' span:not(.qt)').contents().unwrap();
+	var bhashya = $('#' + bhashyaID).html();
+
+
+
+	var re = new RegExp('(' + text + '.*?)([ <])', "g");
+	bhashya = bhashya.replace(re, '<span class="highlight">' + "$1" + '</span>' + "$2");
+
+	$('#' + bhashyaID).html(bhashya);
+}
+
+function addPageNumber() {
+
+	$('.chapter').each(function(){
+		
+		if(!($(this).attr('data-page'))) {
+		
+			id = parseInt($(this).attr('id').replace(/.*(\d\d)/, "$1"));
+			// For bhashyas having no chapters, pseudo page 0 is made as 1
+			if (id == 0) id = 1;
+
+			$(this).attr('data-page', id);
+		}
+	});
+}
+
+
+function addPageLazilyAndJump(upaParvaID) {
+
+
+	var checkUrl = window.location.href;
+	var parvaName = $('.maintext').attr('data-parva');
+	const page = parseInt(upaParvaID.split('_U')[1], 10);
+
+
+    var positions = [];
+    var upaparvaIDs = [];
+
+    var url = baseUrl + "listing/getParvaByPage/" + parvaName + "?page=" + page;
+
+    $.get( url, function( data ) {
+
+        if(data) {
+
+		    var thisId;
+
+		    $('.upaparva').each(function(){
+		    	var pageNum = parseInt($(this).attr('data-page'));
+
+		    	positions[pageNum-1] = pageNum;
+		    	upaparvaIDs[pageNum-1] = $(this).attr('id');	
+
+		    });
+		    for(let i=0;i<(page-1); i++){
+		    	if(positions[i] !== undefined)
+		    		thisId = upaparvaIDs[i];
+		    }
+
+		    if(thisId !== undefined)
+		        $( "#" + thisId ).after( data );
+		    else
+		    	$('.upaparva').first().before(data);
+
+        }
+		    
+		var jumpLoc = $('#' + upaParvaID).offset().top - $('#main-nav-bar').height() - $('#breadcrumb-container').height() - 30;
+		// console.log("jumpLoc: " + jumpLoc);
+        $("html, body").animate({scrollTop: jumpLoc}, 500);
+    });
+}
+
+// function addPageLazilyAndJump(bhashya, page, currentID, nextID) {
+
+//     var url = baseUrl + "display/getBhashyaByPage/" + bhashya + "?page=" + page;
+//     $.get( url, function( data ) {
+       
+//         if(data) {
+
+// 	        $( "#" + currentID ).after( data );
+//             insertChapterName();
+// 			insertHeadingInVyakhya();
+//             insertSectionName();
+//             insertAdhikaranaName();
+
+//             // printNavigation();
+
+//             insertBhashyaTrigger();
+//             //wrapAndFoldBhashya();
+
+//             insertTargetBlank();
+
+//             // bindJumpToID();
+
+//             reformLinks();
+
+//             addPageNumber();
+
+//             if($('.vyakhyaPara').length) {
+				
+// 				insertVyakhyaLinks();
+// 			}
+//         }
+		    
+// 		var jumpLoc = $('#' + nextID).offset().top - $('.address').height() + 50;
+//         $("html, body").animate({scrollTop: jumpLoc}, 500);
+//     });
+// }
+
+
+function bindLazyLoading() {
+
+    var bottomAllownace = 200;
+    if($(window).scrollTop() + $(window).height() > $(document).height() - bottomAllownace) {
+
+    	// console.log("I am here");
+        addPageBottom();
+    }
+}
+
+
+function addPageBottom() {
+
+    $('#loader').fadeIn('slow');
+
+    $( window ).off('scroll', bindLazyLoading);
+
+	var parvaName = $('.maintext').attr('data-parva');
+
+    var page = parseInt($('.upaparva').last().attr('data-page')) + parseInt(1);
+    var currentID = $('.upaparva').last().attr('id');
+
+    var url = baseUrl + "listing/getParvaByPage/" + parvaName + "?page=" + page;
+    // console.log("inside addPageBottom: " + currentID + ':' + url);
+    $.get( url, function( data ) {
+        
+        if(data) {
+         
+         	// console.log(data);
+            $( "#" + currentID ).after( data );
+            // insertChapterName();
+            // insertHeadingInVyakhya();
+            // insertSectionName();
+            // insertAdhikaranaName();
+
+            // printNavigation();
+
+            // insertBhashyaTrigger();
+            //wrapAndFoldBhashya();
+
+            // insertTargetBlank();
+
+            //bindJumpToID();
+
+            // reformLinks();
+
+            // addPageNumber();
+
+        	// if($('.vyakhyaPara').length) {
+		
+			// 	insertVyakhyaLinks();
+			// }
+
+            $( window ).on('scroll', bindLazyLoading);
+        }
+        $('#loader').fadeOut('slow');
+    });
+}
+

@@ -1,0 +1,100 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .map-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .map-container svg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
+
+        /* Hotspot circles */
+        .hotspot {
+            cursor: pointer;
+            fill: rgba(255, 150, 0, 0.25);
+            stroke: orange;
+            stroke-width: 1;
+            transition: fill 0.2s;
+        }
+        .hotspot:hover {
+            fill: rgba(255, 150, 0, 0.6);
+        }
+
+        /* Modal Card */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .card_map {
+            background: linear-gradient(135deg, #f1efed, #f7f5f4);
+            border: 2px solid rgb(228, 176, 20);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 480px;
+            width: 90%;
+            color: rgb(208, 78, 7);
+            position: relative;
+            box-shadow: 0 0 40px rgba(200, 134, 10, 0.4);
+        }
+
+        .card-close {
+            position: absolute;
+            top: 12px; right: 16px;
+            font-size: 22px;
+            cursor: pointer;
+            color: #c8860a;
+            background: none;
+            border: none;
+        }
+
+        .card h2 {
+            color: #f0a500;
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #c8860a;
+            padding-bottom: 8px;
+        }
+
+        .card .card-type {
+            font-size: 0.8rem;
+            color: #c8860a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgb(241, 115, 4);
+        }
+
+        .card .card-footer {
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: #a07030;
+            font-style: italic;
+        }

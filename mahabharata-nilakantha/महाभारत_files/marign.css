@@ -1,0 +1,262 @@
+/* ── Same design tokens as prolegomena.html ── */
+    :root {
+        --saffron:        #D4600A;
+        --saffron-light:  #F0924A;
+        --saffron-wash:   rgba(212, 96, 10, 0.07);
+        --indigo:         #2E5FA3;
+        --indigo-dark:    #1C3D70;
+        --maroon:         #7A1E1E;
+        --amber:          #C97A1A;
+        --ink:            #1A1209;
+        --ink-secondary:  #4A3B2A;
+        --parchment:      #FDFAF4;
+        --parchment-mid:  #F5EFE2;
+        --rule:           rgba(180, 130, 60, 0.22);
+        --shadow:         0 2px 18px rgba(90, 50, 10, 0.08);
+    }
+
+
+    /* ── Layout — mirrors prolegomena wrapper ── */
+    .ty-wrapper {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 40px 60px 60px;
+        background: var(--parchment);
+        box-shadow: var(--shadow);
+        min-height: 80vh;
+    }
+
+    @media (max-width: 768px) {
+        .ty-wrapper { padding: 24px 20px 40px; }
+    }
+
+    /* ── Page title block (mirrors .title-page) ── */
+    .ty-title-block {
+        text-align: center;
+        padding: 40px 20px 32px;
+        margin-bottom: 32px;
+        border-bottom: 2px solid var(--rule);
+    }
+
+    .ty-om {
+        font-family: var(--font-devanagari);
+        font-size: 2.8rem;
+        color: var(--saffron);
+        line-height: 1;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .ty-main-title {
+        font-family: var(--font-roman);
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--saffron);
+        letter-spacing: 1.5px;
+        margin-bottom: 6px;
+    }
+
+    .ty-subtitle {
+        font-family: var(--font-roman);
+        font-size: 1rem;
+        color: var(--ink-secondary);
+        font-style: italic;
+        letter-spacing: 0.4px;
+    }
+
+    /* ── Mandala divider — same as built earlier ── */
+    .mandala-divider {
+        display: block;
+        width: 100%;
+        margin: 0 0 32px;
+    }
+
+    /* ── Gratitude card (mirrors .front-meta) ── */
+    .ty-org-card {
+        background: var(--parchment-mid);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        padding: 24px 32px;
+        margin-bottom: 32px;
+    }
+
+    .ty-to-label {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--amber);
+        margin-bottom: 6px;
+    }
+
+    .ty-org-name {
+        font-family: var(--font-roman);
+        font-size: 1.55rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 4px;
+        line-height: 1.3;
+    }
+
+    .ty-org-name span {
+        color: var(--saffron);
+    }
+
+    /* ── Section headings (same class as prolegomena) ── */
+    .section-heading {
+        font-family: var(--font-roman);
+        color: var(--saffron);
+        font-weight: 700;
+        margin: 36px 0 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--rule);
+        letter-spacing: 0.5px;
+    }
+
+    h2.section-heading { font-size: 1.5rem; }
+
+    h3.section-heading {
+        font-size: 1.2rem;
+        border-left: 4px solid var(--saffron-light);
+        border-bottom: none;
+        padding: 8px 16px;
+        background: var(--saffron-wash);
+        border-radius: 0 5px 5px 0;
+    }
+
+    /* ── Prose (same as prolegomena) ── */
+    .prose {
+        font-family: var(--font-roman);
+        font-size: 1.05rem;
+        line-height: 1.85;
+        margin-bottom: 16px;
+        color: var(--ink);
+        text-align: justify;
+        hyphens: auto;
+    }
+
+    .prose em { color: var(--maroon); }
+
+    /* ── Sanskrit quote block (mirrors footnotes-section) ── */
+    .sanskrit-block {
+        background: var(--parchment-mid);
+        border: 1px solid var(--rule);
+        border-left: 4px solid var(--saffron-light);
+        border-radius: 0 6px 6px 0;
+        padding: 18px 24px;
+        margin: 24px 0;
+    }
+
+    .sanskrit-verse {
+        font-family: var(--font-devanagari);
+        font-size: 1.1rem;
+        color: var(--saffron);
+        margin-bottom: 6px;
+        line-height: 1.7;
+    }
+
+    .sanskrit-trans {
+        font-family: var(--font-roman);
+        font-size: 0.88rem;
+        color: var(--ink-secondary);
+        font-style: italic;
+    }
+
+    /* ── Stats row ── */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 14px;
+        margin: 24px 0;
+    }
+
+    .stat-item {
+        background: var(--parchment-mid);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-num {
+        font-family: var(--font-roman);
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--saffron);
+        display: block;
+        line-height: 1.1;
+    }
+
+    .stat-lbl {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--ink-secondary);
+        margin-top: 4px;
+        display: block;
+    }
+
+    /* ── Buttons ── */
+    .ty-btn-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+    }
+
+    .btn-saffron {
+        background: var(--saffron);
+        color: #fff;
+        border: none;
+        padding: 10px 26px;
+        font-family: var(--font-roman);
+        font-size: 0.95rem;
+        border-radius: 4px;
+        text-decoration: none;
+        display: inline-block;
+        transition: opacity 0.15s;
+    }
+
+    .btn-saffron:hover { opacity: 0.85; color: #fff; }
+
+    .btn-outline-saffron {
+        background: transparent;
+        color: var(--saffron);
+        border: 1.5px solid var(--saffron);
+        padding: 10px 26px;
+        font-family: var(--font-roman);
+        font-size: 0.95rem;
+        border-radius: 4px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-outline-saffron:hover {
+        background: var(--saffron);
+        color: #fff;
+    }
+
+    /* ── Closing blessing ── */
+    .ty-blessing {
+        text-align: center;
+        padding: 28px 0 0;
+        margin-top: 32px;
+        border-top: 1px solid var(--rule);
+    }
+
+    .ty-blessing-sanskrit {
+        font-family: var(--font-devanagari);
+        font-size: 1.2rem;
+        color: var(--saffron);
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .ty-blessing-trans {
+        font-family: var(--font-roman);
+        font-size: 0.88rem;
+        color: var(--ink-secondary);
+        font-style: italic;
+    }

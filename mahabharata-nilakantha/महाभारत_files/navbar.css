@@ -1,0 +1,56 @@
+/* ═══════════════════════════════════════════════════════════
+   MAHABHARATA — navbar.css
+   MINIMAL FIX — only sticky + logo alignment restored
+   All original styles preserved exactly
+═══════════════════════════════════════════════════════════ */
+
+:root {
+  --saffron:          #D4600A;
+  --saffron-light:    #F0924A;
+  --saffron-wash:     rgba(212, 96, 10, 0.07);
+  --indigo:           #2E5FA3;
+  --indigo-dark:      #1C3D70;
+  --indigo-wash:      rgba(46, 95, 163, 0.06);
+  --maroon:           #7A1E1E;
+  --maroon-soft:      #9E3A3A;
+  --amber:            #C97A1A;
+  --ink:              #1A1209;
+  --ink-secondary:    #4A3B2A;
+  --parchment:        #FDFAF4;
+  --parchment-mid:    #F5EFE2;
+  --rule:             rgba(180, 130, 60, 0.22);
+  --shadow:           0 2px 18px rgba(90, 50, 10, 0.08);
+  --font-devanagari:  'Siddhanta';
+  --font-roman:       'Junicode';
+  --navbar-height:    60px; /* set this to your actual navbar height */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+:target {
+  scroll-margin-top: calc(var(--navbar-height) + 60px) !important; 
+}
+/* ── Only fix: sticky navbar ── */
+.navbar-ontop {
+  position: sticky;
+  top: 0;
+  z-index: 1031;
+  background-color: #ffffff; 
+}
+
+/* ── Only fix: logo image size restored ── */
+.navbar-ontop img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* ── Only fix: logo + title vertical alignment ── */
+.navbar-ontop .container-fluid {
+  align-items: center;
+}
+

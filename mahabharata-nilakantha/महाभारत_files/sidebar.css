@@ -1,0 +1,108 @@
+body{
+    position: relative;
+/*    overflow-x: hidden;*/
+    overflow-y: scroll;
+}
+#sidebar {
+    position: sticky;
+    top: 40px;
+}
+/* sidebar */
+.bs-docs-sidebar {
+    font-family: 'Siddhanta';
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* all links */
+.bs-docs-sidebar .nav {
+    display: block;
+}
+
+.bs-docs-sidebar .nav>li {
+    display: block !important;
+}
+.bs-docs-sidebar .nav>li>a {
+    color: #555;
+    border-left: 2px solid transparent;
+    padding: 1px 20px;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+/* nested links */
+.bs-docs-sidebar .nav .nav>li>a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 14px;
+}
+
+.bs-docs-sidebar .nav .nav .nav>li>a {
+    padding-left: 60px;
+}
+
+/* active & hover links */
+.bs-docs-sidebar .nav>li>.nav>li>a.nav-link.active, 
+.bs-docs-sidebar .nav>li>.nav>li>a.nav-link:hover, 
+.bs-docs-sidebar .nav>li>.nav>li>a.nav-link:focus {
+    color: #3F51B5;                 
+    text-decoration: none;          
+    background-color: transparent;  
+    border-left-color: #3F51B5; 
+    font-weight: 400;
+}
+.bs-docs-sidebar .nav>li>a.nav-link.active:after {
+    content: ' ⇽';
+    font-weight: bold;
+}
+.bs-docs-sidebar .nav>li>a.nav-link.active, 
+.bs-docs-sidebar .nav>li>a.nav-link:hover, 
+.bs-docs-sidebar .nav>li>a.nav-link:focus {
+    color: #3F51B5;                 
+    text-decoration: none;          
+    background-color: transparent;  
+    border-left-color: #3F51B5; 
+    font-weight: 400;
+}
+
+.bs-docs-sidebar .nav>li>a.nav-link.active + ul.nav {
+    display: block !important;           
+}
+/* hide inactive nested list */
+.bs-docs-sidebar .nav ul.nav {
+    display: none;           
+}
+/* show active nested list */
+.bs-docs-sidebar > ul.nav {
+    /* overflow-style: auto !important; */
+    overflow: auto !important;
+    height: 95vh;
+    
+}
+
+.bs-docs-sidebar > ul.nav>li.nav-item:first-of-type{
+    margin-top:  30px;
+}
+
+.bs-docs-sidebar .nav>li.special>a {
+    color: rgba(0, 0, 0, 0.8);
+ }
+.bs-docs-sidebar .nav>li.special>a:hover, 
+.bs-docs-sidebar .nav>li.special>a:focus {
+    color: #3F51B5;
+    text-decoration: none;
+    background-color: transparent;
+    border-left-color: #F57C00; 
+}
+
+.bs-docs-sidebar .nav>li.last{
+    margin-bottom: 30px;
+}
+
+@media(max-width:768px) {
+    #sidebar{
+        display: none;
+    }
+}

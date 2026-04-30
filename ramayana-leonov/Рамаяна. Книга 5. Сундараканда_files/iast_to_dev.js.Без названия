@@ -1,0 +1,132 @@
+(() => {
+  const consMap = {
+    "k":"क","kh":"ख","g":"ग","gh":"घ","ṅ":"ङ",
+    "c":"च","ch":"छ","j":"ज","jh":"झ","ñ":"ञ",
+    "ṭ":"ट","ṭh":"ठ","ḍ":"ड","ḍh":"ढ","ṇ":"ण",
+    "t":"त","th":"थ","d":"द","dh":"ध","n":"न",
+    "p":"प","ph":"फ","b":"ब","bh":"भ","m":"म",
+    "y":"य","r":"र","l":"ल","v":"व",
+    "ś":"श","ṣ":"ष","s":"स","h":"ह"
+  };
+
+  const vowelIndependent = {
+    "a":"अ","ā":"आ","i":"इ","ī":"ई","u":"उ","ū":"ऊ",
+    "ṛ":"ऋ","ṝ":"ॠ","ḷ":"ॢ","ḹ":"ॣ",
+    "e":"ए","ai":"ऐ","o":"ओ","au":"औ"
+  };
+
+  const vowelSign = {
+    "a":"", "ā":"ा","i":"ि","ī":"ी","u":"ु","ū":"ू",
+    "ṛ":"ृ","ṝ":"ॄ","ḷ":"ॢ","ḹ":"ॣ",
+    "e":"े","ai":"ै","o":"ो","au":"ौ"
+  };
+
+  const anusvara = "ं";
+  const visarga = "ः";
+  const virama = "्";
+
+  const tokens = [
+    "kh","gh","ch","jh","ṭh","ḍh","th","dh","ph","bh",
+    "ai","au","ā","ī","ū","ṛ","ṝ","ḷ","ḹ","ṃ","ḥ","ṅ","ñ","ṭ","ḍ","ṇ","ś","ṣ",
+    "a","i","u","e","o",
+    "k","g","c","j","t","d","p","b","m","y","r","l","v","s","h","n"
+  ];
+  const tokenRe = new RegExp(tokens.sort((a,b)=>b.length-a.length)
+    .map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join("|"),"gu");
+  const vowels = new Set(["a","ā","i","ī","u","ū","ṛ","ṝ","ḷ","ḹ","e","ai","o","au","ṃ","ḥ"]);
+
+  function isVowel(t){ return vowels.has(t); }
+  function getVowelSign(t){ return vowelSign[t] ?? ""; }
+  function getIndependentVowel(t){ return vowelIndependent[t] ?? ""; }
+
+  function translitIASTtoDeva(text){
+    // Собираем части с позициями (start/end) — это важно для проверки прилегания
+    let parts=[], last=0;
+    for(const m of text.matchAll(tokenRe)){
+      if(m.index > last) parts.push({t:"o", x:text.slice(last,m.index), start:last, end:m.index});
+      parts.push({t:"tok", x:m[0], start:m.index, end:m.index + m[0].length});
+      last = m.index + m[0].length;
+    }
+    if(last < text.length) parts.push({t:"o", x:text.slice(last), start:last, end:text.length});
+
+    let out="";
+    for(let i=0;i<parts.length;i++){
+      const p = parts[i];
+      if(p.t === "o"){ out += p.x; continue; }
+      const tok = p.x;
+      if(isVowel(tok)){
+        // ищем предыдущий нетекстовый токен
+        let j = i-1;
+        while(j >= 0 && parts[j].t === "o") j--;
+        // предыдущий согласный релевантен только если он непосредственно прилегает (end === start)
+        const prevIsConsAndAdjacent = j >= 0 &&
+          parts[j].t === "tok" &&
+          !isVowel(parts[j].x) &&
+          (parts[j].end === p.start);
+        if(prevIsConsAndAdjacent){
+          out += getVowelSign(tok);
+        }else{
+          out += getIndependentVowel(tok) || tok;
+        }
+      }else{
+        // согласный:
+        // если за ним непосредственно прилегает гласная — НЕ ставим вирáму (гласная даст матру),
+        // в остальных случаях ставим вирáму, чтобы не получилось лишнего inherent 'a'
+        // (например: "padam " -> "पदम् " а не "पदमा ").
+        let k = i+1;
+        while(k < parts.length && parts[k].t === "o") k++;
+        const nextTok = (k < parts.length ? parts[k] : null);
+
+        out += consMap[tok] || tok;
+
+        const nextIsAdjacentVowel = nextTok &&
+          nextTok.t === "tok" &&
+          isVowel(nextTok.x) &&
+          (nextTok.start === p.end);
+
+        if(!nextIsAdjacentVowel){
+          out += virama;
+        }
+      }
+    }
+
+    // замены для анусвары/висарги (на всякий случай — оставляем поддержку ṃ и ṁ)
+    return out.replace(/ṃ|ṁ/g, anusvara).replace(/ḥ/g, visarga);
+  }
+
+  function processContainer(div,toDeva){
+    const walker=document.createTreeWalker(div,NodeFilter.SHOW_TEXT,null,false);
+    const nodes=[];
+    while(walker.nextNode())nodes.push(walker.currentNode);
+    for(const n of nodes){
+      if(!n.nodeValue.trim()) continue;
+      if(toDeva){
+        n.nodeValue = translitIASTtoDeva(n.nodeValue);
+      }else{
+        // восстановление через data-iast-orig (см. toggleDiv)
+      }
+    }
+  }
+
+  function toggleDiv(div){
+    if(!div.dataset.iastOrig){
+      div.dataset.iastOrig = div.innerHTML;
+      processContainer(div,true);
+    }else{
+      div.innerHTML = div.dataset.iastOrig;
+      delete div.dataset.iastOrig;
+    }
+  }
+
+  function onKeyDown(e){
+    if(e.key==="F2" && (e.ctrlKey||e.metaKey)){
+      e.preventDefault();
+      document.querySelectorAll("div.chapter_block.iast").forEach(toggleDiv);
+    }
+  }
+
+  window.addEventListener("keydown",onKeyDown);
+
+  // экспорт для тестирования в консоли (опционально)
+  window._translitIASTtoDeva = translitIASTtoDeva;
+})();

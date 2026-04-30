@@ -1,0 +1,105 @@
+        /* Define a thematic color palette */
+        :root {
+            --background-color: #FFF8E1; /* A warm, manuscript-like cream */
+            --header-bg: #BF360C;       /* Your original deep orange */
+            --header-text: #FFECB3;     /* A softer gold for the header text */
+            --card-bg: #FFFFFF;         /* Clean white for the list items */
+            --text-color: #555;      /* A dark, earthy brown for text */
+            --link-hover-color: #BF360C;/* The orange for hover effect */
+            --number-color: #f56708;
+        }
+
+     body {
+            font-family: "Siddhanta", "junicode"  !important;
+            font-size: 18px;
+            color: var(--text-color);            
+        } 
+
+        .homepage-decor{
+            background-color: #EEE;
+        }
+
+        .maincontent{
+            line-height: 30px !important;
+        }
+
+
+        .clear-paddings {
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;       /* Avoids tiling */
+            background-size: inherit;            /* Scales to fit screen */
+            background-position: center;       /* Centers the image */
+            background-attachment: fixed; 
+        }
+
+        /* Enhanced Header Style */
+        .aakara-header {
+            /*font-family: 'Tiro Devanagari Sanskrit', serif; */
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 20px 15px;
+            border-radius: 8px;
+            border-bottom: 4px solid #872608; /* A darker shade for depth */
+            line-height: 1.5;
+            font-size: 2.5rem; /* Make the heading more prominent */
+        }
+
+        /* Style for the list container */
+        .book-list {
+            background: #f0defa;
+            background: radial-gradient(circle, rgba(240, 222, 250, 1) 0%, rgba(255, 232, 232, 1) 50%, rgba(250, 250, 250, 1) 100%);   list-style-type: none; /* Remove default bullet points */
+            padding: 0;
+        }
+
+        /* Card-based design for each list item */
+        .book-item {
+            background-color: var(--card-bg);
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--header-bg); /* Thematic accent border */
+        }
+
+        .book-item:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Styling for the links inside the cards */
+        .book-link {
+            display: block;
+            padding: 20px 25px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .book-link:hover {
+            color: var(--link-hover-color);
+        }
+
+        /* .sticky-top {
+          
+            border-left: 2px solid rgb(242, 122, 23);
+        } */
+        /* 
+        .rounded {
+            padding-left: 5px;
+        } */
+
+        span.parva_number {
+            color: var(--number-color)!important;
+            font-style:oblique;
+            font-weight: 700;
+        }
+
+        span.parva_number:hover {
+            color: var(--card-bg)!important;
+        }
+
+        div.upaparvalist{
+            display: none;
+        }
