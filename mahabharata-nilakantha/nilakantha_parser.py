@@ -1,8 +1,24 @@
 import os
 import re
-import json
+from indic_transliteration import sanscript
+from indic_transliteration.sanscript import transliterate
 
+# ==========================================
+# 1. ТРАНСЛИТЕРАТОР (Devanagari -> IAST)
+# ==========================================
+def devanagari_to_iast(text):
+    """Транслитерирует текст в академический IAST."""
+    if not text:
+        return ""
+    # Прямая транслитерация
+    iast_text = transliterate(text, sanscript.DEVANAGARI, sanscript.IAST)
+    return iast_text
+
+# ==========================================
+# 2. ПАРСЕР ТЕКСТА
+# ==========================================
 def parse_nilakantha_commentary(file_path):
+    """Разбивает сплошной текст на структурированный массив (Шлока + Комментарий)."""
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
@@ -17,7 +33,7 @@ def parse_nilakantha_commentary(file_path):
     chapter_pattern = re.compile(r'अध्यायः$')
 
     for block in blocks:
-        if block in ["॥", "❧✿❧"] or "पर्व" in block and "अध्यायः" not in block:
+        if block in ["॥", "❧✿❧"] or ("पर्व" in block and "अध्यायः" not in block):
             continue
             
         if colophon_pattern.match(block):
@@ -47,8 +63,85 @@ def parse_nilakantha_commentary(file_path):
 
     return parsed_corpus
 
-def generate_markdown_scenarios(corpus, text_name, base_dir="Sanskrit_Vault"):
-    # Создаем изолированные папки для конкретного текста
+# ==========================================
+# 3. АНАЛИЗАТОР СЛОЖНОСТИ (Teacher Dashboard)
+# ==========================================
+def evaluate_difficulty_and_topics(tika_text):
+    """Эвристический анализатор для тегирования шлок в LMS."""
+    if not tika_text:
+        return "low", []
+    
+    topics = []
+    difficulty = "medium"
+    
+    if "आर्ष" in tika_text or "छान्दसं" in tika_text:
+        topics.append("ārṣa-prayoga")
+        difficulty = "high"
+    if "समास" in tika_text:
+        topics.append("samāsa-vigraha")
+    if "पाठे" in tika_text or "पाठान्तरम्" in tika_text:
+        topics.append("pāṭhāntara")
+        difficulty = "high"
+    if "मेदिनी" in tika_text or "यास्कः" in tika_text or "निघण्टु" in tika_text:
+        topics.append("kośa-nirukta")
+        
+    return difficulty, topics
+
+# ==========================================
+# 4. ЭКСТРАКТОР СЛОЖНЫХ СЛОВ (Samāsa)
+# ==========================================
+def extract_and_build_samasas(corpus, text_name, base_dir="Sanskrit_Vault"):
+    """Ищет виграхи Нилакантхи и создает словарь композитов."""
+    samasa_dir = os.path.join(base_dir, text_name, "Samasa_Dictionary")
+    os.makedirs(samasa_dir, exist_ok=True)
+    
+    vigraha_patterns = [
+        re.compile(r'([^\s]+)\s+.*?(यस्य|यस्याः|येषाम्|ययोः)\s+(सः|सा|तत्|तानि|इति)\b'),
+        re.compile(r'([^\s]+)\s+.*?(इति समासः)'),
+        re.compile(r'([^\s]+)\s+.*?(इत्यर्थः)')
+    ]
+    
+    extracted_count = 0
+    for item in corpus:
+        tika = item.get('tika', '')
+        if not tika: continue
+            
+        for pattern in vigraha_patterns:
+            match = pattern.search(tika)
+            if match:
+                pratika = re.sub(r'[।॥0-9]', '', match.group(1)).strip()
+                if len(pratika) < 3: continue
+                    
+                safe_name = re.sub(r'[\\/*?:"<>|]', "", pratika)
+                filepath = os.path.join(samasa_dir, f"{safe_name}.md")
+                
+                if os.path.exists(filepath):
+                    filepath = os.path.join(samasa_dir, f"{safe_name}_{item['verse']}.md")
+                
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    f.write("---\n")
+                    f.write("type: samasa\n")
+                    f.write(f"text_source: {text_name}\n")
+                    f.write(f"chapter: \"{item['chapter']}\"\n")
+                    f.write(f"verse: {item['verse']}\n")
+                    f.write("---\n\n")
+                    f.write(f"# {pratika}\n\n")
+                    f.write(f"**Виграха Нилакантхи:**\n> {tika}\n\n")
+                    f.write("---\n")
+                    
+                    chapter_safe = re.sub(r'[\\/*?:"<>|]', "", item['chapter']).strip()
+                    f.write(f"**Контекст:** [[{text_name}_{chapter_safe}_{item['verse'].zfill(2)}|Перейти к шлоке]]\n")
+                
+                extracted_count += 1
+                break
+                
+    print(f"[{text_name}] Словарь Самас сгенерирован: {extracted_count} статей.")
+
+# ==========================================
+# 5. ГЕНЕРАТОР БАЗЫ ЗНАНИЙ (MDX + Docusaurus)
+# ==========================================
+def generate_lms_markdown(corpus, text_name, base_dir="Sanskrit_Vault"):
+    """Создает атомарные заметки и лонгриды для LMS/Obsidian."""
     text_dir = os.path.join(base_dir, text_name)
     atomic_dir = os.path.join(text_dir, "Atomic_Notes")
     longread_dir = os.path.join(text_dir, "Longreads")
@@ -59,67 +152,107 @@ def generate_markdown_scenarios(corpus, text_name, base_dir="Sanskrit_Vault"):
     def sanitize_filename(name):
         return re.sub(r'[\\/*?:"<>|]', "", name).strip()
 
-    # СЦЕНАРИЙ 1: Атомарные заметки
-    for item in corpus:
-        chapter_safe = sanitize_filename(item['chapter'])
-        # Добавляем префикс текста к файлу, чтобы имена были уникальны глобально
-        filename = f"{text_name}_{chapter_safe}_{item['verse'].zfill(2)}.md"
-        filepath = os.path.join(atomic_dir, filename)
-        
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write("---\n")
-            f.write("type: shloka\n")
-            f.write(f"text: {text_name}\n") # Изоляция по метаданным
-            f.write(f"chapter: \"{item['chapter']}\"\n")
-            f.write(f"verse: {item['verse']}\n")
-            f.write("tags: [raw_import]\n")
-            f.write("---\n\n")
-            
-            f.write("### Mūla\n")
-            f.write(f"{item['mula']}\n\n")
-            
-            if item['tika']:
-                f.write("### Ṭīkā (Nīlakaṇṭha)\n")
-                f.write(f"> {item['tika']}\n\n")
-            
-            f.write("---\n**Ссылки:**\n")
-            f.write(f"[[{text_name}_{chapter_safe}_Full|Перейти к полному тексту главы]]\n")
-
-    # СЦЕНАРИЙ 2: Лонгриды
     chapters_data = {}
+
+    # СЦЕНАРИЙ 1: Атомарные заметки (Zettelkasten / LMS Cards)
     for item in corpus:
         ch = item['chapter']
         if ch not in chapters_data:
             chapters_data[ch] = []
         chapters_data[ch].append(item)
         
+        chapter_safe = sanitize_filename(ch)
+        filename = f"{text_name}_{chapter_safe}_{item['verse'].zfill(2)}.md"
+        filepath = os.path.join(atomic_dir, filename)
+        
+        mula_iast = devanagari_to_iast(item['mula'])
+        tika_iast = devanagari_to_iast(item['tika']) if item['tika'] else ""
+        
+        difficulty, topics = evaluate_difficulty_and_topics(item['tika'])
+        topics_str = ", ".join([f'"{t}"' for t in topics])
+        
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write("---\n")
+            f.write("type: shloka\n")
+            f.write(f"text: {text_name}\n")
+            f.write(f"chapter: \"{item['chapter']}\"\n")
+            f.write(f"verse: {item['verse']}\n")
+            f.write(f"difficulty: {difficulty}\n")
+            if topics:
+                f.write(f"topics: [{topics_str}]\n")
+            f.write("tags: [lms_ready]\n")
+            f.write("---\n\n")
+            
+            # MDX Разметка для Docusaurus
+            f.write(f'<a id="verse-{item["verse"]}" class="shloka-anchor"></a>\n')
+            f.write(f'<div class="verse-number">॥ {item["verse"]} ॥</div>\n\n')
+            
+            f.write("### Mūla (IAST)\n")
+            f.write(f'<div class="mula-iast">\n{mula_iast}\n</div>\n\n')
+            
+            f.write("### Mūla (Devanagari)\n")
+            f.write(f"```devanagari\n{item['mula']}\n```\n\n")
+            
+            if item['tika']:
+                f.write("### Ṭīkā (Nīlakaṇṭha)\n")
+                f.write('<div class="tika-block">\n')
+                f.write(f'  <p>{tika_iast}</p>\n')
+                f.write(f'  <p class="tika-devanagari">{item["tika"]}</p>\n')
+                f.write('</div>\n\n')
+            
+            f.write("---\n")
+            f.write("### Morphological Links (Zaliznyakiada)\n")
+            f.write("- Roots: [[Whitney-linked-2026]]\n")
+            f.write("- Samāsa: \n\n")
+            f.write("---\n**Navigation:**\n")
+            f.write(f"[[{text_name}_{chapter_safe}_Full|Full Chapter]]\n")
+
+    # СЦЕНАРИЙ 2: Лонгриды (Сплошное чтение Docusaurus/HTML)
     for chapter_name, shlokas in chapters_data.items():
         chapter_safe = sanitize_filename(chapter_name)
         filepath = os.path.join(longread_dir, f"{text_name}_{chapter_safe}_Full.md")
         
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(f"# {chapter_name} ({text_name})\n\n")
+            
             for s in shlokas:
-                f.write(f"<a id=\"verse-{s['verse']}\"></a>\n")
-                f.write(f"**॥ {s['verse']} ॥**\n\n")
-                f.write(f"{s['mula']}\n\n")
+                mula_iast = devanagari_to_iast(s['mula'])
+                
+                f.write(f'<a id="verse-{s["verse"]}" class="shloka-anchor"></a>\n')
+                f.write(f'<div class="verse-number">॥ {s["verse"]} ॥</div>\n\n')
+                f.write(f'<div class="mula-iast">\n{mula_iast}\n</div>\n\n')
+                f.write(f"```devanagari\n{s['mula']}\n```\n\n")
+                
                 if s['tika']:
-                    f.write(f"> *{s['tika']}*\n\n")
+                    tika_iast = devanagari_to_iast(s['tika'])
+                    f.write('<div class="tika-block">\n')
+                    f.write(f'  <p>{tika_iast}</p>\n')
+                    f.write(f'  <p class="tika-devanagari">{s["tika"]}</p>\n')
+                    f.write('</div>\n\n')
+                
                 f.write("---\n\n")
 
-    print(f"Успешно обработан текст: {text_name}. Заметок: {len(corpus)}.")
+    print(f"[{text_name}] База знаний сгенерирована: {len(corpus)} шлок, {len(chapters_data)} лонгридов.")
 
 # ==========================================
-# БЛОК ЗАПУСКА (УПРАВЛЕНИЕ ТЕКСТАМИ)
+# 6. ГЛАВНЫЙ ЦИКЛ ЗАПУСКА
 # ==========================================
-
 if __name__ == "__main__":
-    # 1. Обрабатываем Рамопакхьяну
-    if os.path.exists('MBh-Ramopakhyanam-Nilakantha.md'):
-        corpus_ram = parse_nilakantha_commentary('MBh-Ramopakhyanam-Nilakantha.md')
-        generate_markdown_scenarios(corpus_ram, text_name="Ramopakhyanam")
-
-    # 2. Обрабатываем Налопакхьяну (когда файл будет готов)
-    if os.path.exists('MBh-Nalopakhyanam-Nilakantha.md'):
-        corpus_nal = parse_nilakantha_commentary('MBh-Nalopakhyanam-Nilakantha.md')
-        generate_markdown_scenarios(corpus_nal, text_name="Nalopakhyanam")
+    target_file = 'MBh-Nalopakhyanam-Nilakantha.md'
+    text_name = "Nalopakhyanam"
+    
+    if os.path.exists(target_file):
+        print(f"Начат процесс обработки файла: {target_file}...")
+        
+        # 1. Парсинг
+        corpus = parse_nilakantha_commentary(target_file)
+        
+        # 2. Извлечение Самас
+        extract_and_build_samasas(corpus, text_name=text_name)
+        
+        # 3. Генерация Базы Знаний
+        generate_lms_markdown(corpus, text_name=text_name)
+        
+        print("\n✅ Выполнение успешно завершено. Проверьте папку 'Sanskrit_Vault'.")
+    else:
+        print(f"❌ Ошибка: Файл {target_file} не найден в текущей директории.")

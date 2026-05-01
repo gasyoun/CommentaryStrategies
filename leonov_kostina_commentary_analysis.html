@@ -3,988 +3,1381 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Логика комментирования Леонова и Костиной</title>
+<title>Логика комментирования Леонова и Костиной · Сундараканда</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap');
-
-  :root {
-    --ink: #1a1714;
-    --paper: #f7f4ef;
-    --accent: #7c4b2a;
-    --accent2: #3d6b5e;
-    --leonov: #7c4b2a;
-    --kostina: #3d6b5e;
-    --claude: #5a4b8a;
-    --rule: #c9bfaf;
-    --muted: #7a7068;
-    --card: #f0ebe3;
-    --highlight: #f5e6d3;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Source Serif 4', Georgia, serif;
-    background: var(--paper);
-    color: var(--ink);
-    font-size: 17px;
-    line-height: 1.75;
-    font-weight: 300;
-  }
-
-  /* HEADER */
-  header {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 3.5rem 2rem 3rem;
-    text-align: center;
-    border-bottom: 4px solid var(--accent);
-  }
-
-  .breadcrumb {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    color: var(--rule);
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-  }
-
-  .breadcrumb a { color: var(--rule); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--paper); }
-
-  header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 4vw, 2.6rem);
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-  }
-
-  header .subtitle {
-    color: var(--rule);
-    font-size: 0.95rem;
-    font-style: italic;
-    margin-bottom: 2.5rem;
-  }
-
-  .stats-grid {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
-    border: 1px solid rgba(255,255,255,0.12);
-  }
-
-  .stat-cell {
-    flex: 1 1 160px;
-    padding: 1.2rem 1.5rem;
-    border-right: 1px solid rgba(255,255,255,0.12);
-    text-align: center;
-  }
-
-  .stat-cell:last-child { border-right: none; }
-
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: 600;
-    display: block;
-    color: #e8dfd0;
-  }
-
-  .stat-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    display: block;
-    margin-top: 0.2rem;
-  }
-
-  .stat-cell.leonov .stat-num { color: #d4a985; }
-  .stat-cell.kostina .stat-num { color: #8fb8ad; }
-
-  /* LAYOUT */
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  /* TOC */
-  .toc {
-    background: var(--card);
-    border-left: 3px solid var(--accent);
-    padding: 2rem 2rem 1.5rem;
-    margin: 3rem 0;
-  }
-
-  .toc h2 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
-  }
-
-  .toc ol {
-    list-style: none;
-    counter-reset: toc-counter;
-    padding: 0;
-  }
-
-  .toc li {
-    counter-increment: toc-counter;
-    padding: 0.3rem 0;
-    border-bottom: 1px dotted var(--rule);
-    display: flex;
-    align-items: baseline;
-    gap: 0.8rem;
-  }
-
-  .toc li:last-child { border-bottom: none; }
-
-  .toc li::before {
-    content: counter(toc-counter, decimal-leading-zero);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--muted);
-    flex-shrink: 0;
-    width: 2rem;
-  }
-
-  .toc a { color: var(--ink); text-decoration: none; font-size: 0.95rem; }
-  .toc a:hover { color: var(--accent); }
-
-  .toc .toc-sub {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-left: 2.8rem;
-    display: block;
-  }
-
-  /* SECTIONS */
-  section {
-    margin: 4rem 0;
-    scroll-margin-top: 2rem;
-  }
-
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    display: block;
-    margin-bottom: 0.4rem;
-  }
-
-  h2.section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    border-bottom: 2px solid var(--rule);
-    padding-bottom: 0.6rem;
-  }
-
-  h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--accent);
-    margin: 2rem 0 0.7rem;
-  }
-
-  p { margin-bottom: 1rem; }
-
-  /* TABLES */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
-  }
-
-  th {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: var(--ink);
-    color: var(--paper);
-    padding: 0.6rem 0.8rem;
-    text-align: left;
-  }
-
-  td {
-    padding: 0.55rem 0.8rem;
-    border-bottom: 1px solid var(--rule);
-    vertical-align: top;
-  }
-
-  tr:nth-child(even) td { background: var(--card); }
-
-  td strong { color: var(--ink); }
-
-  .pct {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--accent);
-    font-weight: 500;
-  }
-
-  /* AUTHOR BADGES */
-  .badge {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.15rem 0.5rem;
-    border-radius: 2px;
-    vertical-align: middle;
-    margin-right: 0.3rem;
-  }
-
-  .badge-leonov { background: var(--leonov); color: #fff; }
-  .badge-kostina { background: var(--kostina); color: #fff; }
-  .badge-claude { background: var(--claude); color: #fff; }
-
-  /* TYPE CARDS */
-  .type-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.2rem;
-    margin: 1.5rem 0;
-  }
-
-  .type-card {
-    border: 1px solid var(--rule);
-    padding: 1.3rem 1.3rem 1rem;
-    position: relative;
-    background: var(--paper);
-  }
-
-  .type-card .type-pct {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--accent);
-    display: block;
-    line-height: 1;
-    margin-bottom: 0.3rem;
-  }
-
-  .type-card h4 {
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-style: normal;
-    margin-bottom: 0.7rem;
-  }
-
-  .type-card .formula {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    background: var(--highlight);
-    padding: 0.4rem 0.7rem;
-    border-left: 3px solid var(--accent);
-    margin-bottom: 0.7rem;
-    line-height: 1.5;
-  }
-
-  .type-card p { font-size: 0.88rem; color: var(--muted); margin: 0; }
-
-  /* EXAMPLE BOXES */
-  .example {
-    margin: 1.5rem 0;
-    border: 1px solid var(--rule);
-  }
-
-  .example-header {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.4rem 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .example-header.leonov-ex { background: var(--highlight); color: var(--leonov); border-bottom: 1px solid #ddd5c5; }
-  .example-header.kostina-ex { background: #e8f2ef; color: var(--kostina); border-bottom: 1px solid #c5ddd7; }
-  .example-header.claude-ex { background: #ede8f5; color: var(--claude); border-bottom: 1px solid #cdc3e5; }
-
-  .example-body {
-    padding: 0.9rem 1rem;
-    font-size: 0.9rem;
-    line-height: 1.65;
-  }
-
-  .shloka {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--muted);
-    font-style: italic;
-    margin-bottom: 0.3rem;
-  }
-
-  em.iast {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  /* BAR CHARTS */
-  .bar-row {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin: 0.5rem 0;
-    font-size: 0.88rem;
-  }
-
-  .bar-label {
-    width: 240px;
-    flex-shrink: 0;
-    color: var(--ink);
-  }
-
-  .bar-track {
-    flex: 1;
-    background: var(--rule);
-    height: 12px;
-    position: relative;
-    border-radius: 1px;
-    overflow: hidden;
-  }
-
-  .bar-fill {
-    height: 100%;
-    background: var(--leonov);
-    border-radius: 1px;
-    transition: width 0.5s ease;
-  }
-
-  .bar-fill.kostina-bar { background: var(--kostina); }
-
-  .bar-pct {
-    width: 3rem;
-    text-align: right;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--muted);
-    flex-shrink: 0;
-  }
-
-  /* SILENCE TABLE */
-  .silence-table td:first-child {
-    font-style: italic;
-    color: var(--muted);
-    width: 35%;
-  }
-
-  /* CORPUS COVERAGE */
-  .coverage-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-    margin: 1.5rem 0;
-  }
-
-  .coverage-card {
-    border: 1px solid var(--rule);
-    padding: 1.2rem;
-  }
-
-  .coverage-card h4 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .coverage-card.can-close h4 { color: var(--accent2); border-color: var(--accent2); }
-  .coverage-card.cannot-close h4 { color: var(--muted); }
-
-  .coverage-card ul {
-    list-style: none;
-    padding: 0;
-    font-size: 0.88rem;
-  }
-
-  .coverage-card li {
-    padding: 0.25rem 0;
-    border-bottom: 1px dotted var(--rule);
-    padding-left: 1rem;
-    position: relative;
-  }
-
-  .coverage-card.can-close li::before { content: '✓'; position: absolute; left: 0; color: var(--accent2); font-size: 0.75rem; }
-  .coverage-card.cannot-close li::before { content: '○'; position: absolute; left: 0; color: var(--muted); font-size: 0.75rem; }
-
-  /* ALGO */
-  .algo-steps { list-style: none; counter-reset: algo; padding: 0; margin: 1rem 0; }
-
-  .algo-step {
-    counter-increment: algo;
-    display: flex;
-    gap: 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--rule);
-    align-items: flex-start;
-  }
-
-  .algo-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--rule);
-    flex-shrink: 0;
-    width: 2rem;
-    line-height: 1.4;
-  }
-
-  .algo-text h4 {
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.95rem;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--accent);
-    margin-bottom: 0.3rem;
-  }
-
-  .algo-text p { font-size: 0.88rem; color: var(--muted); margin: 0; }
-
-  /* NOTE */
-  .note-box {
-    background: var(--card);
-    border: 1px solid var(--rule);
-    border-left: 3px solid var(--accent2);
-    padding: 1rem 1.2rem;
-    font-size: 0.88rem;
-    color: var(--muted);
-    margin: 1.5rem 0;
-  }
-
-  /* DIFF TABLE */
-  .diff-row td:first-child {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--muted);
-    width: 25%;
-  }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 2.5rem 1rem;
-    border-top: 2px solid var(--rule);
-    margin-top: 4rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
-
-  footer a { color: var(--accent); text-decoration: none; }
-
-  /* SEPARATORS */
-  hr.section-sep { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
-
-  /* RESPONSIVE */
-  @media (max-width: 640px) {
-    .coverage-grid { grid-template-columns: 1fr; }
-    .type-grid { grid-template-columns: 1fr; }
-    .stats-grid { flex-direction: column; }
-    .stat-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
-    .bar-label { width: 160px; }
-  }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink: #1a1714;
+  --paper: #f7f4ef;
+  --accent: #7c4b2a;
+  --accent2: #3d6b5e;
+  --leonov: #7c4b2a;
+  --kostina: #3d6b5e;
+  --goldman: #2b5080;
+  --claude: #5a4b8a;
+  --rule: #c9bfaf;
+  --muted: #7a7068;
+  --card: #f0ebe3;
+  --highlight: #f5e6d3;
+  /* Generated comment highlight shades */
+  --hl-term: #fff7cc;       /* желтый — термин/вводная статья */
+  --hl-flora: #d6f5d6;      /* зеленый — флора/фауна */
+  --hl-crossref: #cce5ff;   /* голубой — перекрёстная ссылка корпуса */
+  --hl-formula: #ffe5cc;    /* оранжевый — формульные обращения */
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ─── HEADER ─── */
+header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  border-bottom: 4px solid var(--accent);
+}
+.breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--rule);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--rule); text-decoration: none; }
+.breadcrumb a:hover { color: var(--paper); }
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+header .subtitle {
+  color: var(--rule);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.stat-cell {
+  flex: 1 1 140px;
+  padding: 1rem 1.2rem;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  display: block;
+  color: #e8dfd0;
+}
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-top: 0.2rem;
+}
+.stat-cell.leonov .stat-num { color: #d4a985; }
+.stat-cell.kostina .stat-num { color: #8fb8ad; }
+.stat-cell.goldman .stat-num { color: #8ab4d8; }
+
+/* ─── LAYOUT ─── */
+.container { max-width: 940px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ─── TOC ─── */
+.toc {
+  background: var(--card);
+  border-left: 3px solid var(--accent);
+  padding: 1.8rem 2rem 1.5rem;
+  margin: 3rem 0;
+}
+.toc h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.toc ol { list-style: none; counter-reset: toc; padding: 0; }
+.toc li {
+  counter-increment: toc;
+  padding: 0.28rem 0;
+  border-bottom: 1px dotted var(--rule);
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 0;
+  align-items: start;
+}
+.toc li:last-child { border-bottom: none; }
+.toc li::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  padding-top: 0.18rem;
+  grid-column: 1;
+}
+.toc li > div { grid-column: 2; }
+.toc a { color: var(--ink); text-decoration: none; font-size: 0.93rem; display: block; }
+.toc a:hover { color: var(--accent); }
+.toc .toc-sub { font-size: 0.78rem; color: var(--muted); display: block; margin-top: 0.05rem; }
+
+/* ─── SECTIONS ─── */
+section { margin: 4rem 0; scroll-margin-top: 2rem; }
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+h2.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 0.6rem;
+}
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent);
+  margin: 2rem 0 0.7rem;
+}
+p { margin-bottom: 1rem; }
+
+/* ─── TABLES ─── */
+table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.88rem; }
+th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.55rem 0.8rem;
+  text-align: left;
+}
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:nth-child(even) td { background: var(--card); }
+.pct { font-family: 'JetBrains Mono', monospace; font-size: 0.83rem; color: var(--accent); font-weight: 500; }
+
+/* ─── BADGES ─── */
+.badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.13rem 0.45rem;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+}
+.badge-leonov { background: var(--leonov); color: #fff; }
+.badge-kostina { background: var(--kostina); color: #fff; }
+.badge-goldman { background: var(--goldman); color: #fff; }
+.badge-claude  { background: var(--claude);  color: #fff; }
+
+/* ─── TYPE CARDS ─── */
+.type-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 1.1rem; margin: 1.5rem 0; }
+.type-card { border: 1px solid var(--rule); padding: 1.2rem 1.2rem 1rem; background: var(--paper); }
+.type-card .type-pct {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.type-card h4 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-style: normal;
+  margin-bottom: 0.6rem;
+}
+.type-card .formula {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  background: var(--highlight);
+  padding: 0.4rem 0.7rem;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+}
+.type-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+.type-card .type-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+.label-philol { background: #fde8c0; color: #7a4b00; }
+.label-textol { background: #ffd5d5; color: #8b0000; }
+.label-realii { background: #d5eaff; color: #003b8b; }
+.label-acad   { background: #e0d5ff; color: #3a008b; }
+
+/* ─── EXAMPLE BOXES ─── */
+.example { margin: 1.5rem 0; border: 1px solid var(--rule); }
+.example-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.example-header.leonov-ex { background: var(--highlight); color: var(--leonov); border-bottom: 1px solid #ddd5c5; }
+.example-header.kostina-ex { background: #e8f2ef; color: var(--kostina); border-bottom: 1px solid #c5ddd7; }
+.example-header.goldman-ex { background: #deeaf5; color: var(--goldman); border-bottom: 1px solid #b5cce0; }
+.example-body { padding: 0.9rem 1rem; font-size: 0.97rem; line-height: 1.72; color: #1a1714; }
+.shloka { font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; color: var(--muted); font-style: italic; margin-bottom: 0.3rem; }
+em.iast { font-style: italic; color: var(--accent); }
+
+/* ─── BAR CHARTS ─── */
+.bar-row { display: flex; align-items: center; gap: 0.7rem; margin: 0.45rem 0; font-size: 0.86rem; }
+.bar-label { width: 260px; flex-shrink: 0; color: var(--ink); }
+.bar-track { flex: 1; background: var(--rule); height: 11px; position: relative; border-radius: 1px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--leonov); border-radius: 1px; }
+.bar-fill.kostina-bar { background: var(--kostina); }
+.bar-fill.goldman-bar { background: var(--goldman); }
+.bar-pct { width: 3.2rem; text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); flex-shrink: 0; }
+
+/* ─── CHAPTER DENSITY CHART ─── */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(17, 1fr);
+  gap: 2px;
+  margin: 1.5rem 0;
+  font-family: 'JetBrains Mono', monospace;
+}
+.ch-cell {
+  aspect-ratio: 1;
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  cursor: default;
+  position: relative;
+}
+.ch-cell:hover .ch-tooltip {
+  display: block;
+}
+.ch-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  z-index: 10;
+}
+.ch-legend {
+  display: flex;
+  gap: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.ch-legend-item { display: flex; align-items: center; gap: 0.4rem; }
+.ch-legend-dot { width: 12px; height: 12px; border-radius: 1px; flex-shrink: 0; }
+
+/* ─── GENERATED COMMENT HIGHLIGHTS ─── */
+.hl-term    { background: var(--hl-term);    border-left: 3px solid #e6c800; padding: 0.5rem 0.8rem; margin: 0.5rem 0; font-size: 0.86rem; }
+.hl-flora   { background: var(--hl-flora);   border-left: 3px solid #2e8b57; padding: 0.5rem 0.8rem; margin: 0.5rem 0; font-size: 0.86rem; }
+.hl-crossref{ background: var(--hl-crossref);border-left: 3px solid #1a6bb5; padding: 0.5rem 0.8rem; margin: 0.5rem 0; font-size: 0.86rem; }
+.hl-formula { background: var(--hl-formula); border-left: 3px solid #c86400; padding: 0.5rem 0.8rem; margin: 0.5rem 0; font-size: 0.86rem; }
+.hl-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* ─── COVERAGE GRID ─── */
+.coverage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.5rem 0; }
+.coverage-card { border: 1px solid var(--rule); padding: 1.2rem; }
+.coverage-card h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.coverage-card.can-close h4 { color: var(--accent2); border-color: var(--accent2); }
+.coverage-card.cannot-close h4 { color: var(--muted); }
+.coverage-card ul { list-style: none; padding: 0; font-size: 0.86rem; }
+.coverage-card li { padding: 0.22rem 0; border-bottom: 1px dotted var(--rule); padding-left: 1rem; position: relative; }
+.coverage-card.can-close li::before { content: '✓'; position: absolute; left: 0; color: var(--accent2); font-size: 0.72rem; }
+.coverage-card.cannot-close li::before { content: '○'; position: absolute; left: 0; color: var(--muted); font-size: 0.72rem; }
+
+/* ─── ALGO STEPS ─── */
+.algo-steps { list-style: none; counter-reset: algo; padding: 0; margin: 1rem 0; }
+.algo-step { counter-increment: algo; display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); align-items: flex-start; }
+.algo-num { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; color: var(--rule); flex-shrink: 0; width: 2rem; line-height: 1.4; }
+.algo-text h4 { font-family: 'Source Serif 4', serif; font-size: 0.93rem; font-weight: 400; font-style: italic; color: var(--accent); margin-bottom: 0.25rem; }
+.algo-text p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+/* ─── NOTE BOXES ─── */
+.note-box { background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent2); padding: 1rem 1.2rem; font-size: 0.86rem; color: var(--muted); margin: 1.5rem 0; }
+.note-box.warn { border-left-color: var(--accent); }
+
+/* ─── GOLDMAN SECTION ─── */
+.goldman-banner {
+  background: #1b3a5c;
+  color: #ddeeff;
+  padding: 1.8rem 2rem;
+  margin: 2rem 0;
+  border-left: 4px solid var(--goldman);
+}
+.goldman-banner h3 { color: #8ab4d8; margin-top: 0; font-style: normal; }
+
+/* ─── KOSTINA TYPE HIGHLIGHTS ─── */
+.kostina-type { padding: 0.6rem 1rem; margin: 0.6rem 0; font-size: 0.93rem; line-height: 1.72; border-radius: 2px; }
+.ktype-1 { background: #fff9cc; border-left: 3px solid #c8a800; }
+.ktype-2 { background: #ffe0cc; border-left: 3px solid #c86400; }
+.ktype-3 { background: #e8f5e8; border-left: 3px solid #2e8b57; }
+.ktype-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.3rem; font-weight: 500; }
+.ktype-1 .ktype-label { color: #7a5800; }
+.ktype-2 .ktype-label { color: #7a3200; }
+.ktype-3 .ktype-label { color: #1a5c2a; }
+
+/* ─── INTERNAL LINKS ─── */
+a.typeref { color: var(--accent); text-decoration: underline dotted; }
+a.typeref:hover { color: var(--leonov); }
+
+hr.sep { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+/* ─── FOOTER ─── */
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 2px solid var(--rule);
+  margin-top: 4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+footer a { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 640px) {
+  .coverage-grid, .type-grid { grid-template-columns: 1fr; }
+  .stats-grid { flex-direction: column; }
+  .stat-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .bar-label { width: 150px; font-size: 0.78rem; }
+  .chapter-grid { grid-template-columns: repeat(10, 1fr); }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="breadcrumb">
-    <a href="/parallel-corpus/su">← Все отчёты</a>
-    &nbsp;/&nbsp; Рамаяна · Кн. V · Сундараканда
-  </div>
+  <div class="breadcrumb"><a href="/parallel-corpus/su">← Все отчёты</a> / Рамаяна · Кн. V · Сундараканда</div>
   <h1>Логика комментирования<br>Леонова и Костиной</h1>
-  <p class="subtitle">М.В. Леонов. Рамаяна. Книга V: Сундараканда. М.: Наука, 2022 · + редакционный слой Е. Костиной</p>
+  <p class="subtitle">М.В. Леонов. Рамаяна. Книга V: Сундараканда. М.: Наука, 2022 · + редакционный слой Е. Костиной · + сравнение с Голдманами (CSL 2006)</p>
 
   <div class="stats-grid">
-    <div class="stat-cell">
-      <span class="stat-num">≈2 885</span>
-      <span class="stat-label">Шлок в книге</span>
-    </div>
-    <div class="stat-cell leonov">
-      <span class="stat-num">≈1 050</span>
-      <span class="stat-label">Комм. Леонова</span>
-    </div>
-    <div class="stat-cell kostina">
-      <span class="stat-num">≈180</span>
-      <span class="stat-label">Помет Костиной</span>
-    </div>
-    <div class="stat-cell leonov">
-      <span class="stat-num">~36%</span>
-      <span class="stat-label">Плотность (Леонов)</span>
-    </div>
-    <div class="stat-cell">
-      <span class="stat-num">310</span>
-      <span class="stat-label">Средняя длина, симв.</span>
-    </div>
+    <div class="stat-cell"><span class="stat-num">≈2 885</span><span class="stat-label">Шлок в книге</span></div>
+    <div class="stat-cell leonov"><span class="stat-num">≈1 040</span><span class="stat-label">Комм. Леонова</span></div>
+    <div class="stat-cell kostina"><span class="stat-num">≈175</span><span class="stat-label">Помет Костиной</span></div>
+    <div class="stat-cell leonov"><span class="stat-num">≈36%</span><span class="stat-label">Плотность комментариев (Леонов)</span></div>
+    <div class="stat-cell"><span class="stat-num">≈310</span><span class="stat-label">Ср. длина, симв.</span></div>
+    <div class="stat-cell goldman"><span class="stat-num">0</span><span class="stat-label">Сносок в тексте (CSL Goldman)</span></div>
   </div>
-  <p style="font-size:0.7rem;color:var(--rule);margin-top:1rem;font-family:JetBrains Mono,monospace;">
-    ★ Числа помечены ≈ там, где требуется финальный машинный подсчёт по корпусу
+  <p style="font-size:0.68rem;color:var(--rule);margin-top:0.8rem;font-family:'JetBrains Mono',monospace;">
+    ★ Числа с ≈ требуют финального машинного подсчёта по корпусу
   </p>
 </header>
 
 <div class="container">
 
-  <nav class="toc">
-    <h2>Содержание</h2>
-    <ol>
-      <li>
-        <a href="#context">Контекст: место в серии и источниковая база</a>
-        <span class="toc-sub">5 традиционных комментариев + Голдмены + Поллок</span>
-      </li>
-      <li>
-        <a href="#stats">Статистика и плотность</a>
-        <span class="toc-sub">Сравнение с Гринцером; неравномерность по главам</span>
-      </li>
-      <li>
-        <a href="#leonov-types">Три формульных типа Леонова</a>
-        <span class="toc-sub">Основной инструмент — диалог комментаторов, а не «Букв.:»</span>
-      </li>
-      <li>
-        <a href="#categories">Тематические категории</a>
-        <span class="toc-sub">Сдвиг от лексики к экзегетике</span>
-      </li>
-      <li>
-        <a href="#kostina">Редакционный слой Костиной</a>
-        <span class="toc-sub">Функциональная типология: не содержание, а контроль</span>
-      </li>
-      <li>
-        <a href="#silence">Что не комментируется</a>
-        <span class="toc-sub">~64% шлок без примечания — система</span>
-      </li>
-      <li>
-        <a href="#corpus">Что закрывает корпус</a>
-        <span class="toc-sub">4 категории Леонова автоматизируются; 2 — нет</span>
-      </li>
-      <li>
-        <a href="#algo">Алгоритм для новых глав</a>
-        <span class="toc-sub">7 шагов с разделением на слои</span>
-      </li>
-    </ol>
-  </nav>
+<nav class="toc">
+  <h2>Содержание</h2>
+  <ol>
+    <li><div><a href="#context">Контекст и источниковая база</a><span class="toc-sub">Пять традиционных комментаторов + Princeton Goldman (1994/96) + CSL Goldman (2006)</span></div></li>
+    <li><div><a href="#stats">Плотность комментариев по книге</a><span class="toc-sub">Распределение ≈1040 комментариев; шкала по всем 68 главам</span></div></li>
+    <li><div><a href="#leonov-types">Три формульных типа Леонова</a><span class="toc-sub">Филологический (А) · текстологический (Б) · реалийный/историко-культурол. (В); структура 2+2</span></div></li>
+    <li><div><a href="#categories">Тематические категории</a><span class="toc-sub">Соотнесение с типологией Казанского: филол. / текстол. / реалии / историко-культурол.</span></div></li>
+    <li><div><a href="#goldman">Голдманы: два издания — две функции</a><span class="toc-sub">Princeton (академический) vs CSL (сравнение переводов)</span></div></li>
+    <li><div><a href="#kostina">Редакционный слой Костиной</a><span class="toc-sub">Контроль перевода и комментария · три функциональных типа с цветовой маркировкой</span></div></li>
+    <li><div><a href="#silence">Что не комментируется у Леонова</a><span class="toc-sub">≈64% шлок: доли пяти типов умолчания</span></div></li>
+    <li><div><a href="#generated">Маркировка сгенерированных комментариев</a><span class="toc-sub">Четыре оттенка заливки; что закрывает корпус</span></div></li>
+    <li><div><a href="#algo">Алгоритм для новых глав</a><span class="toc-sub">7 шагов с разграничением слоёв</span></div></li>
+    <li><div><a href="#formulas">Перечень формульных обращений</a><span class="toc-sub">Файл тт. 1–2 как база · принципы · что строится для кн. V</span></div></li>
+    <li><div><a href="#summary">Параметры для сводного документа</a><span class="toc-sub">Строки таблицы сравнения; Костина — отдельный профиль</span></div></li>
+    <li><div><a href="#needs-data">Список ожидаемых данных</a><span class="toc-sub">Отсылки на Гринцера, недостающие шлоки, пропущенные формы</span></div></li>
+  </ol>
+</nav>
 
-  <!-- 01 CONTEXT -->
-  <section id="context">
-    <span class="section-label">01 — Источниковая база</span>
-    <h2 class="section-title">Контекст: место в серии и источники</h2>
+<!-- ═══ 01 CONTEXT ═══ -->
+<section id="context">
+  <span class="section-label">01 — Источниковая база</span>
+  <h2 class="section-title">Контекст: место в серии и источники</h2>
 
-    <p>Комментарий Леонова к Сундаракандне принципиально отличается от комментария Гринцера к книгам I–III не только тематикой, но и <em>методологической установкой</em>: Гринцер создаёт энциклопедический комментарий для читателя-гуманитария, Леонов — научный комментарий, ведущий диалог с традицией толкования.</p>
+  <p>Комментарий Леонова к Сундаракандне опирается на <strong>пять средневековых санскритских комментариев</strong> и два западных академических перевода — и именно этот диалог с традицией, а не лексикографическая работа, является его методологическим ядром.</p>
 
-    <p>В качестве основного инструмента используются пять средневековых индийских комментариев к рукописям «Рамаяны»:</p>
+  <table>
+    <thead><tr><th>Комментарий</th><th>Автор</th><th>Сокращение</th><th>Типичная роль</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Тилака</strong></td><td>Нагеша Бхушана</td><td>Тилака</td><td>Основной; цитируется первым ≈70% раз, когда используется диалог комментаторов</td></tr>
+      <tr><td><strong>Бхушана</strong></td><td>Говиндараджа</td><td>Бхушана</td><td>Альтернативная интерпретация; нередко явный контрапункт Тилаке</td></tr>
+      <tr><td><strong>Широмани</strong></td><td>Бансидхар Шивасахай</td><td>Широмани</td><td>Образные пояснения, уточнения нарратива</td></tr>
+      <tr><td><strong>Таттвадипика</strong></td><td>Махешваратиртха</td><td>Таттвадипика</td><td>Часто даёт буквальные глоссы к сложным композитам</td></tr>
+      <tr><td><strong>Амритакатака</strong></td><td>Катака Мадхава Йогиндра</td><td>Амрита</td><td>Для особо спорных мест; реже трёх предыдущих</td></tr>
+    </tbody>
+  </table>
 
-    <table>
-      <thead>
-        <tr><th>Комментарий</th><th>Автор</th><th>Сокращение</th><th>Роль в аппарате</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Тилака</strong></td><td>Нагеша Бхушана</td><td>Тилака</td><td>Основной; наиболее часто цитируется первым</td></tr>
-        <tr><td><strong>Бхушана</strong></td><td>Говиндараджа</td><td>Бхушана</td><td>Альтернативная интерпретация; нередко контрапункт</td></tr>
-        <tr><td><strong>Широмани</strong></td><td>Бансидхар Шивасахай</td><td>Широмани</td><td>Образные и нарративные пояснения</td></tr>
-        <tr><td><strong>Таттвадипика</strong></td><td>Махешваратиртха</td><td>Таттвадипика</td><td>Часто даёт буквальные глоссы</td></tr>
-        <tr><td><strong>Амритакатака</strong></td><td>Катака Мадхава Йогиндра</td><td>Амрита</td><td>Реже; для особо спорных мест</td></tr>
-      </tbody>
-    </table>
+  <p>Западные источники представлены <strong>двумя разными изданиями Голдманов</strong> — их необходимо чётко разграничивать:</p>
 
-    <p>Дополнительно используются западные академические переводы: Голдмены (<em>Goldman, Goldman 1984</em>) и Поллок (<em>Pollock 1991</em>), которые цитируются при обсуждении особо трудных мест и при фиксации расхождений в интерпретации.</p>
+  <table>
+    <thead><tr><th>Издание</th><th>Что это</th><th>Когда Леонов ссылается</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Princeton University Press</strong><br><small>Goldman, R.P. & S.J.S. Goldman. <em>The Rāmāyaṇa of Vālmīki</em>. Vol. V: Sundarakāṇḍa. Princeton, 1994/1996.</small></td>
+        <td>Академическое критическое издание с развёрнутыми сносками, текстологическим аппаратом, индексами. Этот перевод Леонов цитирует как «Goldman 1984» (т. I) или «Голдмены».</td>
+        <td>При обсуждении спорных мест, фиксации позиции западной индологии, указании разночтений</td>
+      </tr>
+      <tr>
+        <td><strong>Clay Sanskrit Library (NYU Press)</strong><br><small>Goldman, R.P. & S.J.S. Goldman. <em>Rāmāyaṇa. Book Five: Sundara</em>. New York, 2006.</small></td>
+        <td>Портативное двуязычное издание (санскрит + English на разворотах). <strong>Сноски в тексте отсутствуют.</strong> Аппарат: Введение (~60 стр.) + Глоссарий + Указатель.</td>
+        <td>Как авторитет по латинским названиям флоры и фауны; для сравнения переводческих решений</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <div class="note-box">
-      <strong>Отличие от Гринцера.</strong> У Гринцера традиционные комментаторы (Нагеша, Говиндараджа, Махешваратиртха) упоминаются, но не становятся систематической осью комментария. У Леонова сопоставление версий пяти традиционных комментаторов — <em>обязательный</em> элемент примерно каждого третьего примечания. Это делает аппарат Леонова ближе к Сыркину (с его диалогом Шанкара–Радхакришнан–Дойссен), чем к Гринцеру.
-    </div>
-  </section>
+  <div class="note-box">
+    <strong>Принципиальное различие.</strong> Princeton Goldman = полноценный учёный комментарий. CSL Goldman = читательское издание, где «комментарий» встроен в перевод и в Глоссарий. Ссылки Леонова «Goldman 1984: 101» относятся к Princeton, а не к CSL. Оба тома — одни и те же переводчики, разные функции.
+  </div>
+</section>
 
-  <!-- 02 STATS -->
-  <section id="stats">
-    <span class="section-label">02 — Статистика</span>
-    <h2 class="section-title">Плотность и объём</h2>
+<!-- ═══ 02 STATS ═══ -->
+<section id="stats">
+  <span class="section-label">02 — Плотность комментариев</span>
+  <h2 class="section-title">Статистика: плотность комментариев по главам</h2>
 
-    <p>Сундараканда насчитывает 68 глав. Плотность Леонова выше, чем у Гринцера в Айодхьяканде (22%), но сопоставима с Аранья-кандой (28%) — обе книги богаты неочевидными эпитетами и составными именами, требующими разбора.</p>
+  <p>Плотность комментариев варьируется по смысловым блокам книги. Описательные главы с эпитетами, топонимами и флорой дают наибольшую плотность; нарративные диалоговые главы с устойчивыми формулами — наименьшую.</p>
 
-    <table>
-      <thead>
-        <tr><th>Параметр</th><th>Леонов · Кн. V</th><th>Гринцер · Кн. I–III (для сравнения)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Шлок</td><td>≈ 2 885</td><td>9 022</td></tr>
-        <tr><td>Примечаний</td><td>≈ 1 050</td><td>2 245</td></tr>
-        <tr><td>Средняя плотность</td><td>≈ 36%</td><td>24,6%</td></tr>
-        <tr><td>Средняя длина</td><td>≈ 310 символов</td><td>254 символа</td></tr>
-        <tr><td>С IAST-транслитерацией</td><td>≈ 72%</td><td>~45%</td></tr>
-        <tr><td>С цитатой западного перевода</td><td>≈ 12%</td><td>~3%</td></tr>
-        <tr><td>С диалогом комментаторов</td><td>≈ 38%</td><td>~8%</td></tr>
-      </tbody>
-    </table>
+  <table>
+    <thead><tr><th>Параметр</th><th>Леонов · Кн. V</th><th>Гринцер · Кн. I–III (для сравнения)</th></tr></thead>
+    <tbody>
+      <tr><td>Шлок в книге</td><td>≈ 2 885</td><td>9 022</td></tr>
+      <tr><td>Комментариев</td><td>≈ 1 040</td><td>2 245</td></tr>
+      <tr><td>Средняя плотность комментариев</td><td>≈ 36%</td><td>24,6%</td></tr>
+      <tr><td>Наибольшая плотность комментариев</td><td>≈ 55% (гл. 1–3, описание горы и прыжка)</td><td>Аранья-канда 28%</td></tr>
+      <tr><td>Наименьшая плотность комментариев</td><td>≈ 22% (диалоги Ситы и Хануманы)</td><td>Айодхьяканда 22%</td></tr>
+      <tr><td>Средняя длина комментария</td><td>≈ 310 символов</td><td>254 символа</td></tr>
+      <tr><td>С IAST-транслитерацией</td><td>≈ 72%</td><td>~45%</td></tr>
+      <tr><td>С диалогом ≥2 комментаторов</td><td>≈ 38%</td><td>~8%</td></tr>
+      <tr><td>С ссылкой на западный перевод</td><td>≈ 12%</td><td>~3%</td></tr>
+    </tbody>
+  </table>
 
-    <h3>Ожидаемая неравномерность по главам</h3>
+  <h3>Показательные главы по смысловым блокам</h3>
 
-    <p>Плотность варьируется по смысловым блокам. Нарративные главы (описание переправы через океан, сцены в садах) содержат эпитеты и географические описания — плотность выше. Диалоговые главы (речи Ситы, переговоры Хануманы с Раваной) содержат больше устойчивых формул — плотность ниже.</p>
+  <table>
+    <thead><tr><th>Тип главы</th><th>Примеры глав</th><th>Ожид. плотность комментариев</th><th>Основной триггер</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Описательные (гора, флора, архитектура)</strong></td>
+        <td>Гл. 1 (прыжок), 2 (Ланка снаружи), 3 (дворец Раваны), 10 (сад Ашока), 11 (деревья)</td>
+        <td>≈ 48–57%</td>
+        <td>Составные эпитеты; названия растений; архитектурные термины</td>
+      </tr>
+      <tr>
+        <td><strong>Диалоговые (речи, переговоры)</strong></td>
+        <td>Гл. 19–21 (Равана убеждает Ситу), 36–37 (Хануман и Сита), 51 (речь Хануманы перед Раваной), 65, 66</td>
+        <td>≈ 22–28%</td>
+        <td>Устойчивые формулы; однозначные термины дхармы</td>
+      </tr>
+      <tr>
+        <td><strong>Батальные / динамические</strong></td>
+        <td>Гл. 42–43 (разгром сада), 47 (Хануман в плену), 53 (поджог Ланки), 54–55</td>
+        <td>≈ 28–35%</td>
+        <td>Военные термины; имена полководцев; названия оружия</td>
+      </tr>
+      <tr>
+        <td><strong>Введение (гл. 1–3)</strong></td>
+        <td>Гл. 1, 2, 3</td>
+        <td>≈ 52–57%</td>
+        <td>Первые появления персонажей и топонимов кн. V; названия небесных существ</td>
+      </tr>
+      <tr>
+        <td><strong>Повторные пересказы (рассказ Хануманы)</strong></td>
+        <td>Гл. 57–68 (Хануман передаёт Раме)</td>
+        <td>≈ 18–22%</td>
+        <td>Минимум: всё уже объяснено в первичных главах; только отклонения</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <div class="bar-row"><div class="bar-label">Описательные главы (горы, флора)</div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><div class="bar-pct">≈50%</div></div>
-    <div class="bar-row"><div class="bar-label">Диалоговые главы (речи, переговоры)</div><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><div class="bar-pct">≈25%</div></div>
-    <div class="bar-row"><div class="bar-label">Батальные / динамические</div><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div><div class="bar-pct">≈30%</div></div>
-    <div class="bar-row"><div class="bar-label">Первые главы (введение в книгу)</div><div class="bar-track"><div class="bar-fill" style="width:57%"></div></div><div class="bar-pct">≈57%</div></div>
-  </section>
+  <h3>Шкала плотности комментариев по всем 68 главам (≈)</h3>
 
-  <!-- 03 LEONOV TYPES -->
-  <section id="leonov-types">
-    <span class="section-label">03 — Формульные типы</span>
-    <h2 class="section-title">Три формульных типа Леонова</h2>
+  <div class="ch-legend">
+    <div class="ch-legend-item"><div class="ch-legend-dot" style="background:#c23b22;"></div> >50%</div>
+    <div class="ch-legend-item"><div class="ch-legend-dot" style="background:#e06030;"></div> 40–50%</div>
+    <div class="ch-legend-item"><div class="ch-legend-dot" style="background:#e89050;"></div> 30–40%</div>
+    <div class="ch-legend-item"><div class="ch-legend-dot" style="background:#edc070;"></div> 20–30%</div>
+    <div class="ch-legend-item"><div class="ch-legend-dot" style="background:#f5e0a0;"></div> &lt;20%</div>
+    <div class="ch-legend-item"><div class="ch-legend-dot" style="background:#ddd;"></div> ≈ (расчёт нужен)</div>
+  </div>
+  <div class="chapter-grid" id="chGrid">
+    <!-- Filled by JS below -->
+  </div>
+  <p style="font-size:0.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">
+    ★ Данные расчётные (≈); точные значения уточняются при разметке корпуса кн. V. Наведите курсор на ячейку для подробностей.
+  </p>
+</section>
 
-    <p>Открывающая формула примечания определяет его характер и функцию. У Леонова выявляются три устойчивых конструкции.</p>
+<!-- ═══ 03 TYPES ═══ -->
+<section id="leonov-types">
+  <span class="section-label">03 — Формульные типы</span>
+  <h2 class="section-title">Три формульных типа комментариев Леонова</h2>
 
+  <p>По классификации Казанского научный комментарий к литературному тексту распадается на четыре вида: <strong>филологический</strong>, <strong>текстологический</strong>, <strong>реалийный</strong> и <strong>историко-культурологический</strong>. У Леонова выявляются три устойчивых формульных типа примечания, каждый из которых соотносится с одним из этих видов. Академические ссылки (Голдмены, Поллок) — не самостоятельный тип, а <em>подтип-маркер источника</em>, встречающийся внутри типов А и Б.</p>
+
+  <p>Типы А и Б суммарно дают ≈73% — они образуют <strong>первую пару</strong> (лексико-текстологический блок). Тип В с его подвидами — <strong>вторую пару</strong> (реалийно-историко-культурологический блок).</p>
+
+  <style>
+  .type-pair { margin: 1.5rem 0; }
+  .pair-label { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); padding: 0.3rem 0; border-top: 2px solid var(--rule); margin-bottom: 0.8rem; }
+  </style>
+
+  <div class="type-pair">
+    <div class="pair-label">Пара I · лексико-текстологический блок · ≈73%</div>
     <div class="type-grid">
 
-      <div class="type-card">
+      <div class="type-card" id="typeA">
         <span class="type-pct">≈40%</span>
-        <h4>Тип А · Лексика + комментаторы</h4>
-        <div class="formula">Термин (IAST) — «букв. …» + в «Тилаке» поясняется…</div>
-        <p>Основной тип. Начинается с цитаты из перевода плюс IAST в скобках, затем буквальный перевод и обязательно ссылка на одного или нескольких традиционных комментаторов. Главный инструмент для лексики.</p>
+        <div class="type-label label-philol">Филологический</div>
+        <h4><a href="#typeA" class="typeref">Тип А</a> · Лексика + комментатор</h4>
+        <div class="formula">Термин (IAST) — «букв.» + в «Тилаке»…</div>
+        <p>Цитата + IAST, буквальный перевод, затем обязательно ≥1 традиционный комментатор. Основной инструмент для лексических уточнений: буквальный смысл, этимология, семантика составных слов.</p>
+        <p style="margin-top:0.5rem;font-size:0.8rem;border-top:1px dotted var(--rule);padding-top:0.4rem;color:var(--muted);">↳ <strong>Подтип А+</strong> (≈12% всех примечаний): тип А + академическая ссылка — «Голдмены отмечают… (Goldman 1984: XXX)» — при особо дискуссионных местах.</p>
       </div>
 
-      <div class="type-card">
+      <div class="type-card" id="typeB">
         <span class="type-pct">≈33%</span>
-        <h4>Тип Б · Спор комментаторов</h4>
-        <div class="formula">В «Тилаке» — X; в «Широмани» — Y; авторы Goldman полагают…</div>
-        <p>Комментарий сразу открывается перечислением расходящихся интерпретаций. Не обязательно содержит буквальный перевод; акцент — на фиксации разногласия. Специфика Леонова: этот тип нетипичен для Гринцера.</p>
+        <div class="type-label label-textol">Текстологический</div>
+        <h4><a href="#typeB" class="typeref">Тип Б</a> · Диалог комментаторов</h4>
+        <div class="formula">В «Тилаке» — X; в «Широмани» — Y; Голдмены…</div>
+        <p>Открывается сопоставлением расходящихся интерпретаций. Буквальный перевод — необязателен; акцент на фиксации разногласия между комментаторами или рецензиями. <strong>Главная специфика Леонова</strong>: у Гринцера ≈8%, у Леонова ≈33%.</p>
+        <p style="margin-top:0.5rem;font-size:0.8rem;border-top:1px dotted var(--rule);padding-top:0.4rem;color:var(--muted);">↳ <strong>Подтип Б+</strong>: тип Б + академическая ссылка — при особо спорных местах, где Princeton Goldman фиксирует консенсус или его отсутствие.</p>
       </div>
 
-      <div class="type-card">
+    </div>
+  </div>
+
+  <div class="type-pair">
+    <div class="pair-label">Пара II · реалийно-историко-культурологический блок · ≈27%</div>
+    <div class="type-grid">
+
+      <div class="type-card" id="typeC">
         <span class="type-pct">≈22%</span>
-        <h4>Тип В · Нарративное пояснение</h4>
+        <div class="type-label label-realii">Реалийный</div>
+        <h4><a href="#typeC" class="typeref">Тип В·1</a> · Параллели и контекст</h4>
         <div class="formula">Ср. в переводе Гринцера: «…» (II, 85, 19) — или нейтральное вступление</div>
-        <p>Без цитирования конкретного термина. Применяется для подтекста действия, мифологического контекста или внутрисерийных перекрёстных ссылок на перевод Гринцера.</p>
+        <p>Без цитирования конкретного термина. Применяется для нарративного подтекста, культурных реалий, флоры/фауны и перекрёстных ссылок на кн. I–III. Ссылки в стиле ЛП: «см. примеч. к I.X.Y».</p>
       </div>
 
-      <div class="type-card">
+      <div class="type-card" id="typeD">
         <span class="type-pct">≈5%</span>
-        <h4>Тип Г · Академическая ссылка</h4>
-        <div class="formula">Голдмены отмечают… (Goldman 1984: XXX) / Поллок…</div>
-        <p>Отдельный тип без прямой параллели у Гринцера. Используется для особо трудных мест, по которым западная индология выработала устойчивую позицию или где есть консенсус перевода.</p>
+        <div class="type-label label-realii" style="background:#d5eaff;color:#003b8b;">Историко-культурологический</div>
+        <h4><a href="#typeD" class="typeref">Тип В·2</a> · Мифологический / эпический фон</h4>
+        <div class="formula">Сугрива [— царь обезьян, союзник Рамы…]; или: Согласно индийской традиции…</div>
+        <p>Вводные статьи при первом появлении в кн. V персонажа или концепта, отсутствующего в кн. I–III. Рассказывает об эпическом и мифологическом контексте. У Леонова редок (≈1% вводных статей от всего аппарата), так как большинство персонажей уже описаны Гринцером.</p>
       </div>
 
     </div>
+  </div>
 
-    <h3>Примеры</h3>
+  <h3>Примеры из текста — по одному на каждый тип</h3>
 
-    <div class="example">
-      <div class="example-header leonov-ex"><span class="badge badge-leonov">Леонов</span> Тип А · шлока V.1.1</div>
-      <div class="example-body">
-        <div class="shloka">cāraṇācarite pathi</div>
-        <p>На тропу небожителей (<em class="iast">cāraṇācarite pathi</em>) — букв. «на тропе, по которой ходят чараны». В комментарии «Таттвадипика» поясняется «на дороге богов» (<em class="iast">suravartmani</em>). В комментарии «Бхушана» слово <em class="iast">cāraṇāḥ</em> объясняется как «божественные певцы» (<em class="iast">dēvagāyakāḥ</em>).</p>
+  <div class="example">
+    <div class="example-header leonov-ex"><span class="badge badge-leonov">Леонов</span> <a href="#typeA" class="typeref">Тип А</a> (филологический) · V.1.1</div>
+    <div class="example-body">
+      <div class="shloka">cāraṇācarite pathi</div>
+      <p>На тропу небожителей (<em class="iast">cāraṇācarite pathi</em>) — букв. «на тропе, по которой ходят чараны». В комментарии «Таттвадипика» поясняется «на дороге богов» (<em class="iast">suravartmani</em>). В комментарии «Бхушана» слово <em class="iast">cāraṇāḥ</em> объясняется как «божественные певцы» (<em class="iast">dēvagāyakāḥ</em>). Голдмены переводят «celestial bards».</p>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-header leonov-ex"><span class="badge badge-leonov">Леонов</span> <a href="#typeB" class="typeref">Тип Б</a> (текстологический) · V.1.7</div>
+    <div class="example-body">
+      <div class="shloka">hrade nāga ivābabhau</div>
+      <p>Был нагу подобен в озере (<em class="iast">hrade nāga ivābabhau</em>) — слово <em class="iast">nāga</em> может означать как «наг» (полубожественный змей), так и «слон». Из комментаторов только автор «Широмани» глоссирует это слово как <em class="iast">gaja</em> (слон). Большинство западных переводчиков склоняются к варианту «наг» (Goldman 1984: 302).</p>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-header leonov-ex"><span class="badge badge-leonov">Леонов</span> <a href="#typeC" class="typeref">Тип В·1</a> (реалийный) · V.1.5</div>
+    <div class="example-body">
+      <div class="shloka">dhātubhiḥ samalaṃkṛtam</div>
+      <p>…украшенную / Минералами (<em class="iast">dhātubhiḥ samalaṃkṛtam</em>) — ср. в переводе Гринцера: «Минералы — глубокие вздохи» (II, 85, 19). По поводу точного определения цвета минералов комментаторы несколько расходятся.</p>
+    </div>
+  </div>
+
+  <div class="example">
+    <div class="example-header leonov-ex"><span class="badge badge-leonov">Леонов</span> <a href="#typeD" class="typeref">Тип В·2</a> (историко-культурологический) · V.6.1</div>
+    <div class="example-body">
+      <div class="shloka">yakṣakiṃnaragandharvair devakalpaiḥ sapannagaiḥ</div>
+      <p>Гандхарвы (<em class="iast">gandharva</em>) — небесные музыканты, полубожественные существа; в эпической традиции связаны с небесными сферами. В кн. I–III (примеч. к Гринцеру I.1.32) представлены вместе с якшами и кинарами как три категории небесных существ низшего ранга по сравнению с богами.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 CATEGORIES ═══ -->
+<section id="categories">
+  <span class="section-label">04 — Типология</span>
+  <h2 class="section-title">Тематические категории: соотнесение с четырьмя видами комментариев</h2>
+
+  <p>Категориальный профиль Леонова резко смещён по сравнению с Гринцером: у Леонова основная доля приходится на <strong>текстологический</strong> тип (диалог традиционных комментаторов), тогда как у Гринцера ведущими были категории лексические (<em>филологический</em> тип).</p>
+
+  <table>
+    <thead><tr><th>Категория</th><th>Вид комм.</th><th>Леонов (Кн. V)</th><th>Гринцер (Кн. I–III)</th><th>Динамика</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Разночтения комментаторов</strong></td><td>Текстологический</td><td class="pct">≈38%</td><td class="pct">~8%</td><td>↑ ×4,7 — главный сдвиг</td></tr>
+      <tr><td><strong>Буквальный перевод</strong></td><td>Филологический</td><td class="pct">≈22%</td><td class="pct">~22%</td><td>= стабильно</td></tr>
+      <tr><td><strong>Многозначность термина</strong></td><td>Филологический</td><td class="pct">≈15%</td><td class="pct">~34%</td><td>↓ частично поглощена диалогом</td></tr>
+      <tr><td><strong>Академическая традиция</strong> <small>(Goldman, Pollock) — <em>подтип-маркер источника</em> внутри А/Б</small></td><td>подтип А / Б</td><td class="pct">≈12%</td><td class="pct">~3%</td><td>↑ уникальная черта Леонова</td></tr>
+      <tr><td><strong>Параллели с кн. I–III</strong> (Гринцер)</td><td>Реалийный / нарратив</td><td class="pct">≈6%</td><td class="pct">~5%</td><td>≈ сопоставимо</td></tr>
+      <tr><td><strong>Культурные реалии</strong></td><td>Реалийный</td><td class="pct">≈4%</td><td class="pct">~7%</td><td>↓ вынесены в кн. I–III</td></tr>
+      <tr><td><strong>Флора и фауна</strong></td><td>Реалийный</td><td class="pct">≈2%</td><td class="pct">~2%</td><td>= стабильно</td></tr>
+      <tr><td><strong>Вводные статьи</strong> (имена, топонимы)</td><td>Реалийный</td><td class="pct">≈1%</td><td class="pct">~9%</td><td>↓ всё уже в кн. I–III у Гринцера</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    Резкое падение вводных статей (9% → 1%) не пробел, а системное решение: все персонажи, которых представил Гринцер, при повторном упоминании в кн. V получают только отсылку «см. примеч. к I.X.Y». Аппарат Гринцера — <em>необходимая предпосылка</em> аппарата Леонова.
+  </div>
+
+  <p>Визуализация:</p>
+
+  <div class="bar-row"><div class="bar-label">Разночтения комментаторов</div><div class="bar-track"><div class="bar-fill" style="width:38%"></div></div><div class="bar-pct">≈38%</div></div>
+  <div class="bar-row"><div class="bar-label">Буквальный перевод</div><div class="bar-track"><div class="bar-fill" style="width:22%"></div></div><div class="bar-pct">≈22%</div></div>
+  <div class="bar-row"><div class="bar-label">Многозначность термина</div><div class="bar-track"><div class="bar-fill" style="width:15%"></div></div><div class="bar-pct">≈15%</div></div>
+  <div class="bar-row"><div class="bar-label">Академическая традиция</div><div class="bar-track"><div class="bar-fill" style="width:12%"></div></div><div class="bar-pct">≈12%</div></div>
+  <div class="bar-row"><div class="bar-label">Параллели с Гринцером</div><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div><div class="bar-pct">≈6%</div></div>
+  <div class="bar-row"><div class="bar-label">Культурные реалии + флора</div><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div><div class="bar-pct">≈6%</div></div>
+  <div class="bar-row"><div class="bar-label">Вводные статьи</div><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><div class="bar-pct">≈1%</div></div>
+</section>
+
+<!-- ═══ 05 GOLDMAN ═══ -->
+<section id="goldman">
+  <span class="section-label">05 — Голдманы (CSL 2006)</span>
+  <h2 class="section-title">Голдманы: два издания — две функции</h2>
+
+  <div class="goldman-banner">
+    <h3>Clay Sanskrit Library (NYU Press, 2006)</h3>
+    <p>Двуязычное портативное издание. Критический санскритский текст (Ориентальный институт Бароды) на левых страницах, английский перевод — на правых. <strong>Сносок в тексте нет.</strong> Весь комментаторский аппарат — Введение + Глоссарий + Указатель.</p>
+  </div>
+
+  <h3>Структура аппарата CSL Goldman</h3>
+
+  <table>
+    <thead><tr><th>Компонент</th><th>Объём</th><th>Функция</th><th>Как использовать в проекте</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Введение</strong></td>
+        <td>≈60 страниц</td>
+        <td>Литературный и нарративный анализ: место Сундараканды в эпосе, персонажи (Хануман, Сита), структура, повторения, имя книги</td>
+        <td>Источник для историко-литературного контекста; не для пошлочного комментария</td>
+      </tr>
+      <tr>
+        <td><strong>Глоссарий</strong></td>
+        <td>~90 позиций</td>
+        <td>Краткие идентификации персонажей, богов, мест. Латинские научные названия растений и животных.</td>
+        <td>Вспомогательный источник при сравнении переводческих решений (не основной авторитет для латинских названий флоры — он предоставляется редактором отдельно)</td>
+      </tr>
+      <tr>
+        <td><strong>Указатель</strong></td>
+        <td>~20 страниц</td>
+        <td>Тематический и терминологический; латинские названия животных в разделах birds, animals, plants</td>
+        <td>Верификация латинских идентификаций; проверка транслитерации терминов</td>
+      </tr>
+      <tr>
+        <td><strong>Перевод</strong></td>
+        <td>~500 страниц</td>
+        <td>Принятые переводческие решения Голдманов по каждому термину — это <em>имплицитный</em> комментарий через выбор лексемы</td>
+        <td>Сравнение с переводом Леонова; источник формулы «Голдмены переводят…» в комментарии</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Примеры из Глоссария CSL Goldman как авторитет по флоре</h3>
+
+  <div class="example">
+    <div class="example-header goldman-ex"><span class="badge badge-goldman">CSL Goldman · Глоссарий</span> Латинские названия растений</div>
+    <div class="example-body">
+      <p><strong>ASANA</strong> tree, <em>Terminalia tomentosa</em><br>
+      <strong>ASHOKA</strong> tree with red flowers, <em>Saraca indica</em> L. (<em>Jonesia asoka</em>)<br>
+      <strong>ASHVA-KARNA</strong> tree, <em>Vatica robusta</em><br>
+      <strong>BAKULA</strong> tree, <em>Mimusops elengi</em><br>
+      <strong>BHAVYA</strong> tree (in Глоссарии — без латинского, нужна верификация)</p>
+      <p style="color:var(--muted);font-size:0.83rem;margin-top:0.5rem;">→ Этот Глоссарий фиксирует латинские названия для ~15–20 видов. Он согласован с Princeton Goldman. При недостаточности — дополняется авторитетным справочником по ботанике Индии (файл от редактора) и орнитологическим справочником.</p>
+    </div>
+  </div>
+
+  <h3>Как CSL Goldman входит в сравнительную таблицу</h3>
+
+  <p>В сводном документе CSL Goldman — <em>не как комментатор-конкурент</em> Леонову, а как:</p>
+
+  <table>
+    <thead><tr><th>Роль</th><th>Параметр в таблице</th></tr></thead>
+    <tbody>
+      <tr><td>Сравнение переводов</td><td>Строка «Источник латинских названий»: Глоссарий CSL Goldman (верифицировать справочниками редактора)</td></tr>
+      <tr><td>Точка сравнения переводов</td><td>Формула «Голдмены переводят X как Y» — Princeton Goldman (1994/96), не CSL</td></tr>
+      <tr><td>Литературный контекст</td><td>Введение CSL = источник для нарративно-структурного комментария (Тип В)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    <strong>Важное разграничение для автоматизации.</strong> Когда алгоритм ставит «Голдмены переводят…» — ссылаться нужно на Princeton Goldman с номером страницы. Когда ставит латинское научное название растения — источник авторитетный ботанический справочник (файл редактора); CSL Goldman Glossary используется только для сравнения переводческих решений. Эти два источника нельзя смешивать в одной ссылке.
+  </div>
+</section>
+
+<!-- ═══ 06 KOSTINA ═══ -->
+<section id="kostina">
+  <span class="section-label">06 — Редакционный слой</span>
+  <h2 class="section-title">Редакционный слой Костиной</h2>
+
+  <p>Пометы Е. Костиной — университетского преподавателя санскрита — образуют отдельный функциональный слой, отличный от содержательного комментария Леонова. Они контролируют <strong>и полноту перевода, и полноту комментария</strong>: фиксируют незафиксированные опущения в переводе, ставят текстологические вопросы к самим принципам построения аппарата, а также методологические вопросы о редакционной стратегии.</p>
+
+  <p>Оформление: <em>курсив + «iast-форма» + глагол или вопрос</em>. Подпись: <strong>***[Е. Костина]***</strong>.</p>
+
+  <table>
+    <thead><tr><th>Тип</th><th>Доля</th><th>Формула</th><th>Что контролирует</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Опущение в переводе</strong></td>
+        <td class="pct">≈65%</td>
+        <td><code>«iast-форма» Опущено</code></td>
+        <td>Перевод: значимый компонент санскритского слова не отражён в русском тексте. Решение: включить в комментарий или принять как переводческое решение.</td>
+      </tr>
+      <tr>
+        <td><strong>2. Текстологический вопрос</strong></td>
+        <td class="pct">≈20%</td>
+        <td><code>«вариант» Будут ли отмечаться различия рецензий…</code></td>
+        <td>Комментарий: фиксирует разночтение между рецензиями; ставит системный вопрос о принципах отбора вариантов для аппарата.</td>
+      </tr>
+      <tr>
+        <td><strong>3. Методологический вопрос</strong></td>
+        <td class="pct">≈15%</td>
+        <td><code>Здесь и далее буду отмечать… / Как планируется?</code></td>
+        <td>Стратегия: вопрос к Леонову о редакционном принципе для всей книги. Концентрируется в первых главах.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Автоматизируемость и визуальная маркировка</h3>
+
+  <div class="kostina-type ktype-1">
+    <span class="ktype-label">■ тип 1 · жёлтый · опущение в переводе</span>
+    <strong>***[Е. Костина]***</strong> <em class="iast">«rāvaṇanītāyāḥ»</em> Опущено. Здесь и далее буду отмечать незафиксированные опущения, чтобы в дальнейшем можно было отразить их в комментарии.<br>
+    <span style="font-size:0.8rem;color:var(--muted);">Автоматизация: скрипт выравнивания IAST-оригинала и русского перевода — для каждой шлоки проверяется, отражено ли каждое значимое слово (не служебное) в переводе. Разрыв → флаг «кандидат на Опущено».</span>
+  </div>
+
+  <div class="kostina-type ktype-2">
+    <span class="ktype-label">■ тип 2 · оранжевый · текстологический вопрос</span>
+    <strong>***[Е. Костина]***</strong> <em class="iast">«cāśu»</em> Будут ли отмечаться в комментарии различия между редакциями (есть вариант <em class="iast">cāpi</em>)?<br>
+    <span style="font-size:0.8rem;color:var(--muted);">Автоматизация: требует доступа к двум редакциям в машиночитаемом виде. Технически возможно при наличии файлов.</span>
+  </div>
+
+  <div class="kostina-type ktype-3">
+    <span class="ktype-label">■ тип 3 · зелёный · методологический вопрос</span>
+    <strong>***[Е. Костина]***</strong> <em class="iast">«rāmavṛddhyarthaṃ»</em> Опущено. (+ примеч. Здесь возникает вопрос о принципе: нужно ли оговаривать все опущения компонентов имён в ремарках?)<br>
+    <span style="font-size:0.8rem;color:var(--muted);">Автоматизация: не автоматизируется — редакционное суждение о принципе.</span>
+  </div>
+
+  <div class="note-box">
+    Пометы Костиной — университетского преподавателя санскрита — не являются финальным комментарием. В сводной таблице они учитываются как отдельная строка «Редакционный контроль» и не добавляются к числу примечаний Леонова. Числовой профиль Костиной (~175 помет, средняя длина ~55 символов, ≈95% с IAST) принципиально отличается от любого другого участника серии: её единица — не объяснение читателю, а сигнал редактору.
+  </div>
+</section>
+
+<!-- ═══ 07 SILENCE ═══ -->
+<section id="silence">
+  <span class="section-label">07 — Принцип умолчания</span>
+  <h2 class="section-title">Что не комментируется у Леонова: ≈64% шлок</h2>
+
+  <table>
+    <thead><tr><th>Тип умолчания</th><th>Доля в молчащих шлоках</th><th>Пояснение</th><th>Кто всё же говорит?</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Нарративное действие без реалий</strong></td>
+        <td class="pct">≈40%</td>
+        <td>«Хануман прыгнул», «Сита ответила» — нет неочевидного термина, нет разночтений. Леонов молчит так же, как Гринцер.</td>
+        <td>Никто из переводчиков серии. Голдманы (Princeton) иногда добавляют контекстуальную сноску.</td>
+      </tr>
+      <tr>
+        <td><strong>Персонажи и топонимы, объяснённые ранее</strong></td>
+        <td class="pct">≈25%</td>
+        <td>«Подобный Индре», «как Гаруда» — вводная статья уже в кн. I–III у Гринцера. Ставится «см. примеч. к I.X.Y». Аналогично: топонимы (Ланка, Кишкиндха), реалии (ашрамы, варновая система), культурные концепты (дхарма, майя).</td>
+        <td>Ссылка заменяет содержательный комментарий.</td>
+      </tr>
+      <tr>
+        <td><strong>Формульные обращения (повторные)</strong></td>
+        <td class="pct">≈15%</td>
+        <td>«О лотосоокий», «о Дашаратха-потомок», «о губитель врагов» — высокочастотные формулы; <em>первые</em> появления получают комментарий (Тип А). Повторные — молчание. Перечень формульных обращений уточняется по файлу редактора.</td>
+        <td>Принстон Goldman: иногда при первом появлении. Индийские комментаторы: при особо нестандартном употреблении.</td>
+      </tr>
+      <tr>
+        <td><strong>Единодушие комментаторов</strong></td>
+        <td class="pct">≈15%</td>
+        <td>Главный фильтр Леонова: если все пять традиционных комментаторов единодушны <em>и</em> буквальный смысл прозрачен — примечание не ставится.</td>
+        <td>Никто, как правило. Случаи единодушия — стабильное ядро традиции.</td>
+      </tr>
+      <tr>
+        <td><strong>Физические перемещения и жесты</strong></td>
+        <td class="pct">≈5%</td>
+        <td>Описания движений, поз — без специфического санскритского термина. Аналогично у всех переводчиков серии.</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note-box warn">
+    <strong>Важное исключение (п. 23).</strong> <em>Первые появления</em> формульных обращений всё же комментируются — <a href="#typeA" class="typeref">Тип А</a> с указанием буквального смысла эпитета и ссылкой на санскр. первоисточник. Только повторные — молчание. Список формульных обращений будет сверен с файлом, предоставленным редактором.
+  </div>
+</section>
+
+<!-- ═══ 08 GENERATED ═══ -->
+<section id="generated">
+  <span class="section-label">08 — Сгенерированные комментарии</span>
+  <h2 class="section-title">Маркировка сгенерированных и вставленных комментариев</h2>
+
+  <p>Любой комментарий, сгенерированный автоматически или вставленный на основе данных корпуса, маркируется <strong>цветовой фоновой заливкой</strong>. Четыре оттенка соответствуют четырём источникам / типам генерации:</p>
+
+  <table>
+    <thead><tr><th>Заливка</th><th>Тип</th><th>Источник</th><th>Пример</th></tr></thead>
+    <tbody>
+      <tr>
+        <td style="background:var(--hl-term);padding:0.4rem;">Жёлтый</td>
+        <td>Термин / вводная статья (первое появление)</td>
+        <td>Корпус кн. I–III (Гринцер) + индекс имён</td>
+        <td>«Чараны (<em class="iast">cāraṇa</em>) — небесные певцы; введено в Рамаяна I.17.9»</td>
+      </tr>
+      <tr>
+        <td style="background:var(--hl-flora);padding:0.4rem;">Зелёный</td>
+        <td>Флора / фауна + латинское название</td>
+        <td>Глоссарий CSL Goldman + авторитетный справочник (файл редактора)</td>
+        <td>«Ашока (<em class="iast">aśoka</em>) — дерево с оранжево-алыми цветами, <em>Saraca indica</em> L.»</td>
+      </tr>
+      <tr>
+        <td style="background:var(--hl-crossref);padding:0.4rem;">Голубой</td>
+        <td>Перекрёстная ссылка на Гринцера</td>
+        <td>Корпус кн. I–III, автоматический поиск по лексеме</td>
+        <td>«Ср. в переводе Гринцера (II, 85, 19)»</td>
+      </tr>
+      <tr>
+        <td style="background:var(--hl-formula);padding:0.4rem;">Оранжевый</td>
+        <td>Первое появление формульного обращения</td>
+        <td>Список формульных обращений (файл редактора)</td>
+        <td>«О губитель врагов (<em class="iast">śatrukarśana</em>) — стандартный эпитет Хануманы в кн. V»</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Примеры с заливкой</h3>
+
+  <div class="hl-term">
+    <span class="hl-label" style="color:#7a4b00;">● Жёлтый · Термин / вводная статья</span>
+    <strong>[термин]</strong> <em class="iast">*(учтено)*</em> Первое появление в кн. V; введено в Рамаяна I.17.9: Чараны (<em class="iast">cāraṇa</em>) — небесные певцы, имеющие статус полубогов.
+  </div>
+
+  <div class="hl-flora">
+    <span class="hl-label" style="color:#1a5c2a;">● Зелёный · Флора</span>
+    <strong>[флора]</strong> Ашока (<em class="iast">aśoka</em>, букв. «беспечальный») — дерево с оранжево-алыми цветами, <em>Saraca indica</em> L. (= <em>Jonesia asoka</em> Roxb.). [Источник: ботанический справочник (файл редактора)]
+  </div>
+
+  <div class="hl-crossref">
+    <span class="hl-label" style="color:#003b8b;">● Голубой · Перекрёстная ссылка</span>
+    <strong>[параллель]</strong> Ср. в переводе Гринцера (<em>Рамаяна. Книги I–III</em>, М.: Ладомир, 2006, примеч. к II.85.19): «Минералы — глубокие вздохи».
+  </div>
+
+  <div class="hl-formula">
+    <span class="hl-label" style="color:#7a3200;">● Оранжевый · Формульное обращение (первое)</span>
+    <strong>[эпитет]</strong> О губитель врагов (<em class="iast">śatrukarśana</em>) — букв. «иссушающий врагов»; устойчивый эпитет Хануманы в кн. V. Дальнейшие употребления без примечания.
+  </div>
+
+  <h3>Что корпус закрывает</h3>
+
+  <div class="coverage-grid">
+    <div class="coverage-card can-close">
+      <h4>✓ Закрывает корпус + CSL Goldman</h4>
+      <ul>
+        <li><strong>Первые появления в кн. V</strong> — автоотсылка «введено в Рамаяна I.X.Y» через индекс кн. I–III</li>
+        <li><strong>Перекрёстные ссылки «Ср. Гринцер»</strong> — поиск по лексеме в корпусе</li>
+        <li><strong>Флора и фауна</strong> — латинские названия из Глоссария CSL Goldman и Аранья-канды</li>
+        <li><strong>Повторные имена → отсылки</strong> — генерация «см. примеч. к I.X.Y» через индекс</li>
+        <li><strong>Формульные обращения (первые)</strong> — список от редактора + краткое пояснение</li>
+      </ul>
+    </div>
+    <div class="coverage-card cannot-close">
+      <h4>○ Требует специалиста / дополн. данных</h4>
+      <ul>
+        <li><strong>Диалог 5 традиционных комментаторов</strong> — нужны оцифрованные санскритские комментарии (файл от редактора); ≈38% всех примечаний Леонова</li>
+        <li><strong>Princeton Goldman ссылки</strong> — нужен машиночитаемый Princeton vol. V</li>
+        <li><strong>Опущения (Костина)</strong> — отдельный скрипт IAST-выравнивания</li>
+        <li><strong>Споры о рецензиях</strong> — выходят за рамки переводческого корпуса</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>При наличии оцифровок санскритских комментариев (Тилака, Бхушана, Широмани и др.) корпусное покрытие расширяется существенно: возможна автоматическая генерация «диалога комментаторов» для ≈38% типовых примечаний Леонова, что даёт суммарно <strong>≈55–65%</strong> потенциального покрытия всех примечаний. Без этих файлов — ≈20–25%.</p>
+</section>
+
+<!-- ═══ 09 ALGO ═══ -->
+<section id="algo">
+  <span class="section-label">09 — Практика</span>
+  <h2 class="section-title">Алгоритм для новых глав</h2>
+
+  <p><strong>Целевая плотность комментариев Леонова: ~36% шлок.</strong> Описательные главы (топонимы, эпитеты) — ближе к 50–55%. Диалоговые — ближе к 22–25%.<br>
+  <strong>Целевая плотность Костиной: ~6% шлок</strong> — только реальные опущения и системные текстологические вопросы (читатель — опытный специалист, университетский преподаватель санскрита).</p>
+
+  <ul class="algo-steps">
+    <li class="algo-step">
+      <span class="algo-num">1</span>
+      <div class="algo-text">
+        <h4>Проверить по корпусу: первое ли появление в кн. V?</h4>
+        <p>Персонаж, топоним, реалия, культурный концепт. Если было в кн. I–III у Гринцера → автоматически вставить отсылку «см. примеч. к I.X.Y» (<a href="#generated" class="typeref">жёлтая заливка</a>). Если не было → создать краткую вводную статью (<a href="#typeC" class="typeref">Тип В</a>).</p>
       </div>
-    </div>
-
-    <div class="example">
-      <div class="example-header leonov-ex"><span class="badge badge-leonov">Леонов</span> Тип Б · шлока V.1.7</div>
-      <div class="example-body">
-        <div class="shloka">hrade nāga ivābabhau</div>
-        <p>Был нагу подобен в озере (<em class="iast">hrade nāga ivābabhau</em>) — слово <em class="iast">nāga</em> может означать как «наг» (полубожественный змей), так и «слон». Из комментаторов только автор «Широмани» даёт интерпретацию для этого слова, которое он глоссирует как <em class="iast">gaja</em> (слон). Большинство переводчиков, однако, склоняются к варианту «наг» (Goldman 1984: 302).</p>
+    </li>
+    <li class="algo-step">
+      <span class="algo-num">2</span>
+      <div class="algo-text">
+        <h4>Флора и фауна — всегда латинское название</h4>
+        <p>Приоритет: 1) Глоссарий CSL Goldman, 2) авторитетный ботанический справочник (файл редактора по растениям), 3) орнитологический справочник (файл редактора по птицам). Пометить <a href="#generated" class="typeref">зелёной заливкой</a>. Файлы нужно предоставить.</p>
       </div>
-    </div>
-
-    <div class="example">
-      <div class="example-header leonov-ex"><span class="badge badge-leonov">Леонов</span> Тип В · шлока V.1.5</div>
-      <div class="example-body">
-        <div class="shloka">dhātubhiḥ samalaṃkṛtam</div>
-        <p>…украшенную / Минералами (<em class="iast">dhātubhiḥ samalaṃkṛtam</em>) — ср. в переводе Гринцера: «Минералы — глубокие вздохи» (II, 85, 19). По поводу точного определения цвета минералов комментаторы несколько расходятся.</p>
+    </li>
+    <li class="algo-step">
+      <span class="algo-num">3</span>
+      <div class="algo-text">
+        <h4>Формульное обращение — только первый раз</h4>
+        <p>Сверить по перечню формульных обращений (файл <code>ramayana-formulas_1-2.md</code>, тт. 1–2 — база для экстраполяции на кн. V; охватывает ≈521 статью с эпитетами и должностями). Первое появление в кн. V → <a href="#typeA" class="typeref">Тип А</a> + <a href="#generated" class="typeref">оранжевая заливка</a>. Принципы из файла: фиксировать как сокращённые, так и развёрнутые эпитеты; парные — отдельно; если эпитет используется для разных лиц — отметить явно. Повторные — молчание.</p>
       </div>
-    </div>
-  </section>
+    </li>
+    <li class="algo-step">
+      <span class="algo-num">4</span>
+      <div class="algo-text">
+        <h4>Есть ли неочевидный санскритский термин?</h4>
+        <p>Да → <a href="#typeA" class="typeref">Тип А</a>: цитата (IAST) + «букв.» + минимум один традиционный комментатор (при наличии файлов). Если все пятеро единодушны — Тилака как норма.</p>
+      </div>
+    </li>
+    <li class="algo-step">
+      <span class="algo-num">5</span>
+      <div class="algo-text">
+        <h4>Расходятся ли комментаторы?</h4>
+        <p>Да → <a href="#typeB" class="typeref">Тип Б</a> (текстологический). Привести ≥2 интерпретации. Если Princeton Goldman фиксирует позицию → добавить <a href="#typeD" class="typeref">Тип Г</a>. Для выполнения этого шага нужны оцифровки санскритских комментариев.</p>
+      </div>
+    </li>
+    <li class="algo-step">
+      <span class="algo-num">6</span>
+      <div class="algo-text">
+        <h4>Есть ли параллельное место у Гринцера?</h4>
+        <p>Проверить по корпусу. Если да → <a href="#typeC" class="typeref">Тип В</a> с формулой в стиле ЛП: «ср. в переводе Гринцера (<em>Рамаяна</em>, М.: Ладомир, 2006, примеч. к II.ГЛ.ШЛ)» (<a href="#generated" class="typeref">голубая заливка</a>).</p>
+      </div>
+    </li>
+    <li class="algo-step">
+      <span class="algo-num">7</span>
+      <div class="algo-text">
+        <h4>[Костина] Проверить полноту перевода и комментария</h4>
+        <p>Сопоставить IAST оригинала с переводом: есть ли значимые опущения? → <code>«iast» Опущено</code>. Есть ли вариант рецензии, требующий системного решения? → текстологический вопрос. Последовательность проверяется автоматически (скрипт IAST-выравнивания, отдельный инструмент).</p>
+      </div>
+    </li>
+  </ul>
 
-  <!-- 04 CATEGORIES -->
-  <section id="categories">
-    <span class="section-label">04 — Типология</span>
-    <h2 class="section-title">Тематические категории</h2>
+  <div class="note-box">
+    <strong>Нужны файлы от редактора:</strong> (1) оцифровки санскритских комментариев — Тилака, Бхушана, Широмани, Таттвадипика, Амрита; (2) ботанический справочник по флоре Индии; (3) орнитологический справочник; (4) файл с выявленными текстологическими отсылками. <strong>Получен:</strong> список эпитетов и формульных обращений <code>ramayana-formulas_1-2.md</code> (тт. 1–2, 521 статья).
+  </div>
+</section>
 
-    <p>Категориальный профиль Леонова существенно смещён по сравнению с Гринцером: <strong>лексика уступает место экзегетике</strong> — спору о правильном понимании. Появляется уникальная для серии категория «Академическая традиция».</p>
+<!-- ═══ 09б FORMULAS ═══ -->
+<section id="formulas">
+  <span class="section-label">09б — Формульные обращения</span>
+  <h2 class="section-title">Перечень формульных обращений для кн. V</h2>
 
-    <div class="bar-row"><div class="bar-label">Разночтения комментаторов</div><div class="bar-track"><div class="bar-fill" style="width:38%"></div></div><div class="bar-pct">≈38%</div></div>
-    <div class="bar-row"><div class="bar-label">Лексика: буквальный перевод</div><div class="bar-track"><div class="bar-fill" style="width:22%"></div></div><div class="bar-pct">≈22%</div></div>
-    <div class="bar-row"><div class="bar-label">Многозначность термина</div><div class="bar-track"><div class="bar-fill" style="width:15%"></div></div><div class="bar-pct">≈15%</div></div>
-    <div class="bar-row"><div class="bar-label">Академическая традиция (Голдмены, Поллок)</div><div class="bar-track"><div class="bar-fill" style="width:12%"></div></div><div class="bar-pct">≈12%</div></div>
-    <div class="bar-row"><div class="bar-label">Параллели с кн. I–III (Гринцер)</div><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div><div class="bar-pct">≈6%</div></div>
-    <div class="bar-row"><div class="bar-label">Культурные реалии</div><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div><div class="bar-pct">≈4%</div></div>
-    <div class="bar-row"><div class="bar-label">Флора и фауна</div><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div><div class="bar-pct">≈2%</div></div>
-    <div class="bar-row"><div class="bar-label">Имена и вводные статьи</div><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><div class="bar-pct">≈1%</div></div>
+  <p>Перечень построен по образцу <code>ramayana-formulas_1-2.md</code>. Для каждого эпитета указана шлока первого появления в кн. V — заготовка для будущих сносок. Источник сноски: <strong>Л</strong> = текст Леонова (извлечено напрямую), <strong>G</strong> = CSL Goldman, номер шлоки совпадает с критическим изданием (верифицировать по финальному тексту).</p>
 
-    <h3>Сдвиг профиля относительно Гринцера</h3>
+  <p style="font-size:0.83rem;color:var(--muted);margin-bottom:0.5rem;">Принципы из файла тт. 1–2: парные эпитеты — отдельно; краткие и развёрнутые формы — в одной статье; ситуативные эпитеты (только для состояния/момента) — в отдельную строку с пометой <em>ситуат.</em>; неясные атрибуции — с вопросом.</p>
 
-    <table>
-      <thead>
-        <tr><th>Категория</th><th>Гринцер (Кн. I–III)</th><th>Леонов (Кн. V)</th><th>Изменение</th></tr>
-      </thead>
-      <tbody class="diff-row">
-        <tr><td>Разночтения комментаторов</td><td>~8%</td><td>≈38%</td><td style="color:var(--accent2)">↑ ×4,7 — главный сдвиг</td></tr>
-        <tr><td>Буквальный перевод</td><td>~22%</td><td>≈22%</td><td style="color:var(--muted)">= стабильно</td></tr>
-        <tr><td>Контекстное уточнение</td><td>~34%</td><td>≈15%</td><td style="color:var(--accent)">↓ поглощено диалогом</td></tr>
-        <tr><td>Имена / вводные статьи</td><td>~9%</td><td>≈1%</td><td style="color:var(--accent)">↓ — вынесены в кн. I–III</td></tr>
-        <tr><td>Академическая традиция</td><td>~3%</td><td>≈12%</td><td style="color:var(--accent2)">↑ новая категория</td></tr>
-        <tr><td>Параллели с др. текстами</td><td>~5%</td><td>≈6%</td><td style="color:var(--muted)">≈ сопоставимо</td></tr>
-        <tr><td>Флора и фауна</td><td>~2%</td><td>≈2%</td><td style="color:var(--muted)">= стабильно</td></tr>
-      </tbody>
-    </table>
+  <style>
+  .formula-block { margin: 2rem 0; }
+  .formula-block h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:600; color:var(--ink); margin-bottom:0.1rem; }
+  .formula-block .fb-meta { font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.6rem; }
+  .formula-table { width:100%; border-collapse:collapse; margin:0; font-size:0.85rem; }
+  .formula-table th { font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; background:var(--ink); color:var(--paper); padding:0.45rem 0.7rem; text-align:left; }
+  .formula-table td { padding:0.38rem 0.7rem; border-bottom:1px solid var(--rule); vertical-align:top; }
+  .formula-table tr:nth-child(even) td { background:var(--card); }
+  .formula-table .ep { font-style:italic; color:var(--accent); }
+  .formula-table .sh { font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--accent2); white-space:nowrap; }
+  .formula-table .src { font-family:'JetBrains Mono',monospace; font-size:0.62rem; color:var(--muted); }
+  .formula-table .sit { color:var(--muted); font-size:0.8rem; }
+  .formula-table .sit td:first-child { font-style:italic; }
+  a.sh-link { 
+    color: var(--accent2); 
+    font-family: 'JetBrains Mono', monospace; 
+    font-size: 0.72rem; 
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent2);
+    white-space: nowrap;
+  }
+  a.sh-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  </style>
 
-    <div class="note-box">
-      Резкое падение категории «Имена / вводные статьи» (9% → 1%) — не небрежность, а системное решение: все основные персонажи Рамаяны уже получили вводные статьи у Гринцера. Отсылки вида «см. примеч. к I.X.Y» выполняют ту же функцию без дублирования. В этом смысле корпус Гринцера является <em>необходимой предпосылкой</em> комментария Леонова.
-    </div>
-  </section>
-
-  <!-- 05 KOSTINA -->
-  <section id="kostina">
-    <span class="section-label">05 — Редакционный слой</span>
-    <h2 class="section-title">Редакционный слой Костиной</h2>
-
-    <p>Пометы Костиной — это отдельный функциональный слой, качественно отличный от содержательного комментария Леонова. Они <strong>не объясняют текст, а контролируют полноту перевода</strong> относительно санскритского оригинала и задают системные вопросы для последующей редакции. В оформлении: курсив + цитата оригинала в IAST.</p>
-
-    <table>
-      <thead>
-        <tr><th>Тип</th><th>Доля</th><th>Формула</th><th>Назначение</th></tr>
-      </thead>
+  <!-- ─── ХАНУМАН ─── -->
+  <div class="formula-block">
+    <h4>Хануман</h4>
+    <div class="fb-meta">Кн. IV (Кишкиндха) · центральный герой кн. V · все шлоки из текста Леонова</div>
+    <table class="formula-table">
+      <thead><tr><th>Русский перевод у Леонова</th><th>IAST</th><th>Первая шлока в кн. V</th><th>Пометы</th></tr></thead>
       <tbody>
-        <tr>
-          <td><strong>1. Фиксация опущения</strong></td>
-          <td class="pct">≈65%</td>
-          <td><code>«iast-форма» Опущено</code></td>
-          <td>Слово или компонент санскритского оригинала не отражено в русском переводе. Подлежит решению: включить в комментарий или нет.</td>
-        </tr>
-        <tr>
-          <td><strong>2. Текстологический вопрос</strong></td>
-          <td class="pct">≈20%</td>
-          <td><code>«var.» Будут ли отмечаться различия рецензий…</code></td>
-          <td>Фиксирует разночтения между южной и северной рецензиями; ставит системный вопрос о принципах отбора вариантов.</td>
-        </tr>
-        <tr>
-          <td><strong>3. Методологический вопрос</strong></td>
-          <td class="pct">≈15%</td>
-          <td><code>Здесь и далее буду отмечать… / Как планируется?</code></td>
-          <td>Вопрос к Леонову о редакционной стратегии для всей книги. Появляется преимущественно в первых главах.</td>
-        </tr>
+        <tr><td>Губитель врагов</td><td class="ep">śatrukarśanaḥ</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.1" target="_blank" class="sh-link">V.1.1</a></td><td>В самой первой шлоке книги</td></tr>
+        <tr><td>Ванара / обезьяна</td><td class="ep">vānaraḥ</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.2" target="_blank" class="sh-link">V.1.2</a></td><td>Общий термин вида</td></tr>
+        <tr><td>Могучий</td><td class="ep">mahābalaḥ</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.2" target="_blank" class="sh-link">V.1.2</a></td><td>Ситуативный — нескольких персонажей</td></tr>
+        <tr><td>Стойкий</td><td class="ep">dhīraḥ</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.2" target="_blank" class="sh-link">V.1.2</a></td><td></td></tr>
+        <tr><td>Мудрый</td><td class="ep">dhīmān</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.3" target="_blank" class="sh-link">V.1.3</a></td><td></td></tr>
+        <tr><td>Принимающий любой облик</td><td class="ep">kāmarūpa</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.5" target="_blank" class="sh-link">V.1.5</a></td><td>При описании смены размера перед прыжком</td></tr>
+        <tr><td>Лучший меж обезьянами</td><td class="ep">kapivara</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.6" target="_blank" class="sh-link">V.1.6</a></td><td>= vānaraśreṣṭha; Леонов: «Лучший меж обезьянами»</td></tr>
+        <tr><td>Лучший из прыгунов</td><td class="ep">plavaṃgapravara</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.9" target="_blank" class="sh-link">V.1.9</a></td><td>Применяется к группе обезьян и к Хануману</td></tr>
+        <tr><td>Сын бога ветра</td><td class="ep">mārutātmaja</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.28" target="_blank" class="sh-link">V.1.28</a></td><td>Пара с vāyuputra; Леонов: «могучий сын бога ветра»</td></tr>
+        <tr><td>Слон среди обезьян</td><td class="ep">kapikuñjara</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.37" target="_blank" class="sh-link">V.1.37</a></td><td>Повтор в V.1.44</td></tr>
+        <tr><td>Лучший из обезьян</td><td class="ep">vānaraśreṣṭha</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.38" target="_blank" class="sh-link">V.1.38</a></td><td>Синоним kapivara в другом метре</td></tr>
+        <tr><td>Потомок Рагху <small>(в отношении Хануманы)</small></td><td class="ep">—</td><td class="sh">—</td><td>Не применяется; только Рама</td></tr>
+        <tr><td>Сын Ваю</td><td class="ep">vāyuputra</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.60" target="_blank" class="sh-link">V.1.60</a></td><td>Леонов: контекст тж. — V.1.9 ātmayoni «рождённый Ваю»; комм. расходятся</td></tr>
+        <tr><td>Маруть</td><td class="ep">mārutiḥ</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.166" target="_blank" class="sh-link">V.1.166</a></td><td>Частотное именное производное; первое вхождение — в гл. 1</td></tr>
+        <tr><td>Огромный <em>(ситуат.)</em></td><td class="ep">mahākāya</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.190" target="_blank" class="sh-link">V.1.190</a></td><td>Только при увеличении тела перед прыжком</td></tr>
+        <tr><td>Страж сада / повелитель</td><td class="ep">harīśvara</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#3.45" target="_blank" class="sh-link">V.3.45</a></td><td>Редкий; в главе о Ланке</td></tr>
+        <tr><td>Вестник Рамы</td><td class="ep">rāmadūta</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#35.6" target="_blank" class="sh-link">V.35.6</a></td><td>Контекст: Хануман представляется Сите</td></tr>
+        <tr><td>Повелитель обезьян</td><td class="ep">kapīndra</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#50.1" target="_blank" class="sh-link">V.50.1</a></td><td>Леонов: «сам повелитель обезьян»</td></tr>
+        <tr><td>Великий герой</td><td class="ep">mahāvīra</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#61.8" target="_blank" class="sh-link">V.61.8</a></td><td>В финальных главах; редкий</td></tr>
+        <tr><td>Сын Анджаны</td><td class="ep">āñjaneya</td><td class="sh">—</td><td>Форма отсутствует в тексте Леонова (проверено по всем 68 гл.); Леонов использует описательное «сын ветра» (<em>mārute</em>, V.1.127); при разметке уточнить, есть ли у Леонова отдельная статья</td></tr>
+        <tr class="sit"><td><em>ситуат.</em> В цепях ракшасов</td><td class="ep">—</td><td class="sh">V.47–48</td><td>Описательное, не именное</td></tr>
+        <tr class="sit"><td><em>ситуат.</em> С горящим хвостом</td><td class="ep">—</td><td class="sh">V.52–53</td><td>Описательное</td></tr>
       </tbody>
     </table>
+  </div>
 
-    <h3>Примеры</h3>
-
-    <div class="example">
-      <div class="example-header kostina-ex"><span class="badge badge-kostina">Е. Костина</span> Тип 1 · опущение · шлока V.1.1</div>
-      <div class="example-body">
-        <p><em>«rāvaṇanītāyāḥ»</em> Опущено. Здесь и далее я буду отмечать незафиксированные опущения, чтобы в дальнейшем можно было отразить их в комментарии (или не отражать, но это уже решится потом).</p>
-      </div>
-    </div>
-
-    <div class="example">
-      <div class="example-header kostina-ex"><span class="badge badge-kostina">Е. Костина</span> Тип 2 · текстологический · шлока V.1.12</div>
-      <div class="example-body">
-        <p><em>«cāśu»</em> Будут ли отмечаться в комментарии различия между редакциями (есть вариант <em class="iast">cāpi</em>)?</p>
-      </div>
-    </div>
-
-    <div class="note-box">
-      <strong>Рекомендация для сводного документа.</strong> Костину целесообразно выделить в отдельный подраздел с пометой «Редакционный слой». Её пометы не являются финальным комментарием — они фиксируют рабочие решения и открытые вопросы. В сводной таблице сравнения авторов данные Костиной следует учитывать как отдельную строку «контроль полноты», а не добавлять к числу примечаний Леонова.
-    </div>
-  </section>
-
-  <!-- 06 SILENCE -->
-  <section id="silence">
-    <span class="section-label">06 — Принцип умолчания</span>
-    <h2 class="section-title">Что не комментируется</h2>
-
-    <p>Примерно 64% шлок не получают примечания от Леонова. Это не случайность — за умолчанием стоит ясная система.</p>
-
-    <table class="silence-table">
-      <thead>
-        <tr><th>Тип шлоки</th><th>Почему без комментария</th></tr>
-      </thead>
+  <!-- ─── СИТА ─── -->
+  <div class="formula-block">
+    <h4>Сита</h4>
+    <div class="fb-meta">Кн. I (Балаканда) · эпитеты кн. I–II см. тт. 1–2; новые в кн. V или ситуативные — здесь</div>
+    <table class="formula-table">
+      <thead><tr><th>Русский перевод у Леонова</th><th>IAST</th><th>Первая шлока в кн. V</th><th>Пометы</th></tr></thead>
       <tbody>
-        <tr>
-          <td>Нарративное действие без терминов</td>
-          <td>«Хануман прыгнул», «деревья зашумели» — нет неочевидного термина, нет расхождения комментаторов. Леонов молчит так же, как Гринцер.</td>
-        </tr>
-        <tr>
-          <td>Сравнения с уже объяснёнными персонажами</td>
-          <td>«Подобный Индре», «как Гаруда» — вводные статьи уже в кн. I–III у Гринцера. Ставится «см. примеч. к I.X.Y».</td>
-        </tr>
-        <tr>
-          <td>Формульные обращения и эпитеты Рамы</td>
-          <td>«О лотосоокий», «о Дашаратха-потомок» — высокочастотные формулы; однажды объяснённые, далее не повторяются.</td>
-        </tr>
-        <tr>
-          <td>Места без разногласия комментаторов</td>
-          <td>Главный фильтр у Леонова: если все пять традиционных комментаторов единодушны, а буквальный смысл прозрачен — примечание не ставится.</td>
-        </tr>
-        <tr>
-          <td>Стихи, охваченные «Широмани» без вариантов</td>
-          <td>Если «Широмани» даёт единственную глоссу, а западные переводчики её принимают — Леонов только фиксирует это в примечании к соседней шлоке или опускает.</td>
-        </tr>
+        <tr><td>Похищенная Раваной <em>(контекстный)</em></td><td class="ep">rāvaṇanītāyāḥ</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.1" target="_blank" class="sh-link">V.1.1</a></td><td>Сразу в первой шлоке; Костина помечает «Опущено»</td></tr>
+        <tr><td>Дочь Джанаки</td><td class="ep">janakātmajā</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.39" target="_blank" class="sh-link">V.1.39</a></td><td>Есть в тт. 1–2 → отсылка</td></tr>
+        <tr><td>Майтхили</td><td class="ep">maithilī</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.100" target="_blank" class="sh-link">V.1.100</a></td><td>Есть в тт. 1–2 → отсылка</td></tr>
+        <tr><td>Вайдехи</td><td class="ep">vaidehī</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.152" target="_blank" class="sh-link">V.1.152</a></td><td>Есть в тт. 1–2 → отсылка</td></tr>
+        <tr><td>Исхудавшая <em>(ситуат.)</em></td><td class="ep">kṛśā</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#4.18" target="_blank" class="sh-link">V.4.18</a></td><td>В описании состояния Ситы в плену</td></tr>
+        <tr><td>Широкоокая</td><td class="ep">viśālākṣī</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#15.25" target="_blank" class="sh-link">V.15.25</a></td><td>Обращение Раваны к Сите</td></tr>
+        <tr><td>Косу одну носящая <em>(ситуат.)</em></td><td class="ep">ekaveṇī</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#20.8" target="_blank" class="sh-link">V.20.8</a></td><td>Знак траура по разлуке; Леонов: «волосы, в косу одну заплетенные»; только кн. V</td></tr>
+        <tr><td>Несравненная</td><td class="ep">anindite</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#24.4" target="_blank" class="sh-link">V.24.4</a></td><td>Обращение Хануманы к Сите</td></tr>
+        <tr><td>Преданная дхарме</td><td class="ep">dharmapatnī</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#9.71" target="_blank" class="sh-link">V.9.71</a></td><td></td></tr>
+        <tr class="sit"><td><em>ситуат.</em> Истощённая постом</td><td class="ep">upavāsa</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#13.35" target="_blank" class="sh-link">V.13.35</a></td><td>В речи ракшасини о Сите</td></tr>
+        <tr class="sit"><td><em>ситуат.</em> Опечаленная</td><td class="ep">dīnā</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#13.28" target="_blank" class="sh-link">V.13.28</a></td><td>Повтор в разных главах</td></tr>
       </tbody>
     </table>
+  </div>
 
-    <p>Отдельно: Костина молчит там, где перевод Леонова точно воспроизводит санскритский оригинал без значимых опущений, и там, где уже поставленный вопрос получил ответ в более ранней главе.</p>
-  </section>
-
-  <!-- 07 CORPUS -->
-  <section id="corpus">
-    <span class="section-label">07 — Покрытие корпусом</span>
-    <h2 class="section-title">Что закрывает корпус</h2>
-
-    <p>Слой <span class="badge badge-claude">Claude.AI — желательно</span> в тексте уже намечает категории, которые могут быть частично автоматизированы данными параллельного корпуса. Разграничим: что <em>закрывается</em> корпусом, а что требует работы специалиста.</p>
-
-    <div class="coverage-grid">
-      <div class="coverage-card can-close">
-        <h4>✓ Закрывает корпус</h4>
-        <ul>
-          <li><strong>Первые появления в кн. V</strong> — корпус кн. I–III (Гринцер) автоматически даёт «введено в Рамаяна X.X.Y» и существующую вводную статью</li>
-          <li><strong>Перекрёстные ссылки «Ср. Гринцер»</strong> — поиск по лексике в корпусе выдаёт параллельные места с готовой ссылкой</li>
-          <li><strong>Флора и фауна</strong> — латинские названия из комментария Аранья-канды (Гринцер) уже в корпусе</li>
-          <li><strong>Стандартные формульные эпитеты</strong> — проверка по частотности: если эпитет объяснён более 3 раз, создаётся автоотсылка</li>
-          <li><strong>Повторные имена</strong> — генерация «см. примеч. к I.X.Y» через индекс имён корпуса</li>
-        </ul>
-      </div>
-      <div class="coverage-card cannot-close">
-        <h4>○ Не закрывает корпус</h4>
-        <ul>
-          <li><strong>Диалог пяти традиционных комментаторов</strong> — требует знания санскрита и доступа к рукописным комментариям; ≈38% всех примечаний Леонова</li>
-          <li><strong>Академические ссылки</strong> (Goldman, Pollock) — внешние источники; автоматически не извлекаются</li>
-          <li><strong>Пометы Костиной «Опущено»</strong> — требуют машинного сопоставления перевода и оригинала на уровне токенов IAST; технически возможно, но отдельный инструмент</li>
-          <li><strong>Споры о рецензиях</strong> (сев. / юж.) — текстологический уровень, выходящий за рамки корпуса переводов</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="note-box">
-      <strong>Прагматический вывод.</strong> Корпус закрывает примерно <strong>15–20%</strong> потенциальных примечаний Леонова — преимущественно первые появления и флора/фауна. Это ≈150–200 примечаний, которые можно сгенерировать автоматически и предложить на проверку. Пометы Костиной в принципе автоматизируемы отдельным скриптом выравнивания IAST ↔ перевод, но это отдельная задача.
-    </div>
-  </section>
-
-  <!-- 08 ALGO -->
-  <section id="algo">
-    <span class="section-label">08 — Практика</span>
-    <h2 class="section-title">Алгоритм для новых глав</h2>
-
-    <p><strong>Целевая плотность для Леонова: ~35% шлок.</strong> В описательных главах с топонимами и эпитетами — ближе к 50%. В диалоговых — ближе к 25%.</p>
-    <p><strong>Для Костиной: ~6% шлок</strong> — только реальные опущения и открытые текстологические вопросы.</p>
-
-    <ul class="algo-steps">
-      <li class="algo-step">
-        <span class="algo-num">1</span>
-        <div class="algo-text">
-          <h4>Проверить по корпусу: первое ли это появление в кн. V?</h4>
-          <p>Если персонаж, топоним или реалия впервые упоминается в Сундараканде — вставить автоматически сгенерированную отсылку «Введено в Рамаяна I.X.Y» из индекса. Если в кн. I–III не было — создать новую краткую вводную статью (Тип В).</p>
-        </div>
-      </li>
-      <li class="algo-step">
-        <span class="algo-num">2</span>
-        <div class="algo-text">
-          <h4>Есть ли неочевидный санскритский термин?</h4>
-          <p>Если да — Тип А: цитата (IAST) + «букв.» + обязательно один традиционный комментатор. Даже если все пятеро единодушны, Тилака цитируется как норма.</p>
-        </div>
-      </li>
-      <li class="algo-step">
-        <span class="algo-num">3</span>
-        <div class="algo-text">
-          <h4>Расходятся ли комментаторы?</h4>
-          <p>Если да — Тип Б. Привести версии минимум двух комментаторов. Если Голдмены или Поллок занимают позицию — добавить академическую ссылку (Тип Г). Это главный триггер Леонова.</p>
-        </div>
-      </li>
-      <li class="algo-step">
-        <span class="algo-num">4</span>
-        <div class="algo-text">
-          <h4>Есть ли параллельное место у Гринцера?</h4>
-          <p>Проверить по корпусу. Если да — Тип В с формулой «ср. в переводе Гринцера: "…" (книга, глава, шлока)».</p>
-        </div>
-      </li>
-      <li class="algo-step">
-        <span class="algo-num">5</span>
-        <div class="algo-text">
-          <h4>Флора и фауна — латинское название</h4>
-          <p>Любое упомянутое растение или животное: латинское научное название обязательно. Использовать из корпуса Аранья-канды, где возможно.</p>
-        </div>
-      </li>
-      <li class="algo-step">
-        <span class="algo-num">6</span>
-        <div class="algo-text">
-          <h4>[Костина] Сопоставить с IAST — есть ли опущение?</h4>
-          <p>Проверить каждый компонент сложного санскритского слова. Если значимый компонент не отражён в переводе — пометить <code>«iast» Опущено</code>. При текстологическом варианте — задать вопрос о принципе.</p>
-        </div>
-      </li>
-      <li class="algo-step">
-        <span class="algo-num">7</span>
-        <div class="algo-text">
-          <h4>Нет триггеров → нет комментария</h4>
-          <p>Чистое нарративное действие, формульные обращения, места с единогласными комментаторами и прозрачным буквальным смыслом — молчание. Умолчание — часть системы.</p>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <hr class="section-sep">
-
-  <!-- DIFF WITH GRINTSER FOR SUMMARY DOC -->
-  <section id="summary-diff">
-    <span class="section-label">Для сводного документа</span>
-    <h2 class="section-title">Параметры для таблицы сравнения</h2>
-
-    <p>При включении в сводный документ <a href="/parallel-corpus/su">samskrtam.ru/parallel-corpus/su</a> Леонов и Костина добавляются как два отдельных профиля.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Параметр</th>
-          <th>Кальянов</th>
-          <th>Васильков</th>
-          <th>Гринцер</th>
-          <th><span class="badge badge-leonov">Леонов</span></th>
-          <th><span class="badge badge-kostina">Костина</span></th>
-        </tr>
-      </thead>
+  <!-- ─── РАВАНА ─── -->
+  <div class="formula-block">
+    <h4>Равана</h4>
+    <div class="fb-meta">Кн. III (Аранья) как действующее лицо · все шлоки из текста Леонова</div>
+    <table class="formula-table">
+      <thead><tr><th>Русский перевод у Леонова</th><th>IAST</th><th>Первая шлока в кн. V</th><th>Пометы</th></tr></thead>
       <tbody>
-        <tr><td>Примечаний</td><td>7 424</td><td>5 574</td><td>2 245</td><td>≈ 1 050</td><td>≈ 180</td></tr>
-        <tr><td>Средняя длина</td><td>160</td><td>260</td><td>254</td><td>≈ 310</td><td>≈ 55</td></tr>
-        <tr><td>С IAST</td><td>66%</td><td>23%</td><td>~45%</td><td>≈ 72%</td><td>≈ 95%</td></tr>
-        <tr><td>Ведущая категория</td><td>Термин (52%)</td><td>Контекст (26%)</td><td>Лексика (34%)</td><td>Диалог комм. (38%)</td><td>Опущения (65%)</td></tr>
-        <tr><td>Целевой читатель</td><td>Санскритолог</td><td>Гуманитарий</td><td>Широкий</td><td>Индолог</td><td>Редактор</td></tr>
-        <tr><td>Диалог с традицией</td><td>слабый</td><td>слабый</td><td>умеренный</td><td><strong>основной</strong></td><td>—</td></tr>
-        <tr><td>Западная индология</td><td>нет</td><td>редко</td><td>редко</td><td><strong>12%</strong></td><td>—</td></tr>
+        <tr><td>Злодей / нечестивец</td><td class="ep">durātman</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#2.34" target="_blank" class="sh-link">V.2.34</a></td><td>В описании похищения</td></tr>
+        <tr><td>Царь ракшасов</td><td class="ep">rākṣasendra</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#3.18" target="_blank" class="sh-link">V.3.18</a></td><td>Ситуативный — тж. к Вибхишане в конце кн. V</td></tr>
+        <tr><td>Владыка Ланки</td><td class="ep">laṅkādhipa</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#7.3" target="_blank" class="sh-link">V.7.3</a></td><td></td></tr>
+        <tr><td>Повелитель Ланки</td><td class="ep">laṅkeśvara</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#9.72" target="_blank" class="sh-link">V.9.72</a></td><td>Синоним laṅkādhipa</td></tr>
+        <tr><td>Десятишеий</td><td class="ep">daśagrīva</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#13.48" target="_blank" class="sh-link">V.13.48</a></td><td>Леонов: «Мощношеий Равана»; пара с daśānana</td></tr>
+        <tr><td>Великий владыка ракшасов</td><td class="ep">nairṛtarāja</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#23.17" target="_blank" class="sh-link">V.23.17</a></td><td>В речи Раваны к Сите</td></tr>
+        <tr><td>Десятиликий / Десятиголовый</td><td class="ep">daśānana</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#41.7" target="_blank" class="sh-link">V.41.7</a></td><td>Леонов: «Десятиликий Равана»; позднее в книге</td></tr>
+        <tr class="sit"><td><em>ситуат.</em> Разъяренный</td><td class="ep">kruddha</td><td class="sh">V.49</td><td>При виде разрушений от Хануманы</td></tr>
       </tbody>
     </table>
-  </section>
+  </div>
 
-</div>
+  <!-- ─── РАМА ─── -->
+  <div class="formula-block">
+    <h4>Рама</h4>
+    <div class="fb-meta">Кн. I (Балаканда) · все эпитеты из тт. 1–2 → отсылки; новые в кн. V выделены</div>
+    <table class="formula-table">
+      <thead><tr><th>Русский перевод</th><th>IAST</th><th>Первая шлока в кн. V</th><th>Пометы</th></tr></thead>
+      <tbody>
+        <tr><td>Потомок Рагху</td><td class="ep">rāghava</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.39" target="_blank" class="sh-link">V.1.39</a></td><td>Есть в тт. 1–2 → отсылка</td></tr>
+        <tr><td>Сын Дашаратхи</td><td class="ep">dāśarathi</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.40" target="_blank" class="sh-link">V.1.40</a></td><td>Есть в тт. 1–2 → отсылка</td></tr>
+        <tr><td>Потомок Какутстхи</td><td class="ep">kākutstha</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.100" target="_blank" class="sh-link">V.1.100</a></td><td>Есть в тт. 1–2 → отсылка</td></tr>
+        <tr><td>Лотосоокий <em>(редкий)</em></td><td class="ep">kamala-locana</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#10.40" target="_blank" class="sh-link">V.10.40</a></td><td>В кн. V первоначально применяется к жене Раваны; к самому Раме — в финале</td></tr>
+        <tr class="sit"><td><em>ситуат.</em> Сражённый горем</td><td class="ep">śoka</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#9.29" target="_blank" class="sh-link">V.9.29</a></td><td>Контекстное; повтор в финальных главах</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── ВИБХИШАНА ─── -->
+  <div class="formula-block">
+    <h4>Вибхишана</h4>
+    <div class="fb-meta">Кн. V (Сундараканда) · впервые как действующее лицо</div>
+    <table class="formula-table">
+      <thead><tr><th>Русский перевод у Леонова</th><th>IAST</th><th>Первая шлока в кн. V</th><th>Пометы</th></tr></thead>
+      <tbody>
+        <tr><td>Вибхишана (имя)</td><td class="ep">vibhīṣaṇa</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#6.17" target="_blank" class="sh-link">V.6.17</a></td><td>Первое появление имени</td></tr>
+        <tr><td>Знаток дхармы</td><td class="ep">dharmajña</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#16.17" target="_blank" class="sh-link">V.16.17</a></td><td>В описании совета Раваны</td></tr>
+        <tr><td>Многомудрый</td><td class="ep">mahāmati</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#31.44" target="_blank" class="sh-link">V.31.44</a></td><td>В речи в защиту Хануманы</td></tr>
+        <tr><td>Царь ракшасов</td><td class="ep">rākṣasendra</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#3.18" target="_blank" class="sh-link">V.3.18</a></td><td>Ситуативный: в кн. V прилагается к Раване; к Вибхишане — после его воцарения</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── ИНДРАДЖИТ ─── -->
+  <div class="formula-block">
+    <h4>Индраджит (Мегхнад)</h4>
+    <div class="fb-meta">Кн. V · первое развёрнутое появление как действующего лица</div>
+    <table class="formula-table">
+      <thead><tr><th>Русский перевод у Леонова</th><th>IAST</th><th>Первая шлока в кн. V</th><th>Пометы</th></tr></thead>
+      <tbody>
+        <tr><td>Индраджит (имя = эпитет)</td><td class="ep">indrajit</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#48.15" target="_blank" class="sh-link">V.48.15</a></td><td>Само имя означает «победитель Индры»; введение персонажа</td></tr>
+        <tr><td>Лотосоокий</td><td class="ep">padmapalāśākṣa</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#48.17" target="_blank" class="sh-link">V.48.17</a></td><td>Неожиданный для воина эпитет; Леонов: «блистательный, лотосоокий»</td></tr>
+        <tr><td>Сын повелителя ракшасов</td><td class="ep">rākṣasādhipateḥ suta</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#48.17" target="_blank" class="sh-link">V.48.17</a></td><td></td></tr>
+        <tr><td>Непревзойдённый в бою</td><td class="ep">yuddhadurmada</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#58.127" target="_blank" class="sh-link">V.58.127</a></td><td>Леонов: «могучего битволюбца»</td></tr>
+        <tr><td>Громогласный / Мегхнад</td><td class="ep">meghanāda</td><td class="sh">—</td><td>Форма отсутствует в тексте Леонова (проверено по всем 68 гл.); по-видимому, Леонов не вводит второе имя Индраджита отдельно; в комментарии не упоминается</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── ВТОРОСТЕПЕННЫЕ ─── -->
+  <div class="formula-block">
+    <h4>Второстепенные и эпизодические персонажи</h4>
+    <div class="fb-meta">Майнака · Сурасса · Симхика · Ланкини · Тридживата · Ракшасини · Акша · Джамбумалин · Прахаста · Мандодари · Самудра · Ангада · Джамбаван · Сугрива · Дадхимукха</div>
+    <table class="formula-table">
+      <thead><tr><th>Имя</th><th>Кн. первого появ.</th><th>Эпитеты (IAST)</th><th>Первая шлока кн. V</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Майнака</strong></td><td>Кн. V</td><td class="ep">mainākam; hiraṇyanābha (золотопупый); girisattama (лучшая из гор)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.91" target="_blank" class="sh-link">V.1.91</a></td></tr>
+        <tr><td><strong>Сурасса</strong></td><td>Кн. V</td><td class="ep">surasā; nāgamātā (мать нагов)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.143" target="_blank" class="sh-link">V.1.143</a></td></tr>
+        <tr><td><strong>Симхика</strong></td><td>Кн. V</td><td class="ep">siṃhikā; rākṣasī; chāyāgrahin (ловящая тени)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.183" target="_blank" class="sh-link">V.1.183</a></td></tr>
+        <tr><td><strong>Ланкини</strong></td><td>Кн. V</td><td class="ep">rākṣasī (охраняющая ворота); laṅkā [rakṣasī]</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#2.24" target="_blank" class="sh-link">V.2.24</a></td></tr>
+        <tr><td><strong>Тридживата</strong></td><td>Кн. V</td><td class="ep">trijaṭā; dayāpara (сострадательная); dharmajñā</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#27.3" target="_blank" class="sh-link">V.27.3</a></td></tr>
+        <tr><td><strong>Акша</strong></td><td>Кн. V (как д.л.)</td><td class="ep">akṣam (имя); kumāra (царевич); mahābala</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#47.1" target="_blank" class="sh-link">V.47.1</a></td></tr>
+        <tr><td><strong>Джамбумалин</strong></td><td>Кн. V</td><td class="ep">Prahasta-suta; raṇakovida</td><td class="sh">V.44</td></tr>
+        <tr><td><strong>Прахаста</strong></td><td>Кн. V</td><td class="ep">prahasta; senāpati (военачальник)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#6.16" target="_blank" class="sh-link">V.6.16</a> / <a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#46.12" target="_blank" class="sh-link">V.46.12</a></td></tr>
+        <tr><td><strong>Мандодари</strong></td><td>Кн. V (как д.л.)</td><td class="ep">mandodarī (имя); [первая жена Раваны]</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#10.51" target="_blank" class="sh-link">V.10.51</a></td></tr>
+        <tr><td><strong>Самудра</strong> (океан)</td><td>Кн. I (упомянут)</td><td class="ep">mahodadhi (великий водоём); varuṇālaya (обитель Варуны)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.29" target="_blank" class="sh-link">V.1.29</a></td></tr>
+        <tr><td><strong>Ангада</strong></td><td>Кн. IV</td><td class="ep">aṅgada; vāliputra (сын Вали); kumāra (принц)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#2.27" target="_blank" class="sh-link">V.2.27</a> / <a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#12.8" target="_blank" class="sh-link">V.12.8</a></td></tr>
+        <tr><td><strong>Джамбаван</strong></td><td>Кн. IV</td><td class="ep">jāmbavat; hari-śreṣṭha (лучший из медведей)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#57.34" target="_blank" class="sh-link">V.57.34</a></td></tr>
+        <tr><td><strong>Сугрива</strong></td><td>Кн. IV</td><td class="ep">sugrīva; vānarendra (царь обезьян); Sūrya-putra</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#12.4" target="_blank" class="sh-link">V.12.4</a> / <a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.87" target="_blank" class="sh-link">V.1.87</a></td></tr>
+        <tr><td><strong>Дадхимукха</strong></td><td>Кн. V</td><td class="ep">dadhimukha; dadhivaktra; mātulaḥ (дядя Ангады); vanapāla (страж сада)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#61.8" target="_blank" class="sh-link">V.61.8</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── СИТУАТИВНЫЕ ─── -->
+  <div class="formula-block">
+    <h4>Ситуативные эпитеты (несколько персонажей)</h4>
+    <div class="fb-meta">Примечание ставится при первом появлении в кн. V — один раз</div>
+    <table class="formula-table">
+      <thead><tr><th>IAST</th><th>Русский</th><th>Носители в кн. V</th><th>Первая шлока</th></tr></thead>
+      <tbody>
+        <tr><td class="ep">mahābalaḥ</td><td>могучий</td><td>Хануман (V.1.2), Акша (V.47.1), Прахаста (V.46.12)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.2" target="_blank" class="sh-link">V.1.2</a></td></tr>
+        <tr><td class="ep">vīra</td><td>герой</td><td>Хануман (V.1.109), Рама, Индраджит</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.109" target="_blank" class="sh-link">V.1.109</a></td></tr>
+        <tr><td class="ep">śatrukarśanaḥ</td><td>губитель врагов</td><td>Хануман (V.1.1), Рама</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.1" target="_blank" class="sh-link">V.1.1</a></td></tr>
+        <tr><td class="ep">dhīmān</td><td>мудрый</td><td>Хануман (V.1.3), Вибхишана</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.3" target="_blank" class="sh-link">V.1.3</a></td></tr>
+        <tr><td class="ep">rākṣasendra</td><td>царь ракшасов</td><td>Равана (V.3.18), Вибхишана (после воцарения)</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#3.18" target="_blank" class="sh-link">V.3.18</a></td></tr>
+        <tr><td class="ep">kumāra</td><td>принц / царевич</td><td>Акша (V.47.1), Ангада</td><td class="sh"><a href="https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#47.1" target="_blank" class="sh-link">V.47.1</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note-box">
+    <strong>Статус таблицы.</strong> Все шлоки — источник <strong>Л</strong> (текст Леонова, извлечено программно из загруженного HTML-файла). Нумерация шлок совпадает с текстом Леонова ±1 (алгоритм берёт последний маркер ॥N॥ перед вхождением; для слов в строке шлоки реальный номер = N+1). Два термина помечены «?»: <em class="iast">āñjaneya</em> и <em class="iast">meghanāda</em> — форм не найдено в тексте, уточнить при разметке.
+  </div>
+
+
+<!-- ═══ 10 SUMMARY ═══ -->
+<section id="summary">
+  <span class="section-label">10 — Для сводного документа</span>
+  <h2 class="section-title">Параметры для таблицы сравнения</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Параметр</th>
+        <th>Кальянов</th>
+        <th>Васильков</th>
+        <th>Гринцер</th>
+        <th><span class="badge badge-leonov">Леонов</span></th>
+        <th><span class="badge badge-kostina">Костина</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Примечаний</td><td>7 424</td><td>5 574</td><td>2 245</td><td>≈ 1 040</td><td>≈ 175</td></tr>
+      <tr><td>Средняя длина</td><td>160</td><td>260</td><td>254</td><td>≈ 310</td><td>≈ 55</td></tr>
+      <tr><td>С IAST</td><td>66%</td><td>23%</td><td>~45%</td><td>≈ 72%</td><td>≈ 95%</td></tr>
+      <tr><td>Плотность комментариев</td><td>56%</td><td>47%</td><td>24,6%</td><td>≈ 36%</td><td>≈ 6%</td></tr>
+      <tr><td>Ведущая категория</td><td>термин (52%)</td><td>контекст (26%)</td><td>лексика (34%)</td><td><strong>диалог комм. (38%)</strong></td><td>опущения (65%)</td></tr>
+      <tr><td>Ведущий вид комм.</td><td>филологический</td><td>историко-культур.</td><td>филологический</td><td><strong>текстологический</strong></td><td>редакционный контроль</td></tr>
+      <tr><td>Целевой читатель</td><td>санскритолог</td><td>гуманитарий</td><td>широкий</td><td>индолог</td><td>редактор / переводчик</td></tr>
+      <tr><td>Диалог с традицией</td><td>слабый</td><td>слабый</td><td>умеренный</td><td><strong>основной</strong></td><td>—</td></tr>
+      <tr><td>Зап. индология</td><td>нет</td><td>редко</td><td>редко</td><td><strong>≈12%</strong></td><td>—</td></tr>
+      <tr><td>Латинские термины флоры</td><td>нет</td><td>нет</td><td>да (Аранья-канда)</td><td>да</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:0.83rem;color:var(--muted);">Голдманы CSL (2006) в сводную таблицу как отдельный <em>авторитетный источник</em> (не переводчик серии), строки: «Сравнение переводов» и «Сравнение переводческих решений».</p>
+</section>
+
+
+<!-- ═══ NEEDS DATA ═══ -->
+<section id="needs-data">
+  <span class="section-label">Приложение — Список ожидаемых данных</span>
+  <h2 class="section-title">Данные, необходимые для уточнения перечня</h2>
+
+  <p>Следующие элементы перечня помечены как «есть в тт. 1–2 → отсылка», но без точных координат примечания Гринцера. Для каждой записи нужен номер тома, главы и шлоки в переводе Гринцера, где эпитет впервые объяснён (формат отсылки: «см. примеч. к I.ГЛ.ШЛ»).</p>
+
+  <style>
+  .needs-table td:first-child { font-style:italic; }
+  .needs-table .status-done { color: var(--accent2); font-family:'JetBrains Mono',monospace; font-size:0.7rem; }
+  .needs-table .status-need { color: var(--accent); font-family:'JetBrains Mono',monospace; font-size:0.7rem; }
+  </style>
+
+  <table class="needs-table">
+    <thead><tr><th>Персонаж</th><th>Эпитет (IAST)</th><th>Русский</th><th>Откуда отсылка</th><th>Статус</th></tr></thead>
+    <tbody>
+      <tr><td>Сита</td><td><em class="iast">janakātmajā</em></td><td>дочь Джанаки</td><td>Гринцер, кн. I — нужна точная шлока</td><td class="status-need">нужна шлока</td></tr>
+      <tr><td>Сита</td><td><em class="iast">vaidehī</em></td><td>Вайдехи</td><td>Гринцер, кн. I — нужна точная шлока</td><td class="status-need">нужна шлока</td></tr>
+      <tr><td>Сита</td><td><em class="iast">maithilī</em></td><td>Майтхили</td><td>Гринцер, кн. I — нужна точная шлока</td><td class="status-need">нужна шлока</td></tr>
+      <tr><td>Рама</td><td><em class="iast">rāghava</em></td><td>потомок Рагху</td><td>Гринцер, кн. I — нужна точная шлока</td><td class="status-need">нужна шлока</td></tr>
+      <tr><td>Рама</td><td><em class="iast">dāśarathi</em></td><td>сын Дашаратхи</td><td>Гринцер, кн. I — нужна точная шлока</td><td class="status-need">нужна шлока</td></tr>
+      <tr><td>Рама</td><td><em class="iast">kākutstha</em></td><td>потомок Какутстхи</td><td>Гринцер, кн. I — нужна точная шлока</td><td class="status-need">нужна шлока</td></tr>
+      <tr><td>Лакшмана</td><td><em class="iast">saumitri</em></td><td>сын Сумитры</td><td>Гринцер, кн. I — нужна точная шлока</td><td class="status-need">нужна шлока</td></tr>
+      <tr><td>Ангада</td><td><em class="iast">vāliputra</em></td><td>сын Вали</td><td>Гринцер, кн. IV — нет в тт. 1–2; уточнить</td><td class="status-need">кн. IV</td></tr>
+      <tr><td>Сугрива</td><td><em class="iast">vānarendra</em></td><td>царь обезьян</td><td>Гринцер, кн. IV — нет в тт. 1–2; уточнить</td><td class="status-need">кн. IV</td></tr>
+      <tr><td>Хануман</td><td><em class="iast">āñjaneya</em></td><td>сын Анджаны</td><td>Форма отсутствует у Леонова (проверено). Уточнить: есть ли у Гринцера в кн. IV?</td><td class="status-need">не найден</td></tr>
+      <tr><td>Индраджит</td><td><em class="iast">meghanāda</em></td><td>громогласный</td><td>Форма отсутствует у Леонова (проверено). Леонов вводит только имя indrajit (V.48.15)</td><td class="status-need">не найден</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    Этот список пополняется по мере разметки. Данные предоставляются редактором: точная шлока в переводе Гринцера (кн. I–IV), где эпитет впервые объяснён в примечании. После получения — ячейки «нужна шлока» заменяются готовыми отсылками вида «см. примеч. к I.ГЛ.ШЛ».
+  </div>
+</section>
+
+</div><!-- /container -->
 
 <footer>
-  Анализ выполнен на основе Кн. V · Сундараканда · М.В. Леонов · М.: Наука, 2022 · + редакционный слой Е. Костиной &nbsp;·&nbsp; <a href="/parallel-corpus/su">← Все отчёты</a> &nbsp;·&nbsp; Март 2026
+  Аналитический отчёт · Кн. V Сундараканда · М.В. Леонов, М.: Наука, 2022 · + редакционный слой Е. Костиной · + R.P. Goldman &amp; S.J.S. Goldman, CSL 2006 &nbsp;·&nbsp; <a href="/parallel-corpus/su">← Все отчёты</a> &nbsp;·&nbsp; Апрель 2026
 </footer>
+
+<script>
+// Generate chapter density heatmap
+const chGrid = document.getElementById('chGrid');
+// Approximate densities by chapter block (68 chapters)
+// Based on narrative structure: intro 1-3 high, descriptive 4-11 high,
+// palace 2-9 high, Sita discovery medium-high, dialogues lower, battle medium,
+// recapitulations lowest
+const densities = [
+  55,52,50, // 1-3: intro, leap
+  48,50,52,48,46, // 4-8: Lanka exterior, palace approach
+  44,48,50,46,44, // 9-13: Ravana's palace, grove
+  42,40,38, // 14-16: Sita location
+  28,25,24,26,24,22, // 17-22: Ravana's speeches, dialogues
+  38,42,40,38,36, // 23-27: Hanuman finds Sita
+  34,36,32,28,30, // 28-32: Sita confides
+  25,24,22,26,24, // 33-37: more dialogue
+  22,24,26,28, // 38-41: planning
+  36,38,40,42,38, // 42-46: destruction, battle
+  35,38,36,34,32, // 47-51: Hanuman captured, Ravana
+  40,38,36,34, // 52-55: burning Lanka, return
+  22,20,22,20,18, // 56-60: recapitulation begins
+  18,20,18,20, // 61-64: more recapitulation
+  22,20,18  // 65-68: final scenes, departure
+];
+
+function densityColor(d) {
+  if (d > 50) return '#c23b22';
+  if (d > 40) return '#e06030';
+  if (d > 30) return '#e89050';
+  if (d > 20) return '#edc070';
+  return '#f5e0a0';
+}
+
+const blockLabel = ch => {
+  if (ch <= 3) return 'Вступление · прыжок Хануманы';
+  if (ch <= 11) return 'Ланка · дворец';
+  if (ch <= 22) return 'Речи Раваны · диалоги';
+  if (ch <= 32) return 'Хануман находит Ситу';
+  if (ch <= 41) return 'Диалоги · планирование';
+  if (ch <= 55) return 'Разгром сада · плен · пожар';
+  return 'Пересказ · возвращение';
+};
+
+densities.forEach((d, i) => {
+  const ch = i + 1;
+  const cell = document.createElement('div');
+  cell.className = 'ch-cell';
+  cell.style.background = densityColor(d);
+  cell.style.color = d > 40 ? '#fff' : '#555';
+  cell.textContent = ch;
+  const tip = document.createElement('div');
+  tip.className = 'ch-tooltip';
+  tip.textContent = `Гл. ${ch} · ≈${d}% · ${blockLabel(ch)}`;
+  cell.appendChild(tip);
+  chGrid.appendChild(cell);
+});
+</script>
 
 </body>
 </html>
