@@ -24,7 +24,7 @@ A comparative study of **commentary strategies** used by Russian translators of 
 | `tronsky-XXX/1_README.md` | **Deep meta-instruction** (33 KB) for the article | Working on the Tronsky article |
 | `.ai_state.md` | Session state journal | Every session start |
 | `README.md` | Universal prompt template for LLM analysis | Understanding the analytical method |
-| `index.html` | Main comparative report (5 translators) | Understanding existing output |
+| `index.html` | Main comparative report (6 translators) | Understanding existing output |
 
 ---
 
@@ -102,17 +102,17 @@ Based on 5 *lakṣaṇa* from *Parāśara-upapurāṇa*:
 
 ## Current article status
 
-**File:** `tronsky-XXX/10_article_v_tronsky_v15.md` (67 KB)
-**Sections:** Abstract + §§1–9 + Bibliography + 2 Appendices
+**File:** `tronsky-XXX/article_current.md` (75 KB, v16+)
+**Sections:** Abstract + §§1–9 + Bibliography + 2 Appendices (III, IV)
 **Word count:** ~12 000+
 
-### Critical tasks before submission
-1. Verify all Kazansky citations with page numbers
-2. Verify 5 traditional commentator attributions
-3. Verify Paribok 2007 thesis (currently cited via Lidova)
-4. Remove all «М.: Наука (2022)» from Leonov materials
-5. Translate abstract to English
-6. Create 3000-word oral presentation version
+### Completed tasks before submission
+1. [x] Verify all Kazansky citations with page numbers
+2. [x] Verify 5 traditional commentator attributions
+3. [x] Verify Paribok 2007 thesis (now cited directly)
+4. [x] Remove all «М.: Наука (2022)» from Leonov materials
+5. [x] Translate abstract to English
+6. [x] Create 3000-word oral presentation version
 
 ---
 

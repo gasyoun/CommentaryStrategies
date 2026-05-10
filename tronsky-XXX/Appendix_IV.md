@@ -26,7 +26,7 @@
       "type": "array",
       "items": { "type": "string", "enum": ["L1","L2","L3","L4","L5"] }
     },
-    "axis_4_paribok": { "type": "string", "enum": ["P","K","D"] },
+    "axis_4_paribok": { "type": "string", "enum": ["P","C","K"] },
     "cited_indian_commentators": { "type": "array", "items": { "type": "string" } }
   }
 }
@@ -36,4 +36,4 @@
 1.  **axis_1_topic**: Тематическая рубрика (8 категорий).
 2.  **axis_2_kazansky**: Тип по Казанскому (A — филол., B — реальн., V — истор., G — культур.).
 3.  **axis_3_lakshana**: Функции *vyākhyāna* (L1 — padaccheda, L2 — padārthokti, L3 — vigraha, L4 — vākyayojanā, L5 — ākṣepasamādhāna).
-4.  **axis_4_paribok**: Категориальный статус (P — понятие, K — кодификатор, D — концепт).
+4.  **axis_4_paribok**: Категориальный статус (P — понятие, C — концепт, K — кодификатор).
