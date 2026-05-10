@@ -9,7 +9,7 @@ def build_article():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(script_dir)
     
-    input_md = os.path.join(parent_dir, "3_gasuns_tronsky-30_v21.md")
+    input_md = os.path.join(parent_dir, "article_current.md")
     temp_md = os.path.join(script_dir, "temp_article_anon.md")
     output_docx = os.path.join(parent_dir, "article_v_tronsky_anon.docx")
     
