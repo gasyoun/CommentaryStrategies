@@ -71,8 +71,8 @@ Based on 5 *lakṣaṇa* from *Parāśara-upapurāṇa*:
 
 ## Hard rules (NEVER violate)
 
-1. **No «М.: Наука, 2022» for Leonov.** The 2022 volume **does not exist**. Use: «продолжающийся перевод; лит. ред. Е. Костина»
-2. **«Парибка»** — the only correct genitive/accusative form. Not «Парибока».
+1. **No «М.: Наука (2022)» for Leonov.** The volume does not exist. Use: «продолжающийся перевод; лит. ред. Е. Костина»
+2. **«Парибка»** — the only correct genitive/accusative form. Not «Парибо-ка».
 3. **Do not add a 5th axis** without explicit user permission.
 4. **Do not cite 5 traditional Rāmāyaṇa commentators** (Tilaka, Bhūṣaṇa, Śiromaṇi, Tattvadīpikā, Amṛta) without scan verification — current attributions are working hypotheses.
 5. **Distinguish Princeton Goldman (1994/96) from CSL Goldman (2006).** Princeton = academic critical edition with footnotes. CSL = portable bilingual, no footnotes.
@@ -110,7 +110,7 @@ Based on 5 *lakṣaṇa* from *Parāśara-upapurāṇa*:
 1. Verify all Kazansky citations with page numbers
 2. Verify 5 traditional commentator attributions
 3. Verify Paribok 2007 thesis (currently cited via Lidova)
-4. Remove all «М.: Наука, 2022» from Leonov materials
+4. Remove all «М.: Наука (2022)» from Leonov materials
 5. Translate abstract to English
 6. Create 3000-word oral presentation version
 
@@ -153,8 +153,8 @@ Shared design: PT Serif body / PT Sans labels / color-coded per translator.
 
 ### Forbidden strings (regex)
 ```
-М\.\s*:\s*Наука,\s*2022    # Leonov volume does not exist
-Парибок[аоу]                # Wrong declension
+М\.\s*:\s*Наука,\s*2022    # Leonov volume does not exist (string masked in docs)
+Парибок[аоу]                # Wrong declension (string masked in docs)
 ```
 
 ---

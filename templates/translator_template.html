@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TRANSLATOR_NAME}} · Комментаторские стратегии</title>
+<link rel="stylesheet" href="../css/commentary.css">
+<style>
+  /* Custom translator color */
+  :root {
+    --tr-color: {{COLOR_HEX}};
+    --tr-bg: {{COLOR_LIGHT_HEX}};
+  }
+  .stat-cell.translator .stat-num { color: var(--tr-color); }
+  .badge-translator { background: var(--tr-color); color: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="breadcrumb">
+    <a href="../index.html">← Все переводчики</a>
+    &nbsp;/&nbsp; {{TRANSLATOR_NAME}}
+  </div>
+  <h1>{{TRANSLATOR_FULL_NAME}}</h1>
+  <p class="subtitle">{{PROJECT_DESCRIPTION}}</p>
+
+  <div class="stats-grid">
+    <div class="stat-cell translator">
+      <span class="stat-num">{{TOTAL_NOTES}}</span>
+      <span class="stat-label">Примечаний</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">{{IAST_PCT}}%</span>
+      <span class="stat-label">IAST-насыщенность</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">{{AVG_LENGTH}}</span>
+      <span class="stat-label">Ср. длина (симв.)</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <section id="profile">
+    <span class="section-label">Профиль</span>
+    <h2 class="section-title">Аналитическая сводка</h2>
+    <p>{{ANALYTICAL_SUMMARY}}</p>
+    
+    <div class="note-box">
+      <strong>Стратегия:</strong> {{STRATEGY_TYPE}}
+    </div>
+  </section>
+
+  <section id="examples">
+    <span class="section-label">Примеры</span>
+    <h2 class="section-title">Характерные примечания</h2>
+    
+    {{EXAMPLES_HTML}}
+  </section>
+</div>
+
+<footer>
+  Проект «Комментаторские стратегии» · 2026
+</footer>
+
+</body>
+</html>

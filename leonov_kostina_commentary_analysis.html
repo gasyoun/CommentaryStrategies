@@ -4,22 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Логика комментирования Леонова и Костиной · Сундараканда</title>
+<link rel="stylesheet" href="css/commentary.css">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap');
-
+/* Page-specific overrides and components */
 :root {
-  --ink: #1a1714;
-  --paper: #f7f4ef;
-  --accent: #7c4b2a;
-  --accent2: #3d6b5e;
-  --leonov: #7c4b2a;
-  --kostina: #3d6b5e;
   --goldman: #2b5080;
-  --claude: #5a4b8a;
-  --rule: #c9bfaf;
-  --muted: #7a7068;
-  --card: #f0ebe3;
-  --highlight: #f5e6d3;
   /* Generated comment highlight shades */
   --hl-term: #fff7cc;       /* желтый — термин/вводная статья */
   --hl-flora: #d6f5d6;      /* зеленый — флора/фауна */
@@ -27,48 +16,6 @@
   --hl-formula: #ffe5cc;    /* оранжевый — формульные обращения */
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Source Serif 4', Georgia, serif;
-  background: var(--paper);
-  color: var(--ink);
-  font-size: 17px;
-  line-height: 1.75;
-  font-weight: 300;
-}
-
-/* ─── HEADER ─── */
-header {
-  background: var(--ink);
-  color: var(--paper);
-  padding: 3.5rem 2rem 3rem;
-  text-align: center;
-  border-bottom: 4px solid var(--accent);
-}
-.breadcrumb {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: var(--rule);
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-.breadcrumb a { color: var(--rule); text-decoration: none; }
-.breadcrumb a:hover { color: var(--paper); }
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.6rem, 4vw, 2.5rem);
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 0.4rem;
-}
-header .subtitle {
-  color: var(--rule);
-  font-size: 0.9rem;
-  font-style: italic;
-  margin-bottom: 2.5rem;
-}
 .stats-grid {
   display: flex;
   justify-content: center;
@@ -158,52 +105,8 @@ section { margin: 4rem 0; scroll-margin-top: 2rem; }
   display: block;
   margin-bottom: 0.4rem;
 }
-h2.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.7rem;
-  font-weight: 600;
-  margin-bottom: 1.2rem;
-  border-bottom: 2px solid var(--rule);
-  padding-bottom: 0.6rem;
-}
-h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.15rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--accent);
-  margin: 2rem 0 0.7rem;
-}
-p { margin-bottom: 1rem; }
-
-/* ─── TABLES ─── */
-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.88rem; }
-th {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 0.55rem 0.8rem;
-  text-align: left;
-}
-td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
-tr:nth-child(even) td { background: var(--card); }
 .pct { font-family: 'JetBrains Mono', monospace; font-size: 0.83rem; color: var(--accent); font-weight: 500; }
 
-/* ─── BADGES ─── */
-.badge {
-  display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.13rem 0.45rem;
-  border-radius: 2px;
-  vertical-align: middle;
-  margin-right: 0.3rem;
-}
 .badge-leonov { background: var(--leonov); color: #fff; }
 .badge-kostina { background: var(--kostina); color: #fff; }
 .badge-goldman { background: var(--goldman); color: #fff; }
@@ -429,7 +332,7 @@ footer a { color: var(--accent); text-decoration: none; }
 <header>
   <div class="breadcrumb"><a href="/parallel-corpus/su">← Все отчёты</a> / Рамаяна · Кн. V · Сундараканда</div>
   <h1>Логика комментирования<br>Леонова и Костиной</h1>
-  <p class="subtitle">М.В. Леонов. Рамаяна. Книга V: Сундараканда. М.: Наука, 2022 · + редакционный слой Е. Костиной · + сравнение с Голдманами (CSL 2006)</p>
+  <p class="subtitle">М.В. Леонов. Рамаяна. Книга V: Сундараканда. Продолжающийся перевод; лит. ред. Е. Костина · + редакционный слой Е. Костиной · + сравнение с Голдманами (CSL 2006)</p>
 
   <div class="stats-grid">
     <div class="stat-cell"><span class="stat-num">≈2 885</span><span class="stat-label">Шлок в книге</span></div>
@@ -1318,7 +1221,7 @@ footer a { color: var(--accent); text-decoration: none; }
 </div><!-- /container -->
 
 <footer>
-  Аналитический отчёт · Кн. V Сундараканда · М.В. Леонов, М.: Наука, 2022 · + редакционный слой Е. Костиной · + R.P. Goldman &amp; S.J.S. Goldman, CSL 2006 &nbsp;·&nbsp; <a href="/parallel-corpus/su">← Все отчёты</a> &nbsp;·&nbsp; Апрель 2026
+  Аналитический отчёт · Кн. V Сундараканда · М.В. Леонов, продолжающийся перевод; лит. ред. Е. Костина · + редакционный слой Е. Костиной · + R.P. Goldman &amp; S.J.S. Goldman, CSL 2006 &nbsp;·&nbsp; <a href="/parallel-corpus/su">← Все отчёты</a> &nbsp;·&nbsp; Апрель 2026
 </footer>
 
 <script>
