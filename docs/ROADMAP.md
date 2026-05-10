@@ -156,3 +156,23 @@
 4. **Не смешивать Princeton Goldman и CSL Goldman**
 5. **Не цитировать 5 комментаторов Рамаяны без сверки сканов**
 6. **Лосев-монограф ≠ Лосев-редактор** — только второй релевантен
+
+---
+
+## Приложение: соответствие agent-roadmap-2026
+
+> Источник: <https://github.com/codejunkie99/agent-roadmap-2026>
+> Полное описание — в `docs/GEMINI.md` (раздел «Mapping to agent-roadmap-2026»).
+
+Краткая таблица соответствия — какую фазу agent-roadmap реализует каждая фаза этого плана:
+
+| Фаза проекта | Фаза agent-roadmap-2026 | Ключевой артефакт |
+|---|---|---|
+| **Phase 1** — Статья | Phase 0 (mental models) | 2-страничный doc: 4-осная сетка как контекст-инжиниринг |
+| **Phase 2** — Микроразметка | Phase 2 (LangGraph deep agent) | Lead agent → 6 sub-agents → `data/*.json`; LangSmith trace |
+| **Phase 3** — Расширение корпуса | Phase 1 (tool-using agent) | `nilakantha_parser.py` как Claude Agent SDK Skill с SKILL.md |
+| **Phase 4** — Интеграция с CLR | Phase 4 (evals & CI) | `make eval`: валидация + CI gate на регрессию оси |
+| **Phase 5** — Платформа | Phase 5 (production) | Prompt caching, model routing (Haiku / Opus), sandbox |
+
+**Ключевой принцип** (по аналогии с agent-roadmap): *тот же корпус примечаний, другой харнес → ручная классификация vs. автоматическая разметка по 4 осям в масштабе*.
+Узкое место — не модель, а харнес: правильный **Select** (какие примечания брать), **Write** (JSON в `data/`), **Isolate** (sub-agent на переводчика), **Compress** (возвращать только метки, не сырой текст).

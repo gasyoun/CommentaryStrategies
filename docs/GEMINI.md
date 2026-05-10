@@ -159,6 +159,62 @@ Shared design: PT Serif body / PT Sans labels / color-coded per translator.
 
 ---
 
+## Mapping to agent-roadmap-2026
+
+> Reference: <https://github.com/codejunkie99/agent-roadmap-2026>
+>
+> That roadmap is a **6-phase, 17-week AI agent engineering curriculum**
+> (harness → context → LangGraph → evals → production).
+> This project is a *running domain application* — a scholarly corpus that
+> drives concrete agent engineering tasks at each phase.
+
+### How the phases map
+
+| agent-roadmap-2026 phase | Harness concept taught | Where it appears in CommentaryStrategies |
+|--------------------------|------------------------|------------------------------------------|
+| **Phase 0** — Mental models | Workflow vs. agent; context engineering (Write / Select / Compress / Isolate) | `.ai_state.md` + `docs/GEMINI.md` implement the **Write** primitive. This file *is* the system-prompt context for the agent. |
+| **Phase 1** — Tool-using agent | 100-line loop; Claude Agent SDK; Skills / hooks | `nilakantha_parser.py` is a tool. A Phase 1 project: wrap it as an `@tool`, add `read_file` / `write_file`, run it against the Mahābhārata HTML. |
+| **Phase 2** — LangGraph deep agent | Orchestrator-worker; sub-agent fan-out; PostgresSaver durability | **Micro-markup task** (Phase 2.1 of the roadmap): lead agent reads 50 annotations per translator, fans out to 6 annotation sub-agents (one per translator), each classifies by 4 axes, returns compressed JSON. Lead merges into `data/`. |
+| **Phase 3** — Custom harness | Loop + tool dispatch + context compression + sub-agents | `build_docx.py` + `validate.py` are early harness fragments. A Phase 3 deliverable: 1 500-line harness that ingests any HTML analysis page, runs regex validation, spawns sub-agents to verify citations, and writes the corrected Markdown. |
+| **Phase 4** — Evals & CI | Golden datasets; trajectory evals; CI gates | **Validation CI** (Architecture issue C3): a `make eval` target that runs `validate.py` (forbidden-string check), graders on Leonov date attribution, and blocks merge if errors appear. The 14-item checklist in article §9 is the golden rubric. |
+| **Phase 5** — Production | Cost discipline; sandboxing; drift alerts | Once corpus annotation is automated: prompt-caching the 4-axis system prompt; model routing (Haiku for Axis 1 classification, Opus for Axis 2–4 judgment); nightly drift check on LLM-as-judge scores on the micro-markup dataset. |
+
+### The key insight
+
+The agent-roadmap-2026 says: *same model, different harness, 78% vs 42% on CORE*.
+
+For CommentaryStrategies the equivalent is: *same annotation corpus, different agent harness, manual classification vs. automated 4-axis micro-markup at scale*. The bottleneck is not the model — it is the harness that correctly **selects** (which annotations to classify), **writes** (JSON to `data/`), **isolates** (per-translator sub-agents), and **compresses** (returns only axis labels, not raw text, to the parent).
+
+### Skills this project develops
+
+Following the agent-roadmap-2026 `AGENT.md` protocol, the project profile is:
+
+```
+Level:    built simple agents / shipping scholarly ones
+Goal:     ship at current job (scholarly publication + corpus platform)
+Stack:    Python + Anthropic (Gemini for planning, Claude for harness work)
+Hours:    variable — research schedule
+```
+
+Adjusted plan per `AGENT.md` rules:
+- Phase 0–1: **SPEEDRUN** — existing `nilakantha_parser.py` and HTML pipeline count as Phase 1 evidence
+- Phase 2: **NORMAL** — micro-markup task is the canonical Phase 2 project
+- Phase 3: **SPEEDRUN** — use Deep Agents middleware; write harness only for `validate.py` + docx builder
+- Phase 4: **DEEP** — eval quality is the core bottleneck (architecture issue C3)
+- Phase 5: **ONGOING** — cost and drift matter when annotation scales to 300+ translators
+
+### Deliverables mapped to ROADMAP.md phases
+
+| ROADMAP.md phase | agent-roadmap-2026 deliverable produced |
+|------------------|-----------------------------------------|
+| Phase 1 (article submission) | Phase 0 mental-model doc: write the 2-page doc that explains the 4-axis framework as a context-engineering artifact |
+| Phase 2 (micro-markup) | Phase 2 project: research-analyst deep agent classifying 300 annotations; LangSmith trace URL in README |
+| Phase 3 (corpus expansion) | Phase 1 rebuild: `nilakantha_parser.py` as a Claude Agent SDK Skill with SKILL.md metadata |
+| Phase 4 (CLR integration) | Phase 4 eval: CI gate blocking merge if axis classification drift > 3 points |
+| Phase 5 (publication platform) | Phase 5 hardening: prompt caching, model routing, sandbox for code execution |
+
+---
+
 ## Canonical Д-term list (Paribok 2011, p. 86)
 
 *duḥkha*, *brahman*, *ātman*, *dharma*, *karma*, *bodhicitta*, *guru*,
