@@ -84,9 +84,9 @@
 </main>
 
 <script>
-const T=["К Кальянов","В Васильков","Э Эрман","Г Гринцер","С Сыркин"];
-const C=["#2a5a8b","#3a6b35","#5a2d82","#8b4513","#7a3b00"];
-const CA=["rgba(42,90,139,0.15)","rgba(58,107,53,0.15)","rgba(90,45,130,0.15)","rgba(139,69,19,0.15)","rgba(122,59,0,0.15)"];
+const T=["К Кальянов","В Васильков","Э Эрман","Г Гринцер","С Сыркин","Л Леонов"];
+const C=["#2a5a8b","#3a6b35","#5a2d82","#8b4513","#7a3b00","#d4af37"];
+const CA=["rgba(42,90,139,0.15)","rgba(58,107,53,0.15)","rgba(90,45,130,0.15)","rgba(139,69,19,0.15)","rgba(122,59,0,0.15)","rgba(212,175,55,0.15)"];
 
 new Chart(document.getElementById('bubble'),{type:'bubble',data:{datasets:[
   {label:T[0],data:[{x:66,y:160,r:24}],backgroundColor:CA[0],borderColor:C[0],borderWidth:1.5},
@@ -94,6 +94,7 @@ new Chart(document.getElementById('bubble'),{type:'bubble',data:{datasets:[
   {label:T[2],data:[{x:50,y:264,r:8}], backgroundColor:CA[2],borderColor:C[2],borderWidth:1.5},
   {label:T[3],data:[{x:45,y:254,r:13}],backgroundColor:CA[3],borderColor:C[3],borderWidth:1.5},
   {label:T[4],data:[{x:64,y:316,r:11}],backgroundColor:CA[4],borderColor:C[4],borderWidth:1.5},
+  {label:T[5],data:[{x:65,y:300,r:15}],backgroundColor:CA[5],borderColor:C[5],borderWidth:1.5},
 ]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:20},
   plugins:{legend:{display:false}},
   scales:{x:{min:0,max:90,title:{display:true,text:'IAST, %'}},
@@ -103,8 +104,8 @@ const bleg=document.getElementById('bleg');
 T.forEach((n,i)=>{const s=document.createElement('span');s.innerHTML=`<span class="legend-dot" style="background:${C[i]}"></span>${n}`;bleg.appendChild(s);});
 
 const CATS=["Санскр. термин","Миф / персонаж","Контекст / нарратив","Культурная реалия","Текстология","Отсылка / параллели","Философия / религия","География / этноним"];
-const HD=[[51.5,13.4,40.2,34.0,20.7],[19.5,25.5,17.5,9.0,2.7],[13.6,26.3,20.6,0.0,8.8],[6.0,13.9,8.1,7.0,5.2],[1.2,3.4,4.3,15.0,33.9],[3.9,9.4,32.5,5.0,14.6],[0.2,1.0,2.1,1.0,8.6],[4.2,7.1,0.0,0.0,0.0]];
-const cW=82,cH=36,lW=165,tH=30,svgW=lW+cW*5+10,svgH=tH+cH*8+8;
+const HD=[[51.5,13.4,40.2,34.0,20.7,35.0],[19.5,25.5,17.5,9.0,2.7,25.0],[13.6,26.3,20.6,0.0,8.8,15.0],[6.0,13.9,8.1,7.0,5.2,10.0],[1.2,3.4,4.3,15.0,33.9,10.0],[3.9,9.4,32.5,5.0,14.6,5.0],[0.2,1.0,2.1,1.0,8.6,0.0],[4.2,7.1,0.0,0.0,0.0,0.0]];
+const cW=82,cH=36,lW=165,tH=30,svgW=lW+cW*6+10,svgH=tH+cH*8+8;
 let sv=`<svg viewBox="0 0 ${svgW} ${svgH}" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;font-family:'Source Serif 4',serif;">`;
 T.forEach((n,j)=>{sv+=`<text x="${lW+j*cW+cW/2}" y="${tH-8}" text-anchor="middle" font-size="11" fill="var(--muted)">${n.split(' ')[0]}</text>`;});
 HD.forEach((row,i)=>{const y=tH+i*cH;sv+=`<text x="${lW-8}" y="${y+cH/2+4}" text-anchor="end" font-size="11" fill="var(--ink)">${CATS[i]}</text>`;row.forEach((v,j)=>{const x=lW+j*cW,a=Math.min(0.85,v/55+0.05);sv+=`<rect x="${x+1}" y="${y+1}" width="${cW-2}" height="${cH-2}" rx="3" fill="${C[j]}" fill-opacity="${a}"/>`;sv+=`<text x="${x+cW/2}" y="${y+cH/2+4}" text-anchor="middle" font-size="11" font-weight="500" fill="${a>0.4?'#fff':'var(--ink)'}">${v>0?v.toFixed(1)+'%':'—'}</text>`;});});
@@ -118,7 +119,7 @@ const sleg=document.getElementById('sleg');
 CATS.forEach((c,i)=>{const sp=document.createElement('span');sp.innerHTML=`<span class="legend-dot" style="background:${CC[i]}"></span>${c}`;sleg.appendChild(sp);});
 
 const RL=["Длина прим.","Доля IAST","Плотность","Текстология","Философия","Библиография"];
-const RR=[[160,260,264,254,316],[66,23,50,45,64],[56,47,38,25,40],[1.2,3.4,4.3,15,33.9],[0.2,1.0,2.1,1.0,8.6],[5,30,50,30,80]];
+const RR=[[160,260,264,254,316,300],[66,23,50,45,64,65],[56,47,38,25,40,50],[1.2,3.4,4.3,15,33.9,10],[0.2,1.0,2.1,1.0,8.6,0.5],[5,30,50,30,80,10]];
 const norm=a=>{const mn=Math.min(...a),mx=Math.max(...a);return a.map(v=>Math.round((v-mn)/(mx-mn)*100));};
 const RN=RR.map(norm),RPT=T.map((_,j)=>RN.map(ax=>ax[j]));
 new Chart(document.getElementById('radar'),{type:'radar',data:{labels:RL,datasets:RPT.map((v,i)=>({label:T[i],data:v,borderColor:C[i],backgroundColor:CA[i],borderWidth:1.5,pointRadius:3}))},
