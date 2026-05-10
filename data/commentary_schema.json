@@ -1,59 +1,30 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "CommentaryItem",
-  "description": "A single annotated commentary item in the CommentaryStrategies corpus",
+  "title": "CommentaryStrategiesAnnotation",
+  "description": "Схема разметки одного примечания по 4 осям",
   "type": "object",
+  "required": ["comment_id", "translator", "axis_1_topic", "axis_2_kazansky"],
   "properties": {
-    "id": {
-      "type": "string",
-      "description": "Unique identifier, e.g., 'leo_su_1_1a'"
+    "comment_id":    { "type": "string", "description": "Уникальный ID: {source}/{translator}/comment_{shloka}" },
+    "shloka_addr":   { "type": "string", "description": "Канонический адрес шлоки, напр. Rām. Sundara 1.1.a" },
+    "translator":    { "type": "string", "enum": ["kalyanov","vasilkov","erman","grintser","syrkin","leonov"] },
+    "editor":        { "type": "string", "description": "Редактор (для Леонова: kostina)" },
+    "raw_text":      { "type": "string", "description": "Исходный текст примечания" },
+    "char_count":    { "type": "integer" },
+    "has_iast":      { "type": "boolean" },
+    "axis_1_topic":  {
+      "type": "array",
+      "items": { "type": "string", "enum": [
+        "sanskrit_term","myth","context","realia","geography","reference","textology","philosophy"
+      ]}
     },
-    "source": {
-      "type": "string",
-      "description": "Translator code: k, v, e, g, s, l"
+    "axis_2_kazansky": { "type": "string", "enum": ["A","B","V","G"] },
+    "axis_3_lakshana": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["L1","L2","L3","L4","L5"] }
     },
-    "text_ref": {
-      "type": "string",
-      "description": "Canonical text reference, e.g., 'MBh 6.1.1' or 'Ram 5.1.1'"
-    },
-    "shloka_iast": {
-      "type": "string",
-      "description": "Sanskrit shloka fragment in IAST"
-    },
-    "commentary_text": {
-      "type": "string",
-      "description": "The actual text of the commentary"
-    },
-    "analysis": {
-      "type": "object",
-      "properties": {
-        "axis_1_rubric": {
-          "enum": ["term", "myth", "context", "realia", "geo", "ref", "textual", "philosophy"],
-          "description": "Thematic rubric (CommentaryStrategies taxonomy)"
-        },
-        "axis_2_type": {
-          "enum": ["A", "B", "V", "G"],
-          "description": "Commentary type (Kazansky 2025 taxonomy): A-philological, B-realia, V-historical, G-cultural"
-        },
-        "axis_3_function": {
-          "enum": ["L1", "L2", "L3", "L4", "L5"],
-          "description": "Explanatory function (Lidova/Parashara-upapurana): L1-padaccheda, L2-padarthokti, L3-vigraha, L4-vakyayojana, L5-akṣepasamādhāna"
-        },
-        "axis_4_nature": {
-          "enum": ["P", "K", "D"],
-          "description": "Categorical nature (Paribok 2011): P-concept(notion), K-concept, D-codifier"
-        }
-      },
-      "required": ["axis_1_rubric", "axis_2_type", "axis_3_function", "axis_4_nature"]
-    },
-    "metadata": {
-      "type": "object",
-      "properties": {
-        "annotator": { "type": "string" },
-        "timestamp": { "type": "string", "format": "date-time" },
-        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
-      }
-    }
-  },
-  "required": ["id", "source", "text_ref", "commentary_text", "analysis"]
+    "axis_4_paribok": { "type": "string", "enum": ["P","K","D"] },
+    "cited_indian_commentators": { "type": "array", "items": { "type": "string" } },
+    "cited_western_sources": { "type": "array", "items": { "type": "string" } }
+  }
 }
