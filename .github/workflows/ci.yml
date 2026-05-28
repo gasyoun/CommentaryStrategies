@@ -1,0 +1,88 @@
+name: CI
+
+# Baseline CI for Python tooling repos.
+# Lint (ruff) + format-check (black) + pytest + YAML lint.
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint (ruff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install ruff
+        run: pip install ruff
+      - name: Critical errors (non-blocking warnings)
+        run: ruff check --select=E9,F63,F7,F82 --output-format=github .
+      - name: Style report (warnings only)
+        run: ruff check --output-format=github . || true
+
+  format-check:
+    name: Format check (black)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install black
+        run: pip install black
+      - name: black --check (warn only initially)
+        run: black --check --diff . || echo "::warning::Formatting drift — run 'black .' locally to fix"
+
+  test:
+    name: Pytest
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install deps
+        run: |
+          pip install pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f pyproject.toml ]; then pip install -e . || true; fi
+      - name: Run pytest
+        run: |
+          if [ -d tests ] || [ -d test ] || compgen -G "test_*.py" > /dev/null || compgen -G "*_test.py" > /dev/null; then
+            pytest -v --tb=short
+          else
+            echo "::warning::No tests directory or test_*.py files found. Add tests/ to enable test coverage."
+          fi
+
+  yaml-lint:
+    name: YAML lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: pip install pyyaml
+      - name: Validate all YAML
+        run: |
+          python -c "
+          import sys, glob, yaml
+          fail = 0
+          for f in glob.glob('**/*.yml', recursive=True) + glob.glob('**/*.yaml', recursive=True):
+              if '.git' in f: continue
+              try:
+                  with open(f, encoding='utf-8') as fh: yaml.safe_load(fh)
+              except yaml.YAMLError as e:
+                  print(f'::error file={f}::{e}'); fail = 1
+          sys.exit(fail)
+          "
