@@ -65,7 +65,8 @@ assert_covers(AXIS4, AXIS4_PARIBOK, "export_tei.AXIS4")
 def ncname(s):
     """comment_id → валидный xml:id (NCName): слэши→подчёркивания."""
     out = re.sub(r"[^\w.-]", "_", s)
-    return out if out[0].isalpha() or out[0] == "_" else "x" + out
+    # NCName должен начинаться с буквы/подчёркивания; пустой → не упасть на out[0].
+    return out if out and (out[0].isalpha() or out[0] == "_") else "x" + out
 
 
 def cat(cid, desc):
@@ -134,6 +135,13 @@ def build_note(rec):
 
 
 def build_tei(translator, records):
+    # Уникальность xml:id: разные comment_id могут схлопнуться в один ncname
+    # (слэш/двоеточие/пробел → «_»). Дубль xml:id = невалидный XML, который
+    # ET.fromstring НЕ ловит, — проверяем явно.
+    ids = [ncname(r.get("comment_id", "")) for r in records]
+    dupes = sorted({x for x in ids if ids.count(x) > 1})
+    if dupes:
+        raise ValueError(f"export_tei[{translator}]: дублирующиеся xml:id {dupes}")
     notes = "\n".join(build_note(r) for r in records)
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">

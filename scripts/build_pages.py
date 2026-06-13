@@ -43,10 +43,16 @@ TRANSLATORS = {
 }
 
 
+def _top(counter, default="—"):
+    """Доминирующий ключ Counter, не падая на пустом (все записи без этой оси)."""
+    mc = counter.most_common(1)
+    return mc[0][0] if mc else default
+
+
 def summary(p):
-    topics = ", ".join(f"{t} ({v})" for t, v in p["topics"].most_common(3))
-    a2 = p["axis2"].most_common(1)[0][0]
-    a4 = p["axis4"].most_common(1)[0][0]
+    topics = ", ".join(f"{t} ({v})" for t, v in p["topics"].most_common(3)) or "—"
+    a2 = _top(p["axis2"])
+    a4 = _top(p["axis4"])
     return (f"Золотая выборка из {p['n']} примечаний. "
             f"Медиана длины {p['len_median']} знаков, IAST в {p['iast_pct']}% примечаний, "
             f"многотемность {p['multi_topic_pct']}%. "
@@ -56,8 +62,8 @@ def summary(p):
 
 
 def strategy(p):
-    a2 = AXIS2_LABELS.get(p["axis2"].most_common(1)[0][0], "")
-    top = p["topics"].most_common(1)[0][0]
+    a2 = AXIS2_LABELS.get(_top(p["axis2"]), "")
+    top = _top(p["topics"])
     return f"{a2}; {top}-доминанта; IAST {p['iast_pct']}%"
 
 
@@ -67,7 +73,7 @@ def notes_table(records):
         axes = " · ".join([
             r["axis_2_kazansky"], r["axis_4_paribok"],
             "+".join(r.get("axis_3_lakshana", [])) or "—",
-            "+".join(r.get("axis_1_topic", [])),
+            "+".join(r.get("axis_1_topic", [])) or "—",
         ])
         iast = "✓" if r.get("has_iast") else "—"
         rows.append(

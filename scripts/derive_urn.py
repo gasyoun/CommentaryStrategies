@@ -73,6 +73,10 @@ def derive(addr):
             return f"{NS}:{work}:{passage}", False, f"неизвестная книга/парва «{name}»"
         booknum = table[name]
         parts = passage.split(".")
+        # Граница: passage из regex [\d.]+ допускает пустые сегменты (".1", "5..1").
+        # int() на таком упал бы — возвращаем ok=False вместо краха (контракт derive).
+        if not all(p.isdigit() for p in parts):
+            return f"{NS}:{work}:{passage}", False, f"нечисловой компонент passage «{passage}»"
         # Канонический passage = <книга>.<sarga/adhyāya>.<стих>. Если адрес даёт
         # полную форму (≥3 уровня), первый элемент = номер книги — проверяем.
         # Если даёт укороченную форму (2 уровня, как у Кальянова: adhyāya.verse),
@@ -126,20 +130,22 @@ def main():
     for path in files:
         records = json.loads(path.read_text(encoding="utf-8"))
         new_records = []
+        first_urn = None
         for rec in records:
-            urn, ok, note = derive(rec["shloka_addr"])
+            urn, ok, note = derive(rec.get("shloka_addr", ""))  # .get → нет KeyError
             total += 1
+            if first_urn is None and urn:
+                first_urn = urn  # для лога — без повторного derive(records[0])
             if ok:
                 new_records.append(reorder(rec, urn))
             else:
                 # Не пишем urn:null/непроверенный — оставляем запись как есть и репортим.
-                bad.append((rec.get("comment_id", "?"), rec["shloka_addr"], note))
+                bad.append((rec.get("comment_id", "?"), rec.get("shloka_addr", "?"), note))
                 new_records.append(rec)
         if not check:
             path.write_text(dump_compact(new_records), encoding="utf-8", newline="\n")
-        sample = derive(records[0]["shloka_addr"])[0]
         print(f"{'(check) ' if check else 'wrote  '}{path.name:28s} "
-              f"{len(records):3d} rec  напр.: {sample}")
+              f"{len(records):3d} rec  напр.: {first_urn or '(нет)'}")
 
     print(f"\nВсего: {total} примечаний.")
     if bad:

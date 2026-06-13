@@ -52,6 +52,9 @@ def load(name):
 
 def profile(name, records):
     n = len(records)
+    if n == 0:
+        raise ValueError(f"profile_translator: нет записей для «{name}» "
+                         f"(пустой или повреждённый файл)")
     lengths = [len(r.get("raw_text", "")) for r in records]
     iast = sum(1 for r in records if r.get("has_iast"))
     topics = Counter(t for r in records for t in r.get("axis_1_topic", []))
