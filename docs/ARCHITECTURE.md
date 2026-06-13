@@ -130,13 +130,18 @@ sources/*.json ─▶ annotate_batch.py ─▶ data/*.json ─▶ eval_pipeline.
 | [export_tei.py](../scripts/export_tei.py) | JSON → TEI P5 (таксономии, `@ana`, `@target`) | stdlib |
 | [parse_formulas.py](../scripts/parse_formulas.py) | эпитетный слой Рамаяны → JSON | stdlib |
 | [build_pages.py](../scripts/build_pages.py) | data → `pages/*.html` (переиспользует profile_translator) | stdlib |
-| [annotate_batch.py](../scripts/annotate_batch.py) | LLM-аннотация через Anthropic API (возобновляемая) | `anthropic` |
+| [build_visualizations.py](../scripts/build_visualizations.py) | data → `visualizations.html` (Chart.js, 6-way) | stdlib |
+| [extract_false_friends_profile.py](../scripts/extract_false_friends_profile.py) | профиль «ложных друзей» → `data/false_friends_profile.json` (Article 1) | stdlib |
+| [profile_nilakantha.py](../scripts/profile_nilakantha.py) | структурный профиль ṭīkā Нилакантхи → `data/nilakantha_profile.json` (Article 4) | `indic-transliteration` |
+| [taxonomy.py](../scripts/taxonomy.py) | единый источник кодов осей (читает схему); `assert_covers` | stdlib |
+| [annotate_batch.py](../scripts/annotate_batch.py) | LLM-аннотация через Anthropic API (preflight, возобновляемая) | `anthropic` |
 | [eval_pipeline.py](../scripts/eval_pipeline.py) | оценка точности vs золотая выборка (порог ≥85%) | stdlib |
-| [validate.py](../scripts/validate.py) | валидация (запрещённые формулы, целостность) | stdlib |
+| [validate.py](../scripts/validate.py) | схемная валидация корпуса + запрещённые формулы | stdlib |
 
-Только `anthropic` — третья сторона ([requirements.txt](../requirements.txt)); остальное —
-стандартная библиотека Python 3.10+. Валидация TEI — через ElementTree-разбор (xmllint
-локально недоступен, конвенция проекта).
+Третья сторона ([requirements.txt](../requirements.txt)): `anthropic` (пайплайн),
+`indic-transliteration` (profile_nilakantha); остальное — stdlib Python 3.10+. Все
+data-derived артефакты пересобираемы и проверяются CI-джобом **Corpus integrity**
+(.github/workflows/ci.yml): валидация + URN-кросс-чек + git diff после регенерации.
 
 ---
 

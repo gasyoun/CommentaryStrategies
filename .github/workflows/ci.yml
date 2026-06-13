@@ -86,3 +86,34 @@ jobs:
                   print(f'::error file={f}::{e}'); fail = 1
           sys.exit(fail)
           "
+
+  corpus:
+    name: Corpus integrity
+    runs-on: ubuntu-latest
+    # Schema-driven guards (the checks that catch vasilkov/poetics-style drift) +
+    # full artifact reproducibility for ALL data-derived generators.
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        # indic-transliteration is needed by profile_nilakantha.py (Dev→IAST);
+        # the rest of the corpus scripts are stdlib-only.
+        run: pip install -r requirements.txt
+      - name: Schema + content validation
+        run: python scripts/validate.py
+      - name: CTS-URN cross-check (book ↔ number)
+        run: python scripts/derive_urn.py --check
+      - name: All generated artifacts reproducible from data
+        run: |
+          python scripts/export_tei.py
+          python scripts/build_pages.py
+          python scripts/parse_formulas.py
+          python scripts/profile_nilakantha.py
+          python scripts/extract_false_friends_profile.py
+          python scripts/build_visualizations.py
+          git diff --exit-code -- \
+            tei/ pages/ visualizations.html \
+            data/ramayana_epithets.json data/nilakantha_profile.json data/false_friends_profile.json \
+            || { echo "::error::Generated artifacts are stale — re-run the generators and commit."; exit 1; }
