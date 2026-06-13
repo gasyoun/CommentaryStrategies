@@ -1,4 +1,76 @@
-<!DOCTYPE html>
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Генератор data-driven визуализаций (visualizations.html).
+
+Считает РЕАЛЬНЫЙ профиль шести переводчиков из data/*_markup_50.json и встраивает
+его в visualizations.html (Chart.js). Заменяет прежнюю версию с приблизительными
+захардкоженными числами — теперь графики строятся из источника истины.
+
+Панели: пузырьки (IAST×длина), тепловая карта (темы×переводчики), столбцы по
+Казанскому (A/B/V/G), радар-профиль, scatter «читательский контракт» (IAST×
+дискурсивность) с контрастом Нилакантхи.
+
+Запуск:  python scripts/build_visualizations.py
+Зависимости: только stdlib. Цвета — токены дизайн-системы (css/commentary.css).
+"""
+
+import json
+import statistics
+import sys
+import pathlib
+from collections import Counter
+
+sys.stdout.reconfigure(encoding="utf-8")
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+OUT = ROOT / "visualizations.html"
+
+# Переводчик → (отображаемое имя, цвет из дизайн-системы)
+TR = [
+    ("kalyanov", "Кальянов", "#2a5a8b"),
+    ("vassilkov", "Васильков", "#3a6b35"),
+    ("erman", "Эрман", "#5a2d82"),
+    ("grintser", "Гринцер", "#8b4513"),
+    ("syrkin", "Сыркин", "#7a3b00"),
+    ("leonov", "Леонов", "#7c4b2a"),
+]
+TOPICS = ["sanskrit_term", "myth", "context", "realia", "geography",
+          "reference", "textology", "philosophy", "poetics"]
+TOPIC_RU = {"sanskrit_term": "санскр. термин", "myth": "миф/персонаж",
+            "context": "контекст", "realia": "реалия", "geography": "география",
+            "reference": "отсылка", "textology": "текстология",
+            "philosophy": "философия", "poetics": "поэтика"}
+
+# Нилакантха — индигенная база (из data/nilakantha_profile.json, PR #7; здесь как
+# встроенная константа, т.к. файл приходит с тем PR).
+NILAKANTHA = {"verses": 1800, "with_tika": 373, "coverage_pct": 20.7,
+              "median_gloss": 30, "substantive": 90}
+
+
+def compute():
+    rows = []
+    for slug, name, color in TR:
+        recs = json.loads((DATA / f"{slug}_markup_50.json").read_text(encoding="utf-8"))
+        n = len(recs)
+        lengths = [len(r["raw_text"]) for r in recs]
+        kaz = Counter(r["axis_2_kazansky"] for r in recs)
+        par = Counter(r.get("axis_4_paribok") for r in recs)
+        top = Counter(t for r in recs for t in r.get("axis_1_topic", []))
+        rows.append({
+            "slug": slug, "name": name, "color": color, "n": n,
+            "iast": round(100 * sum(1 for r in recs if r.get("has_iast")) / n),
+            "mean_len": round(statistics.mean(lengths)),
+            "median_len": round(statistics.median(lengths)),
+            "multitopic": round(100 * sum(1 for r in recs if len(r.get("axis_1_topic", [])) > 1) / n),
+            "kazansky": {c: kaz.get(c, 0) for c in "ABVG"},
+            "paribok": {c: round(100 * par.get(c, 0) / n) for c in "PKD"},
+            "topics": {t: round(100 * top.get(t, 0) / n, 1) for t in TOPICS},
+        })
+    return rows
+
+
+HTML = """<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -48,13 +120,13 @@
   <p class="panel-note">Ось X — IAST&nbsp;%, ось Y — доля дискурсивных примечаний (Парибок&nbsp;D).
   Три контракта расходятся: филологический (низ-право), гуманитарный (низ-лево),
   философский (верх). Нилакантха (adhikārin) несоизмерим: покрытие лишь
-  20.7&nbsp;% строф, терсная глосса ~30 знаков — на этой плоскости он
+  __NK_COV__&nbsp;% строф, терсная глосса ~__NK_MED__ знаков — на этой плоскости он
   был бы вырожденной точкой у нуля по обеим осям.</p></div></section>
 </main>
 <footer>CommentaryStrategies &copy; 2026 &middot; Визуальный анализ</footer>
 
 <script>
-const D = [{"slug": "kalyanov", "name": "Кальянов", "color": "#2a5a8b", "n": 50, "iast": 100, "mean_len": 69, "median_len": 68, "multitopic": 42, "kazansky": {"A": 6, "B": 0, "V": 31, "G": 13}, "paribok": {"P": 80, "K": 18, "D": 2}, "topics": {"sanskrit_term": 26.0, "myth": 68.0, "context": 2.0, "realia": 20.0, "geography": 6.0, "reference": 0.0, "textology": 0.0, "philosophy": 20.0, "poetics": 0.0}}, {"slug": "vassilkov", "name": "Васильков", "color": "#3a6b35", "n": 50, "iast": 24, "mean_len": 117, "median_len": 115, "multitopic": 36, "kazansky": {"A": 0, "B": 1, "V": 12, "G": 37}, "paribok": {"P": 72, "K": 12, "D": 16}, "topics": {"sanskrit_term": 0.0, "myth": 50.0, "context": 20.0, "realia": 26.0, "geography": 4.0, "reference": 0.0, "textology": 2.0, "philosophy": 34.0, "poetics": 0.0}}, {"slug": "erman", "name": "Эрман", "color": "#5a2d82", "n": 50, "iast": 66, "mean_len": 97, "median_len": 93, "multitopic": 48, "kazansky": {"A": 1, "B": 2, "V": 19, "G": 28}, "paribok": {"P": 56, "K": 12, "D": 32}, "topics": {"sanskrit_term": 8.0, "myth": 34.0, "context": 18.0, "realia": 14.0, "geography": 6.0, "reference": 18.0, "textology": 0.0, "philosophy": 46.0, "poetics": 4.0}}, {"slug": "grintser", "name": "Гринцер", "color": "#8b4513", "n": 50, "iast": 12, "mean_len": 88, "median_len": 86, "multitopic": 44, "kazansky": {"A": 2, "B": 0, "V": 25, "G": 23}, "paribok": {"P": 92, "K": 0, "D": 8}, "topics": {"sanskrit_term": 6.0, "myth": 46.0, "context": 26.0, "realia": 28.0, "geography": 12.0, "reference": 2.0, "textology": 0.0, "philosophy": 12.0, "poetics": 12.0}}, {"slug": "syrkin", "name": "Сыркин", "color": "#7a3b00", "n": 50, "iast": 66, "mean_len": 104, "median_len": 104, "multitopic": 72, "kazansky": {"A": 1, "B": 0, "V": 7, "G": 42}, "paribok": {"P": 34, "K": 20, "D": 46}, "topics": {"sanskrit_term": 6.0, "myth": 24.0, "context": 8.0, "realia": 12.0, "geography": 2.0, "reference": 38.0, "textology": 0.0, "philosophy": 78.0, "poetics": 4.0}}, {"slug": "leonov", "name": "Леонов", "color": "#7c4b2a", "n": 50, "iast": 100, "mean_len": 126, "median_len": 118, "multitopic": 28, "kazansky": {"A": 22, "B": 6, "V": 13, "G": 9}, "paribok": {"P": 82, "K": 18, "D": 0}, "topics": {"sanskrit_term": 44.0, "myth": 34.0, "context": 10.0, "realia": 4.0, "geography": 4.0, "reference": 12.0, "textology": 12.0, "philosophy": 8.0, "poetics": 0.0}}];
+const D = __DATA__;
 const css = getComputedStyle(document.documentElement);
 const RULE = css.getPropertyValue('--rule') || '#c9bfaf';
 const fade = (hex,a)=>{const n=parseInt(hex.slice(1),16);return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`;};
@@ -67,7 +139,7 @@ new Chart(bubble,{type:'bubble',data:{datasets:D.map(t=>({label:t.name,
 mkleg('leg1',D.map(t=>[t.name,t.color]));
 
 // 02 heatmap (SVG)
-const TOP=["sanskrit_term", "myth", "context", "realia", "geography", "reference", "textology", "philosophy", "poetics"], TRU={"sanskrit_term": "санскр. термин", "myth": "миф/персонаж", "context": "контекст", "realia": "реалия", "geography": "география", "reference": "отсылка", "textology": "текстология", "philosophy": "философия", "poetics": "поэтика"};
+const TOP=__TOPICS__, TRU=__TOPIC_RU__;
 const cW=86,cH=34,lW=150,tH=28,W=lW+cW*D.length+8,H=tH+cH*TOP.length+6;
 let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;font-family:'Source Serif 4',serif">`;
 D.forEach((t,j)=>s+=`<text x="${lW+j*cW+cW/2}" y="${tH-8}" text-anchor="middle" font-size="11" fill="var(--muted)">${t.name}</text>`);
@@ -107,3 +179,23 @@ function mkleg(id,pairs){const el=document.getElementById(id);pairs.forEach(([n,
 </script>
 </body>
 </html>
+"""
+
+
+def main():
+    rows = compute()
+    html = (HTML
+            .replace("__DATA__", json.dumps(rows, ensure_ascii=False))
+            .replace("__TOPICS__", json.dumps(TOPICS))
+            .replace("__TOPIC_RU__", json.dumps(TOPIC_RU, ensure_ascii=False))
+            .replace("__NK_COV__", str(NILAKANTHA["coverage_pct"]))
+            .replace("__NK_MED__", str(NILAKANTHA["median_gloss"])))
+    OUT.write_text(html, encoding="utf-8", newline="\n")
+    print(f"Записано: {OUT.relative_to(ROOT)} ({len(html)} знаков, {len(rows)} переводчиков)")
+    for r in rows:
+        print(f"  {r['name']:10s} IAST {r['iast']:>3}%  ср.длина {r['mean_len']:>3}  "
+              f"P/K/D {r['paribok']['P']}/{r['paribok']['K']}/{r['paribok']['D']}")
+
+
+if __name__ == "__main__":
+    main()
