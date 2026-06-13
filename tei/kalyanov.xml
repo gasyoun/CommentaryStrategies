@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Комментаторский аппарат: kalyanov (золотая выборка, 50 примечаний)</title>
+        <respStmt><resp>разметка</resp><name>CommentaryStrategies</name></respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Корпус CommentaryStrategies. Полнотекстовая публикация авторизована
+           2026-06-12 (см. data/RIGHTS.md). Лицензия данных — отдельно от лицензии кода.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Размеченная выборка примечаний переводчика «kalyanov»;
+           адресация стихов — CTS-URN (scripts/derive_urn.py).</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+      <taxonomy xml:id="axis2_kazansky">
+        <desc>Ось 2 — тип комментария (номенклатура Н. Н. Казанского)</desc>
+        <category xml:id="a2_A"><catDesc>филологический комментарий (язык, грамматика)</catDesc></category>
+        <category xml:id="a2_B"><catDesc>текстологический комментарий (варианты, источники)</catDesc></category>
+        <category xml:id="a2_V"><catDesc>историко-культурный комментарий (реалии, мифология)</catDesc></category>
+        <category xml:id="a2_G"><catDesc>культурологический / интерпретационный комментарий</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis3_lakshana">
+        <desc>Ось 3 — пять lakṣaṇa комментаторской традиции</desc>
+        <category xml:id="lak_L1"><catDesc>именование (nāmadheya)</catDesc></category>
+        <category xml:id="lak_L2"><catDesc>толкование (vivaraṇa)</catDesc></category>
+        <category xml:id="lak_L3"><catDesc>связь (vākyayojanā)</catDesc></category>
+        <category xml:id="lak_L4"><catDesc>возражение (ākṣepa)</catDesc></category>
+        <category xml:id="lak_L5"><catDesc>контекст / смысл целого (samanvaya)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis4_paribok">
+        <desc>Ось 4 — категориальный статус термина (модель А. В. Парибка)</desc>
+        <category xml:id="par_P"><catDesc>понятие (translatable concept)</catDesc></category>
+        <category xml:id="par_K"><catDesc>кодификатор направления деятельности (Парибок)</catDesc></category>
+        <category xml:id="par_D"><catDesc>концепт-расхождение (несоизмеримость)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis1_topic">
+        <desc>Ось 1 — тематическая рубрика примечания</desc>
+        <category xml:id="top_sanskrit_term"><catDesc>sanskrit_term</catDesc></category>
+        <category xml:id="top_myth"><catDesc>myth</catDesc></category>
+        <category xml:id="top_context"><catDesc>context</catDesc></category>
+        <category xml:id="top_realia"><catDesc>realia</catDesc></category>
+        <category xml:id="top_geography"><catDesc>geography</catDesc></category>
+        <category xml:id="top_reference"><catDesc>reference</catDesc></category>
+        <category xml:id="top_textology"><catDesc>textology</catDesc></category>
+        <category xml:id="top_philosophy"><catDesc>philosophy</catDesc></category>
+        <category xml:id="top_poetics"><catDesc>poetics</catDesc></category>
+      </taxonomy>
+      </classDecl>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listAnnotation>
+      <note xml:id="mbh_kalyanov_c1" target="urn:cts:sanskritLit:mahabharata:1.1.1" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="MBh. Ādi 1.1" rend="iast">Сута (sūta) — возница, представитель воинской касты. Воспевал подвиги повелителей.</note>
+      <note xml:id="mbh_kalyanov_c2" target="urn:cts:sanskritLit:mahabharata:1.1.15" type="V" ana="#a2_V #par_P #lak_L2 #top_myth #top_geography" n="MBh. Ādi 1.15" rend="iast">Ганга (gaṅgā) — священная река индийцев. Согласно легендам, первоначально протекала на небесах.</note>
+      <note xml:id="mbh_kalyanov_c3" target="urn:cts:sanskritLit:mahabharata:1.1.20" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_sanskrit_term" n="MBh. Ādi 1.20" rend="iast">Дхарма (dharma) — закон, долг, добродетель. Одно из четырех стремлений человека (puruṣārtha).</note>
+      <note xml:id="mbh_kalyanov_c4" target="urn:cts:sanskritLit:mahabharata:1.1.25" type="V" ana="#a2_V #par_P #lak_L2 #top_realia" n="MBh. Ādi 1.25" rend="iast">Брахман (brāhmaṇa) — представитель высшей, жреческой касты в древнеиндийском обществе.</note>
+      <note xml:id="mbh_kalyanov_c5" target="urn:cts:sanskritLit:mahabharata:1.1.30" type="V" ana="#a2_V #par_P #lak_L2 #top_realia" n="MBh. Ādi 1.30" rend="iast">Кшатрий (kṣatriya) — представитель воинской касты, правитель или воин.</note>
+      <note xml:id="mbh_kalyanov_c6" target="urn:cts:sanskritLit:mahabharata:2.2.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Sabhā 2.1" rend="iast">Майя (maya) — зодчий асуров, построивший великолепный дворец для Пандавов в Хастинапуре.</note>
+      <note xml:id="mbh_kalyanov_c7" target="urn:cts:sanskritLit:mahabharata:2.2.5" type="G" ana="#a2_G #par_P #lak_L2 #top_realia #top_sanskrit_term" n="MBh. Sabhā 2.5" rend="iast">Раджасуя (rājasūya) — торжественное жертвоприношение, совершаемое царем при вступлении на престол.</note>
+      <note xml:id="mbh_kalyanov_c8" target="urn:cts:sanskritLit:mahabharata:4.4.1" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term #top_context" n="MBh. Virāṭa 4.1" rend="iast">Аджнатаваса (ajñātavāsa) — «жизнь неузнанным»; период тайного изгнания Пандавов.</note>
+      <note xml:id="mbh_kalyanov_c9" target="urn:cts:sanskritLit:mahabharata:5.5.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Udyoga 5.1" rend="iast">Вирата (virāṭa) — царь мацьев, тесть Абхиманью. Участвовал в битве на стороне Пандавов.</note>
+      <note xml:id="mbh_kalyanov_c10" target="urn:cts:sanskritLit:mahabharata:7.7.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Droṇa 7.1" rend="iast">Дрона (droṇa) — наставник Пандавов и Кауравов в военном искусстве. Командовал армией Кауравов.</note>
+      <note xml:id="mbh_kalyanov_c11" target="urn:cts:sanskritLit:mahabharata:1.2.1" type="V" ana="#a2_V #par_P #lak_L2 #top_geography #top_myth" n="MBh. Ādi 2.1" rend="iast">Курукшетра (kurukṣetra) — поле Куру; место великой битвы между Пандавами и Кауравами.</note>
+      <note xml:id="mbh_kalyanov_c12" target="urn:cts:sanskritLit:mahabharata:1.3.5" type="G" ana="#a2_G #par_P #lak_L2 #top_realia #top_sanskrit_term" n="MBh. Ādi 3.5" rend="iast">Ашвамедха (aśvamedha) — жертвоприношение коня, подтверждающее верховную власть царя.</note>
+      <note xml:id="mbh_kalyanov_c13" target="urn:cts:sanskritLit:mahabharata:1.4.10" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="MBh. Ādi 4.10" rend="iast">Бхарата (bhārata) — потомок Бхараты; общее именование участников событий эпоса.</note>
+      <note xml:id="mbh_kalyanov_c14" target="urn:cts:sanskritLit:mahabharata:1.5.1" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_myth" n="MBh. Ādi 5.1" rend="iast">Аватара (avatāra) — нисхождение божества на землю в определенном облике.</note>
+      <note xml:id="mbh_kalyanov_c15" target="urn:cts:sanskritLit:mahabharata:1.6.12" type="G" ana="#a2_G #par_P #lak_L2 #top_realia #top_sanskrit_term" n="MBh. Ādi 6.12" rend="iast">Яджна (yajña) — жертвоприношение, основной ритуал ведийской и эпической религии.</note>
+      <note xml:id="mbh_kalyanov_c16" target="urn:cts:sanskritLit:mahabharata:1.7.3" type="V" ana="#a2_V #par_P #lak_L2 #top_realia" n="MBh. Ādi 7.3" rend="iast">Вайшья (vaiśya) — представитель третьей касты (земледельцы, ремесленники, торговцы).</note>
+      <note xml:id="mbh_kalyanov_c17" target="urn:cts:sanskritLit:mahabharata:1.8.2" type="V" ana="#a2_V #par_P #lak_L2 #top_realia" n="MBh. Ādi 8.2" rend="iast">Шудра (śūdra) — представитель низшей касты, слуга высших каст.</note>
+      <note xml:id="mbh_kalyanov_c18" target="urn:cts:sanskritLit:mahabharata:1.9.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 9.1" rend="iast">Агни (agni) — бог огня, посредник между людьми и богами при жертвоприношении.</note>
+      <note xml:id="mbh_kalyanov_c19" target="urn:cts:sanskritLit:mahabharata:1.10.5" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 10.5" rend="iast">Индра (indra) — царь богов, бог грозы и битв.</note>
+      <note xml:id="mbh_kalyanov_c20" target="urn:cts:sanskritLit:mahabharata:1.11.2" type="V" ana="#a2_V #par_P #lak_L2 #top_myth #top_realia" n="MBh. Ādi 11.2" rend="iast">Сома (soma) — священный напиток и одноименное божество (также бог Луны).</note>
+      <note xml:id="mbh_kalyanov_c21" target="urn:cts:sanskritLit:mahabharata:1.12.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 12.1" rend="iast">Варуна (varuṇa) — бог океана, хранитель мирового порядка (рта).</note>
+      <note xml:id="mbh_kalyanov_c22" target="urn:cts:sanskritLit:mahabharata:1.13.5" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term #top_myth" n="MBh. Ādi 13.5" rend="iast">Риши (ṛṣi) — мудрец, провидец, которому открыты божественные гимны.</note>
+      <note xml:id="mbh_kalyanov_c23" target="urn:cts:sanskritLit:mahabharata:1.14.1" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="MBh. Ādi 14.1" rend="iast">Муни (muni) — отшельник, давший обет молчания; мудрец.</note>
+      <note xml:id="mbh_kalyanov_c24" target="urn:cts:sanskritLit:mahabharata:1.15.10" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_realia" n="MBh. Ādi 15.10" rend="iast">Тапас (tapas) — аскетическое подвижничество, порождающее магическую силу.</note>
+      <note xml:id="mbh_kalyanov_c25" target="urn:cts:sanskritLit:mahabharata:1.16.3" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 16.3" rend="iast">Апсара (apsaras) — небесная нимфа, танцовщица при дворе Индры.</note>
+      <note xml:id="mbh_kalyanov_c26" target="urn:cts:sanskritLit:mahabharata:1.17.5" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 17.5" rend="iast">Гандхарва (gandharva) — небесный певец и музыкант.</note>
+      <note xml:id="mbh_kalyanov_c27" target="urn:cts:sanskritLit:mahabharata:1.18.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 18.1" rend="iast">Якша (yakṣa) — дух, хранитель сокровищ Куберы.</note>
+      <note xml:id="mbh_kalyanov_c28" target="urn:cts:sanskritLit:mahabharata:1.19.4" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 19.4" rend="iast">Ракшас (rākṣasa) — злой демон, людоед, враждебный людям и богам.</note>
+      <note xml:id="mbh_kalyanov_c29" target="urn:cts:sanskritLit:mahabharata:1.20.2" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 20.2" rend="iast">Асура (asura) — противник богов (суров), обитатель подземного мира.</note>
+      <note xml:id="mbh_kalyanov_c30" target="urn:cts:sanskritLit:mahabharata:1.21.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 21.1" rend="iast">Дайтья (daitya) — потомок Дити; одно из именований асуров.</note>
+      <note xml:id="mbh_kalyanov_c31" target="urn:cts:sanskritLit:mahabharata:1.22.3" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 22.3" rend="iast">Данава (dānava) — потомок Дану; другое именование асуров.</note>
+      <note xml:id="mbh_kalyanov_c32" target="urn:cts:sanskritLit:mahabharata:1.23.5" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 23.5" rend="iast">Наг (nāga) — полубожественный змей, обитатель Паталы.</note>
+      <note xml:id="mbh_kalyanov_c33" target="urn:cts:sanskritLit:mahabharata:1.24.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 24.1" rend="iast">Гаруда (garuḍa) — царь птиц, ездовое животное (вахана) бога Вишну.</note>
+      <note xml:id="mbh_kalyanov_c34" target="urn:cts:sanskritLit:mahabharata:1.25.4" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 25.4" rend="iast">Вишну (viṣṇu) — один из главных богов индуизма, хранитель мироздания.</note>
+      <note xml:id="mbh_kalyanov_c35" target="urn:cts:sanskritLit:mahabharata:1.26.2" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 26.2" rend="iast">Шива (śiva) — бог-разрушитель, один из тримурти.</note>
+      <note xml:id="mbh_kalyanov_c36" target="urn:cts:sanskritLit:mahabharata:1.27.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 27.1" rend="iast">Брахма (brahmā) — бог-творец, первый в тримурти.</note>
+      <note xml:id="mbh_kalyanov_c37" target="urn:cts:sanskritLit:mahabharata:1.28.3" type="A" ana="#a2_A #par_P #lak_L2 #top_myth #top_sanskrit_term" n="MBh. Ādi 28.3" rend="iast">Локапала (lokapāla) — хранитель сторон света.</note>
+      <note xml:id="mbh_kalyanov_c38" target="urn:cts:sanskritLit:mahabharata:1.29.5" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 29.5" rend="iast">Кубера (kubera) — бог богатства, владыка якшей.</note>
+      <note xml:id="mbh_kalyanov_c39" target="urn:cts:sanskritLit:mahabharata:1.30.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 30.1" rend="iast">Яма (yama) — бог смерти и справедливости, владыка царства мертвых.</note>
+      <note xml:id="mbh_kalyanov_c40" target="urn:cts:sanskritLit:mahabharata:1.31.4" type="V" ana="#a2_V #par_P #lak_L2 #top_myth #top_geography" n="MBh. Ādi 31.4" rend="iast">Патала (pātāla) — подземный мир, обитель нагов и асуров.</note>
+      <note xml:id="mbh_kalyanov_c41" target="urn:cts:sanskritLit:mahabharata:1.32.2" type="V" ana="#a2_V #par_P #lak_L2 #top_myth #top_realia" n="MBh. Ādi 32.2" rend="iast">Амрита (amṛta) — напиток бессмертия, добытый богами и асурами при пахтании океана.</note>
+      <note xml:id="mbh_kalyanov_c42" target="urn:cts:sanskritLit:mahabharata:1.33.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 33.1" rend="iast">Айравата (airāvata) — белый слон, ездовое животное Индры.</note>
+      <note xml:id="mbh_kalyanov_c43" target="urn:cts:sanskritLit:mahabharata:1.34.5" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="MBh. Ādi 34.5" rend="iast">Уччайхшравас (uccaiḥśravas) — небесный конь, добытый при пахтании океана.</note>
+      <note xml:id="mbh_kalyanov_c44" target="urn:cts:sanskritLit:mahabharata:1.35.2" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_myth" n="MBh. Ādi 35.2" rend="iast">Кальпа (kalpa) — огромный период времени, равный дню Брахмы.</note>
+      <note xml:id="mbh_kalyanov_c45" target="urn:cts:sanskritLit:mahabharata:1.36.1" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_myth" n="MBh. Ādi 36.1" rend="iast">Юга (yuga) — мировой период в циклическом времени.</note>
+      <note xml:id="mbh_kalyanov_c46" target="urn:cts:sanskritLit:mahabharata:1.37.3" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_myth" n="MBh. Ādi 37.3" rend="iast">Крита-юга (kṛtayuga) — первая и самая благая из четырех юг.</note>
+      <note xml:id="mbh_kalyanov_c47" target="urn:cts:sanskritLit:mahabharata:1.38.5" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_myth" n="MBh. Ādi 38.5" rend="iast">Кали-юга (kaliyuga) — четвертая, нынешняя юга, эпоха упадка дхармы.</note>
+      <note xml:id="mbh_kalyanov_c48" target="urn:cts:sanskritLit:mahabharata:1.39.2" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_sanskrit_term" n="MBh. Ādi 39.2" rend="iast">Артха (artha) — польза, материальное благополучие; одна из целей человека.</note>
+      <note xml:id="mbh_kalyanov_c49" target="urn:cts:sanskritLit:mahabharata:1.40.1" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_sanskrit_term" n="MBh. Ādi 40.1" rend="iast">Кама (kāma) — любовь, желание, чувственное удовольствие; одна из целей человека.</note>
+      <note xml:id="mbh_kalyanov_c50" target="urn:cts:sanskritLit:mahabharata:1.41.3" type="G" ana="#a2_G #par_D #lak_L2 #top_philosophy #top_sanskrit_term" n="MBh. Ādi 41.3" rend="iast">Мокша (mokṣa) — освобождение из цикла перерождений; высшая цель человека.</note>
+      </listAnnotation>
+    </body>
+  </text>
+</TEI>

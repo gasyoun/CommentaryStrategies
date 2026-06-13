@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Комментаторский аппарат: vassilkov (золотая выборка, 50 примечаний)</title>
+        <respStmt><resp>разметка</resp><name>CommentaryStrategies</name></respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Корпус CommentaryStrategies. Полнотекстовая публикация авторизована
+           2026-06-12 (см. data/RIGHTS.md). Лицензия данных — отдельно от лицензии кода.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Размеченная выборка примечаний переводчика «vassilkov»;
+           адресация стихов — CTS-URN (scripts/derive_urn.py).</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+      <taxonomy xml:id="axis2_kazansky">
+        <desc>Ось 2 — тип комментария (номенклатура Н. Н. Казанского)</desc>
+        <category xml:id="a2_A"><catDesc>филологический комментарий (язык, грамматика)</catDesc></category>
+        <category xml:id="a2_B"><catDesc>текстологический комментарий (варианты, источники)</catDesc></category>
+        <category xml:id="a2_V"><catDesc>историко-культурный комментарий (реалии, мифология)</catDesc></category>
+        <category xml:id="a2_G"><catDesc>культурологический / интерпретационный комментарий</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis3_lakshana">
+        <desc>Ось 3 — пять lakṣaṇa комментаторской традиции</desc>
+        <category xml:id="lak_L1"><catDesc>именование (nāmadheya)</catDesc></category>
+        <category xml:id="lak_L2"><catDesc>толкование (vivaraṇa)</catDesc></category>
+        <category xml:id="lak_L3"><catDesc>связь (vākyayojanā)</catDesc></category>
+        <category xml:id="lak_L4"><catDesc>возражение (ākṣepa)</catDesc></category>
+        <category xml:id="lak_L5"><catDesc>контекст / смысл целого (samanvaya)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis4_paribok">
+        <desc>Ось 4 — категориальный статус термина (модель А. В. Парибка)</desc>
+        <category xml:id="par_P"><catDesc>понятие (translatable concept)</catDesc></category>
+        <category xml:id="par_K"><catDesc>кодификатор направления деятельности (Парибок)</catDesc></category>
+        <category xml:id="par_D"><catDesc>концепт-расхождение (несоизмеримость)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis1_topic">
+        <desc>Ось 1 — тематическая рубрика примечания</desc>
+        <category xml:id="top_sanskrit_term"><catDesc>sanskrit_term</catDesc></category>
+        <category xml:id="top_myth"><catDesc>myth</catDesc></category>
+        <category xml:id="top_context"><catDesc>context</catDesc></category>
+        <category xml:id="top_realia"><catDesc>realia</catDesc></category>
+        <category xml:id="top_geography"><catDesc>geography</catDesc></category>
+        <category xml:id="top_reference"><catDesc>reference</catDesc></category>
+        <category xml:id="top_textology"><catDesc>textology</catDesc></category>
+        <category xml:id="top_philosophy"><catDesc>philosophy</catDesc></category>
+        <category xml:id="top_poetics"><catDesc>poetics</catDesc></category>
+      </taxonomy>
+      </classDecl>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listAnnotation>
+      <note xml:id="mbh_vassilkov_c1" target="urn:cts:sanskritLit:mahabharata:3.8.10" type="G" ana="#a2_G #par_P #lak_L2 #top_realia" n="MBh. Vana 3.8.10">«…выступили через городские ворота Вардхамана...» Знак Вардхамана («возрастающий», «процветающий») — графический символ, эмблема благополучия.</note>
+      <note xml:id="mbh_vassilkov_c2" target="urn:cts:sanskritLit:mahabharata:3.1.1" type="G" ana="#a2_G #par_K #lak_L2 #lak_L5 #top_myth #top_philosophy" n="MBh. Vana 3.1.1" rend="iast">«…самому Индре равные пламенностью духа…» Герои уподобляются богам-демоноборцам: богу грозы Индре, его помощнику Вишну. Пламенность духа (tejas) — магическая энергия кшатрия.</note>
+      <note xml:id="mbh_vassilkov_c3" target="urn:cts:sanskritLit:mahabharata:8.1.1" type="V" ana="#a2_V #par_P #top_context" n="MBh. Karṇa 8.1.1">Карна-парва описывает кульминацию вражды между Карной и Арджуной. Карна здесь выступает как трагический герой, чья гибель предопределена.</note>
+      <note xml:id="mbh_vassilkov_c4" target="urn:cts:sanskritLit:mahabharata:10.1.1" type="G" ana="#a2_G #par_D #lak_L5 #top_context #top_philosophy" n="MBh. Sauptika 10.1.1">Ночное нападение Ашваттхамана на лагерь Пандавов нарушает все правила кшатрийской дхармы. Это событие знаменует окончательный крах рыцарской этики.</note>
+      <note xml:id="mbh_vassilkov_c5" target="urn:cts:sanskritLit:mahabharata:11.1.1" type="G" ana="#a2_G #par_P #lak_L5 #top_realia #top_myth" n="MBh. Strī 11.1.1">Плач женщин на поле битвы (вира-лапа) — традиционный фольклорный мотив, имеющий глубокие этнографические корни в погребальных обрядах.</note>
+      <note xml:id="mbh_vassilkov_c6" target="urn:cts:sanskritLit:mahabharata:12.174.1" type="G" ana="#a2_G #par_D #lak_L2 #top_philosophy" n="MBh. Mokṣa 12.174.1" rend="iast">Мокшадхарма содержит ядро философских учений Махабхараты. Понятие «освобождения» (мокша) здесь трактуется в духе ранней санкхьи и йоги.</note>
+      <note xml:id="mbh_vassilkov_c7" target="urn:cts:sanskritLit:mahabharata:14.1.1" type="V" ana="#a2_V #par_P #lak_L2 #top_realia" n="MBh. Aśvamedhika 14.1.1" rend="iast">Жертвоприношение коня (ашвамедха) призвано очистить Юдхиштхиру от греха убийства родичей. Ритуал описан с большой этнографической точностью.</note>
+      <note xml:id="mbh_vassilkov_c8" target="urn:cts:sanskritLit:mahabharata:15.1.1" type="G" ana="#a2_G #par_K #lak_L2 #top_realia #top_philosophy" n="MBh. Āśramavāsika 15.1.1" rend="iast">Уход престарелых царей в лес (ванапрастха) — третья стадия жизни (ашрама). Отражает древний индийский идеал отречения.</note>
+      <note xml:id="mbh_vassilkov_c9" target="urn:cts:sanskritLit:mahabharata:16.1.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="MBh. Mausala 16.1.1">Гибель рода Ядавов от ударов палицами — эсхатологический сюжет, знаменующий начало Кали-юги. Ср. с гибелью героев в германском эпосе.</note>
+      <note xml:id="mbh_vassilkov_c10" target="urn:cts:sanskritLit:mahabharata:17.1.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="MBh. Mahāprasthānika 17.1.1">Великое странствие Пандавов к Гималаям. Сопровождающая их собака — воплощение бога Дхармы, испытывающего Юдхиштхиру.</note>
+      <note xml:id="mbh_vassilkov_c11" target="urn:cts:sanskritLit:mahabharata:18.1.1" type="G" ana="#a2_G #par_K #lak_L5 #top_myth #top_philosophy" n="MBh. Svargārohaṇa 18.1.1" rend="iast">Восхождение на небеса и видение ада. Финальное испытание героя, где иллюзия (майя) проверяет его верность дхарме.</note>
+      <note xml:id="mbh_vassilkov_c12" target="urn:cts:sanskritLit:mahabharata:3.2.5" type="G" ana="#a2_G #par_P #lak_L2 #top_realia" n="MBh. Vana 3.2.5" rend="iast">Обряд «тарпана» (возлияние воды предкам). Васильков отмечает связь с верованиями о «пути отцов» (питрияна).</note>
+      <note xml:id="mbh_vassilkov_c13" target="urn:cts:sanskritLit:mahabharata:3.12.10" type="G" ana="#a2_G #par_D #lak_L5 #top_myth" n="MBh. Vana 3.12.10">Кришна как воплощение Вишну. Васильков указывает на процесс героизации племенного вождя и его превращение в аватару.</note>
+      <note xml:id="mbh_vassilkov_c14" target="urn:cts:sanskritLit:mahabharata:3.45.2" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="MBh. Vana 3.45.2">Оружие «пашупата», дарованное Шивой Арджуне. Васильков анализирует шаманские корни сюжета обретения магического оружия.</note>
+      <note xml:id="mbh_vassilkov_c15" target="urn:cts:sanskritLit:mahabharata:8.15.3" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_context" n="MBh. Karṇa 8.15.3">Сравнение битвы с жертвоприношением. Поле боя как жертвенный алтарь — классическая метафора индийского эпоса.</note>
+      <note xml:id="mbh_vassilkov_c16" target="urn:cts:sanskritLit:mahabharata:11.15.5" type="V" ana="#a2_V #par_P #lak_L5 #top_realia #top_myth" n="MBh. Strī 11.15.5">Проклятие Гандхари, наложенное на Кришну. Васильков отмечает юридическую силу проклятия в эпическом праве.</note>
+      <note xml:id="mbh_vassilkov_c17" target="urn:cts:sanskritLit:mahabharata:12.180.10" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy" n="MBh. Mokṣa 12.180.10" rend="iast">Учение о трех гунах (саттва, раджас, тамас). Васильков прослеживает развитие этих категорий от ведийских текстов.</note>
+      <note xml:id="mbh_vassilkov_c18" target="urn:cts:sanskritLit:mahabharata:14.20.1" type="B" ana="#a2_B #par_P #lak_L5 #top_textology" n="MBh. Aśvamedhika 14.20.1">Ану-гита («последующая гита»). Повторение наставлений Кришны Арджуне. Васильков считает этот текст поздней вставкой.</note>
+      <note xml:id="mbh_vassilkov_c19" target="urn:cts:sanskritLit:mahabharata:16.5.2" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="MBh. Mausala 16.5.2" rend="iast">Железный пест (мусала), рожденный Самбой. Символ саморазрушения рода. Васильков сравнивает с мифами о проклятых артефактах.</note>
+      <note xml:id="mbh_vassilkov_c20" target="urn:cts:sanskritLit:mahabharata:18.5.10" type="G" ana="#a2_G #par_P #lak_L5 #top_realia #top_context" n="MBh. Svargārohaṇa 18.5.10">Финальный список заслуг (пхала-шрути). Чтение эпоса как очистительный акт. Васильков подчеркивает сакральный статус текста.</note>
+      <note xml:id="mbh_vassilkov_c21" target="urn:cts:sanskritLit:mahabharata:3.5.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="MBh. Vana 3.5.1">Образ Видуры как воплощения бога Дхармы. Васильков анализирует его статус «совести» Пандавов.</note>
+      <note xml:id="mbh_vassilkov_c22" target="urn:cts:sanskritLit:mahabharata:3.10.12" type="V" ana="#a2_V #par_P #lak_L2 #top_geography" n="MBh. Vana 3.10.12">Описание леса Камьяка. Васильков идентифицирует географические ориентиры, сопоставляя их с современными топонимами.</note>
+      <note xml:id="mbh_vassilkov_c23" target="urn:cts:sanskritLit:mahabharata:8.30.5" type="G" ana="#a2_G #par_P #lak_L5 #top_realia #top_context" n="MBh. Karṇa 8.30.5">Инвективы Карны и Шальи. Васильков видит здесь отражение межплеменной вражды народов мадья и куру.</note>
+      <note xml:id="mbh_vassilkov_c24" target="urn:cts:sanskritLit:mahabharata:10.5.15" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_philosophy" n="MBh. Sauptika 10.5.15">Молитва Ашваттхамана Шиве перед бойней. Васильков анализирует экстатический характер его преданности.</note>
+      <note xml:id="mbh_vassilkov_c25" target="urn:cts:sanskritLit:mahabharata:11.20.1" type="G" ana="#a2_G #par_P #lak_L5 #top_realia" n="MBh. Strī 11.20.1">Сцена «Сати» (самосожжения вдов). Васильков обсуждает историческую достоверность этого обычая в эпическую эпоху.</note>
+      <note xml:id="mbh_vassilkov_c26" target="urn:cts:sanskritLit:mahabharata:12.200.5" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy" n="MBh. Mokṣa 12.200.5" rend="iast">Понятие «пуруша» (дух) в противопоставлении «пракрити» (материи). Васильков отмечает дуализм раннего философского мышления.</note>
+      <note xml:id="mbh_vassilkov_c27" target="urn:cts:sanskritLit:mahabharata:14.50.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_philosophy" n="MBh. Aśvamedhika 14.50.1">История о мангусте с золотой головой. Васильков интерпретирует этот миф как критику пышных ритуалов в пользу искренней жертвы.</note>
+      <note xml:id="mbh_vassilkov_c28" target="urn:cts:sanskritLit:mahabharata:15.25.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="MBh. Āśramavāsika 15.25.1">Видение мертвых воинов, выходящих из Ганги. Васильков сравнивает этот мотив с «дикой охотой» в европейском фольклоре.</note>
+      <note xml:id="mbh_vassilkov_c29" target="urn:cts:sanskritLit:mahabharata:16.3.10" type="V" ana="#a2_V #par_P #lak_L5 #top_geography #top_realia" n="MBh. Mausala 16.3.10">Разрушение Двараки волнами океана. Васильков сопоставляет миф с археологическими данными о затоплении древнего порта.</note>
+      <note xml:id="mbh_vassilkov_c30" target="urn:cts:sanskritLit:mahabharata:17.2.1" type="G" ana="#a2_G #par_P #lak_L5 #top_philosophy #top_myth" n="MBh. Mahāprasthānika 17.2.1">Гибель Пандавов один за другим. Васильков видит в этом аллегорию кармического воздаяния за мелкие грехи.</note>
+      <note xml:id="mbh_vassilkov_c31" target="urn:cts:sanskritLit:mahabharata:3.50.2" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="MBh. Vana 3.50.2">Роль Нарады как божественного вестника и провокатора. Васильков отмечает его связь с миром богов и людей.</note>
+      <note xml:id="mbh_vassilkov_c32" target="urn:cts:sanskritLit:mahabharata:8.50.1" type="G" ana="#a2_G #par_P #lak_L2 #top_realia" n="MBh. Karṇa 8.50.1">Описание колесницы Карны. Васильков детально анализирует устройство боевых колесниц согласно «Артхашастре».</note>
+      <note xml:id="mbh_vassilkov_c33" target="urn:cts:sanskritLit:mahabharata:10.8.20" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="MBh. Sauptika 10.8.20" rend="iast">Образ черной женщины (Каларатри), видимой воинам перед смертью. Васильков прослеживает иконографию богини смерти.</note>
+      <note xml:id="mbh_vassilkov_c34" target="urn:cts:sanskritLit:mahabharata:11.25.1" type="V" ana="#a2_V #par_P #lak_L5 #top_context" n="MBh. Strī 11.25.1">Прощание Дхритараштры с павшими сыновьями. Васильков отмечает психологическую глубину образа ослепленного царя.</note>
+      <note xml:id="mbh_vassilkov_c35" target="urn:cts:sanskritLit:mahabharata:12.250.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy" n="MBh. Mokṣa 12.250.1" rend="iast">Диалог Джаджили и Туладхары о природе ненасилия (ахимса). Васильков видит здесь влияние джайнских и буддийских идей.</note>
+      <note xml:id="mbh_vassilkov_c36" target="urn:cts:sanskritLit:mahabharata:14.70.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_context" n="MBh. Aśvamedhika 14.70.1">Борьба Юдхиштхиры с собственными сомнениями. Васильков интерпретирует «Анугиту» как психотерапевтический текст.</note>
+      <note xml:id="mbh_vassilkov_c37" target="urn:cts:sanskritLit:mahabharata:15.30.5" type="V" ana="#a2_V #par_P #lak_L5 #top_myth #top_context" n="MBh. Āśramavāsika 15.30.5">Гибель Кунти, Гандхари и Дхритараштры в лесном пожаре. Васильков отмечает трагическую симметрию их конца.</note>
+      <note xml:id="mbh_vassilkov_c38" target="urn:cts:sanskritLit:mahabharata:16.8.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_context" n="MBh. Mausala 16.8.1">Уход Арджуны, неспособного защитить женщин от разбойников. Васильков подчеркивает тему утраты героем его магической силы.</note>
+      <note xml:id="mbh_vassilkov_c39" target="urn:cts:sanskritLit:mahabharata:17.3.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_myth" n="MBh. Mahāprasthānika 17.3.1">Отказ Юдхиштхиры войти в рай без собаки. Васильков видит в этом высшее проявление принципа ахимсы и верности.</note>
+      <note xml:id="mbh_vassilkov_c40" target="urn:cts:sanskritLit:mahabharata:18.2.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_philosophy" n="MBh. Svargārohaṇa 18.2.1">Рай как место примирения врагов. Васильков отмечает парадоксальность эпического финала, где Дурьодхана оказывается на небесах.</note>
+      <note xml:id="mbh_vassilkov_c41" target="urn:cts:sanskritLit:mahabharata:3.100.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="MBh. Vana 3.100.1">Сказание о Нале и Дамаянти. Васильков анализирует его как самостоятельную эпическую новеллу с фольклорными корнями.</note>
+      <note xml:id="mbh_vassilkov_c42" target="urn:cts:sanskritLit:mahabharata:3.150.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="MBh. Vana 3.150.1">Встреча Бхимы и Ханумана. Васильков отмечает встречу двух «сыновей ветра» как важный сюжетный узел.</note>
+      <note xml:id="mbh_vassilkov_c43" target="urn:cts:sanskritLit:mahabharata:8.70.1" type="G" ana="#a2_G #par_P #lak_L2 #top_realia" n="MBh. Karṇa 8.70.1">Смерть Карны от стрелы Арджуны («анджалика»). Васильков детально описывает типы наконечников стрел в древней Индии.</note>
+      <note xml:id="mbh_vassilkov_c44" target="urn:cts:sanskritLit:mahabharata:10.15.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="MBh. Sauptika 10.15.1">Участь Ашваттхамана — бессмертное скитание в ранах. Васильков сравнивает с легендой о Вечном Жиде.</note>
+      <note xml:id="mbh_vassilkov_c45" target="urn:cts:sanskritLit:mahabharata:11.27.1" type="G" ana="#a2_G #par_P #lak_L5 #top_realia" n="MBh. Strī 11.27.1">Омовение в Ганге после битвы. Васильков отмечает ритуальный характер очищения от скверны смерти.</note>
+      <note xml:id="mbh_vassilkov_c46" target="urn:cts:sanskritLit:mahabharata:12.300.1" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy" n="MBh. Mokṣa 12.300.1" rend="iast">Учение Парашары о долге (дхарме) в разные юги. Васильков обсуждает концепцию «апад-дхармы» (закона для трудных времен).</note>
+      <note xml:id="mbh_vassilkov_c47" target="urn:cts:sanskritLit:mahabharata:14.90.1" type="V" ana="#a2_V #par_P #lak_L5 #top_context" n="MBh. Aśvamedhika 14.90.1">Возвращение Кришны в Двараку. Васильков отмечает ностальгический тон повествования перед финальной катастрофой.</note>
+      <note xml:id="mbh_vassilkov_c48" target="urn:cts:sanskritLit:mahabharata:15.35.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy" n="MBh. Āśramavāsika 15.35.1">Наставления Нарады Юдхиштхире о тщете земного величия. Васильков видит здесь проявление эпического пессимизма.</note>
+      <note xml:id="mbh_vassilkov_c49" target="urn:cts:sanskritLit:mahabharata:16.9.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="MBh. Mausala 16.9.1">Смерть Кришны от стрелы охотника Джары. Васильков сопоставляет с мифом об Ахилле и его уязвимой пятке.</note>
+      <note xml:id="mbh_vassilkov_c50" target="urn:cts:sanskritLit:mahabharata:18.6.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="MBh. Svargārohaṇa 18.6.1">Слияние героев со своими небесными прототипами (Пандавы — с богами, Кауравы — с асурами). Васильков отмечает окончание эпического цикла.</note>
+      </listAnnotation>
+    </body>
+  </text>
+</TEI>

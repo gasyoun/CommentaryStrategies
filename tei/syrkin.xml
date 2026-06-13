@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Комментаторский аппарат: syrkin (золотая выборка, 50 примечаний)</title>
+        <respStmt><resp>разметка</resp><name>CommentaryStrategies</name></respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Корпус CommentaryStrategies. Полнотекстовая публикация авторизована
+           2026-06-12 (см. data/RIGHTS.md). Лицензия данных — отдельно от лицензии кода.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Размеченная выборка примечаний переводчика «syrkin»;
+           адресация стихов — CTS-URN (scripts/derive_urn.py).</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+      <taxonomy xml:id="axis2_kazansky">
+        <desc>Ось 2 — тип комментария (номенклатура Н. Н. Казанского)</desc>
+        <category xml:id="a2_A"><catDesc>филологический комментарий (язык, грамматика)</catDesc></category>
+        <category xml:id="a2_B"><catDesc>текстологический комментарий (варианты, источники)</catDesc></category>
+        <category xml:id="a2_V"><catDesc>историко-культурный комментарий (реалии, мифология)</catDesc></category>
+        <category xml:id="a2_G"><catDesc>культурологический / интерпретационный комментарий</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis3_lakshana">
+        <desc>Ось 3 — пять lakṣaṇa комментаторской традиции</desc>
+        <category xml:id="lak_L1"><catDesc>именование (nāmadheya)</catDesc></category>
+        <category xml:id="lak_L2"><catDesc>толкование (vivaraṇa)</catDesc></category>
+        <category xml:id="lak_L3"><catDesc>связь (vākyayojanā)</catDesc></category>
+        <category xml:id="lak_L4"><catDesc>возражение (ākṣepa)</catDesc></category>
+        <category xml:id="lak_L5"><catDesc>контекст / смысл целого (samanvaya)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis4_paribok">
+        <desc>Ось 4 — категориальный статус термина (модель А. В. Парибка)</desc>
+        <category xml:id="par_P"><catDesc>понятие (translatable concept)</catDesc></category>
+        <category xml:id="par_K"><catDesc>кодификатор направления деятельности (Парибок)</catDesc></category>
+        <category xml:id="par_D"><catDesc>концепт-расхождение (несоизмеримость)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis1_topic">
+        <desc>Ось 1 — тематическая рубрика примечания</desc>
+        <category xml:id="top_sanskrit_term"><catDesc>sanskrit_term</catDesc></category>
+        <category xml:id="top_myth"><catDesc>myth</catDesc></category>
+        <category xml:id="top_context"><catDesc>context</catDesc></category>
+        <category xml:id="top_realia"><catDesc>realia</catDesc></category>
+        <category xml:id="top_geography"><catDesc>geography</catDesc></category>
+        <category xml:id="top_reference"><catDesc>reference</catDesc></category>
+        <category xml:id="top_textology"><catDesc>textology</catDesc></category>
+        <category xml:id="top_philosophy"><catDesc>philosophy</catDesc></category>
+        <category xml:id="top_poetics"><catDesc>poetics</catDesc></category>
+      </taxonomy>
+      </classDecl>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listAnnotation>
+      <note xml:id="up_syrkin_c1" target="urn:cts:sanskritLit:brhadaranyaka:1.1.1" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_reference" n="Bṛh. Up. 1.1.1" rend="iast">Голова жертвенного коня — это утренняя заря (uṣas). Сыркин отмечает символическое соответствие микрокосма и макрокосма. Ср. PU 149.</note>
+      <note xml:id="up_syrkin_c2" target="urn:cts:sanskritLit:brhadaranyaka:2.3.6" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Bṛh. Up. 2.3.6" rend="iast">«Не то, не то» (neti neti) — знаменитая апофатическая формула определения Брахмана. По толкованию Шанкары, означает отрицание всех преходящих форм. См. UM 432.</note>
+      <note xml:id="up_syrkin_c3" target="urn:cts:sanskritLit:chandogya:1.1.1" type="G" ana="#a2_G #par_P #lak_L2 #top_realia #top_sanskrit_term" n="Chānd. Up. 1.1.1" rend="iast">Удгитха (udgītha) — часть песнопения Сома-яджны, отождествляемая со слогом Ом. Сыркин анализирует ритуальную этимологию. Ср. CS 12.</note>
+      <note xml:id="up_syrkin_c4" target="urn:cts:sanskritLit:svetasvatara:1.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Śvet. Up. 1.1" rend="iast">Вопрос о первопричине (brahmavādinaḥ). Сыркин отмечает переход от ведийского ритуализма к метафизическому поиску. См. БУ 231.</note>
+      <note xml:id="up_syrkin_c5" target="urn:cts:sanskritLit:katha:1.1.1" type="A" ana="#a2_A #par_P #lak_L2 #top_myth #top_sanskrit_term" n="Kaṭha Up. 1.1.1" rend="iast">Начикетас (nāciketa) — герой, спускающийся в царство Ямы. Имя этимологизируется как «не-знающий» или «ищущий знания».</note>
+      <note xml:id="up_syrkin_c6" target="urn:cts:sanskritLit:mundaka:1.1.3" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Muṇḍ. Up. 1.1.3" rend="iast">«Зная что, можно узнать всё это?» Основной вопрос упанишад об универсальном знании (vidyā). См. VN 45.</note>
+      <note xml:id="up_syrkin_c7" target="urn:cts:sanskritLit:isa:1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Īśā Up. 1" rend="iast">«Всё это окутано Господом» (īśāvāsyam). Сыркин обсуждает теистический аспект этой упанишады. Ср. PU 567.</note>
+      <note xml:id="up_syrkin_c8" target="urn:cts:sanskritLit:kena:1.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Kena Up. 1.1">«Кем направляемый летит разум?» Сыркин отмечает психологический интроспекционизм текста. См. UM 112.</note>
+      <note xml:id="up_syrkin_c9" target="urn:cts:sanskritLit:prasna:1.1" type="V" ana="#a2_V #par_P #top_context" n="Praśna Up. 1.1">Шесть вопрошателей. Сыркин видит в этом структуру философского симпозиума.</note>
+      <note xml:id="up_syrkin_c10" target="urn:cts:sanskritLit:mandukya:1" type="G" ana="#a2_G #par_K #lak_L5 #top_philosophy #top_reference" n="Māṇḍ. Up. 1" rend="iast">Слог Ом как символ четырех состояний сознания (jāgrat, svapna, suṣupti, turīya). См. БУ 402.</note>
+      <note xml:id="up_syrkin_c11" target="urn:cts:sanskritLit:brhadaranyaka:3.1.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="Bṛh. Up. 3.1.1" rend="iast">Яджнявалкья (yājñavalkya) — великий мудрец, победитель в философском споре при дворе Джанаки.</note>
+      <note xml:id="up_syrkin_c12" target="urn:cts:sanskritLit:chandogya:6.8.7" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Chānd. Up. 6.8.7" rend="iast">«То ты еси» (tat tvam asi) — великое речение (mahāvākya) о тождестве индивидуального и мирового духа. См. PU 458.</note>
+      <note xml:id="up_syrkin_c13" target="urn:cts:sanskritLit:kaivalya:1" type="G" ana="#a2_G #par_D #lak_L2 #top_philosophy" n="Kaivalya Up. 1" rend="iast">Понятие «Кайвалья» — абсолютная обособленность, освобождение. Сыркин отмечает йогический характер текста.</note>
+      <note xml:id="up_syrkin_c14" target="urn:cts:sanskritLit:aitareya:1.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_reference" n="Aitareya Up. 1.1">Сотворение миров из вод. Сыркин сопоставляет с космогонией Ригведы (X.129).</note>
+      <note xml:id="up_syrkin_c15" target="urn:cts:sanskritLit:taittiriya:2.1" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy" n="Taitt. Up. 2.1" rend="iast">Учение о пяти оболочках (kośa) человека. Сыркин детально разбирает каждый уровень (anna, prāṇa, manas, vijñāna, ānanda).</note>
+      <note xml:id="up_syrkin_c16" target="urn:cts:sanskritLit:brhadaranyaka:4.4.5" type="G" ana="#a2_G #par_K #lak_L5 #top_philosophy #top_reference" n="Bṛh. Up. 4.4.5" rend="iast">Закон кармы: «Каково деяние, таков и результат». Сыркин прослеживает этическую детерминированность упанишад. См. PU 270.</note>
+      <note xml:id="up_syrkin_c17" target="urn:cts:sanskritLit:chandogya:5.10.1" type="G" ana="#a2_G #par_K #lak_L5 #top_philosophy #top_reference" n="Chānd. Up. 5.10.1" rend="iast">Путь богов (devayāna) и путь отцов (pitṛyāna). Сыркин поясняет эсхатологические представления о посмертии. Ср. UM 156.</note>
+      <note xml:id="up_syrkin_c18" target="urn:cts:sanskritLit:svetasvatara:4.5" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_poetics" n="Śvet. Up. 4.5">Метафора двух птиц на одном дереве. Один вкушает плод, другой лишь созерцает. Сыркин отмечает символику дживы и атмана.</note>
+      <note xml:id="up_syrkin_c19" target="urn:cts:sanskritLit:brhadaranyaka:1.3.28" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy" n="Bṛh. Up. 1.3.28" rend="iast">Молитва: «Веди меня от небытия к бытию» (asato mā sad gamaya). Сыркин анализирует онтологические оппозиции.</note>
+      <note xml:id="up_syrkin_c20" target="urn:cts:sanskritLit:chandogya:3.14.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Chānd. Up. 3.14.1" rend="iast">«Шандилья-видья». Весь мир есть Брахман (sarvaṃ khalvidaṃ brahma). Сыркин отмечает монистический пафос текста. См. PU 391.</note>
+      <note xml:id="up_syrkin_c21" target="urn:cts:sanskritLit:brhadaranyaka:1.4.10" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy" n="Bṛh. Up. 1.4.10" rend="iast">«Я есмь Брахман» (ahaṃ brahmāsmi). Одно из четырех великих речений. Сыркин обсуждает самосознание абсолюта.</note>
+      <note xml:id="up_syrkin_c22" target="urn:cts:sanskritLit:katha:1.3.3" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Kaṭha Up. 1.3.3">Метафора колесницы: Атман — хозяин, тело — колесница, разум — возница. Сыркин сопоставляет с платоновскими аллегориями. Ср. UM 234.</note>
+      <note xml:id="up_syrkin_c23" target="urn:cts:sanskritLit:chandogya:7.1.1" type="V" ana="#a2_V #par_P #lak_L2 #top_realia #top_context" n="Chānd. Up. 7.1.1">Нарада просит Санаткумару научить его. Перечисление наук того времени. Сыркин дает историко-культурный комментарий.</note>
+      <note xml:id="up_syrkin_c24" target="urn:cts:sanskritLit:mundaka:1.1.4" type="G" ana="#a2_G #par_K #lak_L5 #top_philosophy #top_reference" n="Muṇḍ. Up. 1.1.4" rend="iast">Различение высшего (parā) и низшего (aparā) знания. Сыркин отмечает гносеологический дуализм упанишад. См. PU 670.</note>
+      <note xml:id="up_syrkin_c25" target="urn:cts:sanskritLit:maitri:1.1" type="G" ana="#a2_G #par_P #lak_L5 #top_philosophy #top_context" n="Maitrī Up. 1.1">Царь Брихадратха осознает тщету жизни. Сыркин отмечает пессимистический тон поздних упанишад. См. VN 89.</note>
+      <note xml:id="up_syrkin_c26" target="urn:cts:sanskritLit:brhadaranyaka:5.2.3" type="G" ana="#a2_G #par_K #lak_L5 #top_philosophy" n="Bṛh. Up. 5.2.3" rend="iast">Три наставления: «Дамята» (обуздайте себя), «Датта» (давайте), «Даядхвам» (сострадайте). Сыркин отмечает этический минимум упанишад.</note>
+      <note xml:id="up_syrkin_c27" target="urn:cts:sanskritLit:chandogya:8.1.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy" n="Chānd. Up. 8.1.1" rend="iast">«Дахара-видья» — учение о малом пространстве в сердце, тождественном космосу. Сыркин анализирует концепцию сердца.</note>
+      <note xml:id="up_syrkin_c28" target="urn:cts:sanskritLit:svetasvatara:6.1" type="G" ana="#a2_G #par_D #lak_L5 #top_myth #top_philosophy" n="Śvet. Up. 6.1" rend="iast">Прославление Рудры-Шивы как высшего бога. Сыркин отмечает рождение теистического монизма. См. PU 745.</note>
+      <note xml:id="up_syrkin_c29" target="urn:cts:sanskritLit:kausitaki:1.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth #top_geography" n="Kauṣ. Up. 1.1">Вопрос о пути к Луне. Сыркин обсуждает древние космологические представления о «небесном мире».</note>
+      <note xml:id="up_syrkin_c30" target="urn:cts:sanskritLit:brhadaranyaka:6.1.1" type="G" ana="#a2_G #par_P #lak_L5 #top_philosophy #top_myth" n="Bṛh. Up. 6.1.1" rend="iast">Спор чувств о первенстве. Сыркин отмечает важность праны (дыхания) как жизненного начала.</note>
+      <note xml:id="up_syrkin_c31" target="urn:cts:sanskritLit:chandogya:4.1.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth #top_context" n="Chānd. Up. 4.1.1">История Райквы с телесницей. Сыркин отмечает демократизм передачи знания в упанишадах.</note>
+      <note xml:id="up_syrkin_c32" target="urn:cts:sanskritLit:katha:2.1.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy" n="Kaṭha Up. 2.1.1">«Самосущий пробил отверстия [чувств] наружу». Сыркин поясняет теорию восприятия.</note>
+      <note xml:id="up_syrkin_c33" target="urn:cts:sanskritLit:brhadaranyaka:2.4.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Bṛh. Up. 2.4.1" rend="iast">Диалог Яджнявалкьи и Майтрейи о любви и Атмане. Сыркин отмечает вершину философской лирики. См. PU 197.</note>
+      <note xml:id="up_syrkin_c34" target="urn:cts:sanskritLit:chandogya:5.1.1" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy" n="Chānd. Up. 5.1.1" rend="iast">Учение о пяти огнях (паньчагни-видья). Сыркин поясняет метафизику перерождения.</note>
+      <note xml:id="up_syrkin_c35" target="urn:cts:sanskritLit:svetasvatara:2.8" type="G" ana="#a2_G #par_P #lak_L2 #top_realia #top_philosophy" n="Śvet. Up. 2.8" rend="iast">Наставления по практике йоги. Сыркин отмечает раннее появление технических терминов. См. UM 401.</note>
+      <note xml:id="up_syrkin_c36" target="urn:cts:sanskritLit:taittiriya:1.1" type="G" ana="#a2_G #par_K #lak_L5 #top_philosophy #top_reference" n="Taitt. Up. 1.1" rend="iast">Призыв к ученику: «Говори истину, соблюдай дхарму». Сыркин анализирует педагогический идеал. Ср. БУ 145.</note>
+      <note xml:id="up_syrkin_c37" target="urn:cts:sanskritLit:brhadaranyaka:3.7.1" type="G" ana="#a2_G #par_D #lak_L2 #top_philosophy" n="Bṛh. Up. 3.7.1" rend="iast">Учение о «внутреннем правителе» (antaryāmin). Сыркин поясняет вездесущность Атмана.</note>
+      <note xml:id="up_syrkin_c38" target="urn:cts:sanskritLit:chandogya:6.1.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Chānd. Up. 6.1.1">История Шветакету. Глина и изделия из нее как метафора единства причины. Сыркин обсуждает онтологию субстанции. См. PU 446.</note>
+      <note xml:id="up_syrkin_c39" target="urn:cts:sanskritLit:maitri:6.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_philosophy" n="Maitrī Up. 6.1">Солнце как внешняя форма Атмана. Сыркин отмечает солярный символизм текста. См. VN 112.</note>
+      <note xml:id="up_syrkin_c40" target="urn:cts:sanskritLit:brhadaranyaka:4.3.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy" n="Bṛh. Up. 4.3.1" rend="iast">О свете человека. Когда нет солнца и луны, свет — это Атман. Сыркин анализирует метафизику света.</note>
+      <note xml:id="up_syrkin_c41" target="urn:cts:sanskritLit:chandogya:2.1.1" type="G" ana="#a2_G #par_P #lak_L2 #top_realia #top_sanskrit_term" n="Chānd. Up. 2.1.1" rend="iast">Почитание Самана как благого. Сыркин поясняет музыкально-ритуальные соответствия. Ср. CS 45.</note>
+      <note xml:id="up_syrkin_c42" target="urn:cts:sanskritLit:katha:2.3.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_poetics" n="Kaṭha Up. 2.3.1">Мировое древо корнями вверх. Сыркин сопоставляет с аналогичными образами в Бхагавадгите (XV.1).</note>
+      <note xml:id="up_syrkin_c43" target="urn:cts:sanskritLit:brhadaranyaka:1.5.1" type="G" ana="#a2_G #par_P #lak_L2 #top_realia #top_myth" n="Bṛh. Up. 1.5.1">Семь видов пищи, созданных Отцом. Сыркин анализирует пищевой код в упанишадах.</note>
+      <note xml:id="up_syrkin_c44" target="urn:cts:sanskritLit:chandogya:4.10.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth #top_realia" n="Chānd. Up. 4.10.1">История Упакошалы. Огонь учит его Брахману. Сыркин отмечает роль агни-хотры в передаче знания.</note>
+      <note xml:id="up_syrkin_c45" target="urn:cts:sanskritLit:taittiriya:3.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth #top_philosophy" n="Taitt. Up. 3.1" rend="iast">Бхригу просит отца Варуну научить его Брахману. Сыркин отмечает важность аскезы (тапаса).</note>
+      <note xml:id="up_syrkin_c46" target="urn:cts:sanskritLit:brhadaranyaka:5.1.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Bṛh. Up. 5.1.1">«То — полнота, это — полнота». Сыркин поясняет математическую и метафизическую логику бесконечности. См. PU 289.</note>
+      <note xml:id="up_syrkin_c47" target="urn:cts:sanskritLit:chandogya:5.11.1" type="G" ana="#a2_G #par_K #lak_L5 #top_philosophy" n="Chānd. Up. 5.11.1" rend="iast">Пять брахманов и Вайшванара-Атман. Сыркин обсуждает концепцию «всеобщего человека».</note>
+      <note xml:id="up_syrkin_c48" target="urn:cts:sanskritLit:aitareya:3.1" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy #top_reference" n="Aitareya Up. 3.1" rend="iast">Отождествление Атмана с сознанием (праджняна). Сыркин отмечает интеллектуализм текста. См. БУ 121.</note>
+      <note xml:id="up_syrkin_c49" target="urn:cts:sanskritLit:brhadaranyaka:4.5.15" type="G" ana="#a2_G #par_D #lak_L5 #top_philosophy" n="Bṛh. Up. 4.5.15" rend="iast">«Где всё стало для него Атманом, там кого и через что он будет видеть?» Сыркин отмечает предел субъективизма.</note>
+      <note xml:id="up_syrkin_c50" target="urn:cts:sanskritLit:isa:18" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_philosophy" n="Īśā Up. 18">Финальная молитва к Агни. Сыркин отмечает синтез ведийского гимна и упанишадской метафизики.</note>
+      </listAnnotation>
+    </body>
+  </text>
+</TEI>

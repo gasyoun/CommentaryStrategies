@@ -123,6 +123,55 @@ td {
 
 tr:nth-child(even) td { background: var(--card); }
 
+/* ─── STAT GRID (page header) ─── */
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.stat-cell {
+  flex: 1 1 140px;
+  padding: 1rem 1.2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  display: block;
+  color: #e8dfd0;
+}
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rule);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* ─── SECTION EYEBROW ─── */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 640px) {
+  .stats-grid { flex-direction: column; }
+  .stat-cell { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+}
+
 /* ─── TYPOGRAPHY ─── */
 h2.section-title {
   font-family: 'Playfair Display', serif;
