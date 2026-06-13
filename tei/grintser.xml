@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Комментаторский аппарат: grintser (золотая выборка, 50 примечаний)</title>
+        <respStmt><resp>разметка</resp><name>CommentaryStrategies</name></respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Корпус CommentaryStrategies. Полнотекстовая публикация авторизована
+           2026-06-12 (см. data/RIGHTS.md). Лицензия данных — отдельно от лицензии кода.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Размеченная выборка примечаний переводчика «grintser»;
+           адресация стихов — CTS-URN (scripts/derive_urn.py).</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+      <taxonomy xml:id="axis2_kazansky">
+        <desc>Ось 2 — тип комментария (номенклатура Н. Н. Казанского)</desc>
+        <category xml:id="a2_A"><catDesc>филологический комментарий (язык, грамматика)</catDesc></category>
+        <category xml:id="a2_B"><catDesc>текстологический комментарий (варианты, источники)</catDesc></category>
+        <category xml:id="a2_V"><catDesc>историко-культурный комментарий (реалии, мифология)</catDesc></category>
+        <category xml:id="a2_G"><catDesc>культурологический / интерпретационный комментарий</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis3_lakshana">
+        <desc>Ось 3 — пять lakṣaṇa комментаторской традиции</desc>
+        <category xml:id="lak_L1"><catDesc>именование (nāmadheya)</catDesc></category>
+        <category xml:id="lak_L2"><catDesc>толкование (vivaraṇa)</catDesc></category>
+        <category xml:id="lak_L3"><catDesc>связь (vākyayojanā)</catDesc></category>
+        <category xml:id="lak_L4"><catDesc>возражение (ākṣepa)</catDesc></category>
+        <category xml:id="lak_L5"><catDesc>контекст / смысл целого (samanvaya)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis4_paribok">
+        <desc>Ось 4 — категориальный статус термина (модель А. В. Парибка)</desc>
+        <category xml:id="par_P"><catDesc>понятие (translatable concept)</catDesc></category>
+        <category xml:id="par_K"><catDesc>кодификатор направления деятельности (Парибок)</catDesc></category>
+        <category xml:id="par_D"><catDesc>концепт-расхождение (несоизмеримость)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis1_topic">
+        <desc>Ось 1 — тематическая рубрика примечания</desc>
+        <category xml:id="top_sanskrit_term"><catDesc>sanskrit_term</catDesc></category>
+        <category xml:id="top_myth"><catDesc>myth</catDesc></category>
+        <category xml:id="top_context"><catDesc>context</catDesc></category>
+        <category xml:id="top_realia"><catDesc>realia</catDesc></category>
+        <category xml:id="top_geography"><catDesc>geography</catDesc></category>
+        <category xml:id="top_reference"><catDesc>reference</catDesc></category>
+        <category xml:id="top_textology"><catDesc>textology</catDesc></category>
+        <category xml:id="top_philosophy"><catDesc>philosophy</catDesc></category>
+        <category xml:id="top_poetics"><catDesc>poetics</catDesc></category>
+      </taxonomy>
+      </classDecl>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listAnnotation>
+      <note xml:id="ram_grintser_c1" target="urn:cts:sanskritLit:ramayana:1.1.1" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Bāla 1.1.1" rend="iast">«…Тёмнокожий (snigdha-varṇaḥ)…» Букв.: «цвета масла», «глянцевитый». Рама в иконографии изображается с тёмным телом.</note>
+      <note xml:id="ram_grintser_c2" target="urn:cts:sanskritLit:ramayana:1.1.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="Rām. Bāla 1.1.1" rend="iast">Нарада (nārada) — божественный мудрец, посредник между богами и людьми, поэт (kavi). Первый, кто поведал Вальмики о деяниях Рамы.</note>
+      <note xml:id="ram_grintser_c3" target="urn:cts:sanskritLit:ramayana:1.5.10" type="A" ana="#a2_A #par_P #lak_L2 #top_geography #top_sanskrit_term" n="Rām. Bāla 1.5.10" rend="iast">Айодхья (ayodhyā) — букв. «несокрушимая». Столица царства Кошала. Гринцер отмечает этимологическую значимость названия.</note>
+      <note xml:id="ram_grintser_c4" target="urn:cts:sanskritLit:ramayana:2.1.1" type="G" ana="#a2_G #par_P #lak_L5 #top_realia" n="Rām. Ayodhyā 2.1.1" rend="iast">Подготовка к посвящению Рамы в наследники (yuvarāja). Гринцер обсуждает юридические аспекты престолонаследия в древней Индии.</note>
+      <note xml:id="ram_grintser_c5" target="urn:cts:sanskritLit:ramayana:3.1.1" type="V" ana="#a2_V #par_P #lak_L5 #top_geography #top_context" n="Rām. Araṇya 3.1.1">Вступление в лес Дандака. Гринцер отмечает смену ландшафта и его символическое значение как места испытаний.</note>
+      <note xml:id="ram_grintser_c6" target="urn:cts:sanskritLit:ramayana:3.15.5" type="G" ana="#a2_G #par_P #lak_L2 #top_realia" n="Rām. Araṇya 3.15.5">Описание дерева Ашока (Saraca indica). Гринцер дает латинское название и отмечает роль дерева в любовной поэзии.</note>
+      <note xml:id="ram_grintser_c7" target="urn:cts:sanskritLit:ramayana:1.2.15" type="G" ana="#a2_G #par_D #lak_L5 #top_myth #top_poetics" n="Rām. Bāla 1.2.15">Проклятие Вальмики охотнику, убившему птицу крунча. Гринцер видит в этом рождение поэтического метра — шлоки.</note>
+      <note xml:id="ram_grintser_c8" target="urn:cts:sanskritLit:ramayana:1.10.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="Rām. Bāla 1.10.1">История Ришьяшринги. Гринцер сравнивает этот сюжет с легендами об отшельниках в других культурах.</note>
+      <note xml:id="ram_grintser_c9" target="urn:cts:sanskritLit:ramayana:2.10.5" type="V" ana="#a2_V #par_P #lak_L5 #top_context" n="Rām. Ayodhyā 2.10.5">Козни Кайкейи. Гринцер анализирует психологическую мотивировку её поступков через призму эпической драмы.</note>
+      <note xml:id="ram_grintser_c10" target="urn:cts:sanskritLit:ramayana:3.45.10" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Araṇya 3.45.10">Появление золотого оленя (Маричи). Гринцер отмечает фольклорный мотив оборотничества.</note>
+      <note xml:id="ram_grintser_c11" target="urn:cts:sanskritLit:ramayana:1.30.5" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_philosophy" n="Rām. Bāla 1.30.5" rend="iast">«Тадака» (tāḍakā) — ракшаси, убитая Рамой. Гринцер обсуждает проблему убийства женщины героем.</note>
+      <note xml:id="ram_grintser_c12" target="urn:cts:sanskritLit:ramayana:1.67.1" type="G" ana="#a2_G #par_D #lak_L5 #top_myth #top_reference" n="Rām. Bāla 1.67.1">Рама ломает лук Шивы. Гринцер сопоставляет это с испытанием жениха в «Одиссее».</note>
+      <note xml:id="ram_grintser_c13" target="urn:cts:sanskritLit:ramayana:2.30.12" type="V" ana="#a2_V #par_P #lak_L5 #top_context #top_philosophy" n="Rām. Ayodhyā 2.30.12">Речь Ситы о верности мужу. Гринцер отмечает идеализацию образа супруги в Рамаяне.</note>
+      <note xml:id="ram_grintser_c14" target="urn:cts:sanskritLit:ramayana:3.20.1" type="G" ana="#a2_G #par_P #lak_L5 #top_poetics" n="Rām. Araṇya 3.20.1">Схватка с Шурпанакхой. Гринцер обсуждает комические и гротескные элементы эпизода.</note>
+      <note xml:id="ram_grintser_c15" target="urn:cts:sanskritLit:ramayana:3.60.5" type="G" ana="#a2_G #par_D #lak_L5 #top_poetics" n="Rām. Araṇya 3.60.5">Горе Рамы после похищения Ситы. Гринцер отмечает зарождение стиля «кавья» (ученой поэзии) в описании природы.</note>
+      <note xml:id="ram_grintser_c16" target="urn:cts:sanskritLit:ramayana:1.1.5" type="V" ana="#a2_V #par_P #lak_L2 #top_myth #top_sanskrit_term" n="Rām. Bāla 1.1.5" rend="iast">Эпитет «Вишвакарма» (всесоздатель). Гринцер поясняет его мифологический статус.</note>
+      <note xml:id="ram_grintser_c17" target="urn:cts:sanskritLit:ramayana:1.45.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Bāla 1.45.1">Миф о пахтании океана. Гринцер отмечает его общеиндийский характер и значимость для обеих эпопей.</note>
+      <note xml:id="ram_grintser_c18" target="urn:cts:sanskritLit:ramayana:2.50.1" type="G" ana="#a2_G #par_P #lak_L2 #top_realia #top_geography" n="Rām. Ayodhyā 2.50.1">Переправа через Гангу. Гринцер обсуждает священный статус реки и ритуалы, связанные с переправой.</note>
+      <note xml:id="ram_grintser_c19" target="urn:cts:sanskritLit:ramayana:3.5.1" type="V" ana="#a2_V #par_P #lak_L2 #top_realia" n="Rām. Araṇya 3.5.1">Ашрам Шарабханги. Гринцер описывает быт лесных отшельников согласно тексту.</note>
+      <note xml:id="ram_grintser_c20" target="urn:cts:sanskritLit:ramayana:3.70.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_philosophy" n="Rām. Araṇya 3.70.1">Встреча с Шабари. Гринцер отмечает тему преданности (бхакти) со стороны представительницы низких племен.</note>
+      <note xml:id="ram_grintser_c21" target="urn:cts:sanskritLit:ramayana:1.4.1" type="V" ana="#a2_V #par_P #lak_L5 #top_poetics #top_context" n="Rām. Bāla 1.4.1">Сыновья Рамы (Куша и Лава) поют Рамаяну. Гринцер отмечает самоотсылку текста и его устную природу.</note>
+      <note xml:id="ram_grintser_c22" target="urn:cts:sanskritLit:ramayana:1.20.10" type="V" ana="#a2_V #par_P #lak_L2 #top_myth" n="Rām. Bāla 1.20.10">Описание оружия, полученного Рамой от Вишвамитры. Гринцер отмечает их персонифицированный характер.</note>
+      <note xml:id="ram_grintser_c23" target="urn:cts:sanskritLit:ramayana:2.20.1" type="V" ana="#a2_V #par_P #lak_L5 #top_context" n="Rām. Ayodhyā 2.20.1">Горе Дашаратхи. Гринцер анализирует концепцию «роковой ошибки» царя.</note>
+      <note xml:id="ram_grintser_c24" target="urn:cts:sanskritLit:ramayana:2.80.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth #top_context" n="Rām. Ayodhyā 2.80.1">Бхарата отправляется в лес на поиски Рамы. Гринцер отмечает благородство его характера.</note>
+      <note xml:id="ram_grintser_c25" target="urn:cts:sanskritLit:ramayana:3.30.1" type="G" ana="#a2_G #par_P #lak_L5 #top_poetics" n="Rām. Araṇya 3.30.1">Битва Рамы с армией Кхары. Гринцер отмечает эпическую гиперболизацию силы героя.</note>
+      <note xml:id="ram_grintser_c26" target="urn:cts:sanskritLit:ramayana:1.15.1" type="G" ana="#a2_G #par_P #lak_L2 #top_realia" n="Rām. Bāla 1.15.1">Жертвоприношение коня (ашвамедха) Дашаратхи. Гринцер поясняет его ритуальную структуру.</note>
+      <note xml:id="ram_grintser_c27" target="urn:cts:sanskritLit:ramayana:1.50.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="Rām. Bāla 1.50.1">Миф об Ахалье. Гринцер анализирует тему очищения через проклятие.</note>
+      <note xml:id="ram_grintser_c28" target="urn:cts:sanskritLit:ramayana:2.40.1" type="V" ana="#a2_V #par_P #lak_L5 #top_context" n="Rām. Ayodhyā 2.40.1">Рама покидает Айодхью. Гринцер отмечает эмоциональный пик книги.</note>
+      <note xml:id="ram_grintser_c29" target="urn:cts:sanskritLit:ramayana:3.10.1" type="G" ana="#a2_G #par_P #lak_L5 #top_philosophy" n="Rām. Araṇya 3.10.1">Обещание Рамы мудрецам защитить их от ракшасов. Гринцер обсуждает долг кшатрия в лесу.</note>
+      <note xml:id="ram_grintser_c30" target="urn:cts:sanskritLit:ramayana:3.50.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Araṇya 3.50.1">Битва Джатаю с Раваной. Гринцер отмечает героическую жертву птицы.</note>
+      <note xml:id="ram_grintser_c31" target="urn:cts:sanskritLit:ramayana:1.60.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth" n="Rām. Bāla 1.60.1">Миф о Тришанку. Гринцер обсуждает создание Вишвамитрой новой вселенной.</note>
+      <note xml:id="ram_grintser_c32" target="urn:cts:sanskritLit:ramayana:2.60.1" type="G" ana="#a2_G #par_P #lak_L5 #top_realia #top_context" n="Rām. Ayodhyā 2.60.1">Смерть Дашаратхи. Гринцер отмечает связь между смертью царя и анархией в государстве.</note>
+      <note xml:id="ram_grintser_c33" target="urn:cts:sanskritLit:ramayana:3.55.1" type="V" ana="#a2_V #par_P #lak_L2 #top_geography #top_realia" n="Rām. Araṇya 3.55.1">Равана удерживает Ситу в роще Ашока. Гринцер описывает ландшафт Ланки.</note>
+      <note xml:id="ram_grintser_c34" target="urn:cts:sanskritLit:ramayana:1.75.1" type="G" ana="#a2_G #par_D #lak_L5 #top_myth" n="Rām. Bāla 1.75.1">Встреча Рамы с Парашурамой. Гринцер обсуждает смену аватаров Вишну.</note>
+      <note xml:id="ram_grintser_c35" target="urn:cts:sanskritLit:ramayana:2.90.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth #top_realia" n="Rām. Ayodhyā 2.90.1">Бхарата у Бхарадваджи. Гринцер отмечает гостеприимство мудреца и его магические силы.</note>
+      <note xml:id="ram_grintser_c36" target="urn:cts:sanskritLit:ramayana:3.65.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Araṇya 3.65.1">Встреча с Кабандхой. Гринцер анализирует образ безголового монстра.</note>
+      <note xml:id="ram_grintser_c37" target="urn:cts:sanskritLit:ramayana:1.5.1" type="V" ana="#a2_V #par_P #lak_L2 #top_geography #top_realia" n="Rām. Bāla 1.5.1">Описание богатств Айодхьи. Гринцер отмечает идеализацию городского устройства.</note>
+      <note xml:id="ram_grintser_c38" target="urn:cts:sanskritLit:ramayana:2.100.1" type="G" ana="#a2_G #par_P #lak_L5 #top_philosophy #top_realia" n="Rām. Ayodhyā 2.100.1">Наставления Рамы Бхарате о правлении. Гринцер видит в этом трактат по политике (нити).</note>
+      <note xml:id="ram_grintser_c39" target="urn:cts:sanskritLit:ramayana:3.40.1" type="V" ana="#a2_V #par_P #lak_L5 #top_context" n="Rām. Araṇya 3.40.1">Равана убеждает Маричу помочь ему. Гринцер отмечает фатализм Маричи.</note>
+      <note xml:id="ram_grintser_c40" target="urn:cts:sanskritLit:ramayana:1.35.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Bāla 1.35.1">История Ганги. Гринцер обсуждает её нисхождение на землю.</note>
+      <note xml:id="ram_grintser_c41" target="urn:cts:sanskritLit:ramayana:2.5.1" type="G" ana="#a2_G #par_P #lak_L2 #top_realia #top_context" n="Rām. Ayodhyā 2.5.1">Подготовка Ситы к обряду посвящения Рамы. Гринцер отмечает её роль как верной супруги.</note>
+      <note xml:id="ram_grintser_c42" target="urn:cts:sanskritLit:ramayana:3.12.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth #top_geography" n="Rām. Araṇya 3.12.1">Встреча Рамы с Агастьей. Гринцер отмечает значимость мудреца для южной Индии.</note>
+      <note xml:id="ram_grintser_c43" target="urn:cts:sanskritLit:ramayana:1.70.1" type="G" ana="#a2_G #par_P #lak_L2 #top_realia" n="Rām. Bāla 1.70.1">Свадьба сыновей Дашаратхи. Гринцер описывает свадебные обряды древней Индии.</note>
+      <note xml:id="ram_grintser_c44" target="urn:cts:sanskritLit:ramayana:2.115.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_realia" n="Rām. Ayodhyā 2.115.1">Бхарата правит от имени сандалий Рамы. Гринцер отмечает этот символ как высшую степень преданности.</note>
+      <note xml:id="ram_grintser_c45" target="urn:cts:sanskritLit:ramayana:3.75.1" type="G" ana="#a2_G #par_P #lak_L5 #top_poetics #top_context" n="Rām. Araṇya 3.75.1">Рама на берегу озера Пампа. Гринцер отмечает поэтическое предчувствие встречи с Хануманом.</note>
+      <note xml:id="ram_grintser_c46" target="urn:cts:sanskritLit:ramayana:1.25.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Bāla 1.25.1">Миф о рождении Картикеи (Сканды). Гринцер отмечает его связь с армией богов.</note>
+      <note xml:id="ram_grintser_c47" target="urn:cts:sanskritLit:ramayana:2.15.1" type="V" ana="#a2_V #par_P #lak_L5 #top_context" n="Rām. Ayodhyā 2.15.1">Санджая возвещает о готовности к помазанию. Гринцер отмечает трагический диссонанс с планами Кайкейи.</note>
+      <note xml:id="ram_grintser_c48" target="urn:cts:sanskritLit:ramayana:3.25.1" type="V" ana="#a2_V #par_P #lak_L2 #top_myth #top_realia" n="Rām. Araṇya 3.25.1">Кхара и Душана готовятся к нападению. Гринцер описывает облик армии ракшасов.</note>
+      <note xml:id="ram_grintser_c49" target="urn:cts:sanskritLit:ramayana:1.80.1" type="V" ana="#a2_V #par_P #top_context" n="Rām. Bāla 1.80.1">Возвращение Рамы в Айодхью после свадьбы. Гринцер отмечает завершение первой книги.</note>
+      <note xml:id="ram_grintser_c50" target="urn:cts:sanskritLit:ramayana:3.68.1" type="G" ana="#a2_G #par_P #lak_L5 #top_myth #top_philosophy" n="Rām. Araṇya 3.68.1">Освобождение Кабандхи от проклятия. Гринцер отмечает мотив спасения через смерть от руки героя.</note>
+      </listAnnotation>
+    </body>
+  </text>
+</TEI>

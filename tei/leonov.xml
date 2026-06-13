@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Комментаторский аппарат: leonov (золотая выборка, 50 примечаний)</title>
+        <respStmt><resp>разметка</resp><name>CommentaryStrategies</name></respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Корпус CommentaryStrategies. Полнотекстовая публикация авторизована
+           2026-06-12 (см. data/RIGHTS.md). Лицензия данных — отдельно от лицензии кода.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Размеченная выборка примечаний переводчика «leonov»;
+           адресация стихов — CTS-URN (scripts/derive_urn.py).</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+      <taxonomy xml:id="axis2_kazansky">
+        <desc>Ось 2 — тип комментария (номенклатура Н. Н. Казанского)</desc>
+        <category xml:id="a2_A"><catDesc>филологический комментарий (язык, грамматика)</catDesc></category>
+        <category xml:id="a2_B"><catDesc>текстологический комментарий (варианты, источники)</catDesc></category>
+        <category xml:id="a2_V"><catDesc>историко-культурный комментарий (реалии, мифология)</catDesc></category>
+        <category xml:id="a2_G"><catDesc>культурологический / интерпретационный комментарий</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis3_lakshana">
+        <desc>Ось 3 — пять lakṣaṇa комментаторской традиции</desc>
+        <category xml:id="lak_L1"><catDesc>именование (nāmadheya)</catDesc></category>
+        <category xml:id="lak_L2"><catDesc>толкование (vivaraṇa)</catDesc></category>
+        <category xml:id="lak_L3"><catDesc>связь (vākyayojanā)</catDesc></category>
+        <category xml:id="lak_L4"><catDesc>возражение (ākṣepa)</catDesc></category>
+        <category xml:id="lak_L5"><catDesc>контекст / смысл целого (samanvaya)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis4_paribok">
+        <desc>Ось 4 — категориальный статус термина (модель А. В. Парибка)</desc>
+        <category xml:id="par_P"><catDesc>понятие (translatable concept)</catDesc></category>
+        <category xml:id="par_K"><catDesc>кодификатор направления деятельности (Парибок)</catDesc></category>
+        <category xml:id="par_D"><catDesc>концепт-расхождение (несоизмеримость)</catDesc></category>
+      </taxonomy>
+      <taxonomy xml:id="axis1_topic">
+        <desc>Ось 1 — тематическая рубрика примечания</desc>
+        <category xml:id="top_sanskrit_term"><catDesc>sanskrit_term</catDesc></category>
+        <category xml:id="top_myth"><catDesc>myth</catDesc></category>
+        <category xml:id="top_context"><catDesc>context</catDesc></category>
+        <category xml:id="top_realia"><catDesc>realia</catDesc></category>
+        <category xml:id="top_geography"><catDesc>geography</catDesc></category>
+        <category xml:id="top_reference"><catDesc>reference</catDesc></category>
+        <category xml:id="top_textology"><catDesc>textology</catDesc></category>
+        <category xml:id="top_philosophy"><catDesc>philosophy</catDesc></category>
+        <category xml:id="top_poetics"><catDesc>poetics</catDesc></category>
+      </taxonomy>
+      </classDecl>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listAnnotation>
+      <note xml:id="ram_leonov_comment_5.1.1a" target="urn:cts:sanskritLit:ramayana:5.1.1" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.1.1" rend="iast">О губитель врагов (śatrukarśana) — букв. «иссушающий врагов»; устойчивый эпитет Хануманы в кн. V. Дальнейшие употребления без примечания.</note>
+      <note xml:id="ram_leonov_comment_5.1.1b" target="urn:cts:sanskritLit:ramayana:5.1.1" type="B" ana="#a2_B #par_P #lak_L1 #top_textology" n="Rām. Sundara 5.1.1" rend="iast">Похищенная Раваной (rāvaṇanītāyāḥ). ***[Е. Костина]*** «rāvaṇanītāyāḥ» Опущено. Здесь и далее буду отмечать незафиксированные опущения, чтобы в дальнейшем можно было отразить их в комментарии.</note>
+      <note xml:id="ram_leonov_comment_5.1.1c" target="urn:cts:sanskritLit:ramayana:5.1.1" type="A" ana="#a2_A #par_K #lak_L2 #lak_L5 #top_sanskrit_term #top_myth" n="Rām. Sundara 5.1.1" rend="iast">На тропу небожителей (cāraṇācarite pathi) — букв. «на тропе, по которой ходят чараны». В комментарии «Таттвадипика» поясняется «на дороге богов» (suravartmani). В комментарии «Бхушана» слово cāraṇāḥ объясняется как «божественные певцы» (dēvagāyakāḥ). Голдмены переводят «celestial bards».
+        <bibl type="indian_commentator">Tattvadīpikā</bibl>
+        <bibl type="indian_commentator">Bhūṣaṇa</bibl>
+        <bibl type="western_source">Goldman 1994</bibl></note>
+      <note xml:id="ram_leonov_comment_5.1.2a" target="urn:cts:sanskritLit:ramayana:5.1.2" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term #top_myth" n="Rām. Sundara 5.1.2" rend="iast">Ванара (vānara) — букв. «лесной житель»; обезьяна. Общий термин для обозначения народа Сугривы. В «Тилаке» отмечается, что ванары обладают божественным происхождением.
+        <bibl type="indian_commentator">Tilaka</bibl></note>
+      <note xml:id="ram_leonov_comment_5.1.2b" target="urn:cts:sanskritLit:ramayana:5.1.2" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.1.2" rend="iast">Могучий (mahābala) — ситуативный эпитет, прилагаемый здесь к Хануману. Букв. «обладающий великой силой».</note>
+      <note xml:id="ram_leonov_comment_5.1.2c" target="urn:cts:sanskritLit:ramayana:5.1.2" type="A" ana="#a2_A #par_K #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.1.2" rend="iast">Стойкий (dhīra) — букв. «твердый», «мудрый». В контексте подготовки к прыжку подчеркивает ментальную концентрацию героя.</note>
+      <note xml:id="ram_leonov_comment_5.1.3" target="urn:cts:sanskritLit:ramayana:5.1.3" type="B" ana="#a2_B #par_P #lak_L1 #top_textology" n="Rām. Sundara 5.1.3" rend="iast">Мудрый (dhīmān). ***[Е. Костина]*** «dhīmān» Опущено. Следует ли отмечать все эпитеты мудрости, если они не несут терминологической нагрузки?</note>
+      <note xml:id="ram_leonov_comment_5.1.5" target="urn:cts:sanskritLit:ramayana:5.1.5" type="A" ana="#a2_A #par_K #lak_L2 #lak_L5 #top_sanskrit_term" n="Rām. Sundara 5.1.5" rend="iast">Принимающий любой облик (kāmarūpa) — букв. «облик согласно желанию». По «Широмани» поясняется как способность менять размер тела. Голдмены переводят «able to change his form at will».
+        <bibl type="indian_commentator">Śiromaṇi</bibl>
+        <bibl type="western_source">Goldman 1994</bibl></note>
+      <note xml:id="ram_leonov_comment_5.1.6" target="urn:cts:sanskritLit:ramayana:5.1.6" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.1.6" rend="iast">Лучший меж обезьянами (kapivara) — стандартный эпитет-сравнение (vānaraśreṣṭha). Синонимичен plavaṃgapravara.</note>
+      <note xml:id="ram_leonov_comment_5.1.7" target="urn:cts:sanskritLit:ramayana:5.1.7" type="B" ana="#a2_B #par_K #lak_L5 #top_textology #top_myth" n="Rām. Sundara 5.1.7" rend="iast">Был нагу подобен в озере (hrade nāga ivābabhau) — слово nāga может означать как «наг» (полубожественный змей), так и «слон». Из комментаторов только автор «Широмани» глоссирует это слово как gaja (слон). Большинство западных переводчиков склоняются к варианту «наг» (Goldman 1984: 302).
+        <bibl type="indian_commentator">Śiromaṇi</bibl>
+        <bibl type="western_source">Goldman 1994</bibl></note>
+      <note xml:id="ram_leonov_comment_5.1.9" target="urn:cts:sanskritLit:ramayana:5.1.9" type="B" ana="#a2_B #par_P #lak_L1 #top_textology" n="Rām. Sundara 5.1.9" rend="iast">Лучший из прыгунов (plavaṃgapravara). ***[Е. Костина]*** Здесь возникает вопрос о принципе: нужно ли оговаривать все опущения компонентов имён в ремарках?</note>
+      <note xml:id="ram_leonov_comment_5.1.28" target="urn:cts:sanskritLit:ramayana:5.1.28" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term #top_myth" n="Rām. Sundara 5.1.28" rend="iast">Сын бога ветра (mārutātmaja) — пара с vāyuputra; Леонов: «могучий сын бога ветра». Первое вхождение эпитета в кн. V.</note>
+      <note xml:id="ram_leonov_comment_5.1.37" target="urn:cts:sanskritLit:ramayana:5.1.37" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.1.37" rend="iast">Слон среди обезьян (kapikuñjara) — метафора высшего превосходства в группе. Ср. с puruṣarṣabha (бык среди мужей).</note>
+      <note xml:id="ram_leonov_comment_5.1.38" target="urn:cts:sanskritLit:ramayana:5.1.38" type="B" ana="#a2_B #par_P #lak_L1 #top_textology" n="Rām. Sundara 5.1.38" rend="iast">Лучший из обезьян (vānaraśreṣṭha). ***[Е. Костина]*** «vānaraśreṣṭha» Опущено. В переводе: «лучший ванара». Следует ли считать это опущением или синонимичным переводом?</note>
+      <note xml:id="ram_leonov_comment_5.1.39" target="urn:cts:sanskritLit:ramayana:5.1.39" type="G" ana="#a2_G #par_P #top_reference" n="Rām. Sundara 5.1.39" rend="iast">Дочь Джанаки (janakātmajā) — см. примеч. к I.1.25 (Гринцер). Первое появление эпитета Ситы в кн. V.</note>
+      <note xml:id="ram_leonov_comment_5.1.39b" target="urn:cts:sanskritLit:ramayana:5.1.39" type="G" ana="#a2_G #par_P #top_reference" n="Rām. Sundara 5.1.39" rend="iast">Потомок Рагху (rāghava) — см. примеч. к I.1.1 (Гринцер). Стандартный эпитет Рамы.</note>
+      <note xml:id="ram_leonov_comment_5.1.40" target="urn:cts:sanskritLit:ramayana:5.1.40" type="G" ana="#a2_G #par_P #top_reference" n="Rām. Sundara 5.1.40" rend="iast">Сын Дашаратхи (dāśarathi) — см. примеч. к I.1.8 (Гринцер).</note>
+      <note xml:id="ram_leonov_comment_5.1.60" target="urn:cts:sanskritLit:ramayana:5.1.60" type="A" ana="#a2_A #par_K #lak_L2 #lak_L5 #top_sanskrit_term #top_myth" n="Rām. Sundara 5.1.60" rend="iast">Сын Ваю (vāyuputra). Леонов отмечает, что в V.1.9 используется ātmayoni «рожденный Ваю», однако традиционные комментаторы (Тилака) подчеркивают их идентичность.
+        <bibl type="indian_commentator">Tilaka</bibl></note>
+      <note xml:id="ram_leonov_comment_5.1.91" target="urn:cts:sanskritLit:ramayana:5.1.91" type="V" ana="#a2_V #par_P #lak_L2 #top_myth #top_geography" n="Rām. Sundara 5.1.91" rend="iast">Майнака (maināka) — гора, поднявшаяся из океана навстречу Хануману. В «Бхушане» поясняется как сын Гималаев. Эпитет hiraṇyanābha — «золотопупый» (букв. «с золотой пуповиной»).
+        <bibl type="indian_commentator">Bhūṣaṇa</bibl></note>
+      <note xml:id="ram_leonov_comment_5.1.100" target="urn:cts:sanskritLit:ramayana:5.1.100" type="G" ana="#a2_G #par_P #top_reference" n="Rām. Sundara 5.1.100" rend="iast">Майтхили (maithilī) — см. примеч. к I.1.26 (Гринцер).</note>
+      <note xml:id="ram_leonov_comment_5.1.143" target="urn:cts:sanskritLit:ramayana:5.1.143" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Sundara 5.1.143" rend="iast">Сурасса (surasā) — мать нагов (nāgamātā), представленная здесь как препятствие на пути Ханумана. В «Таттвадипике» поясняется её роль как испытательницы силы героя.
+        <bibl type="indian_commentator">Tattvadīpikā</bibl></note>
+      <note xml:id="ram_leonov_comment_5.1.152" target="urn:cts:sanskritLit:ramayana:5.1.152" type="G" ana="#a2_G #par_P #top_reference" n="Rām. Sundara 5.1.152" rend="iast">Вайдехи (vaidehī) — см. примеч. к I.1.28 (Гринцер).</note>
+      <note xml:id="ram_leonov_comment_5.1.166" target="urn:cts:sanskritLit:ramayana:5.1.166" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term #top_myth" n="Rām. Sundara 5.1.166" rend="iast">Марути (māruti) — именное производное от Марут (бог ветра). Стандартное имя Хануманы.</note>
+      <note xml:id="ram_leonov_comment_5.1.183" target="urn:cts:sanskritLit:ramayana:5.1.183" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Sundara 5.1.183" rend="iast">Симхика (siṃhikā) — ракшасини, «ловящая тени» (chāyāgrahin). Поясняется в «Широмани» как обладающая силой притягивать объекты за их тень.
+        <bibl type="indian_commentator">Śiromaṇi</bibl></note>
+      <note xml:id="ram_leonov_comment_5.1.190" target="urn:cts:sanskritLit:ramayana:5.1.190" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.1.190" rend="iast">Огромный (mahākāya) — ситуативный эпитет Хануманы при увеличении тела перед прыжком. Букв. «обладающий великим телом».</note>
+      <note xml:id="ram_leonov_comment_5.2.24" target="urn:cts:sanskritLit:ramayana:5.2.24" type="V" ana="#a2_V #par_P #lak_L5 #top_myth #top_geography" n="Rām. Sundara 5.2.24" rend="iast">Ланкини (laṅkā) — персонифицированная стражница города Ланки. В «Тилаке» отмечается её роль как воплощенной мощи Раваны.
+        <bibl type="indian_commentator">Tilaka</bibl></note>
+      <note xml:id="ram_leonov_comment_5.2.34" target="urn:cts:sanskritLit:ramayana:5.2.34" type="A" ana="#a2_A #par_K #lak_L2 #top_sanskrit_term #top_philosophy" n="Rām. Sundara 5.2.34" rend="iast">Злодей (durātman) — букв. «дурная душа». Применяется к Раване в контексте описания похищения Ситы. Костина помечает: следует ли сохранять экспрессивность оригинала?</note>
+      <note xml:id="ram_leonov_comment_5.3.18" target="urn:cts:sanskritLit:ramayana:5.3.18" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.3.18" rend="iast">Царь ракшасов (rākṣasendra) — в кн. V прилагается к Раване. Позднее (гл. 68) может относиться к Вибхишане.</note>
+      <note xml:id="ram_leonov_comment_5.3.45" target="urn:cts:sanskritLit:ramayana:5.3.45" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.3.45" rend="iast">Страж сада (harīśvara) — редкий термин. В «Таттвадипике» поясняется как почетный титул охранника.
+        <bibl type="indian_commentator">Tattvadīpikā</bibl></note>
+      <note xml:id="ram_leonov_comment_5.4.18" target="urn:cts:sanskritLit:ramayana:5.4.18" type="V" ana="#a2_V #par_P #top_context" n="Rām. Sundara 5.4.18" rend="iast">Исхудавшая (kṛśā) — ситуативный эпитет Ситы в плену. Подчеркивает её аскетизм и страдания.</note>
+      <note xml:id="ram_leonov_comment_5.6.16" target="urn:cts:sanskritLit:ramayana:5.6.16" type="V" ana="#a2_V #par_P #top_myth" n="Rām. Sundara 5.6.16" rend="iast">Прахаста (prahasta) — военачальник (senāpati) Раваны. Краткая справка: один из четырех главных советников.</note>
+      <note xml:id="ram_leonov_comment_5.7.3" target="urn:cts:sanskritLit:ramayana:5.7.3" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.7.3" rend="iast">Владыка Ланки (laṅkādhipa) — титул Раваны. Ср. с laṅkeśvara.</note>
+      <note xml:id="ram_leonov_comment_5.9.71" target="urn:cts:sanskritLit:ramayana:5.9.71" type="G" ana="#a2_G #par_K #lak_L2 #top_philosophy #top_context" n="Rām. Sundara 5.9.71" rend="iast">Преданная дхарме (dharmapatnī) — букв. «жена по дхарме». Подчеркивает легитимный статус Ситы как супруги Рамы.</note>
+      <note xml:id="ram_leonov_comment_5.10.40" target="urn:cts:sanskritLit:ramayana:5.10.40" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.10.40" rend="iast">Лотосоокий (kamala-locana). В данном контексте применяется к одной из жен Раваны; к самому Раме применяется в финале книги.</note>
+      <note xml:id="ram_leonov_comment_5.10.51" target="urn:cts:sanskritLit:ramayana:5.10.51" type="V" ana="#a2_V #par_P #lak_L2 #lak_L5 #top_myth" n="Rām. Sundara 5.10.51" rend="iast">Мандодари (mandodarī) — главная жена Раваны. Букв. «стройнобёдрая». В «Тилаке» отмечается её благородство и печаль.
+        <bibl type="indian_commentator">Tilaka</bibl></note>
+      <note xml:id="ram_leonov_comment_5.11.1" target="urn:cts:sanskritLit:ramayana:5.11.1" type="V" ana="#a2_V #par_P #lak_L2 #top_realia" n="Rām. Sundara 5.11.1" rend="iast">Ашока (aśoka, букв. «беспечальный») — дерево с оранжево-алыми цветами, Saraca indica L. (= Jonesia asoka Roxb.). [Источник: ботанический справочник (файл редактора)]</note>
+      <note xml:id="ram_leonov_comment_5.12.4" target="urn:cts:sanskritLit:ramayana:5.12.4" type="G" ana="#a2_G #par_P #top_reference" n="Rām. Sundara 5.12.4" rend="iast">Сугрива (sugrīva) — царь обезьян, союзник Рамы. См. примеч. к IV.1.1 (Гринцер).</note>
+      <note xml:id="ram_leonov_comment_5.13.35" target="urn:cts:sanskritLit:ramayana:5.13.35" type="V" ana="#a2_V #par_P #lak_L5 #top_context #top_philosophy" n="Rām. Sundara 5.13.35" rend="iast">Истощённая постом (upavāsa) — ситуативный эпитет Ситы. В «Бхушане» поясняется как признак её верности и аскетической силы.
+        <bibl type="indian_commentator">Bhūṣaṇa</bibl></note>
+      <note xml:id="ram_leonov_comment_5.15.25" target="urn:cts:sanskritLit:ramayana:5.15.25" type="B" ana="#a2_B #par_P #lak_L1 #top_textology" n="Rām. Sundara 5.15.25" rend="iast">Широкоокая (viśālākṣī). ***[Е. Костина]*** «viśālākṣī» Опущено. Обращение Раваны к Сите. Важно ли сохранять этот эпитет для передачи его ложной учтивости?</note>
+      <note xml:id="ram_leonov_comment_5.16.17" target="urn:cts:sanskritLit:ramayana:5.16.17" type="G" ana="#a2_G #par_K #lak_L5 #top_philosophy" n="Rām. Sundara 5.16.17" rend="iast">Знаток дхармы (dharmajña) — эпитет Вибхишаны. Подчеркивает его моральное превосходство над другими советниками Раваны.</note>
+      <note xml:id="ram_leonov_comment_5.20.8" target="urn:cts:sanskritLit:ramayana:5.20.8" type="V" ana="#a2_V #par_P #lak_L2 #lak_L5 #top_realia #top_myth" n="Rām. Sundara 5.20.8" rend="iast">Косу одну носящая (ekaveṇī) — знак траура по разлуке; Леонов: «волосы, в косу одну заплетенные». Согласно «Широмани», это символ верности мужу.
+        <bibl type="indian_commentator">Śiromaṇi</bibl></note>
+      <note xml:id="ram_leonov_comment_5.24.4" target="urn:cts:sanskritLit:ramayana:5.24.4" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.24.4" rend="iast">Несравненная (anindite) — обращение Хануманы к Сите. Букв. «не заслуживающая порицания».</note>
+      <note xml:id="ram_leonov_comment_5.27.3" target="urn:cts:sanskritLit:ramayana:5.27.3" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Sundara 5.27.3" rend="iast">Триджавата (trijaṭā) — сострадательная (dayāpara) ракшасини, видящая вещий сон о победе Рамы. В «Таттвадипике» поясняется как знаток знамений.
+        <bibl type="indian_commentator">Tattvadīpikā</bibl></note>
+      <note xml:id="ram_leonov_comment_5.31.44" target="urn:cts:sanskritLit:ramayana:5.31.44" type="V" ana="#a2_V #par_P #top_context" n="Rām. Sundara 5.31.44" rend="iast">Многомудрый (mahāmati) — эпитет Вибхишаны в сцене его выступления в защиту Хануманы.</note>
+      <note xml:id="ram_leonov_comment_5.35.6" target="urn:cts:sanskritLit:ramayana:5.35.6" type="G" ana="#a2_G #par_K #lak_L5 #top_context #top_myth" n="Rām. Sundara 5.35.6" rend="iast">Вестник Рамы (rāmadūta) — Хануман официально представляется Сите. Важный юридический и дипломатический статус.</note>
+      <note xml:id="ram_leonov_comment_5.41.7" target="urn:cts:sanskritLit:ramayana:5.41.7" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.41.7" rend="iast">Десятиликий (daśānana) — синоним daśagrīva. Леонов: «Десятиликий Равана».</note>
+      <note xml:id="ram_leonov_comment_5.47.1" target="urn:cts:sanskritLit:ramayana:5.47.1" type="V" ana="#a2_V #par_P #lak_L5 #top_myth" n="Rām. Sundara 5.47.1" rend="iast">Акша (akṣa) — царевич (kumāra), сын Раваны, выходящий на бой с Хануманом. В «Тилаке» отмечается его безрассудная храбрость.
+        <bibl type="indian_commentator">Tilaka</bibl></note>
+      <note xml:id="ram_leonov_comment_5.48.15" target="urn:cts:sanskritLit:ramayana:5.48.15" type="A" ana="#a2_A #par_P #lak_L2 #top_myth #top_sanskrit_term" n="Rām. Sundara 5.48.15" rend="iast">Индраджит (indrajit) — имя-эпитет, означающее «победитель Индры». Старший сын Раваны.</note>
+      <note xml:id="ram_leonov_comment_5.48.17" target="urn:cts:sanskritLit:ramayana:5.48.17" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.48.17" rend="iast">Лотосоокий (padmapalāśākṣa) — эпитет Индраджита. Леонов: «блистательный, лотосоокий». Необычный эпитет для грозного воина, подчеркивающий его царственность.</note>
+      <note xml:id="ram_leonov_comment_5.50.1" target="urn:cts:sanskritLit:ramayana:5.50.1" type="A" ana="#a2_A #par_P #lak_L2 #top_sanskrit_term" n="Rām. Sundara 5.50.1" rend="iast">Повелитель обезьян (kapīndra) — титул Хануманы в момент его пленения. Леонов: «сам повелитель обезьян».</note>
+      </listAnnotation>
+    </body>
+  </text>
+</TEI>
