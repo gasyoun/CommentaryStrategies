@@ -15,6 +15,7 @@
 """
 
 import json
+import statistics
 import sys
 from collections import Counter
 from pathlib import Path
@@ -59,7 +60,7 @@ def profile(name, records):
         "len_min": min(lengths),
         "len_max": max(lengths),
         "len_mean": round(sum(lengths) / n, 1),
-        "len_median": sorted(lengths)[n // 2],
+        "len_median": round(statistics.median(lengths)),
         "iast_pct": round(100 * iast / n, 1),
         "multi_topic_pct": round(100 * multi_topic / n, 1),
         "topics": topics,

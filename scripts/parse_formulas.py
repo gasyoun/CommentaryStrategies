@@ -66,8 +66,15 @@ def parse(text):
             name, is_group = clean_name(m.group(1))
             cur = {"name": name, "is_group": is_group,
                    "content": clean_rest(m.group(2))}
-        elif started and cur is not None and line.strip():
-            # продолжение текущей статьи (мягкий перенос внутри записи)
+        elif not line.strip():
+            # Пустая строка = граница абзаца (markdown): закрываем текущую статью.
+            # Без этого хвостовая редакторская проза (стр./«кто это?»/заметки),
+            # отделённая пустой строкой, прилипала к последней статье.
+            if cur:
+                entries.append(cur)
+                cur = None
+        elif started and cur is not None:
+            # Мягкий перенос ВНУТРИ статьи (непрерывные строки без пустой между).
             cur["content"] += " " + line.strip()
     if cur:
         entries.append(cur)
@@ -121,7 +128,7 @@ def main():
         "entries": records,
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
-                   encoding="utf-8")
+                   encoding="utf-8", newline="\n")
 
     print(f"Записано: {OUT.relative_to(ROOT)}")
     print(f"  всего статей:           {len(records)}")

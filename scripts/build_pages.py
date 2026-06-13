@@ -131,7 +131,7 @@ def main():
     template = TEMPLATE.read_text(encoding="utf-8")
     for name in sorted(TRANSLATORS):
         dest = OUT / f"{name}.html"
-        dest.write_text(build(name, template), encoding="utf-8")
+        dest.write_text(build(name, template), encoding="utf-8", newline="\n")
         print(f"✓ {dest.relative_to(ROOT)}")
     print(f"\nСобрано {len(TRANSLATORS)} страниц из data/*_markup_50.json.")
 

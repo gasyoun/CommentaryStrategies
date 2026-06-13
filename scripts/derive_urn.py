@@ -129,11 +129,14 @@ def main():
         for rec in records:
             urn, ok, note = derive(rec["shloka_addr"])
             total += 1
-            if not ok:
+            if ok:
+                new_records.append(reorder(rec, urn))
+            else:
+                # Не пишем urn:null/непроверенный — оставляем запись как есть и репортим.
                 bad.append((rec.get("comment_id", "?"), rec["shloka_addr"], note))
-            new_records.append(reorder(rec, urn))
+                new_records.append(rec)
         if not check:
-            path.write_text(dump_compact(new_records), encoding="utf-8")
+            path.write_text(dump_compact(new_records), encoding="utf-8", newline="\n")
         sample = derive(records[0]["shloka_addr"])[0]
         print(f"{'(check) ' if check else 'wrote  '}{path.name:28s} "
               f"{len(records):3d} rec  напр.: {sample}")

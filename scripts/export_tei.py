@@ -156,7 +156,7 @@ def main():
             print(f"✗ {path.name}: ОШИБКА разбора TEI — {e}")
             continue
         dest = OUT / f"{translator}.xml"
-        dest.write_text(xml, encoding="utf-8")
+        dest.write_text(xml, encoding="utf-8", newline="\n")
         total += len(records)
         print(f"✓ {dest.relative_to(ROOT)}  ({len(records)} note, ET parse OK)")
     print(f"\nЭкспортировано {total} примечаний в TEI P5. Валидация: ET parse OK.")
