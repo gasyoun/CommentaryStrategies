@@ -85,16 +85,18 @@ def notes_table(records):
         ".data-table .axes{white-space:nowrap;font-size:.78rem;color:var(--tr-color,#333)}"
         ".data-table .iast{text-align:center}"
         ".gen-note{font-size:.8rem;color:#777;font-style:italic}"
+        ".table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}"
         "</style>"
     )
     return (style +
             '\n    <p class="gen-note">Таблица сгенерирована из данных автоматически '
             '(scripts/build_pages.py). Полная аналитика — в рукописной странице '
             '*_commentary_analysis.html.</p>\n'
+            '    <div class="table-scroll">\n'
             '    <table class="data-table">\n'
             '      <thead><tr><th>URN</th><th>Адрес</th><th>Оси (Каз.·Париб.·lakṣ.·темы)</th>'
             '<th>IAST</th><th>Текст примечания</th></tr></thead>\n'
-            '      <tbody>\n' + "\n".join(rows) + '\n      </tbody>\n    </table>')
+            '      <tbody>\n' + "\n".join(rows) + '\n      </tbody>\n    </table>\n    </div>')
 
 
 def build(name, template):
