@@ -4,6 +4,8 @@
 # parse_formulas, build_pages, eval_pipeline) используют только стандартную
 # библиотеку Python 3.10+ и не требуют установки.
 #
-# Третья сторона нужна только аннотационному пайплайну (scripts/annotate_batch.py),
-# обращающемуся к Anthropic API:
+# Третья сторона нужна только двум скриптам:
+#   • scripts/annotate_batch.py — аннотация через Anthropic API
+#   • scripts/profile_nilakantha.py — Devanagari→IAST (через канонический парсер)
 anthropic>=0.40
+indic-transliteration>=2.3

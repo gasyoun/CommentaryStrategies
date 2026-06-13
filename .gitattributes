@@ -1,0 +1,14 @@
+# Normalize text files to LF in the repository.
+# Without this, core.autocrlf=true on Windows leaves the working tree CRLF while
+# generators write LF, so `git status` is perpetually noisy after regeneration and
+# the CI artifact-reproducibility check could differ between Windows and Linux.
+* text=auto eol=lf
+
+# Binary files — never normalize.
+*.pdf   binary
+*.docx  binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
