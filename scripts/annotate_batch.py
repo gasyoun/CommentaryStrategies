@@ -144,6 +144,36 @@ def run(translator: str, model: str, limit: int | None, dry_run: bool) -> None:
         sys.exit(1)
 
     client = anthropic.Anthropic()
+
+    # Preflight: verify credentials AND model resolve BEFORE the loop. Without
+    # this, a missing key errors through every note (the 401 is swallowed as a
+    # per-note "error") and an empty output file gets written — looking like a
+    # run that "did nothing". One cheap, token-free call fails fast instead.
+    no_creds_msg = ("ERROR: no valid Anthropic credentials. Set ANTHROPIC_API_KEY "
+                    "(or ANTHROPIC_AUTH_TOKEN, or run `ant auth login`) and retry.")
+    try:
+        client.models.retrieve(model)
+    except anthropic.AuthenticationError:
+        # Key present but rejected by the server (401).
+        print(no_creds_msg)
+        sys.exit(2)
+    except anthropic.PermissionDeniedError:
+        print(f"ERROR: these credentials lack permission for model {model!r}.")
+        sys.exit(2)
+    except anthropic.NotFoundError:
+        print(f"ERROR: unknown model {model!r}. Check --model.")
+        sys.exit(2)
+    except anthropic.APIError as e:
+        # Transient/other (rate limit, overload, network): warn but proceed —
+        # the main loop has its own per-note handling.
+        print(f"WARNING: preflight inconclusive ({type(e).__name__}: {e}); proceeding.")
+    except Exception as e:
+        # No credential configured at all: the SDK raises TypeError ("Could not
+        # resolve authentication method") locally, before any request is sent.
+        print(no_creds_msg)
+        print(f"  ({type(e).__name__}: {e})")
+        sys.exit(2)
+
     errors = 0
 
     for i, note in enumerate(notes, start=1):
@@ -168,22 +198,35 @@ def run(translator: str, model: str, limit: int | None, dry_run: bool) -> None:
             results.append(record)
             print(f"✓ {record['axis_2_kazansky']} {record['axis_4_paribok']}"
                   f"{' FF:' + ','.join(record['false_friends']) if record['false_friends'] else ''}")
+        except (anthropic.AuthenticationError, anthropic.PermissionDeniedError) as e:
+            # Fatal config error — every remaining call fails identically. Abort
+            # now (break, not exit) so the guarded save below preserves whatever
+            # already succeeded; the run is resumable.
+            print(f"\nFATAL: {type(e).__name__}: {e}")
+            print("Aborting — fix credentials/permissions, then re-run (resumable).")
+            break
         except Exception as e:
             errors += 1
             print(f"ERROR: {e}")
 
-        # Incremental save every 20 notes
-        if i % 20 == 0:
+        # Incremental save every 20 notes (only if we have something to save)
+        if results and i % 20 == 0:
             output_file.write_text(
-                json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+                json.dumps(results, ensure_ascii=False, indent=2),
+                encoding="utf-8", newline="\n")
 
         # Rate limit: ~6 req/s max for Haiku, stay well below
         time.sleep(0.2)
 
-    output_file.write_text(
-        json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    print(f"\nComplete: {len(results)} notes classified, {errors} errors → {output_file}")
+    # Never write an empty output file — it would create misleading resume state
+    # and look like real output.
+    if results:
+        output_file.write_text(
+            json.dumps(results, ensure_ascii=False, indent=2),
+            encoding="utf-8", newline="\n")
+        print(f"\nComplete: {len(results)} notes classified, {errors} errors → {output_file}")
+    else:
+        print(f"\nNo notes classified ({errors} errors); output file not written.")
     if errors:
         print(f"  Re-run to retry failed notes (pipeline is resumable).")
 
