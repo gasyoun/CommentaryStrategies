@@ -13,10 +13,52 @@
 
 | Файл | Назначение |
 |------|-----------|
-| `docs/GEMINI.md` | Контекст для AI-агентов (читать первым) |
-| `docs/ROADMAP.md` | Пятифазный план развития |
-| `docs/ARCHITECTURE.md` | Архитектурный обзор |
-| `PROMPT_TEMPLATE.md` | Универсальный промт для LLM-анализа |
+| [docs/GEMINI.md](docs/GEMINI.md) | Контекст для AI-агентов (читать первым) |
+| [docs/ROADMAP_2026H2.md](docs/ROADMAP_2026H2.md) | Актуальный план (v2.0): DH-санация, праксис Сундараканды, греко-санскритское сравнение |
+| [docs/ROADMAP.md](docs/ROADMAP.md) | Прежний пятифазный план (v1.0, фазы 1–3 выполнены) |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Архитектурный обзор |
+| [docs/TYPOLOGY_GREEK_SANSKRIT.md](docs/TYPOLOGY_GREEK_SANSKRIT.md) | Сравнительная типология: схолии vs ṭīkā |
+| [PROMPT_TEMPLATE.md](PROMPT_TEMPLATE.md) | Универсальный промт для LLM-анализа |
+
+## Корпус и данные
+
+Размеченная **золотая выборка**: 300 примечаний (по 50 от шести переводчиков),
+размеченных по четырёхосной сетке.
+
+| Файл / директория | Содержание |
+|---|---|
+| [data/commentary_schema.json](data/commentary_schema.json) | JSON-схема разметки (4 оси + URN + IAST) |
+| [data/*_markup_50.json](data/) | Золотая выборка, 6×50 примечаний с CTS-URN |
+| [data/RIGHTS.md](data/RIGHTS.md) | Права: полнотекстовая публикация 5 изданий авторизована |
+| [data/ramayana_epithets.json](data/ramayana_epithets.json) | Формульно-эпитетный слой Рамаяны (509 статей, кн. 1–2) |
+| [tei/](tei/) | Экспорт корпуса в TEI P5 (6 файлов) |
+
+**Оси разметки:** (1) тема примечания; (2) тип комментария по номенклатуре
+Н. Н. Казанского (A/B/V/G); (3) пять *lakṣaṇa* (L1–L5); (4) категория термина по
+модели А. В. Парибка (P/K/D). Адресация стихов — каноническими CTS-URN
+(`urn:cts:sanskritLit:<work>:<passage>`).
+
+## Воспроизводимость
+
+Скрипты используют только стандартную библиотеку Python 3.10+ (третья сторона —
+только `anthropic` для аннотационного пайплайна; см. [requirements.txt](requirements.txt)).
+
+```sh
+python scripts/profile_translator.py grintser vassilkov kalyanov  # профили по осям
+python scripts/derive_urn.py                                      # CTS-URN из адресов
+python scripts/export_tei.py                                      # JSON → TEI P5 (tei/)
+python scripts/parse_formulas.py                                  # эпитетный слой
+python scripts/build_pages.py                                     # data → pages/*.html
+```
+
+[pages/](pages/) — автогенерируемое табличное представление данных (НЕ заменяет
+рукописные аналитические страницы, см. [pages/README.md](pages/README.md)).
+
+## Как цитировать
+
+См. [CITATION.cff](CITATION.cff). Лицензия **кода** — Apache-2.0 ([LICENSE](LICENSE));
+условия использования **текстов примечаний** — отдельно, см. [data/RIGHTS.md](data/RIGHTS.md)
+(полнотекстовая публикация авторизована, с обязательным указанием издания-источника).
 
 ## Аналитические страницы
 
