@@ -5,7 +5,14 @@
 # библиотеку Python 3.10+ и не требуют установки.
 #
 # Третья сторона нужна только двум скриптам:
-#   • scripts/annotate_batch.py — аннотация через Anthropic API
+#   • scripts/annotate_batch.py — аннотация через выбираемый бэкенд (--backend):
+#       openai     → openai>=1.0      (бэкенд по умолчанию; любой OpenAI-совместимый
+#                    эндпойнт: OpenAI, OpenRouter, Gemini, YandexGPT, локальный Ollama …)
+#       anthropic  → anthropic>=0.40  (только если есть ANTHROPIC_API_KEY)
+#     Рецепты по провайдерам: docs/ANNOTATION_BACKENDS.md
 #   • scripts/profile_nilakantha.py — Devanagari→IAST (через канонический парсер)
+#
+# Ставьте только тот клиент, чей бэкенд используете (оба ставить не обязательно).
+openai>=1.0
 anthropic>=0.40
 indic-transliteration>=2.3
