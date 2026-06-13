@@ -42,10 +42,12 @@
 - [ ] Приложить tei/leonov.xml к Article 3/4 как supplementary data
 - [ ] Полная RNG-валидация против tei_all (нужен xmllint / онлайн-валидатор)
 
-### B4. Воспроизводимость: данные → страницы
-- [ ] Сейчас HTML-аналитика написана руками и расходится с JSON — единственный источник истины отсутствует
-- [ ] Генерация `*_commentary_analysis.html` из `data/*.json` по [translator_template.html](../templates/translator_template.html); CI пересобирает при изменении данных
-- [ ] `requirements.txt` + фиксация версий; убрать дублирование `nilakantha_parser.py` (корень `scripts/` vs `mahabharata-nilakantha/`)
+### B4. Воспроизводимость: данные → страницы — ✅ готово (2026-06-12)
+- [x] `scripts/build_pages.py`: генерирует `pages/<translator>.html` из `data/*_markup_50.json` по [translator_template.html](../templates/translator_template.html); переиспользует `profile_translator.py` (без дублирования статистики). Все 6 страниц собраны, HTML парсится, плейсхолдеров не осталось.
+- [x] **Решение об источнике истины:** генератор пишет в отдельную `pages/` (data-derived таблица), **не затрагивая** рукописные `*_commentary_analysis.html` в корне — они содержательно богаче (см. [pages/README.md](../pages/README.md)).
+- [x] `requirements.txt` создан (единственная третья сторона — `anthropic` для пайплайна).
+- [x] **Корректировка:** «дублирования» `nilakantha_parser.py` не было — файлы различались (scripts/ = 2 КБ заглушка-placeholder, mahabharata-nilakantha/ = 11 КБ стабильный v1.0). Заглушка удалена; канонический — в `mahabharata-nilakantha/`.
+- [ ] CI-job на пересборку pages/ при изменении данных (отдельно)
 
 ### B5. Межкодерская надёжность (методологический блокер статей 1–2)
 - [ ] Второй кодировщик на 50 примечаний × 2 оси (axis_2, axis_4); Cohen's κ, цель ≥0.7 / совпадение ≥85%

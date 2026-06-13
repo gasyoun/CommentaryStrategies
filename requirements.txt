@@ -1,0 +1,9 @@
+# CommentaryStrategies — зависимости
+#
+# Большинство скриптов (profile_translator, derive_urn, export_tei,
+# parse_formulas, build_pages, eval_pipeline) используют только стандартную
+# библиотеку Python 3.10+ и не требуют установки.
+#
+# Третья сторона нужна только аннотационному пайплайну (scripts/annotate_batch.py),
+# обращающемуся к Anthropic API:
+anthropic>=0.40
