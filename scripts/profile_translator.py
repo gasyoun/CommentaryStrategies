@@ -20,11 +20,15 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from taxonomy import AXIS2_KAZANSKY, AXIS4_PARIBOK, assert_covers  # noqa: E402
+
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
+# Короткие подписи для отчёта (стиль «название (код)»). КОДЫ — из схемы (taxonomy.py).
 AXIS2_LABELS = {
     "A": "филологический (A)",
     "B": "текстологический (B)",
@@ -36,6 +40,8 @@ AXIS4_LABELS = {
     "K": "кодификатор (K)",
     "D": "концепт-расхождение (D)",
 }
+assert_covers(AXIS2_LABELS, AXIS2_KAZANSKY, "profile.AXIS2_LABELS")
+assert_covers(AXIS4_LABELS, AXIS4_PARIBOK, "profile.AXIS4_LABELS")
 
 
 def load(name):

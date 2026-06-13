@@ -4,11 +4,18 @@ validate.py — CI validation for CommentaryStrategies.
 Checks all text files for forbidden strings and structural rules.
 Exit code 0 = pass, 1 = fail.
 """
+import json
 import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from taxonomy import (  # noqa: E402
+    TRANSLATORS, AXIS1_TOPICS, AXIS2_KAZANSKY, AXIS3_LAKSHANA,
+    AXIS4_PARIBOK, REQUIRED, URN_PREFIX)
+
 ROOT = Path(__file__).parent.parent
+DATA = ROOT / "data"
 
 FORBIDDEN = [
     # (regex_pattern, human_readable_description)
@@ -60,6 +67,55 @@ def validate_html_structure(path: Path) -> list[str]:
 
     return errors
 
+def validate_corpus() -> list[str]:
+    """Проверка записей корпуса против кодов схемы (taxonomy.py, единый источник).
+
+    Ловит класс багов из код-ревью: дрейф enum (translator «vasilkov» vs данные;
+    тема «poetics» вне enum), пропуск обязательных полей, неверный URN/тип.
+    """
+    errors = []
+    files = sorted(DATA.glob('*_markup_50.json')) + sorted(DATA.glob('*_full.json'))
+    records_checked = 0
+    for path in files:
+        try:
+            records = json.loads(path.read_text(encoding='utf-8'))
+        except Exception as e:
+            errors.append(f'{path.name}: JSON parse error: {e}')
+            continue
+        if not isinstance(records, list):
+            continue
+        for i, r in enumerate(records):
+            if not isinstance(r, dict):
+                errors.append(f'{path.name} [#{i}]: record is not an object')
+                continue
+            records_checked += 1
+            cid = r.get('comment_id', f'#{i}')
+            for field in REQUIRED:
+                if field not in r:
+                    errors.append(f"{path.name} [{cid}]: missing required field '{field}'")
+            checks = [
+                ('translator', r.get('translator'), TRANSLATORS),
+                ('axis_2_kazansky', r.get('axis_2_kazansky'), AXIS2_KAZANSKY),
+                ('axis_4_paribok', r.get('axis_4_paribok'), AXIS4_PARIBOK),
+            ]
+            for field, val, allowed in checks:
+                if val is not None and val not in allowed:
+                    errors.append(f"{path.name} [{cid}]: {field} '{val}' not in schema enum {list(allowed)}")
+            for topic in r.get('axis_1_topic', []):
+                if topic not in AXIS1_TOPICS:
+                    errors.append(f"{path.name} [{cid}]: axis_1_topic '{topic}' not in schema enum")
+            for lak in r.get('axis_3_lakshana', []):
+                if lak not in AXIS3_LAKSHANA:
+                    errors.append(f"{path.name} [{cid}]: axis_3_lakshana '{lak}' not in schema enum")
+            urn = r.get('urn')
+            if urn is not None and not str(urn).startswith(URN_PREFIX):
+                errors.append(f"{path.name} [{cid}]: urn '{urn}' missing prefix {URN_PREFIX}")
+            if 'has_iast' in r and not isinstance(r['has_iast'], bool):
+                errors.append(f"{path.name} [{cid}]: has_iast is not boolean")
+    print(f'Validated {records_checked} corpus records across {len(files)} files.')
+    return errors
+
+
 def main():
     skip_dirs = {'.git', '__pycache__', 'archive', 'महाभारत_files',
                  'Рамаяна. Книга 5. Сундараканда_files'}
@@ -83,6 +139,9 @@ def main():
             all_errors.extend(html_errs)
             
         checked += 1
+
+    # Record-level corpus validation against the schema (single source of truth)
+    all_errors.extend(validate_corpus())
 
     print(f'Checked {checked} files.')
     if all_errors:

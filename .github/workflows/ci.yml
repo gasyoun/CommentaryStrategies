@@ -86,3 +86,27 @@ jobs:
                   print(f'::error file={f}::{e}'); fail = 1
           sys.exit(fail)
           "
+
+  corpus:
+    name: Corpus integrity
+    runs-on: ubuntu-latest
+    # Schema-driven guards: the same checks that would have caught the
+    # vasilkov/poetics drift bugs. All scripts are stdlib-only.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Schema + content validation
+        run: python scripts/validate.py
+      - name: CTS-URN cross-check (book ↔ number)
+        run: python scripts/derive_urn.py --check
+      - name: Generated artifacts reproducible from data
+        # Regenerate TEI / pages / epithet layer and fail if they drift from
+        # what's committed — enforces "data → artifacts" single source of truth.
+        run: |
+          python scripts/export_tei.py
+          python scripts/build_pages.py
+          python scripts/parse_formulas.py
+          git diff --exit-code -- tei/ pages/ data/ramayana_epithets.json \
+            || { echo "::error::Generated artifacts are stale — re-run the generators and commit."; exit 1; }

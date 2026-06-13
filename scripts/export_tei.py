@@ -24,6 +24,10 @@ import pathlib
 import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from taxonomy import (  # noqa: E402
+    AXIS1_TOPICS, AXIS2_KAZANSKY, AXIS3_LAKSHANA, AXIS4_PARIBOK, assert_covers)
+
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
@@ -31,7 +35,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 OUT = ROOT / "tei"
 
-# Категории таксономий: id → (метка, ось, описание)
+# Подписи категорий (TEI <catDesc>) — стиль «полное описание». КОДЫ берутся из
+# схемы (taxonomy.py); assert_covers ниже падает, если подписи разойдутся со схемой.
 AXIS2 = {
     "A": "филологический комментарий (язык, грамматика)",
     "B": "текстологический комментарий (варианты, источники)",
@@ -48,10 +53,13 @@ AXIS4 = {
     "K": "кодификатор направления деятельности (Парибок)",
     "D": "концепт-расхождение (несоизмеримость)",
 }
-AXIS1 = [
-    "sanskrit_term", "myth", "context", "realia", "geography",
-    "reference", "textology", "philosophy", "poetics",  # poetics — см. C0.1
-]
+# Список тем axis_1 — напрямую из схемы (без хардкод-копии).
+AXIS1 = list(AXIS1_TOPICS)
+
+# Защита от дрейфа: подписи обязаны покрывать ровно коды схемы.
+assert_covers(AXIS2, AXIS2_KAZANSKY, "export_tei.AXIS2")
+assert_covers(AXIS3, AXIS3_LAKSHANA, "export_tei.AXIS3")
+assert_covers(AXIS4, AXIS4_PARIBOK, "export_tei.AXIS4")
 
 
 def ncname(s):
