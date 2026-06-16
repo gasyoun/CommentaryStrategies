@@ -23,19 +23,22 @@ using the 4-axis framework below. Return ONLY valid JSON — no explanation, no 
 
 ## Axis 2 — Kazansky commentary type  (one value)
 
-- `A` Philological: etymological or grammatical analysis of a Sanskrit term; IAST
-  transliteration with linguistic commentary; word-by-word parsing. Focus is on the
-  FORM of the original term.
-- `B` Realia: identifies a material, social, or cultural fact from the Indian context.
-  Focus is on OBJECTS, INSTITUTIONS, PRACTICES — not terms.
-- `V` Historical: provides historical dating, genealogy, dynastic succession, political
-  context, dating of a text or event. Focus is on TIME and EVENTS.
-- `G` Cultural-historical: broader interpretive or comparative commentary; the note
-  functions as a cultural essay, philosophical interpretation, or cross-tradition
-  comparison. Focus is on MEANING and INTERPRETATION.
+This codebook follows the gold-coder mapping (the classical Russian textology set: текстологический · историко-литературный · реальный · словарный). NOTE the two easy traps, both corrected below: **B is textology, NOT realia**, and **V is the broad in-world / realia bucket, NOT narrowly "historical/dating"**.
 
-When in doubt between A and G: A is strictly about the Sanskrit word form/etymology;
-G is about what the text MEANS culturally or philosophically.
+- `A` Филологический / словарный (lexical-philological): the note's subject is the SANSKRIT WORD-FORM itself — its literal sense («букв. …», «означает»), derivation/morphology («именное производное от», synonym), etymology, or how an epithet is rendered. The translation is treated as settled; the note adds linguistic, not text-critical, information.
+  *Cues:* epithet gloss → A ("śatrukarśana — букв. «иссушающий врагов»"); "X — имя-эпитет, означающее…" → A ("indrajit — «победитель Индры»"); "māruti — именное производное от Марут" → A.
+
+- `B` Текстологический (textological / source-critical) — **NOT "Realia"**: the note is about the STATE of the text or of the TRANSLATION act, not about the world the text describes. It documents an editorial/transmission fact — a word OMITTED from the translation, a contested manuscript/commentator variant, or a recension/authenticity (interpolation) judgment.
+  *Cues:* "«rāvaṇanītāyāḥ» Опущено" / omission query → B; manuscript variant weighed across commentators/translators ("nāga: «наг» vs «слон», только «Широмани» глоссирует gaja") → B; "поздняя вставка" (interpolation) verdict → B.
+
+- `V` Историко-культурный / реальный (in-world identification + realia) — **the broad realia bucket, NOT narrowly "dating/genealogy"**: the note SITUATES a named referent inside the narrative world and stops there, with low interpretation — a factual gloss of who/what/where: deity, demon-class, sage, king, caste, river, mountain, city, people, weapon, military formation, or a one-line scene/plot beat. May cite an Indian commentator's gloss but makes no comparative or theoretical claim.
+  *Cues:* caste/varṇa gloss → V ("kṣatriya — представитель воинской касты"); deity/role identification → V ("indra — царь богов"); sacred river / place / mountain → V ("gaṅgā — священная река индийцев"); ethnonym, vyūha troop-formation, or a plot beat ("Смерть Дашаратхи") → V.
+
+- `G` Культурологический / интерпретационный (conceptual + interpretive): triggered EITHER by (1) an ABSTRACT-IDEA subject — a philosophical/doctrinal/ethical/poetological concept (dharma, mokṣa, yoga, the puruṣārthas, the yugas, karma, kāvya genesis) even under a flat verb — OR (2) an INTERPRETIVE MOVE on a concrete referent: cross-tradition comparison, symbolic/allegorical reading, or tracing a notion's development.
+  *Cues:* concept placed in a doctrinal system → G ("dharma — … одно из четырёх стремлений человека (puruṣārtha)"); cross-cultural comparison → G (death of Кришна ↔ миф об Ахилле); "двойной смысл: место битвы и место духовного подвига" / symbolic reading → G. Diagnostic verbs: анализирует, интерпретирует, сопоставляет/сравнивает, видит в этом, прослеживает развитие.
+  *Override (system-concept beats realia):* a single-term gloss that NAMES an element of the ritual, cosmological, or doctrinal SYSTEM is `G` even when the gloss is one brief line — sacrifices/rites (yajña, aśvamedha, rājasūya, tapas, soma), cosmic time-units (kalpa, yuga, krita-yuga), and abstract doctrinal terms (avatāra, ahaṃkāra, guṇa, varṇa as a system). These are system-concepts, not in-world objects, so they go `G`, not `V` — UNLESS the note merely describes the rite as a staged event/scene with no system framing (then `V`).
+
+**Decision rule (prevents the realia→B error):** Ask "is this note about the TEXT or about the WORLD?" A concrete thing IN the story — caste, river, deity, people, weapon, ritual object — is a real-world referent → **V** (or **G** if the note interprets/compares rather than identifies it). It is **NEVER `B`**. Reserve `B` strictly for metatext: an omission, a variant reading, a source attribution, or an interpolation/authenticity judgment about the Sanskrit or its translation. Word-vs-thing splits A from V (A unpacks the WORD/epithet; V names WHO/WHAT it denotes); interpretive-lift splits V from G (V identifies, G abstracts or compares).
 
 ---
 
