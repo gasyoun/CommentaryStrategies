@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сундараканда гл. 1 · Корпусное обогащение комментария Леонова</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/commentary.css">
+<style>
+:root {
+  --leo: #7c4b2a;
+  --kos: #3d6b5e;
+  --hl-term:    #fff7cc;
+  --hl-flora:   #d6f5d6;
+  --hl-crossref:#cce5ff;
+  --hl-formula: #ffe5cc;
+  --hl-none:    #f0ebe3;
+}
+
+body { max-width: 960px; }
+
+/* ── nav ── */
+.page-nav {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+  margin-bottom: 40px;
+}
+.page-nav .nav-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.page-nav a {
+  color: var(--leo);
+  text-decoration: none;
+  font-weight: 700;
+}
+.page-nav a:hover { text-decoration: underline; }
+
+/* ── header ── */
+.page-header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 28px;
+  margin-bottom: 40px;
+}
+.page-label {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+h1 { margin-bottom: 10px; }
+.page-meta {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ── stats grid ── */
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 28px 0 40px;
+}
+.stat-cell {
+  background: var(--card);
+  padding: 18px 22px;
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-cell.leo { background: #fdf4ec; }
+.stat-cell.kos { background: #f0f7f4; }
+.stat-num {
+  font-family: 'PT Serif', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--leo);
+  line-height: 1;
+}
+.stat-cell.kos .stat-num { color: var(--kos); }
+.stat-cell.neutral .stat-num { color: var(--ink); }
+.stat-label {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* ── section ── */
+.section { margin-bottom: 56px; }
+.section-eyebrow {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.section h2 {
+  font-family: 'PT Serif', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── relevance matrix ── */
+.rel-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.rel-table th {
+  text-align: left;
+  padding: 8px 12px;
+  background: var(--card);
+  border-bottom: 2px solid var(--rule);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.rel-table td {
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.rel-table tr:hover td { background: #f7f2eb; }
+.badge-type {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.bt-maha  { background: #e8f0fb; color: #2a5a9b; }
+.bt-rama  { background: #fdf0e8; color: #8b4513; }
+.bt-vedic { background: #fffae0; color: #7a6000; }
+.bt-gita  { background: #edf7ed; color: #2a7a2a; }
+.bt-up    { background: #f5edf8; color: #6a3080; }
+.bt-lexi  { background: #f0f0f0; color: #555; }
+.bt-phil  { background: #e8f5f5; color: #2a7070; }
+.bt-other { background: #f5f5f5; color: #666; }
+.overlap-bar {
+  display: inline-block;
+  height: 10px;
+  background: var(--leo);
+  opacity: 0.55;
+  border-radius: 1px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.example-addr {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── candidate boxes ── */
+.cand-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+.cand-box {
+  border-left: 4px solid #ccc;
+  padding: 12px 16px;
+  border-radius: 2px;
+  font-family: 'PT Serif', serif;
+  font-size: 14px;
+  line-height: 1.6;
+  position: relative;
+}
+.cand-box.yellow { background: var(--hl-term);    border-color: #c8a800; }
+.cand-box.green  { background: var(--hl-flora);   border-color: #2a8a2a; }
+.cand-box.blue   { background: var(--hl-crossref);border-color: #2a70c8; }
+.cand-box.orange { background: var(--hl-formula); border-color: #c87020; }
+.cand-box.none   { background: var(--hl-none);    border-color: #b0a898; }
+.cand-meta {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cand-addr {
+  font-weight: 700;
+  color: var(--leo);
+  font-family: 'PT Sans', sans-serif;
+}
+.cand-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.tag-yellow { background: #c8a800; color: #fff; }
+.tag-green  { background: #2a8a2a; color: #fff; }
+.tag-blue   { background: #2a70c8; color: #fff; }
+.tag-orange { background: #c87020; color: #fff; }
+.tag-review { background: #aaa; color: #fff; }
+.cand-prov {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  font-style: italic;
+}
+iast { font-style: italic; }
+.prov-chip {
+  display: inline-block;
+  background: #e8e4dd;
+  border-radius: 2px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-style: normal;
+  margin-right: 4px;
+  color: #555;
+}
+
+/* ── color legend ── */
+.color-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 24px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+}
+.legend-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+.sw-yellow  { background: var(--hl-term); }
+.sw-green   { background: var(--hl-flora); }
+.sw-blue    { background: var(--hl-crossref); }
+.sw-orange  { background: var(--hl-formula); }
+
+/* ── topic distribution ── */
+.dist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+.dist-cell {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 14px 16px;
+  border-radius: 2px;
+}
+.dist-n {
+  font-family: 'PT Serif', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--leo);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.dist-label {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── needs-data appendix ── */
+.needs-data {
+  background: #fff9f0;
+  border: 1px solid #e8c870;
+  border-left: 4px solid #c87020;
+  padding: 20px 24px;
+  margin: 20px 0;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+.needs-data h3 {
+  font-family: 'PT Serif', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #c87020;
+  margin: 0 0 12px;
+}
+.needs-data ul { margin: 0; padding-left: 18px; }
+.needs-data li { margin-bottom: 6px; }
+
+/* ── soft-evidence note ── */
+.soft-note {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid #aaa;
+  padding: 12px 16px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 16px 0 28px;
+}
+
+/* ── algorithm steps ── */
+.algo-steps { margin: 20px 0; }
+.algo-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.step-n {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--leo);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+/* ── footer ── */
+.page-footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+<!-- НАВИГАЦИЯ -->
+<nav class="page-nav">
+  <div class="nav-label">← Все отчёты</div>
+  <a href="index.html">Комментаторские стратегии пяти переводчиков</a>
+  &nbsp;·&nbsp;
+  <a href="leonov_kostina_commentary_analysis.html">Логика комментирования Леонова и Костиной</a>
+</nav>
+
+<!-- ШАПКА -->
+<header class="page-header">
+  <div class="page-label">Корпусное обогащение · ПИЛОТ (глава 1)</div>
+  <h1>Сундараканда, глава 1<br>Корпусное обогащение комментария Леонова</h1>
+  <div class="page-meta">
+    М.В. Леонов · Рамаяна, книга V · пилот: 213 шлок · корпус samskrtam.ru (148 текстов) ·
+    сформировано 2026-06-26
+  </div>
+</header>
+
+<!-- КЛЮЧЕВЫЕ МЕТРИКИ -->
+<div class="stats-grid">
+  <div class="stat-cell neutral">
+    <span class="stat-num">213</span>
+    <span class="stat-label">Шлок в гл. 1</span>
+  </div>
+  <div class="stat-cell leo">
+    <span class="stat-num">25</span>
+    <span class="stat-label">Существующих примечаний Леонова/Костиной (образец 50)</span>
+  </div>
+  <div class="stat-cell leo">
+    <span class="stat-num">138</span>
+    <span class="stat-label">Симв. среднее (существующие примечания гл. 1)</span>
+  </div>
+  <div class="stat-cell leo">
+    <span class="stat-num">100%</span>
+    <span class="stat-label">Примечаний с IAST (существующий образец)</span>
+  </div>
+  <div class="stat-cell neutral">
+    <span class="stat-num">1 448</span>
+    <span class="stat-label">Контентных стеблей SLP1 в гл. 1</span>
+  </div>
+  <div class="stat-cell kos">
+    <span class="stat-num">702</span>
+    <span class="stat-num" style="font-size:14px;color:var(--muted);">из</span>
+    <span class="stat-label">Стеблей гл. 1, зафиксированных в Рамаяне I–III + Гринцер (межтекстовый индекс)</span>
+  </div>
+  <div class="stat-cell neutral">
+    <span class="stat-num">130</span>
+    <span class="stat-label">Текстов корпуса (из 148) с пересечением по стеблям</span>
+  </div>
+  <div class="stat-cell kos">
+    <span class="stat-num">162</span>
+    <span class="stat-label">Сгенерированных кандидатов-аннотаций (требуют проверки)</span>
+  </div>
+</div>
+
+<div class="soft-note">
+  <strong>Методическое предупреждение.</strong> Все корпусные доказательства в этом отчёте — <em>уровень шлоки</em> (мягкое свидетельство): совпадение стебля SLP1 означает «этот шлок содержит данную форму», а не пословное соответствие. Каждый кандидат помечен <code>review_required: true</code> и требует редакторской проверки перед включением в аппарат. Текст Леонова не изменён — кандидаты образуют отдельный, цветовой слой.
+</div>
+
+<!-- § 1. СОСТАВ ОТЧЁТА -->
+<nav class="section">
+  <div class="section-eyebrow">§ 01</div>
+  <h2>Состав отчёта</h2>
+  <ol style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:2; color:var(--ink);">
+    <li><a href="#step0" style="color:var(--leo);">Шаг 0 — Провenance #ru-перевода</a></li>
+    <li><a href="#step1" style="color:var(--leo);">Шаг 1 — Матрица релевантности 148 текстов</a></li>
+    <li><a href="#step2" style="color:var(--leo);">Шаг 2 — Реальные числа гл. 1 (замена ≈)</a></li>
+    <li><a href="#step3" style="color:var(--leo);">Шаг 3 — Образцы кандидатов по цвету</a></li>
+    <li><a href="#appendix" style="color:var(--leo);">Приложение — Нужны данные (needs-data)</a></li>
+  </ol>
+</nav>
+
+<!-- § 0. PROVENANCE -->
+<section class="section" id="step0">
+  <div class="section-eyebrow">§ 02 · Шаг 0</div>
+  <h2>Провenance параллельного #ru-перевода</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:16px;">
+    Параллельный <code>#ru</code>-текст в JSONL-корпусе samskrtam.ru (<code>05_ramayana-sundarakanda.jsonl</code>)
+    идентифицирован как <strong>подстрочник М.В. Леонова</strong> — буквальный перевод, опубликованный
+    в составе: <em>Рамаяна. Книга 5. Сундараканда</em> (М.: Наука, 2022). Шапка сохранённого HTML
+    содержит прямой атрибут «Подстрочник подготовил М.В. Леонов».
+  </p>
+
+  <div class="needs-data" style="border-color:#3d6b5e; background:#f0f7f4;">
+    <h3 style="color:var(--kos);">Важно для цитирования</h3>
+    <p>
+      <code>#ru</code>-текст — <em>не независимый</em> перевод, а буквальный слой того же Леонова.
+      Сравнение «Леонов литературный» (финальный текст) vs «Леонов подстрочник» (<code>#ru</code>)
+      — корректный инструмент для выявления переводческих трансформаций (тип Б по Казанскому),
+      поскольку сопоставляются две редакции одного автора, а не два независимых переводчика.
+      Это не делает сравнение «нециркулярным» в строгом смысле, но выявляет редакторский слой —
+      что само по себе ценно для комментирования.
+    </p>
+  </div>
+</section>
+
+<!-- § 1. МАТРИЦА РЕЛЕВАНТНОСТИ -->
+<section class="section" id="step1">
+  <div class="section-eyebrow">§ 03 · Шаг 1</div>
+  <h2>Матрица релевантности: какие из 148 текстов корпуса обогащают гл. 1</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:16px;">
+    Из 1 448 контентных стеблей SLP1 гл. 1 (функциональные слова исключены) пересечение найдено
+    в <strong>130 из 148</strong> текстов корпуса. Метод: подсчёт общих стеблей (≥ 3 символа)
+    без LLM-интерпретации. Ниже — топ-30 по количеству общих стеблей, полная матрица
+    сохранена в <code>data/sundara_ch1_corpus_relevance.json</code>.
+  </p>
+
+  <div class="soft-note" style="margin-top:0;">
+    Высокое перекрытие у Махабхараты объясняется объёмом текстов (сотни тысяч шлок) и общим
+    эпическим словарём. Это не означает прямого источникового влияния — для межтекстовых параллелей
+    нужен отбор редких стеблей и редакторская интерпретация.
+  </div>
+
+  <table class="rel-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Текст</th>
+        <th>Тип</th>
+        <th>Общих стеблей</th>
+        <th>% от гл. 1</th>
+        <th>Примеры</th>
+      </tr>
+    </thead>
+    <tbody id="relBody">
+      <!-- Filled by script below -->
+    </tbody>
+  </table>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:13px; color:var(--muted);">
+    Полная матрица — <a href="data/sundara_ch1_corpus_relevance.json" style="color:var(--leo);">data/sundara_ch1_corpus_relevance.json</a>
+  </p>
+
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 28px 0 12px;">Нетривиальные пересечения</h3>
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7;">
+    Помимо ожидаемых Рамаяны I–III и Махабхараты, значимое перекрытие дают:
+  </p>
+  <ul style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.85;">
+    <li><strong>Бхагавадгита</strong> (все версии): эпитеты mahābala, dhīra, vānara встречаются в контексте Арджуны и кшатриев — возможная формульная параллель;</li>
+    <li><strong>Упанишады</strong> (Брихадараньяка, Чандогья): абстрактные существительные (ātman, brahman-стебли) указывают на философский фон;</li>
+    <li><strong>Законы Ману</strong> (manavadharmashastra): правовые и ритуальные термины с пересечением до 17%;</li>
+    <li><strong>Рагхувамша</strong> (raghuvamsha): близкий эпитетный словарь к рода Рагху — прямая генеалогическая связь с Рамой;</li>
+    <li><strong>Буддхачарита</strong> (buddhacharita): нарративные формулы описания героя в движении (ср. описание Ханумана при прыжке).</li>
+  </ul>
+</section>
+
+<!-- § 2. РЕАЛЬНЫЕ ЧИСЛА -->
+<section class="section" id="step2">
+  <div class="section-eyebrow">§ 04 · Шаг 2</div>
+  <h2>Реальные числа гл. 1 (замена ≈ в базовом отчёте)</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:20px;">
+    Следующие показатели вычислены по образцу Леонова/Костиной (25 примечаний к гл. 1, из набора
+    <code>leonov_markup_50.json</code>) и дополнены данными корпусного пилота.
+  </p>
+
+  <div class="dist-grid">
+    <div class="dist-cell">
+      <div class="dist-n">213</div>
+      <div class="dist-label">Шлок в гл. 1 (точное число)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">25</div>
+      <div class="dist-label">Существующих примечаний к гл. 1 в образце</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">11.7%</div>
+      <div class="dist-label">Плотность примечаний по образцу (25/213)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">138 симв.</div>
+      <div class="dist-label">Средняя длина примечания (гл. 1)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">100%</div>
+      <div class="dist-label">Примечаний с IAST (образец гл. 1)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">3</div>
+      <div class="dist-label">Помет Костиной «Опущено» в образце гл. 1</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">48%</div>
+      <div class="dist-label">Тема: sanskrit_term (12/25)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">36%</div>
+      <div class="dist-label">Тема: myth (9/25)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">20%</div>
+      <div class="dist-label">Тема: textology / reference (10/25)</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 28px 0 12px;">Распределение тем (гл. 1, образец)</h3>
+
+  <div style="display:flex; flex-direction:column; gap:8px; max-width:480px;">
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">sanskrit_term</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:48%;background:var(--leo);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">48%&nbsp;(12)</div>
+    </div>
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">myth</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:36%;background:var(--leo);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">36%&nbsp;(9)</div>
+    </div>
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">textology</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:20%;background:var(--leo);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">20%&nbsp;(5)</div>
+    </div>
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">reference</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:20%;background:var(--kos);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">20%&nbsp;(5)</div>
+    </div>
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">geography</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:4%;background:var(--kos);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">4%&nbsp;(1)</div>
+    </div>
+  </div>
+</section>
+
+<!-- § 3. ОБРАЗЦЫ КАНДИДАТОВ -->
+<section class="section" id="step3">
+  <div class="section-eyebrow">§ 05 · Шаг 3</div>
+  <h2>Образцы сгенерированных кандидатов по цвету</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:16px;">
+    Всего сгенерировано <strong>162 кандидата</strong> для гл. 1 (хранятся в
+    <a href="data/leonov_sundara_ch1_candidates.json" style="color:var(--leo);">data/leonov_sundara_ch1_candidates.json</a>).
+    Все кандидаты несут <code>candidate: true</code> и <code>review_required: true</code> —
+    они не входят в основной аппарат без редакторского одобрения.
+  </p>
+
+  <!-- Легенда цветов -->
+  <div class="color-legend">
+    <div class="legend-item"><div class="legend-swatch sw-yellow"></div> 🟡 Первое появление термина / эпитета</div>
+    <div class="legend-item"><div class="legend-swatch sw-green"></div> 🟢 Флора / фауна / реалия (первое вхождение)</div>
+    <div class="legend-item"><div class="legend-swatch sw-blue"></div> 🔵 Гринцер / корпусная перекрёстная ссылка</div>
+    <div class="legend-item"><div class="legend-swatch sw-orange"></div> 🟠 Формула / эпитет (первое вхождение в кн. V)</div>
+  </div>
+
+  <!-- Распределение кандидатов по цвету -->
+  <div class="stats-grid" style="margin-bottom:28px;">
+    <div class="stat-cell">
+      <span class="stat-num" style="color:#c87020;">16</span>
+      <span class="stat-label">🟠 Оранжевых (формула/эпитет, первое вхождение)</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num" style="color:#2a70c8;">61</span>
+      <span class="stat-label">🔵 Голубых (Гринцер / межкорпусная перекрёстная ссылка)</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num" style="color:#888;">85</span>
+      <span class="stat-label">⬜ Без цвета (текстологические, требуют доп. классификации)</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num" style="color:#2a8a2a;">0</span>
+      <span class="stat-label">🟡🟢 Жёлтых / Зелёных (нет в данном образце — см. ниже)</span>
+    </div>
+  </div>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:13px; color:var(--muted); margin-bottom:24px;">
+    Жёлтые и зелёные кандидаты не сгенерированы автоматически: они требуют ручной разметки
+    ботаники/зоологии (тема <em>flora/fauna</em>) и терминологических статей, не покрытых ключевыми
+    эпитетами. Их можно добавить вторым проходом по тематическому словарю.
+  </p>
+
+  <!-- 🟠 Оранжевые образцы -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 0 0 12px;">🟠 Оранжевые — формула/эпитет, первое вхождение</h3>
+  <div class="cand-grid">
+
+    <div class="cand-box orange">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.1</span>
+        <span class="cand-tag tag-orange">🟠 формула</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Губитель врагов (<iast>śatrukarśana</iast>) — первое вхождение эпитета в гл. 1. [Корпус: нет параллелей в несмежных текстах]</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>Satrukarza</code> · первое вхождение: да
+      </div>
+    </div>
+
+    <div class="cand-box orange">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.2</span>
+        <span class="cand-tag tag-orange">🟠 формула</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Обладающий великой силой (<iast>mahābala</iast>) — первое вхождение эпитета в гл. 1. Ср. с эпитетом в контексте Арджуны в Бхагавадгите.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>mahAbala</code> · первое вхождение: да
+      </div>
+    </div>
+
+    <div class="cand-box orange">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.91</span>
+        <span class="cand-tag tag-orange">🟠 формула</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Майнака (<iast>maināka</iast>) — гора, поднявшаяся из океана навстречу Хануману; первое вхождение в гл. 1. В «Бхушане» — сын Гималаев.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>mEnAka</code> · первое вхождение: да
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🔵 Голубые образцы -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 28px 0 12px;">🔵 Голубые — Гринцер / перекрёстная ссылка из корпуса</h3>
+  <div class="cand-grid">
+
+    <div class="cand-box blue">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.7</span>
+        <span class="cand-tag tag-blue">🔵 Гринцер</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Наг/слон (<iast>nāga</iast>). Ср. <em>02_ramayana-ayodhyakanda:22.1</em>, <em>02_ramayana-ayodhyakanda:41.9</em>, <em>02_ramayana-ayodhyakanda:52.48</em> — три вхождения в Айодхья-канде. Амбивалентность «наг vs. слон» разбирается комментатором «Широмани».</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>naga</code> · Гринцер-индекс: 3 адреса в Ram. II
+      </div>
+    </div>
+
+    <div class="cand-box blue">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.39</span>
+        <span class="cand-tag tag-blue">🔵 Гринцер</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Дочь Джанаки (<iast>janakātmajā</iast>) — первое вхождение эпитета Ситы в кн. V. Ср. <em>01_ramayana-balakanda</em> (ввод персонажа) — «введено в Рам. I.X.Y». Рекомендуется перекрёстная ссылка.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>janakAtmajA</code> · Гринцер-индекс: адреса в Ram. I–II
+      </div>
+    </div>
+
+    <div class="cand-box blue">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.24</span>
+        <span class="cand-tag tag-blue">🔵 межтекстовая параллель</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Стебель <iast>bidyate</iast> (SLP1) присутствует в «Шантипарве Махабхараты» (ср. 12.112.81, 12.152.25) — возможная формульная параллель. Требует редакторской интерпретации.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        Источник: <code>12_mahabharata-shantiparva.jsonl</code>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Текстологические образцы (без цвета) -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 28px 0 12px;">⬜ Текстологические кандидаты — возможные опущения (тип «Опущено» по Костиной)</h3>
+  <div class="cand-grid">
+
+    <div class="cand-box none">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.2</span>
+        <span class="cand-tag" style="background:#888;color:#fff;">текстология</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Ванара (<iast>vānara</iast>). [Е. Костина — кандидат]: «<iast>vānara</iast>» возможно опущено в подстрочнике.
+        Подстрочник: «Трудное, ни для кого иного непосильное дело желая сделать, <em>обезьяна</em>…» (термин передан
+        нарицательным словом без транслитерации). Требует проверки — возможно синонимичный перевод.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">параллельный текст · мягкое</span>
+        Тип расхождения: potential_omission
+      </div>
+    </div>
+
+    <div class="cand-box none">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.3</span>
+        <span class="cand-tag" style="background:#888;color:#fff;">текстология</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Стойкий (<iast>dhīra</iast>). [Е. Костина — кандидат]: «<iast>dhīra</iast>» возможно опущено в подстрочнике.
+        Подстрочник передаёт только «наделённый великой силой», без перевода <iast>dhīra</iast>.
+        Требует проверки: эпитет входит в устойчивую формулу или ситуативен?</div>
+      <div class="cand-prov">
+        <span class="prov-chip">параллельный текст · мягкое</span>
+        Тип расхождения: potential_omission
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- § 4. АЛГОРИТМ -->
+<section class="section">
+  <div class="section-eyebrow">§ 06</div>
+  <h2>7-шаговый алгоритм генерации кандидатов</h2>
+
+  <div class="algo-steps">
+    <div class="algo-step"><div class="step-n">1</div><div>Загрузить JSONL гл. 1 — получить #sa/#ru для каждого шлока (уровень стихотворения).</div></div>
+    <div class="algo-step"><div class="step-n">2</div><div>Построить индекс контентных стеблей SLP1 (≥3 символа, функциональные слова исключены).</div></div>
+    <div class="algo-step"><div class="step-n">3</div><div>Сопоставить стебли гл. 1 с индексом Рам. I–III + Гринцер (702 стебля с адресами) — сгенерировать 🔵 кандидаты с адресами кросс-ссылок.</div></div>
+    <div class="algo-step"><div class="step-n">4</div><div>Проверить совпадение с ключевыми эпитетами (словарь KEY_EPITHETS_SLP1: 25 форм) — зафиксировать первое вхождение каждого → 🟠 оранжевый кандидат.</div></div>
+    <div class="algo-step"><div class="step-n">5</div><div>Сравнить #ru подстрочника с ожидаемыми глоссами — обнаружить потенциальные опущения → «Опущено»-кандидаты (тип Б по Казанскому).</div></div>
+    <div class="algo-step"><div class="step-n">6</div><div>Для шлоков с редкими стеблями — найти параллели в топ-15 нераямаянных текстах корпуса → 🔵 межтекстовый кандидат.</div></div>
+    <div class="algo-step"><div class="step-n">7</div><div>Каждый кандидат сериализовать в JSON по схеме <code>commentary_schema.json</code> с доп. полями <code>fill_color</code> и <code>provenance</code> (адрес + файл корпуса).</div></div>
+  </div>
+</section>
+
+<!-- § APPENDIX -->
+<section class="section" id="appendix">
+  <div class="section-eyebrow">Приложение</div>
+  <h2>Нужны данные (needs-data)</h2>
+
+  <div class="needs-data">
+    <h3>Открытые вопросы для М.Г.</h3>
+    <ul>
+      <li>
+        <strong>Провenance #ru (частично разрешён).</strong>
+        Установлено: <code>#ru</code> = подстрочник Леонова (Наука, 2022).
+        Требуется подтвердить: является ли подстрочник тем же текстом, что опубликован в книге,
+        или это предварительная версия из корпуса samskrtam.ru. Если расхождение возможно —
+        необходима версионная метка при цитировании.
+      </li>
+      <li>
+        <strong>Классификация флора/фауна.</strong>
+        Зелёных (🟢) кандидатов автоматически не сгенерировано — нужен тематический список
+        ботанических и зоологических терминов гл. 1 для второго прохода. Потенциальные термины:
+        <iast>vaidūrya</iast> (самоцвет), <iast>śādvala</iast> (луг), <iast>kesarī</iast> (лев),
+        <iast>gavāṃ pati</iast> (бык).
+      </li>
+      <li>
+        <strong>Счёт шлок.</strong>
+        В гл. 1 по JSONL — 213 Sanskrit-шлок; оригинальный критический аппарат (BORI) даёт
+        иной счёт из-за вариантов рукописей (±10 шлок типично). Рекомендуется проверить по
+        изданию, которым пользовался Леонов.
+      </li>
+      <li>
+        <strong>Формулы из ramayana-formulas_1-2.md.</strong>
+        Индекс формул содержит данные по кн. I–II, тогда как пилот охватывает кн. V гл. 1.
+        Для точной привязки «первого вхождения эпитета в кн. V» нужна ручная проверка: возможно,
+        некоторые эпитеты из списка KEY_EPITHETS_SLP1 уже введены в гл. I–IV Сундараканды
+        в других источниках.
+      </li>
+      <li>
+        <strong>Решение C0 (слепое тестирование).</strong>
+        Согласно <code>.ai_state.md</code>, решение по трём аппаратным моделям (I/II/III)
+        ещё не принято. Выбор аппарата влияет на то, какие кандидаты (жёлтые или оранжевые)
+        войдут в печатный слой, а какие останутся только в цифровом.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  Пилот: Сундараканда гл. 1 · 213 шлок · корпус samskrtam.ru (148 текстов, 529 МБ) ·
+  Методология: стебельный оверлэп SLP1 (≥3 сим.), без LLM на этапе сопоставления ·
+  Все корпусные данные — уровень шлоки (мягкое свидетельство) ·
+  Кандидаты: <code>data/leonov_sundara_ch1_candidates.json</code> ·
+  Матрица релевантности: <code>data/sundara_ch1_corpus_relevance.json</code> ·
+  Сформировано 2026-06-26 · Не перезаписывает текст Леонова
+</footer>
+
+<script>
+// Inline relevance data (top 30) — avoids fetch for local file viewing
+const relData = [
+  {file:"03_mahabharata-aranyakaparva",type:"mahabharata",n:589,pct:40.7,ex:[{s:"vAnara",ch1:"1.2",ot:["3.264.60","3.148.3"]}]},
+  {file:"12_mahabharata-shantiparva",type:"mahabharata",n:544,pct:37.6,ex:[{s:"DIra",ch1:"1.3",ot:["12.56.7","12.200.14"]}]},
+  {file:"03_ramayana-aranyakanda",type:"ramayana",n:533,pct:36.8,ex:[{s:"rAvaNa",ch1:"1.1",ot:["3.47.6","3.56.10"]}]},
+  {file:"02_ramayana-ayodhyakanda",type:"ramayana",n:530,pct:36.6,ex:[{s:"naga",ch1:"1.7",ot:["2.22.1","2.41.9"]}]},
+  {file:"01_mahabharata-adiparva",type:"mahabharata",n:500,pct:34.5,ex:[{s:"mahAbala",ch1:"1.2",ot:["1.61.20","1.102.4"]}]},
+  {file:"07_mahabharata-dronaparva",type:"mahabharata",n:484,pct:33.4,ex:[{s:"kapivara",ch1:"1.6",ot:["7.10.14","7.60.2"]}]},
+  {file:"13_mahabharata-anushasanaparva",type:"mahabharata",n:468,pct:32.3,ex:[]},
+  {file:"05_mahabharata-udyogaparva",type:"mahabharata",n:438,pct:30.2,ex:[]},
+  {file:"06_mahabharata-bhishmaparva",type:"mahabharata",n:427,pct:29.5,ex:[]},
+  {file:"08_mahabharata-karnaparva",type:"mahabharata",n:392,pct:27.1,ex:[]},
+  {file:"01_ramayana-balakanda",type:"ramayana",n:381,pct:26.3,ex:[{s:"jAnakAtmajA",ch1:"1.39",ot:["1.20.15","1.66.3"]}]},
+  {file:"14_mahabharata-ashvamedhikaparva",type:"mahabharata",n:370,pct:25.5,ex:[]},
+  {file:"04_mahabharata-virataparva",type:"mahabharata",n:355,pct:24.5,ex:[]},
+  {file:"09_mahabharata-shalyaparva",type:"mahabharata",n:348,pct:24.0,ex:[]},
+  {file:"10_mahabharata-sauptikaparva",type:"mahabharata",n:310,pct:21.4,ex:[]},
+  {file:"11_mahabharata-striparva",type:"mahabharata",n:295,pct:20.4,ex:[]},
+  {file:"manavadharmashastra",type:"other",n:288,pct:19.9,ex:[]},
+  {file:"02_mahabharata-sabhaparva",type:"mahabharata",n:275,pct:19.0,ex:[]},
+  {file:"raghuvamsha",type:"other",n:260,pct:18.0,ex:[{s:"rAGava",ch1:"1.39",ot:["Ragh.1.1","Ragh.3.4"]}]},
+  {file:"01_rigveda",type:"vedic",n:245,pct:16.9,ex:[{s:"DIra",ch1:"1.3",ot:["RV1.32.1","RV1.55.2"]}]},
+  {file:"03_rigveda",type:"vedic",n:238,pct:16.4,ex:[]},
+  {file:"bhagavadgita-sharma",type:"gita",n:220,pct:15.2,ex:[{s:"mahAbala",ch1:"1.2",ot:["BhG.1.4","BhG.11.26"]}]},
+  {file:"bhagavadgity",type:"gita",n:218,pct:15.1,ex:[]},
+  {file:"buddhacharita",type:"other",n:195,pct:13.5,ex:[]},
+  {file:"kumarasambhava",type:"other",n:188,pct:13.0,ex:[]},
+  {file:"br-up",type:"upanishad",n:175,pct:12.1,ex:[]},
+  {file:"01_atharvaveda",type:"vedic",n:168,pct:11.6,ex:[]},
+  {file:"vishnu-purana",type:"purana",n:155,pct:10.7,ex:[]},
+  {file:"yoga-sutry",type:"philosophy",n:98,pct:6.8,ex:[]},
+  {file:"slovar-grintsera-iz-ramayany-1-2",type:"lexicon",n:702,pct:48.5,ex:[]}
+];
+
+const typeLabels = {
+  mahabharata:"Махабхарата",ramayana:"Рамаяна",vedic:"Веды",
+  gita:"Гита",upanishad:"Упанишады",purana:"Пурана",
+  philosophy:"Философия",other:"Другое",lexicon:"Словарь"
+};
+const typeCss = {
+  mahabharata:"bt-maha",ramayana:"bt-rama",vedic:"bt-vedic",
+  gita:"bt-gita",upanishad:"bt-up",purana:"bt-lexi",
+  philosophy:"bt-phil",other:"bt-other",lexicon:"bt-lexi"
+};
+
+const tbody = document.getElementById('relBody');
+const maxN = Math.max(...relData.map(r=>r.n));
+relData.sort((a,b)=>b.n-a.n).slice(0,30).forEach((r,i)=>{
+  const barW = Math.round(80*r.n/maxN);
+  const exStr = r.ex.slice(0,2).map(e=>
+    `<span class="example-addr">${e.s}: гл1.${e.ch1}→${(e.ot||[]).slice(0,1).join(',')}</span>`
+  ).join(' ');
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td style="color:var(--muted);font-size:12px;">${i+1}</td>
+    <td style="font-family:'PT Sans',sans-serif;font-weight:700;">${r.file.replace(/_/g,' ')}</td>
+    <td><span class="badge-type ${typeCss[r.type]||'bt-other'}">${typeLabels[r.type]||r.type}</span></td>
+    <td>
+      <span class="overlap-bar" style="width:${barW}px;"></span>
+      <span style="font-family:'PT Sans',sans-serif;">${r.n}</span>
+    </td>
+    <td style="font-family:'PT Sans',sans-serif;">${r.pct}%</td>
+    <td>${exStr}</td>`;
+  tbody.appendChild(tr);
+});
+</script>
+
+</body>
+</html>
