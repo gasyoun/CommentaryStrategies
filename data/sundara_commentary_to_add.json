@@ -5,40 +5,42 @@
       "rule": "Примечание добавляется ТОЛЬКО когда оно даёт то, чего нет в подстрочнике Леонова.",
       "evidence": "Все корпусные свидетельства — уровень шлоки (мягкое). Каждое примечание review_required.",
       "generated": "2026-06-26",
+      "gazetteer_supplement": "2026-06-26: добавлены пропущенные именованные сущности (§09б formulas) — 11 примечаний",
       "total_verses": 2859,
-      "total_notes": 84,
-      "verses_with_note": 69,
-      "verses_without_note": 2790,
+      "total_notes": 95,
+      "verses_with_note": 79,
+      "verses_without_note": 2780,
       "by_type": {
-        "В": 37,
-        "А": 36,
+        "В": 45,
+        "А": 39,
         "Б": 11
       },
       "by_trigger": {
-        "realia": 34,
+        "realia": 42,
         "term": 22,
-        "epithet": 15,
+        "epithet": 18,
         "omission": 5,
         "crossref": 8
       },
       "by_priority": {
-        "high": 25,
-        "med": 37,
+        "high": 30,
+        "med": 43,
         "low": 22
       },
       "per_chapter_notes": {
+        "1": 24,
         "2": 15,
-        "3": 5,
+        "3": 6,
         "4": 2,
         "5": 1,
         "6": 6,
         "7": 1,
         "8": 2,
         "9": 4,
-        "10": 3,
+        "10": 4,
         "11": 1,
         "12": 5,
-        "13": 3,
+        "13": 4,
         "14": 1,
         "15": 1,
         "16": 1,
@@ -52,7 +54,7 @@
         "24": 0,
         "25": 0,
         "26": 0,
-        "27": 1,
+        "27": 2,
         "28": 1,
         "29": 0,
         "30": 0,
@@ -66,14 +68,14 @@
         "38": 1,
         "39": 0,
         "40": 0,
-        "41": 0,
+        "41": 1,
         "42": 0,
         "43": 0,
-        "44": 0,
+        "44": 1,
         "45": 0,
         "46": 0,
-        "47": 0,
-        "48": 1,
+        "47": 1,
+        "48": 2,
         "49": 0,
         "50": 1,
         "51": 0,
@@ -86,17 +88,17 @@
         "58": 1,
         "59": 0,
         "60": 0,
-        "61": 0,
+        "61": 1,
         "62": 0,
         "63": 0,
         "64": 0,
         "65": 0,
         "66": 0,
         "67": 0,
-        "68": 1,
-        "1": 22
+        "68": 1
       },
       "chapter_verse_counts": {
+        "1": 213,
         "2": 58,
         "3": 51,
         "4": 30,
@@ -163,8 +165,7 @@
         "65": 28,
         "66": 15,
         "67": 44,
-        "68": 29,
-        "1": 213
+        "68": 29
       }
     }
   },
@@ -285,6 +286,21 @@
   },
   {
     "shloka": "V.1.29",
+    "lemma_iast": "samudra",
+    "note_ru": "Океан (samudra) — великий океан (samudra), отделяющий материк от Ланки; эпитеты varuṇālaya «обитель Варуны», mahodadhi «великий водоём». Его переплытие в один прыжок — центральный подвиг кн. V. Подстрочник передаёт нарицательным «океан», не отмечая его как мифологизированную водную преграду — обитель Варуны.",
+    "type": "В",
+    "trigger": "realia",
+    "priority": "med",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [
+      "Goldman 1994"
+    ],
+    "src_candidate_id": "gazetteer/sundara/1.29"
+  },
+  {
+    "shloka": "V.1.29",
     "lemma_iast": "mārutātmaja",
     "note_ru": "Сын бога ветра (mārutātmaja). [Е. Костина]: именной эпитет «mārutātmaja» присутствует в оригинале, но не передан отдельным словом в подстрочнике («…«Это подобный горе Хануман, сын ветра, Желает, стремительный…»). В литературном тексте эпитет восстанавливается; отметить как незафиксированное опущение — на усмотрение редактора.",
     "type": "Б",
@@ -369,6 +385,21 @@
     "source": "parallel-text divergence (verse-level, soft)",
     "review_required": true,
     "src_candidate_id": "ram/leonov/candidate_5.1.61.om56"
+  },
+  {
+    "shloka": "V.1.91",
+    "lemma_iast": "maināka",
+    "note_ru": "Майнака (maināka) — золотая гора (maināka), поднявшаяся из океана навстречу Хануману как место отдыха по просьбе Самудры (океана). В «Бхушане» — сын Гималаев и Мены; эпитеты hiraṇyanābha «золотопупый», girisattama «лучшая из гор». Хануман из учтивости касается её и летит дальше. Первое появление персонажа.",
+    "type": "В",
+    "trigger": "realia",
+    "priority": "high",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [
+      "Bhūṣaṇa"
+    ],
+    "cited_western_sources": [],
+    "src_candidate_id": "gazetteer/sundara/1.91"
   },
   {
     "shloka": "V.1.92",
@@ -711,6 +742,23 @@
     "src_candidate_id": "auto/sundara/3.17.ep"
   },
   {
+    "shloka": "V.3.21",
+    "lemma_iast": "laṅkinī",
+    "note_ru": "Ланкини (laṅkinī) — хранительница-божество города Ланки (laṅkinī), ракшаси, персонифицирующая саму крепость; преграждает Хануману вход и сражена его ударом. По комментаторам, её поражение — предзнаменование падения Ланки (древнее пророчество о гибели города при появлении обезьяны). Подстрочник передаёт «Ланка… сама предстала», сохраняя двусмысленность «город / его богиня». Первое появление персонажа.",
+    "type": "В",
+    "trigger": "realia",
+    "priority": "high",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [
+      "Tilaka"
+    ],
+    "cited_western_sources": [
+      "Goldman 1994"
+    ],
+    "src_candidate_id": "gazetteer/sundara/3.21"
+  },
+  {
     "shloka": "V.3.27",
     "lemma_iast": "kāma",
     "note_ru": "Кама / желание (kāma) — kāma — «желание», «любовь»; третий puruṣārtha; также имя бога любви. Двусмысленность «желание/Кама» важна в эротических описаниях Ланки.",
@@ -1002,6 +1050,21 @@
     "src_candidate_id": "auto/sundara/10.38.ep"
   },
   {
+    "shloka": "V.10.52",
+    "lemma_iast": "mandodarī",
+    "note_ru": "Мандодари (mandodarī) — главная супруга Раваны (mandodarī «тонкостанная»), спящую красоту которой Хануман сперва принимает за Ситу. Дочь асура Майи; в традиции — образец добродетельной жены при злом муже. Подстрочник лишь транслитерирует имя; узнавание-ошибка Ханумана — важный сюжетный мотив. Первое появление персонажа.",
+    "type": "В",
+    "trigger": "realia",
+    "priority": "high",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [
+      "Bhūṣaṇa"
+    ],
+    "cited_western_sources": [],
+    "src_candidate_id": "gazetteer/sundara/10.52"
+  },
+  {
     "shloka": "V.11.30",
     "lemma_iast": "astra",
     "note_ru": "Астра / магическое оружие (astra) — astra — оружие, активируемое мантрой, в отличие от śastra (оружие рукопашного боя). В эпосе астры — метательные снаряды с магическим зарядом.",
@@ -1086,6 +1149,19 @@
     ],
     "cited_western_sources": [],
     "src_candidate_id": "auto/sundara/12.20.ep"
+  },
+  {
+    "shloka": "V.13.49",
+    "lemma_iast": "daśagrīva",
+    "note_ru": "Десятишеий (daśagrīva) — эпитет Раваны daśa-grīva «десятишеий» (пара к daśānana «десятиликий»); указывает на его десять голов — знак чудовищной мощи, полученной аскезой. Леонов: «Мощношеий Равана». Первое вхождение формы в кн. V.",
+    "type": "А",
+    "trigger": "epithet",
+    "priority": "med",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "gazetteer/sundara/13.49"
   },
   {
     "shloka": "V.13.55",
@@ -1196,6 +1272,23 @@
     "src_candidate_id": "auto/sundara/21.8.ep"
   },
   {
+    "shloka": "V.27.4",
+    "lemma_iast": "trijaṭā",
+    "note_ru": "Триджата (trijaṭā) — старая ракшаси (trijaṭā «с тремя косицами»), стражница Ситы, которая удерживает прочих ракшасини от расправы, рассказав свой вещий сон о победе Рамы. Эпитеты dharmajñā «знающая дхарму», dayāpara «сострадательная». Её сон — структурный пророческий узел кн. V. Первое появление персонажа.",
+    "type": "В",
+    "trigger": "realia",
+    "priority": "high",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [
+      "Tattvadīpikā"
+    ],
+    "cited_western_sources": [
+      "Goldman 1994"
+    ],
+    "src_candidate_id": "gazetteer/sundara/27.4"
+  },
+  {
     "shloka": "V.27.37",
     "lemma_iast": "gopura",
     "note_ru": "Гопура / ворота (gopura) — gopura — монументальные надвратные башни; в описании Ланки — ворота главного дворца.",
@@ -1263,6 +1356,47 @@
     "src_candidate_id": "auto/sundara/38.37.ep"
   },
   {
+    "shloka": "V.41.8",
+    "lemma_iast": "daśānana",
+    "note_ru": "Десятиликий (daśānana) — эпитет Раваны daśa-ānana «десятиликий» (пара к daśagrīva); подчёркивает его десятиглавый облик. Леонов: «Десятиликий Равана». Первое вхождение формы в кн. V.",
+    "type": "А",
+    "trigger": "epithet",
+    "priority": "med",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "gazetteer/sundara/41.8"
+  },
+  {
+    "shloka": "V.44.19",
+    "lemma_iast": "jambumālin",
+    "note_ru": "Джамбумалин (jambumālin) — сын Прахасты, ракшаса-воин (jambu-mālin «в гирлянде из роз»), первый полководец, посланный против Ханумана и им убитый; эпитет raṇakovida «искусный в бою». Его гибель открывает череду поединков в роще. Первое появление персонажа.",
+    "type": "В",
+    "trigger": "realia",
+    "priority": "med",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "gazetteer/sundara/44.19"
+  },
+  {
+    "shloka": "V.47.1",
+    "lemma_iast": "akṣa",
+    "note_ru": "Акша (akṣa) — юный сын Раваны (akṣa), царевич (kumāra), отправленный против Ханумана после гибели пяти полководцев и убитый им; описан эпитетом mahābala «многомощный». Гибель сына — поворот, вынуждающий Равану послать Индраджита. Подстрочник называет его «царевич», имя вводит ниже. Первое появление персонажа.",
+    "type": "В",
+    "trigger": "realia",
+    "priority": "high",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [
+      "Goldman 1994"
+    ],
+    "src_candidate_id": "gazetteer/sundara/47.1"
+  },
+  {
     "shloka": "V.48.16",
     "lemma_iast": "indrajit",
     "note_ru": "Индраджит (indrajit) — старший сын Раваны и главный полководец (indra-jit «победивший Индру»); его брахмастра усыплена героями позднее. «Бхушана» глоссирует победу над Индрой как основание имени. Первое вхождение в кн. V.",
@@ -1276,6 +1410,21 @@
     ],
     "cited_western_sources": [],
     "src_candidate_id": "auto/sundara/48.16.ep"
+  },
+  {
+    "shloka": "V.48.17",
+    "lemma_iast": "padmapalāśākṣa",
+    "note_ru": "Лотосоокий (padmapalāśākṣa) — эпитет Индраджита padma-palāśa-akṣa «с глазами-лепестками лотоса» — неожиданная «лирическая» формула красоты, приложенная к грозному воину-ракшасу. Леонов: «блистательный, лотосоокий». Контраст между нежным эпитетом и боевой ролью отмечается комментаторами как намеренный. Первое вхождение в кн. V.",
+    "type": "А",
+    "trigger": "epithet",
+    "priority": "med",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [
+      "Bhūṣaṇa"
+    ],
+    "cited_western_sources": [],
+    "src_candidate_id": "gazetteer/sundara/48.17"
   },
   {
     "shloka": "V.50.2",
@@ -1302,6 +1451,19 @@
     "cited_indian_commentators": [],
     "cited_western_sources": [],
     "src_candidate_id": "auto/sundara/58.3.ep"
+  },
+  {
+    "shloka": "V.61.9",
+    "lemma_iast": "dadhimukha",
+    "note_ru": "Дадхимукха (dadhimukha) — обезьяна-страж медового сада Сугривы (dadhimukha «творожноликий», вар. dadhivaktra), дядя (mātula) Ангады; жалуется Сугриве на разорение сада вернувшимися ванарами — комический эпизод, косвенно сообщающий об успехе миссии. Первое появление персонажа.",
+    "type": "В",
+    "trigger": "realia",
+    "priority": "med",
+    "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "gazetteer/sundara/61.9"
   },
   {
     "shloka": "V.68.1",
