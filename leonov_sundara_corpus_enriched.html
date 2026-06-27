@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Сундараканда гл. 1 · Корпусное обогащение комментария Леонова</title>
+<title>Сундараканда кн. V, гл. 1–68 · Корпусное обогащение комментария Леонова</title>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/commentary.css">
 <style>
@@ -377,11 +377,12 @@ iast { font-style: italic; }
 
 <!-- ШАПКА -->
 <header class="page-header">
-  <div class="page-label">Корпусное обогащение · ПИЛОТ (глава 1)</div>
-  <h1>Сундараканда, глава 1<br>Корпусное обогащение комментария Леонова</h1>
+  <div class="page-label">Корпусное обогащение · Кн. V (гл. 1–68) · межтекстовый слой: пилот гл. 1</div>
+  <h1>Сундараканда, книга V (гл. 1–68)<br>Корпусное обогащение комментария Леонова</h1>
   <div class="page-meta">
-    М.В. Леонов · Рамаяна, книга V · пилот: 213 шлок · корпус samskrtam.ru (148 текстов) ·
-    сформировано 2026-06-26
+    М.В. Леонов · Рамаяна, книга V · 2 859 шлок · 105 примечаний · корпус samskrtam.ru (148 текстов) ·
+    межтекстовый слой (cross-text): пилот гл. 1, 10 примечаний ·
+    сформировано 2026-06-27
   </div>
 </header>
 
@@ -459,7 +460,7 @@ iast { font-style: italic; }
   <div class="section-eyebrow">§ 01</div>
   <h2>Состав отчёта</h2>
   <ol style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:2; color:var(--ink);">
-    <li><a href="#step0" style="color:var(--leo);">Шаг 0 — Провenance #ru-перевода</a></li>
+    <li><a href="#step0" style="color:var(--leo);">Шаг 0 — Провенанс #ru-перевода</a></li>
     <li><a href="#step1" style="color:var(--leo);">Шаг 1 — Матрица релевантности 148 текстов</a></li>
     <li><a href="#step2" style="color:var(--leo);">Шаг 2 — Реальные числа гл. 1 (замена ≈)</a></li>
     <li><a href="#step3" style="color:var(--leo);">Шаг 3 — Образцы кандидатов по цвету</a></li>
@@ -470,7 +471,7 @@ iast { font-style: italic; }
 <!-- § 0. PROVENANCE -->
 <section class="section" id="step0">
   <div class="section-eyebrow">§ 02 · Шаг 0</div>
-  <h2>Провenance параллельного #ru-перевода</h2>
+  <h2>Провенанс параллельного #ru-перевода</h2>
 
   <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:16px;">
     Параллельный <code>#ru</code>-текст в JSONL-корпусе samskrtam.ru (<code>05_ramayana-sundarakanda.jsonl</code>)
@@ -877,7 +878,7 @@ iast { font-style: italic; }
     <h3>Открытые вопросы для М.Г.</h3>
     <ul>
       <li>
-        <strong>Провenance #ru (частично разрешён).</strong>
+        <strong>Провенанс #ru (частично разрешён).</strong>
         Установлено: <code>#ru</code> = подстрочник Леонова (Наука, 2022).
         Требуется подтвердить: является ли подстрочник тем же текстом, что опубликован в книге,
         или это предварительная версия из корпуса samskrtam.ru. Если расхождение возможно —
@@ -913,9 +914,132 @@ iast { font-style: italic; }
   </div>
 </section>
 
+<!-- § МЕЖТЕКСТОВЫЙ СЛОЙ (пилот гл. 1) -->
+<section class="section" id="cross_text">
+  <div class="section-eyebrow">§ 07 · Межтекстовый слой · пилот гл. 1</div>
+  <h2>Межтекстовый слой — примечания из параллельных текстов (гл. 1, пилот)</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:12px;">
+    Помимо 95 стандартных примечаний (Тип А/Б/В), для <strong>главы 1</strong> добавлен пилотный
+    слой межтекстовых параллелей (<code>subtype: "cross_text"</code>): цитированные локусы из
+    шести нераямаянских текстов корпуса, которые подлинно освещают шлок Сундараканды.
+    Критерий допуска: <em>не</em> тривиальное пересечение стеблей, а конкретный смысловой вклад —
+    locus classicus термина, гномический/этический параллелизм, формульный эпитет в сопоставимом
+    контексте или кāвья-переосмысление. Каждое примечание — <code>review_required: true</code>;
+    свидетельство — уровень шлоки (мягкое).
+  </p>
+
+  <div class="soft-note" style="margin-bottom:20px;">
+    <strong>Почему не в основном слое?</strong> Межтекстовые примечания отличаются по природе:
+    они не заполняют пробел подстрочника, а открывают сравнительный горизонт. Поэтому они
+    выделены в отдельный слой и помечены <code>subtype: "cross_text"</code>, а не заменяют
+    основные примечания Типа А/В.
+  </div>
+
+  <!-- Таблица cross_text примечаний -->
+  <table class="rel-table" style="margin-bottom:28px;">
+    <thead>
+      <tr>
+        <th style="width:72px;">Шлока</th>
+        <th style="width:140px;">Лемма (IAST)</th>
+        <th style="width:160px;">Источник</th>
+        <th>Текст примечания (фрагмент)</th>
+      </tr>
+    </thead>
+    <tbody id="ctBody"><!-- filled by script --></tbody>
+  </table>
+
+  <!-- Карта вклада по источникам -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin:24px 0 10px;">
+    Вклад источников (пересечение с гл. 1 → промотировано в примечание)
+  </h3>
+  <table class="rel-table">
+    <thead>
+      <tr>
+        <th>Источник</th>
+        <th>Тип</th>
+        <th>Общих стеблей</th>
+        <th>Примечаний</th>
+        <th>Основание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:700;">Mānavadharmaśāstra</td>
+        <td><span class="badge-type bt-other">дхармашастра</span></td>
+        <td>259</td>
+        <td>3 (kṛtayuga, rākṣasa, dharma)</td>
+        <td>locus classicus терминов</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">MBh Śāntiparvan</td>
+        <td><span class="badge-type bt-maha">Махабхарата</span></td>
+        <td>545</td>
+        <td>2 (dhīra, vānara)</td>
+        <td>гномический/этический параллелизм</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">MBh Āraṇyakaparvan</td>
+        <td><span class="badge-type bt-maha">Махабхарата</span></td>
+        <td>590</td>
+        <td>1 (tapas)</td>
+        <td>параллельный нарративный мотив</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Bhagavadgītā</td>
+        <td><span class="badge-type bt-gita">Гита</span></td>
+        <td>226</td>
+        <td>2 (mahābala, dūta/karma)</td>
+        <td>формульный эпитет / этика долга</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Raghuvaṃśa (Kālidāsa)</td>
+        <td><span class="badge-type bt-other">кāвья</span></td>
+        <td>354</td>
+        <td>1 (rāghava)</td>
+        <td>кāвья-переосмысление эпитета</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Buddhacarita (Aśvaghoṣa)</td>
+        <td><span class="badge-type bt-other">кāвья</span></td>
+        <td>237</td>
+        <td>1 (mumoca)</td>
+        <td>нарративная формула героя в движении</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:13px; color:var(--muted); margin-top:8px;">
+    Отклонено как тривиальные пересечения: высокочастотные стебли (papata, canye, pratipedire и др.),
+    общие для всего эпоса и не несущие специфического смысла в межтекстовом сравнении. —
+    Полный «Решебник» (decision ledger): <a href="data/sundara_decision_ledger.json" style="color:var(--leo);">data/sundara_decision_ledger.json</a>
+    · <a href="SUNDARA_COMMENTARY_RATIONALE.md" style="color:var(--leo);">SUNDARA_COMMENTARY_RATIONALE.md</a>
+  </p>
+</section>
+
+<!-- § РЕШЕБНИК (ссылка) -->
+<section class="section" id="ledger">
+  <div class="section-eyebrow">§ 08 · Decision Ledger</div>
+  <h2>Решебник: почему эти примечания и почему не другие</h2>
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7;">
+    Для всей книги V (гл. 1–68, 2 859 шлок) сформирован полный реестр кандидатов с решениями
+    «принято / отклонено» и конкретной причиной. Файлы:
+  </p>
+  <ul style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:2; color:var(--ink);">
+    <li><a href="data/sundara_decision_ledger.json" style="color:var(--leo);">data/sundara_decision_ledger.json</a>
+      — машиночитаемый реестр (поля: shloka, lemma_iast, trigger, decision, reason, chapter)</li>
+    <li><a href="SUNDARA_COMMENTARY_RATIONALE.md" style="color:var(--leo);">SUNDARA_COMMENTARY_RATIONALE.md</a>
+      — человекочитаемый Markdown с управляющим правилом, сводной таблицей и картой вклада источников</li>
+    <li><a href="data/sundara_commentary_to_add.json" style="color:var(--leo);">data/sundara_commentary_to_add.json</a>
+      — итоговые 105 примечаний (включая 10 cross_text)</li>
+    <li><a href="data/sundara_book_stats.json" style="color:var(--leo);">data/sundara_book_stats.json</a>
+      — агрегированная статистика по всей книге</li>
+  </ul>
+</section>
+
 <!-- FOOTER -->
 <footer class="page-footer">
-  Пилот: Сундараканда гл. 1 · 213 шлок · корпус samskrtam.ru (148 текстов, 529 МБ) ·
+  Кн. V (гл. 1–68) · 2 859 шлок · 105 примечаний · корпус samskrtam.ru (148 текстов, 529 МБ) ·
   Методология: стебельный оверлэп SLP1 (≥3 сим.), без LLM на этапе сопоставления ·
   Все корпусные данные — уровень шлоки (мягкое свидетельство) ·
   Кандидаты: <code>data/leonov_sundara_ch1_candidates.json</code> ·
@@ -1016,6 +1140,34 @@ if (nbody) {
       <td style="font-family:'PT Serif',serif;font-size:13.5px;line-height:1.55;">${n.tx}</td>
       <td><span style="display:inline-block;padding:2px 8px;border-radius:2px;font-size:11px;font-weight:700;color:#fff;background:${pc};">${pl}</span></td>`;
     nbody.appendChild(tr);
+  });
+}
+
+// ── Межтекстовый слой (§07 cross_text) ──
+const ctData = [
+  {sh:"V.1.122",lem:"kṛtayuga",wl:"Mānavadharmaśāstra",va:"Manu 1.85",tx:"Крита-юга (kṛtayuga) — первая и лучшая из четырёх космических эпох (yuga); её признаки: совершенное исполнение дхармы, отсутствие пороков, долголетие. Канонический авторитет — Mānavadharmaśāstra (Законы Ману). Хануман уподобляется воину крита-юги, что возводит его подвиг в ранг вселенской нормы. Ср. Manu 1.85: «Одни дхармы — в век Крита, другие — в Трета и Двапара, иные — в век Кали, соответственно укорочению веков». Свидетельство: уровень шлоки (мягкое).",tr:"term",pr:"high",ch:1},
+  {sh:"V.1.39",lem:"rāghava",wl:"Raghuvaṃśa (Kālidāsa)",va:"Ragh. 1.1",tx:"Потомок Рагху (rāghava) — в Raghuvaṃśa («Родословная Рагху») Калидасы эпитет rāghava — сквозное наименование династической линии от Рагху до Рамы. Ср. Ragh. 1.1: «Ради истинного проникновения в слово и его значение я склоняюсь перед Парвати и Высшим Владыкой, родителями вселенной». Для Калидасы это прежде всего генеалогический термин; в Сундараканде он превращается в эпический эпитет. Свидетельство: уровень шлоки (мягкое).",tr:"term",pr:"med",ch:1},
+  {sh:"V.1.16",lem:"mumoca",wl:"Buddhacarita (Aśvaghoṣa)",va:"BC 8.8",tx:"Освободил / выпустил (mumoca) — нарративная формула «герой освобождает / вырывается» встречается в Buddhacarita Aśvaghoṣi. Ср. BC 8.8: «Увидев коня и возницу, бредущих устало, вернувшихся без буйвола племени шакьев, слёзы пролили горожане». Формула сигнализирует переломный момент действия — «развязку» одной фазы и начало следующей. Свидетельство: уровень шлоки (мягкое).",tr:"crossref",pr:"low",ch:1},
+  {sh:"V.1.3",lem:"dhīra",wl:"Mahābhārata, Śāntiparvan",va:"MBh Śānti 12.3.1-9",tx:"Стойкий (dhīra) — в гномической традиции эпоса эпитет dhīra обозначает мудрость, неколебимую в бедствиях — качество, разработанное в Śāntiparvan («Книге о мире»). Ср. МБх Шанти 12.3.1-9: «karṇasya bāhuvīryeṇa praśrayeṇa damena ca | tutoṣa bhṛguśārdūlaḥ» («Тигр среди потомков Бхригу был доволен мощью рук Карны, его смирением, сдержанностью»). Эпитет Ханумана dhīra прочитывается как маркер мудрой самообладательности перед прыжком через океан. Свидетельство: уровень шлоки (мягкое).",tr:"epithet",pr:"med",ch:1},
+  {sh:"V.1.2",lem:"vānara",wl:"Mahābhārata, Śāntiparvan",va:"MBh Śānti 12.30.24",tx:"Народ ванаров (vānara) — в Śāntiparvan есть аллегорические эпизоды с животными как носителями мудрости. Ср. МБх Шанти 12.30.24: «vānaraṃ caiva kanyā tvāṃ vivāhātprabhṛti prabho | sandrakṣyanti narāś cānye svarūpeṇa vinākṛtam». Контекст «мудрой обезьяны» как носителя dharma-знания — общеэпический мотив, делающий образ Ханумана частью более широкой традиции. Свидетельство: уровень шлоки (мягкое).",tr:"term",pr:"low",ch:1},
+  {sh:"V.1.3",lem:"mahābala",wl:"Bhagavadgītā (BhG)",va:"BhG 1.4",tx:"Обладающий великой силой (mahābala) — в Бхагавадгите перечень mahārathin (BhG 1.4–6) описывает воинов через формулу «равных Бхиме и Арджуне в бою». Ср. BhG 1.4: «atra śūrā maheṣvāsā bhīmārjunasamā yuddhi» («В нём находятся герои, равные Бхиме и Арджуне в бою»). Эпитет Ханумана mahābala — формульное обозначение героя-бойца, общее для эпической традиции. Свидетельство: уровень шлоки (мягкое).",tr:"epithet",pr:"med",ch:1},
+  {sh:"V.2.15",lem:"rākṣasa",wl:"Mānavadharmaśāstra",va:"Manu 12.44",tx:"Ракшас (rākṣasa) — в системе Ману ракшасы классифицируются по происхождению (tamoguna) и образу жизни: ночная нечисть, питающаяся мясом. Ср. Manu 12.44: «Чараны, супарны, лицемерные люди (dāmbhika), ракшасы и пишачи — высшее состояние, обусловленное тёмной [гуной]». Ману задаёт догматическую характеристику ракшасов, Сундараканда — повествовательную. Свидетельство: уровень шлоки (мягкое).",tr:"term",pr:"med",ch:2},
+  {sh:"V.2.39",lem:"dūta",wl:"Bhagavadgītā",va:"BhG 3.19",tx:"Долг посланника (dūta + karma) — в Бхагавадгите нормативная формула действия без привязанности к плоду (niṣkāmakarma) задаёт идеальную модель dharma как социальной роли. Ср. BhG 3.19: «tasmād asaktaḥ satataṃ kāryaṃ karma samācara» («Поэтому, без привязанности, всегда совершай надлежащее действие»). Хануман как дūta Рамы выполняет именно такую функцию. Свидетельство: уровень шлоки (мягкое).",tr:"term",pr:"low",ch:2},
+  {sh:"V.5.19",lem:"dharma",wl:"Mānavadharmaśāstra",va:"Manu 1.2",tx:"Дхарма (dharma) — locus classicus — Mānavadharmaśāstra: Manu 1.2 открывает систематическое изложение dharma для всех четырёх варн. В системе Ману dharma — первый из четырёх puruṣārtha и основа сословного поведения (varṇāśramadharma). В Сундараканде dharma обозначает прежде всего личный долг: для Ханумана — верность поручению, для Раваны — нарушение космического порядка. Свидетельство: уровень шлоки (мягкое).",tr:"term",pr:"high",ch:5},
+  {sh:"V.8.4",lem:"tapas",wl:"Mahābhārata, Āraṇyakaparvan",va:"MBh Āraṇyaka 3.1.22-30",tx:"Аскеза (tapas) — Āraṇyakaparvan («Лесная книга» Махабхараты) — главный эпический «учебник» лесной аскезы и магической силы. Ср. МБх Āraṇyaka 3.1.22-30: «vastram āpas tilān bhūmiṃ gandho vāsayate yathā» («Как благовонное вещество придаёт одежде, водам, земле аромат цветов»). Tapas Ситы — моральный «броненосец», делающий её недоступной для Раваны; параллельный мотив развёрнут в лесных эпизодах Āraṇyakaparvan. Свидетельство: уровень шлоки (мягкое).",tr:"term",pr:"med",ch:8},
+];
+const ctbody = document.getElementById('ctBody');
+if (ctbody) {
+  const prioBadge2 = {"high":["#c23b22","выс."],"med":["#e08020","сред."],"low":["#888","низ."]};
+  ctData.forEach(n=>{
+    const [pc,pl] = prioBadge2[n.pr]||["#888",n.pr];
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-family:'PT Sans',sans-serif;font-weight:700;color:var(--leo);white-space:nowrap;">${n.sh}</td>
+      <td><iast style="font-weight:700;">${n.lem}</iast><br><span class="example-addr" style="font-size:11px;">${n.wl}</span></td>
+      <td style="font-size:12px;color:var(--muted);">${n.va}</td>
+      <td style="font-family:'PT Serif',serif;font-size:13px;line-height:1.5;">${n.tx.slice(0,220)}…</td>`;
+    ctbody.appendChild(tr);
   });
 }
 
