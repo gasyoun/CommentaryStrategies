@@ -1,0 +1,36 @@
+{
+ "_meta": {
+  "cluster": "kavya",
+  "verified_by": "adversarial Sanskritist review (default-to-reject)",
+  "date": "2026-06-27",
+  "finding": "No curated kavya cross-text NOTES were ever proposed for this cluster. The kavya pipeline (scripts/crosstext_kavya.py) only emitted the raw candidate-stem index data/crosstext/_kavya_raw_index.json plus the locator helper scripts/_kavya_locate.py; the curation step that would emit note objects (schema like data/crosstext/dharmashastra.json) was never run, so data/crosstext/kavya.json did not exist. There is nothing to confirm: proposed=0, confirmed=0. kavya.json is written as an empty array.",
+  "raw_index_quality_warning": "The raw index is built on a crude SLP1 suffix-stemmer intersected on shared stems. Spot-check shows it is dominated by COINCIDENTAL stem collisions that must NOT be promoted to notes without manual reading."
+ },
+ "rejected_raw_candidates_sample": [
+  {
+   "stem": "babanD",
+   "sund": "V.48.46 — tatas te rākṣasā dṛṣṭvā nirviceṣṭam ariṃdamam | babandhuḥ śaṇavalkaiś ca drumacīraiś ca saṃhataiḥ — the rākṣasas BIND the captured Hanumān with ropes of hemp and bark.",
+   "src": "Buddhacarita 1.44 — velāṃ samudre sagaraś ca dadhre na ikṣvākavo yāṃ prathamaṃ babandhuḥ — Sagara FIXED (established) the shore-line of the ocean.",
+   "reason": "Coincidental collision on √bandh only. Senses are unrelated (physically tying a prisoner vs. establishing a coastline). Not illuminating; reject."
+  },
+  {
+   "stem": "kzitAv",
+   "sund": "V.42.30",
+   "src": "Raghuvaṃśa 3.29-32",
+   "reason": "Common locative kṣitau ('on the earth/ground') — ubiquitous filler word, not a shared motif. Reject as a generic stem collision."
+  },
+  {
+   "stem": "agam",
+   "sund": "V.14.17",
+   "src": "Raghuvaṃśa 11.53-56",
+   "reason": "√gam / agamat is one of the commonest verbs in Sanskrit; co-occurrence carries no editorial signal. Reject."
+  },
+  {
+   "stem": "kAmay",
+   "sund": "V.20.3",
+   "src": "Buddhacarita 11.64",
+   "reason": "√kam (kāmayate, 'desire') is generic; no specific shared image or phrasing established. Reject pending real textual reading."
+  }
+ ],
+ "_note": "These are NOT failed notes — no notes were authored. They illustrate why the raw stem index cannot be auto-promoted. If a curated kavya note set is later produced, it must pass: (1) the cited locus exists and contains the stem; (2) the parallel is illuminating, not a stem collision; (3) note_ru accurately renders the parallel."
+}

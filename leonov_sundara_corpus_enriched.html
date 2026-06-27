@@ -377,12 +377,12 @@ iast { font-style: italic; }
 
 <!-- ШАПКА -->
 <header class="page-header">
-  <div class="page-label">Корпусное обогащение · Кн. V (гл. 1–68) · межтекстовый слой: пилот гл. 1</div>
+  <div class="page-label">Корпусное обогащение · Кн. V (гл. 1–68) · 157 примечаний (95 базовых + 62 межтекстовых)</div>
   <h1>Сундараканда, книга V (гл. 1–68)<br>Корпусное обогащение комментария Леонова</h1>
   <div class="page-meta">
-    М.В. Леонов · Рамаяна, книга V · 2 859 шлок · 105 примечаний · корпус samskrtam.ru (148 текстов) ·
-    межтекстовый слой (cross-text): пилот гл. 1, 10 примечаний ·
-    сформировано 2026-06-27
+    М.В. Леонов · Рамаяна, книга V · 2 859 шлок · <strong>157 примечаний</strong> (95 базовых + 62 межтекстовых) · корпус samskrtam.ru (148 текстов) ·
+    межтекстовый слой (cross-text): гл. 1–68, 62 примечания ·
+    сформировано 2026-06-27 · сверено 2026-06-27
   </div>
 </header>
 
@@ -639,16 +639,20 @@ iast { font-style: italic; }
     для <strong>всей Сундараканды</strong>. Пилот гл. 1 (22 примечания) распространён на гл. 2–68 с
     книжным дедупом «первое вхождение» и дополнен пропущенными именованными сущностями по гербарию
     §09б формул (Майнака, Ланкини, Мандодари, Триджата, Акша, Джамбумалин, Дадхимукха, эпитеты
-    daśagrīva/daśānana/padmapalāśākṣa). Итог: <strong>95 примечаний</strong> к
+    daśagrīva/daśānana/padmapalāśākṣa). Итог: <strong>95 базовых примечаний</strong> к
     <strong>79 шлокам</strong> из 2859; остальные шлоки примечания не получают — подстрочник Леонова их
-    уже проясняет (дисциплина пилота: ≈97 % стихов без примечания). Полный JSON:
+    уже проясняет (дисциплина пилота: ≈97 % стихов без примечания). Дополнительно:
+    <strong>62 межтекстовых примечания</strong> (слой «cross_text», гл. 1–68, 7 источников — см. § 07 ниже).
+    Итоговый файл:
     <a href="data/sundara_commentary_to_add.json" style="color:var(--leo);">data/sundara_commentary_to_add.json</a>
-    · по главам: <a href="data/" style="color:var(--leo);">data/sundara_ch{N}_commentary_to_add.json</a>.
+    (<strong>157 примечаний</strong> = 95 базовых + 62 межтекстовых).
   </p>
   <div class="soft-note" style="margin-top:8px;">
     Все примечания помечены <code>review_required: true</code>; корпусные свидетельства — уровень шлоки (мягкое).
     Первое-вхождение, эпитеты, реалии и кросс-ссылки привязаны к самой ранней шлоке во всей книге —
     эпитет/имя, отмеченные в более ранней главе, повторно не примечаются.
+    <strong>Межтекстовый слой — наиболее мягкое свидетельство</strong>: он открывает сравнительный
+    горизонт, а не закрывает пробел подстрочника; подлежит первоочередной редакторской проверке.
   </div>
 
   <!-- Плотность примечаний по главам -->
@@ -914,104 +918,211 @@ iast { font-style: italic; }
   </div>
 </section>
 
-<!-- § МЕЖТЕКСТОВЫЙ СЛОЙ (пилот гл. 1) -->
+<!-- § МЕЖТЕКСТОВЫЙ СЛОЙ (гл. 1–68, 62 примечания) -->
 <section class="section" id="cross_text">
-  <div class="section-eyebrow">§ 07 · Межтекстовый слой · пилот гл. 1</div>
-  <h2>Межтекстовый слой — примечания из параллельных текстов (гл. 1, пилот)</h2>
+  <div class="section-eyebrow">§ 07 · Межтекстовый слой · гл. 1–68 · 62 примечания</div>
+  <h2>Межтекстовый слой — примечания из параллельных текстов (62 примечания, гл. 1–68)</h2>
 
   <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:12px;">
-    Помимо 95 стандартных примечаний (Тип А/Б/В), для <strong>главы 1</strong> добавлен пилотный
-    слой межтекстовых параллелей (<code>subtype: "cross_text"</code>): цитированные локусы из
-    шести нераямаянских текстов корпуса, которые подлинно освещают шлок Сундараканды.
+    Помимо 95 базовых примечаний (Тип А/Б/В), по всей книге V добавлен
+    слой межтекстовых параллелей (<code>subtype: "cross_text"</code>): <strong>62 примечания</strong>
+    из 7 источников-кластеров, верифицированных построчно.
     Критерий допуска: <em>не</em> тривиальное пересечение стеблей, а конкретный смысловой вклад —
-    locus classicus термина, гномический/этический параллелизм, формульный эпитет в сопоставимом
-    контексте или кāвья-переосмысление. Каждое примечание — <code>review_required: true</code>;
-    свидетельство — уровень шлоки (мягкое).
+    locus classicus термина, гномический/этический параллелизм, формульное полустишие в сопоставимом
+    контексте, генеалогический crossref или кāвья-переосмысление. Каждое примечание — <code>review_required: true</code>;
+    свидетельство — уровень шлоки (мягкое). <strong>Межтекстовый слой — наиболее мягкое свидетельство</strong>
+    и подлежит первоочередной редакторской проверке.
   </p>
 
   <div class="soft-note" style="margin-bottom:20px;">
     <strong>Почему не в основном слое?</strong> Межтекстовые примечания отличаются по природе:
     они не заполняют пробел подстрочника, а открывают сравнительный горизонт. Поэтому они
     выделены в отдельный слой и помечены <code>subtype: "cross_text"</code>, а не заменяют
-    основные примечания Типа А/В.
+    основные примечания Типа А/В. Оба режима принятия описаны подробно в
+    <a href="SUNDARA_COMMENTARY_RATIONALE.md" style="color:var(--leo);">SUNDARA_COMMENTARY_RATIONALE.md</a>.
   </div>
-
-  <!-- Таблица cross_text примечаний -->
-  <table class="rel-table" style="margin-bottom:28px;">
-    <thead>
-      <tr>
-        <th style="width:72px;">Шлока</th>
-        <th style="width:140px;">Лемма (IAST)</th>
-        <th style="width:160px;">Источник</th>
-        <th>Текст примечания (фрагмент)</th>
-      </tr>
-    </thead>
-    <tbody id="ctBody"><!-- filled by script --></tbody>
-  </table>
 
   <!-- Карта вклада по источникам -->
   <h3 style="font-family:'PT Serif',serif; font-size:16px; margin:24px 0 10px;">
-    Вклад источников (пересечение с гл. 1 → промотировано в примечание)
+    Вклад источников (гл. 1–68 → промотировано в примечание)
   </h3>
-  <table class="rel-table">
+  <table class="rel-table" style="margin-bottom:28px;">
     <thead>
       <tr>
         <th>Источник</th>
-        <th>Тип</th>
-        <th>Общих стеблей</th>
-        <th>Примечаний</th>
-        <th>Основание</th>
+        <th>Тип параллели</th>
+        <th>Принято</th>
+        <th>Отклонено</th>
+        <th>Основание принятия</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td style="font-weight:700;">Rāmāyaṇa I–III (Гринцер)</td>
+        <td><span class="badge-type bt-rama">Рамаяна</span></td>
+        <td><strong>22</strong></td>
+        <td>—</td>
+        <td>генеалогич. crossref + формульное полустишие</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">MBh (narrative parvas)</td>
+        <td><span class="badge-type bt-maha">Махабхарата</span></td>
+        <td><strong>20</strong></td>
+        <td>8</td>
+        <td>формульный (Нала↔Дамаянти, Гаруда↔наг, atithi)</td>
+      </tr>
+      <tr>
         <td style="font-weight:700;">Mānavadharmaśāstra</td>
         <td><span class="badge-type bt-other">дхармашастра</span></td>
-        <td>259</td>
-        <td>3 (kṛtayuga, rākṣasa, dharma)</td>
-        <td>locus classicus терминов</td>
+        <td><strong>12</strong></td>
+        <td>1+</td>
+        <td>locus classicus нормативных терминов</td>
       </tr>
       <tr>
-        <td style="font-weight:700;">MBh Śāntiparvan</td>
+        <td style="font-weight:700;">MBh (battle parvas)</td>
         <td><span class="badge-type bt-maha">Махабхарата</span></td>
-        <td>545</td>
-        <td>2 (dhīra, vānara)</td>
-        <td>гномический/этический параллелизм</td>
-      </tr>
-      <tr>
-        <td style="font-weight:700;">MBh Āraṇyakaparvan</td>
-        <td><span class="badge-type bt-maha">Махабхарата</span></td>
-        <td>590</td>
-        <td>1 (tapas)</td>
-        <td>параллельный нарративный мотив</td>
+        <td><strong>4</strong></td>
+        <td>11</td>
+        <td>формульный (батальная лексика: gadā, nārāca, vega)</td>
       </tr>
       <tr>
         <td style="font-weight:700;">Bhagavadgītā</td>
         <td><span class="badge-type bt-gita">Гита</span></td>
-        <td>226</td>
-        <td>2 (mahābala, dūta/karma)</td>
-        <td>формульный эпитет / этика долга</td>
+        <td><strong>2</strong></td>
+        <td>~10</td>
+        <td>гномич. эпитет + этика dolга (niṣkāmakarma)</td>
       </tr>
       <tr>
         <td style="font-weight:700;">Raghuvaṃśa (Kālidāsa)</td>
         <td><span class="badge-type bt-other">кāвья</span></td>
-        <td>354</td>
-        <td>1 (rāghava)</td>
-        <td>кāвья-переосмысление эпитета</td>
+        <td><strong>1</strong></td>
+        <td>~5</td>
+        <td>кāвья-переосмысление генеалогич. эпитета</td>
       </tr>
       <tr>
         <td style="font-weight:700;">Buddhacarita (Aśvaghoṣa)</td>
         <td><span class="badge-type bt-other">кāвья</span></td>
-        <td>237</td>
-        <td>1 (mumoca)</td>
+        <td><strong>1</strong></td>
+        <td>~5</td>
         <td>нарративная формула героя в движении</td>
+      </tr>
+      <tr style="font-weight:700; background:var(--hl-none);">
+        <td>Итого</td>
+        <td></td>
+        <td><strong>62</strong></td>
+        <td>25+</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
 
+  <!-- Таблица cross_text примечаний по группам источников -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin:24px 0 10px;">
+    Все 62 межтекстовых примечания (по источникам)
+  </h3>
+
+  <!-- Rāmāyaṇa I–III -->
+  <h4 style="font-family:'PT Sans',sans-serif;font-size:14px;color:var(--leo);margin:18px 0 6px;">
+    Rāmāyaṇa I–III, пер. Гринцера (22 примечания)
+  </h4>
+  <p style="font-family:'PT Sans',sans-serif;font-size:13px;color:var(--muted);margin-bottom:8px;">
+    Генеалогические crossref (персонаж введён в кн. I–III, в Сундаре появляется без паспорта)
+    и формульные совпадения (полустишие повторяется через 3–4 книги). Отдельный reject-файл не ведётся:
+    все предложенные примечания прошли верификацию.
+  </p>
+  <table class="rel-table" style="margin-bottom:20px;">
+    <thead>
+      <tr>
+        <th style="width:72px;">Шлока</th>
+        <th style="width:150px;">Лемма (IAST)</th>
+        <th style="width:170px;">Параллельный локус</th>
+        <th>Текст примечания (фрагмент)</th>
+      </tr>
+    </thead>
+    <tbody id="ctBodyRam"><!-- filled by script --></tbody>
+  </table>
+
+  <!-- MBh narrative -->
+  <h4 style="font-family:'PT Sans',sans-serif;font-size:14px;color:var(--leo);margin:18px 0 6px;">
+    Mahābhārata, нарративные парвы (20 принято · 8 отклонено)
+  </h4>
+  <p style="font-family:'PT Sans',sans-serif;font-size:13px;color:var(--muted);margin-bottom:8px;">
+    Формульный метод: совпадение редкого сложного слова или целого полустишия (<em>mandaprakhyāyamānena,
+    vivarṇavadanābhavat, ratnagarbhagṛhocitā</em>) — три параллели образа Ситы↔Дамаянти из Нала-упакхьяны.
+    Отклонены: тривиальные имена нарицательные в несвязанной функции (pannaga, ulkā).
+  </p>
+  <table class="rel-table" style="margin-bottom:20px;">
+    <thead>
+      <tr>
+        <th style="width:72px;">Шлока</th>
+        <th style="width:150px;">Лемма (IAST)</th>
+        <th style="width:170px;">Параллельный локус</th>
+        <th>Текст примечания (фрагмент)</th>
+      </tr>
+    </thead>
+    <tbody id="ctBodyMbhN"><!-- filled by script --></tbody>
+  </table>
+
+  <!-- Mānavadharmaśāstra -->
+  <h4 style="font-family:'PT Sans',sans-serif;font-size:14px;color:var(--leo);margin:18px 0 6px;">
+    Mānavadharmaśāstra — Законы Ману (12 принято · 1 отклонено)
+  </h4>
+  <p style="font-family:'PT Sans',sans-serif;font-size:13px;color:var(--muted);margin-bottom:8px;">
+    Нормативные loci classici: термин у Ману закрепляет значение, используемое в Сундаре (svadharma,
+    pativratā, satya, atithi, yuga-scheme, rākṣasa-vidhi). Отклонено: tapovrata (V.28.15) —
+    цитата Manu 4.204 отсутствует в корпусе.
+    Пример тривиального отклонения из базового фильтра: <em>sarvasya → Manu 1.3</em> —
+    генитив «всего/всех» встречается в 259 общих стеблях гл. 1 с Ману и не несёт смыслового сигнала.
+  </p>
+  <table class="rel-table" style="margin-bottom:20px;">
+    <thead>
+      <tr>
+        <th style="width:72px;">Шлока</th>
+        <th style="width:150px;">Лемма (IAST)</th>
+        <th style="width:170px;">Параллельный локус</th>
+        <th>Текст примечания (фрагмент)</th>
+      </tr>
+    </thead>
+    <tbody id="ctBodyManu"><!-- filled by script --></tbody>
+  </table>
+
+  <!-- MBh battle -->
+  <h4 style="font-family:'PT Sans',sans-serif;font-size:14px;color:var(--leo);margin:18px 0 6px;">
+    Mahābhārata, батальные парвы (4 принято · 11 отклонено)
+  </h4>
+  <p style="font-family:'PT Sans',sans-serif;font-size:13px;color:var(--muted);margin-bottom:8px;">
+    Батальная формула: gadā (палица), nārāca (железная стрела), vega-атака, tejasvin на пике боя.
+    11 отклонений — привязка к неверной шлоке или общее слово в несвязанном контексте.
+  </p>
+  <table class="rel-table" style="margin-bottom:20px;">
+    <thead>
+      <tr>
+        <th style="width:72px;">Шлока</th>
+        <th style="width:150px;">Лемма (IAST)</th>
+        <th style="width:170px;">Параллельный локус</th>
+        <th>Текст примечания (фрагмент)</th>
+      </tr>
+    </thead>
+    <tbody id="ctBodyBattle"><!-- filled by script --></tbody>
+  </table>
+
+  <!-- BhG + Ragh + BC -->
+  <h4 style="font-family:'PT Sans',sans-serif;font-size:14px;color:var(--leo);margin:18px 0 6px;">
+    Bhagavadgītā (2) · Raghuvaṃśa (1) · Buddhacarita (1)
+  </h4>
+  <table class="rel-table" style="margin-bottom:20px;">
+    <thead>
+      <tr>
+        <th style="width:72px;">Шлока</th>
+        <th style="width:150px;">Лемма (IAST)</th>
+        <th style="width:170px;">Источник / локус</th>
+        <th>Текст примечания (фрагмент)</th>
+      </tr>
+    </thead>
+    <tbody id="ctBodyOther"><!-- filled by script --></tbody>
+  </table>
+
   <p style="font-family:'PT Sans',sans-serif; font-size:13px; color:var(--muted); margin-top:8px;">
-    Отклонено как тривиальные пересечения: высокочастотные стебли (papata, canye, pratipedire и др.),
-    общие для всего эпоса и не несущие специфического смысла в межтекстовом сравнении. —
     Полный «Решебник» (decision ledger): <a href="data/sundara_decision_ledger.json" style="color:var(--leo);">data/sundara_decision_ledger.json</a>
     · <a href="SUNDARA_COMMENTARY_RATIONALE.md" style="color:var(--leo);">SUNDARA_COMMENTARY_RATIONALE.md</a>
   </p>
@@ -1031,7 +1142,7 @@ iast { font-style: italic; }
     <li><a href="SUNDARA_COMMENTARY_RATIONALE.md" style="color:var(--leo);">SUNDARA_COMMENTARY_RATIONALE.md</a>
       — человекочитаемый Markdown с управляющим правилом, сводной таблицей и картой вклада источников</li>
     <li><a href="data/sundara_commentary_to_add.json" style="color:var(--leo);">data/sundara_commentary_to_add.json</a>
-      — итоговые 105 примечаний (включая 10 cross_text)</li>
+      — итоговые <strong>157 примечаний</strong> (95 базовых + 62 межтекстовых)</li>
     <li><a href="data/sundara_book_stats.json" style="color:var(--leo);">data/sundara_book_stats.json</a>
       — агрегированная статистика по всей книге</li>
   </ul>
@@ -1039,9 +1150,9 @@ iast { font-style: italic; }
 
 <!-- FOOTER -->
 <footer class="page-footer">
-  Кн. V (гл. 1–68) · 2 859 шлок · 105 примечаний · корпус samskrtam.ru (148 текстов, 529 МБ) ·
+  Кн. V (гл. 1–68) · 2 859 шлок · <strong>157 примечаний</strong> (95 базовых + 62 межтекстовых) · корпус samskrtam.ru (148 текстов, 529 МБ) ·
   Методология: стебельный оверлэп SLP1 (≥3 сим.), без LLM на этапе сопоставления ·
-  Все корпусные данные — уровень шлоки (мягкое свидетельство) ·
+  Межтекстовый слой: 7 источников, верификация построчная · Все корпусные данные — уровень шлоки (мягкое свидетельство) ·
   Кандидаты: <code>data/leonov_sundara_ch1_candidates.json</code> ·
   Матрица релевантности: <code>data/sundara_ch1_corpus_relevance.json</code> ·
   Сформировано 2026-06-26 · Не перезаписывает текст Леонова

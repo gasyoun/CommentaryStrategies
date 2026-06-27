@@ -3,9 +3,10 @@
     "description": "Decision ledger — why each note was accepted or rejected (book-wide, ch.1–68)",
     "rule": "Примечание добавляется ТОЛЬКО когда оно даёт то, чего нет в подстрочнике Леонова.",
     "generated": "2026-06-27",
+    "reconciled": "2026-06-27 — accepted count corrected to 95 (was 67 before named-entity gazetteer supplement + cross-text layer expansion)",
     "total_candidates": 5282,
-    "accepted": 67,
-    "rejected": 5215,
+    "accepted": 95,
+    "rejected": 5187,
     "accepted_by_bucket": {
       "accepted_realia": 28,
       "accepted_new_first": 28,
@@ -33,71 +34,77 @@
     }
   },
   "per_work_cross_text_map": {
-    "Manu": {
-      "file": "manavadharmashastra.jsonl",
+    "_note": "Counts updated 2026-06-27 to reflect full 62 cross-text notes (all chapters, not ch.1 pilot only). Regime: each source cluster proposed notes book-wide; confirmed = appears in data/sundara_commentary_to_add.json; rejected = in *.rejected.json or never promoted (trivial stem collision).",
+    "ramayana_grintser": {
+      "file": "crosstext/ramayana_grintser.json",
+      "label": "Vālmīki Rāmāyaṇa, кн. I–III (пер. Гринцера)",
+      "notes_promoted": 22,
+      "rejected_as_trivial_or_missing": "n/a (no *.rejected.json; all proposed notes confirmed)",
+      "acceptance_criterion": "genealogical cross-reference (catalogue of vānaras, Bālakāṇḍa phalashruticonnections) OR formulaic first-occurrence (shared half-verse across books I–V)",
+      "rejection_rule": "trivial verbal stem shared across the entire epic (√gam, √bhū, √vad); common epithets already covered by base layer",
+      "example_accepted": "ratnagarbhagṛhocitā mṛṇālī aciroddhṛtā (V.19.17) ↔ Āraṇyaka 3.65.15 — near-verbatim formula for the suffering heroine",
+      "example_rejected": "(no formal reject file; all proposed notes passed review)"
+    },
+    "mbh_narrative": {
+      "file": "crosstext/mbh_narrative.json",
+      "label": "Mahābhārata (narrative parvas: Ādi, Sabhā, Āraṇyaka, Udyoga)",
+      "notes_promoted": 20,
+      "rejected": 8,
+      "rejected_file": "crosstext/mbh_narrative.rejected.json",
+      "acceptance_criterion": "locus classicus of rare compound OR typological parallel (Sītā↔Damayantī formula) OR Garuḍa↔nāga formula occurring in both epics in comparable function",
+      "rejection_rule": "common term pannaga/ulkā in unrelated function; coincidental stem collision that does not illuminate the Sundara passage",
+      "example_accepted": "vivarṇavadanābhavat (V.25.8) ↔ Āraṇyaka 3.61.95 — verbatim formula for the abandoned heroine's pale face",
+      "example_rejected": "pañcāsya pannaga (V.1.56) ↔ Sabhā 2.19.9 — common term pannaga in unrelated toponym list"
+    },
+    "Mānavadharmaśāstra": {
+      "file": "crosstext/dharmashastra.json",
       "label": "Mānavadharmaśāstra (Законы Ману)",
-      "shared_stems_with_ch1": 259,
-      "notes_promoted": 3,
-      "rejected_as_trivial_overlap": 254,
-      "example_loci": [
-        "sarvasya → Manu 1.3",
-        "sarvan → Manu 1.4"
-      ]
+      "notes_promoted": 12,
+      "rejected": 1,
+      "rejected_file": "crosstext/dharmashastra.rejected.json",
+      "acceptance_criterion": "locus classicus for a normative term (svadharma, pativratā, satya, atithi) or cosmological framework (yuga-scheme, rākṣasa-vidhi) explicitly invoked in the Sundara passage",
+      "rejection_rule": "Manu citation unconfirmable in corpus OR term–parallel connection is purely terminological without shared discourse context",
+      "example_accepted": "svadharmo rakṣasām (V.20.5) ↔ Manu 3.33 rākṣaso vidhir — Rāvaṇa's self-styled dharma is the literal enactment of Manu's rākṣasa-vidhi (forced abduction)",
+      "example_rejected_manu": "sarvasya → Manu 1.3 — trivial genitive 'of all' across 259 shared stems; no thematic illumination",
+      "example_rejected_ledger": "tapovrata (V.28.15) — cited Manu 4.204 absent from corpus; connection is terminological only"
     },
-    "MBh Śānti": {
-      "file": "12_mahabharata-shantiparva.jsonl",
-      "label": "Mahābhārata, Śāntiparvan",
-      "shared_stems_with_ch1": 545,
-      "notes_promoted": 0,
-      "rejected_as_trivial_overlap": 543,
-      "example_loci": [
-        "tvam → MBh Śānti 12.1.1-12",
-        "suhṛdo → MBh Śānti 12.1.1-12"
-      ]
+    "mbh_battle": {
+      "file": "crosstext/mbh_battle.json",
+      "label": "Mahābhārata (battle parvas: Bhīṣma, Droṇa, Karṇa, Śalya)",
+      "notes_promoted": 4,
+      "rejected": 11,
+      "rejected_file": "crosstext/mbh_battle.rejected.json",
+      "acceptance_criterion": "shared battle formula in a comparable heroic function (gadā-wielder as death, nārāca in the face, vega-leap attack, tejasvin at peak of battle)",
+      "rejection_rule": "stem nārāca bound to wrong Sundara verse; weapon name paraśvadha cited from passage not containing it; formula too generic (common to all battle parvas)",
+      "example_accepted": "carantaṃ gadayā vīraṃ daṇḍapāṇim ivāntakam (Bhīṣma 6.50) ↔ gadābhir … Hanumān (V.42.28) — palice-wielder as death, same heroic register",
+      "example_rejected": "paraśvadha (V.43.13) ↔ Karṇa 8.27 — cited verse does not contain paraśvadha; weapon name mismatch"
     },
-    "MBh Āraṇyaka": {
-      "file": "03_mahabharata-aranyakaparva.jsonl",
-      "label": "Mahābhārata, Āraṇyakaparvan",
-      "shared_stems_with_ch1": 590,
-      "notes_promoted": 0,
-      "rejected_as_trivial_overlap": 588,
-      "example_loci": [
-        "evam → MBh Āraṇyaka 3.1.1-7",
-        "kotuhalam → MBh Āraṇyaka 3.1.1-7"
-      ]
+    "Bhagavadgītā": {
+      "file": "sundara_commentary_to_add.json (subtype cross_text, cluster Bhagavadgita/Bhagavadgītā)",
+      "label": "Bhagavadgītā",
+      "notes_promoted": 2,
+      "rejected": "trivial stem collisions (kuru, uvāca) not yielding notes",
+      "acceptance_criterion": "gnomic formula or ethical principle explicitly paralleled in Sundara (mahābala formula in BhG 1.4 mahārathī list; niṣkāmakarma as dūta-dharma BhG 3.19)",
+      "example_accepted": "mahābala (V.1.3) ↔ BhG 1.4 bhīmārjunasamā yuddhi — shared formulaic roster of warriors",
+      "example_rejected": "kuru → BhG 1.1 — common imperative 'do', not a meaningful parallel"
     },
-    "BhG": {
-      "file": "bhagavadgita-radha.jsonl",
-      "label": "Bhagavadgītā (Радхакришнан)",
-      "shared_stems_with_ch1": 226,
-      "notes_promoted": 1,
-      "rejected_as_trivial_overlap": 223,
-      "example_loci": [
-        "kuru → BhG 1.1",
-        "uvaca → BhG 1.1"
-      ]
-    },
-    "Ragh": {
-      "file": "raghuvamsha.jsonl",
+    "raghuvamsha": {
+      "file": "sundara_commentary_to_add.json (subtype cross_text, cluster Raghuvaṃśa (Kālidāsa))",
       "label": "Raghuvaṃśa (Kālidāsa)",
-      "shared_stems_with_ch1": 354,
       "notes_promoted": 1,
-      "rejected_as_trivial_overlap": 351,
-      "example_loci": [
-        "sagaram → Ragh 1.2-4",
-        "ham → Ragh 1.5-10"
-      ]
+      "rejected": "trivial stem collisions (kṣitau 'on earth', agamat 'went') not yielding notes",
+      "acceptance_criterion": "kāvya genealogical context that illuminates an epithet's meaning in a new register",
+      "example_accepted": "rāghava (V.1.39) ↔ Ragh. 1.1 — kāvya context of the Raghu dynasty as literary programme",
+      "example_rejected": "sagaram → Ragh 1.2-4 — common noun 'ocean', not a meaningful parallel"
     },
-    "BC": {
-      "file": "buddhacharita.jsonl",
+    "buddhacarita": {
+      "file": "sundara_commentary_to_add.json (subtype cross_text, cluster Buddhacarita (Aśvaghoṣa))",
       "label": "Buddhacarita (Aśvaghoṣa)",
-      "shared_stems_with_ch1": 237,
       "notes_promoted": 1,
-      "rejected_as_trivial_overlap": 234,
-      "example_loci": [
-        "babuva → BC 1.1",
-        "nama → BC 1.1"
-      ]
+      "rejected": "trivial stem collisions (kāmayate, babuva) not yielding notes",
+      "acceptance_criterion": "shared narrative formula for hero's decisive action marking a structural turning point",
+      "example_accepted": "mumoca (V.1.16) ↔ BC 8.8 — formula for hero's release/departure as structural marker",
+      "example_rejected": "babuva → BC 1.1 — coincidental √bandh collision (Sundara: bind a prisoner; BC: establish a coastline)"
     }
   },
   "entries": [
