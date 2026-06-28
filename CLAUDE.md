@@ -89,7 +89,8 @@ in-chapter root duplicates). See [data/lexical/PILOT_REPORT.md](data/lexical/PIL
 
 Every gold-sample note carries coordinates on 4 axes (canonical enum: [data/commentary_schema.json](data/commentary_schema.json)):
 1. **Topic** — 9 empirical rubrics (`sanskrit_term`, `myth`, `realia`, `poetics`, …)
-2. **Kazansky 2025** — A philological / B realia / V historical / G cultural
+2. **Kazansky 2025** — A philological / B **textological** (metatext on source/translation
+   state — *not* realia) / V historical-cultural & realia / G cultural. Realia go in **V, never B**.
 3. **Lidova 2024** — L1–L5 *lakṣaṇa*
 4. **Paribok 2011** — **P/K/D** (concept / culturally-loaded / codifier). *Note:* `docs/ARCHITECTURE.md`
    historically mislabels this "P/C/K" in places — the schema and data are authoritative: **P/K/D**.
