@@ -3,7 +3,7 @@ paper_id: A19
 title: "Концептуальная непереводимость как переводческая стратегия: санскритские ключевые термины в русских академических переводах"
 venue: Вопросы языкознания (ВЯ)
 byline: "М. Ю. Гасунс (sole author)"
-orcid: TBC
+orcid: 0000-0003-4513-884X
 manuscript: article1_vya.md
 readiness: 4/5
 date: 2026-06-26
@@ -87,7 +87,7 @@ These must not appear in the submitted copy. Produce a clean copy with all three
 
 - **[@DO] Archival-verify Петров 1788.** Confirm attribution (is it «А. А. Петров»?), title, printer (Тип. Н. И. Новикова?), place, and year of the first Russian Bhagavadgītā (translated from Wilkins 1785) against the primary source. This releases the bracketed bibliography entry at **line 455** and the diachronic anchor prose in **§6.1 (line 337)** and **§1 (line 56)**. Until then the bracket stays. **PENDING — not done.**
 - **[@DO] axis_4 inter-coder reliability (≥85%).** Recruit a second coder, double-code the 50-note-per-translator gold sample on *axis_4_paribok*, and report inter-coder agreement reaching **≥85%**. Named as an open obligation in **§7.5 (line 413)**. If any P/K/D cell shifts, Таблицы 1–2 (lines 261–268, 286–302) and §5.3 may need an agreement footnote. **PENDING — no number exists yet; do not invent one.**
-- **[@DO] Confirm ORCID for the byline** (the one used for the A25 / Письменные памятники Востока submission). Trivial but blocks the final byline line in both the manuscript and [cover_letter_A19.md](cover_letter_A19.md), which currently reads `[уточняется до подачи]`. **PENDING.**
+- ~~**[@DO] Confirm ORCID for the byline.**~~ ✅ **RESOLVED 2026-06-28** — ORCID **0000-0003-4513-884X** (canonical source `Uprava/AUTHOR.md`) pasted into the manuscript frontmatter (`article1_vya.md`) and the cover letter (`cover_letter_A19.md`, line 43). No longer a gate; was mechanical, not a non-fabricable human action.
 
 ---
 
@@ -117,4 +117,4 @@ These must not appear in the submitted copy. Produce a clean copy with all three
 
 **Current readiness: 4/5.** The manuscript is substantively complete, internally consistent on its arithmetic (300 = 50×6), bilingual, within the ВЯ length band (~52 000 зн.), and candid about its own limitations. It is staged for submission with a cover letter.
 
-**What flips it to 5/5:** clearing the three **@DO** human gates — (1) Петров 1788 archival verification (releases line 455 + §6.1), (2) the ≥85% axis_4 inter-coder reliability number from a second coder (backs §5 Таблицы 1–2 and §7.5), and (3) the confirmed ORCID for the byline. The house-style and proofread items in §§A–G above are all agent-/author-doable and do not require external input; they should be applied in the clean submission copy alongside the gate resolutions. None of the agent-doable items, on its own, blocks 5/5 — but the three @DO gates each do, and two of them (Петров, IRR) are non-fabricable.
+**What flips it to 5/5:** clearing the **two remaining @DO** human gates — (1) Петров 1788 archival verification (releases line 455 + §6.1) and (2) the ≥85% axis_4 inter-coder reliability number from a second coder (backs §5 Таблицы 1–2 and §7.5). _(The former third gate — confirm ORCID — was resolved 2026-06-28: ORCID 0000-0003-4513-884X pasted into the manuscript + cover letter.)_ The house-style and proofread items in §§A–G above are all agent-/author-doable and do not require external input; they should be applied in the clean submission copy alongside the gate resolutions. Both remaining @DO gates are non-fabricable (Петров, IRR).
