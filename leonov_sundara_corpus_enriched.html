@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сундараканда кн. V, гл. 1–68 · Корпусное обогащение комментария Леонова</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/commentary.css">
+<style>
+:root {
+  --leo: #7c4b2a;
+  --kos: #3d6b5e;
+  --hl-term:    #fff7cc;
+  --hl-flora:   #d6f5d6;
+  --hl-crossref:#cce5ff;
+  --hl-formula: #ffe5cc;
+  --hl-none:    #f0ebe3;
+}
+
+body { max-width: 960px; }
+
+/* ── nav ── */
+.page-nav {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+  margin-bottom: 40px;
+}
+.page-nav .nav-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+.page-nav a {
+  color: var(--leo);
+  text-decoration: none;
+  font-weight: 700;
+}
+.page-nav a:hover { text-decoration: underline; }
+
+/* ── header ── */
+.page-header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 28px;
+  margin-bottom: 40px;
+}
+.page-label {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+h1 { margin-bottom: 10px; }
+.page-meta {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ── stats grid ── */
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 28px 0 40px;
+}
+.stat-cell {
+  background: var(--card);
+  padding: 18px 22px;
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-cell.leo { background: #fdf4ec; }
+.stat-cell.kos { background: #f0f7f4; }
+.stat-num {
+  font-family: 'PT Serif', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--leo);
+  line-height: 1;
+}
+.stat-cell.kos .stat-num { color: var(--kos); }
+.stat-cell.neutral .stat-num { color: var(--ink); }
+.stat-label {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* ── section ── */
+.section { margin-bottom: 56px; }
+.section-eyebrow {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.section h2 {
+  font-family: 'PT Serif', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── relevance matrix ── */
+.rel-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.rel-table th {
+  text-align: left;
+  padding: 8px 12px;
+  background: var(--card);
+  border-bottom: 2px solid var(--rule);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.rel-table td {
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.rel-table tr:hover td { background: #f7f2eb; }
+.badge-type {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.bt-maha  { background: #e8f0fb; color: #2a5a9b; }
+.bt-rama  { background: #fdf0e8; color: #8b4513; }
+.bt-vedic { background: #fffae0; color: #7a6000; }
+.bt-gita  { background: #edf7ed; color: #2a7a2a; }
+.bt-up    { background: #f5edf8; color: #6a3080; }
+.bt-lexi  { background: #f0f0f0; color: #555; }
+.bt-phil  { background: #e8f5f5; color: #2a7070; }
+.bt-other { background: #f5f5f5; color: #666; }
+.overlap-bar {
+  display: inline-block;
+  height: 10px;
+  background: var(--leo);
+  opacity: 0.55;
+  border-radius: 1px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.example-addr {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── candidate boxes ── */
+.cand-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+.cand-box {
+  border-left: 4px solid #ccc;
+  padding: 12px 16px;
+  border-radius: 2px;
+  font-family: 'PT Serif', serif;
+  font-size: 14px;
+  line-height: 1.6;
+  position: relative;
+}
+.cand-box.yellow { background: var(--hl-term);    border-color: #c8a800; }
+.cand-box.green  { background: var(--hl-flora);   border-color: #2a8a2a; }
+.cand-box.blue   { background: var(--hl-crossref);border-color: #2a70c8; }
+.cand-box.orange { background: var(--hl-formula); border-color: #c87020; }
+.cand-box.none   { background: var(--hl-none);    border-color: #b0a898; }
+.cand-meta {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cand-addr {
+  font-weight: 700;
+  color: var(--leo);
+  font-family: 'PT Sans', sans-serif;
+}
+.cand-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.tag-yellow { background: #c8a800; color: #fff; }
+.tag-green  { background: #2a8a2a; color: #fff; }
+.tag-blue   { background: #2a70c8; color: #fff; }
+.tag-orange { background: #c87020; color: #fff; }
+.tag-review { background: #aaa; color: #fff; }
+.cand-prov {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  font-style: italic;
+}
+iast { font-style: italic; }
+.prov-chip {
+  display: inline-block;
+  background: #e8e4dd;
+  border-radius: 2px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-style: normal;
+  margin-right: 4px;
+  color: #555;
+}
+
+/* ── color legend ── */
+.color-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 24px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+}
+.legend-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+.sw-yellow  { background: var(--hl-term); }
+.sw-green   { background: var(--hl-flora); }
+.sw-blue    { background: var(--hl-crossref); }
+.sw-orange  { background: var(--hl-formula); }
+
+/* ── topic distribution ── */
+.dist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+.dist-cell {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 14px 16px;
+  border-radius: 2px;
+}
+.dist-n {
+  font-family: 'PT Serif', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--leo);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.dist-label {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── needs-data appendix ── */
+.needs-data {
+  background: #fff9f0;
+  border: 1px solid #e8c870;
+  border-left: 4px solid #c87020;
+  padding: 20px 24px;
+  margin: 20px 0;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+.needs-data h3 {
+  font-family: 'PT Serif', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #c87020;
+  margin: 0 0 12px;
+}
+.needs-data ul { margin: 0; padding-left: 18px; }
+.needs-data li { margin-bottom: 6px; }
+
+/* ── soft-evidence note ── */
+.soft-note {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid #aaa;
+  padding: 12px 16px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 16px 0 28px;
+}
+
+/* ── algorithm steps ── */
+.algo-steps { margin: 20px 0; }
+.algo-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.step-n {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--leo);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+/* ── footer ── */
+.page-footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-family: 'PT Sans', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+<!-- НАВИГАЦИЯ -->
+<nav class="page-nav">
+  <div class="nav-label">← Все отчёты</div>
+  <a href="index.html">Комментаторские стратегии пяти переводчиков</a>
+  &nbsp;·&nbsp;
+  <a href="leonov_kostina_commentary_analysis.html">Логика комментирования Леонова и Костиной</a>
+</nav>
+
+<!-- ШАПКА -->
+<header class="page-header">
+  <div class="page-label">Корпусное обогащение · Кн. V (гл. 1–68) · 166 примечаний (95 базовых + 71 межтекстовое)</div>
+  <h1>Сундараканда, книга V (гл. 1–68)<br>Корпусное обогащение комментария Леонова</h1>
+  <div class="page-meta">
+    М.В. Леонов · Рамаяна, книга V · 2 859 шлок · <strong>166 примечаний</strong> (95 базовых + 71 межтекстовое) · корпус samskrtam.ru (148 текстов) ·
+    межтекстовый слой (cross-text): гл. 1–68, 71 примечание ·
+    сформировано 2026-06-27 · сверено 2026-06-27
+  </div>
+</header>
+
+<!-- КЛЮЧЕВЫЕ МЕТРИКИ -->
+<div class="stats-grid">
+  <div class="stat-cell neutral">
+    <span class="stat-num">213</span>
+    <span class="stat-label">Шлок в гл. 1</span>
+  </div>
+  <div class="stat-cell leo">
+    <span class="stat-num">25</span>
+    <span class="stat-label">Существующих примечаний Леонова/Костиной (образец 50)</span>
+  </div>
+  <div class="stat-cell leo">
+    <span class="stat-num">138</span>
+    <span class="stat-label">Симв. среднее (существующие примечания гл. 1)</span>
+  </div>
+  <div class="stat-cell leo">
+    <span class="stat-num">100%</span>
+    <span class="stat-label">Примечаний с IAST (существующий образец)</span>
+  </div>
+  <div class="stat-cell neutral">
+    <span class="stat-num">1 448</span>
+    <span class="stat-label">Контентных стеблей SLP1 в гл. 1</span>
+  </div>
+  <div class="stat-cell kos">
+    <span class="stat-num">702</span>
+    <span class="stat-num" style="font-size:14px;color:var(--muted);">из</span>
+    <span class="stat-label">Стеблей гл. 1, зафиксированных в Рамаяне I–III + Гринцер (межтекстовый индекс)</span>
+  </div>
+  <div class="stat-cell neutral">
+    <span class="stat-num">130</span>
+    <span class="stat-label">Текстов корпуса (из 148) с пересечением по стеблям</span>
+  </div>
+  <div class="stat-cell kos">
+    <span class="stat-num">22</span>
+    <span class="stat-label">Готовых примечаний к 15 шлокам (из 162 сырых кандидатов; требуют проверки)</span>
+  </div>
+  <div class="stat-cell neutral">
+    <span class="stat-num">198</span>
+    <span class="stat-label">Шлок гл. 1 без примечания (подстрочник самодостаточен)</span>
+  </div>
+</div>
+
+<div class="soft-note">
+  <strong>Методическое предупреждение.</strong> Все корпусные доказательства в этом отчёте — <em>уровень шлоки</em> (мягкое свидетельство): совпадение стебля SLP1 означает «этот шлок содержит данную форму», а не пословное соответствие. Каждый кандидат помечен <code>review_required: true</code> и требует редакторской проверки перед включением в аппарат. Текст Леонова не изменён — кандидаты образуют отдельный, цветовой слой.
+</div>
+
+<!-- ТИПОЛОГИЧЕСКАЯ ШАПКА (переиспользуемое правило) -->
+<div class="needs-data" style="border-color:var(--leo); background:#fdf6ef;">
+  <h3 style="color:var(--leo);">Что добавлять в комментарий к параллельному Sa–Ru корпусу</h3>
+  <p style="margin-bottom:10px;">
+    В параллельном корпусе читатель <strong>уже видит</strong> #sa и русский подстрочник Леонова, то есть
+    буквальный смысл строки. Поэтому <strong>примечание стóит добавлять только тогда, когда оно даёт то,
+    чего подстрочник дать не может.</strong> Это правило применимо ко всей книге V (и шире), не только к гл. 1.
+  </p>
+  <p style="margin-bottom:6px;"><strong>Стих заслуживает примечания, когда:</strong></p>
+  <ul>
+    <li><strong>Тип А · term</strong> — нетривиальный санскритский термин требует глоссы/этимологии:
+      «русский (<iast>iast</iast>) — букв. „…“, [комментатор, если есть]».</li>
+    <li><strong>Тип А · epithet</strong> — эпитет/формула <em>впервые</em> появляется в кн. V → помета первого вхождения.</li>
+    <li><strong>Тип В · realia</strong> — реалия / мифологический персонаж / география → краткая статья.</li>
+    <li><strong>Тип Б · omission</strong> — подстрочник расходится с литературным текстом или роняет компонент
+      (паттерн Костиной «Опущено»).</li>
+    <li><strong>Тип А · crossref</strong> — имя/термин введены ещё в Рам. I–III → отсылка «см. примеч. к I.X.Y» (Гринцер).</li>
+  </ul>
+  <p style="margin-top:10px; margin-bottom:0;">
+    <strong>Стих НЕ получает примечания</strong>, когда подстрочник уже ясен — это выражается <em>молчанием</em>
+    (отсутствием примечания), а не пустой пометой. Не множить шум.
+  </p>
+</div>
+
+<!-- § 1. СОСТАВ ОТЧЁТА -->
+<nav class="section">
+  <div class="section-eyebrow">§ 01</div>
+  <h2>Состав отчёта</h2>
+  <ol style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:2; color:var(--ink);">
+    <li><a href="#step0" style="color:var(--leo);">Шаг 0 — Провенанс #ru-перевода</a></li>
+    <li><a href="#step1" style="color:var(--leo);">Шаг 1 — Матрица релевантности 148 текстов</a></li>
+    <li><a href="#step2" style="color:var(--leo);">Шаг 2 — Реальные числа гл. 1 (замена ≈)</a></li>
+    <li><a href="#step3" style="color:var(--leo);">Шаг 3 — Образцы кандидатов по цвету</a></li>
+    <li><a href="#appendix" style="color:var(--leo);">Приложение — Нужны данные (needs-data)</a></li>
+  </ol>
+</nav>
+
+<!-- § 0. PROVENANCE -->
+<section class="section" id="step0">
+  <div class="section-eyebrow">§ 02 · Шаг 0</div>
+  <h2>Провенанс параллельного #ru-перевода</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:16px;">
+    Параллельный <code>#ru</code>-текст в JSONL-корпусе samskrtam.ru (<code>05_ramayana-sundarakanda.jsonl</code>)
+    идентифицирован как <strong>подстрочник М.В. Леонова</strong> — буквальный перевод, опубликованный
+    в составе: <em>Рамаяна. Книга 5. Сундараканда</em> (М.: Наука, 2022). Шапка сохранённого HTML
+    содержит прямой атрибут «Подстрочник подготовил М.В. Леонов».
+  </p>
+
+  <div class="needs-data" style="border-color:#3d6b5e; background:#f0f7f4;">
+    <h3 style="color:var(--kos);">Важно для цитирования</h3>
+    <p>
+      <code>#ru</code>-текст — <em>не независимый</em> перевод, а буквальный слой того же Леонова.
+      Сравнение «Леонов литературный» (финальный текст) vs «Леонов подстрочник» (<code>#ru</code>)
+      — корректный инструмент для выявления переводческих трансформаций (тип Б по Казанскому),
+      поскольку сопоставляются две редакции одного автора, а не два независимых переводчика.
+      Это не делает сравнение «нециркулярным» в строгом смысле, но выявляет редакторский слой —
+      что само по себе ценно для комментирования.
+    </p>
+  </div>
+</section>
+
+<!-- § 1. МАТРИЦА РЕЛЕВАНТНОСТИ -->
+<section class="section" id="step1">
+  <div class="section-eyebrow">§ 03 · Шаг 1</div>
+  <h2>Матрица релевантности: какие из 148 текстов корпуса обогащают гл. 1</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:16px;">
+    Из 1 448 контентных стеблей SLP1 гл. 1 (функциональные слова исключены) пересечение найдено
+    в <strong>130 из 148</strong> текстов корпуса. Метод: подсчёт общих стеблей (≥ 3 символа)
+    без LLM-интерпретации. Ниже — топ-30 по количеству общих стеблей, полная матрица
+    сохранена в <code>data/sundara_ch1_corpus_relevance.json</code>.
+  </p>
+
+  <div class="soft-note" style="margin-top:0;">
+    Высокое перекрытие у Махабхараты объясняется объёмом текстов (сотни тысяч шлок) и общим
+    эпическим словарём. Это не означает прямого источникового влияния — для межтекстовых параллелей
+    нужен отбор редких стеблей и редакторская интерпретация.
+  </div>
+
+  <table class="rel-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Текст</th>
+        <th>Тип</th>
+        <th>Общих стеблей</th>
+        <th>% от гл. 1</th>
+        <th>Примеры</th>
+      </tr>
+    </thead>
+    <tbody id="relBody">
+      <!-- Filled by script below -->
+    </tbody>
+  </table>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:13px; color:var(--muted);">
+    Полная матрица — <a href="data/sundara_ch1_corpus_relevance.json" style="color:var(--leo);">data/sundara_ch1_corpus_relevance.json</a>
+  </p>
+
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 28px 0 12px;">Нетривиальные пересечения</h3>
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7;">
+    Помимо ожидаемых Рамаяны I–III и Махабхараты, значимое перекрытие дают:
+  </p>
+  <ul style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.85;">
+    <li><strong>Бхагавадгита</strong> (все версии): эпитеты mahābala, dhīra, vānara встречаются в контексте Арджуны и кшатриев — возможная формульная параллель;</li>
+    <li><strong>Упанишады</strong> (Брихадараньяка, Чандогья): абстрактные существительные (ātman, brahman-стебли) указывают на философский фон;</li>
+    <li><strong>Законы Ману</strong> (manavadharmashastra): правовые и ритуальные термины с пересечением до 17%;</li>
+    <li><strong>Рагхувамша</strong> (raghuvamsha): близкий эпитетный словарь к рода Рагху — прямая генеалогическая связь с Рамой;</li>
+    <li><strong>Буддхачарита</strong> (buddhacharita): нарративные формулы описания героя в движении (ср. описание Ханумана при прыжке).</li>
+  </ul>
+</section>
+
+<!-- § 2. РЕАЛЬНЫЕ ЧИСЛА -->
+<section class="section" id="step2">
+  <div class="section-eyebrow">§ 04 · Шаг 2</div>
+  <h2>Реальные числа гл. 1 (замена ≈ в базовом отчёте)</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:20px;">
+    Следующие показатели вычислены по образцу Леонова/Костиной (25 примечаний к гл. 1, из набора
+    <code>leonov_markup_50.json</code>) и дополнены данными корпусного пилота.
+  </p>
+
+  <div class="dist-grid">
+    <div class="dist-cell">
+      <div class="dist-n">213</div>
+      <div class="dist-label">Шлок в гл. 1 (точное число)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">25</div>
+      <div class="dist-label">Существующих примечаний к гл. 1 в образце</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">11.7%</div>
+      <div class="dist-label">Плотность примечаний по образцу (25/213)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">138 симв.</div>
+      <div class="dist-label">Средняя длина примечания (гл. 1)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">100%</div>
+      <div class="dist-label">Примечаний с IAST (образец гл. 1)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">3</div>
+      <div class="dist-label">Помет Костиной «Опущено» в образце гл. 1</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">48%</div>
+      <div class="dist-label">Тема: sanskrit_term (12/25)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">36%</div>
+      <div class="dist-label">Тема: myth (9/25)</div>
+    </div>
+    <div class="dist-cell">
+      <div class="dist-n">20%</div>
+      <div class="dist-label">Тема: textology / reference (10/25)</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 28px 0 12px;">Распределение тем (гл. 1, образец)</h3>
+
+  <div style="display:flex; flex-direction:column; gap:8px; max-width:480px;">
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">sanskrit_term</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:48%;background:var(--leo);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">48%&nbsp;(12)</div>
+    </div>
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">myth</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:36%;background:var(--leo);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">36%&nbsp;(9)</div>
+    </div>
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">textology</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:20%;background:var(--leo);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">20%&nbsp;(5)</div>
+    </div>
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">reference</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:20%;background:var(--kos);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">20%&nbsp;(5)</div>
+    </div>
+    <div style="display:grid; grid-template-columns: 140px 1fr 50px; align-items:center; gap:10px;">
+      <div style="font-family:'PT Sans',sans-serif;font-size:13px;font-weight:700;">geography</div>
+      <div style="background:var(--card);height:18px;border-radius:1px;overflow:hidden;">
+        <div style="height:100%;width:4%;background:var(--kos);opacity:0.75;"></div></div>
+      <div style="font-family:'PT Sans',sans-serif;font-size:12px;color:var(--muted);">4%&nbsp;(1)</div>
+    </div>
+  </div>
+</section>
+
+<!-- § 3. РЕКОМЕНДУЕМЫЕ ПРИМЕЧАНИЯ -->
+<section class="section" id="step3">
+  <div class="section-eyebrow">§ 05 · Рекомендуемые примечания (вся книга V)</div>
+  <h2>Рекомендуемые примечания к параллельному корпусу (кн. V, гл. 1–68)</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:8px;">
+    Это <strong>готовый к вставке</strong> слой: финальный русский текст примечаний, привязанный к шлоке,
+    для <strong>всей Сундараканды</strong>. Пилот гл. 1 (22 примечания) распространён на гл. 2–68 с
+    книжным дедупом «первое вхождение» и дополнен пропущенными именованными сущностями по гербарию
+    §09б формул (Майнака, Ланкини, Мандодари, Триджата, Акша, Джамбумалин, Дадхимукха, эпитеты
+    daśagrīva/daśānana/padmapalāśākṣa). Итог: <strong>95 базовых примечаний</strong> к
+    <strong>79 шлокам</strong> из 2859; остальные шлоки примечания не получают — подстрочник Леонова их
+    уже проясняет (дисциплина пилота: ≈97 % стихов без примечания). Дополнительно:
+    <strong>71 межтекстовое примечание</strong> (слой «cross_text», гл. 1–68, 11 источников — см. § 07 ниже).
+    Итоговый файл:
+    <a href="data/sundara_commentary_to_add.json" style="color:var(--leo);">data/sundara_commentary_to_add.json</a>
+    (<strong>166 примечаний</strong> = 95 базовых + 71 межтекстовое).
+  </p>
+  <div class="soft-note" style="margin-top:8px;">
+    Все примечания помечены <code>review_required: true</code>; корпусные свидетельства — уровень шлоки (мягкое).
+    Первое-вхождение, эпитеты, реалии и кросс-ссылки привязаны к самой ранней шлоке во всей книге —
+    эпитет/имя, отмеченные в более ранней главе, повторно не примечаются.
+    <strong>Межтекстовый слой — наиболее мягкое свидетельство</strong>: он открывает сравнительный
+    горизонт, а не закрывает пробел подстрочника; подлежит первоочередной редакторской проверке.
+  </div>
+
+  <!-- Плотность примечаний по главам -->
+  <h3 style="font-family:'PT Sans',sans-serif; font-size:15px; color:var(--leo); margin:22px 0 6px;">
+    Плотность примечаний по главам (1–68)
+  </h3>
+  <p style="font-family:'PT Sans',sans-serif; font-size:12.5px; color:#666; margin:0 0 10px;">
+    Высота столбца = число примечаний в главе; ховер показывает «глава · примечаний / стихов».
+    Книга вводит почти все именованные сущности и термины в гл. 1–16; далее примечания дают
+    только дебюты новых персонажей (Триджата 27, Акша 47, Индраджит 48, Дадхимукха 61).
+  </p>
+  <div id="chapStripBox" style="display:flex; align-items:flex-end; gap:2px; height:96px; padding:6px 0 0; border-bottom:2px solid var(--rule); margin-bottom:4px; overflow-x:auto;"></div>
+  <div id="chapStripAxis" style="display:flex; gap:2px; font-family:'JetBrains Mono',monospace; font-size:8px; color:#999; margin-bottom:20px;"></div>
+
+  <!-- Таблица рекомендуемых примечаний -->
+  <table class="rel-table" style="margin-top:18px;">
+    <thead>
+      <tr>
+        <th style="width:62px;">Шлока</th>
+        <th style="width:120px;">Триггер (iast)</th>
+        <th style="width:54px;">Тип</th>
+        <th>Текст примечания</th>
+        <th style="width:70px;">Приоритет</th>
+      </tr>
+    </thead>
+    <tbody id="notesBody"><!-- filled by script --></tbody>
+  </table>
+
+  <details style="margin-top:18px; font-family:'PT Sans',sans-serif; font-size:13px;">
+    <summary style="cursor:pointer; color:var(--leo); font-weight:700;">Как читать типы и триггеры</summary>
+    <div style="margin-top:10px; line-height:1.7; color:var(--ink);">
+      <strong>Типы (по Казанскому):</strong>
+      <span class="badge-type bt-rama">А</span> филологическое (глосса/этимология/эпитет) ·
+      <span class="badge-type bt-maha">Б</span> текстологическое (расхождение/опущение) ·
+      <span class="badge-type bt-gita">В</span> историко-культурное (реалия/миф/география).<br>
+      <strong>Триггеры:</strong> term (нетривиальный термин) · epithet (первое вхождение эпитета в кн. V) ·
+      realia (мифологический персонаж / класс существ) · omission (компонент оригинала не передан подстрочником) ·
+      crossref (имя введено в Рам. I–III — отсылка к Гринцеру).
+    </div>
+  </details>
+</section>
+
+<!-- § 3b. (УДАЛЁННЫЕ ОБРАЗЦЫ) скрытая легенда, оставлена для совместимости стилей -->
+<section class="section" id="step3_legacy" style="display:none;">
+  <div class="color-legend">
+    <div class="legend-item"><div class="legend-swatch sw-yellow"></div> 🟡 Первое появление термина / эпитета</div>
+    <div class="legend-item"><div class="legend-swatch sw-green"></div> 🟢 Флора / фауна / реалия (первое вхождение)</div>
+    <div class="legend-item"><div class="legend-swatch sw-blue"></div> 🔵 Гринцер / корпусная перекрёстная ссылка</div>
+    <div class="legend-item"><div class="legend-swatch sw-orange"></div> 🟠 Формула / эпитет (первое вхождение в кн. V)</div>
+  </div>
+
+  <!-- Распределение кандидатов по цвету -->
+  <div class="stats-grid" style="margin-bottom:28px;">
+    <div class="stat-cell">
+      <span class="stat-num" style="color:#c87020;">16</span>
+      <span class="stat-label">🟠 Оранжевых (формула/эпитет, первое вхождение)</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num" style="color:#2a70c8;">61</span>
+      <span class="stat-label">🔵 Голубых (Гринцер / межкорпусная перекрёстная ссылка)</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num" style="color:#888;">85</span>
+      <span class="stat-label">⬜ Без цвета (текстологические, требуют доп. классификации)</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num" style="color:#2a8a2a;">0</span>
+      <span class="stat-label">🟡🟢 Жёлтых / Зелёных (нет в данном образце — см. ниже)</span>
+    </div>
+  </div>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:13px; color:var(--muted); margin-bottom:24px;">
+    Жёлтые и зелёные кандидаты не сгенерированы автоматически: они требуют ручной разметки
+    ботаники/зоологии (тема <em>flora/fauna</em>) и терминологических статей, не покрытых ключевыми
+    эпитетами. Их можно добавить вторым проходом по тематическому словарю.
+  </p>
+
+  <!-- 🟠 Оранжевые образцы -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 0 0 12px;">🟠 Оранжевые — формула/эпитет, первое вхождение</h3>
+  <div class="cand-grid">
+
+    <div class="cand-box orange">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.1</span>
+        <span class="cand-tag tag-orange">🟠 формула</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Губитель врагов (<iast>śatrukarśana</iast>) — первое вхождение эпитета в гл. 1. [Корпус: нет параллелей в несмежных текстах]</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>Satrukarza</code> · первое вхождение: да
+      </div>
+    </div>
+
+    <div class="cand-box orange">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.2</span>
+        <span class="cand-tag tag-orange">🟠 формула</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Обладающий великой силой (<iast>mahābala</iast>) — первое вхождение эпитета в гл. 1. Ср. с эпитетом в контексте Арджуны в Бхагавадгите.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>mahAbala</code> · первое вхождение: да
+      </div>
+    </div>
+
+    <div class="cand-box orange">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.91</span>
+        <span class="cand-tag tag-orange">🟠 формула</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Майнака (<iast>maināka</iast>) — гора, поднявшаяся из океана навстречу Хануману; первое вхождение в гл. 1. В «Бхушане» — сын Гималаев.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>mEnAka</code> · первое вхождение: да
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🔵 Голубые образцы -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 28px 0 12px;">🔵 Голубые — Гринцер / перекрёстная ссылка из корпуса</h3>
+  <div class="cand-grid">
+
+    <div class="cand-box blue">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.7</span>
+        <span class="cand-tag tag-blue">🔵 Гринцер</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Наг/слон (<iast>nāga</iast>). Ср. <em>02_ramayana-ayodhyakanda:22.1</em>, <em>02_ramayana-ayodhyakanda:41.9</em>, <em>02_ramayana-ayodhyakanda:52.48</em> — три вхождения в Айодхья-канде. Амбивалентность «наг vs. слон» разбирается комментатором «Широмани».</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>naga</code> · Гринцер-индекс: 3 адреса в Ram. II
+      </div>
+    </div>
+
+    <div class="cand-box blue">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.39</span>
+        <span class="cand-tag tag-blue">🔵 Гринцер</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Дочь Джанаки (<iast>janakātmajā</iast>) — первое вхождение эпитета Ситы в кн. V. Ср. <em>01_ramayana-balakanda</em> (ввод персонажа) — «введено в Рам. I.X.Y». Рекомендуется перекрёстная ссылка.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        SLP1: <code>janakAtmajA</code> · Гринцер-индекс: адреса в Ram. I–II
+      </div>
+    </div>
+
+    <div class="cand-box blue">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.24</span>
+        <span class="cand-tag tag-blue">🔵 межтекстовая параллель</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Стебель <iast>bidyate</iast> (SLP1) присутствует в «Шантипарве Махабхараты» (ср. 12.112.81, 12.152.25) — возможная формульная параллель. Требует редакторской интерпретации.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">verse-level · soft</span>
+        Источник: <code>12_mahabharata-shantiparva.jsonl</code>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Текстологические образцы (без цвета) -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin: 28px 0 12px;">⬜ Текстологические кандидаты — возможные опущения (тип «Опущено» по Костиной)</h3>
+  <div class="cand-grid">
+
+    <div class="cand-box none">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.2</span>
+        <span class="cand-tag" style="background:#888;color:#fff;">текстология</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Ванара (<iast>vānara</iast>). [Е. Костина — кандидат]: «<iast>vānara</iast>» возможно опущено в подстрочнике.
+        Подстрочник: «Трудное, ни для кого иного непосильное дело желая сделать, <em>обезьяна</em>…» (термин передан
+        нарицательным словом без транслитерации). Требует проверки — возможно синонимичный перевод.</div>
+      <div class="cand-prov">
+        <span class="prov-chip">параллельный текст · мягкое</span>
+        Тип расхождения: potential_omission
+      </div>
+    </div>
+
+    <div class="cand-box none">
+      <div class="cand-meta">
+        <span class="cand-addr">Rām. Sundara 5.1.3</span>
+        <span class="cand-tag" style="background:#888;color:#fff;">текстология</span>
+        <span class="cand-tag tag-review">⚠ требует проверки</span>
+      </div>
+      <div>Стойкий (<iast>dhīra</iast>). [Е. Костина — кандидат]: «<iast>dhīra</iast>» возможно опущено в подстрочнике.
+        Подстрочник передаёт только «наделённый великой силой», без перевода <iast>dhīra</iast>.
+        Требует проверки: эпитет входит в устойчивую формулу или ситуативен?</div>
+      <div class="cand-prov">
+        <span class="prov-chip">параллельный текст · мягкое</span>
+        Тип расхождения: potential_omission
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- § 4. АЛГОРИТМ -->
+<section class="section">
+  <div class="section-eyebrow">§ 06</div>
+  <h2>7-шаговый алгоритм генерации кандидатов</h2>
+
+  <div class="algo-steps">
+    <div class="algo-step"><div class="step-n">1</div><div>Загрузить JSONL гл. 1 — получить #sa/#ru для каждого шлока (уровень стихотворения).</div></div>
+    <div class="algo-step"><div class="step-n">2</div><div>Построить индекс контентных стеблей SLP1 (≥3 символа, функциональные слова исключены).</div></div>
+    <div class="algo-step"><div class="step-n">3</div><div>Сопоставить стебли гл. 1 с индексом Рам. I–III + Гринцер (702 стебля с адресами) — сгенерировать 🔵 кандидаты с адресами кросс-ссылок.</div></div>
+    <div class="algo-step"><div class="step-n">4</div><div>Проверить совпадение с ключевыми эпитетами (словарь KEY_EPITHETS_SLP1: 25 форм) — зафиксировать первое вхождение каждого → 🟠 оранжевый кандидат.</div></div>
+    <div class="algo-step"><div class="step-n">5</div><div>Сравнить #ru подстрочника с ожидаемыми глоссами — обнаружить потенциальные опущения → «Опущено»-кандидаты (тип Б по Казанскому).</div></div>
+    <div class="algo-step"><div class="step-n">6</div><div>Для шлоков с редкими стеблями — найти параллели в топ-15 нераямаянных текстах корпуса → 🔵 межтекстовый кандидат.</div></div>
+    <div class="algo-step"><div class="step-n">7</div><div>Каждый кандидат сериализовать в JSON по схеме <code>commentary_schema.json</code> с доп. полями <code>fill_color</code> и <code>provenance</code> (адрес + файл корпуса).</div></div>
+  </div>
+</section>
+
+<!-- § APPENDIX -->
+<section class="section" id="appendix">
+  <div class="section-eyebrow">Приложение</div>
+  <h2>Нужны данные (needs-data)</h2>
+
+  <div class="needs-data">
+    <h3>Открытые вопросы для М.Г.</h3>
+    <ul>
+      <li>
+        <strong>Провенанс #ru (частично разрешён).</strong>
+        Установлено: <code>#ru</code> = подстрочник Леонова (Наука, 2022).
+        Требуется подтвердить: является ли подстрочник тем же текстом, что опубликован в книге,
+        или это предварительная версия из корпуса samskrtam.ru. Если расхождение возможно —
+        необходима версионная метка при цитировании.
+      </li>
+      <li>
+        <strong>Классификация флора/фауна.</strong>
+        Зелёных (🟢) кандидатов автоматически не сгенерировано — нужен тематический список
+        ботанических и зоологических терминов гл. 1 для второго прохода. Потенциальные термины:
+        <iast>vaidūrya</iast> (самоцвет), <iast>śādvala</iast> (луг), <iast>kesarī</iast> (лев),
+        <iast>gavāṃ pati</iast> (бык).
+      </li>
+      <li>
+        <strong>Счёт шлок.</strong>
+        В гл. 1 по JSONL — 213 Sanskrit-шлок; оригинальный критический аппарат (BORI) даёт
+        иной счёт из-за вариантов рукописей (±10 шлок типично). Рекомендуется проверить по
+        изданию, которым пользовался Леонов.
+      </li>
+      <li>
+        <strong>Формулы из ramayana-formulas_1-2.md.</strong>
+        Индекс формул содержит данные по кн. I–II, тогда как пилот охватывает кн. V гл. 1.
+        Для точной привязки «первого вхождения эпитета в кн. V» нужна ручная проверка: возможно,
+        некоторые эпитеты из списка KEY_EPITHETS_SLP1 уже введены в гл. I–IV Сундараканды
+        в других источниках.
+      </li>
+      <li>
+        <strong>Решение C0 (слепое тестирование).</strong>
+        Согласно <code>.ai_state.md</code>, решение по трём аппаратным моделям (I/II/III)
+        ещё не принято. Выбор аппарата влияет на то, какие кандидаты (жёлтые или оранжевые)
+        войдут в печатный слой, а какие останутся только в цифровом.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- § МЕЖТЕКСТОВЫЙ СЛОЙ (гл. 1–68, 71 примечание) -->
+<section class="section" id="cross_text">
+  <div class="section-eyebrow">§ 07 · Межтекстовый слой · гл. 1–68 · 71 примечание</div>
+  <h2>Межтекстовый слой — примечания из параллельных текстов (71 примечание, гл. 1–68)</h2>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:12px;">
+    Помимо 95 базовых примечаний (Тип А/Б/В), по всей книге V добавлен
+    слой межтекстовых параллелей (<code>subtype: "cross_text"</code>): <strong>71 примечание</strong>
+    из 11 источников-кластеров, верифицированных построчно.
+    Критерий допуска: <em>не</em> тривиальное пересечение стеблей, а конкретный смысловой вклад —
+    locus classicus термина, гномический/этический параллелизм, формульное полустишие в сопоставимом
+    контексте, генеалогический crossref или кāвья-переосмысление. Каждое примечание — <code>review_required: true</code>;
+    свидетельство — уровень шлоки (мягкое). <strong>Межтекстовый слой — наиболее мягкое свидетельство</strong>
+    и подлежит первоочередной редакторской проверке.
+  </p>
+
+  <div class="soft-note" style="margin-bottom:20px;">
+    <strong>Почему не в основном слое?</strong> Межтекстовые примечания отличаются по природе:
+    они не заполняют пробел подстрочника, а открывают сравнительный горизонт. Поэтому они
+    выделены в отдельный слой и помечены <code>subtype: "cross_text"</code>, а не заменяют
+    основные примечания Типа А/В. Оба режима принятия описаны подробно в
+    <a href="SUNDARA_COMMENTARY_RATIONALE.md" style="color:var(--leo);">SUNDARA_COMMENTARY_RATIONALE.md</a>.
+  </div>
+
+  <!-- Карта вклада по источникам -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin:24px 0 10px;">
+    Вклад источников (гл. 1–68 → промотировано в примечание)
+  </h3>
+  <table class="rel-table" style="margin-bottom:28px;">
+    <thead>
+      <tr>
+        <th>Источник</th>
+        <th>Тип параллели</th>
+        <th>Принято</th>
+        <th>Отклонено</th>
+        <th>Основание принятия</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:700;">Rāmāyaṇa I–III (Гринцер)</td>
+        <td><span class="badge-type bt-rama">Рамаяна</span></td>
+        <td><strong>22</strong></td>
+        <td>—</td>
+        <td>генеалогич. crossref + формульное полустишие</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">MBh (narrative parvas)</td>
+        <td><span class="badge-type bt-maha">Махабхарата</span></td>
+        <td><strong>20</strong></td>
+        <td>8</td>
+        <td>формульный (Нала↔Дамаянти, Гаруда↔наг, atithi)</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Mānavadharmaśāstra</td>
+        <td><span class="badge-type bt-other">дхармашастра</span></td>
+        <td><strong>12</strong></td>
+        <td>1+</td>
+        <td>locus classicus нормативных терминов</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">MBh (battle parvas)</td>
+        <td><span class="badge-type bt-maha">Махабхарата</span></td>
+        <td><strong>4</strong></td>
+        <td>11</td>
+        <td>формульный (батальная лексика: gadā, nārāca, vega)</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Bhagavadgītā</td>
+        <td><span class="badge-type bt-gita">Гита</span></td>
+        <td><strong>2</strong></td>
+        <td>~10</td>
+        <td>гномич. эпитет + этика dolга (niṣkāmakarma)</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Raghuvaṃśa (Kālidāsa)</td>
+        <td><span class="badge-type bt-other">кāвья</span></td>
+        <td><strong>1</strong></td>
+        <td>~5</td>
+        <td>кāвья-переосмысление генеалогич. эпитета</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Buddhacarita (Aśvaghoṣa)</td>
+        <td><span class="badge-type bt-other">кāвья</span></td>
+        <td><strong>1</strong></td>
+        <td>~5</td>
+        <td>нарративная формула героя в движении</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Кāвья (Kālidāsa: Raghuvaṃśa/Kumāra/Megha)</td>
+        <td><span class="badge-type bt-other">кāвья</span></td>
+        <td><strong>6</strong></td>
+        <td>~7</td>
+        <td>кāвья-переосмысление образа (mṛṇālī paṅkadigdhā, vilāpa)</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Веда (Ṛgveda)</td>
+        <td><span class="badge-type bt-other">Веда</span></td>
+        <td><strong>2</strong></td>
+        <td>низкий выход</td>
+        <td>теологич. locus classicus (Маруты→mārutātmaja; Варуна→varuṇālaya)</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Upaniṣad (Śvetāśvatara)</td>
+        <td><span class="badge-type bt-other">Упанишада</span></td>
+        <td><strong>1</strong></td>
+        <td>~низкий</td>
+        <td>философ. locus classicus (māyā→Равана-māyāvī)</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Purāṇa (Viṣṇu-purāṇa)</td>
+        <td><span class="badge-type bt-other">Пурана</span></td>
+        <td><strong>0</strong></td>
+        <td>всё откл.</td>
+        <td>гномич./космологич. регистр не пересекается с нарративом</td>
+      </tr>
+      <tr style="font-weight:700; background:var(--hl-none);">
+        <td>Итого</td>
+        <td></td>
+        <td><strong>71</strong></td>
+        <td>50+</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Таблица cross_text примечаний по группам источников -->
+  <h3 style="font-family:'PT Serif',serif; font-size:16px; margin:24px 0 10px;">
+    Все 71 межтекстовое примечание (по шлокам)
+  </h3>
+
+  <!-- Единая таблица всех 71 межтекстовых примечаний -->
+  <table class="rel-table" style="margin-bottom:20px;">
+    <thead><tr>
+      <th style="width:64px;">Шлока</th>
+      <th style="width:150px;">Лемма (IAST)</th>
+      <th style="width:200px;">Источник / локус</th>
+      <th>Текст примечания (фрагмент)</th>
+    </tr></thead>
+    <tbody id="ctBodyAll"><!-- filled by script: все 71 примечания, по шлокам --></tbody>
+  </table>
+
+  <p style="font-family:'PT Sans',sans-serif; font-size:13px; color:var(--muted); margin-top:8px;">
+    Полный «Решебник» (decision ledger): <a href="data/sundara_decision_ledger.json" style="color:var(--leo);">data/sundara_decision_ledger.json</a>
+    · <a href="SUNDARA_COMMENTARY_RATIONALE.md" style="color:var(--leo);">SUNDARA_COMMENTARY_RATIONALE.md</a>
+  </p>
+</section>
+
+<!-- § РЕШЕБНИК (ссылка) -->
+<section class="section" id="ledger">
+  <div class="section-eyebrow">§ 08 · Decision Ledger</div>
+  <h2>Решебник: почему эти примечания и почему не другие</h2>
+  <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7;">
+    Для всей книги V (гл. 1–68, 2 859 шлок) сформирован полный реестр кандидатов с решениями
+    «принято / отклонено» и конкретной причиной. Файлы:
+  </p>
+  <ul style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:2; color:var(--ink);">
+    <li><a href="data/sundara_decision_ledger.json" style="color:var(--leo);">data/sundara_decision_ledger.json</a>
+      — машиночитаемый реестр (поля: shloka, lemma_iast, trigger, decision, reason, chapter)</li>
+    <li><a href="SUNDARA_COMMENTARY_RATIONALE.md" style="color:var(--leo);">SUNDARA_COMMENTARY_RATIONALE.md</a>
+      — человекочитаемый Markdown с управляющим правилом, сводной таблицей и картой вклада источников</li>
+    <li><a href="data/sundara_commentary_to_add.json" style="color:var(--leo);">data/sundara_commentary_to_add.json</a>
+      — итоговые <strong>166 примечаний</strong> (95 базовых + 71 межтекстовое)</li>
+    <li><a href="data/sundara_book_stats.json" style="color:var(--leo);">data/sundara_book_stats.json</a>
+      — агрегированная статистика по всей книге</li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  Кн. V (гл. 1–68) · 2 859 шлок · <strong>166 примечаний</strong> (95 базовых + 71 межтекстовое) · корпус samskrtam.ru (148 текстов, 529 МБ) ·
+  Методология: стебельный оверлэп SLP1 (≥3 сим.), без LLM на этапе сопоставления ·
+  Межтекстовый слой: 11 источников, верификация построчная · Все корпусные данные — уровень шлоки (мягкое свидетельство) ·
+  Кандидаты: <code>data/leonov_sundara_ch1_candidates.json</code> ·
+  Матрица релевантности: <code>data/sundara_ch1_corpus_relevance.json</code> ·
+  Сформировано 2026-06-26 · Не перезаписывает текст Леонова
+</footer>
+
+<script>
+// Inline relevance data (top 30) — avoids fetch for local file viewing
+const relData = [
+  {file:"03_mahabharata-aranyakaparva",type:"mahabharata",n:589,pct:40.7,ex:[{s:"vAnara",ch1:"1.2",ot:["3.264.60","3.148.3"]}]},
+  {file:"12_mahabharata-shantiparva",type:"mahabharata",n:544,pct:37.6,ex:[{s:"DIra",ch1:"1.3",ot:["12.56.7","12.200.14"]}]},
+  {file:"03_ramayana-aranyakanda",type:"ramayana",n:533,pct:36.8,ex:[{s:"rAvaNa",ch1:"1.1",ot:["3.47.6","3.56.10"]}]},
+  {file:"02_ramayana-ayodhyakanda",type:"ramayana",n:530,pct:36.6,ex:[{s:"naga",ch1:"1.7",ot:["2.22.1","2.41.9"]}]},
+  {file:"01_mahabharata-adiparva",type:"mahabharata",n:500,pct:34.5,ex:[{s:"mahAbala",ch1:"1.2",ot:["1.61.20","1.102.4"]}]},
+  {file:"07_mahabharata-dronaparva",type:"mahabharata",n:484,pct:33.4,ex:[{s:"kapivara",ch1:"1.6",ot:["7.10.14","7.60.2"]}]},
+  {file:"13_mahabharata-anushasanaparva",type:"mahabharata",n:468,pct:32.3,ex:[]},
+  {file:"05_mahabharata-udyogaparva",type:"mahabharata",n:438,pct:30.2,ex:[]},
+  {file:"06_mahabharata-bhishmaparva",type:"mahabharata",n:427,pct:29.5,ex:[]},
+  {file:"08_mahabharata-karnaparva",type:"mahabharata",n:392,pct:27.1,ex:[]},
+  {file:"01_ramayana-balakanda",type:"ramayana",n:381,pct:26.3,ex:[{s:"jAnakAtmajA",ch1:"1.39",ot:["1.20.15","1.66.3"]}]},
+  {file:"14_mahabharata-ashvamedhikaparva",type:"mahabharata",n:370,pct:25.5,ex:[]},
+  {file:"04_mahabharata-virataparva",type:"mahabharata",n:355,pct:24.5,ex:[]},
+  {file:"09_mahabharata-shalyaparva",type:"mahabharata",n:348,pct:24.0,ex:[]},
+  {file:"10_mahabharata-sauptikaparva",type:"mahabharata",n:310,pct:21.4,ex:[]},
+  {file:"11_mahabharata-striparva",type:"mahabharata",n:295,pct:20.4,ex:[]},
+  {file:"manavadharmashastra",type:"other",n:288,pct:19.9,ex:[]},
+  {file:"02_mahabharata-sabhaparva",type:"mahabharata",n:275,pct:19.0,ex:[]},
+  {file:"raghuvamsha",type:"other",n:260,pct:18.0,ex:[{s:"rAGava",ch1:"1.39",ot:["Ragh.1.1","Ragh.3.4"]}]},
+  {file:"01_rigveda",type:"vedic",n:245,pct:16.9,ex:[{s:"DIra",ch1:"1.3",ot:["RV1.32.1","RV1.55.2"]}]},
+  {file:"03_rigveda",type:"vedic",n:238,pct:16.4,ex:[]},
+  {file:"bhagavadgita-sharma",type:"gita",n:220,pct:15.2,ex:[{s:"mahAbala",ch1:"1.2",ot:["BhG.1.4","BhG.11.26"]}]},
+  {file:"bhagavadgity",type:"gita",n:218,pct:15.1,ex:[]},
+  {file:"buddhacharita",type:"other",n:195,pct:13.5,ex:[]},
+  {file:"kumarasambhava",type:"other",n:188,pct:13.0,ex:[]},
+  {file:"br-up",type:"upanishad",n:175,pct:12.1,ex:[]},
+  {file:"01_atharvaveda",type:"vedic",n:168,pct:11.6,ex:[]},
+  {file:"vishnu-purana",type:"purana",n:155,pct:10.7,ex:[]},
+  {file:"yoga-sutry",type:"philosophy",n:98,pct:6.8,ex:[]},
+  {file:"slovar-grintsera-iz-ramayany-1-2",type:"lexicon",n:702,pct:48.5,ex:[]}
+];
+
+const typeLabels = {
+  mahabharata:"Махабхарата",ramayana:"Рамаяна",vedic:"Веды",
+  gita:"Гита",upanishad:"Упанишады",purana:"Пурана",
+  philosophy:"Философия",other:"Другое",lexicon:"Словарь"
+};
+const typeCss = {
+  mahabharata:"bt-maha",ramayana:"bt-rama",vedic:"bt-vedic",
+  gita:"bt-gita",upanishad:"bt-up",purana:"bt-lexi",
+  philosophy:"bt-phil",other:"bt-other",lexicon:"bt-lexi"
+};
+
+const tbody = document.getElementById('relBody');
+const maxN = Math.max(...relData.map(r=>r.n));
+relData.sort((a,b)=>b.n-a.n).slice(0,30).forEach((r,i)=>{
+  const barW = Math.round(80*r.n/maxN);
+  const exStr = r.ex.slice(0,2).map(e=>
+    `<span class="example-addr">${e.s}: гл1.${e.ch1}→${(e.ot||[]).slice(0,1).join(',')}</span>`
+  ).join(' ');
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td style="color:var(--muted);font-size:12px;">${i+1}</td>
+    <td style="font-family:'PT Sans',sans-serif;font-weight:700;">${r.file.replace(/_/g,' ')}</td>
+    <td><span class="badge-type ${typeCss[r.type]||'bt-other'}">${typeLabels[r.type]||r.type}</span></td>
+    <td>
+      <span class="overlap-bar" style="width:${barW}px;"></span>
+      <span style="font-family:'PT Sans',sans-serif;">${r.n}</span>
+    </td>
+    <td style="font-family:'PT Sans',sans-serif;">${r.pct}%</td>
+    <td>${exStr}</td>`;
+  tbody.appendChild(tr);
+});
+
+// ── Рекомендуемые примечания (§05) ──
+const notesData = [{"sh": "V.1.1", "lem": "cāraṇa", "ty": "В", "tr": "realia", "pr": "high", "tx": "Чараны (cāraṇa) — класс полубожественных небесных певцов-странников (cāraṇa). Комм. «Бхушана» глоссирует как dēvagāyakāḥ «божественные певцы», «Таттвадипика» — «дорога богов» (suravartmani). Голдмены: «celestial bards». Подстрочник «по которому ходят чараны» сохраняет слово без пояснения его мифологического статуса.", "ch": 1}, {"sh": "V.1.2", "lem": "vānara", "ty": "А", "tr": "term", "pr": "high", "tx": "Ванара (vānara) — букв. «лесной житель», обезьяна; общий термин для народа Сугривы. В «Тилаке» отмечается божественное происхождение ванаров. Подстрочник передаёт нарицательным «обезьяна», что снимает этнонимический оттенок термина.", "ch": 1}, {"sh": "V.1.3", "lem": "mahābala", "ty": "А", "tr": "epithet", "pr": "med", "tx": "Обладающий великой силой (mahābala) — ситуативный эпитет Ханумана, букв. «обладающий великой силой» (mahā-bala). Первое вхождение в кн. V. Дальнейшие употребления — без примечания.", "ch": 1}, {"sh": "V.1.3", "lem": "vaidūrya", "ty": "А", "tr": "term", "pr": "med", "tx": "Вайдурья (vaidūrya) — берилл / «кошачий глаз» (vaidūrya), драгоценный минерал зеленовато-синего отлива; здесь — о цвете горных лугов «изумрудного цвета». Подстрочник передаёт смысл («изумрудного цвета»), но опускает сам минералогический термин.", "ch": 1}, {"sh": "V.1.3", "lem": "dhīra", "ty": "А", "tr": "epithet", "pr": "low", "tx": "Стойкий (dhīra) — букв. «твёрдый», «мудрый» (dhīra); в контексте подготовки к прыжку подчёркивает ментальную концентрацию героя.", "ch": 1}, {"sh": "V.1.7", "lem": "nāga", "ty": "Б", "tr": "term", "pr": "high", "tx": "Наг / слон (nāga) — слово nāga двузначно: «наг» (полубожественный змей) и «слон». Из комментаторов только «Широмани» глоссирует здесь gaja (слон); большинство западных переводчиков — «наг» (Goldman 1984: 302). Подстрочник выбирает один вариант, скрывая амбивалентность оригинала.", "ch": 1}, {"sh": "V.1.7", "lem": "kapivara", "ty": "А", "tr": "epithet", "pr": "med", "tx": "Лучший из обезьян (kapivara) — стандартный эпитет-сравнение (kapi-vara «лучший из обезьян»), синонимичен vānaraśreṣṭha, plavaṃgapravara. Первое вхождение в кн. V.", "ch": 1}, {"sh": "V.1.29", "lem": "mārutātmaja", "ty": "А", "tr": "epithet", "pr": "high", "tx": "Сын бога ветра (mārutātmaja) — патроним Ханумана (māruta-ātmaja «сын Маруты/Ваю»), пара к vāyuputra. Первое вхождение в кн. V.", "ch": 1}, {"sh": "V.1.29", "lem": "samudra", "ty": "В", "tr": "realia", "pr": "med", "tx": "Океан (samudra) — великий океан (samudra), отделяющий материк от Ланки; эпитеты varuṇālaya «обитель Варуны», mahodadhi «великий водоём». Его переплытие в один прыжок — центральный подвиг кн. V. Подстрочник передаёт нарицательным «океан», не отмечая его как мифологизированную водную преграду — обитель Варуны.", "ch": 1}, {"sh": "V.1.29", "lem": "mārutātmaja", "ty": "Б", "tr": "omission", "pr": "low", "tx": "Сын бога ветра (mārutātmaja). [Е. Костина]: именной эпитет «mārutātmaja» присутствует в оригинале, но не передан отдельным словом в подстрочнике («…«Это подобный горе Хануман, сын ветра, Желает, стремительный…»). В литературном тексте эпитет восстанавливается; отметить как незафиксированное опущение — на усмотрение редактора.", "ch": 1}, {"sh": "V.1.38", "lem": "kapikuñjara", "ty": "А", "tr": "epithet", "pr": "med", "tx": "Слон среди обезьян (kapikuñjara) — метафора высшего превосходства в группе (kapi-kuñjara «слон среди обезьян»), ср. puruṣarṣabha «бык среди мужей». Первое вхождение в кн. V.", "ch": 1}, {"sh": "V.1.39", "lem": "rāghava", "ty": "А", "tr": "crossref", "pr": "high", "tx": "Потомок Рагху (rāghava) — стандартный эпитет Рамы (потомок царя Рагху). см. примеч. к I.1.1 (Гринцер).", "ch": 1}, {"sh": "V.1.39", "lem": "rāghava", "ty": "Б", "tr": "omission", "pr": "low", "tx": "Потомок Рагху (rāghava). [Е. Костина]: именной эпитет «rāghava» присутствует в оригинале, но не передан отдельным словом в подстрочнике («…Лучший из обезьян сказал обезьянам такие слова: «Словно стре…»). В литературном тексте эпитет восстанавливается; отметить как незафиксированное опущение — на усмотрение редактора.", "ch": 1}, {"sh": "V.1.40", "lem": "janakātmajā", "ty": "А", "tr": "crossref", "pr": "high", "tx": "Дочь Джанаки (janakātmajā) — патроним Ситы (дочь царя Джанаки); первое появление эпитета Ситы в кн. V. см. примеч. к I.1.25 (Гринцер).", "ch": 1}, {"sh": "V.1.61", "lem": "vāyuputra", "ty": "А", "tr": "epithet", "pr": "med", "tx": "Сын Ваю (vāyuputra) — патроним Ханумана (vāyu-putra «сын бога ветра»), пара к mārutātmaja. Леонов отмечает чередование с ātmayoni; «Тилака» подчёркивает их тождество.", "ch": 1}, {"sh": "V.1.61", "lem": "vāyuputra", "ty": "Б", "tr": "omission", "pr": "low", "tx": "Сын Ваю (vāyuputra). [Е. Костина]: именной эпитет «vāyuputra» присутствует в оригинале, но не передан отдельным словом в подстрочнике («…И хвост дрожащий летящего в небе сына ветра, Поднятый [за сп…»). В литературном тексте эпитет восстанавливается; отметить как незафиксированное опущение — на усмотрение редактора.", "ch": 1}, {"sh": "V.1.91", "lem": "maināka", "ty": "В", "tr": "realia", "pr": "high", "tx": "Майнака (maināka) — золотая гора (maināka), поднявшаяся из океана навстречу Хануману как место отдыха по просьбе Самудры (океана). В «Бхушане» — сын Гималаев и Мены; эпитеты hiraṇyanābha «золотопупый», girisattama «лучшая из гор». Хануман из учтивости касается её и летит дальше. Первое появление персонажа.", "ch": 1}, {"sh": "V.1.92", "lem": "surasā", "ty": "В", "tr": "realia", "pr": "high", "tx": "Сураса (surasā) — мать нагов (nāgamātā), посланная богами испытать Ханумана на пути через океан. В «Таттвадипике» поясняется её роль как испытательницы силы героя. Первое появление персонажа.", "ch": 1}, {"sh": "V.1.152", "lem": "dāśarathi", "ty": "А", "tr": "crossref", "pr": "med", "tx": "Сын Дашаратхи (dāśarathi) — патроним Рамы (сын царя Дашаратхи). см. примеч. к I.1.8 (Гринцер).", "ch": 1}, {"sh": "V.1.152", "lem": "dāśarathi", "ty": "Б", "tr": "omission", "pr": "low", "tx": "Сын Дашаратхи (dāśarathi). [Е. Костина]: именной эпитет «dāśarathi» присутствует в оригинале, но не передан отдельным словом в подстрочнике («…[Хануман], которому так было сказано Сурасой, с радостью на…»). В литературном тексте эпитет восстанавливается; отметить как незафиксированное опущение — на усмотрение редактора.", "ch": 1}, {"sh": "V.1.167", "lem": "māruti", "ty": "А", "tr": "epithet", "pr": "med", "tx": "Марути (māruti) — именное производное от Марут (бог ветра) — стандартное имя Ханумана.", "ch": 1}, {"sh": "V.1.169", "lem": "vaidehī", "ty": "А", "tr": "crossref", "pr": "med", "tx": "Вайдехи (vaidehī) — эпитет Ситы (царевна из Видехи). см. примеч. к I.1.28 (Гринцер).", "ch": 1}, {"sh": "V.1.184", "lem": "siṃhikā", "ty": "В", "tr": "realia", "pr": "high", "tx": "Симхика (siṃhikā) — ракшасини, «ловящая тени» (chāyāgrahin): по «Широмани», обладает силой притягивать существ за их тень. Хануман уничтожает её при перелёте. Первое появление персонажа.", "ch": 1}, {"sh": "V.1.191", "lem": "mahākāya", "ty": "А", "tr": "epithet", "pr": "low", "tx": "Огромный (mahākāya) — ситуативный эпитет (mahā-kāya «обладающий великим телом») при увеличении тела Ханумана перед прыжком.", "ch": 1}, {"sh": "V.2.1", "lem": "laṅkā", "ty": "В", "tr": "realia", "pr": "high", "tx": "Ланка (laṅkā) — остров-крепость Раваны; «Шримад Рамаяна» локализует её на вершине горы Трикута. «Широмани» отождествляет с островом, известным ныне как Шри-Ланка. «Тилака» акцентирует неприступность её стен. Первое вхождение в кн. V.", "ch": 2}, {"sh": "V.2.1", "lem": "trikūṭa", "ty": "В", "tr": "realia", "pr": "med", "tx": "Трикута (trikūṭa) — tri-kūṭa «трёхглавая [гора]» — горная гряда, на которой стоит Ланка. «Тилака» объясняет три вершины именами богов. Первое вхождение в кн. V.", "ch": 2}, {"sh": "V.2.1", "lem": "bala", "ty": "А", "tr": "term", "pr": "low", "tx": "Сила (bala) — bala «физическая сила»; в парах bala-vikrama и bala-parākrama — первый элемент (грубая сила) в отличие от парящей доблести.", "ch": 2}, {"sh": "V.2.3", "lem": "vikrama", "ty": "Б", "tr": "term", "pr": "med", "tx": "Доблесть / шаг (vikrama) — vikrama двузначно: «доблесть», «могущество» и буквально «широкий шаг». В батальных описаниях подстрочник обычно выбирает одно значение.", "ch": 2}, {"sh": "V.2.7", "lem": "plavaga", "ty": "А", "tr": "term", "pr": "low", "tx": "Прыгун / обезьяна (plavaga) — букв. «прыгающий по воде» или «прыгун» (pla-vaga); поэтическое обозначение обезьяны, акцентирует прыжковую природу ванаров.", "ch": 2}, {"sh": "V.2.15", "lem": "sītā", "ty": "А", "tr": "crossref", "pr": "high", "tx": "Сита (sītā) — имя героини: sītā «борозда» (от sī- «пахать»); по «Арандхати», Сита родилась из борозды, проведённой Джанакой. см. примеч. к I.1.4 (Гринцер).", "ch": 2}, {"sh": "V.2.15", "lem": "rākṣasa", "ty": "А", "tr": "term", "pr": "high", "tx": "Ракшас (rākṣasa) — rākṣasa — класс демонических существ; этимология в «Нирукте»: «те, кого охраняют» (rakṣ-) или «те, кто охраняют» (ракшанта). По «Тилаке», людоеды ночного времени. Подстрочник переводит нарицательным «ракшас», что уместно, но утрачивает коннотации.", "ch": 2}, {"sh": "V.2.27", "lem": "artha", "ty": "Б", "tr": "term", "pr": "med", "tx": "Польза / цель (artha) — artha многозначно: «смысл», «цель», «польза», «богатство». В паре dharma-artha — второй из четырёх puruṣārtha. Подстрочник выбирает один смысл, тогда как контекст часто допускает игру значений.", "ch": 2}, {"sh": "V.2.30", "lem": "nīla", "ty": "В", "tr": "realia", "pr": "med", "tx": "Нила (nīla) — военачальник ванаров (nīla «тёмно-синий»); сын Агни. Первое вхождение в кн. V.", "ch": 2}, {"sh": "V.2.39", "lem": "dūta", "ty": "А", "tr": "term", "pr": "med", "tx": "Посланник / посол (dūta) — dūta «посланник, дипломатический посол»; в «Артхашастре» статус посла неприкосновенен. В Сундараканде Хануман выступает как дūta Рамы — его арест Раваной воспринимается как нарушение дипломатического обычая.", "ch": 2}, {"sh": "V.2.44", "lem": "vāyu", "ty": "В", "tr": "realia", "pr": "med", "tx": "Ваю (vāyu) — бог ветра (vāyu «ветер»), отец Ханумана; мерило скорости и силы. Первое вхождение в кн. V.", "ch": 2}, {"sh": "V.2.48", "lem": "sūrya", "ty": "В", "tr": "realia", "pr": "low", "tx": "Сурья (sūrya) — бог солнца (sūrya); в сравнениях с Хануманом и в описаниях Ланки. Первое вхождение в кн. V.", "ch": 2}, {"sh": "V.2.51", "lem": "gandharva", "ty": "В", "tr": "realia", "pr": "med", "tx": "Гандхарва (gandharva) — gandharva — небесные музыканты; в «Бхушане» — любовники апсар. В Сундараканде маркируют атмосферу Ланки как перевёрнутого рая. Первое вхождение в кн. V.", "ch": 2}, {"sh": "V.2.51", "lem": "prāsāda", "ty": "А", "tr": "term", "pr": "low", "tx": "Дворец / башня (prāsāda) — prāsāda — многоэтажный дворцовый павильон или башня-терраса; в контексте Ланки — элемент архитектуры крепости-дворца Раваны.", "ch": 2}, {"sh": "V.2.53", "lem": "yama", "ty": "В", "tr": "realia", "pr": "med", "tx": "Яма (yama) — бог смерти и загробного мира (yama «сдерживающий»); в боевых описаниях сравнения с Ямой маркируют смертоносность героя. Первое вхождение в кн. V.", "ch": 2}, {"sh": "V.3.15", "lem": "dvivida", "ty": "В", "tr": "realia", "pr": "low", "tx": "Двивида (dvivida) — Двивида (dvivida «двойная»), один из воинов-ванаров; упоминается в перечнях войска. Первое вхождение в кн. V.", "ch": 3}, {"sh": "V.3.15", "lem": "mainda", "ty": "В", "tr": "realia", "pr": "low", "tx": "Маинда (mainda) — Маинда (mainda), воин-ванар; партнёр Двивиды в описаниях войска. Первое вхождение в кн. V.", "ch": 3}, {"sh": "V.3.17", "lem": "parākrama", "ty": "А", "tr": "epithet", "pr": "low", "tx": "Доблесть (parākrama) — parākrama «высшее могущество / натиск» (para+ā+krama); отличается от vikrama тем, что акцент на внешней экспансии. Первое вхождение в кн. V.", "ch": 3}, {"sh": "V.3.21", "lem": "laṅkinī", "ty": "В", "tr": "realia", "pr": "high", "tx": "Ланкини (laṅkinī) — хранительница-божество города Ланки (laṅkinī), ракшаси, персонифицирующая саму крепость; преграждает Хануману вход и сражена его ударом. По комментаторам, её поражение — предзнаменование падения Ланки (древнее пророчество о гибели города при появлении обезьяны). Подстрочник передаёт «Ланка… сама предстала», сохраняя двусмысленность «город / его богиня». Первое появление персонажа.", "ch": 3}, {"sh": "V.3.27", "lem": "kāma", "ty": "Б", "tr": "term", "pr": "med", "tx": "Кама / желание (kāma) — kāma — «желание», «любовь»; третий puruṣārtha; также имя бога любви. Двусмысленность «желание/Кама» важна в эротических описаниях Ланки.", "ch": 3}, {"sh": "V.3.38", "lem": "vānaraśreṣṭha", "ty": "А", "tr": "epithet", "pr": "low", "tx": "Лучший из ванаров (vānaraśreṣṭha) — vānara-śreṣṭha «лучший из обезьян», синонимичен kapivara; первое вхождение в кн. V.", "ch": 3}, {"sh": "V.4.16", "lem": "agni", "ty": "В", "tr": "realia", "pr": "med", "tx": "Агни (agni) — бог огня (agni «огонь»); в кн. V — испытание огнём Ланки и очищение Ситы посредством Агни. Первое вхождение в кн. V.", "ch": 4}, {"sh": "V.4.21", "lem": "śakti", "ty": "Б", "tr": "term", "pr": "med", "tx": "Шакти / копьё (śakti) — śakti двузначно: «сила/энергия» (абстрактное) и «копьё» (оружие). В батальных сценах Сундараканды подстрочник обычно выбирает «копьё», оставляя семантику «жизненной силы» невыраженной.", "ch": 4}, {"sh": "V.5.19", "lem": "dharma", "ty": "А", "tr": "term", "pr": "high", "tx": "Дхарма (dharma) — dharma — «порядок», «закон», «долг»: в данном контексте сочетает значения космического закона и личного долга. Подстрочник обычно переводит ситуативно («закон», «долг», «добродетель»), скрывая полноту смысла. В «Тилаке» — dharma как один из четырёх puruṣārtha.", "ch": 5}, {"sh": "V.6.17", "lem": "prahastha", "ty": "В", "tr": "realia", "pr": "med", "tx": "Прахаста (prahastha) — главный военачальник Раваны в Ланке (pra-hasta «с вытянутой рукой»). Первое вхождение в кн. V.", "ch": 6}, {"sh": "V.6.18", "lem": "vibhīṣaṇa", "ty": "В", "tr": "realia", "pr": "high", "tx": "Вибхишана (vibhīṣaṇa) — праведный младший брат Раваны (vibhīṣaṇa «внушающий страх»); впоследствии перешёл на сторону Рамы. В «Тилаке» объясняется парадокс: праведник среди ракшасов. Первое появление в кн. V.", "ch": 6}, {"sh": "V.6.18", "lem": "kumbhakarṇa", "ty": "В", "tr": "realia", "pr": "high", "tx": "Кумбхакарна (kumbhakarṇa) — гигантский брат Раваны (kumbha-karṇa «горшкоухий»), обречённый на многомесячный сон. Первое появление в кн. V.", "ch": 6}, {"sh": "V.6.26", "lem": "hanūmān", "ty": "А", "tr": "epithet", "pr": "high", "tx": "Хануман (hanūmān) — имя героя (hanūmān, именительный от hanumat): «наделённый крепкими челюстями»; по «Тилаке», Индра ударил его ваджрой по подбородку, отсюда имя. Первое вхождение в кн. V.", "ch": 6}, {"sh": "V.6.26", "lem": "piśāca", "ty": "В", "tr": "realia", "pr": "med", "tx": "Пишача (piśāca) — piśāca — разряд злобных духов-людоедов, питающихся плотью и кровью; в комментарии «Бхушана» отличаются от ракшасов пищевыми привычками. Первое вхождение в кн. V.", "ch": 6}, {"sh": "V.6.42", "lem": "kubera", "ty": "В", "tr": "realia", "pr": "high", "tx": "Кубера (kubera) — бог богатства и владыка якшей, брат Раваны по отцу; Равана вытеснил его с Ланки и захватил колесницу пушпака. «Широмани»: kubera = «уродливый». Первое вхождение в кн. V.", "ch": 6}, {"sh": "V.7.16", "lem": "janaka", "ty": "В", "tr": "crossref", "pr": "med", "tx": "Джанака (janaka) — Джанака (janaka «рождающий»), царь Видехи, отец Ситы. см. примеч. к I.1.25 (Гринцер).", "ch": 7}, {"sh": "V.8.4", "lem": "tapas", "ty": "А", "tr": "term", "pr": "med", "tx": "Тапас / аскеза (tapas) — tapas — аскетический жар/подвиг; согласно «Тилаке», «разогрев» тела позволяет аскету достичь сверхъестественных способностей. В кн. V — мотив праведности Ситы как аскетки.", "ch": 8}, {"sh": "V.8.8", "lem": "puṣpaka", "ty": "В", "tr": "realia", "pr": "high", "tx": "Пушпака (puṣpaka) — puspaka (пушпака) — воздушная колесница, первоначально принадлежавшая Кубере, захваченная Раваной. «Бхушана»: «движется куда пожелает повелитель» (yathecchagāmī). Первое появление в кн. V.", "ch": 8}, {"sh": "V.9.9", "lem": "varuṇa", "ty": "В", "tr": "realia", "pr": "med", "tx": "Варуна (varuṇa) — ведийский бог вод и нравственного миропорядка (ṛta); в эпосе — владыка океана. В Сундараканде фигурирует в контексте переплытия Ханумана. Первое вхождение в кн. V.", "ch": 9}, {"sh": "V.9.16", "lem": "indra", "ty": "В", "tr": "realia", "pr": "high", "tx": "Индра (indra) — Индра (indra «мощный»), царь богов и повелитель грозы; в Сундараканде — мерило высшего могущества («лучший как Индра»). Первое вхождение в кн. V.", "ch": 9}, {"sh": "V.9.29", "lem": "śoka", "ty": "А", "tr": "term", "pr": "med", "tx": "Горе / скорбь (śoka) — śoka — «горе», «скорбь»; в теории рас — основа каруṇa (сочувственной) расы. В речах Ситы — ключевое переживание разлуки (viraha-śoka).", "ch": 9}, {"sh": "V.9.70", "lem": "janakātmajā", "ty": "Б", "tr": "omission", "pr": "low", "tx": "Дочь Джанаки (janakātmajā). [Е. Костина]: именной эпитет «janakātmajā» присутствует в оригинале, но не передан отдельным словом в подстрочнике («…Не было там какой-либо женщины насильно [взятой], Обретены о…»). В литературном тексте эпитет восстанавливается; отметить как незафиксированное опущение — на усмотрение редактора.", "ch": 9}, {"sh": "V.10.4", "lem": "aśoka", "ty": "В", "tr": "realia", "pr": "high", "tx": "Ашока (aśoka) — дерево ашока (Saraca asoca / Jonesia ashoka); символ заточения Ситы в одноимённой роще. «Широмани» глоссирует: aśoka букв. «без скорби», отсюда горькая ирония места заключения. Первое вхождение в кн. V.", "ch": 10}, {"sh": "V.10.16", "lem": "viṣṇu", "ty": "В", "tr": "realia", "pr": "med", "tx": "Вишну (viṣṇu) — Вишну (viṣṇu «всепроникающий») — бог-хранитель; в «Тилаке» Рама интерпретируется как аватара Вишну, хотя сама поэма не делает этого акцента явно. Первое вхождение в кн. V.", "ch": 10}, {"sh": "V.10.38", "lem": "bhāminī", "ty": "Б", "tr": "term", "pr": "med", "tx": "Прекрасная / гневная (bhāminī) — bh āminī двузначно: «прекрасная женщина» и «гневливая (женщина)». Контекст определяет выбор; подстрочник может выбрать один из оттенков.", "ch": 10}, {"sh": "V.10.52", "lem": "mandodarī", "ty": "В", "tr": "realia", "pr": "high", "tx": "Мандодари (mandodarī) — главная супруга Раваны (mandodarī «тонкостанная»), спящую красоту которой Хануман сперва принимает за Ситу. Дочь асура Майи; в традиции — образец добродетельной жены при злом муже. Подстрочник лишь транслитерирует имя; узнавание-ошибка Ханумана — важный сюжетный мотив. Первое появление персонажа.", "ch": 10}, {"sh": "V.11.30", "lem": "astra", "ty": "А", "tr": "term", "pr": "med", "tx": "Астра / магическое оружие (astra) — astra — оружие, активируемое мантрой, в отличие от śastra (оружие рукопашного боя). В эпосе астры — метательные снаряды с магическим зарядом.", "ch": 11}, {"sh": "V.12.5", "lem": "sugrīva", "ty": "В", "tr": "realia", "pr": "high", "tx": "Сугрива (sugrīva) — царь ванаров (su-grīva «прекрасношеий»), союзник Рамы. В Сундараканде Хануман выполняет его поручение. Первое вхождение в кн. V.", "ch": 12}, {"sh": "V.12.9", "lem": "aṅgada", "ty": "В", "tr": "realia", "pr": "med", "tx": "Ангада (aṅgada) — сын Валина, племянник Сугривы (aṅgada «браслет»); командует частью войска ванаров. Первое появление в кн. V.", "ch": 12}, {"sh": "V.12.9", "lem": "jāmbavān", "ty": "В", "tr": "realia", "pr": "med", "tx": "Джамбаван (jāmbavān) — «медведь» (jāmbavān), старый советник ванаров; именно он пробуждает в Ханумане память о его силе, побуждая к прыжку через океан. Первое вхождение в кн. V.", "ch": 12}, {"sh": "V.12.19", "lem": "hanumat", "ty": "А", "tr": "epithet", "pr": "high", "tx": "Хануман (hanumat) — имя героя — «наделённый (крепкими) челюстями» (hanu «челюсть» + mat). «Тилака» объясняет: Индра ударил его ваджрой по подбородку, отсюда имя. Первое появление формы hanumat в кн. V.", "ch": 12}, {"sh": "V.12.20", "lem": "vidyādhara", "ty": "В", "tr": "realia", "pr": "med", "tx": "Видьядхара (vidyādhara) — vidyādhara «владеющий знанием» — класс волшебных существ, обитающих в воздушном пространстве; в «Тилаке» — существа, умеющие летать силой мантр. Первое вхождение в кн. V.", "ch": 12}, {"sh": "V.13.49", "lem": "daśagrīva", "ty": "А", "tr": "epithet", "pr": "med", "tx": "Десятишеий (daśagrīva) — эпитет Раваны daśa-grīva «десятишеий» (пара к daśānana «десятиликий»); указывает на его десять голов — знак чудовищной мощи, полученной аскезой. Леонов: «Мощношеий Равана». Первое вхождение формы в кн. V.", "ch": 13}, {"sh": "V.13.55", "lem": "aśokavanikā", "ty": "В", "tr": "realia", "pr": "high", "tx": "Роща Ашока (aśokavanikā) — роща деревьев ашока (aśoka-vanikā), место заключения Ситы в Ланке; центральное место действия кн. V. Первое вхождение в кн. V.", "ch": 13}, {"sh": "V.13.57", "lem": "māyā", "ty": "А", "tr": "term", "pr": "high", "tx": "Майя / иллюзия (māyā) — māyā — «иллюзорная сила», «магия»; в контексте Ланки — демоническое искусство ракшасов принимать облики. «Широмани» различает māyā ракшасов (воинская магия) от māyā Брахмы (космическая иллюзия).", "ch": 13}, {"sh": "V.13.65", "lem": "brahman", "ty": "В", "tr": "realia", "pr": "med", "tx": "Брахман (бог) (brahman) — Брахма (brahmā, nom. от brahman) — бог-творец; в кн. V фигурирует в контексте брахмастры и бессмертия Ханумана. Первое вхождение в кн. V.", "ch": 13}, {"sh": "V.14.49", "lem": "śiva", "ty": "В", "tr": "realia", "pr": "low", "tx": "Шива (śiva) — Шива (śiva «благой»); фигурирует в пиршественных/дворцовых описаниях Ланки. Первое вхождение в кн. V.", "ch": 14}, {"sh": "V.15.21", "lem": "nala", "ty": "В", "tr": "realia", "pr": "med", "tx": "Нала (nala) — Нала (nala «полый тростник»), архитектор-обезьяна, сын Вишвакармана; в кн. VI строит мост, но в кн. V упоминается в контексте войска. Первое вхождение в кн. V.", "ch": 15}, {"sh": "V.16.17", "lem": "daśaratha", "ty": "В", "tr": "crossref", "pr": "med", "tx": "Дашаратха (daśaratha) — Дашаратха (daśa-ratha «десять колесниц»), отец Рамы; умер от горя после изгнания сына. см. примеч. к I.1.8 (Гринцер).", "ch": 16}, {"sh": "V.20.32", "lem": "apsaras", "ty": "В", "tr": "realia", "pr": "med", "tx": "Апсара (apsaras) — apsaras — небесные танцовщицы/нимфы; в Сундараканде — часть обстановки дворца Раваны. Первое вхождение в кн. V.", "ch": 20}, {"sh": "V.21.8", "lem": "upamā", "ty": "А", "tr": "term", "pr": "low", "tx": "Упама / сравнение (upamā) — upamā — «сравнение» (алам-кара), ключевая фигура стиля Вālмīки. В «Натьяшастре» описывается как простейший аланкара.", "ch": 21}, {"sh": "V.27.4", "lem": "trijaṭā", "ty": "В", "tr": "realia", "pr": "high", "tx": "Триджата (trijaṭā) — старая ракшаси (trijaṭā «с тремя косицами»), стражница Ситы, которая удерживает прочих ракшасини от расправы, рассказав свой вещий сон о победе Рамы. Эпитеты dharmajñā «знающая дхарму», dayāpara «сострадательная». Её сон — структурный пророческий узел кн. V. Первое появление персонажа.", "ch": 27}, {"sh": "V.27.37", "lem": "gopura", "ty": "А", "tr": "term", "pr": "low", "tx": "Гопура / ворота (gopura) — gopura — монументальные надвратные башни; в описании Ланки — ворота главного дворца.", "ch": 27}, {"sh": "V.28.5", "lem": "mantra", "ty": "А", "tr": "term", "pr": "low", "tx": "Мантра (mantra) — mantra — «священная формула» или «тайный совет» (в политическом контексте man-tra «мысль-инструмент»). В советах на суде Раваны — «совет», «политическое решение».", "ch": 28}, {"sh": "V.31.12", "lem": "vālin", "ty": "В", "tr": "crossref", "pr": "med", "tx": "Валин (vālin) — Валин (vālin), убитый Рамой царь ванаров; его гибель — предыстория союза Сугривы с Рамой. см. примеч. к IV (Гринцер).", "ch": 31}, {"sh": "V.32.9", "lem": "śākhāmṛga", "ty": "А", "tr": "term", "pr": "low", "tx": "Ветвелаз / обезьяна (śākhāmṛga) — поэтическое обозначение обезьяны: śākhā-mṛga «ветвяной зверь» (букв. «зверь ветвей»).", "ch": 32}, {"sh": "V.38.37", "lem": "brahmastra", "ty": "В", "tr": "realia", "pr": "high", "tx": "Брахмастра (brahmastra) — brahmastra — «оружие Брахмы», высшая астра (astra), непреодолимый снаряд, наделённый силой Брахмы. В кн. V связано с пленением Ханумана. Первое вхождение в кн. V.", "ch": 38}, {"sh": "V.41.8", "lem": "daśānana", "ty": "А", "tr": "epithet", "pr": "med", "tx": "Десятиликий (daśānana) — эпитет Раваны daśa-ānana «десятиликий» (пара к daśagrīva); подчёркивает его десятиглавый облик. Леонов: «Десятиликий Равана». Первое вхождение формы в кн. V.", "ch": 41}, {"sh": "V.44.19", "lem": "jambumālin", "ty": "В", "tr": "realia", "pr": "med", "tx": "Джамбумалин (jambumālin) — сын Прахасты, ракшаса-воин (jambu-mālin «в гирлянде из роз»), первый полководец, посланный против Ханумана и им убитый; эпитет raṇakovida «искусный в бою». Его гибель открывает череду поединков в роще. Первое появление персонажа.", "ch": 44}, {"sh": "V.47.1", "lem": "akṣa", "ty": "В", "tr": "realia", "pr": "high", "tx": "Акша (akṣa) — юный сын Раваны (akṣa), царевич (kumāra), отправленный против Ханумана после гибели пяти полководцев и убитый им; описан эпитетом mahābala «многомощный». Гибель сына — поворот, вынуждающий Равану послать Индраджита. Подстрочник называет его «царевич», имя вводит ниже. Первое появление персонажа.", "ch": 47}, {"sh": "V.48.16", "lem": "indrajit", "ty": "В", "tr": "realia", "pr": "high", "tx": "Индраджит (indrajit) — старший сын Раваны и главный полководец (indra-jit «победивший Индру»); его брахмастра усыплена героями позднее. «Бхушана» глоссирует победу над Индрой как основание имени. Первое вхождение в кн. V.", "ch": 48}, {"sh": "V.48.17", "lem": "padmapalāśākṣa", "ty": "А", "tr": "epithet", "pr": "med", "tx": "Лотосоокий (padmapalāśākṣa) — эпитет Индраджита padma-palāśa-akṣa «с глазами-лепестками лотоса» — неожиданная «лирическая» формула красоты, приложенная к грозному воину-ракшасу. Леонов: «блистательный, лотосоокий». Контраст между нежным эпитетом и боевой ролью отмечается комментаторами как намеренный. Первое вхождение в кн. V.", "ch": 48}, {"sh": "V.50.2", "lem": "kapīndra", "ty": "А", "tr": "epithet", "pr": "med", "tx": "Царь обезьян (kapīndra) — эпитет «царь обезьян» (kapi-indra), прилагается к Сугриве или Хануману в зависимости от контекста. Первое вхождение в кн. V.", "ch": 50}, {"sh": "V.58.3", "lem": "anilātmaja", "ty": "А", "tr": "epithet", "pr": "low", "tx": "Сын Анилы (anilātmaja) — патроним Ханумана: anila-ātmaja «сын Анилы (бога ветра)»; синонимичен mārutātmaja, vāyuputra. Первое вхождение в кн. V.", "ch": 58}, {"sh": "V.61.9", "lem": "dadhimukha", "ty": "В", "tr": "realia", "pr": "med", "tx": "Дадхимукха (dadhimukha) — обезьяна-страж медового сада Сугривы (dadhimukha «творожноликий», вар. dadhivaktra), дядя (mātula) Ангады; жалуется Сугриве на разорение сада вернувшимися ванарами — комический эпизод, косвенно сообщающий об успехе миссии. Первое появление персонажа.", "ch": 61}, {"sh": "V.68.1", "lem": "naravyāghra", "ty": "А", "tr": "epithet", "pr": "low", "tx": "Тигр среди людей (naravyāghra) — nara-vyāghra «тигр среди людей» — animal-metaphor ранга, симметричная puruṣarṣabha. Первое вхождение в кн. V.", "ch": 68}];
+const chapStrip = [{"ch": 1, "n": 24, "v": 213}, {"ch": 2, "n": 15, "v": 58}, {"ch": 3, "n": 6, "v": 51}, {"ch": 4, "n": 2, "v": 30}, {"ch": 5, "n": 1, "v": 27}, {"ch": 6, "n": 6, "v": 44}, {"ch": 7, "n": 1, "v": 17}, {"ch": 8, "n": 2, "v": 8}, {"ch": 9, "n": 4, "v": 72}, {"ch": 10, "n": 4, "v": 54}, {"ch": 11, "n": 1, "v": 47}, {"ch": 12, "n": 5, "v": 25}, {"ch": 13, "n": 4, "v": 69}, {"ch": 14, "n": 1, "v": 51}, {"ch": 15, "n": 1, "v": 54}, {"ch": 16, "n": 1, "v": 32}, {"ch": 17, "n": 0, "v": 32}, {"ch": 18, "n": 0, "v": 32}, {"ch": 19, "n": 0, "v": 22}, {"ch": 20, "n": 1, "v": 36}, {"ch": 21, "n": 1, "v": 34}, {"ch": 22, "n": 0, "v": 46}, {"ch": 23, "n": 0, "v": 19}, {"ch": 24, "n": 0, "v": 47}, {"ch": 25, "n": 0, "v": 20}, {"ch": 26, "n": 0, "v": 49}, {"ch": 27, "n": 2, "v": 54}, {"ch": 28, "n": 1, "v": 20}, {"ch": 29, "n": 0, "v": 8}, {"ch": 30, "n": 0, "v": 44}, {"ch": 31, "n": 1, "v": 19}, {"ch": 32, "n": 1, "v": 14}, {"ch": 33, "n": 0, "v": 31}, {"ch": 34, "n": 0, "v": 39}, {"ch": 35, "n": 0, "v": 90}, {"ch": 36, "n": 0, "v": 47}, {"ch": 37, "n": 0, "v": 68}, {"ch": 38, "n": 1, "v": 70}, {"ch": 39, "n": 0, "v": 54}, {"ch": 40, "n": 0, "v": 25}, {"ch": 41, "n": 1, "v": 21}, {"ch": 42, "n": 0, "v": 44}, {"ch": 43, "n": 0, "v": 25}, {"ch": 44, "n": 1, "v": 20}, {"ch": 45, "n": 0, "v": 17}, {"ch": 46, "n": 0, "v": 41}, {"ch": 47, "n": 1, "v": 38}, {"ch": 48, "n": 2, "v": 61}, {"ch": 49, "n": 0, "v": 20}, {"ch": 50, "n": 1, "v": 19}, {"ch": 51, "n": 0, "v": 45}, {"ch": 52, "n": 0, "v": 28}, {"ch": 53, "n": 0, "v": 44}, {"ch": 54, "n": 0, "v": 51}, {"ch": 55, "n": 0, "v": 35}, {"ch": 56, "n": 0, "v": 51}, {"ch": 57, "n": 0, "v": 50}, {"ch": 58, "n": 1, "v": 169}, {"ch": 59, "n": 0, "v": 32}, {"ch": 60, "n": 0, "v": 20}, {"ch": 61, "n": 1, "v": 24}, {"ch": 62, "n": 0, "v": 38}, {"ch": 63, "n": 0, "v": 33}, {"ch": 64, "n": 0, "v": 45}, {"ch": 65, "n": 0, "v": 28}, {"ch": 66, "n": 0, "v": 15}, {"ch": 67, "n": 0, "v": 44}, {"ch": 68, "n": 1, "v": 29}];
+
+const typeBadge = {"А":"bt-rama","Б":"bt-maha","В":"bt-gita"};
+const prioBadge = {"high":["#c23b22","выс."],"med":["#e08020","сред."],"low":["#888","низ."]};
+const nbody = document.getElementById('notesBody');
+if (nbody) {
+  let curCh = null;
+  notesData.forEach(n=>{
+    // chapter separator row (book-wide view)
+    if (n.ch !== curCh) {
+      curCh = n.ch;
+      const sep = document.createElement('tr');
+      sep.innerHTML = `<td colspan="5" style="background:var(--leo);color:#fff;font-family:'PT Sans',sans-serif;font-weight:700;font-size:12px;padding:3px 8px;letter-spacing:0.04em;">Глава ${curCh}</td>`;
+      nbody.appendChild(sep);
+    }
+    const [pc,pl] = prioBadge[n.pr]||["#888",n.pr];
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-family:'PT Sans',sans-serif;font-weight:700;color:var(--leo);white-space:nowrap;">${n.sh}</td>
+      <td><iast style="font-weight:700;">${n.lem}</iast><br><span class="example-addr">${n.tr}</span></td>
+      <td><span class="badge-type ${typeBadge[n.ty]||'bt-other'}">${n.ty}</span></td>
+      <td style="font-family:'PT Serif',serif;font-size:13.5px;line-height:1.55;">${n.tx}</td>
+      <td><span style="display:inline-block;padding:2px 8px;border-radius:2px;font-size:11px;font-weight:700;color:#fff;background:${pc};">${pl}</span></td>`;
+    nbody.appendChild(tr);
+  });
+}
+
+// ── Межтекстовый слой (§07 cross_text) ──
+const ctData = [{"sh": "V.1.2", "lem": "vānara", "wl": "MBh Śānti 12.30.24 (аллегория vānara как носителя мудрости)", "tx": "Народ ванаров (vānara) — в Śāntiparvan есть аллегорические эпизоды с животными как носителями мудрости (образ «говорящей обезьяны»). Ср. МБх Шанти 12.30.24: «vānaraṃ caiva kanyā tvāṃ vivāhātprabhṛti prabho । sandrakṣyanti narāścānye svarūpeṇa vinākṛtam ॥24॥» («…»). Это не прямая параллель к Сундараканде, но контекст «мудрой обезьяны» как носителя dharma-знания — общеэпический мотив, делающий образ Ханумана частью более широкой традиции. Свидетельство: уровень шлоки (мягкое).", "pr": "low"}, {"sh": "V.1.3", "lem": "dhīra", "wl": "MBh Śānti 12.3.1-9 (гномический контекст dhīra)", "tx": "Стойкий (dhīra) — в гномической традиции эпоса эпитет dhīra обозначает мудрость, неколебимую в бедствиях — качество, разработанное в Śāntiparvan («Книге о мире»), посвящённой царскому долгу и стойкости духа. Ср. МБх Шанти 12.3.1-9: «karṇasya bāhuvīryeṇa praśrayeṇa damena ca । tutoṣa bhṛguśārdūlo guruśuśrūṣayā tathā ॥1॥ tasmai sa vi» («Тигр среди потомков Бхригу, [Рама] был доволен мощью рук Карны, его смирением, сдержанностью и почти»). Эпитет Ханумана dhīra (V.1.3) прочитывается в этом контексте как маркер не просто физической твёрдости, но именно мудрой самообладательности героя перед прыжком через океан. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.1.3", "lem": "mahAbala (महाबल)", "wl": "BhG 1.4 (общеэпический эпитет mahAbala)", "tx": "Обладающий великой силой (mahAbala) — в Бхагавадгите перечень mahArathin (BhG 1.4-6) описывает воинов именно через формулу «равных Бхиме и Арджуне в бою» — т.е. mahAbala как признак «первоклассного бойца» является общеэпическим. Ср. BhG 1.4: «atra sUrA mahezvasA bImarjunasamA yuDi» («В нём находятся герои, равные Бхиме и Арджуне в бою»). Это позволяет видеть в эпитете Ханумана (V.1.3) формульное обозначение героя-бойца, общее для всей классической санскритской эпической традиции, а не специфически «обезьяний» атрибут. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.1.8", "lem": "mahendra", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.29.21 (Гринцер, пер. изд. I–III)", "tx": "Махендра (mahendra) «Великий Индра» в перечне богов, которым Хануман творит анджали перед прыжком (V.1.8: sūryāya mahendrāya pavanāya svayambhuve). Тот же титул в Бала-канде 1.29.21 закреплён за Индрой как восстановленным владыкой трёх миров после усмирения Бали. Призывание именно «Махендры» (а не просто Индры) маркирует верховный, победительный аспект бога — уместный для опасного предприятия; подстрочник даёт «Великому Индре» без этого оттенка.\n\nПараллель — Rām. Bāla 1.29.21:\n  «mahendrāya punaḥ prādāt niyamya balimojasā । trailokyaṃ sa mahātejāścakre śakravaśaṃ punaḥ ॥21॥»\n  Повязав Бали своею силой, Он, сиятельный, снова отдал Три мира под власть Шакры, Подчинив их Великому Индре.", "pr": "med"}, {"sh": "V.1.16", "lem": "mumoca", "wl": "BC 8.8 (нарративная формула mumoca)", "tx": "Освободил / выпустил (mumoca) — нарративная формула «герой освобождает / вырывается» встречается в Buddhacarita Aśvaghoṣi — ещё одном санскритском повествовании о герое в движении. Ср. BC 8.8: «Увидев коня и возницу, бредущих устало, Вернувшихся без буйвола племени шакьев, Слезы пролили горожане, Как некогда при…». В обоих текстах формула сигнализирует переломный момент действия — «развязку» одной фазы и начало следующей. Аśvaghoṣa создаёт Buddhacarita примерно в I–II вв. н.э. — вероятно, после сложения Сундараканды, что делает это возможным «поэтическим отзвуком», а не источником. Свидетельство: уровень шлоки (мягкое).", "pr": "low"}, {"sh": "V.1.29", "lem": "mārutātmaja (Hanumān)", "wl": "Kālidāsa, Raghuvaṃśa 13.21 (vāyusutaṃ mahābalam)", "tx": "Хануман назван mārutātmaja — «сын (ātmaja) Маруты/Ваю» — в первом же описании прыжка через океан (V.1.29: eṣa … hanūmān mārutātmajaḥ। titīrṣati … samudraṃ varuṇālayam). В «Рагхувамше» Кālidāса воспроизводит этот же образ в сарге 13, посвящённой Рāмāяне: Raghu 13.21 называет Ханумана vāyusutaṃ mahābalam («сын ветра, великомощный»). Эпитет мāрутāтмаджа — теологически точный: Хануман порождён Ваю (богом ветра), а сам прыжок — воплощённый атрибут отца, ваю-шакти. «Рагхувамша» переосмысляет этот эпитет как кāвья-перифраз, ставя его рядом со сравнением с Гарудой (ср. Sundara V.1.2 garuḍopama). Первая крупная кāвья-рецепция mārutātmaja как имени Ханумана.", "pr": "high"}, {"sh": "V.1.29", "lem": "mārutātmaja / mārutaṃ gaṇam", "wl": "Ṛgveda 1.64.12 (rudrasya sūnuṃ … mārutaṃ gaṇam); РВ 5.42.15 (rudrasya sūnūṃr yuvanyūṃr)", "tx": "Хануман назван mārutātmaja — «рождённый из Маруты / Ваю» — в первом же описании его прыжка (V.1.29: eṣa … hanūmān mārutātmajaḥ। titīrṣati … samudraṃ varuṇālayam). Веды дают теологический фундамент этому эпитету. В «Ригведе» Маруты — класс ветровых божеств, «сыновья Рудры» (rudrasya sūnavaḥ): РВ 1.64.12 — ghṛṣum pāvakaṃ vaninaṃ vicarṣaṇiṃ rudrasya sūnuṃ havasā gṛṇīmasi | rajasturaṃ tavasam mārutaṃ gaṇam («Бодрых, очищающих, быстрых, всё превосходящих, сынов Рудры зовём мы гимнами; за пересекающею пространство толпой Марутов…»). В РВ Маруты — грозовые ветры, несущие жизненную силу (ojas) и стремительность (vega): именно эти качества воплощает Хануман в прыжке. Эпос переосмысляет «сына Маруты» из ведийского грозового духа в персонажного сына бога ветра Ваю (vāyuputra; V.1.61 — vāyuputrasya). Vedic anchor: mārutaṃ gaṇaṃ = коллектив Марутов → mārutātmaja = Хануман как их эпическая персонификация-потомок.", "pr": "high"}, {"sh": "V.1.29", "lem": "varuṇālaya (ocean as Varuṇa's dwelling)", "wl": "Ṛgveda 7.87.1; 7.64.1 (Varuṇa as lord of cosmic waters / sindhu)", "tx": "Океан назван в Сундараканде varuṇālaya — «обитель Варуны» — трижды (V.1.29; V.1.50; V.1.173). Это не просто поэтический эпитет: Варуна — ведийский владыка космических вод, и обозначение океана его «обителью» восходит к ведийской теологии. В РВ Варуна связан с безмерными водами (apāṃ patiḥ, «повелитель вод»): РВ 7.87.1 — vy akhyad dyām ṛtur id asya dharmā sindhoḥ pārā uta parāṇi («Он огляделся [Варуна] — для него вечный порядок держит берега Синдху и дальние просторы»); РВ 7.64.1-2 — samrājā bhūmyā divo varuṇo mitro aryamā («Вседержители земли и неба — Варуна, Митра, Арьяман»). В эпосе varuṇālaya прямо переводит ведийский образ Варуны как морского бога в географический термин. Эпический Хануман пересекает «царство Варуны» — теологически точное название для океана в ведийской традиции. Locus classicus для понимания этого эпитета.", "pr": "high"}, {"sh": "V.1.34", "lem": "garuḍa / mahoraga", "wl": "Mahābhārata, Ādiparva 1.114.60", "tx": "Сравнение изогнутого хвоста летящего Ханумана с «огромной змеёй (mahoraga), которую уносит Гаруда» (V.1.34: garuḍeneva hriyamāṇo mahoragaḥ) опирается на устойчивую эпическую антитезу Гаруда↔наги. В Махабхарате термины mahoraga и takṣaka mahoragaḥ стоят рядом в каталоге змеев, явившихся к рождению Арджуны: Ādi 1.114.60 «karkoṭako'tha śeṣaśca vāsukiśca bhujaṅgamaḥ / kacchapaścāpakuṇḍaśca takṣakaśca mahoragaḥ» — «Также Каркотака и Шеша, змей Васуки и Каччхапа, Кунда и великий змей Такшака». Сундараканда переводит эту космологическую вражду в план кавья-сравнения: Хануман — Гаруда, его хвост — обречённая змея. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.1.39", "lem": "rāghava", "wl": "Ragh. 1.1 (генеалогический контекст rāghava)", "tx": "Потомок Рагху (rāghava) — в Raghuvaṃśa («Родословная Рагху») Калидасы эпитет rāghava — сквозное наименование династической линии от Рагху до Рамы. Ср. Ragh. 1.1: «Ради истинного проникновения в слово и его значение я склоняюсь перед Парвати и Высшим Владыкой, родителями вселенной, с…». Для Калидасы это прежде всего генеалогический термин; в Сундараканде (V.1.39 и далее) он превращается в эпический эпитет, кратко указывающий на царственную родословную Рамы. Контраст двух употреблений — классический пример «переосмысления» кāвьи. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.1.75", "lem": "bhujaṅga / suparṇa", "wl": "Mahābhārata, Ādiparva 1.46.16", "tx": "«Змеи, живущие в океане (bhujaṅgāḥ sāgaraṃgamāḥ), решили, что это Супарна (Гаруда)» (V.1.75) — снова формульная пара змей↔Гаруда, на сей раз с термином bhujaṅga. В Махабхарате bhujaṅga часто равно «змей-губитель»: Ādi 1.46.16 «takṣakeṇa bhujaṅgena dhakṣyate» — «(царь) должен быть сожжён змеем (bhujaṅga) Такшакой». Ужас морских змеев перед мнимым Гарудой-Хануманом черпает силу из общеэпического представления о Гаруде как природном истребителе нагов. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.1.106", "lem": "jātarūpamaya", "wl": "Mahābhārata, Āraṇyakaparva 3.151.5", "tx": "Эпитет jātarūpamaya «из чистого золота» (V.1.106, о золотых пиках горы Майнаки) — устойчивая формула описания дивных, кубероподобных мест. Ср. Āraṇyaka 3.151.5, описание лотосового озера Куберы на Кайласе: «jātarūpamayaiḥ padmaiśchannāṃ paramagandhibhiḥ» — «(озеро,) усеянное ароматнейшими золотыми лотосами (jātarūpamaya)». В обоих случаях золото маркирует принадлежность ландшафта к сфере якшей/богов. Сундараканда наделяет Майнаку той же сакрально-золотой топикой. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.1.118", "lem": "mārutātmaja", "wl": "Mahābhārata, Āraṇyakaparva 3.149.16", "tx": "Эпитет mārutātmaja «сын Ветра» (V.1.118) применён к Хануману. Тот же эпитет того же персонажа — в ключевом эпизоде встречи Ханумана и Бхимы (оба сыновья Ваю!): Āraṇyaka 3.149.16 «na hi te kiñcidaprāpyaṃ mārutātmaja vidyate» — «Воистину, для тебя нет ничего недостижимого, о сын Ветра (mārutātmaja)!». Этот локус — лучший внешний комментарий к сундараканде: там Хануман демонстрирует Бхиме свой облик «прыжка через океан» (sāgaralaṅghana), а Бхима признаёт, что Хануман один мог бы уничтожить Ланку. Прямая мифологическая перекличка двух эпосов через общего отца-Ваю. Свидетельство: уровень шлоки (мягкое, но сильное по содержанию).", "pr": "med"}, {"sh": "V.1.119", "lem": "atithi", "wl": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 3.99–112", "tx": "Майнака предлагает Хануману гостеприимство гномической максимой: atithiḥ kila pūjārhaḥ prākṛto 'pi vijānatā dharmaṃ jijñāsamānena «Воистину, гость заслуживает почёта, даже заурядный, — тем, кто стремится познать дхарму». Прямая параллель к atithi-dharma Ману, где приём гостя — строгая обязанность домохозяина. Ср. Manu 3.99 sqq.: гостя (atithi), пришедшего к закату, домохозяин ни в коем случае не оставляет без приёма; пренебрежение гостем уносит заслуги хозяина. Эпическая сентенция и шастрическая норма выражают единый идеал ātithya; локус классикус для термина.", "pr": "med"}, {"sh": "V.1.119", "lem": "atithiḥ pūjārhaḥ", "wl": "Mahābhārata, Ādiparva 1.157.4", "tx": "Гнома Майнаки «гость заслуживает почёта, даже заурядный» (atithiḥ kila pūjārhaḥ prākṛto 'pi, V.1.119) — формульное выражение дхармы гостеприимства (atithi-pūjā). Ср. Ādi 1.157.4, где Вьяса, придя к скрывающимся Пандавам, спрашивает: «api vipreṣu vaḥ pūjā pūjārheṣu na hīyate» — «не лишаются ли почестей те, кто заслуживает их (pūjārha)?». Один и тот же корень pūjā-arha закрепляет общеэпический кодекс приёма достойного гостя; Майнака прилагает его к Хануману, чтобы оправдать своё желание дать ему отдых. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.1.122", "lem": "kṛtayuga", "wl": "Manu 1.85 (параллельный локус классикус)", "tx": "Крита-юга (kṛtayuga) — первая и лучшая из четырёх космических эпох (yuga); её признаки: совершенное исполнение дхармы, отсутствие пороков, долголетие. Канонический авторитет — Ману 1.81–86 («Одни дхармы - в век Крита, другие - в Трета и Двапара, иные - в век Кали, соответственно укорочению веков.…»). Хануман уподобляется воину крита-юги, что возводит его подвиг в ранг вселенской нормы. Подстрочник «золотого века» передаёт смысл, но термин kṛtayuga в тексте Ману и Сундараканде функционирует как устойчивое хронотопическое понятие. Свидетельство: уровень шлоки (мягкое).", "pr": "high"}, {"sh": "V.1.125", "lem": "devarāṭ / vajram udyamya", "wl": "Mahābhārata, Udyogaparva 5.18.4", "tx": "Майнака вспоминает, как «владыка богов (devarāṭ), разгневанный, подняв ваджру (vajram udyamya), приблизился ко мне» (V.1.125) — отсылка к мифу о подрезании Индрой крыльев гор. Титул devarāṭ «царь богов» — стандартное эпическое именование Индры; ср. Udyoga 5.18.4 «sa sametya mahendrāṇyā devarājaḥ śatakratuḥ / …pālayāmāsa devarāṭ» — «И царь богов (devarāṭ), совершитель ста жертвоприношений, стал охранять (миры)». Параллель закрепляет, что в V.1.125 действует именно Индра-вседержитель с его атрибутом-ваджрой, а Майнака — один из немногих уцелевших крылатых гор, спасённый Ваю. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.1.141", "lem": "satkriyā", "wl": "Mahābhārata, Āraṇyakaparva 3.182.10", "tx": "Похвала Сурасы Хануману «доволен я тобой, сумевшей оказать ему гостеприимство (satkriyā)» (V.1.141) использует satkriyā в техническом значении ритуального приёма-почитания. Ср. Āraṇyaka 3.182.10, где Хайхаи говорят отшельнику: «na vayaṃ satkriyāṃ mune tvatto'rhāḥ karmadoṣeṇa» — «Мы недостойны, мудрец, твоего гостеприимства (satkriyā): грех на нас». Один и тот же термин satkriyā связывает эпизод испытания Ханумана Сурасой с общеэпической этикой почётного приёма. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.1.141", "lem": "dāśarathi (Rāma)", "wl": "Kālidāsa, Raghuvaṃśa 12.44; 12.76–79", "tx": "Хануман назван капи, летящим dāśaratheḥ hitāya — «на благо Дашаратхи (= Рамы)». Эпитет dāśarathi неоднократно появляется в Рагхувамше в контексте именно Ланкийской войны (sarga 12–13): Raghu 12.44 — udāyudhān āpatatas tān dṛptān prekṣya rāghavaḥ … eko dāśarathī rāmo («один Дашаратхи Рама») и Raghu 12.76–79 — garuḍāpātaviśliṣṭa- -meghanādāstrabandhanaḥ dāśarathyoḥ kṣaṇakleśaḥ («короткая мука обоих Дашаратхов»). Кālidāса сохраняет dāśarathi как маркер родовой идентичности Рамы именно в батальном контексте, делая его эпическим «позывным» Рамы-воителя. Raghu 12–15 (Lankādahana-sarga) — прямая кāвья-обработка Сундараканды и Юддхаканды.", "pr": "med"}, {"sh": "V.1.191", "lem": "prāvṛṣ", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.32.12 (Гринцер, пер. изд. I–III)", "tx": "Сравнение «как в пору дождей» (prāvṛṣi … iva): в Бала-канде 1.32.12 девы-внучки Кушанабхи блистают «словно молнии в сезон дождей» (prāvṛṣīva śatahradāḥ). В Сундаре (V.1.191) тот же зачин simile применён к Хануману, растущему «словно грозовая туча в пору дождей» (prāvṛṣīva balāhakaḥ). Одна метеорологическая формула — для женской красоты и для богатырского роста; подстрочник передаёт буквально, без указания на формульность.\n\nПараллель — Rām. Bāla 1.32.12:\n  «tāstu yauvanaśālinyo rūpavatyaḥ svalaṅkṛtāḥ । udyānabhūmimāgamya prāvṛṣīva śatahradāḥ ॥12॥»\n  Однажды в пору юности Они, блистая украшениями, Словно молнии в сезон дождей, Гуляли в дворцовом парке.", "pr": "med"}, {"sh": "V.2.15", "lem": "rākṣasa", "wl": "Manu 12.44 (таксономия ракшасов)", "tx": "Ракшас (rākṣasa) — в системе Ману (Mānavadharmaśāstra) ракшасы классифицируются по происхождению (tamoguna — тёмная гуна) и образу жизни: ночная нечисть, питающаяся мясом; запрет пищевого общения с ними выражен в нескольких нормах (напр., гл. 5). Ср. Manu 12.44: «Чараны, супарны, лицемерные люди (dāmbhika), ракшасы и пишачи - высшее состояние, обусловленное темн…». Это «сравнительно-правовой» контекст к эпитету «ракшас» в описании слуг Раваны: Ману задаёт его догматическую характеристику, Сундараканда — повествовательную. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.2.39", "lem": "dūta", "wl": "BhG 3.19 (этика niṣkāmakarma ← dūta-dharma)", "tx": "Долг / дело посланника (dūta + karma) — в Бхагавадгите нормативная формула действия без привязанности к плоду (niṣkāmakarma) задаёт идеальную модель исполнения dharma как социальной роли. Ср. BhG 3.19: «tasmāt — поэтому; asaktaḥ — без привязанности; satatam — всегда; kāryam — предписанную; karma — деятельность; samācara —…». В Сундараканде Хануман как дūta Рамы выполняет именно такую функцию — действует во имя поручения, а не личной выгоды. Параллель с Гитой подчёркивает этическую природу его поступков. Свидетельство: уровень шлоки (мягкое).", "pr": "low"}, {"sh": "V.3.15", "lem": "suṣeṇa", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.17.15 (Гринцер, пер. изд. I–III)", "tx": "Сушена (suṣeṇa) — обезьяний вождь, упомянутый в Сундаре (V.3.15) среди тех, кому «достижима» Ланка. Его происхождение задано в «каталоге ванаров» Бала-канды 1.17.15: «varuṇo janayāmāsa suṣeṇaṃ nāma vānaram» — он сын Варуны. Подстрочник даёт имя без мифологического паспорта, который вводится в кн. I.\n\nПараллель — Rām. Bāla 1.17.15:\n  «varuṇo janayāmāsa suṣeṇaṃ nāma vānaram । śarabhaṃ janayāmāsa parjanyastu mahābalam ॥15॥»\n  От Варуны родился сын — Обезьяна по имени Сушена; А от могучего Парджаньи — Сын по имени Шарабха.", "pr": "med"}, {"sh": "V.3.15", "lem": "mainda", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.17.14 (Гринцер, пер. изд. I–III)", "tx": "Майнда и Двивида (mainda, dvivida) — обезьяны-близнецы, не раз названные в Сундаре (V.3.15; V.59.16 как непобедимые бойцы). Их рождение описано в каталоге ванаров Бала-канды 1.17.14: они сыновья Ашвинов («maindaṃ ca dvividaṃ caiva janayāmāsatuḥ»), отсюда их парность и красота. Генеалогический фон вводится в кн. I.\n\nПараллель — Rām. Bāla 1.17.14:\n  «rūpadraviṇasaṃpannāvaśvinau rūpasaṃmatau । maindaṃ ca dvividaṃ caiva janayāmāsatuḥ svayam ॥14॥»\n  Ашвины, чтимые за красоту, Произвели на свет Таких же прекрасных, как они, Братьев Майнду и Двивиду;", "pr": "med"}, {"sh": "V.5.19", "lem": "dharma", "wl": "Manu 1.2 (лócus classicus термина dharma)", "tx": "Дхарма (dharma) — каноническое многозначное понятие: «порядок», «закон», «долг», «добродетель». Лócus classicus — Mānavadharmaśāstra (Законы Ману): Manu 1.2: «\"О божественный! Благоволи сказать нам точно и в должном порядке дхармы всех четырех варн и имеющих смешанное происхожде…». В системе Ману dharma — первый из четырёх puruṣārtha и основа сословного поведения (varṇāśramadharma). В Сундараканде dharma обозначает прежде всего личный долг воина: для Ханумана — верность порученному делу, для Равана — нарушение космического порядка (похищение Ситы). Подстрочник выбирает один контекстный смысл, тогда как оригинальный термин несёт всю полноту нормативного значения. Свидетельство: уровень шлоки (мягкое).", "pr": "high"}, {"sh": "V.6.18", "lem": "kumbhakarṇa", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.3.36 (Гринцер, пер. изд. I–III)", "tx": "Кумбхакарна (kumbhakarṇa) — в Сундаре впервые вводится мимоходом, как владелец дома-«облака» (V.6.18). Его роль задана заранее в пхалашрути Бала-канды 1.3.36 («kumbhakarṇasya nidhanam»), а характеристика «вечно спящего» — в Araṇya 3.17.22 (pravṛddhanidraḥ ca sadā kumbhakarṇo mahābalaḥ). Эти места кн. I и III дают тот мифологический паспорт спящего великана, который Сундара предполагает известным.\n\nПараллель — Rām. Bāla 1.3.36:\n  «kumbhakarṇasya nidhanaṃ meghanādanibarhaṇam । rāvaṇasya vināśaṃ ca sītāvāptimareḥ pure ॥36॥»\n  Об убиении Кумбхакарны И о гибели Мегханады, О смерти самого Раваны И об обретении Ситы;", "pr": "med"}, {"sh": "V.6.26", "lem": "piśāca", "wl": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 1.43; 12.44; 11.96", "tx": "Хануман обходит дома ракшасов-военачальников, среди них «Пишача» (piśāca). Ману — локус классикус для места пишачей в иерархии существ. Manu 1.43 относит их вместе с ракшасами к живородящим: rakṣāṃsi ca piśācāśca manuṣyāśca jarāyujāḥ «ракшасы, пишачи и люди — живородящие». Manu 12.44 помещает «ракшасов и пишачей» в высшую ступень тёмного (tāmasa) перерождения: rakṣāṃsi ca piśācāśca tāmasīṣūttamā gatiḥ. Manu 11.96 определяет их через нечистую пищу — мясо и хмельное (yakṣarakṣaḥpiśācānnaṃ madyaṃ māṃsam), что объясняет, почему мир ракшасов в Сундараканде описан через мясо, кровь и вино. Шастрический фон демонологической номенклатуры главы.", "pr": "med"}, {"sh": "V.6.32", "lem": "airāvatasama gaja", "wl": "Mahābhārata, Sabhāparva 2.48.25", "tx": "Описание боевых слонов Ланки «в битве подобных Айравате (airāvatasamān yudhi)» (V.6.32) использует слона Индры Айравату как эталон. Ср. каталог даров на rājasūya Юдхиштхиры (Sabhā 2.48.25): «virāṭena tu matsyena… kuñjarāṇāṃ sahasre dve mattānāṃ samupāhṛte» — «Виратой, царём матсьев, были доставлены две тысячи возбуждённых слонов (kuñjara)». Перечни породистых, «опьянённых» боевых слонов — общий эпический топос царской/военной роскоши; сундараканда применяет его к могуществу Раваны. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.7.15", "lem": "himātyaya", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.8.24 (Гринцер, пер. изд. I–III)", "tx": "Химатьяя (himātyaye) «с окончанием зимы / в начале весны» — устойчивый зачин лотосового сравнения: в Бала-канде 1.8.24 лица обрадованных жён сияют «как лотосы с концом холодов» (padmānīva himātyaye). В Сундаре (V.7.15) тем же оборотом (himātyaye nagam iva) описан благоухающий дворец. Сезонная формула красоты повторяется; в подстрочнике связь не отмечена.\n\nПараллель — Rām. Bāla 1.8.24:\n  «tāsāṃ tenātikāntena vacanena suvarcasām । mukhapadmānyaśobhanta padmānīva himātyaye ॥24॥»\n  «Готовьтесь ради рождения сына Принять участие в ашвамедхе!» И у них, прекрасных, при этом слове Просияли от радости лица, Словно нежные цветы лотосов С окончанием холодной зимы.", "pr": "med"}, {"sh": "V.8.4", "lem": "tapas", "wl": "MBh Āraṇyaka 3.1.22-30 (параллельный мотив tapas-защиты)", "tx": "Аскеза (tapas) — Āraṇyakaparvan («Лесная книга» Махабхараты) — главный эпический «учебник» лесной аскезы и магической силы, порождённой tapas. Ср. МБх Āraṇyaka 3.1.22-30: «vastramāpastilānbhūmiṃ gandho vāsayate yathā । puṣpāṇāmadhivāsena tathā saṃsargajā guṇāḥ ॥22॥ mohajā» («Как благовонное вещество придает одежде, водам, земле и зернам сезама цветочный аромат, так причастн»). В Сундараканде tapas Ситы — моральный «броненосец», делающий её недоступной для Раваны; параллельный мотив (женщина-аскетка при превосходящем физическом противнике) развёрнут в лесных эпизодах Āraṇyakaparvan. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.10.5", "lem": "dhūpita", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.11.25 (Гринцер, пер. изд. I–III)", "tx": "Дхупита (dhūpita) «окуренный благовониями» — деталь праздничного убранства: в Бала-канде 1.11.25 (и Ayodhyā 2.14.29) так описана Айодхья, готовимая к торжеству и встрече Дашаратхи/Рамы. В Сундаре (V.10.5) та же формула благоухания-окуривания приложена к опочивальне Раваны. Перенос «праздничной» роскоши столицы Рамы на чертог демона — ироническая кавья-перекличка.\n\nПараллель — Rām. Bāla 1.11.25:\n  «dhūpitaṃ siktasammṛṣṭaṃ patākābhiralaṅkṛtam । । tataḥ prahṛṣṭāḥ paurāste śrutvā rājānamāgatam ॥25॥»\n  Вычищен, пропитан благовониями, Повсюду украшен флагами!» Узнав о возвращении Дашаратхи, Охваченные радостью горожане", "pr": "med"}, {"sh": "V.10.7", "lem": "lohitākṣa", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.18.11 (Гринцер, пер. изд. I–III)", "tx": "Лохитакша махабаху (lohitākṣaṃ mahābāhum) — «красноглазый, мощнорукий»: в Бала-канде (1.18.11) это часть описания НОВОРОЖДЁННОГО Рамы, воплощения половины Вишну. В Сундаре (V.10.7) тот же геройский формуляр приложен к спящему Раване. Перенос богатырского эпитета на демона-царя — сознательный кавья-приём (царственная стать ракшаса), который в подстрочнике («красноглазого, с могучими руками») остаётся незаметным.\n\nПараллель — Rām. Bāla 1.18.11:\n  «viṣṇorardhaṃ mahābhāgaṃ putramaikṣvākunandanam । lohitākṣaṃ mahābāhuṃ raktauṣṭhaṃ dundubhisvanam ॥11॥»\n  Родила великого потомка Икшваку, Чтимого всеми людьми Раму, Красноглазого, красногубого, мощнорукого, С голосом, звучащим как барабан.", "pr": "med"}, {"sh": "V.12.3", "lem": "āryapathe sthitā", "wl": "Mahābhārata, Āraṇyakaparva 3.250.1-9", "tx": "Хануман размышляет о Сите как «стоящей на наилучшем пути благородных (āryapathe sthitā), сосредоточенной на сохранении добродетели (svaśīlasaṃrakṣaṇa)», которую погубил «предводитель ракшасов (rākṣasānāṃ pravara)» (V.12.3). Ситуация дословно рифмуется с эпизодом домогательства Джаядратхи к Драупади (Āraṇyaka 3.250 сл.): там «śibīnāṃ pravara» (Котикашья) подступает к одинокой верной жене в лесу, а Драупади защищает свою дхарму («niratā svadharme»). Обе сцены — испытание pativratā наедине перед лицом похитителя; параллель высвечивает типовой эпический мотив «одинокая добродетельная жена и насильник-pravara». Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.13.8", "lem": "hriyamāṇā", "wl": "Mahābhārata, Udyogaparva 5.176.41", "tx": "Хануман воображает Ситу «когда её несли (hriyamāṇāyāḥ) по пути сиддхов» (V.13.8) — причастие от hṛ «похищать», эпический термин насильственного увоза женщины. Тот же глагол в рассказе Амбы (Udyoga 5.176.41): «eṣa me hriyamāṇāyā… abhavaddhṛdi saṅkalpaḥ» — «Когда меня увозили насильно (hriyamāṇā), у меня в сердце зародилось желание (отомстить)». Параллель ставит похищение Ситы в один типологический ряд с похищением Амбы Бхишмой — оба запускают сюжет мести/войны. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.13.11", "lem": "tapasvinī (Sītā)", "wl": "Kālidāsa, Raghuvaṃśa 14.47 (tapasvinī kṛśatarā virahe tapasvinaḥ); ср. Raghu 1.48–53 (tapasvin в ашраме)", "tx": "Хануман, ища Ситу и не находя её, называет её tapasvinī — «подвижница» (буквально: «та, в ком пылает тапас»). Это одновременно и эпитет-характеристика (верная жена, хранящая себя аскезой), и горькая ирония: мощь её тапас не смогла защитить её. Кālidāsa в «Рагхувамше» использует этот же образ в параллельной ситуации: когда Рама, выслушав клеветников, изгоняет беременную Ситу из Айодхьи, она удаляется в лес, где «подвижница стала ещё исхудавшей» (Raghu 14.47: tapasvinī kṛśatarā virahe tapasvinaḥ — «подвижница стала ещё истощённее в разлуке с подвижником»). Двойное tapasvin в Рагхувамше — Сита и Рама оба «подвижники», их разлука описана в аскетических категориях. В Сундараканде (V.13.11) tapasvinī-Сита «брошена без защитника» (abandhur) и «съедена», то есть, как думает Хануман, уничтожена. Кālidāса переосмысляет уязвимость tapasvinī как судьбу, которой не избежать даже высочайшей добродетели. Лocus classicus кāвья-рецепции образа.", "pr": "high"}, {"sh": "V.13.53", "lem": "nirdahet / sāgaralaṅghana", "wl": "Mahābhārata, Āraṇyakaparva 3.267.27", "tx": "Опасение Ханумана, что Рама, не найдя Ситу, «уничтожит всех обезьян (nirdahet sarvavānarān)» (V.13.53), отсылает к узловой проблеме всего эпоса — переправе войска через стойойджанный океан. Рамопакхьяна Махабхараты прямо излагает её устами Рамы: Āraṇyaka 3.267.27 «śatayojanavistāraṃ na śaktāḥ sarvavānarāḥ / krāntuṃ toyanidhiṃ» — «Вы, обезьяны (sarvavānarāḥ), не сможете все вместе пересечь водный простор шириной в сотню йоджан». Эта параллель — компактный эпический пересказ той самой повествовательной рамки, в которой действует Хануман-разведчик. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.15.15", "lem": "gandhamādana", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.17.12 (Гринцер, пер. изд. I–III)", "tx": "Гандхамадана (gandhamādana) — в Сундаре (V.15.15) это благоуханная ГОРА, с которой сравнивается Хануман в роще ашоки. Но в каталоге ванаров Бала-канды 1.17.12 Gandhamādana — ИМЯ обезьяны, сына Куберы. Совпадение имени горы и героя (оба связаны с ароматами, гандха-) — характерная для эпоса омонимия; подстрочник её не оговаривает.\n\nПараллель — Rām. Bāla 1.17.12:\n  «dhanadasya sutaḥ śrīmān vānaro gandhamādanaḥ । viśvakarmā tvajanayannalaṃ nāma mahākapim ॥12॥»\n  Славным сыном Куберы Стал обезьяна Гандхамадана; А сыном Вишвакармана — Великая обезьяна Нала.", "pr": "med"}, {"sh": "V.15.19", "lem": "kṛśā dīnā tapasvinī (Sītā)", "wl": "Kālidāsa, Raghuvaṃśa 14.48–50; Meghadūta 95", "tx": "Сита предстаёт перед взором Ханумана «исхудавшей от поста» (upavāsakṛśā), «печальной» (dīnā), «то и дело вздыхающей» — и сравнивается с ясной луной в начале светлой половины месяца. Это самое развёрнутое в Сундараканде описание Ситы в заточении. В «Рагхувамше» аналогичный тройной образ появляется в описании Ситы после её второго изгнания: Raghu 14.48–50 (kṛśāṃ dīnāṃ tapasvinīṃ — «исхудавшую, опечаленную, подвижницу») — тройная формула практически вербальна. В «Мегхадūте» Кālidāса использует ту же связку kṛśā/dīnā для virahiṇī (разлучённой жены), ожидающей мужа: Megha 95 (kṛśatanur). Три слова вместе (kṛśa + dīna + tapasvin) — kāвья-формула страдающей благородной женщины, восходящая к эпическому описанию Ситы в Сундараканде.", "pr": "high"}, {"sh": "V.15.20", "lem": "śikhām iva vibhāvasoḥ pinaddhāṃ dhūmajālena", "wl": "Mahābhārata, Āraṇyakaparva 3.65.7", "tx": "Сита в ашоковой роще «с трудноузнаваемым обликом (mandaprakhyāyamānena rūpeṇa), сияющая подобно пламени огня, скрытому клубами дыма» (V.15.20) — это почти дословно стих о найденной Дамаянти в Нала-упакхьяне: Āraṇyaka 3.65.7 «mandaprakhyāyamānena rūpeṇāpratimena tām / pinaddhāṃ dhūmajālena prabhāmiva vibhāvasoḥ» — «Несравненная красота её пряталась от взоров, словно солнце за облёкшею его завесой дыма». Совпадение целого полустишия (формула «mandaprakhyāyamānena rūpeṇa … pinaddhāṃ dhūmajālena») — яркий случай общего эпического клише для покинутой, измождённой тоской верной жены. Свидетельство: уровень шлоки (сильная формульная параллель).", "pr": "med"}, {"sh": "V.15.31", "lem": "tapasvinī", "wl": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 11.234 sqq.; 4.162; 6.75–85", "tx": "Сита в плену уподоблена подвижнице (tapasvinī / tāpasī iva) — образ, на который ложится учение Ману о tapas. Manu 11.234 — tapomūlamidaṃ sarvaṃ … «всё это [благо] коренится в подвижничестве». Manu 4.162 особо запрещает причинять вред подвижникам: na hiṃsyādbrāhmaṇān gāśca sarvāṃścaiva tapasvinaḥ «нельзя причинять вред … коровам, брахманам и всем подвижникам»; насилие Раваны над Ситой-tapasvinī прочитывается как нарушение и этой нормы. Кавья-метафора с шастрическим фоном.", "pr": "med"}, {"sh": "V.16.15", "lem": "dharmaśīla", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.6.9 (Гринцер, пер. изд. I–III)", "tx": "Дхармашила (dharmaśīla) — «нравом привязанный к дхарме»: в Бала-канде 1.6.9 эпитет идеальных жителей Айодхьи. В Сундаре (V.16.15) им наделён Джанака, отец Ситы (dharmaśīlasya janakasya). Перенос «идеально-дхармического» эпитета с горожан Рамы на тестя подчёркивает праведность рода Митхилы.\n\nПараллель — Rām. Bāla 1.6.9:\n  «sarve narāśca nāryaśca dharmaśīlāḥ susaṃyatāḥ । uditāḥ śīlavṛttābhyāṃ maharṣaya ivāmalāḥ ॥9॥»\n  Добродетельные мужья и жены Славились своим поведением, Были привязаны друг к другу, Безгрешны, как великие риши.", "pr": "med"}, {"sh": "V.18.18", "lem": "nairṛta", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.22.13 (Гринцер, пер. изд. I–III)", "tx": "Найрита (nairṛta) — «ракшас», букв. «принадлежащий Ниррити», божеству юго-западной стороны и гибели. Термин технически связывает ракшасов с южной/юго-западной четвертью света (ср. Araṇya 3.64.22 о пути «в страну найрита»). В Сундаре он постоянен как титул Раваны («nairṛtapati», «nairṛtarāja»; V.18.18 и др.). Подстрочник передаёт нейтральным «ракшас», снимая космографический оттенок.\n\nПараллель — Rām. Bāla 1.22.13:\n  «na ca suptaṃ pramattaṃ vā dharṣayiṣyanti nairṛtāḥ । na bāhvoḥ sadṛśo vīrye pṛthivyāmasti kaścana ॥13॥»\n  Я научу тебя заклинаниям, Именующимся Бала и Атибала. Ни усталость, ни лихорадка, Ни приметы уродливой старости,", "pr": "med"}, {"sh": "V.19.6", "lem": "mṛṇālī paṅkadigdhā (Sītā)", "wl": "Kālidāsa, Kumārasambhava 1.40; Raghuvaṃśa 16.7–8", "tx": "Сита описана как mṛṇālī paṅkadigdhā — «стебель лотоса, покрытый илом»: красота, скрытая грязью. Это один из центральных образов страдающей героини в санскритской поэзии. Кālidāса в «Кумāрасамбхаве» развёртывает этот же образ: белые руки Пāрвати уподоблены стеблям лотоса (Kum. 1.40: madhye yathā śyāmamukhasya tasya mṛṇālayor iva yugam viśuddham — «между двумя стеблями лотоса»). В «Рагхувамше» Кālidāса вновь использует mṛṇālinī для женщины в бедственном положении: Raghu 16.7–8 (mṛṇālinī hriyamāṇā — лотос, уносимый потоком). Формула «лотос в иле» — устойчивый образ добродетельной женщины, попавшей в неподобающие обстоятельства. Сундараканда — ранний эпический источник этого образа; кāвья его переосмысляет в эротическом и трагическом регистрах.", "pr": "high"}, {"sh": "V.19.17", "lem": "ratnagarbhagṛhocitā mṛṇālī aciroddhṛtā", "wl": "Mahābhārata, Āraṇyakaparva 3.65.15", "tx": "Стих о Сите «нежную, с прекрасным телом, привыкшую жить во дворце, полном самоцветов (ratnagarbhagṛhocitā), подобную сжигаемому зноем недавно вырванному лотосовому стеблю (mṛṇālīm aciroddhṛtām)» (V.19.17) совпадает практически слово-в-слово с описанием Дамаянти: Āraṇyaka 3.65.15 «sukumārīṃ sujātāṅgīṃ ratnagarbhagṛhocitām / dahyamānāmivoṣṇena mṛṇālīmaciroddhṛtām». Это вторая (после V.15.20) общая формула из того же пассажа Нала-упакхьяны: образ «дворцовой неженки, ставшей вырванным лотосовым стеблем» — устойчивый троп для героини в изгнании/плену. Сильное свидетельство прямого формульного родства Сита↔Дамаянти. Свидетельство: уровень шлоки (сильная формульная параллель).", "pr": "med"}, {"sh": "V.20.5", "lem": "svadharma (rakṣasām)", "wl": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 3.33; 3.26; 3.24", "tx": "Равана возводит насилие над чужими жёнами в «свою дхарму» ракшасов (svadharmo rakṣasāṃ … gamanaṃ vā parastrīṇāṃ haraṇaṃ sampramathya vā). Это отсылка к нормативной классификации браков у Ману, где «обряд ракшаса» определяется именно как насильственное похищение: Manu 3.33 — hatvā chittvā ca bhittvā ca krośantīṃ rudantīṃ gṛhāt | prasahya kanyāharaṇaṃ rākṣaso vidhirucyate || «Похищение из дома кричащей и плачущей девушки силой, сопровождаемое убийствами, ранениями и разрушениями, называется обрядом ракшаса». Manu 3.24 закрепляет эту форму за кшатрием (rākṣasaṃ kṣatriyasya). «Свадхарма» Раваны иронически совпадает с тем, что шастра кодифицирует как низший, но признанный для воина способ брака; похищение Ситы — чудовищная буквализация rākṣasa-vidhi. Локус классикус для термина.", "pr": "med"}, {"sh": "V.20.29", "lem": "suparṇaḥ pannagaṃ yathā", "wl": "Mahābhārata, Āraṇyakaparva 3.176.2", "tx": "Равана льстит Сите: «ты похищаешь мою душу, словно Супарна — змею (suparṇaḥ pannagaṃ yathā)» (V.20.29). Сравнение перекодирует уже знакомую формулу Гаруда↔наг (ср. V.1.34, V.1.75) в любовно-кавья регистр: похищающий Гаруда теперь — метафора пленяющей красоты. Эпический фон термина pannaga как жертвы более сильного — Āraṇyaka 3.176.2, где Бхима, схваченный змеем, обращается: «kāmayā brūhi pannaga… kastvaṃ» — «Поведай мне милостиво, о змей (pannaga)». Параллель помогает увидеть, что комплимент Раваны построен на инверсии хищной формулы. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.21.2", "lem": "pativratā", "wl": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 3.262; 5.151–156; 8.28", "tx": "Сита названа pativratā «верной мужу» — технический термин женской дхармы, для которого Ману служит локусом классикус. Manu 3.262 — pativratā dharmapatnī pitṛpūjanatatparā «Преданная мужу законная жена, имеющая высшей целью почитание предков». Идеал ананья-преданности, который Сита формулирует сама (V.28.12 ananyadevatvam «нет для меня иного божества кроме тебя»), точно соответствует нормативному определению pativratā. Эпитет, прилагаемый к Сите неоднократно (ср. V.59.23), — кавья-воплощение шастрического стандарта верной жены.", "pr": "med"}, {"sh": "V.21.13", "lem": "pāpa", "wl": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 12.54–69; 4.165–169", "tx": "Сита называет Равану pāpa «грешником, губимым собственными делами» (svaiḥ karmabhiḥ … pāpa) и предрекает радость живых о его гибели. Учение Ману о посмертном (pretya) воздаянии даёт фон этих угроз. Manu 12.54–58 расписывает перерождения за тяжкие грехи (pātaka): вор-брахман тысячекратно проходит через состояния пауков, змей и «зловредных пишачей» (hiṃsrāṇāṃ ca piśācānām). Manu 4.165–169 — насилие и грех возвращаются к совершившему. Инвектива Ситы (V.21.13–14; ср. V.27.22 о том, что грешным закрыты небеса) опирается на это представление о карме и pretya-воздаянии.", "pr": "med"}, {"sh": "V.22.20", "lem": "bhasma … tejasā", "wl": "Mahābhārata, Udyogaparva 5.180.24", "tx": "Угроза-несовершение Ситы Раване: «не будь повеления Рамы и сохранения мной тапаса, я обратила бы тебя в пепел своей мощью (bhasma … tejasā), Дашагрива» (V.22.20). Здесь действует общеэпическое представление о tapas как накопленной испепеляющей энергии. Ср. Udyoga 5.180.24, где Рама Джамадагнья объясняет Бхишме, по чему он не ударит: «ye te vedāḥ śarīrasthā… tapaśca sumahattaptaṃ na tebhyaḥ praharāmyaham» — «Веды, что в теле твоём, и аскетические заслуги, накопленные суровым покаянием (tapas), — по ним я не ударю». В обоих местах tapas мыслится как реальная боевая сила, которую носитель добровольно сдерживает. Свидетельство: уровень шлоки (мягкое).", "pr": "med"}, {"sh": "V.24.12", "lem": "damayantī … sagara … saudāsa", "wl": "Mahābhārata, Āraṇyakaparva 3.106.10-17 (Sagara) и 3.50-78 (Nala–Damayantī)", "tx": "Хануман ободряет Ситу списком образцовых верных жён: «как Мадаянти к Саудасе, как Кешини к Сагаре, как Дамаянти, дочь Бхимы, верная мужу — к Нишадцу (Нале)» (V.24.12). Все три pativratā-пары — герои именно Араньякапарвы. Сагара — герой кумулятивного сказания Āraṇyaka 3.106 сл. («etatte sarvamākhyātaṃ… sagareṇa vivāsitaḥ»), а Дамаянти, дочь Бхимы (bhaimī) — героиня Нала-упакхьяны (Āraṇyaka 3.50-78), откуда уже извлечены формульные параллели V.15.20 и V.19.17. Таким образом, перечень эталонных жён у Ханумана опирается на тот же повествовательный фонд Vana-parvan, что и описания самой Ситы. Свидетельство: уровень шлоки (мягкое; связь по корпусу имён).", "pr": "med"}, {"sh": "V.25.8", "lem": "vivarṇavadanābhavat / kadalī pravāte", "wl": "Mahābhārata, Āraṇyakaparva 3.61.95", "tx": "Сита перед ракшаси «трепещущая, словно подорожник (банан) на ветру (kadalī pravāte), … побледневшая лицом (vivarṇavadanābhavat)» (V.25.8). Глагольная формула pāda «vivarṇavadanābhavat» дословно совпадает с описанием покинутой Дамаянти: Āraṇyaka 3.61.95 «bhartṛśokaparā dīnā vivarṇavadanābhavat» — «была она бледна и печальна, поглощена тоской о супруге (vivarṇavadanābhavat)»; а в следующих стихах Дамаянти, как и Сита, ищет утешения у дерева aśoka. Третья общая формула из Нала-упакхьяны (ср. V.15.20, V.19.17) подтверждает, что портрет страдающей Ситы систематически собран из клише, отработанных на образе Дамаянти. Свидетельство: уровень шлоки (сильная формульная параллель).", "pr": "med"}, {"sh": "V.26.1", "lem": "vilāpa (Sītā's lament)", "wl": "Kālidāsa, Raghuvaṃśa 8.70; 14.53–55", "tx": "Сита «принялась причитать» (vilaptum upacakrame) — вилāпа, речи горя и разлуки, — один из установленных жанров санскритской поэзии. Кālidāса в «Рагхувамше» дважды обращается к этому мотиву в контексте той же эпической истории: Raghu 8.70 (vilapann iti kosalādhipaḥ — «так причитал повелитель Кошалы [царь Дашаратха, умирая по Раме]») и Raghu 14.53–55 (вилāпа Ситы в лесу после изгнания: «О лучший из Рагхавов! О Лакшмана!»). Формульный зачин vilaptum upacakrame / bahudhā vilapya встречается в Сундараканде трижды (V.13.14; V.26.1; V.28.18) и точно воспроизводится в Рагхувамше как маркер кульминационного горя. Кālidāса следует эпическому канону вилāпы, но переносит его в более индивидуализированный регистр.", "pr": "med"}, {"sh": "V.26.13", "lem": "alpavīrya", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.25.2 (Гринцер, пер. изд. I–III)", "tx": "Альпавирья (alpavīrya) «маломощный» — оценочный термин: в Бала-канде 1.25.2 он звучит как гномический тезис о якшини, что «слыли слабосильными» (alpavīryā yadā yakṣī), тут же опровергаемый историей Тараки. В Сундаре (V.26.13) Сита иронически зовёт «маломощным ракшасом» (alpavīryeṇa rakṣasā) самого Равану, противопоставляя ему мощь мужа. Один и тот же термин маркирует мотив «обманчивой слабости/силы».\n\nПараллель — Rām. Bāla 1.25.2:\n  «alpavīryā yadā yakṣī śrūyate munipuṅgava । kathaṃ nāgasahasrasya dhārayatyabalā balam ॥2॥»\n  «Якшини, бык среди мудрецов, Слыли всегда слабосильными. Как же досталась немощной Тараке Сила многих тысяч слонов?»", "pr": "med"}, {"sh": "V.26.34", "lem": "adharma", "wl": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 4.170–174; 8.353", "tx": "Сита формулирует закон возмездия: «из-за недолжного поведения (adharma) будет ныне великое бедствие; не ведают должного поведения ракшасы». Совпадает с дидактикой Ману о саморазрушительности адхармы. Manu 4.174 — adharmeṇaidhate tāvattato bhadrāṇi paśyati | tataḥ sapatnāñ jayati samūlastu vinaśyati «Адхармой [человек] сперва процветает … затем побеждает врагов, но погибает с корнем». Manu 8.353 связывает похищение чужих жён со «смешением варн» и адхармой, «уничтожающей корни» (mūlaharo 'dharmaḥ sarvanāśāya kalpate). Пророчество Ситы о гибели Раваны — кавья-иллюстрация шастрического тезиса о крахе того, кто живёт адхармой.", "pr": "med"}, {"sh": "V.31.10", "lem": "janasthāna", "wl": "Vālmīki Rāmāyaṇa, Rām. Araṇya 3.23.5 (Гринцер, пер. изд. I–III)", "tx": "Джанастхана (janasthāna) — лесная область в Дандаке, ставка ракшасов Кхары и Душаны; её разорение Рамой (избиение 14000 ракшасов) — кульминация Аранья-канды (повествование от 3.20 и далее, ср. 3.23.5 о панике зверей). В Сундаре «Джанастхана» работает как смысловой якорь-ретроспекция: именно местью за Джанастхану мотивировано похищение Ситы (V.31.10), на неё ссылаются Сита (V.26.12) и Хануман (V.16.9). Подстрочник передаёт топоним без указания на этот причинно-сюжетный узел, заданный в кн. III.\n\nПараллель — Rām. Araṇya 3.23.5:\n  «janasthāna samīpe ca samākramya khara svanāḥ । visvarān vividhān ca cakruḥ māṃsa ādā mṛga pakṣiṇaḥ ॥5॥»\n  По всей Джанастхане Стали рыскать хищные звери И летать беспорядочно птицы, Издавая нестройные крики.", "pr": "med"}, {"sh": "V.33.25", "lem": "satya", "wl": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 4.138; 8.83; 6.92", "tx": "Сита характеризует Раму через предельную правдивость: dadyān na pratigṛhṇīyāt satyaṃ brūyan na cānṛtam api jīvitahetor «должен давать, не отнимать, говорить правду, не ложь — даже ради собственной жизни». Эпическая огласовка нормы Ману: Manu 4.138 — satyaṃ brūyāt priyaṃ brūyānna brūyāt satyamapriyam priyaṃ ca nānṛtaṃ brūyādeṣa dharmaḥ sanātanaḥ «Надо говорить правду … не следует говорить приятную ложь — такова вечная дхарма». Manu 6.92 включает satya в десятеричный «признак дхармы» (daśakaṃ dharmalakṣaṇam). Эпитеты Рамы satyavrata (V.28.11), satyaparākrama, satyavāc — кавья-конкретизация sanātana-dharma правдивой речи. Локус классикус.", "pr": "med"}, {"sh": "V.34.14", "lem": "māyā / māyāvī (Rāvaṇa)", "wl": "Śvetāśvatara Up. 1.10 (viśvamāyānivṛttiḥ); 4.10 (māyāṃ tu prakṛtiṃ vidyān māyinaṃ tu maheśvaraṃ); Bṛhad. Up. 2.5.19 (indro māyābhiḥ pururūpa īyate)", "tx": "Хануман обращается к Раване: «Если ты сам māyāvī ('чародей'), прибегнувший к māyā ('иллюзии/обману')…» (māyāṃ praviṣṭo māyāvī yadi tvaṃ rāvaṇaḥ svayam). Термин māyā в эпическом значении — «иллюзорный облик, волшебство» (Равана мог принимать чужой вид). Упанишады дают философское измерение этого термина, которое в эпической трактовке ещё только складывается. Шветāшватара-упанишада (1.10) — ближайший к эпосу контекст: māyāṃ tu prakṛtiṃ vidyān māyinaṃ tu maheśvaraṃ («Знай, что пракрити — это māyā, а тот, кто создаёт māyā, — Махешвара»; Śvet. 4.10); и: viśvamāyānivṛttiḥ («исчезновение вселенской māyā»; Śvet. 1.10). В БрихАд-упанишаде 2.5.19 māyā связана с Индрой: indro māyābhiḥ pururūpa īyate («Индра шествует, [приняв] множество обликов через свои māyā»). Равана как māyāvī — эпическая персонификация того самого «Бога, создающего иллюзорные облики» (māyin), которому Упанишады дают космологическое объяснение. Locus classicus для философского понимания термина māyā в его начальной, ещё не адвайтической форме.", "pr": "med"}, {"sh": "V.35.15", "lem": "vipulāṃsa", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.1.9 (Гринцер, пер. изд. I–III)", "tx": "Випулаямса-махабаху (vipulāṃso mahābāhuḥ kambugrīvaḥ) — словесный портрет Рамы по благим телесным приметам (lakṣaṇa). Эта формула впервые произносится Нарадой в ответе Вальмики (Бала-канда 1.1.9) как канонический образ героя. В Сундаре (V.35.15) её почти дословно повторяет уже сама Сита, опознавая Раму по описанию Ханумана, — редкий случай прямого самоцитирования эпоса через четыре книги. Подстрочник Леонова передаёт формулу буквально, но не отмечает её тождества с «исходным» портретом из кн. I.\n\nПараллель — Rām. Bāla 1.1.9:\n  «buddhimānnītimānvāggmī śrīmān śatrunibarhaṇaḥ । vipulāṃso mahābāhuḥ kambugrīvo mahāhanuḥ ॥9॥»\n  Губитель врагов, наделенный счастьем, Он всегда владеет собою. У него широкие плечи, мощные длани, Шея-раковина, твердый подбородок,", "pr": "med"}, {"sh": "V.36.13", "lem": "yugānta", "wl": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 1.54; 1.68–73", "tx": "Образ Рамы, готового сжечь землю «словно огонь конца юги» (yugāntāgnir iva), и родственные сравнения (V.47.8 yugāntakālāgnim iva prajākṣaye; V.37.67 yugāntasūryapratima) опираются на космохронологию Ману. Manu 1.68–73 разворачивает счёт «дней и ночей Брахмы», в конце которых наступает растворение мира (pralaya): yugapat tu pralīyante … (Manu 1.54). Эпическая формула yugānta- получает у Ману развёрнутый референт — разрушение, завершающее тысячу веков богов. Кавья-переработка шастрического представления о кальпе.", "pr": "med"}, {"sh": "V.38.2", "lem": "strīsvabhāva", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.26.12 (Гринцер, пер. изд. I–III)", "tx": "Женская природа (strīsvabhāva) как этическая категория: locus classicus — Бала-канда 1.26.12, где Рама колеблется убить Тараку, «защищённую естеством женщины» (strīsvabhāvena rakṣitām). В Сундаре (V.38.2) Хануман хвалит ответ Ситы как подобающий «женской природе и правилам поведения добродетельных жён» (strīsvabhāvasya sādhvīnāṃ vinayasya). Один и тот же термин маркирует у Вальмики специфический женский дхармический статус; подстрочник передаёт его описательно («женской природе»).\n\nПараллель — Rām. Bāla 1.26.12:\n  «na hyenāmutsahe hantuṃ strīsvabhāvena rakṣitām । vīryaṃ cāsyā gatiṃ cāpi hanyatāmiti me matiḥ ॥12॥»\n  Пожалуй, не стану ее убивать: Ей защита — естество женщины. Но навсегда хочу убить Силу ее и способность двигаться».", "pr": "med"}, {"sh": "V.40.6", "lem": "mahendravaruṇopama", "wl": "Vālmīki Rāmāyaṇa, Rām. Ayodhyā 2.1.4 (Гринцер, пер. изд. I–III)", "tx": "Махендра-варунопама (mahendravaruṇopama) «подобный Махендре и Варуне» — парная формула величия: в Айодхья-канде (2.1.4) ею описаны Бхарата и Шатругхна. В Сундаре (V.40.6) Сита прилагает её к Раме (mahendravaruṇopama), упрекая его в бездействии. Тот же двойной эпитет царственной мощи переходит с младших братьев на самого Раму.\n\nПараллель — Rām. Ayodhyā 2.1.4:\n  «rājāpi tau mahātejāḥ sasmāra proṣitau sutau । ubhau bharataśatrughnau mahendravaruṇopamau ॥4॥»\n  И великий царь всегда помнил Сыновей, уехавших из дому — Царевичей Бхарату и Шатругхну, Подобных Махендре и Варуне.", "pr": "med"}, {"sh": "V.42.28", "lem": "gadā", "wl": "Mahābhārata, Śalyaparva 9.59.1-2", "tx": "«Палица» (gadā) — главное ударное оружие эпического богатыря и фокус целой парвы: Шальяпарва кульминирует в поединке на палицах (gadāyuddha) Бхимы и Дурьодханы. В МБх Баладева назван «знатоком и искушённым в бою на палицах» (gadāyuddhaviśeṣajño gadāyuddhaviśāradaḥ). Стих Сундараканды, где ракшасы идут на Ханумана «с разнообразными палицами», помещает обезьяньего героя в ту же воинскую парадигму, где gadā — оружие первого ранга. Параллель — локус классикус технического термина.\n\nПараллель — Śalyaparva 9.59.1-2:\nСА: adharmeṇa hataṃ dṛṣṭvā rājānaṃ mādhavottamaḥ । kimabravīttadā sūta baladevo mahābalaḥ ॥1॥ gadāyuddhaviśeṣajño gadāyuddhaviśāradaḥ । kṛtavānrauhiṇeyo yattanmamācakṣva sañjaya ॥2॥\nРУ: Увидев царя (кауравов), сраженного нечестным путем, что сказал тогда, о возница, могучий Баладева, превосходнейший из рода Мадху? О том, что сделал (в этом случае) сын Рохини, искушенный в сражении на палицах и хорошо сведущий во всех тонкостях битвы на палицах, расскажи мне, о Санджая!\n\nСвидетельство: уровень шлоки (мягкое, корпусное); требуется проверка.", "pr": "med"}, {"sh": "V.42.30", "lem": "tejasvin", "wl": "Mahābhārata, Karṇaparva 8.63.1-2", "tx": "«Пылающий [ратным] жаром» (tejasvin) — стандартный эпитет богатыря в гуще боя: в Карнапарве «пылкий (tejasvī) Карна на колеснице двинулся на врагов», преисполненный скорби и ярости. Сундара 42.30, где «пылкий (tejasvī), осиянный Хануман, подобный горе, взмахнул хвостом по земле и взревел великим рыком», прилагает тот же эпитет tejas к обезьяньему герою на пике боевого подъёма. Общая героическая формула.\n\nПараллель — Karṇaparva 8.63.1-2:\nСА: vṛṣasenaṃ hataṃ dṛṣṭvā śokāmarṣasamanvitaḥ । muktvā śokodbhavaṃ vāri netrābhyāṃ sahasā vṛṣaḥ ॥1॥ rathena karṇastejasvī jagāmābhimukho ripūn । yuddhāyāmarṣatāmrākṣaḥ samāhūya dhanañjayam ॥2॥\nРУ: Увидев, что сражен Вришасена, Вриша, преисполненный скорби и гнева, тотчас излил из очей рожденную скорбью влагу. Затем с глазами, налившимися от ярости кровью, пылкий Карна устремился в своей колеснице на врагов, выкликая Завоевателя богатств на поединок.\n\nСвидетельство: уровень шлоки (мягкое, корпусное); требуется проверка.", "pr": "med"}, {"sh": "V.44.7", "lem": "nārāca", "wl": "Mahābhārata, Karṇaparva 8.12.50-51", "tx": "Ровно тот же приём — поражение врага железной стрелой nārāca в лицо / между бровей — формульно повторяется в Карнапарве: «Арджуна с силой вонзил железную стрелу между бровей (Ашваттхамана); и с этой стрелой воссиял сын Дроны, словно солнце с устремлённым ввысь лучом». Сундара 44.7 («одной стрелой, подобной полумесяцу, в лицо … десятью стрелами [поразил]») — кавья-вариация той же батальной формулы прицельного выстрела нарача.\n\nПараллель — Karṇaparva 8.12.50-51:\nСА: tato'vidhyadbhruvormadhye nārācenārjuno bhṛśam । sa tena vibabhau drauṇirūrdhvaraśmiryathā raviḥ ॥50॥ atha kṛṣṇau śaraśatairaśvatthāmnārditau bhṛśam । saraśmijālanikarau yugāntārkāvivāsatuḥ ॥51॥\nРУ: Вот Арджуна с силой вонзил железную стрелу между бровей (Ашваттхаману); и с этой (стрелой) воссиял сын Дроны, словно солнце с (единственным) устремленным ввысь лучом. А два Кришны, тоже тяжко израненные сотнями стрел Ашваттхамана, были подобны двум солнцам светопреставления, ощетинившимся множеством лучей.\n\nСвидетельство: уровень шлоки (мягкое, корпусное); требуется проверка.", "pr": "med"}, {"sh": "V.44.19", "lem": "krodhasaṃraktalocana", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.36.21 (Гринцер, пер. изд. I–III)", "tx": "Кродха-самракта-лочана (krodhasaṃraktalocana) «с глазами, покрасневшими от гнева» — формула ярости: в Бала-канде 1.36.21 так описана проклинающая богов мать (Дити). В Сундаре (V.44.19) тем же оборотом передан гнев Раваны, узнавшего о гибели Джамбумалина. Один формуляр аффекта связывает мифологический гнев и гнев главного антагониста.\n\nПараллель — Rām. Bāla 1.36.21:\n  «samanyuraśapat sarvān krodhasaṃraktalocanā । yasmānnivāritā cāhaṃ saṅgatā putrakāmyayā ॥21॥»\n  Покрасневшими от гнева глазами, Всех их прокляла, негодуя: \"Я так хотела иметь сына, А вы меня его лишили.", "pr": "med"}, {"sh": "V.46.2", "lem": "virūpākṣa", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.40.13 (Гринцер, пер. изд. I–III)", "tx": "Вирупакша (virūpākṣa) «кривоглазый» — в Сундаре это имя ракшаса-полководца Раваны (V.46.2; ср. V.6.19) и определение «уродливоглазых» ракшаси (V.53.24). В Бала-канде 1.40.13 Virūpākṣa — имя СЛОНА-хранителя одной из сторон света (diśā-gaja), поддерживающего землю. Одно и то же имя у диггаджи и у ракшаса — типичная эпическая омонимия, в подстрочнике не оговариваемая; кн. I даёт «благую», космогоническую референцию имени.\n\nПараллель — Rām. Bāla 1.40.13:\n  «khanyamāne tatastasmin dadṛśuḥ parvatopamam । diśāgajaṃ virūpākṣaṃ dhārayantaṃ mahītalam ॥13॥»\n  И, раскопав его, увидели Хранителя мира Вирупакшу — Слона высотою с гору, Поддерживающего землю.", "pr": "med"}, {"sh": "V.46.27", "lem": "vega", "wl": "Mahābhārata, Droṇaparva 7.134.3", "tx": "«Стремительный налёт» (vegena utpatya / abhipatya) — устойчивая формула атаки батальных парван: в Дронапарве воин «стремительно обрушивался» (utpatantaṃ vegena), и его пришлось удерживать. Сундара 46.27, где Хануман «высоко вдруг взлетев (sahasotpatya), на колесницу Дурдхары обрушился, стремительный (mahāvega), словно молния на гору», — кавья-вариация той же кинетической формулы прыжка-атаки. Общий батальный словарь движения.\n\nПараллель — Droṇaparva 7.134.3:\nСА: tamutpatantaṃ vegena rājā duryodhanaḥ svayam । nyavārayanmahārāja kṛpaśca dvipadāṃ varaḥ ॥3॥\nРУ: И когда он стремительно обрушивался (на Карну), его удержали сам царь Дурьйодхана, о великий царь, и Крипа, наилучший из двуногих.\n\nСвидетельство: уровень шлоки (мягкое, корпусное); требуется проверка.", "pr": "med"}, {"sh": "V.54.24", "lem": "siddha", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.5.19 (Гринцер, пер. изд. I–III)", "tx": "Вимана сиддхов (vimānam siddhānām) — формула описания идеального города: в Бала-канде 1.5.19 Айодхья сравнивается с «небесной колесницей сиддхов, добытой подвижничеством». В Сундаре (V.54.24) горящие дворцы Ланки уподоблены «домам сиддхов, когда заслуги их исчерпаны». Один и тот же образ града-обители совершенных переходит с Айодхьи на гибнущую Ланку — структурная зеркальность двух столиц.\n\nПараллель — Rām. Bāla 1.5.19:\n  «vimānamiva siddhānāṃ tapasādhigataṃ divi । suniveśitaveśmāntāṃ narottamasamāvṛtām ॥19॥»\n  Прекрасный своими строениями, Прекрасный живущими в нем людьми, Этот город кажется колесницей сиддхов, Вознесенной в небо их добродетелью.", "pr": "med"}, {"sh": "V.55.14", "lem": "puruṣaśārdūla", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.11.12 (Гринцер, пер. изд. I–III)", "tx": "Пуруша-шардула (puruṣaśārdūla) «тигр среди мужей» — эпическая формула, прилагаемая в кн. I к Рамe и Дашаратхе (Бала 1.11.12), в кн. II — к скорбящему герою, которого призывают крепиться (Ayodhyā 2.34.54). В Сундаре (V.55.14) Хануман зовёт так Раму и Лакшману. Устойчивый «героический» формуляр; первое вхождение в кн. V здесь, далее — без примечания.\n\nПараллель — Rām. Bāla 1.11.12:\n  «। sa tvaṃ puruṣaśārdūla tamānaya susatkṛtam । svayameva mahārāja gatvā sabalavāhanaḥ ॥12॥»\n  Так приведи же, тигр среди людей, С должным почетом Ришьяшрингу! Сам отправься за ним, государь, С колесницами и со всем войском!»", "pr": "med"}, {"sh": "V.56.51", "lem": "lavaṇārṇava", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.1.72 (Гринцер, пер. изд. I–III)", "tx": "Солёный океан (lavaṇārṇava) и прыжок на сто йоджан: пхалашрути Бала-канды (1.1.72) заранее объявляет «śatayojanavistīrṇaṃ pupluve lavaṇārṇavam». В Сундаре (V.56.51) обратный прыжок Ханумана описан той же лексикой (lavaṇārṇavam … utpapāta). Кольцевая отсылка к программному стиху кн. I; в подстрочнике связь не отмечена.\n\nПараллель — Rām. Bāla 1.1.72:\n  «tato gṛdhrasya vacanātsampāteेrhanumān balī । śatayojanavistīrṇaṃ pupluve lavaṇārṇavam ॥72॥»\n  По совету коршуна Сампати Хануман, могучая обезьяна, Прыжком на сто йоджан Пересек соленый океан", "pr": "med"}, {"sh": "V.64.37", "lem": "madhu", "wl": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.3.33 (Гринцер, пер. изд. I–III)", "tx": "Похищение мёда (madhūnāṃ haraṇam): уже в оглавлении-пхалашрути Бала-канды (1.3.33), где Нарада перечисляет грядущие деяния, «похищение мёда» названо среди подвигов Сына Ваю наряду с сожжением Ланки. В Сундаре (V.64.37) этот эпизод (разорение Мадхуваны обезьянами Сугривы) реализуется в повествовании. Параллель показывает, что мотив запрограммирован в проспективном «синопсисе» поэмы; подстрочник его не комментирует.\n\nПараллель — Rām. Bāla 1.3.33:\n  «grahaṇaṃ vāyusūnośca laṅkādāhābhigarjanam । pratiplavanamevātha madhūnāṃ haraṇaṃ tathā ॥33॥»\n  О пленении Сына Ваю, О сожжении им в ярости Ланки, О преодолении им океана И о похищении меда;", "pr": "med"}];
+const ctbody = document.getElementById('ctBodyAll');
+if (ctbody) {
+  ctData.forEach(n=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`
+      <td style="font-family:'PT Sans',sans-serif;font-weight:700;color:var(--leo);white-space:nowrap;">${n.sh}</td>
+      <td><iast style="font-weight:700;">${n.lem}</iast></td>
+      <td style="font-size:12px;color:var(--muted);">${n.wl}</td>
+      <td style="font-family:'PT Serif',serif;font-size:13px;line-height:1.5;">${(n.tx||'').slice(0,240)}…</td>`;
+    ctbody.appendChild(tr);
+  });
+}
+
+// ── Плотность примечаний по главам (§05 book-wide strip) ──
+(function(){
+  const box = document.getElementById('chapStripBox');
+  const axis = document.getElementById('chapStripAxis');
+  if (!box || typeof chapStrip === 'undefined') return;
+  const maxN = Math.max(1, ...chapStrip.map(c=>c.n));
+  chapStrip.forEach(c=>{
+    const h = c.n === 0 ? 2 : Math.round(6 + 86*c.n/maxN);
+    const col = c.n === 0 ? '#e2ddd2' : (c.n>=10 ? '#8a1c10' : (c.n>=4 ? '#c23b22' : '#e08020'));
+    const bar = document.createElement('div');
+    bar.title = `Глава ${c.ch} · ${c.n} примеч. / ${c.v} стихов`;
+    bar.style.cssText = `flex:0 0 auto;width:9px;height:${h}px;background:${col};border-radius:1px 1px 0 0;`;
+    box.appendChild(bar);
+    const lab = document.createElement('div');
+    lab.style.cssText = 'flex:0 0 auto;width:9px;text-align:center;';
+    lab.textContent = (c.ch % 5 === 0 || c.ch === 1) ? c.ch : '';
+    axis.appendChild(lab);
+  });
+})();
+</script>
+
+</body>
+</html>
