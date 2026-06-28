@@ -59,10 +59,8 @@ Net: five tables, three of them captioned, and the captions run 3 → 1 → 2. A
 - The manuscript mixes **IAST** (*dharma*, *ātman*, *brahman*) with **Cyrillic practical transcription** («дхарма», «атман», «Брахман») — this is appropriate and consistent (IAST = object-language citation; Cyrillic = the rendered Russian word under discussion). No change needed, but state the convention once (Proposed edit 6) so a referee does not read it as inconsistency.
 - **Spelling error, line 447:** «Рамаяна. **Арааньяканда**» → should be **«Араньяканда»** (Araṇyakāṇḍa). Typo in a bibliography entry.
 
-### D. Byline form is inconsistent across artefacts
-- Manuscript frontmatter (line 3): **«Гасунс М. Ю.»**
-- Handoff: **«М. Ю. Гасунс»**; task byline: **«M. Gasūns»**.
-Pick one canonical Russian form for submission (recommend **«М. Ю. Гасунс»**, given name + patronymic initials before surname, the ВЯ norm) and use it identically in the manuscript, the cover letter, and the ORCID record. The cover letter as written uses «М. Ю. Гасунс».
+### D. Byline form — ✅ unified 2026-06-28
+- Resolved: manuscript frontmatter (line 3) changed from «Гасунс М. Ю.» → **«М. Ю. Гасунс»**, now identical to the cover letter and the canonical RU form in `Uprava/AUTHOR.md` (given name + patronymic initials before surname, the ВЯ norm). All A19 artefacts now agree.
 
 ### E. Dev/status artefacts still embedded (must be stripped for submission)
 - Lines 26–30: `<!-- СТАТУС … -->` HTML comment with the `[уточнить]` Петров flag.
@@ -109,7 +107,7 @@ These must not appear in the submitted copy. Produce a clean copy with all three
 
 8. **Strip dev artefacts in the clean submission copy** (do this in a *copy*, not the working draft, so the journal sees no comments): remove lines 26–30, 328–331, 433–435; remove the `[уточнить]/[проверить]` editorial markers; leave the Петров 1788 bracket (line 455) until the @DO archival check lands.
 
-9. **Unify the byline** to «М. Ю. Гасунс» in the manuscript frontmatter (line 3 currently «Гасунс М. Ю.») to match the cover letter and the ВЯ surname-after-initials norm; or pick the journal's required order — but make all three artefacts agree.
+9. ✅ **APPLIED 2026-06-28.** Manuscript frontmatter (line 3) unified to «М. Ю. Гасунс», matching the cover letter and the canonical RU form in `Uprava/AUTHOR.md`. All three artefacts now agree.
 
 ---
 

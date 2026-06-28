@@ -4,7 +4,8 @@ title: "Submission-readiness report — A21 Nīlakaṇṭha commentary tradition
 manuscript: "article3_nilakantha.md"
 cover_letter: "cover_letter_A21.md"
 venue: "Scrinium (Brill) — primary; Indologica Taurinensia — alternate"
-byline: "M. Gasūns (sole author; ORCID TBC)"
+byline: "M. Gasūns (sole author)"
+orcid: 0000-0003-4513-884X
 readiness_now: 5/5
 date: 2026-06-26
 lang: en
@@ -25,7 +26,7 @@ This is a Month-1 *confirmation* pass on a paper already at 5/5 (revising / read
 - **All seven sections written** (§1–§7) plus Аннотация (RU), Summary (EN), Примечания (2 footnotes), and a full Список литературы (Источники + Литература). Confirmed by full read.
 - **Both data tables present and internally complete.** Table 1 (lines 78–109) = 30 Nīlakaṇṭha loci with parallel V/N columns; Table 2 (lines 174–191) = 16 actual V/N notes. Two further comparison/typology tables in §3 (lines 155–160) and §5 (lines 231–236, 252–258).
 - **Central result is stated consistently** in the abstract, §4.1, §7.1: typological convergence (Nīlakaṇṭha ≈43% P / 37% K / 17% D; V/N ≈63% P / 37% K / 0% D) with zero locus overlap ("selection divergence" / functional inversion).
-- **Cover letter drafted** (English, ~330 words): title + one-paragraph contribution, fit-to-*Scrinium* rationale, originality / not-under-review statement, sole-author + ORCID-TBC line, contact.
+- **Cover letter drafted** (English, ~330 words): title + one-paragraph contribution, fit-to-*Scrinium* rationale, originality / not-under-review statement, sole-author + ORCID line (0000-0003-4513-884X), contact.
 - **No BOM**, encoding clean; Devanāgarī pratīkas in Table 1 render as expected in UTF-8.
 
 ---
@@ -52,7 +53,7 @@ Concrete, with manuscript line refs. Items P1–P2 are real defects; P3–P6 are
 
 Bracketed `[@DO]` items that block 5/5 → submitted and that an agent cannot do:
 
-- **[@DO] Confirm ORCID for the sole byline (M. Gasūns).** No ORCID is recorded for A21 in [`ARTICLES.md`](../../Uprava/ARTICLES.md) (line 65 has no ORCID, vs. A25 line 157 "ORCID set"). The cover letter and any submission form carry `ORCID: [TBC]` until confirmed.
+- ~~**[@DO] Confirm ORCID for the sole byline (M. Gasūns).**~~ ✅ **RESOLVED 2026-06-28** — ORCID **0000-0003-4513-884X** (canonical source `Uprava/AUTHOR.md`) pasted into the cover letter (ORCID line + frontmatter); correspondence email unified to `gasyoun@ya.ru` (was `ai.chatgpt.ocr@gmail.com`). No longer a gate.
 - **[@DO] Confirm the final byline form** — Cyrillic "Гасунс М. Ю." vs. Latin "M. Gasūns" — per the chosen venue's convention (see P3). For *Scrinium* the Latin form is expected.
 - **[@DO] Scholarly call on the three optional references** (lines 348–352): keep, promote, or drop (see Proposed edits → Optional references). This is an editorial-judgment call reserved for the author.
 - **[@DO] Final author sign-off + submission** to *Scrinium* (or *Indologica Taurinensia*): manuscript format, cover note, venue-specific style sheet, and (if Brill) the article-type / open-access selections.
@@ -83,4 +84,4 @@ Bracketed `[@DO]` items that block 5/5 → submitted and that an agent cannot do
 
 **Current readiness: 5/5 (revising, ready-to-send).** The paper is substantively complete, internally consistent, well-cited, and the data tables are well-formed. The agent-side confirmation pass found only one true defect (P1, orphaned footnote `[^1]`) and one wording reconciliation (P2, Minkowski characterization) — **both now applied 2026-06-26** (footnote anchored at line 60; Minkowski parenthetical reworded to match the cited *Mantrakāśīkhaṇḍa* article). The manuscript is now **fully ready bar sign-off**.
 
-**What flips 5/5 → submitted:** the four `[@DO]` human gates — (1) confirm ORCID, (2) confirm Latin byline form for *Scrinium*, (3) the optional-references scholarly call, (4) author sign-off and the venue upload. None require further authoring. Recommend applying proposed edits 1–4 in the same pass as the byline/ORCID confirmation, then submit.
+**What flips 5/5 → submitted:** the three remaining `[@DO]` human gates — (1) confirm the Latin byline form for *Scrinium*, (2) the optional-references scholarly call, (3) author sign-off and the venue upload. _(The former ORCID gate was resolved 2026-06-28: 0000-0003-4513-884X pasted into the cover letter.)_ None require further authoring. Recommend applying proposed edits 1–4 in the same pass as the byline confirmation, then submit.

@@ -2,7 +2,8 @@
 paper_id: A21
 to: "Editors, Scrinium (Brill)"
 re: "Manuscript submission"
-author: "M. Gasūns (sole author; ORCID TBC)"
+author: "M. Gasūns (sole author)"
+orcid: "0000-0003-4513-884X"
 date: 2026-06-26
 lang: en
 note: "Scrinium/Brill editorial correspondence is in English. If Indologica Taurinensia is chosen as the venue, a Russian-language variant of this letter is trivial to produce."
@@ -23,5 +24,5 @@ I would be glad to provide any additional materials the review process requires,
 Sincerely,
 
 M. Gasūns (sole author)
-ORCID: [TBC]
-Email: ai.chatgpt.ocr@gmail.com
+ORCID: 0000-0003-4513-884X (https://orcid.org/0000-0003-4513-884X)
+Email: gasyoun@ya.ru
