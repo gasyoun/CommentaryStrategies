@@ -63,10 +63,15 @@ def validate_html_structure(path: Path) -> list[str]:
 def main():
     skip_dirs = {'.git', '__pycache__', 'archive', 'महाभारत_files',
                  'Рамаяна. Книга 5. Сундараканда_files'}
+    # Rule-definition docs must quote the forbidden strings in order to define them —
+    # don't let the validator flag its own rulebook.
+    skip_files = {'CLAUDE.md'}
     all_errors = []
     checked = 0
     for path in ROOT.rglob('*'):
         if any(part in skip_dirs for part in path.parts):
+            continue
+        if path.name in skip_files:
             continue
         if path.suffix.lower() not in EXTENSIONS:
             continue
