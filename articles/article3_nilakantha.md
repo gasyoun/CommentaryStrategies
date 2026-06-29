@@ -1,6 +1,6 @@
 ---
 title: "Индигенная и академическая комментаторские традиции: Бхарата-бхавадипа Нилакантхи и русские переводчики Махабхараты"
-author: "Гасунс М. Ю."
+author: "М. Ю. Гасунс"
 orcid: "0000-0003-4513-884X"
 target: "Scrinium / Indologica Taurinensia"
 status: "5/5 — revising (ready-to-send)"

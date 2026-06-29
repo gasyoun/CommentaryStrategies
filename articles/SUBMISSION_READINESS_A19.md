@@ -75,7 +75,7 @@ These must not appear in the submitted copy. Produce a clean copy with all three
 - DOI line 473: confirm `10.30842/ielcp2306901529049` resolves (the prefix 10.30842 is ИЛИ РАН / Indo-European linguistics, which matches «Известия РАН. Серия литературы и языка» only loosely — verify the DOI actually points to the Казанский 2025 article, since §1 is the theoretical hinge that leans on it).
 
 ### G. Method/repo documentation drift (non-blocking, but keep consistent)
-- Per the handoff and `.ai_state.md`: `docs/ARCHITECTURE.md` in the repo calls the axis **"P/C/K"**, while the manuscript (§2.3, Таблица at line 103) and all data use **P/K/D**. If a referee follows the repo link in footnote [^1] (line 427), the mismatch is visible. Reconcile the repo doc to P/K/D; do not change the manuscript.
+- ~~`docs/ARCHITECTURE.md` calls the axis "P/C/K" while the manuscript and data use P/K/D.~~ ✅ **RESOLVED** — `docs/ARCHITECTURE.md` uses the **P/K/D** letters (corrected 2026-06-13); no referee-visible letter mismatch via footnote [^1]. (A separate, non-blocking gloss discrepancy on the axis-4 **K/D semantics** between CLAUDE.md/GEMINI.md and ARCHITECTURE.md/ROADMAP_2026H2.md is logged in `.ai_state.md` for an author ruling; it does not touch the manuscript, which is internally consistent on P/K/D.)
 
 ---
 
