@@ -19,7 +19,7 @@ keywords-en:
   - adhikārin
 ---
 
-<!-- STATUS: Translation v1 from article3_nilakantha.md (Russian draft v3, 2026-05-16).
+<!-- STATUS: 4/5 — draft (needs author review) [translation v1 from article3_nilakantha.md, Russian draft v3, 2026-05-16].
      Tables preserved; Sanskrit devanāgarī unchanged.
      Requires author review before submission. -->
 
