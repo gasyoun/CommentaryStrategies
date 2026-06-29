@@ -2,7 +2,7 @@
 title: "Indigenous and Academic Commentary Traditions: Nīlakaṇṭha's Bharatabhāvadīpa and Russian Translators of the Mahābhārata"
 author: "Mārcis Gasūns"
 target: "Indologica Taurinensia"
-status: translation-v1
+status: "4/5 — draft (needs author review)"
 date: 2026-05-18
 lang: en
 original_lang: ru

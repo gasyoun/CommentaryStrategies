@@ -5,7 +5,7 @@ orcid: "0000-0003-4513-884X"
 affiliation: "независимый исследователь"
 email: "gasyoun@ya.ru"
 target: "Вопросы языкознания"
-status: draft-v1
+status: "4/5 — submission-staged"
 date: 2026-05-15
 lang: ru
 keywords:

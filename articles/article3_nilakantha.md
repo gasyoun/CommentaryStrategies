@@ -3,7 +3,7 @@ title: "Индигенная и академическая комментато�
 author: "Гасунс М. Ю."
 orcid: "0000-0003-4513-884X"
 target: "Scrinium / Indologica Taurinensia"
-status: черновик-v3
+status: "5/5 — revising (ready-to-send)"
 date: 2026-05-16
 lang: ru
 keywords:
