@@ -2,14 +2,13 @@
 """
 Crosswalk data/gita_tm.json → SLP1 headwords from mw_en_tm.json.
 
-MW encoding in mw_en_tm.json (Cologne digitisation convention):
-  Aspirates (uppercase single char = aspirated counterpart):
-    K=kh  G=gh  C=ch  J=jh  T=th  D=dh  P=ph  B=bh
+MW encoding in mw_en_tm.json — standard SLP1 (not Cologne):
+  Aspirates:  K=kh  G=gh  C=ch  J=jh  T=th  D=dh  P=ph  B=bh
   Sibilants:  S=ś  z=ṣ
-  Palatal nasal:  Y=ñ
-  Long vowels:  A=ā  I=ī  U=ū
+  Nasals:  Y=ñ  N=ṅ  R=ṇ (retroflex nasal — common! guṇa=guRa)
+  Long vowels:  A=ā  I=ī  U=ū  E=ai  O=au
+  Retroflexes: w=ṭ  W=ṭh  q=ḍ  Q=ḍh
   Anusvara/visarga:  M=ṃ  H=ḥ (stripped in simplified form)
-  Retroflex ṭ ḍ ṇ: represented as q d N (rare in common terms)
 
 gita_tm.json keys are lowercase romanized Sanskrit, no diacritics:
   - long/short vowels merged (ā=a, ī=i, ū=u)
@@ -55,25 +54,27 @@ MW_TM   = (REPO.parent / "SanskritLexicography" / "RussianTranslation"
 # then lowercase, producing a form comparable to gita_tm keys.
 
 def mw_to_simple(key: str) -> str:
-    """Reduce an MW/SLP1 key to a simplified no-diacritic ASCII form."""
-    # Aspirates: single uppercase char → lowercase digraph
+    """Reduce an MW SLP1 key to a simplified no-diacritic ASCII form."""
+    # Aspirates (dental + labial + palatal + velar)
     key = (key
            .replace('K', 'kh').replace('G', 'gh')
            .replace('C', 'ch').replace('J', 'jh')
            .replace('T', 'th').replace('D', 'dh')
            .replace('P', 'ph').replace('B', 'bh'))
-    # Sibilants: S=ś, z=ṣ → both to 's' for matching (gita_tm also uses 's')
+    # Sibilants: S=ś, z=ṣ → 's'
     key = key.replace('S', 's').replace('z', 's')
-    # Palatal nasal ñ (Y) → 'n' (gita_tm writes jñ as 'jn')
-    key = key.replace('Y', 'n')
-    # Long vowels → short
+    # Nasals: Y=ñ, N=ṅ, R=ṇ → all 'n'
+    key = key.replace('Y', 'n').replace('N', 'n').replace('R', 'n')
+    # Long vowels and diphthongs
     key = key.replace('A', 'a').replace('I', 'i').replace('U', 'u')
-    # Vocalic r/l: f=ṛ, F=ṝ, x=ḷ
+    key = key.replace('E', 'ai').replace('O', 'au')
+    # Vocalic r/l
     key = key.replace('F', 'r').replace('f', 'r').replace('x', 'l')
     # Anusvara → m, visarga → strip
     key = key.replace('M', 'm').replace('H', '')
-    # Retroflex nasal (N) → n
-    key = key.replace('N', 'n')
+    # Retroflexes → dental equivalents
+    key = key.replace('W', 'th').replace('Q', 'dh')  # ṭh→th, ḍh→dh
+    key = key.replace('w', 't').replace('q', 'd')    # ṭ→t, ḍ→d
     return key.lower()
 
 
