@@ -228,6 +228,17 @@ Until this lands, the mitigation is the review page's **neighbours ±2** panel a
 caveat. Recommended order: implement (1)+(2) as a cheap `extract_yellow_sargas.py` preprocessing pass,
 then (3) as a validation/repair step reported alongside the segmented output.
 
+**IMPLEMENTED 2026-07-01 (partial):** shared canon module `scripts/sa_align.py` (wraps `sanskrit_util`
+`nfold` + `difflib`; SHARED_CODE §1-2). Wired into `compare_editions.py` (principled canon; identical
+1006→1065; transposition detection; true-vs-apparent absence split — but `critical_only` stayed ~399,
+needs fuzzy global assignment, not done) and into `extract_yellow_sargas.py` as pratīka anchoring: each
+gloss's leading pratīka is deva→iast→canon'd and prefix-matched to the verse; the run now reports
+`alignment_precision`. **Measured: 0.432** (197/456) with prefix matching — well below the >95% target,
+and 138/259 mismatches carry a `suggest_verse` (a nearby verse the pratīka fits) → the marker-based
+segmentation has a systematic offset recoverable by a **reassignment pass (item 3, NOT yet done)**. So
+p.1 delivered the shared canon + honest metrics + edition correctness, but neither aspirational target
+(critical_only <50, precision >95%) is met yet.
+
 ## 10. Decision & change record
 
 - 2026-07-01 — C0/D2 = model II (two-tier hybrid); D-P2-1 pilot 35/36/37; D-P2-2 name commentator in-note;

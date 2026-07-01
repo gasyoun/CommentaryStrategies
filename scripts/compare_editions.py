@@ -22,7 +22,6 @@ import sys
 import os
 import re
 import json
-import unicodedata
 from difflib import SequenceMatcher
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -38,14 +37,10 @@ OUTDIR = os.path.join(REPO, "data", "edition_comparison")
 
 VERSE_RE = re.compile(r"5\.(\d+)\.(\d+)([ac])\s+(.+)")
 
-
-def norm(s):
-    """Normalize an IAST verse for content comparison."""
-    s = unicodedata.normalize("NFC", s).lower()
-    s = re.sub(r"[०-९0-9]", "", s)          # verse digits
-    s = re.sub(r"[।॥|/.,;:\-—()\[\]']", " ", s)
-    s = re.sub(r"\s+", " ", s).strip()
-    return s
+sys.path.insert(0, HERE)
+from sa_align import canon as norm, backend as _align_backend  # noqa: E402
+# `norm` = sanskrit_util nfold-based canon (strips diacritics/length, folds nasals→n):
+# neutralizes sandhi/orthographic noise so the SAME shloka matches across editions.
 
 
 def load_critical():
@@ -146,15 +141,22 @@ def main():
                 crit_only.append({"critical": f"5.{s}.{v}", "text": t})
                 concordance.append({"status": "critical_only", "critical": f"5.{s}.{v}"})
         elif tag == "replace":
-            # pair up by best similarity; leftovers = edition-only
+            # pair up by best similarity; leftovers = edition-only.
+            # cached SequenceMatcher (b = cn[i]) + quick_ratio prefilter for speed.
             ci, sj = list(range(i1, i2)), list(range(j1, j2))
             used_s = set()
+            sm2 = SequenceMatcher(autojunk=False)
             for i in ci:
+                sm2.set_seq2(cn[i])
                 best, bestr = None, 0.0
                 for j in sj:
                     if j in used_s:
                         continue
-                    r = SequenceMatcher(None, cn[i], sn[j]).ratio()
+                    sm2.set_seq1(sn[j])
+                    floor = max(bestr, 0.6)
+                    if sm2.real_quick_ratio() < floor or sm2.quick_ratio() < floor:
+                        continue
+                    r = sm2.ratio()
                     if r > bestr:
                         best, bestr = j, r
                 if best is not None and bestr >= 0.6:
@@ -175,6 +177,14 @@ def main():
                     s, v, t = south[j]
                     south_only.append({"southern": f"5.{s}.{v}", "text": t})
                     concordance.append({"status": "southern_only", "southern": f"5.{s}.{v}"})
+
+    # ---- reclassify TRANSPOSITIONS: a verse whose canon appears in the other
+    #      edition is not truly absent but moved — removes false absences ----
+    c_canons, s_canons = set(cn), set(sn)
+    transposed_southern = [r for r in south_only if norm(r["text"]) in c_canons]
+    south_only = [r for r in south_only if norm(r["text"]) not in c_canons]
+    transposed_critical = [r for r in crit_only if norm(r["text"]) in s_canons]
+    crit_only = [r for r in crit_only if norm(r["text"]) not in s_canons]
 
     # group southern-only into runs (contiguous passages) for footnotes
     south_only_sorted = sorted(south_only, key=lambda r: tuple(int(x) for x in r["southern"][2:].split(".")))
@@ -217,7 +227,9 @@ def main():
             "generated_by": "scripts/compare_editions.py",
             "critical": "GRETIL Baroda critical edition (ram_05_u.htm)",
             "southern": "southern vulgate (samskrtam.ru / Gita Supersite) — text translated by M. Leonov",
-            "method": "content alignment of normalized IAST verses (difflib), book-level",
+            "method": "content alignment of canonicalized IAST verses (difflib), book-level",
+            "canon_backend": _align_backend(),
+            "canon": "sanskrit_util.nfold (diacritics/length stripped, nasals folded→n)",
         },
         "book_totals": {
             "critical_verses": len(crit),
@@ -229,6 +241,8 @@ def main():
             "variant_verses": len(variants),
             "southern_only_verses": len(south_only),
             "critical_only_verses": len(crit_only),
+            "transposed_southern_verses": len(transposed_southern),
+            "transposed_critical_verses": len(transposed_critical),
             "southern_only_runs": len(runs),
             "southern_extra_sargas": southern_extra_sargas,
         },
@@ -252,8 +266,11 @@ def main():
                "runs": runs, "verses": south_only},
               open(os.path.join(OUTDIR, "significant_absences.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
-    json.dump({"_meta": {"note": "Critical verses absent in southern + word-variant pairs."},
-               "critical_only": crit_only, "variants": variants},
+    json.dump({"_meta": {"note": "Critical verses truly absent in southern (canon nowhere in southern) + "
+                                 "word-variant pairs + transpositions (same canon, different position)."},
+               "critical_only": crit_only, "variants": variants,
+               "transposed_southern": transposed_southern,
+               "transposed_critical": transposed_critical},
               open(os.path.join(OUTDIR, "critical_only_and_variants.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
 

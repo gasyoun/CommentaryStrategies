@@ -3,7 +3,9 @@
     "generated_by": "scripts/compare_editions.py",
     "critical": "GRETIL Baroda critical edition (ram_05_u.htm)",
     "southern": "southern vulgate (samskrtam.ru / Gita Supersite) — text translated by M. Leonov",
-    "method": "content alignment of normalized IAST verses (difflib), book-level"
+    "method": "content alignment of canonicalized IAST verses (difflib), book-level",
+    "canon_backend": "sanskrit_util",
+    "canon": "sanskrit_util.nfold (diacritics/length stripped, nasals folded→n)"
   },
   "book_totals": {
     "critical_verses": 2488,
@@ -11,14 +13,17 @@
     "delta_southern_minus_critical": 371,
     "critical_sargas": 66,
     "southern_sargas": 68,
-    "identical_verses": 1006,
-    "variant_verses": 1075,
-    "southern_only_verses": 778,
-    "critical_only_verses": 407,
-    "southern_only_runs": 196,
+    "identical_verses": 1065,
+    "variant_verses": 1021,
+    "southern_only_verses": 764,
+    "critical_only_verses": 399,
+    "transposed_southern_verses": 9,
+    "transposed_critical_verses": 3,
+    "southern_only_runs": 198,
     "southern_extra_sargas": [
       4,
-      8
+      8,
+      60
     ]
   },
   "per_sarga_aligned": [
@@ -424,9 +429,9 @@
     {
       "critical_sarga": 58,
       "critical_verses": 22,
-      "southern_sarga": 60,
-      "southern_verses": 20,
-      "delta_southern_minus_critical": -2
+      "southern_sarga": 59,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": 10
     },
     {
       "critical_sarga": 59,
@@ -487,7 +492,8 @@
   ],
   "southern_extra_sargas": [
     4,
-    8
+    8,
+    60
   ],
   "per_sarga_by_number_RAW": [
     {

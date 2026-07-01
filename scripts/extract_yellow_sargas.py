@@ -37,6 +37,32 @@ PILOT_SARGAS = [35, 36, 37]
 # ।। 5.<sarga>.<verse> ।।  — verse group may be a merged range scraped as one token
 MARKER = re.compile(r"।।\s*5\.(\d+)\.(\d+)\s*।।")
 
+sys.path.insert(0, HERE)
+from sa_align import canon_tokens, deva_to_iast, backend as _align_backend  # noqa: E402
+
+# pratīka = the verse catchword a gloss opens with; used to verify/repair which
+# verse a commentary chunk actually belongs to (§11 alignment accuracy).
+_PRATIKA_STOP = re.compile(r"[।॥\-—]|इति")
+
+
+def leading_pratika_tokens(deva_text):
+    head = _PRATIKA_STOP.split((deva_text or "").strip(), 1)[0]
+    return canon_tokens(deva_to_iast(head))[:4]
+
+
+def _pratika_hit(pt_tokens, verse_tokens):
+    """Match a pratīka token to a verse word by prefix (sandhi truncates: the
+    gloss 'yānīti' → 'yan' must still match verse word 'yani')."""
+    for p in pt_tokens:
+        if len(p) < 3:
+            continue
+        for w in verse_tokens:
+            if len(w) < 3:
+                continue
+            if w == p or w.startswith(p) or p.startswith(w):
+                return True
+    return False
+
 
 def segment_file(path, sarga):
     """Return {verse_token: commentary_text} for one commentary file.
@@ -131,6 +157,35 @@ def main():
             "commentary": rec["commentary"],
         })
 
+    # ---- pratīka anchoring: verify each chunk sits on the right verse (§11) ----
+    vtok = {b["verse_id"]: set(canon_tokens(b["sanskrit_iast"])) for b in bundles if b["sanskrit_iast"]}
+    checkable = matched = 0
+    for b in bundles:
+        vt = vtok.get(b["verse_id"])
+        if not vt:
+            continue
+        chk = {}
+        base = int(b["verse"]) if b["verse"].isdigit() else None
+        for c, txt in b["commentary"].items():
+            pt = leading_pratika_tokens(txt)
+            if not pt:
+                continue
+            checkable += 1
+            hit = _pratika_hit(pt, vt)
+            if hit:
+                matched += 1
+            entry = {"pratika_iast": " ".join(pt), "matches_verse": hit}
+            if not hit and base is not None:      # suggest the verse the pratīka fits
+                for d in (-1, 1, -2, 2, -3, 3):
+                    nb = vtok.get(f"5.{b['sarga']}.{base + d}")
+                    if nb and _pratika_hit(pt, nb):
+                        entry["suggest_verse"] = f"5.{b['sarga']}.{base + d}"
+                        break
+            chk[c] = entry
+        if chk:
+            b["pratika_check"] = chk
+    precision = round(matched / checkable, 3) if checkable else None
+
     payload = {
         "_meta": {
             "generated_by": "scripts/extract_yellow_sargas.py",
@@ -141,6 +196,10 @@ def main():
             "verses_all_three": sum(1 for b in bundles if len(b["commentary"]) == 3),
             "ambiguous_markers": sum(1 for b in bundles if b["ambiguous_marker"]),
             "corpus_aligned": sum(1 for b in bundles if b["sanskrit_iast"]),
+            "align_backend": _align_backend(),
+            "pratika_checkable": checkable,
+            "pratika_matched": matched,
+            "alignment_precision": precision,
             "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md",
         },
         "preambles": preambles,
@@ -156,6 +215,8 @@ def main():
           f"({m['verses_all_three']} with all 3 commentaries, "
           f"{m['corpus_aligned']} corpus-aligned, "
           f"{m['ambiguous_markers']} ambiguous markers)")
+    print(f"pratīka alignment precision: {m['alignment_precision']} "
+          f"({m['pratika_matched']}/{m['pratika_checkable']}) via {m['align_backend']}")
     print(f"wrote {OUT}")
 
 
