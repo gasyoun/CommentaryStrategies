@@ -74,16 +74,24 @@ The register is the whole point; get it wrong and it isn't publishable. Grintser
 - **«Парибка»** is the only correct oblique form; obey all `validate.py` hard rules.
 - Never attribute a Leonov note to «М.: Наука 2022» (nonexistent volume).
 
-## 5. OPEN DECISIONS (to confirm with M.G. before generating) — resolved values fill in here
+## 5. DECISIONS — RESOLVED 2026-07-01 (M.G.)
 
-- **[D-P2-1] First-build scope** — pending.
-- **[D-P2-2] Commentator attribution in the reader-facing note** — pending. (ЛП house style tends to an
-  anonymous scholarly voice; hard-rule #4 forbids naming the traditional commentators *in the article
-  title* — unclear whether that sensitivity extends to the apparatus.)
-- **[D-P2-3] Note rendering form** (distilled RU only · RU + IAST pratīka · short quoted Sanskrit + RU) — pending.
-- **[D-P2-4] Generation method** (DeepSeek/openai-compat LLM distillation + gate · deterministic
-  extract-only, human writes RU · hybrid) — pending.
-- **[D-P2-5] Density target** — pending (default: ~36 %, Leonov parity).
+- **[D-P2-1] First-build scope = 2–3 sarga METHOD PILOT.** Prove Sanskrit→Russian distillation + reject
+  gate on a tiny set before any scale. Recommended pilot: **contiguous 🟡 sargas** (commentary-rich,
+  Leonov-thin) so the value-add is visible — pilot set **35 / 36 / 37**, coverage **verified 2026-07-01**:
+  all three carry tilaka + bhūṣaṇa + śiromaṇi (sarga 35 richest — bhūṣaṇa ~50 KB, śiromaṇi ~35 KB; 36/37
+  also full). Fallback sets 22/24/26 and 39/51 are likewise fully covered. Full-book density target
+  unchanged (~36 %, Leonov parity) but **gated on pilot approval**.
+- **[D-P2-2] Commentator attribution = NAME THE COMMENTATOR IN-NOTE** («по Тилаке / Бхушане / Широмани»).
+  Fits model II: tier-1 (print) stays terse, **tier-2 (this digital layer) carries the attribution**.
+  ⚠️ Boundary: hard-rule #4 forbids naming the traditional commentators **in the article title only** —
+  it is NOT overridden; the apparatus may name them, the article title still may not. Keep a machine
+  `source_commentary` field too (audit), in addition to the visible name.
+- **[D-P2-3] Rendering = Russian note + short IAST pratīka lemma.** Keep Grintser's ~12 % IAST band; no
+  block quotes of Sanskrit.
+- **[D-P2-4] Generation = HYBRID.** LLM (DeepSeek via openai-compat pipeline; no Anthropic key) drafts the
+  pilot candidates only; **M.G./Kostina gate the pilot before any scale-up**. Nothing auto-scales.
+- **[D-P2-5] Density target = ~36 % (Leonov parity)**, applied only after the pilot is approved.
 
 ## 6. Guardrails carried over
 
