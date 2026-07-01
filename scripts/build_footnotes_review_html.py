@@ -54,6 +54,10 @@ main.container{max-width:920px;margin:0 auto;padding:16px}
 .badge{font:11px system-ui,sans-serif;padding:1px 7px;border-radius:10px;background:#eee5d3;color:var(--acc);margin-left:6px}
 .dup{font:12px system-ui,sans-serif;background:#fff0f0;border:1px solid var(--no);border-radius:5px;padding:4px 8px;margin:6px 0;color:var(--no)}
 .note{font-size:16px;margin:8px 0;padding:6px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.absent{background:#f7f2e8;border-radius:6px;padding:6px 10px;margin:6px 0}
+.absent .lbl{font:11px system-ui,sans-serif;color:var(--mut)}
+.absent .v{font-style:italic;color:#3a3020;margin:2px 0}
+.absent .vn{font-style:normal;color:var(--mut);font:11px system-ui,sans-serif;margin-right:6px}
 .controls{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;font:13px system-ui,sans-serif}
 .controls label{display:inline-flex;gap:4px;align-items:center;padding:5px 10px;border:1px solid var(--line);border-radius:20px;cursor:pointer}
 textarea{width:100%;font:14px Georgia,serif;padding:8px;border:1px solid var(--line);border-radius:5px;margin-top:8px}
@@ -85,6 +89,9 @@ function render(){
   card.innerHTML=`<div class="vid">${c.range}<span class="badge">${c.kind}</span><span class="badge">${c.count} шлок</span></div>
    ${dup}
    <div class="note">${esc(c.note_ru)}</div>
+   <div class="absent"><span class="lbl">Отсутствующий текст (IAST):</span>${
+     (c.verses_iast||[]).map(v=>`<div class="v"><span class="vn">${v.verse_id}</span>${esc(v.iast)||'<span class="vn">—</span>'}</div>`).join("")
+   }</div>
    <div class="controls">
      <label><input type="radio" name="a${i}" value="accept"> ✅ принять</label>
      <label><input type="radio" name="a${i}" value="edit"> ✏️ править</label>

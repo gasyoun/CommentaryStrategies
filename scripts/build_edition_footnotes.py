@@ -58,6 +58,8 @@ def main():
         else:
             runs.append({"sarga": s, "verses": [v]})
 
+    text_by_id = {r["southern"]: r.get("text", "") for r in structural}   # IAST of each absent verse
+
     candidates, singletons = [], []
     for run in runs:
         s, vs = run["sarga"], run["verses"]
@@ -80,6 +82,7 @@ def main():
         rec = {
             "anchor": ids[0], "kind": kind, "sarga": s, "range": rng,
             "verses": vs, "count": n, "note_ru": note,
+            "verses_iast": [{"verse_id": i, "iast": text_by_id.get(i, "")} for i in ids],
             "confidence": "structural_absence (best_crit_jaccard < 0.25)",
             "leonov_note_here": leo_here or None,
             "leonov_edition_note_here": leo_ed or None,
