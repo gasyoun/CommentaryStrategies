@@ -54,6 +54,9 @@ except ImportError:
 REPO   = Path(__file__).parent.parent
 MW_TM  = (REPO.parent / "SanskritLexicography" / "RussianTranslation"
           / "src" / "mw_en_tm.json")
+sys.path.insert(0, str(MW_TM.parent))
+from mw_en_tm import slp1_simplify as slp1_to_simple, build_simplified_index  # noqa: E402
+
 BS_DIR = REPO / "data" / "brahmasutra"
 YS_DIR = REPO / "data" / "yogasutra"
 BS_OUT = REPO / "data" / "bs_term_map_slp1.json"
@@ -74,60 +77,8 @@ def dev_to_slp1(text: str) -> str:
     return slp1
 
 
-# ── Simplification (for MW index lookup) ─────────────────────────────────────
-# mw_to_simple: normalise MW Cologne SLP1 keys → no-diacritic ASCII.
-# slp1_to_simple: same but for indic_transliteration output (R=ṇ, w=ṭ, q=ḍ).
-
-def mw_to_simple(key: str) -> str:
-    """Reduce an MW SLP1 key to a simplified no-diacritic ASCII form."""
-    key = (key
-           .replace('K', 'kh').replace('G', 'gh')
-           .replace('C', 'ch').replace('J', 'jh')
-           .replace('T', 'th').replace('D', 'dh')
-           .replace('P', 'ph').replace('B', 'bh'))
-    key = key.replace('S', 's').replace('z', 's')
-    # Nasals: Y=ñ, N=ṅ, R=ṇ → all 'n'
-    key = key.replace('Y', 'n').replace('N', 'n').replace('R', 'n')
-    key = key.replace('A', 'a').replace('I', 'i').replace('U', 'u')
-    key = key.replace('E', 'ai').replace('O', 'au')
-    key = key.replace('f', 'r').replace('F', 'r').replace('x', 'l')
-    key = key.replace('M', 'm').replace('H', '')
-    # Retroflexes → dental equivalents
-    key = key.replace('W', 'th').replace('Q', 'dh')
-    key = key.replace('w', 't').replace('q', 'd')
-    return key.lower()
-
-
-def slp1_to_simple(key: str) -> str:
-    """Like mw_to_simple but handles indic_transliteration SLP1 extras."""
-    key = (key
-           .replace('K', 'kh').replace('G', 'gh')
-           .replace('C', 'ch').replace('J', 'jh')
-           .replace('T', 'th').replace('D', 'dh')
-           .replace('P', 'ph').replace('B', 'bh'))
-    key = key.replace('S', 's').replace('z', 's')
-    key = key.replace('Y', 'n')
-    key = key.replace('A', 'a').replace('I', 'i').replace('U', 'u')
-    # Diphthongs: E=ai, O=au (SLP1 convention)
-    key = key.replace('E', 'ai').replace('O', 'au')
-    key = key.replace('f', 'r').replace('F', 'r').replace('x', 'l')
-    key = key.replace('M', 'm').replace('H', '')
-    key = key.replace('R', 'n')   # indic_transliteration: ṇ = R (≠ MW's N)
-    key = key.replace('N', 'n')   # MW's ṇ just in case
-    key = key.replace('w', 't')   # indic_transliteration: ṭ = w
-    key = key.replace('q', 'd')   # indic_transliteration: ḍ = q
-    return key.lower()
-
-
 # ── Index and lookup ──────────────────────────────────────────────────────────
-
-def build_mw_index(mw_data: dict) -> dict:
-    """simplified_form → list of MW SLP1 keys."""
-    idx = {}
-    for k in mw_data:
-        s = mw_to_simple(k)
-        idx.setdefault(s, []).append(k)
-    return idx
+# slp1_to_simple and build_simplified_index imported from mw_en_tm (canonical source)
 
 
 def resolve_slp1(simple_form: str, idx: dict, mw_data: dict) -> str | None:
@@ -335,7 +286,7 @@ def main():
     print(f"  MW TM: {len(mw_data):,} entries", flush=True)
 
     print("Building MW simplified index …", flush=True)
-    idx = build_mw_index(mw_data)
+    idx = build_simplified_index(mw_data)
     print(f"  Index: {len(idx):,} simplified forms", flush=True)
 
     # ── Debug mode ──

@@ -44,38 +44,11 @@ REPO    = Path(__file__).parent.parent
 GITA_TM = REPO / "data" / "gita_tm.json"
 OUT     = REPO / "data" / "gita_tm_slp1.json"
 
-# mw_en_tm.json lives in the SanskritLexicography sibling repo
+# mw_en_tm.json (and mw_en_tm.py) live in the SanskritLexicography sibling repo
 MW_TM   = (REPO.parent / "SanskritLexicography" / "RussianTranslation"
            / "src" / "mw_en_tm.json")
-
-
-# ── MW key → simplified form ──────────────────────────────────────────────────
-# Map uppercase Cologne encoding chars to their phonetic romanized form,
-# then lowercase, producing a form comparable to gita_tm keys.
-
-def mw_to_simple(key: str) -> str:
-    """Reduce an MW SLP1 key to a simplified no-diacritic ASCII form."""
-    # Aspirates (dental + labial + palatal + velar)
-    key = (key
-           .replace('K', 'kh').replace('G', 'gh')
-           .replace('C', 'ch').replace('J', 'jh')
-           .replace('T', 'th').replace('D', 'dh')
-           .replace('P', 'ph').replace('B', 'bh'))
-    # Sibilants: S=ś, z=ṣ → 's'
-    key = key.replace('S', 's').replace('z', 's')
-    # Nasals: Y=ñ, N=ṅ, R=ṇ → all 'n'
-    key = key.replace('Y', 'n').replace('N', 'n').replace('R', 'n')
-    # Long vowels and diphthongs
-    key = key.replace('A', 'a').replace('I', 'i').replace('U', 'u')
-    key = key.replace('E', 'ai').replace('O', 'au')
-    # Vocalic r/l
-    key = key.replace('F', 'r').replace('f', 'r').replace('x', 'l')
-    # Anusvara → m, visarga → strip
-    key = key.replace('M', 'm').replace('H', '')
-    # Retroflexes → dental equivalents
-    key = key.replace('W', 'th').replace('Q', 'dh')  # ṭh→th, ḍh→dh
-    key = key.replace('w', 't').replace('q', 'd')    # ṭ→t, ḍ→d
-    return key.lower()
+sys.path.insert(0, str(MW_TM.parent))
+from mw_en_tm import build_simplified_index  # noqa: E402
 
 
 # ── Gita key → candidate stem forms ──────────────────────────────────────────
@@ -135,15 +108,6 @@ def gita_stem_variants(key: str) -> list:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def build_simple_index(mw_data: dict) -> dict:
-    """Build: simplified_form → list of SLP1_keys (many-to-one possible)."""
-    idx = {}
-    for slp1_key in mw_data:
-        simple = mw_to_simple(slp1_key)
-        idx.setdefault(simple, []).append(slp1_key)
-    return idx
-
-
 def resolve(gita_key: str, idx: dict, mw_data: dict) -> str | None:
     """Return the best SLP1 key match for a gita_tm key, or None."""
     # Sort by length descending: longer stems are more specific and preferred
@@ -179,7 +143,7 @@ def main():
     print(f"  MW TM: {len(mw_data):,} entries")
 
     print("Building simplified index …", flush=True)
-    idx = build_simple_index(mw_data)
+    idx = build_simplified_index(mw_data)
     print(f"  Index: {len(idx):,} simplified forms")
 
     print("Loading gita_tm.json …", flush=True)
