@@ -88,6 +88,10 @@ resolved decisions, the input path, and an output schema; each writes exactly
 - Short **IAST pratīka** lemma; keep IAST ≈12 % of the note (Grintser calibration) — decision [D-P2-3].
 - Kazansky type per note: **Б** = textological (wording / meaning / ellipsis / variant); **В** =
   realia/historical-cultural (place, custom, myth, epithet). Realia → В, never Б.
+- **`why_proposed`** (required label): one clause stating *why this note earns a place* — what it gives
+  beyond the подстрочник (the acceptance rationale, mirror image of a reject reason). The reviewer sees
+  this label first. Pilot notes were back-filled by Opus (`scripts/backfill_why_proposed.py`); future
+  agents emit it natively.
 - Obey `validate.py` hard rules: never «М.: Наука 2022» for Leonov; «Парибка» is the only oblique form.
 
 ### 3.2 What to draft vs. skip — the reject discipline
@@ -111,11 +115,26 @@ combines the per-sarga files into
 
 ## 5. STEP 4 — the human gate (this is where you come in)
 
-**When:** now, before any scale-up. **How:** open
-[`data/analysis/phase2_pilot/PILOT_REVIEW.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_pilot/PILOT_REVIEW.md)
-and mark each note ✅ принять / ✏️ править / ❌ отклонить. **After you gate:** accepted notes are grafted
-into `data/sundara_ch{NN}_commentary_to_add.json` with a `gated_by`/`gated_date` stamp; your rejections go
-to a `.rejected.json` with your reason. Only once you approve the **register** do we scale.
+**When:** now, before any scale-up. **Interactive — no printing.** Build and open the review page:
+```sh
+python scripts/build_pilot_review_html.py     # -> data/analysis/phase2_pilot/review.html
+```
+Open [`data/analysis/phase2_pilot/review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_pilot/review.html)
+in a browser. Each card shows: the verse (IAST + Leonov подстрочник), the **`why_proposed`** label,
+the proposed note, the **Sanskrit source** (all three commentators at that verse; the cited one
+highlighted), **neighbouring verses ±2** (so you see what else is commented nearby), and any existing
+Phase-1 note on the verse. Click **✅ принять / ✏️ править / ❌ отклонить** per card (edit box and
+reject-reason field appear as needed). Choices persist in `localStorage`; **⬇ Скачать decisions.json**
+exports them (or ⧉ copy). The static markdown sheet `PILOT_REVIEW.md` remains as a read-only fallback.
+
+**Caveat shown in the page:** the per-verse "source" is the segmenter's alignment; because of marker
+offsets/merged ranges it can differ from where the drafter actually found the cited text (e.g. 5.35.45
+cites Tilaka but Tilaka's chunk aligned to a neighbour) — the neighbours panel is there to cover this.
+
+**After you send `decisions.json` back:** an apply step (to be written) grafts `accept`/`edit` notes into
+`data/sundara_ch{NN}_commentary_to_add.json` with a `gated_by`/`gated_date` stamp and the (possibly edited)
+text; `reject` entries go to a `.rejected.json` with your reason. Only once you approve the **register** do
+we scale.
 
 ## 6. Why the accept rate is ~6 % (and why that is correct)
 
