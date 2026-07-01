@@ -8,7 +8,9 @@ changes. Each released version is git-tagged (`vX.Y.Z`) with a matching
 [GitHub release](https://github.com/gasyoun/CommentaryStrategies/releases).
 Work not yet on `main` stays under **[Unreleased]**.
 
-## [1.3.0] - 2026-07-01 — Scraped śāstric corpora, PWG→EN translation memories, Phase-2 + edition comparison
+## [Unreleased]
+
+## [1.3.0] - 2026-07-01
 
 ### Added
 
@@ -73,7 +75,7 @@ Work not yet on `main` stays under **[Unreleased]**.
 - 🟡 sargas 22, 24, 26, 30, 34–37, 39, 51: untapped commentator coverage, queued for
   `extract_yellow_sargas.py` (not yet written).
 
-## [1.2.0] - 2026-06-29 — Sundarakāṇḍa: all four Kazansky levels + Grintser cross-refs
+## [1.2.0] - 2026-06-29
 
 ### Added
 - **Г историко-культурологический layer** — 11 background intro-articles
@@ -100,7 +102,7 @@ Work not yet on `main` stays under **[Unreleased]**.
   a Gemini-Pro OCR of the five Sanskrit commentaries — not yet available.
 - `leonov_sundara_corpus_enriched.html` still shows pre-expansion counts (166); refresh pending.
 
-## [1.1.0] - 2026-06-29 — Sundarakāṇḍa lexical/etymological layer
+## [1.1.0] - 2026-06-29
 
 ### Added
 - **Lexical layer (А)** — 611 etymological/lexical gloss notes across all 68 chapters
