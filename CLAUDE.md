@@ -107,6 +107,20 @@ epic, book = first passage element — derived deterministically by `derive_urn.
 
 Run `python scripts/validate.py` after any content edit to catch 1–2.
 
+## Human review / gating artifacts — interactive HTML, never checkboxes
+
+Any artifact for a human accept/edit/reject pass (candidate notes, footnotes, findings) **must be an
+interactive HTML page**: one vote control per item, choices persisted in `localStorage`, and a
+**"Скачать decisions.json" / copy** button that exports the decisions for a deterministic apply step.
+The canonical example is [data/analysis/phase2_pilot/review.html](data/analysis/phase2_pilot/review.html)
+(generator [scripts/build_pilot_review_html.py](scripts/build_pilot_review_html.py)); the edition
+footnotes use [scripts/build_footnotes_review_html.py](scripts/build_footnotes_review_html.py).
+
+- **Never** emit a Markdown checkbox sheet (`☐ принять ☐ править ☐ отклонить`) for review — it is not used.
+- Every review/report HTML must carry the design-system markers or `validate.py` fails: a
+  `css/commentary.css` link (correct relative depth) and a `<main class="container">` wrapper (that exact
+  literal — extra attributes on `<main>` break the check; nest an inner `<div>` instead).
+
 ## Conventions
 
 - **Python**: stdlib-only by default (3.10+); third-party only in `annotate_batch.py` (`anthropic`)

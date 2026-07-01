@@ -1,0 +1,980 @@
+{
+  "_meta": {
+    "generated_by": "scripts/compare_editions.py",
+    "critical": "GRETIL Baroda critical edition (ram_05_u.htm)",
+    "southern": "southern vulgate (samskrtam.ru / Gita Supersite) — text translated by M. Leonov",
+    "method": "content alignment of canonicalized IAST verses (difflib), book-level",
+    "canon_backend": "sanskrit_util",
+    "canon": "sanskrit_util.nfold (diacritics/length stripped, nasals folded→n)"
+  },
+  "book_totals": {
+    "critical_verses": 2488,
+    "southern_verses": 2859,
+    "delta_southern_minus_critical": 371,
+    "critical_sargas": 66,
+    "southern_sargas": 68,
+    "identical_verses": 1065,
+    "variant_verses": 1043,
+    "fuzzy_paired_verses": 22,
+    "southern_only_verses": 742,
+    "southern_structural_absence": 307,
+    "southern_reworded": 435,
+    "critical_only_verses": 377,
+    "transposed_southern_verses": 9,
+    "transposed_critical_verses": 3,
+    "southern_only_runs": 209,
+    "southern_extra_sargas": [
+      4,
+      8,
+      60
+    ]
+  },
+  "per_sarga_aligned": [
+    {
+      "critical_sarga": 1,
+      "critical_verses": 190,
+      "southern_sarga": 1,
+      "southern_verses": 213,
+      "delta_southern_minus_critical": 23
+    },
+    {
+      "critical_sarga": 2,
+      "critical_verses": 55,
+      "southern_sarga": 2,
+      "southern_verses": 58,
+      "delta_southern_minus_critical": 3
+    },
+    {
+      "critical_sarga": 3,
+      "critical_verses": 37,
+      "southern_sarga": 3,
+      "southern_verses": 51,
+      "delta_southern_minus_critical": 14
+    },
+    {
+      "critical_sarga": 4,
+      "critical_verses": 24,
+      "southern_sarga": 5,
+      "southern_verses": 27,
+      "delta_southern_minus_critical": 3
+    },
+    {
+      "critical_sarga": 5,
+      "critical_verses": 42,
+      "southern_sarga": 6,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 2
+    },
+    {
+      "critical_sarga": 6,
+      "critical_verses": 17,
+      "southern_sarga": 7,
+      "southern_verses": 17,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 7,
+      "critical_verses": 69,
+      "southern_sarga": 9,
+      "southern_verses": 72,
+      "delta_southern_minus_critical": 3
+    },
+    {
+      "critical_sarga": 8,
+      "critical_verses": 50,
+      "southern_sarga": 10,
+      "southern_verses": 54,
+      "delta_southern_minus_critical": 4
+    },
+    {
+      "critical_sarga": 9,
+      "critical_verses": 44,
+      "southern_sarga": 11,
+      "southern_verses": 47,
+      "delta_southern_minus_critical": 3
+    },
+    {
+      "critical_sarga": 10,
+      "critical_verses": 25,
+      "southern_sarga": 12,
+      "southern_verses": 25,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 11,
+      "critical_verses": 69,
+      "southern_sarga": 13,
+      "southern_verses": 69,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 12,
+      "critical_verses": 51,
+      "southern_sarga": 14,
+      "southern_verses": 51,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 13,
+      "critical_verses": 52,
+      "southern_sarga": 15,
+      "southern_verses": 54,
+      "delta_southern_minus_critical": 2
+    },
+    {
+      "critical_sarga": 14,
+      "critical_verses": 32,
+      "southern_sarga": 16,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 15,
+      "critical_verses": 33,
+      "southern_sarga": 17,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": -1
+    },
+    {
+      "critical_sarga": 16,
+      "critical_verses": 28,
+      "southern_sarga": 18,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": 4
+    },
+    {
+      "critical_sarga": 17,
+      "critical_verses": 21,
+      "southern_sarga": 19,
+      "southern_verses": 22,
+      "delta_southern_minus_critical": 1
+    },
+    {
+      "critical_sarga": 18,
+      "critical_verses": 35,
+      "southern_sarga": 20,
+      "southern_verses": 36,
+      "delta_southern_minus_critical": 1
+    },
+    {
+      "critical_sarga": 19,
+      "critical_verses": 30,
+      "southern_sarga": 21,
+      "southern_verses": 34,
+      "delta_southern_minus_critical": 4
+    },
+    {
+      "critical_sarga": 20,
+      "critical_verses": 41,
+      "southern_sarga": 22,
+      "southern_verses": 46,
+      "delta_southern_minus_critical": 5
+    },
+    {
+      "critical_sarga": 21,
+      "critical_verses": 19,
+      "southern_sarga": 23,
+      "southern_verses": 19,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 22,
+      "critical_verses": 42,
+      "southern_sarga": 24,
+      "southern_verses": 47,
+      "delta_southern_minus_critical": 5
+    },
+    {
+      "critical_sarga": 23,
+      "critical_verses": 20,
+      "southern_sarga": 25,
+      "southern_verses": 20,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 24,
+      "critical_verses": 49,
+      "southern_sarga": 26,
+      "southern_verses": 49,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 25,
+      "critical_verses": 38,
+      "southern_sarga": 27,
+      "southern_verses": 54,
+      "delta_southern_minus_critical": 16
+    },
+    {
+      "critical_sarga": 26,
+      "critical_verses": 20,
+      "southern_sarga": 28,
+      "southern_verses": 20,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 27,
+      "critical_verses": 8,
+      "southern_sarga": 29,
+      "southern_verses": 8,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 28,
+      "critical_verses": 44,
+      "southern_sarga": 30,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 29,
+      "critical_verses": 12,
+      "southern_sarga": 31,
+      "southern_verses": 19,
+      "delta_southern_minus_critical": 7
+    },
+    {
+      "critical_sarga": 30,
+      "critical_verses": 8,
+      "southern_sarga": 32,
+      "southern_verses": 14,
+      "delta_southern_minus_critical": 6
+    },
+    {
+      "critical_sarga": 31,
+      "critical_verses": 27,
+      "southern_sarga": 33,
+      "southern_verses": 31,
+      "delta_southern_minus_critical": 4
+    },
+    {
+      "critical_sarga": 32,
+      "critical_verses": 39,
+      "southern_sarga": 34,
+      "southern_verses": 39,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 33,
+      "critical_verses": 80,
+      "southern_sarga": 35,
+      "southern_verses": 90,
+      "delta_southern_minus_critical": 10
+    },
+    {
+      "critical_sarga": 34,
+      "critical_verses": 45,
+      "southern_sarga": 36,
+      "southern_verses": 47,
+      "delta_southern_minus_critical": 2
+    },
+    {
+      "critical_sarga": 35,
+      "critical_verses": 68,
+      "southern_sarga": 37,
+      "southern_verses": 68,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 36,
+      "critical_verses": 56,
+      "southern_sarga": 38,
+      "southern_verses": 70,
+      "delta_southern_minus_critical": 14
+    },
+    {
+      "critical_sarga": 37,
+      "critical_verses": 53,
+      "southern_sarga": 39,
+      "southern_verses": 54,
+      "delta_southern_minus_critical": 1
+    },
+    {
+      "critical_sarga": 38,
+      "critical_verses": 24,
+      "southern_sarga": 40,
+      "southern_verses": 25,
+      "delta_southern_minus_critical": 1
+    },
+    {
+      "critical_sarga": 39,
+      "critical_verses": 17,
+      "southern_sarga": 41,
+      "southern_verses": 21,
+      "delta_southern_minus_critical": 4
+    },
+    {
+      "critical_sarga": 40,
+      "critical_verses": 36,
+      "southern_sarga": 42,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 8
+    },
+    {
+      "critical_sarga": 41,
+      "critical_verses": 18,
+      "southern_sarga": 43,
+      "southern_verses": 25,
+      "delta_southern_minus_critical": 7
+    },
+    {
+      "critical_sarga": 42,
+      "critical_verses": 19,
+      "southern_sarga": 44,
+      "southern_verses": 20,
+      "delta_southern_minus_critical": 1
+    },
+    {
+      "critical_sarga": 43,
+      "critical_verses": 16,
+      "southern_sarga": 45,
+      "southern_verses": 17,
+      "delta_southern_minus_critical": 1
+    },
+    {
+      "critical_sarga": 44,
+      "critical_verses": 39,
+      "southern_sarga": 46,
+      "southern_verses": 41,
+      "delta_southern_minus_critical": 2
+    },
+    {
+      "critical_sarga": 45,
+      "critical_verses": 39,
+      "southern_sarga": 47,
+      "southern_verses": 38,
+      "delta_southern_minus_critical": -1
+    },
+    {
+      "critical_sarga": 46,
+      "critical_verses": 59,
+      "southern_sarga": 48,
+      "southern_verses": 61,
+      "delta_southern_minus_critical": 2
+    },
+    {
+      "critical_sarga": 47,
+      "critical_verses": 20,
+      "southern_sarga": 49,
+      "southern_verses": 20,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 48,
+      "critical_verses": 16,
+      "southern_sarga": 50,
+      "southern_verses": 19,
+      "delta_southern_minus_critical": 3
+    },
+    {
+      "critical_sarga": 49,
+      "critical_verses": 36,
+      "southern_sarga": 51,
+      "southern_verses": 45,
+      "delta_southern_minus_critical": 9
+    },
+    {
+      "critical_sarga": 50,
+      "critical_verses": 17,
+      "southern_sarga": 52,
+      "southern_verses": 28,
+      "delta_southern_minus_critical": 11
+    },
+    {
+      "critical_sarga": 51,
+      "critical_verses": 39,
+      "southern_sarga": 53,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 5
+    },
+    {
+      "critical_sarga": 52,
+      "critical_verses": 17,
+      "southern_sarga": 54,
+      "southern_verses": 51,
+      "delta_southern_minus_critical": 34
+    },
+    {
+      "critical_sarga": 53,
+      "critical_verses": 28,
+      "southern_sarga": 55,
+      "southern_verses": 35,
+      "delta_southern_minus_critical": 7
+    },
+    {
+      "critical_sarga": 54,
+      "critical_verses": 26,
+      "southern_sarga": 56,
+      "southern_verses": 51,
+      "delta_southern_minus_critical": 25
+    },
+    {
+      "critical_sarga": 55,
+      "critical_verses": 38,
+      "southern_sarga": 57,
+      "southern_verses": 50,
+      "delta_southern_minus_critical": 12
+    },
+    {
+      "critical_sarga": 56,
+      "critical_verses": 140,
+      "southern_sarga": 58,
+      "southern_verses": 169,
+      "delta_southern_minus_critical": 29
+    },
+    {
+      "critical_sarga": 57,
+      "critical_verses": 17,
+      "southern_sarga": 59,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": 15
+    },
+    {
+      "critical_sarga": 58,
+      "critical_verses": 22,
+      "southern_sarga": 59,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": 10
+    },
+    {
+      "critical_sarga": 59,
+      "critical_verses": 22,
+      "southern_sarga": 61,
+      "southern_verses": 24,
+      "delta_southern_minus_critical": 2
+    },
+    {
+      "critical_sarga": 60,
+      "critical_verses": 37,
+      "southern_sarga": 62,
+      "southern_verses": 38,
+      "delta_southern_minus_critical": 1
+    },
+    {
+      "critical_sarga": 61,
+      "critical_verses": 27,
+      "southern_sarga": 63,
+      "southern_verses": 33,
+      "delta_southern_minus_critical": 6
+    },
+    {
+      "critical_sarga": 62,
+      "critical_verses": 40,
+      "southern_sarga": 64,
+      "southern_verses": 45,
+      "delta_southern_minus_critical": 5
+    },
+    {
+      "critical_sarga": 63,
+      "critical_verses": 26,
+      "southern_sarga": 65,
+      "southern_verses": 28,
+      "delta_southern_minus_critical": 2
+    },
+    {
+      "critical_sarga": 64,
+      "critical_verses": 15,
+      "southern_sarga": 66,
+      "southern_verses": 15,
+      "delta_southern_minus_critical": 0
+    },
+    {
+      "critical_sarga": 65,
+      "critical_verses": 36,
+      "southern_sarga": 67,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 8
+    },
+    {
+      "critical_sarga": 66,
+      "critical_verses": 29,
+      "southern_sarga": 68,
+      "southern_verses": 29,
+      "delta_southern_minus_critical": 0
+    }
+  ],
+  "southern_extra_sargas": [
+    4,
+    8,
+    60
+  ],
+  "per_sarga_by_number_RAW": [
+    {
+      "sarga": 1,
+      "critical_verses": 190,
+      "southern_verses": 213,
+      "delta_southern_minus_critical": 23,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 2,
+      "critical_verses": 55,
+      "southern_verses": 58,
+      "delta_southern_minus_critical": 3,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 3,
+      "critical_verses": 37,
+      "southern_verses": 51,
+      "delta_southern_minus_critical": 14,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 4,
+      "critical_verses": 24,
+      "southern_verses": 30,
+      "delta_southern_minus_critical": 6,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 5,
+      "critical_verses": 42,
+      "southern_verses": 27,
+      "delta_southern_minus_critical": -15,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 6,
+      "critical_verses": 17,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 27,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 7,
+      "critical_verses": 69,
+      "southern_verses": 17,
+      "delta_southern_minus_critical": -52,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 8,
+      "critical_verses": 50,
+      "southern_verses": 8,
+      "delta_southern_minus_critical": -42,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 9,
+      "critical_verses": 44,
+      "southern_verses": 72,
+      "delta_southern_minus_critical": 28,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 10,
+      "critical_verses": 25,
+      "southern_verses": 54,
+      "delta_southern_minus_critical": 29,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 11,
+      "critical_verses": 69,
+      "southern_verses": 47,
+      "delta_southern_minus_critical": -22,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 12,
+      "critical_verses": 51,
+      "southern_verses": 25,
+      "delta_southern_minus_critical": -26,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 13,
+      "critical_verses": 52,
+      "southern_verses": 69,
+      "delta_southern_minus_critical": 17,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 14,
+      "critical_verses": 32,
+      "southern_verses": 51,
+      "delta_southern_minus_critical": 19,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 15,
+      "critical_verses": 33,
+      "southern_verses": 54,
+      "delta_southern_minus_critical": 21,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 16,
+      "critical_verses": 28,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": 4,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 17,
+      "critical_verses": 21,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": 11,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 18,
+      "critical_verses": 35,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": -3,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 19,
+      "critical_verses": 30,
+      "southern_verses": 22,
+      "delta_southern_minus_critical": -8,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 20,
+      "critical_verses": 41,
+      "southern_verses": 36,
+      "delta_southern_minus_critical": -5,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 21,
+      "critical_verses": 19,
+      "southern_verses": 34,
+      "delta_southern_minus_critical": 15,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 22,
+      "critical_verses": 42,
+      "southern_verses": 46,
+      "delta_southern_minus_critical": 4,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 23,
+      "critical_verses": 20,
+      "southern_verses": 19,
+      "delta_southern_minus_critical": -1,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 24,
+      "critical_verses": 49,
+      "southern_verses": 47,
+      "delta_southern_minus_critical": -2,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 25,
+      "critical_verses": 38,
+      "southern_verses": 20,
+      "delta_southern_minus_critical": -18,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 26,
+      "critical_verses": 20,
+      "southern_verses": 49,
+      "delta_southern_minus_critical": 29,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 27,
+      "critical_verses": 8,
+      "southern_verses": 54,
+      "delta_southern_minus_critical": 46,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 28,
+      "critical_verses": 44,
+      "southern_verses": 20,
+      "delta_southern_minus_critical": -24,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 29,
+      "critical_verses": 12,
+      "southern_verses": 8,
+      "delta_southern_minus_critical": -4,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 30,
+      "critical_verses": 8,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 36,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 31,
+      "critical_verses": 27,
+      "southern_verses": 19,
+      "delta_southern_minus_critical": -8,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 32,
+      "critical_verses": 39,
+      "southern_verses": 14,
+      "delta_southern_minus_critical": -25,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 33,
+      "critical_verses": 80,
+      "southern_verses": 31,
+      "delta_southern_minus_critical": -49,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 34,
+      "critical_verses": 45,
+      "southern_verses": 39,
+      "delta_southern_minus_critical": -6,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 35,
+      "critical_verses": 68,
+      "southern_verses": 90,
+      "delta_southern_minus_critical": 22,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 36,
+      "critical_verses": 56,
+      "southern_verses": 47,
+      "delta_southern_minus_critical": -9,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 37,
+      "critical_verses": 53,
+      "southern_verses": 68,
+      "delta_southern_minus_critical": 15,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 38,
+      "critical_verses": 24,
+      "southern_verses": 70,
+      "delta_southern_minus_critical": 46,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 39,
+      "critical_verses": 17,
+      "southern_verses": 54,
+      "delta_southern_minus_critical": 37,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 40,
+      "critical_verses": 36,
+      "southern_verses": 25,
+      "delta_southern_minus_critical": -11,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 41,
+      "critical_verses": 18,
+      "southern_verses": 21,
+      "delta_southern_minus_critical": 3,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 42,
+      "critical_verses": 19,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 25,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 43,
+      "critical_verses": 16,
+      "southern_verses": 25,
+      "delta_southern_minus_critical": 9,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 44,
+      "critical_verses": 39,
+      "southern_verses": 20,
+      "delta_southern_minus_critical": -19,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 45,
+      "critical_verses": 39,
+      "southern_verses": 17,
+      "delta_southern_minus_critical": -22,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 46,
+      "critical_verses": 59,
+      "southern_verses": 41,
+      "delta_southern_minus_critical": -18,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 47,
+      "critical_verses": 20,
+      "southern_verses": 38,
+      "delta_southern_minus_critical": 18,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 48,
+      "critical_verses": 16,
+      "southern_verses": 61,
+      "delta_southern_minus_critical": 45,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 49,
+      "critical_verses": 36,
+      "southern_verses": 20,
+      "delta_southern_minus_critical": -16,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 50,
+      "critical_verses": 17,
+      "southern_verses": 19,
+      "delta_southern_minus_critical": 2,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 51,
+      "critical_verses": 39,
+      "southern_verses": 45,
+      "delta_southern_minus_critical": 6,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 52,
+      "critical_verses": 17,
+      "southern_verses": 28,
+      "delta_southern_minus_critical": 11,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 53,
+      "critical_verses": 28,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 16,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 54,
+      "critical_verses": 26,
+      "southern_verses": 51,
+      "delta_southern_minus_critical": 25,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 55,
+      "critical_verses": 38,
+      "southern_verses": 35,
+      "delta_southern_minus_critical": -3,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 56,
+      "critical_verses": 140,
+      "southern_verses": 51,
+      "delta_southern_minus_critical": -89,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 57,
+      "critical_verses": 17,
+      "southern_verses": 50,
+      "delta_southern_minus_critical": 33,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 58,
+      "critical_verses": 22,
+      "southern_verses": 169,
+      "delta_southern_minus_critical": 147,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 59,
+      "critical_verses": 22,
+      "southern_verses": 32,
+      "delta_southern_minus_critical": 10,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 60,
+      "critical_verses": 37,
+      "southern_verses": 20,
+      "delta_southern_minus_critical": -17,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 61,
+      "critical_verses": 27,
+      "southern_verses": 24,
+      "delta_southern_minus_critical": -3,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 62,
+      "critical_verses": 40,
+      "southern_verses": 38,
+      "delta_southern_minus_critical": -2,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 63,
+      "critical_verses": 26,
+      "southern_verses": 33,
+      "delta_southern_minus_critical": 7,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 64,
+      "critical_verses": 15,
+      "southern_verses": 45,
+      "delta_southern_minus_critical": 30,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 65,
+      "critical_verses": 36,
+      "southern_verses": 28,
+      "delta_southern_minus_critical": -8,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 66,
+      "critical_verses": 29,
+      "southern_verses": 15,
+      "delta_southern_minus_critical": -14,
+      "only_in_one_edition": false
+    },
+    {
+      "sarga": 67,
+      "critical_verses": 0,
+      "southern_verses": 44,
+      "delta_southern_minus_critical": 44,
+      "only_in_one_edition": true
+    },
+    {
+      "sarga": 68,
+      "critical_verses": 0,
+      "southern_verses": 29,
+      "delta_southern_minus_critical": 29,
+      "only_in_one_edition": true
+    }
+  ],
+  "_caveat": "Use per_sarga_aligned (sargas matched by verse content). per_sarga_by_number_RAW compares by sarga NUMBER and is misleading after the numbering diverges. identical/variant/only counts are content-based; near-identical verses with minor orthographic/sandhi differences inflate 'variant' and the 'only' buckets — the reliable absence signal is the large contiguous southern_only runs."
+}
