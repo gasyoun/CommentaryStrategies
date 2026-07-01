@@ -9,15 +9,25 @@ Covers [`data/valmiki_shlokas/`](valmiki_shlokas/) (verse text + English glosses
 - **Acquired:** 2026-06-29, via [`scripts/scrape_valmiki_shlokas.py`](../scripts/scrape_valmiki_shlokas.py) + [`scripts/scrape_valmiki_commentaries.py`](../scripts/scrape_valmiki_commentaries.py).
 - **Regenerable:** yes — re-run the two scrapers with `--force`. The cached files are not authored here.
 
-## ⚠️ RIGHTS — NOT yet cleared (blocks publication/commit)
+## ✅ RIGHTS — CLEARED (2026-07-01)
 
-The Vālmīki text and the 7 traditional Sanskrit commentaries are old works, **but** GitaSupersite's
-specific digital edition, its **modern English word-by-word glosses and explanations** (captured in the
-`word_by_word` / `explanation` fields of every shloka file), and the site's database compilation may carry
-their own copyright / terms-of-use. GitaSupersite's ToS and `robots.txt` were **not** consulted by the
-scrape. [`data/RIGHTS.md`](RIGHTS.md) covers only the five Soviet/Russian translation editions — it does
-**not** extend to this source. **Do not republish, commit to history, or deposit (Zenodo/TEI) until rights
-are cleared** (read the ToS / obtain IIT Kanpur permission, or ship scrapers-only + a regeneration manifest).
+Permission to reproduce, distribute, and make available the **Sanskrit text, the seven traditional
+Sanskrit commentaries, and the modern English word‑by‑word glosses and explanations** as published on
+<https://valmiki.gitasupersite.in> — for an open‑source research corpus and a Zenodo archive under an open
+license — was granted by **Sudalaimuthu Palaniappan, editor of the Vālmīki Rāmāyaṇa section of the Gita
+Supersite**, on **1 July 2026**. Non‑exclusive, worldwide, perpetual, royalty‑free; **attribution
+required**. Full grant archived verbatim in [`valmiki_PERMISSION.md`](valmiki_PERMISSION.md); summary in
+[`data/RIGHTS.md`](RIGHTS.md).
+
+- **License:** CC BY 4.0 (project compilation/derived apparatus; underlying Gita Supersite materials used
+  by permission, not claimed as this project's copyright).
+- **Required attribution (verbatim):** *Vālmīki Rāmāyaṇa, as published on the Gita Supersite
+  (https://valmiki.gitasupersite.in), used by permission of the editor, Sudalaimuthu Palaniappan.*
+- Publication/commit/deposit (Zenodo/TEI) is **permitted**. (Historical note: the corpus was in fact
+  already tracked in git before clearance; this grant legitimizes the existing commit — no un-ignore was
+  needed.)
+- Residual-risk note: editor-level grant, relied upon in good faith; not a separate IIT Kanpur
+  institutional instrument. See [`valmiki_PERMISSION.md`](valmiki_PERMISSION.md).
 
 ## Cleanup applied (2026-06-29)
 
@@ -62,12 +72,16 @@ an English bracketed sarga summary — filter on empty `verse_id` if processing.
 | dharmakutam | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
 | tanisloki | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
 
-**Known gaps (acquisition is partial — not "7 commentaries on all of Vālmīki"):**
-- `dharmakutam` (tid 9) and `tanisloki` (tid 11) produced **zero** files anywhere — verify the tids against
-  the live site or confirm these commentaries are absent from GitaSupersite.
-- **Yuddhakāṇḍa has zero commentary files** (shlokas were scraped, commentaries were not) — the run was
-  interrupted.
+**Known gaps — DOCUMENTED AS PERMANENT (do NOT re-scrape; project decision 2026-07-01).**
+Acquisition is partial — this is *not* "7 commentaries on all of Vālmīki." Per M.G., **re-scraping will
+not recover these cells** (the content is not retrievable from the source), so they are recorded here as
+standing coverage limits, not as a TODO:
+- `dharmakutam` (tid 9) and `tanisloki` (tid 11) — **zero** files anywhere; absent from GitaSupersite for
+  this acquisition. Not retrievable.
+- **Yuddhakāṇḍa — zero commentary files** across all commentaries (verse text present). Not retrievable.
 - `kataka` exists only for kāṇḍas 1–2; `tilaka`/`bhusana` thin in Ayodhyā; `tattvadipika` thin in Sundara.
 
-Completing the missing cells requires a re-scrape (network load on the source) and is gated on the rights
-question above.
+**Impact on Phase 2 (Sundarakāṇḍa density layer): none.** Sundara commentary coverage is strong —
+`tilaka` 66, `bhusana` 68, `siromani` 65 (of 68 sargas) — which is what the ~38% Sanskrit-commentator
+dialogue layer draws on. The gaps above affect other kāṇḍas / the full-corpus deposit's completeness, not
+the Sundara apparatus.

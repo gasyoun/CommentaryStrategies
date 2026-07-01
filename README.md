@@ -81,6 +81,16 @@ python scripts/build_pages.py                                     # data → pag
 условия использования **текстов примечаний** — отдельно, см. [data/RIGHTS.md](data/RIGHTS.md)
 (полнотекстовая публикация авторизована, с обязательным указанием издания-источника).
 
+### Корпус Вальмики (Gita Supersite) — CC BY 4.0, по разрешению
+
+Санскритский текст, семь традиционных санскритских комментариев и современные английские
+пословные глоссы Рамаяны в [data/valmiki_shlokas/](data/valmiki_shlokas/) и
+[data/valmiki_commentaries/](data/valmiki_commentaries/) используются **по разрешению** редактора
+раздела Вальмики Gita Supersite (см. [data/valmiki_PERMISSION.md](data/valmiki_PERMISSION.md),
+[data/RIGHTS.md](data/RIGHTS.md)). Лицензия компиляции — **CC BY 4.0**. Обязательная атрибуция:
+
+> Vālmīki Rāmāyaṇa, as published on the Gita Supersite (https://valmiki.gitasupersite.in), used by permission of the editor, Sudalaimuthu Palaniappan.
+
 ## Аналитические страницы
 
 - `index.html` — сравнение 6 переводчиков (Кальянов, Васильков, Эрман, Гринцер, Сыркин, Леонов)
