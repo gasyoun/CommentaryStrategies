@@ -1,0 +1,145 @@
+#!/usr/bin/env python3
+"""Generate footnote candidates for critical↔southern edition differences.
+
+Deterministic (no LLM — these are structural statements). Emits «в критическом
+издании (Барода) отсутствует» footnotes ONLY from genuine structural absences
+(significant_absences.json → divergence == 'structural_absence'), grouped into
+contiguous passages, deduped against Leonov/Kostina's own notes, every candidate
+review_required. Format is per COMMENTARY_ROADMAP §3 and is [to ratify].
+
+Usage: python scripts/build_edition_footnotes.py
+Output: data/edition_footnotes/candidates.json + EDITION_FOOTNOTES_REVIEW.md
+"""
+import sys
+import os
+import json
+
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.dirname(HERE)
+CD = os.path.join(REPO, "data", "edition_comparison")
+OUTDIR = os.path.join(REPO, "data", "edition_footnotes")
+
+MIN_RUN = 2          # [to ratify] min passage length for a standalone footnote
+WHOLE_FRAC = 0.8     # a run covering >= this fraction of a sarga = whole-sarga absence
+EDITION_KW = ["критическ", "южн", "издани", "выпал", "отсутств", "редакц", "рецензи", "вульгат", "рукопис"]
+
+
+def vparts(vid):
+    p = vid.split(".")
+    return int(p[1]), int(p[2])
+
+
+def main():
+    sa = json.load(open(os.path.join(CD, "significant_absences.json"), encoding="utf-8"))
+    bs = json.load(open(os.path.join(CD, "book_summary.json"), encoding="utf-8"))
+    structural = sa.get("structural_absence", [])
+
+    # southern verse totals per sarga (raw by-number table has southern_verses)
+    south_total = {r["sarga"]: r["southern_verses"] for r in bs.get("per_sarga_by_number_RAW", [])}
+
+    # Leonov/Kostina own notes: which verses they annotate, and which carry an edition remark
+    leo_any, leo_edition = set(), set()
+    lp = os.path.join(REPO, "data", "leonov_own_notes.json")
+    if os.path.exists(lp):
+        for n in json.load(open(lp, encoding="utf-8"))["notes"]:
+            leo_any.add(n["verse_id"])
+            if any(k in n.get("raw_text", "").lower() for k in EDITION_KW):
+                leo_edition.add(n["verse_id"])
+
+    # contiguous runs of structural-absence verses within a sarga
+    verses = sorted({vparts(r["southern"]) for r in structural})
+    runs = []
+    for s, v in verses:
+        if runs and runs[-1]["sarga"] == s and v == runs[-1]["verses"][-1] + 1:
+            runs[-1]["verses"].append(v)
+        else:
+            runs.append({"sarga": s, "verses": [v]})
+
+    candidates, singletons = [], []
+    for run in runs:
+        s, vs = run["sarga"], run["verses"]
+        n = len(vs)
+        rng = f"5.{s}.{vs[0]}" + (f"–{vs[-1]}" if n > 1 else "")
+        ids = [f"5.{s}.{v}" for v in vs]
+        leo_here = [i for i in ids if i in leo_any]
+        leo_ed = [i for i in ids if i in leo_edition]
+        whole = south_total.get(s) and n >= WHOLE_FRAC * south_total[s]
+        if whole:
+            kind = "sarga_absence"
+            note = (f"Песнь [южн. {s}] (стихи {vs[0]}–{vs[-1]}, {n} шлок) целиком отсутствует "
+                    f"в критическом издании (Барода).")
+        elif n >= MIN_RUN:
+            kind = "verse_range"
+            note = f"Шлоки {rng} ({n} шлок) отсутствуют в критическом издании (Барода)."
+        else:
+            kind = "single"
+            note = f"Шлока {rng} отсутствует в критическом издании (Барода)."
+        rec = {
+            "anchor": ids[0], "kind": kind, "sarga": s, "range": rng,
+            "verses": vs, "count": n, "note_ru": note,
+            "confidence": "structural_absence (best_crit_jaccard < 0.25)",
+            "leonov_note_here": leo_here or None,
+            "leonov_edition_note_here": leo_ed or None,
+            "review_required": True,
+            "source": "edition_comparison/structural_absence",
+            "provenance": {"generator": "scripts/build_edition_footnotes.py", "deterministic": True},
+        }
+        (singletons if kind == "single" else candidates).append(rec)
+
+    os.makedirs(OUTDIR, exist_ok=True)
+    payload = {
+        "_meta": {
+            "generated_by": "scripts/build_edition_footnotes.py",
+            "basis": "structural_absence verses (южные шлоки без критич. аналога, Jaccard<0.25)",
+            "format": "COMMENTARY_ROADMAP §3 — [на ратификацию]",
+            "thresholds": {"min_run_for_footnote": MIN_RUN, "whole_sarga_fraction": WHOLE_FRAC},
+            "footnote_candidates": len(candidates),
+            "single_verse_absences": len(singletons),
+            "sarga_absences": sum(1 for c in candidates if c["kind"] == "sarga_absence"),
+            "with_leonov_note_on_verse": sum(1 for c in candidates if c["leonov_note_here"]),
+            "with_leonov_edition_note": sum(1 for c in candidates if c["leonov_edition_note_here"]),
+            "all_review_required": True,
+            "rights_note": "coordinates are corpus-derived — verify against the print critical apparatus",
+        },
+        "candidates": candidates,
+        "single_verse_absences": singletons,
+    }
+    json.dump(payload, open(os.path.join(OUTDIR, "candidates.json"), "w", encoding="utf-8"),
+              ensure_ascii=False, indent=2)
+
+    # human review sheet
+    md = ["# Сноски о расхождениях изданий — на ратификацию\n",
+          "> Кандидаты в сноски «в критическом издании (Барода) отсутствует», построены "
+          "детерминированно из **истинных структурных отсутствий** (Jaccard<0.25 к любой критич. шлоке). "
+          "Формат — COMMENTARY_ROADMAP §3, **[на ратификацию]**. Все `review_required`. Координаты "
+          "корпусные — сверить с печатным критич. аппаратом.\n",
+          f"**Итог:** {len(candidates)} сносок-пассажей "
+          f"({payload['_meta']['sarga_absences']} целых песней) + {len(singletons)} одиночных шлок. "
+          f"⚠ Порог значимости (≥{MIN_RUN} шлок) и формулировка — на ваше утверждение.\n",
+          "Отметьте: **✅ принять · ✏️ править · ❌ отклонить**.\n"]
+    for i, c in enumerate(candidates, 1):
+        flag = ""
+        if c["leonov_edition_note_here"]:
+            flag = " · ⚠ Леонов уже отмечает редакцию здесь — возможно дубль"
+        elif c["leonov_note_here"]:
+            flag = " · (у Леонова есть примечание на этих стихах)"
+        md.append(f"**{i}. {c['range']}** ({c['kind']}, {c['count']} шлок){flag}\n\n"
+                  f"> {c['note_ru']}\n\n— ☐ принять ☐ править ☐ отклонить: __________\n")
+    if singletons:
+        md.append(f"\n## Одиночные отсутствия ({len(singletons)}) — свести сводкой?\n")
+        md.append(", ".join(c["range"] for c in singletons) + "\n")
+    open(os.path.join(OUTDIR, "EDITION_FOOTNOTES_REVIEW.md"), "w", encoding="utf-8").write("\n".join(md))
+
+    m = payload["_meta"]
+    print(f"footnote candidates: {m['footnote_candidates']} passages "
+          f"({m['sarga_absences']} whole-sarga) + {m['single_verse_absences']} singletons")
+    print(f"dedup: {m['with_leonov_edition_note']} overlap a Leonov EDITION note; "
+          f"{m['with_leonov_note_on_verse']} have any Leonov note on the verse")
+    print(f"wrote candidates.json + EDITION_FOOTNOTES_REVIEW.md -> {OUTDIR}")
+
+
+if __name__ == "__main__":
+    main()

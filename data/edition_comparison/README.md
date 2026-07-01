@@ -63,6 +63,12 @@
 94 «чистого отсутствия» из 209) · Переформулировки · Разночтения слов · Только в критическом. Фильтр по
 стиху/тексту.
 
+## Сноски (готовые кандидаты)
+
+`scripts/build_edition_footnotes.py` → [`../edition_footnotes/`](../edition_footnotes/): **51 сносок-пассажей**
+(из истинных `structural_absence`) + 123 одиночных шлоки, формат §3 [на ратификацию], все `review_required`,
+с dedup против нот Леонова. Ратификация — [`EDITION_FOOTNOTES_REVIEW.md`](../edition_footnotes/EDITION_FOOTNOTES_REVIEW.md).
+
 ## Как ещё отмечены отличия (файлы)
 
 - `book_summary.json` — счётчики, `per_sarga_aligned`, `southern_extra_sargas`, book totals.
