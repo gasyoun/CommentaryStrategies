@@ -116,6 +116,7 @@ PAGE = r"""<!DOCTYPE html>
 <html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Пилот Сундараканды — интерактивная сверка примечаний</title>
+<link rel="stylesheet" href="../../../css/commentary.css">
 <style>
 :root{--bg:#faf8f4;--card:#fff;--ink:#222;--mut:#777;--line:#e4ddd0;--acc:#7a5c2e;
 --ok:#2e7d32;--edit:#b8860b;--no:#b23b3b;}
@@ -175,7 +176,7 @@ textarea,.rr{width:100%;font:14px Georgia,serif;padding:8px;border:1px solid var
 <button onclick="reset()">↺ Сброс</button>
 <span class="vid">Выбор сохраняется в браузере (localStorage). Каждая карточка: стих · подстрочник · <b>зачем предложено</b> · примечание · санскр. источник (зелёным — использованный) · соседние комментарии · существующие примечания фазы 1.</span>
 </div></header>
-<main id="app"></main>
+<main class="container"><div id="app"></div></main>
 <script>
 const D = /*DATA*/null;
 const KEY = "sundara_pilot_decisions_v1";

@@ -232,18 +232,21 @@ def render_html(results: dict) -> str:
     return f"""<!DOCTYPE html>
 <html><head><meta charset='utf-8'>
 <title>BG Cross-Commentator Divergence</title>
+<link rel="stylesheet" href="../../css/commentary.css">
 <style>
   body{{font-family:Georgia,serif;max-width:1400px;margin:2em auto;padding:0 1em}}
   h1{{color:#333}} h2{{color:#444}} table{{margin-bottom:1em}}
   td,th{{padding:4px 6px;vertical-align:top}}
 </style>
 </head><body>
+<main class="container">
 <h1>Bhagavad Gita — Cross-Commentator Divergence on Core Terms</h1>
 <p>13 Sanskrit commentaries, 700 verses. CV (coefficient of variation) measures
 how unevenly commentators distribute their attention on a term across a verse —
 high CV ≈ philosophically contested or school-specific interpretation.</p>
 <p><b>Commentators:</b> {', '.join(f'{SC_LABELS[f]} ({f})' for f in SC_FIELDS)}</p>
 {''.join(sections)}
+</main>
 </body></html>"""
 
 

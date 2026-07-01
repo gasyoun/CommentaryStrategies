@@ -188,6 +188,7 @@ def render_html(matrix: list[dict]) -> str:
     return f"""<!DOCTYPE html>
 <html><head><meta charset='utf-8'>
 <title>Sundarakanda Coverage</title>
+<link rel="stylesheet" href="../../css/commentary.css">
 <style>
   body{{font-family:Georgia,serif;max-width:1200px;margin:2em auto;padding:0 1em}}
   h1,h2{{color:#333}} table{{border-collapse:collapse;width:100%}}
@@ -195,6 +196,7 @@ def render_html(matrix: list[dict]) -> str:
   th{{background:#e8e8e8;font-size:12px}}
 </style>
 </head><body>
+<main class="container">
 <h1>Sundarakanda — Commentary Coverage vs. Leonov Annotation Density</h1>
 
 <h2>Legend</h2>
@@ -231,6 +233,7 @@ def render_html(matrix: list[dict]) -> str:
   <li><b>Tattvadīpikā</b> coverage is very sparse (6 sargas) —
     treat its hits as high-value data points, not representative coverage.</li>
 </ul>
+</main>
 </body></html>"""
 
 
