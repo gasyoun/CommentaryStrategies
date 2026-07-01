@@ -110,35 +110,21 @@ def main():
     json.dump(payload, open(os.path.join(OUTDIR, "candidates.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
 
-    # human review sheet
-    md = ["# Сноски о расхождениях изданий — на ратификацию\n",
-          "> Кандидаты в сноски «в критическом издании (Барода) отсутствует», построены "
-          "детерминированно из **истинных структурных отсутствий** (Jaccard<0.25 к любой критич. шлоке). "
-          "Формат — COMMENTARY_ROADMAP §3, **[на ратификацию]**. Все `review_required`. Координаты "
-          "корпусные — сверить с печатным критич. аппаратом.\n",
-          f"**Итог:** {len(candidates)} сносок-пассажей "
-          f"({payload['_meta']['sarga_absences']} целых песней) + {len(singletons)} одиночных шлок. "
-          f"⚠ Порог значимости (≥{MIN_RUN} шлок) и формулировка — на ваше утверждение.\n",
-          "Отметьте: **✅ принять · ✏️ править · ❌ отклонить**.\n"]
-    for i, c in enumerate(candidates, 1):
-        flag = ""
-        if c["leonov_edition_note_here"]:
-            flag = " · ⚠ Леонов уже отмечает редакцию здесь — возможно дубль"
-        elif c["leonov_note_here"]:
-            flag = " · (у Леонова есть примечание на этих стихах)"
-        md.append(f"**{i}. {c['range']}** ({c['kind']}, {c['count']} шлок){flag}\n\n"
-                  f"> {c['note_ru']}\n\n— ☐ принять ☐ править ☐ отклонить: __________\n")
-    if singletons:
-        md.append(f"\n## Одиночные отсутствия ({len(singletons)}) — свести сводкой?\n")
-        md.append(", ".join(c["range"] for c in singletons) + "\n")
-    open(os.path.join(OUTDIR, "EDITION_FOOTNOTES_REVIEW.md"), "w", encoding="utf-8").write("\n".join(md))
+    # Human gate is the interactive footnotes_review.html — build it now (no
+    # markdown checkbox sheet; see CLAUDE.md "Human review / gating artifacts").
+    try:
+        sys.path.insert(0, HERE)
+        import build_footnotes_review_html as _r
+        _r.main()
+    except Exception as e:      # keep candidate generation independent of the viewer
+        sys.stderr.write(f"WARN: could not build footnotes_review.html: {e}\n")
 
     m = payload["_meta"]
     print(f"footnote candidates: {m['footnote_candidates']} passages "
           f"({m['sarga_absences']} whole-sarga) + {m['single_verse_absences']} singletons")
     print(f"dedup: {m['with_leonov_edition_note']} overlap a Leonov EDITION note; "
           f"{m['with_leonov_note_on_verse']} have any Leonov note on the verse")
-    print(f"wrote candidates.json + EDITION_FOOTNOTES_REVIEW.md -> {OUTDIR}")
+    print(f"wrote candidates.json -> {OUTDIR}")
 
 
 if __name__ == "__main__":
