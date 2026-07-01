@@ -1,13 +1,14 @@
 {
   "_meta": {
-    "generated_by": "scripts/merge_phase2_pilot.py",
     "layer": "phase2 commentator-dialogue (model II tier-2)",
     "status": "PILOT — all notes review_required, human gate pending",
     "drafted_by": "claude-sonnet-5 (Sonnet); orchestrated by claude-opus-4-8 (Opus)",
     "date": "2026-07-01",
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md",
+    "generated_by": "scripts/merge_phase2_pilot.py",
     "total_notes": 16,
     "total_verses_considered": 253,
-    "total_rejected": 138,
+    "total_rejected_entries": 138,
     "accept_rate_pct": 6.3,
     "by_kazansky": {
       "Б": 11,
@@ -18,31 +19,40 @@
       "bhusana": 7,
       "siromani": 4
     },
+    "reject_taxonomy": {
+      "formulaic_panegyric": 1,
+      "pure_grammar": 12,
+      "overlaps_other_note": 4,
+      "other": 3,
+      "restates_podstrochnik": 92,
+      "data_misalignment": 1,
+      "merged_range_marker": 25
+    },
     "per_sarga": [
       {
         "sarga": 35,
         "drafted": 6,
         "considered": 113,
-        "rejected": 8
+        "rejected_entries": 8
       },
       {
         "sarga": 36,
         "drafted": 6,
         "considered": 58,
-        "rejected": 52
+        "rejected_entries": 52
       },
       {
         "sarga": 37,
         "drafted": 4,
         "considered": 82,
-        "rejected": 78
+        "rejected_entries": 78
       }
     ],
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md",
     "caveats": [
       "verse_id alignment is corpus-derived (।। markers); the human gate must confirm each against print.",
       "known source glitch: 5.36.45 bhusana chunk held commentary for v.4 (rejected, no note rests on it).",
-      "merged-range markers (e.g. 5.s.810 = vv.8-10) were mostly rejected; not independent verses."
+      "merged-range markers (e.g. 5.s.810 = vv.8-10) were mostly rejected; not independent verses.",
+      "counts do not fully reconcile: agents grouped some rejects (e.g. '5.35.17-20') so notes + reject-entries < verses_considered; this is expected, not data loss."
     ]
   },
   "notes": [

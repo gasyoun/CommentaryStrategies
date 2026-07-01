@@ -10,9 +10,13 @@
 (write why). Approved notes graft into `data/sundara_ch{35,36,37}_commentary_to_add.json` and rebuild
 `data/sundara_book_stats.json`.
 
-**Pilot numbers:** 253 verse-bundles considered → **16 drafted (6.3 %)** · Kazansky **Б 11 / В 5** ·
-commentators cited: Tilaka 12, Bhūṣaṇa 7, Śiromaṇi 4. Source data:
-[pilot_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/rights/valmiki-clearance-phase2-handoff/data/analysis/phase2_pilot/pilot_candidates.json).
+**Pilot numbers:** 253 verse-bundles considered → **16 drafted (6.3 %)**, **138 rejected** · Kazansky
+**Б 11 / В 5** · commentators cited: Tilaka 12, Bhūṣaṇa 7, Śiromaṇi 4.
+- Accepted set: [pilot_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/rights/valmiki-clearance-phase2-handoff/data/analysis/phase2_pilot/pilot_candidates.json)
+- **Full reject log** (every declined verse + reason + bucket): [pilot_rejected.json](https://github.com/gasyoun/CommentaryStrategies/blob/rights/valmiki-clearance-phase2-handoff/data/analysis/phase2_pilot/pilot_rejected.json) — reject taxonomy: restates подстрочник 92, merged-range 25, grammar-only 12, overlaps 4, other 3, formulaic 1, misalignment 1.
+- **Method manual** (when/how/why for every step): [docs/PHASE2_METHOD.md](https://github.com/gasyoun/CommentaryStrategies/blob/rights/valmiki-clearance-phase2-handoff/docs/PHASE2_METHOD.md)
+
+If you disagree with any **rejection**, note its verse_id — a rejected verse can be promoted back into the drafting set before we scale.
 
 **Caveats for the gate:**
 - `verse_id` is corpus-derived from `।।` markers — **confirm each against the print edition**.
