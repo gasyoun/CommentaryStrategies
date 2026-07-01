@@ -239,6 +239,15 @@ segmentation has a systematic offset recoverable by a **reassignment pass (item 
 p.1 delivered the shared canon + honest metrics + edition correctness, but neither aspirational target
 (critical_only <50, precision >95%) is met yet.
 
+**Item 1a (fuzzy assigner) 2026-07-01 — done, corrected conclusion.** Token-set Jaccard pass pairing
+mutually-unmatched verses recovered only 22 clean pairs (critical_only 399→377). A sample diagnostic
+showed the residual is NOT artifact: those critical verses map to nearby southern verses at Jaccard
+0.27–0.44 — the **same shlokas heavily reworded** between Baroda critical and southern vulgate. The "<50"
+premise was wrong (the recensions rephrase pervasively). The useful output instead **partitions the 742
+southern-only into `structural_absence` (307, best Jaccard vs any critical verse < 0.25 → real absence,
+safe footnote) vs `reworded` (435, 0.25–0.5 → variant reading, NOT an absence)** — the real accuracy win
+for footnotes (item 4): only the 307 + whole extra sargas are truly "absent in critical."
+
 ## 10. Decision & change record
 
 - 2026-07-01 — C0/D2 = model II (two-tier hybrid); D-P2-1 pilot 35/36/37; D-P2-2 name commentator in-note;

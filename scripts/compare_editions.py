@@ -186,6 +186,65 @@ def main():
     transposed_critical = [r for r in crit_only if norm(r["text"]) in s_canons]
     crit_only = [r for r in crit_only if norm(r["text"]) not in s_canons]
 
+    # ---- fuzzy global assignment: pair the mutually-unmatched verses
+    #      (crit_only × south_only) by token-set Jaccard — recovers near-variant
+    #      counterparts the book-level LCS orphaned; the rest are TRUE absences.
+    #      Jaccard on canon word-sets (not difflib ratio): O(words), and char-level
+    #      quick_ratio prunes poorly for Sanskrit (verses share many letters). ----
+    co_sets = [set(norm(r["text"]).split()) for r in crit_only]
+    so_sets = [set(norm(r["text"]).split()) for r in south_only]
+    JACCARD_MIN, INTER_MIN = 0.5, 3
+    fuzzy_pairs = []
+    used_s = set()
+    keep_crit = []
+    for i, cr in enumerate(crit_only):
+        a = co_sets[i]
+        best, bestr = None, 0.0
+        if a:
+            for j, b in enumerate(so_sets):
+                if j in used_s or not b:
+                    continue
+                inter = len(a & b)
+                if inter < INTER_MIN:
+                    continue
+                jac = inter / len(a | b)
+                if jac > bestr:
+                    best, bestr = j, jac
+        if best is not None and bestr >= JACCARD_MIN:
+            used_s.add(best)
+            fuzzy_pairs.append({"critical": cr["critical"], "southern": south_only[best]["southern"],
+                                "similarity": round(bestr, 2), "kind": "fuzzy_variant",
+                                "critical_text": cr["text"], "southern_text": south_only[best]["text"]})
+        else:
+            keep_crit.append(cr)
+    crit_only = keep_crit
+    south_only = [r for j, r in enumerate(south_only) if j not in used_s]
+    variants = variants + fuzzy_pairs
+
+    # ---- partition southern-only: TRUE structural absence vs merely REWORDED.
+    #      A southern verse whose best token-Jaccard against ANY critical verse is
+    #      very low (< 0.25) is genuinely absent from the critical ed. (safe
+    #      footnote); a mid overlap (0.25–0.5) means the same verse is present but
+    #      heavily reworded (a variant, NOT an absence). This is the real signal:
+    #      the two recensions rephrase pervasively. ----
+    crit_sets = [set(c.split()) for c in cn]
+    for r in south_only:
+        a = set(norm(r["text"]).split())
+        best = 0.0
+        for b in crit_sets:
+            if not b:
+                continue
+            inter = len(a & b)
+            if inter < 2:
+                continue
+            j = inter / len(a | b)
+            if j > best:
+                best = j
+        r["best_crit_jaccard"] = round(best, 2)
+        r["divergence"] = "structural_absence" if best < 0.25 else "reworded"
+    structural_absence = [r for r in south_only if r["divergence"] == "structural_absence"]
+    reworded_southern = [r for r in south_only if r["divergence"] == "reworded"]
+
     # group southern-only into runs (contiguous passages) for footnotes
     south_only_sorted = sorted(south_only, key=lambda r: tuple(int(x) for x in r["southern"][2:].split(".")))
     runs = []
@@ -239,7 +298,10 @@ def main():
             "southern_sargas": len(sc),
             "identical_verses": identical,
             "variant_verses": len(variants),
+            "fuzzy_paired_verses": len(fuzzy_pairs),
             "southern_only_verses": len(south_only),
+            "southern_structural_absence": len(structural_absence),
+            "southern_reworded": len(reworded_southern),
             "critical_only_verses": len(crit_only),
             "transposed_southern_verses": len(transposed_southern),
             "transposed_critical_verses": len(transposed_critical),
@@ -261,9 +323,17 @@ def main():
     json.dump({"_meta": summary["_meta"], "concordance": concordance},
               open(os.path.join(OUTDIR, "concordance.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
-    json.dump({"_meta": {"note": "Southern verses/passages with NO critical counterpart — footnote candidates "
-                                 "(«в критическом издании (Барода) отсутствует»). Grouped into contiguous runs."},
-               "runs": runs, "verses": south_only},
+    json.dump({"_meta": {"note": "Southern verses/passages not aligned to critical. Each carries "
+                                 "`divergence`: 'structural_absence' (best token-Jaccard vs any critical "
+                                 "verse < 0.25 — genuinely absent, safe «в критическом отсутствует» footnote) "
+                                 "or 'reworded' (0.25–0.5 — same verse present but heavily reworded, a variant "
+                                 "reading, NOT an absence). Prefer structural_absence + whole extra sargas for "
+                                 "footnotes.",
+                         "structural_absence_verses": len(structural_absence),
+                         "reworded_verses": len(reworded_southern)},
+               "runs": runs,
+               "structural_absence": structural_absence,
+               "reworded": reworded_southern},
               open(os.path.join(OUTDIR, "significant_absences.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=2)
     json.dump({"_meta": {"note": "Critical verses truly absent in southern (canon nowhere in southern) + "
