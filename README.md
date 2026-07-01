@@ -38,6 +38,34 @@
 модели А. В. Парибка (P/K/D). Адресация стихов — каноническими CTS-URN
 (`urn:cts:sanskritLit:<work>:<passage>`).
 
+## Параллельные корпусы (scraped) и PWG→EN Translation Memory
+
+Дополнительные санскритские корпусы, скачанные с [Gita Supersite](https://www.gitasupersite.in),
+для обогащения машинного перевода (PWG→EN harness) и диахронического анализа.
+
+| Файл / директория | Содержание |
+|---|---|
+| [data/gita/](data/gita/) | 700 шлок BG × 27 полей (13 санскритских комментаторов + 14 переводчиков); 18 870 текстовых записей |
+| [data/brahmasutra/](data/brahmasutra/) | 571 сутра + бхашья Шанкарачарьи (766 351 знак) |
+| [data/yogasutra/](data/yogasutra/) | 195 сутр + бхашья Вьясы + вритти Бходжи (≈190 000 знаков) |
+| [data/gita_tm.json](data/gita_tm.json) | 3 883 пар «санскритский термин → английская глосса» (Гамбирананда/Адидевананда) |
+| [data/gita_tm_slp1.json](data/gita_tm_slp1.json) | Кроссвок Гита-TM → SLP1-ключи MW (2 173/2 926 терминов, 74 %) |
+| [data/bs_term_map_slp1.json](data/bs_term_map_slp1.json) | Философские термины Брахмасутр с глоссами MW (826 терминов) |
+| [data/ys_term_map_slp1.json](data/ys_term_map_slp1.json) | Философские термины Йогасутр с глоссами MW (582 термина) |
+
+Скрипты построения TM:
+
+```sh
+python scripts/build_gita_tm.py            # шаг 1: gita_tm.json
+python scripts/crosswalk_gita_tm.py        # шаг 2: gita_tm_slp1.json
+python scripts/build_sutra_tm.py           # шаги 3–4: bs/ys_term_map_slp1.json
+python scripts/build_sutra_tm.py --corpus ys --report   # только Йогасутры
+```
+
+Все четыре TM-файла совместимы с `mw_en_tm.json` (187 506 записей) по ключам SLP1 и готовы
+к подключению в `gen_opt_harness2 --lang en` как слой шастрического обогащения для
+судьи-Opus.
+
 ## Аппарат Сундараканды (генерируемый комментарий к переводу М. В. Леонова)
 
 Отдельный активный поток: корпусно-генерируемые русские примечания к Рамаяне V
@@ -70,6 +98,11 @@ python scripts/derive_urn.py                                      # CTS-URN из
 python scripts/export_tei.py                                      # JSON → TEI P5 (tei/)
 python scripts/parse_formulas.py                                  # эпитетный слой
 python scripts/build_pages.py                                     # data → pages/*.html
+
+# PWG→EN Translation Memory (требует indic-transliteration и sibling SanskritLexicography/)
+python scripts/build_gita_tm.py            # Гита TM (шаг 1)
+python scripts/crosswalk_gita_tm.py        # SLP1 кроссвок (шаг 2)
+python scripts/build_sutra_tm.py           # Брахмасутры + Йогасутры (шаги 3–4)
 ```
 
 [pages/](pages/) — автогенерируемое табличное представление данных (НЕ заменяет
