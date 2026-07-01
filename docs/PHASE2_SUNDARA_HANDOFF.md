@@ -36,8 +36,13 @@ compatible with Leonov/Kostina's own notes sitting verbatim alongside.
   `tattvadipika` only 6; `kataka`/`dharmakutam`/`tanisloki` = 0 in Sundara. → the layer rests on **tilaka + bhūṣaṇa + śiromaṇi**.
 - **Verse text + Leonov подстрочник**: sibling repo `GitHub/SamudraManthanam/web/corpus_builder/jsonl/05_ramayana-sundarakanda.jsonl`
   (the `#ru` field IS Leonov's literal layer — never cite «М.: Наука 2022»; see hard rule).
-- **Existing apparatus** to dedup against: [`data/sundara_commentary_to_add.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara_commentary_to_add.json)
-  (788 notes) + per-chapter `data/lexical/ch{N}.json`.
+- **Dedup baselines** (a candidate must add something none of these already give):
+  1. Leonov's подстрочник (`#ru` in the corpus jsonl).
+  2. **Leonov/Kostina's OWN apparatus — 1,058 notes** (`data/leonov_own_notes.json`, model II tier-1, the
+     ~36 % benchmark), digitized by `scripts/extract_leonov_notes.py`. **This is the primary dedup baseline
+     and the pilot lacked it** (9/16 candidates overlap it) — see PHASE2_METHOD.md §3.3.
+  3. Our own Phase-1 apparatus: [`data/sundara_commentary_to_add.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara_commentary_to_add.json)
+     (788 notes) + per-chapter `data/lexical/ch{N}.json`.
 - **Coverage / density map**: [`data/analysis/sundara_coverage.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/sundara_coverage.json)
   — 🟢20 / 🟡14 / 🔴11 / ⚪23. The **14 🟡 sargas (22, 24, 26, 30, 34–37, 39, 51)** are "commentary-rich but
   Leonov-annotation-thin" → the highest-yield first targets.

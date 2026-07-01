@@ -24,6 +24,7 @@ REPO = os.path.dirname(HERE)
 PILOT_DIR = os.path.join(REPO, "data", "analysis", "phase2_pilot")
 SEG = os.path.join(REPO, "data", "analysis", "sundara_commentary_segmented.json")
 BOOK = os.path.join(REPO, "data", "sundara_commentary_to_add.json")
+LEONOV = os.path.join(REPO, "data", "leonov_own_notes.json")
 OUT = os.path.join(PILOT_DIR, "review.html")
 
 COMM_LABEL = {"tilaka": "Тилака", "bhusana": "Бхушана", "siromani": "Широмани"}
@@ -56,6 +57,13 @@ def main():
                 {"lemma": n.get("lemma_iast", ""), "note": n.get("note_ru", ""),
                  "type": n.get("type", "")})
 
+    # Leonov/Kostina OWN notes (tier-1 dedup baseline), indexed by "5.s.v"
+    lo = {}
+    if os.path.exists(LEONOV):
+        for n in json.load(open(LEONOV, encoding="utf-8"))["notes"]:
+            lo.setdefault(n["verse_id"], []).append(
+                {"editor": n.get("editor"), "note": n.get("raw_text", "")})
+
     # per-sarga context stats
     stats = {}
     for b in seg["verses"]:
@@ -66,6 +74,7 @@ def main():
             st["with_commentary"] += 1
     for s in stats:
         stats[s]["phase1_notes"] = sum(len(v) for k, v in p1.items() if k.startswith(f"5.{s}."))
+        stats[s]["leonov_notes"] = sum(len(v) for k, v in lo.items() if k.startswith(f"5.{s}."))
         stats[s]["proposed"] = sum(1 for n in notes if parse_vid(n["verse_id"])[0] == s)
 
     # build review records
@@ -92,6 +101,7 @@ def main():
             "commentary_at_verse": bundle.get("commentary", {}),
             "neighbours": neighbours,
             "phase1_here": p1.get(vid, []),
+            "leonov_here": lo.get(vid, []),
         })
 
     data = {"generated": cand["_meta"].get("date"), "stats": stats, "notes": review,
@@ -144,6 +154,10 @@ summary{cursor:pointer;color:var(--acc);font:13px system-ui,sans-serif}
 .comm .who{font:11px system-ui,sans-serif;color:var(--mut);display:block;margin-bottom:2px}
 .dev{font-family:"Nirmala UI","Noto Sans Devanagari",serif}
 .p1{font-size:13px;color:#555;background:#fbf0f0;border-radius:5px;padding:6px 10px;margin:6px 0}
+.leo{font-size:14px;background:#fff0f0;border:1px solid var(--no);border-left:4px solid var(--no);
+border-radius:6px;padding:8px 12px;margin:8px 0}
+.leo b{color:var(--no)}
+.leo .who{font:11px system-ui,sans-serif;color:var(--mut)}
 .controls{margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;
 font:13px system-ui,sans-serif}
 .controls label{display:inline-flex;gap:4px;align-items:center;padding:5px 10px;border:1px solid var(--line);
@@ -182,7 +196,7 @@ function render(){
   // per-sarga stat header
   Object.keys(D.stats).sort((a,b)=>a-b).forEach(s=>{
     const st=D.stats[s];
-    app.appendChild($(`<div class="stat">Песнь ${s}: стихов ${st.verses} · с санскр. комментарием ${st.with_commentary} · существующих примечаний (фаза 1) ${st.phase1_notes} · <b>предложено сейчас ${st.proposed}</b></div>`));
+    app.appendChild($(`<div class="stat">Песнь ${s}: стихов ${st.verses} · с санскр. комментарием ${st.with_commentary} · <b>собственных примечаний Леонова/Костиной ${st.leonov_notes||0}</b> · наш аппарат фазы 1 ${st.phase1_notes} · <b>предложено сейчас ${st.proposed}</b></div>`));
   });
   D.notes.forEach((n,i)=>{
     const d=dec[n.verse_id]||{};
@@ -196,6 +210,9 @@ function render(){
         <div class="ru">${esc(n.leonov_ru)||'<i>подстрочник не найден</i>'}</div>
       </div>
       <div class="why"><b>Зачем предложено:</b> ${esc(n.why_proposed)}</div>
+      ${n.leonov_here.length?`<div class="leo"><b>⚠ Леонов/Костина УЖЕ комментируют этот стих</b> — проверьте на дублирование:${
+        n.leonov_here.map(l=>`<div><span class="who">${l.editor||'Леонов'}:</span> ${esc(l.note).slice(0,260)}</div>`).join("")
+      }</div>`:''}
       <div class="note" contenteditable="false">${esc(n.note_ru)}</div>
       <details><summary>Санскритский источник (все комментаторы к этому стиху)</summary>${commBlock(n.commentary_at_verse,n.source_commentary)}</details>
       ${n.neighbours.length?`<details><summary>Соседние стихи (±2) — что рядом комментируется</summary>${

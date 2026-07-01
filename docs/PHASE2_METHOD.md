@@ -95,10 +95,25 @@ resolved decisions, the input path, and an output schema; each writes exactly
 - Obey `validate.py` hard rules: never «М.: Наука 2022» for Leonov; «Парибка» is the only oblique form.
 
 ### 3.2 What to draft vs. skip — the reject discipline
-Draft a note **only** when the commentary adds something the подстрочник cannot give. **Reject** when it
-(a) restates the подстрочник, (b) is pure Sanskrit grammar/parsing invisible to a Russian reader, (c) is
-formulaic praise, (d) is a non-independent merged-range marker, or (e) duplicates an earlier note. Every
-rejection is **kept with its reason** (§6).
+Draft a note **only** when the commentary adds something **neither the подстрочник NOR Leonov/Kostina's
+own note** already gives. **Reject** when it (a) restates the подстрочник, (b) duplicates a Leonov/Kostina
+own note on the same verse+point (see §3.3), (c) is pure Sanskrit grammar/parsing invisible to a Russian
+reader, (d) is formulaic praise, (e) is a non-independent merged-range marker, or (f) duplicates an
+earlier note. Every rejection is **kept with its reason** (§6).
+
+### 3.3 Dedup baseline — Leonov/Kostina's OWN apparatus (model II tier-1)
+Leonov/Kostina already wrote **1,058 notes** across all 68 sargas (their print apparatus — this *is* the
+~36 % density benchmark, and model II tier-1). Digitized by
+[`scripts/extract_leonov_notes.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/extract_leonov_notes.py)
+from `ramayana-leonov/Рамаяна. Книга 5. Сундараканда 2026.html` →
+[`data/leonov_own_notes.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/leonov_own_notes.json)
+(442 attributed to Kostina, 616 unattributed = Leonov; ~1,022 verses covered).
+**Every Phase-2 candidate must be checked against this file** — a commentator note that repeats a point
+Leonov/Kostina already made is a duplicate. **The 2026-07-01 pilot did NOT have this baseline** (agents
+deduped only against the подстрочник): 9 of the 16 candidates landed on verses Leonov already comments on,
+and several (e.g. 5.37.25 nāgarājasya, 5.35.82 Śambasādana, 5.36.17 upāya, 5.36.33 Śachī) are effective
+duplicates. The interactive review page now shows Leonov's own note per verse in red so the reviewer sees
+the overlap; when scaling, the drafting prompt must include the sarga's Leonov notes as dedup context.
 
 ## 4. STEP 3 — merge + reject taxonomy
 
@@ -184,6 +199,34 @@ per-verse reject entries so the arithmetic closes.
 4. Track cumulative density in `data/sundara_book_stats.json`; stop the *commentator* layer when its
    marginal accept rate collapses (dry signal), not at a fixed count.
 5. Switch to per-verse reject entries (§7) so counts reconcile at scale.
+
+## 11. Alignment accuracy — current state & preprocessing plan
+
+**Current (marker-only) accuracy.** Step 1 aligns commentary to verses solely by the `।। 5.s.v ।।`
+markers. Pilot: **204/253 (~81 %) of bundles corpus-aligned**; 48 merged-range markers. Per-commentator
+alignment is weaker — e.g. 5.35.45 cites Tilaka, but Tilaka's chunk aligned to a neighbour/merged token.
+Two failure modes: (a) **merged-range tokens** (`5.35.810` = vv. 8–10) don't map to one verse; (b)
+**marker offsets** (a chunk sits before the wrong marker, e.g. 5.36.45 held v. 4's text).
+
+**Yes — accuracy can be materially improved, mostly by preprocessing** (documented now, to implement before
+scaling):
+1. **Merged-range reconstruction.** Parse tokens like `810` using sequence context (prev marker 7, next 11
+   ⇒ 8–10); attribute the chunk to each verse in the range and tag `verse_range`. Repairs most of the 48.
+2. **Sequence validation + offset repair.** Cross-check the marker sequence against the canonical verse
+   count per sarga (e.g. 90 for sarga 35); flag out-of-order/duplicate markers and snap them to the
+   expected position. Catches the 5.36.45-type offset.
+3. **Pratīka anchoring (strongest signal).** Every traditional gloss opens with a *pratīka* — the verse
+   catchword it comments (e.g. `yānīti` = yāni + iti). Match the pratīka against the verse's own words
+   (transliteration-normalized, via the org `sanskrit-util` toolkit — do not re-implement transcoding) to
+   align **by content**, independent of the `।।` marker. This would have placed Tilaka on 5.35.45
+   correctly. Define **alignment precision = fraction of chunks whose pratīka matches the assigned verse**;
+   target > 95 %.
+4. **Keep multi-glosses.** A verse can carry several sub-glosses (bhūṣaṇa emitted 131 markers for 90
+   verses) — preserve all, don't collapse.
+
+Until this lands, the mitigation is the review page's **neighbours ±2** panel and the honest per-page
+caveat. Recommended order: implement (1)+(2) as a cheap `extract_yellow_sargas.py` preprocessing pass,
+then (3) as a validation/repair step reported alongside the segmented output.
 
 ## 10. Decision & change record
 
