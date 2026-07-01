@@ -248,6 +248,14 @@ southern-only into `structural_absence` (307, best Jaccard vs any critical verse
 safe footnote) vs `reworded` (435, 0.25–0.5 → variant reading, NOT an absence)** — the real accuracy win
 for footnotes (item 4): only the 307 + whole extra sargas are truly "absent in critical."
 
+**Item 1b (segmenter reassignment) 2026-07-01 — done.** `extract_yellow_sargas.py` now re-anchors each
+commentary chunk to the verse its leading pratīka actually matches (nearest in the sarga), fixing the
+systematic marker offset instead of only flagging it. **175 chunks reassigned; pratīka alignment precision
+0.432 → 0.799** (315/394). Below the 95% aspiration — the residual ~20% are chunks whose pratīka matches
+no verse (crude leading-token extraction, merged-range markers, or ambiguous glosses) — but a major
+correctness gain for the segmented input that Phase-2 drafting consumes. Reassignment is heuristic; all
+downstream notes stay `review_required`.
+
 ## 10. Decision & change record
 
 - 2026-07-01 — C0/D2 = model II (two-tier hybrid); D-P2-1 pilot 35/36/37; D-P2-2 name commentator in-note;

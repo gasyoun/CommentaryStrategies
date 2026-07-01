@@ -64,6 +64,21 @@ def _pratika_hit(pt_tokens, verse_tokens):
     return False
 
 
+def best_verse_for(pt, sarga, orig_v, cts):
+    """Verse in this sarga whose tokens the pratīka matches, nearest to orig_v."""
+    best = None
+    for vid, toks in cts.items():
+        parts = vid.split(".")
+        if int(parts[1]) != sarga:
+            continue
+        if _pratika_hit(pt, toks):
+            vv = int(parts[2]) if parts[2].isdigit() else None
+            dist = abs(vv - orig_v) if (vv is not None and orig_v is not None) else 999
+            if best is None or dist < best[0]:
+                best = (dist, vid)
+    return best[1] if best else None
+
+
 def segment_file(path, sarga):
     """Return {verse_token: commentary_text} for one commentary file.
 
@@ -143,18 +158,55 @@ def main():
 
     corpus = load_corpus(sargas)
 
+    # corpus token-sets for every verse in these sargas (reassignment targets)
+    cts = {}
+    for passage, segs in corpus.items():
+        s = int(passage.split(".", 1)[0])
+        if s in sargas and segs.get("sa"):
+            cts[f"5.{passage}"] = set(canon_tokens(segs["sa"]))
+
+    # ---- reassignment (§11 item 1b): move each commentary chunk to the verse
+    #      its leading pratīka actually matches (nearest in the sarga), fixing
+    #      systematic marker offsets. Chunks that already match, or whose pratīka
+    #      matches no verse, stay put. Collisions merge (concatenate). ----
+    from collections import defaultdict as _dd
+    newmap = _dd(dict)      # verse_id -> {commentator: [texts]}
+    moves = kept = 0
+    for (sarga, tok), rec in verses.items():
+        src_vid = f"5.{sarga}.{tok}"
+        base = int(tok) if tok.isdigit() else None
+        for c, text in rec["commentary"].items():
+            pt = leading_pratika_tokens(text)
+            tgt = src_vid
+            vt = cts.get(src_vid)
+            if pt and vt is not None and not _pratika_hit(pt, vt):
+                bv = best_verse_for(pt, sarga, base, cts)
+                if bv:
+                    tgt, moves = bv, moves + 1
+                else:
+                    kept += 1
+            else:
+                kept += 1
+            newmap[tgt].setdefault(c, []).append(text)
+    cmap = {vid: {c: "\n".join(t) for c, t in d.items()} for vid, d in newmap.items()}
+
+    def _vk(vid):
+        p = vid.split(".")
+        return (int(p[1]), int(p[2]) if p[2].isdigit() else 0)
+
     bundles = []
-    for (sarga, tok), rec in sorted(verses.items(), key=lambda kv: (kv[0][0], int(kv[0][1]) if kv[0][1].isdigit() else 0)):
-        passage = f"{sarga}.{tok}"
-        cs = corpus.get(passage, {})
+    for vid in sorted(cmap, key=_vk):
+        s = int(vid.split(".")[1])
+        tok = vid.split(".")[2]
+        cs = corpus.get(f"{s}.{tok}", {})
         bundles.append({
-            "verse_id": f"5.{sarga}.{tok}",
-            "sarga": sarga,
+            "verse_id": vid,
+            "sarga": s,
             "verse": tok,
             "ambiguous_marker": is_ambiguous(tok),
             "sanskrit_iast": cs.get("sa", ""),
             "leonov_ru": cs.get("ru", ""),
-            "commentary": rec["commentary"],
+            "commentary": cmap[vid],
         })
 
     # ---- pratīka anchoring: verify each chunk sits on the right verse (§11) ----
@@ -197,6 +249,7 @@ def main():
             "ambiguous_markers": sum(1 for b in bundles if b["ambiguous_marker"]),
             "corpus_aligned": sum(1 for b in bundles if b["sanskrit_iast"]),
             "align_backend": _align_backend(),
+            "reassigned_moves": moves,
             "pratika_checkable": checkable,
             "pratika_matched": matched,
             "alignment_precision": precision,
@@ -215,7 +268,8 @@ def main():
           f"({m['verses_all_three']} with all 3 commentaries, "
           f"{m['corpus_aligned']} corpus-aligned, "
           f"{m['ambiguous_markers']} ambiguous markers)")
-    print(f"pratīka alignment precision: {m['alignment_precision']} "
+    print(f"reassigned {m['reassigned_moves']} chunks; "
+          f"pratīka alignment precision: {m['alignment_precision']} "
           f"({m['pratika_matched']}/{m['pratika_checkable']}) via {m['align_backend']}")
     print(f"wrote {OUT}")
 
