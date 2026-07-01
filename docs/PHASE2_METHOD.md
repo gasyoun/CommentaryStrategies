@@ -250,11 +250,12 @@ for footnotes (item 4): only the 307 + whole extra sargas are truly "absent in c
 
 **Item 1b (segmenter reassignment) 2026-07-01 — done.** `extract_yellow_sargas.py` now re-anchors each
 commentary chunk to the verse its leading pratīka actually matches (nearest in the sarga), fixing the
-systematic marker offset instead of only flagging it. **175 chunks reassigned; pratīka alignment precision
-0.432 → 0.799** (315/394). Below the 95% aspiration — the residual ~20% are chunks whose pratīka matches
-no verse (crude leading-token extraction, merged-range markers, or ambiguous glosses) — but a major
-correctness gain for the segmented input that Phase-2 drafting consumes. Reassignment is heuristic; all
-downstream notes stay `review_required`.
+systematic marker offset instead of only flagging it. **179 chunks reassigned; pratīka alignment precision
+0.432 → 0.799 → 0.896** (353/394) after adding **iti-stemming** to the matcher (a pratīka is quoted fused
+with *iti*: `rakṣitā+iti`→`raksiteti`; stripping `-iti/-eti/-ti` yields a stem that prefix-matches the
+verse word). The residual ~10% (41 chunks) is the genuinely-hard set and is left as-is (diminishing
+returns): 11 bare-pronoun pratīkas ("sa"/"te") and ~30 Tilaka/Śiromaṇi *paraphrases* that don't quote a
+verse word. Reassignment is heuristic; all downstream notes stay `review_required`.
 
 ## 10. Decision & change record
 

@@ -50,15 +50,27 @@ def leading_pratika_tokens(deva_text):
     return canon_tokens(deva_to_iast(head))[:4]
 
 
+def _iti_stems(p):
+    """A pratīka is usually quoted fused with 'iti': rakṣitā+iti→'raksiteti',
+    rāja+iti→'rajeti'. Yield the token plus its de-iti'd stems so it can still
+    prefix-match the verse word (raksiteti→raksit ⊂ raksita)."""
+    out = [p]
+    if len(p) > 4 and p.endswith("ti"):
+        for s in (p[:-2], p[:-3]):
+            if len(s) >= 3:
+                out.append(s)
+    return out
+
+
 def _pratika_hit(pt_tokens, verse_tokens):
-    """Match a pratīka token to a verse word by prefix (sandhi truncates: the
-    gloss 'yānīti' → 'yan' must still match verse word 'yani')."""
-    for p in pt_tokens:
+    """Match a pratīka token to a verse word by prefix (sandhi truncates), after
+    stripping a fused trailing 'iti'."""
+    cands = [s for p in pt_tokens for s in _iti_stems(p)]
+    vt = [w for w in verse_tokens if len(w) >= 3]
+    for p in cands:
         if len(p) < 3:
             continue
-        for w in verse_tokens:
-            if len(w) < 3:
-                continue
+        for w in vt:
             if w == p or w.startswith(p) or p.startswith(w):
                 return True
     return False
