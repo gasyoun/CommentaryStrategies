@@ -1,30 +1,462 @@
 {
-  "generated": "2026-06-29",
-  "source": "base+cross_text+lexical (Phase-1 complete, 68/68 chapters, QA-pruned)",
-  "total_notes": 788,
-  "by_subtype": {
-    "base": 95,
-    "lexical": 611,
-    "cross_text": 71,
-    "hist_cultural": 11
+ "_meta": {
+  "description": "Агрегированная статистика примечаний по всей кн. V (гл. 1–68)",
+  "generated": "2026-07-02",
+  "source": "sundara_commentary_to_add.json (crosstext-expansion PR #42 reconciliation)"
+ },
+ "total_verses": 2859,
+ "total_notes": 887,
+ "verses_with_note": 751,
+ "verses_without_note": 2108,
+ "by_type": {
+  "В": 150,
+  "А": 645,
+  "Б": 81,
+  "Г": 11
+ },
+ "by_trigger": {
+  "realia": 206,
+  "etymology": 190,
+  "term": 22,
+  "epithet": 18,
+  "gloss": 138,
+  "omission": 5,
+  "crossref": 8,
+  "myth_background": 11,
+  "compound": 119,
+  "crosstext": 170
+ },
+ "by_subtype": {
+  "base": 717,
+  "cross_text": 170
+ },
+ "by_priority": {
+  "high": 326,
+  "med": 318,
+  "low": 51,
+  "2": 10,
+  "3": 1,
+  "1": 9
+ },
+ "cross_text_by_cluster": {
+  "dharmashastra": 25,
+  "gita": 24,
+  "kavya": 18,
+  "mbh_battle": 5,
+  "mbh_gnomic": 18,
+  "mbh_narrative": 44,
+  "ramayana_grintser": 33,
+  "upanishads": 1,
+  "veda": 2
+ },
+ "per_chapter": {
+  "1": {
+   "verses": 213,
+   "verses_noted": 75,
+   "verses_unnoted": 138,
+   "notes": 108
   },
-  "by_type": {
-    "В": 122,
-    "А": 617,
-    "Б": 38,
-    "Г": 11
+  "2": {
+   "verses": 58,
+   "verses_noted": 23,
+   "verses_unnoted": 35,
+   "notes": 34
   },
-  "total_verses": 2859,
-  "verses_with_note": 692,
-  "density_pct": 24.2,
-  "lexical_chapters": 68,
-  "qa_pruned_chapters": [
-    20,
-    22,
-    23,
-    27
-  ],
-  "note": "Lexical layer 68/68, all review_required. QA prune applied to low-rejection chapters 20/22/23/27. Global lemma-dedup keeps first occurrence.",
-  "grintser_crossrefs": 46,
-  "crossrefs_backfilled_corpus": 26
+  "3": {
+   "verses": 51,
+   "verses_noted": 15,
+   "verses_unnoted": 36,
+   "notes": 18
+  },
+  "4": {
+   "verses": 30,
+   "verses_noted": 10,
+   "verses_unnoted": 20,
+   "notes": 11
+  },
+  "5": {
+   "verses": 27,
+   "verses_noted": 8,
+   "verses_unnoted": 19,
+   "notes": 10
+  },
+  "6": {
+   "verses": 44,
+   "verses_noted": 12,
+   "verses_unnoted": 32,
+   "notes": 20
+  },
+  "7": {
+   "verses": 17,
+   "verses_noted": 6,
+   "verses_unnoted": 11,
+   "notes": 6
+  },
+  "8": {
+   "verses": 8,
+   "verses_noted": 2,
+   "verses_unnoted": 6,
+   "notes": 3
+  },
+  "9": {
+   "verses": 72,
+   "verses_noted": 17,
+   "verses_unnoted": 55,
+   "notes": 21
+  },
+  "10": {
+   "verses": 54,
+   "verses_noted": 14,
+   "verses_unnoted": 40,
+   "notes": 17
+  },
+  "11": {
+   "verses": 47,
+   "verses_noted": 13,
+   "verses_unnoted": 34,
+   "notes": 13
+  },
+  "12": {
+   "verses": 25,
+   "verses_noted": 9,
+   "verses_unnoted": 16,
+   "notes": 13
+  },
+  "13": {
+   "verses": 69,
+   "verses_noted": 22,
+   "verses_unnoted": 47,
+   "notes": 26
+  },
+  "14": {
+   "verses": 51,
+   "verses_noted": 8,
+   "verses_unnoted": 43,
+   "notes": 10
+  },
+  "15": {
+   "verses": 54,
+   "verses_noted": 16,
+   "verses_unnoted": 38,
+   "notes": 17
+  },
+  "16": {
+   "verses": 32,
+   "verses_noted": 10,
+   "verses_unnoted": 22,
+   "notes": 10
+  },
+  "17": {
+   "verses": 32,
+   "verses_noted": 8,
+   "verses_unnoted": 24,
+   "notes": 9
+  },
+  "18": {
+   "verses": 32,
+   "verses_noted": 7,
+   "verses_unnoted": 25,
+   "notes": 9
+  },
+  "19": {
+   "verses": 22,
+   "verses_noted": 9,
+   "verses_unnoted": 13,
+   "notes": 9
+  },
+  "20": {
+   "verses": 36,
+   "verses_noted": 9,
+   "verses_unnoted": 27,
+   "notes": 12
+  },
+  "21": {
+   "verses": 34,
+   "verses_noted": 15,
+   "verses_unnoted": 19,
+   "notes": 19
+  },
+  "22": {
+   "verses": 46,
+   "verses_noted": 8,
+   "verses_unnoted": 38,
+   "notes": 8
+  },
+  "23": {
+   "verses": 19,
+   "verses_noted": 5,
+   "verses_unnoted": 14,
+   "notes": 5
+  },
+  "24": {
+   "verses": 47,
+   "verses_noted": 11,
+   "verses_unnoted": 36,
+   "notes": 13
+  },
+  "25": {
+   "verses": 20,
+   "verses_noted": 5,
+   "verses_unnoted": 15,
+   "notes": 6
+  },
+  "26": {
+   "verses": 49,
+   "verses_noted": 16,
+   "verses_unnoted": 33,
+   "notes": 16
+  },
+  "27": {
+   "verses": 54,
+   "verses_noted": 16,
+   "verses_unnoted": 38,
+   "notes": 18
+  },
+  "28": {
+   "verses": 20,
+   "verses_noted": 6,
+   "verses_unnoted": 14,
+   "notes": 8
+  },
+  "29": {
+   "verses": 8,
+   "verses_noted": 3,
+   "verses_unnoted": 5,
+   "notes": 3
+  },
+  "30": {
+   "verses": 44,
+   "verses_noted": 6,
+   "verses_unnoted": 38,
+   "notes": 9
+  },
+  "31": {
+   "verses": 19,
+   "verses_noted": 7,
+   "verses_unnoted": 12,
+   "notes": 8
+  },
+  "32": {
+   "verses": 14,
+   "verses_noted": 4,
+   "verses_unnoted": 10,
+   "notes": 5
+  },
+  "33": {
+   "verses": 31,
+   "verses_noted": 8,
+   "verses_unnoted": 23,
+   "notes": 9
+  },
+  "34": {
+   "verses": 39,
+   "verses_noted": 11,
+   "verses_unnoted": 28,
+   "notes": 11
+  },
+  "35": {
+   "verses": 90,
+   "verses_noted": 21,
+   "verses_unnoted": 69,
+   "notes": 29
+  },
+  "36": {
+   "verses": 47,
+   "verses_noted": 12,
+   "verses_unnoted": 35,
+   "notes": 13
+  },
+  "37": {
+   "verses": 68,
+   "verses_noted": 18,
+   "verses_unnoted": 50,
+   "notes": 18
+  },
+  "38": {
+   "verses": 70,
+   "verses_noted": 23,
+   "verses_unnoted": 47,
+   "notes": 24
+  },
+  "39": {
+   "verses": 54,
+   "verses_noted": 12,
+   "verses_unnoted": 42,
+   "notes": 12
+  },
+  "40": {
+   "verses": 25,
+   "verses_noted": 9,
+   "verses_unnoted": 16,
+   "notes": 10
+  },
+  "41": {
+   "verses": 21,
+   "verses_noted": 6,
+   "verses_unnoted": 15,
+   "notes": 7
+  },
+  "42": {
+   "verses": 44,
+   "verses_noted": 14,
+   "verses_unnoted": 30,
+   "notes": 16
+  },
+  "43": {
+   "verses": 25,
+   "verses_noted": 5,
+   "verses_unnoted": 20,
+   "notes": 5
+  },
+  "44": {
+   "verses": 20,
+   "verses_noted": 5,
+   "verses_unnoted": 15,
+   "notes": 7
+  },
+  "45": {
+   "verses": 17,
+   "verses_noted": 3,
+   "verses_unnoted": 14,
+   "notes": 3
+  },
+  "46": {
+   "verses": 41,
+   "verses_noted": 12,
+   "verses_unnoted": 29,
+   "notes": 13
+  },
+  "47": {
+   "verses": 38,
+   "verses_noted": 10,
+   "verses_unnoted": 28,
+   "notes": 10
+  },
+  "48": {
+   "verses": 61,
+   "verses_noted": 16,
+   "verses_unnoted": 45,
+   "notes": 18
+  },
+  "49": {
+   "verses": 20,
+   "verses_noted": 6,
+   "verses_unnoted": 14,
+   "notes": 6
+  },
+  "50": {
+   "verses": 19,
+   "verses_noted": 6,
+   "verses_unnoted": 13,
+   "notes": 7
+  },
+  "51": {
+   "verses": 45,
+   "verses_noted": 15,
+   "verses_unnoted": 30,
+   "notes": 15
+  },
+  "52": {
+   "verses": 28,
+   "verses_noted": 9,
+   "verses_unnoted": 19,
+   "notes": 10
+  },
+  "53": {
+   "verses": 44,
+   "verses_noted": 12,
+   "verses_unnoted": 32,
+   "notes": 12
+  },
+  "54": {
+   "verses": 51,
+   "verses_noted": 14,
+   "verses_unnoted": 37,
+   "notes": 15
+  },
+  "55": {
+   "verses": 35,
+   "verses_noted": 8,
+   "verses_unnoted": 27,
+   "notes": 11
+  },
+  "56": {
+   "verses": 51,
+   "verses_noted": 11,
+   "verses_unnoted": 40,
+   "notes": 12
+  },
+  "57": {
+   "verses": 50,
+   "verses_noted": 10,
+   "verses_unnoted": 40,
+   "notes": 11
+  },
+  "58": {
+   "verses": 169,
+   "verses_noted": 9,
+   "verses_unnoted": 160,
+   "notes": 9
+  },
+  "59": {
+   "verses": 32,
+   "verses_noted": 5,
+   "verses_unnoted": 27,
+   "notes": 5
+  },
+  "60": {
+   "verses": 20,
+   "verses_noted": 4,
+   "verses_unnoted": 16,
+   "notes": 5
+  },
+  "61": {
+   "verses": 24,
+   "verses_noted": 8,
+   "verses_unnoted": 16,
+   "notes": 8
+  },
+  "62": {
+   "verses": 38,
+   "verses_noted": 7,
+   "verses_unnoted": 31,
+   "notes": 8
+  },
+  "63": {
+   "verses": 33,
+   "verses_noted": 7,
+   "verses_unnoted": 26,
+   "notes": 8
+  },
+  "64": {
+   "verses": 45,
+   "verses_noted": 11,
+   "verses_unnoted": 34,
+   "notes": 12
+  },
+  "65": {
+   "verses": 28,
+   "verses_noted": 9,
+   "verses_unnoted": 19,
+   "notes": 11
+  },
+  "66": {
+   "verses": 15,
+   "verses_noted": 4,
+   "verses_unnoted": 11,
+   "notes": 4
+  },
+  "67": {
+   "verses": 44,
+   "verses_noted": 8,
+   "verses_unnoted": 36,
+   "notes": 10
+  },
+  "68": {
+   "verses": 29,
+   "verses_noted": 8,
+   "verses_unnoted": 21,
+   "notes": 9
+  }
+ }
 }

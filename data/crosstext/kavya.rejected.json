@@ -1,96 +1,228 @@
-{
- "_meta": {
-  "cluster": "kavya",
-  "verified_by": "adversarial Sanskritist review (default-to-reject)",
-  "date": "2026-06-27",
-  "promoted": 6,
-  "rejected": 14,
-  "note": "kavya.json supersedes the empty placeholder written by the prior session. 6 confirmed notes (tapasvinī Raghu 14.47, mṛṇālī KumSam 1.40+Raghu 16.7, vilāpa Raghu 8.70+14.53, mārutātmaja Raghu 13.21, kṛśā/dīnā/tapasvinī Raghu 14.48+Megha 95, dāśarathi Raghu 12.44). 14 stem categories rejected below."
- },
- "rejected": [
-  {
-   "stem": "kzitAv",
-   "sund": "V.42.30",
-   "src": "Raghuvaṃśa 3.29-32",
-   "reason": "Common locative kṣitau ('on the ground') — ubiquitous filler, not a shared motif. Reject."
-  },
-  {
-   "stem": "agam",
-   "sund": "V.14.17",
-   "src": "Raghuvaṃśa 11.53-56",
-   "reason": "√gam / agamat — commonest Sanskrit verb; co-occurrence carries no signal. Reject."
-  },
-  {
-   "stem": "kAmay",
-   "sund": "V.20.3",
-   "src": "Buddhacarita 11.64",
-   "reason": "√kam 'desire' is generic. No specific shared image. Reject."
-  },
-  {
-   "stem": "rAGav",
-   "sund": "V.1.39+many",
-   "src": "Raghuvaṃśa passim",
-   "reason": "Rāghava occurs 119× in Sundara, 31× in Raghu — too frequent in both; no specific shared verse is illuminating beyond the 1 note already in the base layer (V.1.39 ↔ Ragh.1.1 already promoted in prior pass as rāghava/dynasty note). Additional bulk overlap adds nothing. Reject as bulk."
-  },
-  {
-   "stem": "laNkA",
-   "sund": "115 occurrences",
-   "src": "Raghuvaṃśa 5",
-   "reason": "Laṅkā appears 115× in Sundara; any kāvya mention is incidental. The place-name alone is not a cross-text parallel. Reject."
-  },
-  {
-   "stem": "rAvaR",
-   "sund": "204 occurrences",
-   "src": "Raghuvaṃśa 9",
-   "reason": "Rāvaṇa appears 204× in Sundara. Frequency makes any single hit unsalvageable as a parallel. Reject."
-  },
-  {
-   "stem": "candra",
-   "sund": "34 occurrences",
-   "src": "Kāvya passim (63 hits)",
-   "reason": "Candra as comparison for beauty is pan-Sanskrit. 34×Sundara + 63×kāvya = coincidental overlap on the most common Sanskrit simile. No specific shared formula. Reject."
-  },
-  {
-   "stem": "padma",
-   "sund": "19 occurrences",
-   "src": "Kāvya passim",
-   "reason": "Lotus (padma) is equally ubiquitous. Without a specific shared verse or formula, stem collision only. Reject."
-  },
-  {
-   "stem": "siMha",
-   "sund": "20 occurrences",
-   "src": "Kāvya passim",
-   "reason": "Lion (siṃha) as heroic simile is pan-epic and pan-kāvya. No specific shared formula identified. Reject."
-  },
-  {
-   "stem": "sAgar",
-   "sund": "62 occurrences",
-   "src": "Kāvya passim",
-   "reason": "Ocean (sāgara) is the central prop of Sundara; 62 occurrences makes any hit non-distinctive. No specific kāvya parallel beyond the general ocean motif. Reject."
-  },
-  {
-   "stem": "tapas",
-   "sund": "23 occurrences",
-   "src": "Kāvya passim (48 hits)",
-   "reason": "tapas is too widely distributed (48 kāvya hits across all works). Covered more specifically by tapasv note above. Additional tapas hits lack verse-level precision. Reject."
-  },
-  {
-   "stem": "janak",
-   "sund": "57 occurrences",
-   "src": "Kāvya 13 hits",
-   "reason": "Janaka = Sītā's father, appears 57× in Sundara. Kāvya uses it in vaidehī/maithilī context but these do not yield additional verses not already covered by the base layer (first-occurrence crossrefs). No new note. Reject."
-  },
-  {
-   "stem": "rudant",
-   "sund": "2 occurrences",
-   "src": "Śukasaptati 39.4",
-   "reason": "Sundara V.19.3 rudantī (weeping Sītā); Śukasaptati 39.4 uses rudantī in a merchant's wife context. Genre mismatch (prose narrative vs. epic). Not illuminating. Reject."
-  },
-  {
-   "stem": "dIna",
-   "sund": "12 occurrences",
-   "src": "Amaruśataka 2.6",
-   "reason": "Amaruśataka 2.6 uses dīna for virahiṇī — thematically related (separation grief) but the register mismatch is significant: śṛṅgāra erotic lyric vs. epic captivity. The dīna/kṛśa note promoted covers this via Raghu 14.48. Reject duplicate."
+[
+ {
+  "_meta": {
+   "cluster": "kavya",
+   "rejected_from": "kavya.json",
+   "generated": "2026-06-27",
+   "rejected_count": 7,
+   "verification": "Adversarial Sanskritist pass: rejected for fictitious/misattributed shared stem, locus-quote mismatch, or coincidental over-generic parallel."
   }
- ]
-}
+ },
+ {
+  "shloka": "V.42.30",
+  "lemma_iast": "kzitAv",
+  "source": "Raghuvaṃśa 3.29-32",
+  "cluster": "kavya",
+  "reject_reason": "Common locative kṣitau ('on the ground') — ubiquitous filler, not a shared motif. Reject.",
+  "stem": "kzitAv"
+ },
+ {
+  "shloka": "V.14.17",
+  "lemma_iast": "agam",
+  "source": "Raghuvaṃśa 11.53-56",
+  "cluster": "kavya",
+  "reject_reason": "√gam / agamat — commonest Sanskrit verb; co-occurrence carries no signal. Reject.",
+  "stem": "agam"
+ },
+ {
+  "shloka": "V.20.3",
+  "lemma_iast": "kAmay",
+  "source": "Buddhacarita 11.64",
+  "cluster": "kavya",
+  "reject_reason": "√kam 'desire' is generic. No specific shared image. Reject.",
+  "stem": "kAmay"
+ },
+ {
+  "shloka": "V.1.39+many",
+  "lemma_iast": "rAGav",
+  "source": "Raghuvaṃśa passim",
+  "cluster": "kavya",
+  "reject_reason": "Rāghava occurs 119× in Sundara, 31× in Raghu — too frequent in both; no specific shared verse is illuminating beyond the 1 note already in the base layer (V.1.39 ↔ Ragh.1.1 already promoted in prior pass as rāghava/dynasty note). Additional bulk overlap adds nothing. Reject as bulk.",
+  "stem": "rAGav"
+ },
+ {
+  "shloka": "115 occurrences",
+  "lemma_iast": "laNkA",
+  "source": "Raghuvaṃśa 5",
+  "cluster": "kavya",
+  "reject_reason": "Laṅkā appears 115× in Sundara; any kāvya mention is incidental. The place-name alone is not a cross-text parallel. Reject.",
+  "stem": "laNkA"
+ },
+ {
+  "shloka": "204 occurrences",
+  "lemma_iast": "rAvaR",
+  "source": "Raghuvaṃśa 9",
+  "cluster": "kavya",
+  "reject_reason": "Rāvaṇa appears 204× in Sundara. Frequency makes any single hit unsalvageable as a parallel. Reject.",
+  "stem": "rAvaR"
+ },
+ {
+  "shloka": "34 occurrences",
+  "lemma_iast": "candra",
+  "source": "Kāvya passim (63 hits)",
+  "cluster": "kavya",
+  "reject_reason": "Candra as comparison for beauty is pan-Sanskrit. 34×Sundara + 63×kāvya = coincidental overlap on the most common Sanskrit simile. No specific shared formula. Reject.",
+  "stem": "candra"
+ },
+ {
+  "shloka": "19 occurrences",
+  "lemma_iast": "padma",
+  "source": "Kāvya passim",
+  "cluster": "kavya",
+  "reject_reason": "Lotus (padma) is equally ubiquitous. Without a specific shared verse or formula, stem collision only. Reject.",
+  "stem": "padma"
+ },
+ {
+  "shloka": "20 occurrences",
+  "lemma_iast": "siMha",
+  "source": "Kāvya passim",
+  "cluster": "kavya",
+  "reject_reason": "Lion (siṃha) as heroic simile is pan-epic and pan-kāvya. No specific shared formula identified. Reject.",
+  "stem": "siMha"
+ },
+ {
+  "shloka": "62 occurrences",
+  "lemma_iast": "sAgar",
+  "source": "Kāvya passim",
+  "cluster": "kavya",
+  "reject_reason": "Ocean (sāgara) is the central prop of Sundara; 62 occurrences makes any hit non-distinctive. No specific kāvya parallel beyond the general ocean motif. Reject.",
+  "stem": "sAgar"
+ },
+ {
+  "shloka": "23 occurrences",
+  "lemma_iast": "tapas",
+  "source": "Kāvya passim (48 hits)",
+  "cluster": "kavya",
+  "reject_reason": "tapas is too widely distributed (48 kāvya hits across all works). Covered more specifically by tapasv note above. Additional tapas hits lack verse-level precision. Reject.",
+  "stem": "tapas"
+ },
+ {
+  "shloka": "57 occurrences",
+  "lemma_iast": "janak",
+  "source": "Kāvya 13 hits",
+  "cluster": "kavya",
+  "reject_reason": "Janaka = Sītā's father, appears 57× in Sundara. Kāvya uses it in vaidehī/maithilī context but these do not yield additional verses not already covered by the base layer (first-occurrence crossrefs). No new note. Reject.",
+  "stem": "janak"
+ },
+ {
+  "shloka": "2 occurrences",
+  "lemma_iast": "rudant",
+  "source": "Śukasaptati 39.4",
+  "cluster": "kavya",
+  "reject_reason": "Sundara V.19.3 rudantī (weeping Sītā); Śukasaptati 39.4 uses rudantī in a merchant's wife context. Genre mismatch (prose narrative vs. epic). Not illuminating. Reject.",
+  "stem": "rudant"
+ },
+ {
+  "shloka": "12 occurrences",
+  "lemma_iast": "dIna",
+  "source": "Amaruśataka 2.6",
+  "cluster": "kavya",
+  "reject_reason": "Amaruśataka 2.6 uses dīna for virahiṇī — thematically related (separation grief) but the register mismatch is significant: śṛṅgāra erotic lyric vs. epic captivity. The dīna/kṛśa note promoted covers this via Raghu 14.48. Reject duplicate.",
+  "stem": "dIna"
+ },
+ {
+  "shloka": "V.1.6",
+  "lemma_iast": "vidyādhara",
+  "note_ru": "Махендра «населён меняющими облик якшами, киннарами, гандхарвами … и змеями» (1.6) — типовая для кавьи «заселённость» священной горы полубожественными существами. Ср. Гималаи у Калидасы, где на берёсте, окрашенной рудой (dhātu-rasa), «vrajanti vidyādharasundarīṇām anaṅgalekhakriyayopayogam» (Кумара I.7) — «[пятна] идут в дело любовных писем красавиц-видьядхари». И там и тут гора — обиталище vidyādhara/yakṣa/kiṃnara; кавья насыщает мотив эротикой. Параллель показывает общий кавья-штамп «полубоги населяют вершину».",
+  "type": "А",
+  "trigger": "crosstext",
+  "subtype": "cross_text",
+  "source": "Kumārasambhava I.7 (Kālidāsa)",
+  "stem": "viryADara",
+  "parallel_addr": "1.7",
+  "cluster": "kavya",
+  "review_required": true,
+  "verified": false,
+  "reject_reason": "Заголовочный стем vidyādhara ОТСУТСТВУЕТ и в базовом стихе (Сундара 1.6: yakṣa/kiṃnara/gandharva/pannaga, НЕ vidyādhara), и в цитируемом Kumāra I.7. Параллель — родовой топос «полубоги на горе»; стем-коллизия фиктивна (SLP1 'viryADara' нет ни в одном тексте). Тип А, неосвещающе."
+ },
+ {
+  "shloka": "V.5.5",
+  "lemma_iast": "candra",
+  "note_ru": "Многосоставная строфа о полной луне (5.5: kakudmān iva … mahācalaḥ śveta iva … hastīva jāmbūnadabaddhaśṛṅgo … vibhāti candraḥ paripūrṇaśṛṅgaḥ, «сияла полная луна — словно горбатый бык, словно белая гора, словно слон с позолоченными бивнями») — учебный пример кавья-утпрекши (нанизанных сравнений) внутри эпоса. Тот же приём «вечной луны над идеальным городом» — у Калидасы: «nityajyotsnāḥ … pradoṣāḥ» (Мегха II.3). Параллель показывает, что Сундараканда здесь работает в развитой кавья-манере многоступенчатого сравнения, а не в скупом эпическом стиле; подстрочник Леонова это сглаживает.",
+  "type": "А",
+  "trigger": "crosstext",
+  "subtype": "cross_text",
+  "source": "Meghadūta II.2 (Kālidāsa)",
+  "stem": "candra",
+  "parallel_addr": "2.2",
+  "cluster": "kavya",
+  "review_required": true,
+  "verified": false,
+  "reject_reason": "Коллизия по сверхчастому candra. Цитируемый Megha II.3 — про pradoṣa/вечную луну города, не про утпрекшу луны; candra в Megha 2.2 ОТСУТСТВУЕТ. Note сам признаёт, что речь о стиле самой Сундары — параллель не несёт самостоятельного освещения. Дублирует приём note на pradoṣa."
+ },
+ {
+  "shloka": "V.16.22",
+  "lemma_iast": "śīlasaṃpanna",
+  "note_ru": "«Её, наделённую добродетелью (śīlasampannām), измученную Раваной, видеть желает Рагхава, словно жаждущий — источник» (16.22). Топос верной супруги, чья добродетель неколебима в разлуке, и тоскующего по ней мужа — сердцевина кавья-вирахи. Ср. наказ Якши вестнику-облаку щадить сон жены: «tasmin kāle jalada yadi sā labdhanidrāsukhā syād … yāmamātraṃ sahasva» (Мегха II.37) — «если, облако, застанешь её уснувшей, помедли хоть на стражу [ночи]». И там и тут — мужнина нежность к измождённой разлукой целомудренной жене. Параллель освещает кавья-регистр супружеской верности, к которому принадлежит реплика о Сите.",
+  "type": "А",
+  "trigger": "crosstext",
+  "subtype": "cross_text",
+  "source": "Meghadūta II.34/37 (Kālidāsa)",
+  "stem": "SIlasampanna",
+  "parallel_addr": "2.34",
+  "cluster": "kavya",
+  "review_required": true,
+  "verified": false,
+  "reject_reason": "Стем śīlasaṃpanna только в Сундаре; в Megha 2.34 его нет. Цитата (Якша просит облако не будить спящую жену) тематически далека от «Рагхава желает видеть добродетельную Ситу как жаждущий — источник». Сверх-родовой мотив «нежный муж / верная жена» — совпадение, не освещение."
+ },
+ {
+  "shloka": "V.28.16",
+  "lemma_iast": "jīvita",
+  "note_ru": "Сита в отчаянии готова «скоро оставить жизнь (jīvitaṃ tyajeyam) ядом или острым мечом» (28.16). Бренность жизни как ходячая максима — у Бхартрихари: «kṣaṇaṃ bālo bhūtvā kṣaṇam api yuvā … jarājīrṇair aṅgair naṭa iva … naraḥ saṃsārānte viśati yamadhānīyavanikām» (Шатакатрая III.50, «Вайрагья») — «миг — дитя, миг — юноша … и вот, дряхлый телом, как лицедёт с подмостков, нисходит человек в обитель Ямы». Гномическая параллель помещает частное отчаяние Ситы в общеиндийскую топику бренности (jīvita/saṃsāra), показывая кавья-фон её слов о смерти.",
+  "type": "А",
+  "trigger": "crosstext",
+  "subtype": "cross_text",
+  "source": "Bhartṛhari, Vairāgyaśataka 50 (Śatakatraya III.50)",
+  "stem": "jIvita",
+  "parallel_addr": "3.50",
+  "cluster": "kavya",
+  "review_required": true,
+  "verified": false,
+  "reject_reason": "jīvita — сверхчастое слово (коллизия). Vairāgya 50 («kṣaṇaṃ bālo…») — о естественном угасании/старении и входе в обитель Ямы в КОНЦЕ saṃsāra; Сундара 28.16 — о суицидальном отчаянии Ситы (ядом/мечом). Бренность-жизни ≠ желание-смерти: тематическое несовпадение на случайном стеме."
+ },
+ {
+  "shloka": "V.28.16",
+  "lemma_iast": "viṣa",
+  "note_ru": "Мысль Ситы, что у неё нет ни яда (viṣa), ни меча, чтобы покончить с собой, развёртывается в общем для текста мотиве: даже могущественнейший беспомощен перед судьбой (daiva). Гномический locus — «дайва-паддхати» Бхартрихари: «netā yasya bṛhaspatiḥ praharaṇaṃ vajraṃ surāḥ sainikāḥ … ity āścaryabalānvito 'pi balabhid bhagnaḥ paraiḥ … tad vyaktaṃ nanu daivam eva śaraṇaṃ» (Шатакатрая I.81) — «чей вождь Брихаспати, оружие — ваджра, воины — боги … и всё же [Индра] бывал сокрушён врагами; ясно: судьба — единственное прибежище». Параллель показывает: безвыходность Ситы артикулирует ту же нити-максиму о всевластии daiva, что пронизывает плачи Сундараканды.",
+  "type": "А",
+  "trigger": "crosstext",
+  "subtype": "cross_text",
+  "source": "Bhartṛhari, Nītiśataka 81 (Śatakatraya I.81, daivapaddhatiḥ)",
+  "stem": "viza",
+  "parallel_addr": "1.81",
+  "cluster": "kavya",
+  "review_required": true,
+  "verified": false,
+  "reject_reason": "МИСАТРИБУЦИЯ. Стем — viṣa (яд), но цитируемый Nīti 81 (daivapaddhati) о ЯДЕ НИЧЕГО не содержит — он о daiva (судьбе); viṣa в нём отсутствует. Note молча подменяет стем-совпадение (viṣa) импортированной темой (daiva). Второе примечание на тот же стих 28.16; daiva-связь — интерпретативный оверрич без якоря."
+ },
+ {
+  "shloka": "V.29.4",
+  "lemma_iast": "ūru",
+  "note_ru": "Описание Ситы по частям тела — дрожащее бедро (ūru), «подобное хоботу царя слонов» (29.4, как доброе предзнаменование) — образец кавья-приёма nakha-śikha (перечисления красот фигуры). Его канон задаёт Калидаса в портрете Парвати: «vṛttānupūrve ca na cātidīrghe jaṅghe śubhe … śeṣāṅganirmāṇavidhau vidhātur lāvaṇya utpādya ivāsa yatnaḥ» (Кумара I.35-36) — «округлые, в меру длинные, прекрасные голени … словно Творец, создав [их], собрал всё изящество для остальных членов». Сравнение бедра со слоновьим хоботом и «округлость» бёдер — общий кавья-инвентарь женской красоты. Параллель показывает кавья-конвенцию, в которой выдержано «благое» описание тела Ситы.",
+  "type": "А",
+  "trigger": "crosstext",
+  "subtype": "cross_text",
+  "source": "Kumārasambhava I.35-36 (Kālidāsa)",
+  "stem": "Uru",
+  "parallel_addr": "1.35",
+  "cluster": "kavya",
+  "review_required": true,
+  "verified": false,
+  "reject_reason": "Стем ūru отсутствует в цитируемом Kumāra I.35-36, который описывает jaṅghā (ГОЛЕНИ: «vṛttānupūrve ca na cātidīrghe jaṅghe»), а note заявляет параллель БЕДРА (ūru, Сундара 29.4). Цитируется не тот член тела; nakha-śikha — родовая конвенция. Совпадение + рассогласование локуса."
+ },
+ {
+  "shloka": "V.32.11",
+  "lemma_iast": "klānta",
+  "note_ru": "Сита, поглощённая одним именем (32.11: rāmeti rāmeti sadaiva buddhyā … «„Рама, Рама“ — все мои мысли и речи [только] о нём»), являет ту же одержимость отсутствующим возлюбленным, что Джаядева разворачивает как литанию вирахи: «vikirati muhuḥ śvāsān āśāḥ puro muhur īkṣate … madana-kadana-klāntaḥ kānte priyas tava vartate» (Гитаговинда V.16) — «то вздыхает, то глядит по сторонам … изнемогает (klānta) твой любимый, терзаемый Маданой». Кавья даёт мужской зеркальный полюс той же топики «сознание, целиком занятое отсутствующим». Параллель освещает кавья-конвенцию виршаха-смарана (непрестанного памятования о возлюбленном), к которой принадлежит «Рама-Рама» Ситы.",
+  "type": "А",
+  "trigger": "crosstext",
+  "subtype": "cross_text",
+  "source": "Gītagovinda V.16 (Jayadeva)",
+  "stem": "klAnta",
+  "parallel_addr": "5.16",
+  "cluster": "kavya",
+  "review_required": true,
+  "verified": false,
+  "reject_reason": "Стем klānta ОТСУТСТВУЕТ в базовом стихе Сундара 32.11 («rāmeti rāmeti… vicintya») — общего стема на стороне Сундары нет. klānta есть только в Gita 5.16. Стем-основа параллели ложна; смараṇа-связь чисто тематическая и слабая."
+ }
+]
