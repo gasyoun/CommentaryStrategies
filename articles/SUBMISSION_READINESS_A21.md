@@ -85,3 +85,56 @@ Bracketed `[@DO]` items that block 5/5 → submitted and that an agent cannot do
 **Current readiness: 5/5 (revising, ready-to-send).** The paper is substantively complete, internally consistent, well-cited, and the data tables are well-formed. The agent-side confirmation pass found only one true defect (P1, orphaned footnote `[^1]`) and one wording reconciliation (P2, Minkowski characterization) — **both now applied 2026-06-26** (footnote anchored at line 60; Minkowski parenthetical reworded to match the cited *Mantrakāśīkhaṇḍa* article). The manuscript is now **fully ready bar sign-off**.
 
 **What flips 5/5 → submitted:** the three remaining `[@DO]` human gates — (1) confirm the Latin byline form for *Scrinium*, (2) the optional-references scholarly call, (3) author sign-off and the venue upload. _(The former ORCID gate was resolved 2026-06-28: 0000-0003-4513-884X pasted into the cover letter.)_ None require further authoring. Recommend applying proposed edits 1–4 in the same pass as the byline confirmation, then submit.
+
+
+---
+
+## Hostile pre-send check — 02-07-2026 (Fable 5, `claude-fable-5`) — VERDICT: **HOLD**
+
+Full adversarial read of the manuscript + external verification of venues and the
+load-bearing citation. The argument itself is sound and the Russian scholarly register is
+publication-grade; the internal arithmetic was re-verified against Tables 1–2 (13/11/5/1 →
+43/37/17%; 10/6 → 63/37%; totals consistent in abstract, §4.1, §7.1). The P1/P2 edits from
+this report are confirmed applied, and two report items are now stale: the Latin byline
+(`author: "M. Gasūns"` + `author-ru`) and the three optional references (all promoted into
+Литература AND cited in-text at §1, §6, §7.2) are already in the manuscript. What blocks
+sending is none of that:
+
+**Blocker 1 — both named venues fail.** *Indologica Taurinensia* ceased publication — the
+journal's own page states the last and final issue is n. 45 (2019)
+([asiainstitutetorino.it](https://www.asiainstitutetorino.it/indologica.html)). *Scrinium*
+(Brill) is a journal of patrology, critical hagiography and ecclesiastical history —
+ancient/medieval **Christian** Church ([brill.com](https://brill.com/view/journals/scri/scri-overview.xml));
+a Sanskrit ṭīkā paper is categorically out of scope and the cover letter's fit paragraph
+cannot survive desk review. **[@DECIDE] new venue required.** Constraint to weigh: the
+manuscript is Russian; the EN translation (A22, `article3_nilakantha_en.md`) is 4/5 and
+needs author review before any English-language venue.
+
+**Blocker 2 — Paribok attribution (axis-4 K/D ruling).** §3 presents the operational
+K/D glosses («кодификатор/системное позиционирование», «дискурсивное») as «Таксономия
+Парибка (2011)», and §1/§4.1/§7.2 + both abstracts build the central universality claim on
+that identity. Per [docs/AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md)
+the scale is the project's own, derived from Paribok but classifying *notes*, not *terms*.
+Likely referees are Russian indologists of Paribok's circle (Vasilkov — a subject of the
+paper — co-edited the very Шабдапракаша volume). Required rewording is bounded (§3 intro +
+definitions provenance, §1/§7.2 claim softening to «трёхчастное различение, восходящее к
+Парибку»; the I–IV↔P/K/D mapping, tables and percentages stand unchanged). Gated on the
+[@DO] source check in AXIS4_KD_DECISION §5.
+
+**Blocker 3 — the Парибок 2011 bibliography entry is defective.** The manuscript cites
+«Шабдапракаша 2 / под ред. А. В. Парибка и Д. Н. Лелюхина. СПб., 2011. С. 77–98»; external
+evidence documents the 2011 Шабдапракаша as **Зографский сборник. Вып. 1 / под ред.
+Я. В. Василькова и С. В. Пахомова. СПб.: ЛЕМА, 2011**
+([academia.edu](https://www.academia.edu/8228180/)); a «Шабдапракаша 2» edited by
+Парибок/Лелюхин is not externally attested. Editors, issue, pages and the article title must
+be verified against the physical volume (same [@DO] as Blocker 2). Note this entry was never
+in the verified-bibliography list (.ai_state covers Кальянов/В-Н/Нилакантха/Минковски only);
+P5 above verified citation *resolution*, not entry *content*.
+
+**Minor (fix in the same pass):** (a) «Васильков 1995–1996» entry lacks volume and pages;
+(b) Table 1 caption says «Рамопакхьяна, адхьяи 273–276» but its Rāma rows start at 274.9 —
+align caption or note that adhyāya 273 yielded no Nīlakaṇṭha locus; (c) stray double blank
+line after the Парибок 2011 entry.
+
+**Consequence:** readiness 5/5 → **4/5 (revising / pre-submission)** until the three
+blockers clear. Send is the wrong call today; the fix path is short and fully specified.

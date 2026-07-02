@@ -92,8 +92,12 @@ Every gold-sample note carries coordinates on 4 axes (canonical enum: [data/comm
 2. **Kazansky 2025** — A philological / B **textological** (metatext on source/translation
    state — *not* realia) / V historical-cultural & realia / G cultural. Realia go in **V, never B**.
 3. **Lidova 2024** — L1–L5 *lakṣaṇa*
-4. **Paribok 2011** — **P/K/D** (concept / culturally-loaded / codifier). *Note:* `docs/ARCHITECTURE.md`
-   historically mislabels this "P/C/K" in places — the schema and data are authoritative: **P/K/D**.
+4. **P/K/D — operational note-depth scale** (P gloss-identification / K system-placement /
+   D discursive elaboration), *derived from but NOT identical to* Paribok 2011, whose own П/К/Д
+   (понятие / концепт / кодификатор) is a typology of **terms**, not notes. The data's semantics
+   are the operational scale (canonical definitions: `prompts/classify_note.md`). Never present
+   the scale as "Paribok's taxonomy" — ruling and canonical wording:
+   [docs/AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md).
 
 Verse addressing is canonical **CTS-URN** (`urn:cts:sanskritLit:<work>:<passage>`), one work per
 epic, book = first passage element — derived deterministically by `derive_urn.py`.

@@ -55,7 +55,10 @@ Most notes in Russian academic translations do NOT use these — leave empty `[]
 
 ---
 
-## Axis 4 — Paribok categorical nature  (one value)
+## Axis 4 — note-depth scale P/K/D  (one value)
+
+(Operational scale of the CommentaryStrategies project, derived from — but not identical
+to — Paribok 2011; see docs/AXIS4_KD_DECISION.md. The output key stays `axis_4_paribok`.)
 
 Assign ONLY when `axis_1_topic` includes `sanskrit_term` or `philosophy`.
 For purely realia / geography / historical notes, omit (set to `"P"` as default).

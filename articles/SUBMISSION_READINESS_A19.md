@@ -116,3 +116,44 @@ These must not appear in the submitted copy. Produce a clean copy with all three
 **Current readiness: 4/5.** The manuscript is substantively complete, internally consistent on its arithmetic (300 = 50×6), bilingual, within the ВЯ length band (~52 000 зн.), and candid about its own limitations. It is staged for submission with a cover letter.
 
 **What flips it to 5/5:** clearing the **two remaining @DO** human gates — (1) Петров 1788 archival verification (releases line 455 + §6.1) and (2) the ≥85% axis_4 inter-coder reliability number from a second coder (backs §5 Таблицы 1–2 and §7.5). _(The former third gate — confirm ORCID — was resolved 2026-06-28: ORCID 0000-0003-4513-884X pasted into the manuscript + cover letter.)_ The house-style and proofread items in §§A–G above are all agent-/author-doable and do not require external input; they should be applied in the clean submission copy alongside the gate resolutions. Both remaining @DO gates are non-fabricable (Петров, IRR).
+
+
+---
+
+## Verification pass — 02-07-2026 (Fable 5, `claude-fable-5`) — report & cover letter vs. manuscript
+
+Gate question: do the readiness report and cover letter promise what the manuscript
+delivers? **Verdict: yes — the report is substantively accurate and the cover letter's every
+claim (17 863 notes, 300-note hand-coded sample, three strategies, reader-contract ↔
+adhikārin, Kazansky lineage) is delivered by the manuscript.** Confirmed still-open, exactly
+as reported: table numbering 3→1→2 (A), 10 keywords (B), «Арааньяканда» typo (C), all three
+dev-comment blocks (E), the Гринцер-2014 / Леонов-URL brackets (F). Byline «М. Ю. Гасунс»
+confirmed in frontmatter (D resolved). Deltas found:
+
+1. **All line refs drifted +3** (frontmatter gained `orcid`/`affiliation`/`email` on
+   2026-06-28 after this report was written): Таблица 3 now at line 172, Таблица 1 at 262,
+   Таблица 2 at 287, typo at 450, Петров at 458, dev comments at 29–33 / 331–334 / 436–438.
+   Recompute before applying the numbered edits.
+2. **Item G under-calls the axis-4 issue.** The K/D semantics conflict *does* touch the
+   manuscript: §2.2 uses «кодификатор направления деятельности» in Paribok's own sense
+   (term-class, «Парибок 2011: 86») while §2.3 defines «К (K) Кодификатор» as a
+   note-depth value «введённой А. В. Парибком (2011)» — two colliding senses of the same
+   word, referee-visible at ВЯ. Per [docs/AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md)
+   the fix is bounded rewording (§2.3 intro, §7.4, abstract's «П/К/Д по Парибку 2011» →
+   provenance-honest phrasing); §2.2's usage is correct and stays. **This becomes a third
+   @DO-adjacent gate**, shared with A21 and gated on the AXIS4 §5 source check.
+3. **Казанский 2025 venue/DOI mismatch — upgrade from "verify" (item F) to "fix".** The
+   bibliography names «Известия РАН. Серия литературы и языка. Т. 84. № 6», but the DOI
+   prefix `10.30842/ielcp…` is ИЕЯКФ, and `docs/GEMINI.md` records the source as **ИЕЯКФ 29
+   (2025)** (Tronsky proceedings, ИЛИ РАН). The theoretical hinge of §1 must cite its venue
+   correctly; fix against the actual publication.
+4. **Same defective Парибок 2011 entry as A21** («Шабдапракаша 2 / под ред. Парибка и
+   Лелюхина» — externally the 2011 Шабдапракаша is Зографский сборник вып. 1, ред.
+   Васильков/Пахомов, ЛЕМА; [academia.edu](https://www.academia.edu/8228180/)). Verify
+   against the physical volume.
+5. **Cover letter typo:** line 42 «Гасунс **Мāрцис** Юрьевич» mixes an IAST ā into a
+   Cyrillic name — should be «Марцис».
+
+**Net readiness: stays 4/5.** Human gates now three: Петров 1788 (archival), axis_4
+inter-coder ≥85%, and the Paribok attribution + bibliography fix (AXIS4_KD_DECISION §5).
+The house-style fix list above remains agent-/author-doable in the clean submission copy.
