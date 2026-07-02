@@ -4,7 +4,7 @@ author: "M. Gasūns"
 author-ru: "М. Ю. Гасунс"
 orcid: "0000-0003-4513-884X"
 target: "Scrinium / Indologica Taurinensia"
-status: "5/5 — revising (ready-to-send)"
+status: "4/5 — revising (pre-submission; venue + Paribok gates)"
 date: 2026-05-16
 lang: ru
 keywords:
@@ -27,9 +27,10 @@ keywords-en:
   - Paribok
 ---
 
-<!-- СТАТУС: 5/5 — revising (ready-to-send) (черновик v3). 2026-05-16.
-     Все разделы написаны. Таблицы 1 и 2 финальные. Библиография верифицирована.
-     Финальная вычитка завершена. Готово к отправке в редакцию. -->
+<!-- СТАТУС: 4/5 — revising (pre-submission) (черновик v3). 2026-05-16; понижено 02-07-2026.
+     Все разделы написаны. Таблицы 1 и 2 финальные. HOLD по итогам враждебной проверки:
+     оба журнала отпали (IT закрыт, Scrinium вне профиля), атрибуция P/K/D Парибку и запись
+     «Парибок 2011» в библиографии — гейты; см. SUBMISSION_READINESS_A21.md (02-07-2026). -->
 
 ---
 
