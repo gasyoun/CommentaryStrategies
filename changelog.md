@@ -10,6 +10,30 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-07-02
+
+### Changed
+
+**Axis-4 semantics governance — [docs/AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md)** (Fable 5, `claude-fable-5`, delegated adjudication)
+- Axis 4 is now documented as the project's **operational note-depth scale** (P gloss-identification /
+  K system-placement / D discursive elaboration) — *derived from, but not identical to*, Paribok 2011,
+  whose own П/К/Д (понятие / концепт / кодификатор) is a typology of **terms**, not notes. Data,
+  letters, TEI and scripts are untouched; only attribution language changed.
+- Divergent glosses aligned to the ruling: `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`,
+  `docs/ROADMAP_2026H2.md`, `docs/TYPOLOGY_GREEK_SANSKRIT.md`, `prompts/classify_note.md`.
+
+### Added
+
+- **A21 hostile pre-send verdict (HOLD, 5/5→4/5)** appended to
+  [articles/SUBMISSION_READINESS_A21.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/SUBMISSION_READINESS_A21.md):
+  Indologica Taurinensia defunct (last issue 45, 2019); Scrinium out of scope; Paribok attribution +
+  defective «Парибок 2011» bibliography entry (externally: Зографский сборник вып. 1, ред.
+  Васильков/Пахомов, ЛЕМА 2011).
+- **A19 verification pass** appended to
+  [articles/SUBMISSION_READINESS_A19.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/SUBMISSION_READINESS_A19.md):
+  report + cover letter verified accurate against the manuscript; deltas listed (+3 line drift,
+  §2.2↔§2.3 «кодификатор» collision, Казанский 2025 venue/DOI fix, cover-letter «Мāрцис» typo).
+
 ## [1.3.0] - 2026-07-01
 
 ### Added
