@@ -26,26 +26,39 @@ per_work = ledger['per_work_cross_text_map']
 CLUSTER_ORDER = OrderedDict([
     ('dharmashastra', 'Ману'),
     ('mbh_narrative', 'МБх-нарратив'),
+    ('mbh_battle', 'МБх-батальный'),
     ('mbh_gnomic', 'Шанти'),
     ('ramayana_grintser', 'Гринцер'),
     ('gita', 'Гита'),
     ('kavya', 'кавья'),
+    ('veda', 'Веда'),
+    ('upanishads', 'Упанишады'),
 ])
 # note: prompt lists Ману/МБх-нарратив/МБх-батальные/Гринцер/Гита/Шанти/кавья/упанишады/пураны;
-# only the 6 clusters above exist in the recovered data — батальные/упанишады/пураны empty, omitted.
+# 9 of these clusters carry confirmed notes as of the crosstext-expansion PR #42 reconciliation
+# (2026-07-02, union of two independently mined note sets); пураны remain empty (0 confirmed), omitted.
 
 BADGE = {
     'dharmashastra': ('bt-other', 'дхармашастра'),
     'mbh_narrative': ('bt-maha', 'МБх-нарратив'),
+    'mbh_battle': ('bt-maha', 'МБх-батальный'),
     'mbh_gnomic': ('bt-maha', 'МБх-Шанти'),
     'ramayana_grintser': ('bt-other', 'Рам. I–III'),
     'gita': ('bt-gita', 'Гита'),
     'kavya': ('bt-other', 'кавья'),
+    'veda': ('bt-other', 'Веда'),
+    'upanishads': ('bt-other', 'Упанишады'),
 }
 
 def shloka_key(s):
     m = re.match(r'V\.(\d+)\.(\d+)', str(s))
     return (int(m.group(1)), int(m.group(2))) if m else (999, 999)
+
+total_conf = sum(per_work.get(cl, {}).get('notes_confirmed', 0) for cl in CLUSTER_ORDER)
+total_rej = sum(per_work.get(cl, {}).get('rejected_as_trivial', 0) for cl in CLUSTER_ORDER)
+active_sources = sum(1 for cl in CLUSTER_ORDER if per_work.get(cl, {}).get('notes_confirmed', 0) > 0)
+base_total = sum(1 for x in comm if isinstance(x, dict) and '_meta' not in x and x.get('subtype') != 'cross_text')
+book_total = base_total + total_conf
 
 # build JS ctData rows grouped by cluster order, then by shloka
 rows = []
@@ -83,7 +96,7 @@ badge_js = 'const ctBadge = ' + json.dumps(
     {cl: list(BADGE[cl]) for cl in CLUSTER_ORDER}, ensure_ascii=False) + ';'
 
 # ---- new JS block (between markers) ----
-js_block = f"""// ── Межтекстовый слой (§07 cross_text · книжный охват, 6 источников) ──
+js_block = f"""// ── Межтекстовый слой (§07 cross_text · книжный охват, {active_sources} источников) ──
 {js_array}
 {badge_js}
 const ctClusterLabel = {json.dumps({cl: lbl for cl, lbl in CLUSTER_ORDER.items()}, ensure_ascii=False)};
@@ -130,19 +143,16 @@ for cl, lbl in CLUSTER_ORDER.items():
         f'      </tr>')
 contrib_tbody = '\n'.join(contrib_rows)
 
-total_conf = sum(per_work.get(cl, {}).get('notes_confirmed', 0) for cl in CLUSTER_ORDER)
-total_rej = sum(per_work.get(cl, {}).get('rejected_as_trivial', 0) for cl in CLUSTER_ORDER)
-
 # ---- new section markup ----
 section = f'''<!-- § МЕЖТЕКСТОВЫЙ СЛОЙ (книжный охват) -->
 <section class="section" id="cross_text">
-  <div class="section-eyebrow">§ 07 · Межтекстовый слой · книжный охват · 6 источников</div>
+  <div class="section-eyebrow">§ 07 · Межтекстовый слой · книжный охват · {active_sources} источников</div>
   <h2>Межтекстовый слой — примечания из параллельных текстов (вся кн. V, по перспективам)</h2>
 
   <p style="font-family:'PT Sans',sans-serif; font-size:14px; line-height:1.7; margin-bottom:12px;">
-    Помимо 95 базовых примечаний (Тип А/Б/В), по всей <strong>книге V</strong> добавлен
+    Помимо {base_total} базовых примечаний (Тип А/Б/В), по всей <strong>книге V</strong> добавлен
     слой межтекстовых параллелей (<code>subtype: "cross_text"</code>): {total_conf} подтверждённых
-    локусов из <strong>шести</strong> нераямаянских/рамаянских перспектив корпуса, подлинно
+    локусов из <strong>{active_sources}</strong> нераямаянских/рамаянских перспектив корпуса, подлинно
     освещающих шлок Сундараканды. Критерий допуска: <em>не</em> тривиальное пересечение стеблей,
     а конкретный смысловой вклад — locus classicus термина, гномический/этический параллелизм,
     дхарма-норма, нарративный мотив-двойник или кāвья-переосмысление. Каждое примечание —
@@ -152,8 +162,10 @@ section = f'''<!-- § МЕЖТЕКСТОВЫЙ СЛОЙ (книжный охва
 
   <div class="soft-note" style="margin-bottom:20px;">
     <strong>Сгруппировано по кластеру-перспективе:</strong> Ману (дхарма-норма) · МБх-нарратив
-    (мотивы-двойники) · Шанти (гномика, царская нити) · Гринцер (углубление рамаянского фона) ·
-    Гита (этика долга, бхакти) · кāвья (переосмысление эпитета). Каждый блок открывается строкой-заголовком.
+    (мотивы-двойники) · МБх-батальный (формульные боевые парал.) · Шанти (гномика, царская нити) ·
+    Гринцер (углубление рамаянского фона) · Гита (этика долга, бхакти) · кāвья (переосмысление
+    эпитета) · Веда (теологич. locus classicus) · Упанишады (философ. locus classicus).
+    Каждый блок открывается строкой-заголовком.
   </div>
 
   <!-- Таблица cross_text примечаний (книжный охват, по кластерам) -->
@@ -217,10 +229,13 @@ js_pat = re.compile(
 html, nj = js_pat.subn(lambda m: js_block, html, count=1)
 assert nj == 1, f'js replace count={nj}'
 
-# Fix stale ledger-section count "итоговые 105 примечаний (включая 10 cross_text)"
+# Fix stale ledger-section count strings from earlier partial passes (best-effort; no-op if absent)
 html = html.replace('итоговые 105 примечаний (включая 10 cross_text)',
-                    'итоговые 202 примечания (включая 107 cross_text из 6 источников)')
-html = re.sub(r'105 примечаний', '202 примечания', html)
+                    f'итоговые {book_total} примечания (включая {total_conf} cross_text из {active_sources} источников)')
+html = html.replace('итоговые 202 примечания (включая 107 cross_text из 6 источников)',
+                    f'итоговые {book_total} примечания (включая {total_conf} cross_text из {active_sources} источников)')
+html = re.sub(r'\b105 примечаний\b', f'{book_total} примечания', html)
+html = re.sub(r'\b202 примечания\b', f'{book_total} примечания', html)
 
 with open(HTML, 'w', encoding='utf-8') as f:
     f.write(html)

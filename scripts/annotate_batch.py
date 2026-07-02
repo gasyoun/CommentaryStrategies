@@ -1,5 +1,14 @@
 """
-Year 1 annotation pipeline — batch note classification via Anthropic API.
+Year 1 annotation pipeline — batch note classification via a pluggable LLM backend.
+
+Backends (choose with --backend or $LLM_BACKEND; default: openai):
+  • openai    — any OpenAI-compatible Chat Completions endpoint (OpenAI, OpenRouter,
+                Gemini's OpenAI-compat API, YandexGPT, local Ollama/vLLM/LM Studio …).
+                Config via env:
+                  LLM_API_KEY   (or OPENAI_API_KEY)  — required
+                  LLM_BASE_URL  — optional; omit for api.openai.com, set for others
+                  LLM_MODEL     — optional default model id (or pass --model)
+  • anthropic — Anthropic Messages API (needs ANTHROPIC_API_KEY).
 
 Input:  sources/{translator}_notes.json
         Array of objects with at minimum: {"raw_text": "..."}
@@ -9,14 +18,27 @@ Output: data/{translator}_full.json
         Array of fully classified annotation records per commentary_schema.json
 
 Usage:
-    python scripts/annotate_batch.py sementsov
-    python scripts/annotate_batch.py sementsov --limit 50 --model claude-sonnet-4-6
-    python scripts/annotate_batch.py sementsov --dry-run
+    # OpenAI-compatible (default backend)
+    export LLM_API_KEY=...                # your provider key
+    export LLM_MODEL=gpt-4o-mini          # provider-specific; --model overrides
+    python scripts/annotate_batch.py kalyanov --limit 5
+    python scripts/annotate_batch.py kalyanov --limit 50
 
+    # OpenRouter / Gemini / YandexGPT / local — same backend, different base_url:
+    export LLM_BASE_URL=https://openrouter.ai/api/v1
+    export LLM_MODEL=google/gemini-2.0-flash-001
+
+    # Anthropic (only if you have a key):
+    python scripts/annotate_batch.py kalyanov --backend anthropic
+
+    # Offline smoke test (no API call, no key needed):
+    python scripts/annotate_batch.py kalyanov --dry-run
+
+See docs/ANNOTATION_BACKENDS.md for per-provider recipes.
 Resumable: skips notes already in the output file (matched by comment_id).
 """
 
-import sys, json, re, time, argparse, pathlib
+import sys, os, json, re, time, argparse, pathlib
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
@@ -26,7 +48,11 @@ PROMPTS = ROOT / "prompts"
 SOURCES = ROOT / "sources"
 DATA    = ROOT / "data"
 
-DEFAULT_MODEL = "claude-haiku-4-5-20251001"   # cheapest; upgrade to sonnet for quality check
+# Per-backend default model — used only when neither --model nor $LLM_MODEL is set.
+DEFAULT_MODELS = {
+    "openai":    "gpt-4o-mini",                 # cheap, capable; override per provider
+    "anthropic": "claude-haiku-4-5-20251001",   # cheapest; upgrade to sonnet for quality
+}
 
 IAST_RE = re.compile(r'[āĀīĪūŪṛṚṭṬḍḌṇṆśŚṣṢṃṀḥḤñṅḷ]')
 
@@ -45,23 +71,143 @@ def load_system_prompt() -> str:
     return path.read_text(encoding="utf-8")
 
 
-# ── Classification ─────────────────────────────────────────────────────────────
+# ── LLM backends ─────────────────────────────────────────────────────────────────
+#
+# A backend wraps one provider SDK and exposes three methods:
+#   complete(system_prompt, user_content, model) -> raw reply text
+#   preflight(model) -> None if creds+model+endpoint resolve, else an error string
+#   is_fatal(exc)    -> True if a mid-loop exception is a config error (abort, not skip)
+# Everything provider-specific lives here; the rest of the pipeline is backend-agnostic.
 
-def classify_note(client, system_prompt: str, raw_text: str, translator: str,
+class AnthropicBackend:
+    """Anthropic Messages API. Needs ANTHROPIC_API_KEY (or ANTHROPIC_AUTH_TOKEN)."""
+    name = "anthropic"
+
+    def __init__(self):
+        try:
+            import anthropic
+        except ImportError:
+            print("ERROR: anthropic package not installed. Run: pip install anthropic")
+            sys.exit(1)
+        self._sdk = anthropic
+        self.client = anthropic.Anthropic()
+
+    def complete(self, system_prompt: str, user_content: str, model: str) -> str:
+        message = self.client.messages.create(
+            model=model,
+            max_tokens=512,
+            system=system_prompt,
+            messages=[{"role": "user", "content": user_content}],
+        )
+        return message.content[0].text.strip()
+
+    def preflight(self, model: str) -> str | None:
+        a = self._sdk
+        no_creds = ("no valid Anthropic credentials. Set ANTHROPIC_API_KEY "
+                    "(or ANTHROPIC_AUTH_TOKEN), then retry.")
+        try:
+            self.client.models.retrieve(model)        # cheap, token-free
+            return None
+        except a.AuthenticationError:
+            return no_creds
+        except a.PermissionDeniedError:
+            return f"credentials lack permission for model {model!r}."
+        except a.NotFoundError:
+            return f"unknown model {model!r}. Check --model / $LLM_MODEL."
+        except a.APIError as e:
+            print(f"WARNING: preflight inconclusive ({type(e).__name__}: {e}); proceeding.")
+            return None
+        except Exception as e:
+            return f"{no_creds}\n  ({type(e).__name__}: {e})"
+
+    def is_fatal(self, exc: Exception) -> bool:
+        return isinstance(exc, (self._sdk.AuthenticationError, self._sdk.PermissionDeniedError))
+
+
+class OpenAIBackend:
+    """Any OpenAI-compatible Chat Completions endpoint, selected by env:
+        LLM_API_KEY / OPENAI_API_KEY  — key (required)
+        LLM_BASE_URL                  — endpoint (optional; default = api.openai.com)
+    Covers OpenAI, OpenRouter, Gemini (OpenAI-compat), YandexGPT, local servers.
+    """
+    name = "openai"
+
+    def __init__(self):
+        try:
+            import openai
+        except ImportError:
+            print("ERROR: openai package not installed. Run: pip install openai")
+            sys.exit(1)
+        self._sdk = openai
+        api_key = os.environ.get("LLM_API_KEY") or os.environ.get("OPENAI_API_KEY")
+        base_url = os.environ.get("LLM_BASE_URL") or None
+        if not api_key:
+            print("ERROR: no API key. Set LLM_API_KEY (or OPENAI_API_KEY); for "
+                  "non-OpenAI providers also set LLM_BASE_URL. "
+                  "See docs/ANNOTATION_BACKENDS.md.")
+            sys.exit(2)
+        self.base_url = base_url or "https://api.openai.com/v1"
+        self.client = (openai.OpenAI(api_key=api_key, base_url=base_url)
+                       if base_url else openai.OpenAI(api_key=api_key))
+
+    def complete(self, system_prompt: str, user_content: str, model: str) -> str:
+        resp = self.client.chat.completions.create(
+            model=model,
+            max_tokens=512,
+            temperature=0,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_content},
+            ],
+        )
+        return (resp.choices[0].message.content or "").strip()
+
+    def preflight(self, model: str) -> str | None:
+        o = self._sdk
+        try:
+            # Minimal end-to-end probe: validates key + endpoint + model in one cheap call.
+            self.client.chat.completions.create(
+                model=model, max_tokens=1,
+                messages=[{"role": "user", "content": "ping"}],
+            )
+            return None
+        except o.AuthenticationError:
+            return (f"API key rejected (401) at {self.base_url}. "
+                    "Check LLM_API_KEY / OPENAI_API_KEY.")
+        except o.PermissionDeniedError:
+            return f"permission denied (403) at {self.base_url}."
+        except o.NotFoundError:
+            return (f"model {model!r} not found at {self.base_url}. "
+                    "Set --model / $LLM_MODEL.")
+        except o.BadRequestError as e:
+            return f"bad request for model {model!r}: {e}. Check --model / $LLM_MODEL."
+        except o.APIError as e:
+            print(f"WARNING: preflight inconclusive ({type(e).__name__}: {e}); proceeding.")
+            return None
+        except Exception as e:
+            print(f"WARNING: preflight could not run ({type(e).__name__}: {e}); proceeding.")
+            return None
+
+    def is_fatal(self, exc: Exception) -> bool:
+        return isinstance(exc, (self._sdk.AuthenticationError, self._sdk.PermissionDeniedError))
+
+
+def make_backend(name: str):
+    if name == "anthropic":
+        return AnthropicBackend()
+    if name == "openai":
+        return OpenAIBackend()
+    print(f"ERROR: unknown backend {name!r}. Use --backend openai|anthropic.")
+    sys.exit(1)
+
+
+# ── Classification ───────────────────────────────────────────────────────────────
+
+def classify_note(backend, system_prompt: str, raw_text: str, translator: str,
                   model: str) -> dict:
-    """Call Anthropic API. Returns parsed classification dict."""
-    import anthropic
-
-    message = client.messages.create(
-        model=model,
-        max_tokens=512,
-        system=system_prompt,
-        messages=[{
-            "role": "user",
-            "content": f"Translator: {translator}\n\nNote:\n{raw_text}"
-        }]
-    )
-    text = message.content[0].text.strip()
+    """Send one note to the active backend; parse the JSON object from its reply."""
+    user_content = f"Translator: {translator}\n\nNote:\n{raw_text}"
+    text = backend.complete(system_prompt, user_content, model)
 
     # Extract JSON block (model may wrap in ```json ... ```)
     m = re.search(r'\{.*\}', text, re.DOTALL)
@@ -106,7 +252,8 @@ def normalise(raw: str, classification: dict, note_index: int,
 
 # ── Pipeline ───────────────────────────────────────────────────────────────────
 
-def run(translator: str, model: str, limit: int | None, dry_run: bool) -> None:
+def run(translator: str, backend_name: str, model: str, limit: int | None,
+        dry_run: bool, sleep: float) -> None:
     source_file = SOURCES / f"{translator}_notes.json"
     output_file = DATA    / f"{translator}_full.json"
 
@@ -130,48 +277,22 @@ def run(translator: str, model: str, limit: int | None, dry_run: bool) -> None:
     done_indices = {r["comment_id"] for r in results}
 
     if dry_run:
-        print(f"[DRY RUN] Would classify {total - len(done_indices)} notes using {model}")
+        print(f"[DRY RUN] backend={backend_name} model={model} — would classify "
+              f"{total - len(done_indices)} notes (no API call).")
         for i, note in enumerate(notes[:3]):
             print(f"  [{i+1}] {note['raw_text'][:80]}...")
         return
 
     system_prompt = load_system_prompt()
+    backend = make_backend(backend_name)
+    print(f"Backend: {backend_name}   model: {model}")
 
-    try:
-        import anthropic
-    except ImportError:
-        print("ERROR: anthropic package not installed. Run: pip install anthropic")
-        sys.exit(1)
-
-    client = anthropic.Anthropic()
-
-    # Preflight: verify credentials AND model resolve BEFORE the loop. Without
-    # this, a missing key errors through every note (the 401 is swallowed as a
-    # per-note "error") and an empty output file gets written — looking like a
-    # run that "did nothing". One cheap, token-free call fails fast instead.
-    no_creds_msg = ("ERROR: no valid Anthropic credentials. Set ANTHROPIC_API_KEY "
-                    "(or ANTHROPIC_AUTH_TOKEN, or run `ant auth login`) and retry.")
-    try:
-        client.models.retrieve(model)
-    except anthropic.AuthenticationError:
-        # Key present but rejected by the server (401).
-        print(no_creds_msg)
-        sys.exit(2)
-    except anthropic.PermissionDeniedError:
-        print(f"ERROR: these credentials lack permission for model {model!r}.")
-        sys.exit(2)
-    except anthropic.NotFoundError:
-        print(f"ERROR: unknown model {model!r}. Check --model.")
-        sys.exit(2)
-    except anthropic.APIError as e:
-        # Transient/other (rate limit, overload, network): warn but proceed —
-        # the main loop has its own per-note handling.
-        print(f"WARNING: preflight inconclusive ({type(e).__name__}: {e}); proceeding.")
-    except Exception as e:
-        # No credential configured at all: the SDK raises TypeError ("Could not
-        # resolve authentication method") locally, before any request is sent.
-        print(no_creds_msg)
-        print(f"  ({type(e).__name__}: {e})")
+    # Preflight: verify credentials AND model resolve BEFORE the loop. Without this,
+    # a missing key / bad model errors through every note (looking like a run that
+    # "did nothing", with an empty output file). One cheap call fails fast instead.
+    err = backend.preflight(model)
+    if err:
+        print(f"ERROR: {err}")
         sys.exit(2)
 
     errors = 0
@@ -189,7 +310,7 @@ def run(translator: str, model: str, limit: int | None, dry_run: bool) -> None:
         print(f"  [{i}/{total}] {cid} ({len(raw)} chars)...", end=" ", flush=True)
 
         try:
-            classification = classify_note(client, system_prompt, raw, translator, model)
+            classification = classify_note(backend, system_prompt, raw, translator, model)
             record = normalise(raw, classification, i, translator)
             # Carry through optional fields from source
             for field in ("shloka_addr", "editor"):
@@ -198,14 +319,14 @@ def run(translator: str, model: str, limit: int | None, dry_run: bool) -> None:
             results.append(record)
             print(f"✓ {record['axis_2_kazansky']} {record['axis_4_paribok']}"
                   f"{' FF:' + ','.join(record['false_friends']) if record['false_friends'] else ''}")
-        except (anthropic.AuthenticationError, anthropic.PermissionDeniedError) as e:
-            # Fatal config error — every remaining call fails identically. Abort
-            # now (break, not exit) so the guarded save below preserves whatever
-            # already succeeded; the run is resumable.
-            print(f"\nFATAL: {type(e).__name__}: {e}")
-            print("Aborting — fix credentials/permissions, then re-run (resumable).")
-            break
         except Exception as e:
+            # Fatal config error (bad key/permission) — every remaining call fails
+            # identically. Abort now (break, not exit) so the guarded save below
+            # preserves whatever already succeeded; the run is resumable.
+            if backend.is_fatal(e):
+                print(f"\nFATAL: {type(e).__name__}: {e}")
+                print("Aborting — fix credentials/permissions, then re-run (resumable).")
+                break
             errors += 1
             print(f"ERROR: {e}")
 
@@ -215,8 +336,8 @@ def run(translator: str, model: str, limit: int | None, dry_run: bool) -> None:
                 json.dumps(results, ensure_ascii=False, indent=2),
                 encoding="utf-8", newline="\n")
 
-        # Rate limit: ~6 req/s max for Haiku, stay well below
-        time.sleep(0.2)
+        # Gentle throttle; raise --sleep for low-RPM free tiers (e.g. Gemini free).
+        time.sleep(sleep)
 
     # Never write an empty output file — it would create misleading resume state
     # and look like real output.
@@ -235,15 +356,27 @@ def run(translator: str, model: str, limit: int | None, dry_run: bool) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Batch annotate translator notes via Anthropic API")
+        description="Batch-annotate translator notes via a pluggable LLM backend "
+                    "(OpenAI-compatible by default; Anthropic optional).")
     parser.add_argument("translator",
-        help="Translator slug (e.g. sementsov, burba, petrov)")
+        help="Translator slug (e.g. kalyanov, sementsov, burba)")
+    parser.add_argument("--backend", choices=["openai", "anthropic"], default=None,
+        help="LLM backend (default: $LLM_BACKEND or 'openai').")
+    parser.add_argument("--model", default=None,
+        help="Model id. Precedence: --model > $LLM_MODEL > per-backend default "
+             "(openai: gpt-4o-mini, anthropic: claude-haiku-4-5-20251001).")
     parser.add_argument("--limit", type=int, default=None,
-        help="Process only first N notes (for testing)")
-    parser.add_argument("--model", default=DEFAULT_MODEL,
-        help=f"Anthropic model ID (default: {DEFAULT_MODEL})")
+        help="Process only the first N notes (for testing).")
+    parser.add_argument("--sleep", type=float, default=0.2,
+        help="Delay between calls, seconds (raise for low-RPM free tiers). Default 0.2.")
     parser.add_argument("--dry-run", action="store_true",
-        help="Print what would be done without calling the API")
+        help="Print what would be done without calling any API (no key needed).")
     args = parser.parse_args()
 
-    run(args.translator, args.model, args.limit, args.dry_run)
+    backend_name = args.backend or os.environ.get("LLM_BACKEND", "openai")
+    model = args.model or os.environ.get("LLM_MODEL") or DEFAULT_MODELS.get(backend_name)
+    if not model:
+        print(f"ERROR: no model for backend {backend_name!r}. Pass --model or set $LLM_MODEL.")
+        sys.exit(1)
+
+    run(args.translator, backend_name, model, args.limit, args.dry_run, args.sleep)

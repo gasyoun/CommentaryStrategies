@@ -1,0 +1,67 @@
+{
+ "_meta": {
+  "cluster": "purana",
+  "verified_by": "adversarial Sanskritist review (default-to-reject)",
+  "date": "2026-06-27",
+  "promoted": 0,
+  "rejected_by_corpus_gap": 1,
+  "rejected_by_register_mismatch": 8,
+  "honest_yield_note": "0 confirmed notes. Primary source (Viṣṇupurāṇa) has 0 usable Sanskrit SLP1 verses in the SamudraManthanam corpus (26 records, all without SLP1 transliteration) — cannot be mined by stem-match. Secondary source (Devīgītā, 492 verses) is a Śākta philosophical text (Devī Bhāgavata Purāṇa VII.31–40) with no substantive Rāma-relevant content. None of the 9 shared stems yielded a verse-level parallel that illuminates a Sundara passage: all hits are either coincidental name collisions (Rāvaṇa in Devīgītā 8.46 = random occurrence in festival list), cosmological parallels too generic to annotate (brahmā, kalpa, meru), or proper names without Rāma-storyline context (dakṣa, prajāpati in Devīgītā 3.30 = viśvarūpa body-parts list). This is a correct 0-yield result — the Purāṇa cluster cannot be properly mined until a Viṣṇupurāṇa JSONL with SLP1 data is added to the corpus."
+ },
+ "rejected": [
+  {
+   "stem": "rAvaR",
+   "sund": "204 occurrences",
+   "src": "Devīgītā 8.46",
+   "reason": "Devīgītā 8.46 is a festival calendar verse (śrāvaṇa month); the Rāvaṇa stem there is a false match (likely in a compound or incidental mention). No Purāṇic account of Rāvaṇa's backstory available in corpus. Reject."
+  },
+  {
+   "stem": "prajAp",
+   "sund": "V.23.6-7 (prajāpatiḥ Pulastya; Viśravā)",
+   "src": "Devīgītā 3.30",
+   "reason": "Sundara V.23.6-7 gives Rāvaṇa's Purāṇic genealogy (Brahmā → Pulastya → Viśravā → Rāvaṇa). This IS a genuine Purāṇic anchor passage — but it requires the Viṣṇupurāṇa or Brahma-Purāṇa, not the Devīgītā. Devīgītā 3.30 mentions prajāpati as a body part in viśvarūpa — completely unrelated to Rāvaṇa's lineage. Reject due to source mismatch; the note concept is valid but must await VishṇuP corpus addition."
+  },
+  {
+   "stem": "brahmA",
+   "sund": "V.13.65; V.38.37; V.48.40",
+   "src": "Devīgītā 1.70; 3.13; 10.10",
+   "reason": "Devīgītā Brahmā appearances are in Śākta theological lists (Brahmā as subordinate to Devī). Sundara uses brahmā in standard epic theogony (brahmāstra, svayambhū). The Śākta register adds nothing to Sundara commentary. Reject."
+  },
+  {
+   "stem": "kalp",
+   "sund": "19 occurrences (devakalpaiḥ, salilakalpeṣu etc.)",
+   "src": "Devīgītā passim",
+   "reason": "kalpa in Sundara = 'resembling' (kalpate), not 'cosmic cycle'. Devīgītā kalpa = kalpavṛkṣa (wish-tree) or 'determined'. Semantic mismatch. Reject."
+  },
+  {
+   "stem": "SrI",
+   "sund": "34 occurrences",
+   "src": "Devīgītā 6.27; 7.37",
+   "reason": "Śrī in Sundara is a common honorific/auspiciousness marker (śrīmān, śrīmatī). Devīgītā śrī contexts are Śākta theology. No specific verse-level parallel. Reject."
+  },
+  {
+   "stem": "lakzmI",
+   "sund": "V.2.14; V.5.3 etc.",
+   "src": "Devīgītā 8.5; 10.41",
+   "reason": "Lakṣmī in Sundara = beauty/prosperity simile. Devīgītā 8.5 = sacred geography (Kolāpura). Thematic overlap too generic. Reject."
+  },
+  {
+   "stem": "meru",
+   "sund": "V.9.14; V.36.38 etc.",
+   "src": "Devīgītā 5.29",
+   "reason": "Meru in Devīgītā 5.29 = yoga anatomy (merudaṇḍa = spine). Sundara meru = mountain simile. Semantic mismatch (anatomy vs. geography). Reject."
+  },
+  {
+   "stem": "dakza",
+   "sund": "V.38.62 (dakṣaḥ = 'able/skilled'); V.48.15 (dakṣasutaprabhāvaḥ = 'like sons of Dakṣa/gods')",
+   "src": "Devīgītā 1.47",
+   "reason": "Sundara V.48.15 dakṣasuta = sons of Dakṣa = gods (standard epithet). Devīgītā 1.47 mentions dakṣaduhitara (Dakṣa's daughter = Satī). Unrelated: one is Rāvaṇa's son fighting gods, the other is Devī's birth. Reject."
+  },
+  {
+   "stem": "vAyu",
+   "sund": "34 occurrences",
+   "src": "Devīgītā 2.28; 3.24; 5.15",
+   "reason": "Devīgītā Vāyu = cosmic element (air) in Sāṃkhya or yoga context (one of five elements, prāṇa-movement). Sundara Vāyu = Hanumān's divine father. The cosmological element connection is too remote from the narrative genealogy. Reject."
+  }
+ ]
+}

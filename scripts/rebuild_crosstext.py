@@ -42,7 +42,12 @@ print(f'BASE notes: {len(base)}')
 # 2. CROSS candidates: every verified note across crosstext/*.json
 #    (ignore *.rejected.json). gita + mbh_gnomic treated as confirmed.
 # ---------------------------------------------------------------------------
-CONFIRMED_NO_FLAG = {'gita', 'mbh_gnomic'}  # merged earlier, lack verified flag
+CONFIRMED_NO_FLAG = {'gita', 'mbh_gnomic', 'ramayana_grintser'}  # merged earlier, lack verified flag
+# ramayana_grintser added 2026-07-02 (PR #42 reconciliation): main's 22-entry file is a
+# non-underscore "confirmed" file by the same naming convention as every other category,
+# but never carries the verified flag (unlike main's own dharmashastra/kavya/mbh_narrative,
+# which are 100% flagged) -- an oversight in whichever pass wrote that one file, not a
+# deliberate unconfirmed marker.
 cluster_meta = {}   # cluster -> _meta dict
 cross_candidates = []  # accepted-into-merge candidates (verified or confirmed)
 

@@ -45,14 +45,15 @@ A comparative study of **commentary strategies** used by Russian translators of 
 
 Every annotation is classified along 4 axes:
 
-### Axis 1 — Topic (8 empirical categories)
-`sanskrit_term` · `myth` · `context` · `realia` · `geography` · `reference` · `textology` · `philosophy`
+### Axis 1 — Topic (9 empirical categories)
+`sanskrit_term` · `myth` · `context` · `realia` · `geography` · `reference` · `textology` · `philosophy` · `poetics`
 
 ### Axis 2 — Commentary type (Kazansky 2025)
-- **A** — Philological (lexical gloss, etymology)
-- **B** — Realia (material/social culture)
-- **V** — Historical (context, dating)
-- **G** — Cultural-historical (broader interpretation)
+> Canonical definitions: [`data/commentary_schema.json`](../data/commentary_schema.json) (`axis_2_kazansky`). **Realia belong to V, never B.**
+- **A** — Philological / lexical: gloss, derivation, etymology of the Sanskrit form itself (literal sense, morphology, epithet rendering). *Not* realia.
+- **B** — Textological (*not* "realia"): metatext on the state of the source or the act of translation — omission in the translation, manuscript/commentator variant, interpolation verdict.
+- **V** — Historical-cultural / realia: in-world identification + realia — deity, demon class, sage, king, caste, river, mountain, city, people, weapon, battle formation, plot scene. **Realia go here, never in B.**
+- **G** — Cultural / interpretive: abstract concepts (dharma, mokṣa, yuga, puruṣārthas) and interpretive moves — cross-traditional comparisons, symbolic/allegorical readings, concept-development.
 
 ### Axis 3 — Structural type of explanation (Lidova 2024)
 Based on 5 *lakṣaṇa* from *Parāśara-upapurāṇa*:

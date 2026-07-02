@@ -50,10 +50,12 @@ const result = {
   firstNote: noteRows[0]?._html?.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().slice(0,90),
 };
 console.log(JSON.stringify(result, null, 1));
-// hard checks
-const ok = ctData.length === 107
-  && headerRows.length === 6
-  && noteRows.length === 107
-  && JSON.stringify(Object.keys(clusters).sort()) === JSON.stringify(['dharmashastra','gita','kavya','mbh_gnomic','mbh_narrative','ramayana_grintser']);
+// hard checks (updated 2026-07-02, crosstext-expansion PR #42 reconciliation: 107->170 notes,
+// 6->9 clusters after unioning with parallel direct-to-main cross-text work; ramayana_grintser
+// promoted 11->33 confirmed once its missing 'verified' flag was treated like gita/mbh_gnomic)
+const ok = ctData.length === 170
+  && headerRows.length === 9
+  && noteRows.length === 170
+  && JSON.stringify(Object.keys(clusters).sort()) === JSON.stringify(['dharmashastra','gita','kavya','mbh_battle','mbh_gnomic','mbh_narrative','ramayana_grintser','upanishads','veda']);
 console.log('DOM_VERIFY', ok ? 'PASS' : 'FAIL');
 process.exit(ok ? 0 : 1);
