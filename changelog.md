@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-07-03
+
 ### Added
 
 **H141 — unified per-sarga apparatus, pilot sargas 35/36/37** (Fable 5, `claude-fable-5`)
