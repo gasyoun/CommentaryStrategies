@@ -1,0 +1,1622 @@
+[
+  {
+    "_meta": {
+      "cluster": "archive_parallels",
+      "cluster_label": "DCS parallel-search (archive.sqlite) — межтекстовый + внутритекстовый слой",
+      "description": "Машинно-выявленный слой параллелей ко всей Сундараканде (кн. V), извлечённый из полнотекстового прогона параллельного поиска DCS (VisualDCS archive.sqlite, таблица parallels). Для каждого стиха Сундары показаны стихи ДРУГИХ корпусных текстов (scope=crosstext: Махабхарата) и внутритекстовые переклички Рамаяны (scope=intratext: формульные самоповторы). Санскритский текст обеих сторон приведён дословно; русская нота НЕ сочиняется машиной (review_required). matched_words = РАЗЛИЧАЮЩАЯ пара лемм DCS ('+ запрос - контрагент'), рендерится как есть; сила совпадения измеряется пересечением содержательных токенов текста (overlap_tokens).",
+      "editorial_focus": "Приоритет — crosstext (реальные интертекстуальные локусы: описание Ситы ↔ Дамаянти в МБх III.65 (два стиха); нити-стих mūlaghātiṣu sajjante ↔ МБх III.240). Внутритекстовые самоповторы = отдельный «эхо»-аппарат (split on scope).",
+      "method": "SELECT из parallels WHERE source_text_id=248 OR target_text_id=248; фильтр kāṇḍa=5; группировка по неориентированной паре нормализованных текстов стихов (дедуп двух направлений БД, восстановление номеров стихов); adversarial-гейт: <2 общих содержательных токенов → reject.",
+      "edition_caveat": "Нумерация сарг/стихов — КРИТИЧЕСКОЕ (Бародское) издание DCS, НЕ южная вульгата Леонова (68 сарг). Сопоставление с нумерацией Леонова требует слоя выравнивания изданий (scripts/sa_align.py, data/edition_comparison/). Здесь НЕ переприсваивается.",
+      "provenance": "VisualDCS archive.sqlite; fulltext run 2026; Rām text_id=248",
+      "generator": "scripts/crosstext_archive_parallels.py",
+      "model_provenance": "Deterministic SQL/Python extraction (no LLM). Curation session: Opus 4.8 (claude-opus-4-8).",
+      "counts": {
+        "accepted": 31,
+        "crosstext": 3,
+        "intratext": 28,
+        "rejected": 5,
+        "sundara_verses_covered": 30
+      },
+      "remapped_by": "scripts/remap_archive_parallels.py",
+      "remap_source": "data/edition_comparison/concordance.json (compare_editions.py, statuses identical/variant)",
+      "remap_rule": "shloka = vulgate (southern / Leonov) ref; original critical anchor in shloka_critical; per-verse mapping in verse_map; entries without a concordance hit are KEPT with edition='critical'",
+      "remap_counts": {
+        "vulgate": 23,
+        "vulgate_partial": 1,
+        "critical": 7
+      },
+      "entries": 31
+    }
+  },
+  {
+    "shloka": "V.13.27",
+    "lemma_iast": "śyāma subhrū",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); MBh 3.65.10",
+    "subtype": "cross_text",
+    "scope": "crosstext",
+    "parallel_sa_iast": "pūrṇacandrānanāṁ śyāmāṁ cāruvṛttapayodharām |kurvantīṁ prabhayā devīṁ sarvā vitimirā diśaḥ ||",
+    "parallel_ru": "",
+    "work_label": "MBh",
+    "verse_address": "MBh 3.65.10",
+    "sundara_sa_iast": "pūrṇacandrānanāṁ subhrūṁ cāruvṛttapayodharām |kurvantīṁ prabhayā devīṁ sarvā vitimirā diśaḥ ||",
+    "quality": "PARTLY",
+    "matched_words": "+ subhrū - śyāma · + śyāma - subhrū",
+    "overlap_tokens": [
+      "cāruvṛttapayodharām",
+      "devīṁ",
+      "diśaḥ",
+      "kurvantīṁ",
+      "prabhayā",
+      "pūrṇacandrānanāṁ",
+      "sarvā",
+      "vitimirā"
+    ],
+    "overlap_n": 8,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "curated_overlap": {},
+    "shloka_critical": "V.13.27",
+    "verse_map": [
+      {
+        "critical": "5.13.27",
+        "vulgate": null,
+        "status": "critical_only"
+      }
+    ],
+    "edition": "critical"
+  },
+  {
+    "shloka": "V.19.17",
+    "lemma_iast": "tap dah",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); MBh 3.65.15",
+    "subtype": "cross_text",
+    "scope": "crosstext",
+    "parallel_sa_iast": "sukumārīṁ sujātāṅgīṁ ratnagarbhagṛhocitām |dahyamānām ivoṣṇena mṛṇālīm aciroddhṛtām ||",
+    "parallel_ru": "",
+    "work_label": "MBh",
+    "verse_address": "MBh 3.65.15",
+    "sundara_sa_iast": "sukumārīṁ sujātāṅgīṁ ratnagarbhagṛhocitām |tapyamānām ivoṣṇena mṛṇālīm aciroddhṛtām ||",
+    "quality": "PARTLY",
+    "matched_words": "+ dah - tap · + tap - dah",
+    "overlap_tokens": [
+      "aciroddhṛtām",
+      "ivoṣṇena",
+      "mṛṇālīm",
+      "ratnagarbhagṛhocitām",
+      "sujātāṅgīṁ",
+      "sukumārīṁ"
+    ],
+    "overlap_n": 6,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "curated_overlap": {
+      "cluster": "mbh_narrative",
+      "shloka": "V.19.17",
+      "shared_tokens": [
+        "aciroddhṛtām",
+        "mṛṇālīm",
+        "ratnagarbhagṛhocitām"
+      ]
+    },
+    "shloka_critical": "V.17.16",
+    "verse_map": [
+      {
+        "critical": "5.17.16",
+        "vulgate": "5.19.17",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate"
+  },
+  {
+    "shloka": "V.51.18",
+    "lemma_iast": "kārya dharma",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); MBh 3.240.3",
+    "subtype": "cross_text",
+    "scope": "crosstext",
+    "parallel_sa_iast": "na hi kāryaviruddheṣu bahvapāyeṣu karmasu |mūlaghātiṣu sajjante buddhimanto bhavadvidhāḥ ||",
+    "parallel_ru": "",
+    "work_label": "MBh",
+    "verse_address": "MBh 3.240.3",
+    "sundara_sa_iast": "na hi dharmaviruddheṣu bahvapāyeṣu karmasu |mūlaghātiṣu sajjante buddhimanto bhavadvidhāḥ ||",
+    "quality": "PARTLY",
+    "matched_words": "+ dharma - kārya · + kārya - dharma",
+    "overlap_tokens": [
+      "bahvapāyeṣu",
+      "bhavadvidhāḥ",
+      "buddhimanto",
+      "karmasu",
+      "mūlaghātiṣu",
+      "sajjante"
+    ],
+    "overlap_n": 6,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "curated_overlap": {
+      "cluster": "dharmashastra",
+      "shloka": "V.51.18",
+      "shared_tokens": [
+        "dharmaviruddheṣu",
+        "mūlaghātiṣu",
+        "sajjante"
+      ]
+    },
+    "shloka_critical": "V.49.16",
+    "verse_map": [
+      {
+        "critical": "5.49.16",
+        "vulgate": "5.51.18",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate"
+  },
+  {
+    "shloka": "V.40.14,17,23–24",
+    "lemma_iast": "- dṛś tu bhrātṛ pradā",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.65.25,26,33,34,35 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "imaṁ ca tīvraṁ mama śokavegaṁ rakṣobhir ebhiḥ brūyāstu rāmasya gataḥ samīpaṁ śivaśca te .dhvāstu |",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.65.25,26,33,34,35 (крит. изд.)",
+    "sundara_sa_iast": "imaṁ ca tīvraṁ mama śokavegaṁ rakṣobhir ebhiḥ brūyāstu rāmasya gataḥ samīpaṁ śivaśca te .dhvāstu |",
+    "quality": "GOOD",
+    "matched_words": "+  - paritap · + bhrātṛ - ubh · + dṛś - paritap · + pradā - dā · + tu - ca",
+    "overlap_tokens": [
+      "brūyāstu",
+      "dhvāstu",
+      "ebhiḥ",
+      "gataḥ",
+      "imaṁ",
+      "rakṣobhir",
+      "rāmasya",
+      "samīpaṁ",
+      "tīvraṁ",
+      "śivaśca",
+      "śokavegaṁ"
+    ],
+    "overlap_n": 11,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.38.14,17,22,23",
+    "verse_map": [
+      {
+        "critical": "5.38.14",
+        "vulgate": "5.40.14",
+        "status": "identical"
+      },
+      {
+        "critical": "5.38.17",
+        "vulgate": "5.40.17",
+        "status": "variant"
+      },
+      {
+        "critical": "5.38.22",
+        "vulgate": "5.40.23",
+        "status": "variant"
+      },
+      {
+        "critical": "5.38.23",
+        "vulgate": "5.40.24",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.67.41–43 (вульгата)"
+  },
+  {
+    "shloka": "V.67.41–43",
+    "lemma_iast": "- dṛś tu bhrātṛ pradā",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.38.14,17,22,23 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "imaṁ ca tīvraṁ mama śokavegaṁ rakṣobhir ebhiḥ brūyāstu rāmasya gataḥ samīpaṁ śivaśca te .dhvāstu |",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.38.14,17,22,23 (крит. изд.)",
+    "sundara_sa_iast": "imaṁ ca tīvraṁ mama śokavegaṁ rakṣobhir ebhiḥ brūyāstu rāmasya gataḥ samīpaṁ śivaśca te .dhvāstu |",
+    "quality": "GOOD",
+    "matched_words": "+  - paritap · + bhrātṛ - ubh · + dṛś - paritap · + pradā - dā · + tu - ca",
+    "overlap_tokens": [
+      "brūyāstu",
+      "dhvāstu",
+      "ebhiḥ",
+      "gataḥ",
+      "imaṁ",
+      "rakṣobhir",
+      "rāmasya",
+      "samīpaṁ",
+      "tīvraṁ",
+      "śivaśca",
+      "śokavegaṁ"
+    ],
+    "overlap_n": 11,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.65.25,26,33,34,35",
+    "verse_map": [
+      {
+        "critical": "5.65.25",
+        "vulgate": null,
+        "status": "critical_only"
+      },
+      {
+        "critical": "5.65.26",
+        "vulgate": null,
+        "status": "critical_only"
+      },
+      {
+        "critical": "5.65.33",
+        "vulgate": "5.67.41",
+        "status": "identical"
+      },
+      {
+        "critical": "5.65.34",
+        "vulgate": "5.67.42",
+        "status": "variant"
+      },
+      {
+        "critical": "5.65.35",
+        "vulgate": "5.67.43",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate_partial",
+    "verse_address_vulgate": "Rām V.40.14,17,23–24 (вульгата)"
+  },
+  {
+    "shloka": "V.39.14,28,30–31,47",
+    "lemma_iast": "tathā abhivāday - eva",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.54.3–7 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastasya tat sadṛśaṁ bhavet ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.54.3–7 (крит. изд.)",
+    "sundara_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastat tasya sadṛśaṁ bhavet ||",
+    "quality": "GOOD",
+    "matched_words": "+  - praśrita · + abhivāday - brū · + eva - tathā · + tathā - eva",
+    "overlap_tokens": [
+      "balaistu",
+      "bhavet",
+      "kṛtvā",
+      "laṅkāṁ",
+      "māṁ",
+      "nayed",
+      "parabalārdanaḥ",
+      "sadṛśaṁ",
+      "saṁkulāṁ",
+      "yadi"
+    ],
+    "overlap_n": 10,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.37.13,27,29,30,46",
+    "verse_map": [
+      {
+        "critical": "5.37.13",
+        "vulgate": "5.39.14",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.27",
+        "vulgate": "5.39.28",
+        "status": "variant"
+      },
+      {
+        "critical": "5.37.29",
+        "vulgate": "5.39.30",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.30",
+        "vulgate": "5.39.31",
+        "status": "variant"
+      },
+      {
+        "critical": "5.37.46",
+        "vulgate": "5.39.47",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.56.11–14,21 (вульгата)"
+  },
+  {
+    "shloka": "V.39.20,25,28,30–31,33,35–36,38–41,49",
+    "lemma_iast": "manyu vāraṇa - mahāsattva mahābhāga śoka",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.66.3,8,11,14,15,17,18,19,21,22,23,24,26 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "balais tu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthas tat tasya sadṛśaṁ bhavet ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.66.3,8,11,14,15,17,18,19,21,22,23,24,26 (крит. изд.)",
+    "sundara_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastat tasya sadṛśaṁ bhavet ||",
+    "quality": "GOOD",
+    "matched_words": "+  - praśrita · + mahābhāga - mahāsattva · + mahāsattva - mahābhāga · + manyu - śoka · + vāraṇa - upasthā · + śoka - manyu",
+    "overlap_tokens": [
+      "bhavet",
+      "kṛtvā",
+      "laṅkāṁ",
+      "māṁ",
+      "nayed",
+      "parabalārdanaḥ",
+      "sadṛśaṁ",
+      "saṁkulāṁ",
+      "tasya",
+      "yadi"
+    ],
+    "overlap_n": 10,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.37.19,24,27,29,30,32,34,35,37,38,39,40,48",
+    "verse_map": [
+      {
+        "critical": "5.37.19",
+        "vulgate": "5.39.20",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.24",
+        "vulgate": "5.39.25",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.27",
+        "vulgate": "5.39.28",
+        "status": "variant"
+      },
+      {
+        "critical": "5.37.29",
+        "vulgate": "5.39.30",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.30",
+        "vulgate": "5.39.31",
+        "status": "variant"
+      },
+      {
+        "critical": "5.37.32",
+        "vulgate": "5.39.33",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.34",
+        "vulgate": "5.39.35",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.35",
+        "vulgate": "5.39.36",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.37",
+        "vulgate": "5.39.38",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.38",
+        "vulgate": "5.39.39",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.39",
+        "vulgate": "5.39.40",
+        "status": "identical"
+      },
+      {
+        "critical": "5.37.40",
+        "vulgate": "5.39.41",
+        "status": "variant"
+      },
+      {
+        "critical": "5.37.48",
+        "vulgate": "5.39.49",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.68.3,8,11,14–15,17–19,21–24,26 (вульгата)"
+  },
+  {
+    "shloka": "V.56.11–14,21",
+    "lemma_iast": "tathā abhivāday - eva",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.37.13,27,29,30,46 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastat tasya sadṛśaṁ bhavet ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.37.13,27,29,30,46 (крит. изд.)",
+    "sundara_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastasya tat sadṛśaṁ bhavet ||",
+    "quality": "GOOD",
+    "matched_words": "+  - praśrita · + abhivāday - brū · + eva - tathā · + tathā - eva",
+    "overlap_tokens": [
+      "balaistu",
+      "bhavet",
+      "kṛtvā",
+      "laṅkāṁ",
+      "māṁ",
+      "nayed",
+      "parabalārdanaḥ",
+      "sadṛśaṁ",
+      "saṁkulāṁ",
+      "yadi"
+    ],
+    "overlap_n": 10,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.54.3–7",
+    "verse_map": [
+      {
+        "critical": "5.54.3",
+        "vulgate": "5.56.11",
+        "status": "identical"
+      },
+      {
+        "critical": "5.54.4",
+        "vulgate": "5.56.12",
+        "status": "identical"
+      },
+      {
+        "critical": "5.54.5",
+        "vulgate": "5.56.13",
+        "status": "variant"
+      },
+      {
+        "critical": "5.54.6",
+        "vulgate": "5.56.14",
+        "status": "variant"
+      },
+      {
+        "critical": "5.54.7",
+        "vulgate": "5.56.21",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.39.14,28,30–31,47 (вульгата)"
+  },
+  {
+    "shloka": "V.68.3,8,11,14–15,17–19,21–24,26",
+    "lemma_iast": "manyu vāraṇa - mahāsattva mahābhāga śoka",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.37.19,24,27,29,30,32,34,35,37,38,39,40,48 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastat tasya sadṛśaṁ bhavet ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.37.19,24,27,29,30,32,34,35,37,38,39,40,48 (крит. изд.)",
+    "sundara_sa_iast": "balais tu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthas tat tasya sadṛśaṁ bhavet ||",
+    "quality": "GOOD",
+    "matched_words": "+  - praśrita · + mahābhāga - mahāsattva · + mahāsattva - mahābhāga · + manyu - śoka · + vāraṇa - upasthā · + śoka - manyu",
+    "overlap_tokens": [
+      "bhavet",
+      "kṛtvā",
+      "laṅkāṁ",
+      "māṁ",
+      "nayed",
+      "parabalārdanaḥ",
+      "sadṛśaṁ",
+      "saṁkulāṁ",
+      "tasya",
+      "yadi"
+    ],
+    "overlap_n": 10,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.66.3,8,11,14,15,17,18,19,21,22,23,24,26",
+    "verse_map": [
+      {
+        "critical": "5.66.3",
+        "vulgate": "5.68.3",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.8",
+        "vulgate": "5.68.8",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.11",
+        "vulgate": "5.68.11",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.14",
+        "vulgate": "5.68.14",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.15",
+        "vulgate": "5.68.15",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.17",
+        "vulgate": "5.68.17",
+        "status": "variant"
+      },
+      {
+        "critical": "5.66.18",
+        "vulgate": "5.68.18",
+        "status": "variant"
+      },
+      {
+        "critical": "5.66.19",
+        "vulgate": "5.68.19",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.21",
+        "vulgate": "5.68.21",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.22",
+        "vulgate": "5.68.22",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.23",
+        "vulgate": "5.68.23",
+        "status": "variant"
+      },
+      {
+        "critical": "5.66.24",
+        "vulgate": "5.68.24",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.26",
+        "vulgate": "5.68.26",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.39.20,25,28,30–31,33,35–36,38–41,49 (вульгата)"
+  },
+  {
+    "shloka": "V.2.39–41",
+    "lemma_iast": "vinaś vipad",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.28.37–39 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "na vinaśyet kathaṁ kāryaṁ vaiklavyaṁ na kathaṁ bhavet |laṅghanaṁ ca samudrasya kathaṁ nu na vṛthā bhavet ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.28.37–39 (крит. изд.)",
+    "sundara_sa_iast": "na vinaśyet kathaṁ kāryaṁ vaiklavyaṁ na kathaṁ bhavet |laṅghanaṁ ca samudrasya kathaṁ nu na vṛthā bhavet ||",
+    "quality": "GOOD",
+    "matched_words": "+ vinaś - vipad · + vipad - vinaś",
+    "overlap_tokens": [
+      "bhavet",
+      "kathaṁ",
+      "kāryaṁ",
+      "laṅghanaṁ",
+      "nu",
+      "samudrasya",
+      "vaiklavyaṁ",
+      "vinaśyet",
+      "vṛthā"
+    ],
+    "overlap_n": 9,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.2.37–39",
+    "verse_map": [
+      {
+        "critical": "5.2.37",
+        "vulgate": "5.2.39",
+        "status": "variant"
+      },
+      {
+        "critical": "5.2.38",
+        "vulgate": "5.2.40",
+        "status": "variant"
+      },
+      {
+        "critical": "5.2.39",
+        "vulgate": "5.2.41",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.30.37–39 (вульгата)"
+  },
+  {
+    "shloka": "V.30.37–39",
+    "lemma_iast": "vinaś vipad",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.2.37–39 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "na vinaśyet kathaṁ kāryaṁ vaiklavyaṁ na kathaṁ bhavet |laṅghanaṁ ca samudrasya kathaṁ nu na vṛthā bhavet ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.2.37–39 (крит. изд.)",
+    "sundara_sa_iast": "na vinaśyet kathaṁ kāryaṁ vaiklavyaṁ na kathaṁ bhavet |laṅghanaṁ ca samudrasya kathaṁ nu na vṛthā bhavet ||",
+    "quality": "GOOD",
+    "matched_words": "+ vinaś - vipad · + vipad - vinaś",
+    "overlap_tokens": [
+      "bhavet",
+      "kathaṁ",
+      "kāryaṁ",
+      "laṅghanaṁ",
+      "nu",
+      "samudrasya",
+      "vaiklavyaṁ",
+      "vinaśyet",
+      "vṛthā"
+    ],
+    "overlap_n": 9,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.28.37–39",
+    "verse_map": [
+      {
+        "critical": "5.28.37",
+        "vulgate": "5.30.37",
+        "status": "identical"
+      },
+      {
+        "critical": "5.28.38",
+        "vulgate": "5.30.38",
+        "status": "identical"
+      },
+      {
+        "critical": "5.28.39",
+        "vulgate": "5.30.39",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.2.39–41 (вульгата)"
+  },
+  {
+    "shloka": "V.56.11–13",
+    "lemma_iast": "tathā eva",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.66.11,14,15 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "balais tu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthas tat tasya sadṛśaṁ bhavet ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.66.11,14,15 (крит. изд.)",
+    "sundara_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastasya tat sadṛśaṁ bhavet ||",
+    "quality": "GOOD",
+    "matched_words": "+ eva - tathā · + tathā - eva",
+    "overlap_tokens": [
+      "bhavet",
+      "kṛtvā",
+      "laṅkāṁ",
+      "māṁ",
+      "nayed",
+      "parabalārdanaḥ",
+      "sadṛśaṁ",
+      "saṁkulāṁ",
+      "yadi"
+    ],
+    "overlap_n": 9,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.54.3–5",
+    "verse_map": [
+      {
+        "critical": "5.54.3",
+        "vulgate": "5.56.11",
+        "status": "identical"
+      },
+      {
+        "critical": "5.54.4",
+        "vulgate": "5.56.12",
+        "status": "identical"
+      },
+      {
+        "critical": "5.54.5",
+        "vulgate": "5.56.13",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.68.11,14–15 (вульгата)"
+  },
+  {
+    "shloka": "V.68.11,14–15",
+    "lemma_iast": "tathā eva",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.54.3–5 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastasya tat sadṛśaṁ bhavet ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.54.3–5 (крит. изд.)",
+    "sundara_sa_iast": "balais tu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthas tat tasya sadṛśaṁ bhavet ||",
+    "quality": "GOOD",
+    "matched_words": "+ eva - tathā · + tathā - eva",
+    "overlap_tokens": [
+      "bhavet",
+      "kṛtvā",
+      "laṅkāṁ",
+      "māṁ",
+      "nayed",
+      "parabalārdanaḥ",
+      "sadṛśaṁ",
+      "saṁkulāṁ",
+      "yadi"
+    ],
+    "overlap_n": 9,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.66.11,14,15",
+    "verse_map": [
+      {
+        "critical": "5.66.11",
+        "vulgate": "5.68.11",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.14",
+        "vulgate": "5.68.14",
+        "status": "identical"
+      },
+      {
+        "critical": "5.66.15",
+        "vulgate": "5.68.15",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.56.11–13 (вульгата)"
+  },
+  {
+    "shloka": "V.39.9",
+    "lemma_iast": "tvad bhrātṛ",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.38.22 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "yathā ca sa mahābāhur māṁ tārayati rāghavaḥ |asmād duḥkhāmbusaṁrodhāt tat samādhātum arhasi ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.38.22 (крит. изд.)",
+    "sundara_sa_iast": "yathā ca sa mahābāhur māṁ tārayati rāghavaḥ |asmād duḥkhāmbusaṁrodhāt tvaṁ samādhātum arhasi ||",
+    "quality": "GOOD",
+    "matched_words": "+ bhrātṛ - ubh · + tvad - upakram",
+    "overlap_tokens": [
+      "arhasi",
+      "asmād",
+      "duḥkhāmbusaṁrodhāt",
+      "mahābāhur",
+      "māṁ",
+      "rāghavaḥ",
+      "samādhātum",
+      "tārayati"
+    ],
+    "overlap_n": 8,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.37.8",
+    "verse_map": [
+      {
+        "critical": "5.37.8",
+        "vulgate": "5.39.9",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.40.23 (вульгата)"
+  },
+  {
+    "shloka": "V.39.9",
+    "lemma_iast": "tvad",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.65.34 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "yathā ca sa mahābāhur māṁ tārayati rāghavaḥ |asmād duḥkhāmbusaṁrodhāt tat samādhātum arhasi ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.65.34 (крит. изд.)",
+    "sundara_sa_iast": "yathā ca sa mahābāhur māṁ tārayati rāghavaḥ |asmād duḥkhāmbusaṁrodhāt tvaṁ samādhātum arhasi ||",
+    "quality": "GOOD",
+    "matched_words": "+ tvad - anāmaya",
+    "overlap_tokens": [
+      "arhasi",
+      "asmād",
+      "duḥkhāmbusaṁrodhāt",
+      "mahābāhur",
+      "māṁ",
+      "rāghavaḥ",
+      "samādhātum",
+      "tārayati"
+    ],
+    "overlap_n": 8,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.37.8",
+    "verse_map": [
+      {
+        "critical": "5.37.8",
+        "vulgate": "5.39.9",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.67.42 (вульгата)"
+  },
+  {
+    "shloka": "V.40.23",
+    "lemma_iast": "tvad bhrātṛ",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.37.8 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "yathā ca sa mahābāhur māṁ tārayati rāghavaḥ |asmād duḥkhāmbusaṁrodhāt tvaṁ samādhātum arhasi ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.37.8 (крит. изд.)",
+    "sundara_sa_iast": "yathā ca sa mahābāhur māṁ tārayati rāghavaḥ |asmād duḥkhāmbusaṁrodhāt tat samādhātum arhasi ||",
+    "quality": "GOOD",
+    "matched_words": "+ bhrātṛ - ubh · + tvad - upakram",
+    "overlap_tokens": [
+      "arhasi",
+      "asmād",
+      "duḥkhāmbusaṁrodhāt",
+      "mahābāhur",
+      "māṁ",
+      "rāghavaḥ",
+      "samādhātum",
+      "tārayati"
+    ],
+    "overlap_n": 8,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.38.22",
+    "verse_map": [
+      {
+        "critical": "5.38.22",
+        "vulgate": "5.40.23",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.39.9 (вульгата)"
+  },
+  {
+    "shloka": "V.43.8",
+    "lemma_iast": "",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 6.32.13 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "jayatyatibalo rāmo lakṣmaṇaśca mahābalaḥ |rājā jayati sugrīvo rāghaveṇābhipālitaḥ ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 6.32.13 (крит. изд.)",
+    "sundara_sa_iast": "jayatyatibalo rāmo lakṣmaṇaśca mahābalaḥ |rājā jayati sugrīvo rāghaveṇābhipālitaḥ ||",
+    "quality": "GOOD",
+    "matched_words": "",
+    "overlap_tokens": [
+      "jayati",
+      "jayatyatibalo",
+      "lakṣmaṇaśca",
+      "mahābalaḥ",
+      "rāghaveṇābhipālitaḥ",
+      "rājā",
+      "rāmo",
+      "sugrīvo"
+    ],
+    "overlap_n": 8,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.41.6",
+    "verse_map": [
+      {
+        "critical": "5.41.6",
+        "vulgate": "5.43.8",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate"
+  },
+  {
+    "shloka": "V.67.42",
+    "lemma_iast": "tvad",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.37.8 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "yathā ca sa mahābāhur māṁ tārayati rāghavaḥ |asmād duḥkhāmbusaṁrodhāt tvaṁ samādhātum arhasi ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.37.8 (крит. изд.)",
+    "sundara_sa_iast": "yathā ca sa mahābāhur māṁ tārayati rāghavaḥ |asmād duḥkhāmbusaṁrodhāt tat samādhātum arhasi ||",
+    "quality": "GOOD",
+    "matched_words": "+ tvad - anāmaya",
+    "overlap_tokens": [
+      "arhasi",
+      "asmād",
+      "duḥkhāmbusaṁrodhāt",
+      "mahābāhur",
+      "māṁ",
+      "rāghavaḥ",
+      "samādhātum",
+      "tārayati"
+    ],
+    "overlap_n": 8,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.65.34",
+    "verse_map": [
+      {
+        "critical": "5.65.34",
+        "vulgate": "5.67.42",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.39.9 (вульгата)"
+  },
+  {
+    "shloka": "V.16.9",
+    "lemma_iast": "",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 6.82.14 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "caturdaśasahasrāṇi rakṣasāṁ bhīmakarmaṇām |nihatāni janasthāne śarair agniśikhopamaiḥ ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 6.82.14 (крит. изд.)",
+    "sundara_sa_iast": "caturdaśasahasrāṇi rakṣasāṁ bhīmakarmaṇām |nihatāni janasthāne śarair agniśikhopamaiḥ ||",
+    "quality": "GOOD",
+    "matched_words": "",
+    "overlap_tokens": [
+      "agniśikhopamaiḥ",
+      "bhīmakarmaṇām",
+      "caturdaśasahasrāṇi",
+      "janasthāne",
+      "nihatāni",
+      "rakṣasāṁ",
+      "śarair"
+    ],
+    "overlap_n": 7,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.14.9",
+    "verse_map": [
+      {
+        "critical": "5.14.9",
+        "vulgate": "5.16.9",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate"
+  },
+  {
+    "shloka": "V.31.7",
+    "lemma_iast": "api",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.33.10 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "rakṣitā jīvalokasya svajanasya ca rakṣitā |rakṣitā svasya vṛttasya dharmasya ca paraṁtapaḥ ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.33.10 (крит. изд.)",
+    "sundara_sa_iast": "rakṣitā svasya vṛttasya svajanasyāpi rakṣitā |rakṣitā jīvalokasya dharmasya ca paraṁtapaḥ ||",
+    "quality": "GOOD",
+    "matched_words": "+ api - upama",
+    "overlap_tokens": [
+      "dharmasya",
+      "jīvalokasya",
+      "paraṁtapaḥ",
+      "rakṣitā",
+      "svasya",
+      "vṛttasya"
+    ],
+    "overlap_n": 6,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.29.6",
+    "verse_map": [
+      {
+        "critical": "5.29.6",
+        "vulgate": "5.31.7",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.35.10 (вульгата)"
+  },
+  {
+    "shloka": "V.35.10",
+    "lemma_iast": "api",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.29.6 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "rakṣitā svasya vṛttasya svajanasyāpi rakṣitā |rakṣitā jīvalokasya dharmasya ca paraṁtapaḥ ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.29.6 (крит. изд.)",
+    "sundara_sa_iast": "rakṣitā jīvalokasya svajanasya ca rakṣitā |rakṣitā svasya vṛttasya dharmasya ca paraṁtapaḥ ||",
+    "quality": "GOOD",
+    "matched_words": "+ api - upama",
+    "overlap_tokens": [
+      "dharmasya",
+      "jīvalokasya",
+      "paraṁtapaḥ",
+      "rakṣitā",
+      "svasya",
+      "vṛttasya"
+    ],
+    "overlap_n": 6,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.33.10",
+    "verse_map": [
+      {
+        "critical": "5.33.10",
+        "vulgate": "5.35.10",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.31.7 (вульгата)"
+  },
+  {
+    "shloka": "V.38.28",
+    "lemma_iast": "tvad",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.65.11 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "tatastasminmahābāho kopasaṁvartitekṣaṇaḥ |vāyase tvaṁ kṛthāḥ krūrāṁ matiṁ matimatāṁ vara ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.65.11 (крит. изд.)",
+    "sundara_sa_iast": "tatastasminmahābāhuḥ kopasaṁvartitekṣaṇaḥ |vāyase kṛtavān krūrāṁ matiṁ matimatāṁ vara ||",
+    "quality": "GOOD",
+    "matched_words": "+ tvad - sama",
+    "overlap_tokens": [
+      "kopasaṁvartitekṣaṇaḥ",
+      "krūrāṁ",
+      "matimatāṁ",
+      "matiṁ",
+      "vara",
+      "vāyase"
+    ],
+    "overlap_n": 6,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.36.25",
+    "verse_map": [
+      {
+        "critical": "5.36.25",
+        "vulgate": "5.38.28",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.67.11 (вульгата)"
+  },
+  {
+    "shloka": "V.67.11",
+    "lemma_iast": "tvad",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "high",
+    "source": "DCS parallel-search (GOOD); Rām 5.36.25 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "tatastasminmahābāhuḥ kopasaṁvartitekṣaṇaḥ |vāyase kṛtavān krūrāṁ matiṁ matimatāṁ vara ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.36.25 (крит. изд.)",
+    "sundara_sa_iast": "tatastasminmahābāho kopasaṁvartitekṣaṇaḥ |vāyase tvaṁ kṛthāḥ krūrāṁ matiṁ matimatāṁ vara ||",
+    "quality": "GOOD",
+    "matched_words": "+ tvad - sama",
+    "overlap_tokens": [
+      "kopasaṁvartitekṣaṇaḥ",
+      "krūrāṁ",
+      "matimatāṁ",
+      "matiṁ",
+      "vara",
+      "vāyase"
+    ],
+    "overlap_n": 6,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.65.11",
+    "verse_map": [
+      {
+        "critical": "5.65.11",
+        "vulgate": "5.67.11",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate",
+    "verse_address_vulgate": "Rām V.38.28 (вульгата)"
+  },
+  {
+    "shloka": "V.57.11,12,14",
+    "lemma_iast": "devī eva rakṣ bhartṛ tvad",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); Rām 5.63.13,16 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "tataḥ saṁbhāṣitā devī sarvam arthaṁ ca darśitā |rāmasugrīvasakhyaṁ ca śrutvā prītim upāgatā ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.63.13,16 (крит. изд.)",
+    "sundara_sa_iast": "tataḥ saṁbhāṣitā caiva sarvam arthaṁ ca darśitā |rāmasugrīvasakhyaṁ ca śrutvā prītim upāgatā ||",
+    "quality": "PARTLY",
+    "matched_words": "+ bhartṛ - tvad · + devī - eva · + eva - devī · + rakṣ - hi · + tvad - bhartṛ",
+    "overlap_tokens": [
+      "arthaṁ",
+      "darśitā",
+      "prītim",
+      "rāmasugrīvasakhyaṁ",
+      "sarvam",
+      "saṁbhāṣitā",
+      "tataḥ",
+      "upāgatā",
+      "śrutvā"
+    ],
+    "overlap_n": 9,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.57.11,12,14",
+    "verse_map": [
+      {
+        "critical": "5.57.11",
+        "vulgate": null,
+        "status": "critical_only"
+      },
+      {
+        "critical": "5.57.12",
+        "vulgate": null,
+        "status": "critical_only"
+      },
+      {
+        "critical": "5.57.14",
+        "vulgate": null,
+        "status": "critical_only"
+      }
+    ],
+    "edition": "critical"
+  },
+  {
+    "shloka": "V.61.18",
+    "lemma_iast": "netṛ",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); Rām 5.62.32 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "jāmbavān yatra netā syād aṅgadaśca baleśvaraḥ |hanūmāṁścāpyadhiṣṭhātā na tasya gatir anyathā ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.62.32 (крит. изд.)",
+    "sundara_sa_iast": "jāmbavān yatra netā syād aṅgadasya baleśvaraḥ |hanūmāṁścāpyadhiṣṭhātā na tasya gatir anyathā ||",
+    "quality": "PARTLY",
+    "matched_words": "+ netṛ - netṛ",
+    "overlap_tokens": [
+      "anyathā",
+      "baleśvaraḥ",
+      "gatir",
+      "hanūmāṁścāpyadhiṣṭhātā",
+      "jāmbavān",
+      "netā",
+      "syād",
+      "tasya",
+      "yatra"
+    ],
+    "overlap_n": 9,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.61.18",
+    "verse_map": [
+      {
+        "critical": "5.61.18",
+        "vulgate": null,
+        "status": "critical_only"
+      }
+    ],
+    "edition": "critical"
+  },
+  {
+    "shloka": "V.62.32",
+    "lemma_iast": "netṛ",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); Rām 5.61.18 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "jāmbavān yatra netā syād aṅgadasya baleśvaraḥ |hanūmāṁścāpyadhiṣṭhātā na tasya gatir anyathā ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.61.18 (крит. изд.)",
+    "sundara_sa_iast": "jāmbavān yatra netā syād aṅgadaśca baleśvaraḥ |hanūmāṁścāpyadhiṣṭhātā na tasya gatir anyathā ||",
+    "quality": "PARTLY",
+    "matched_words": "+ netṛ - netṛ",
+    "overlap_tokens": [
+      "anyathā",
+      "baleśvaraḥ",
+      "gatir",
+      "hanūmāṁścāpyadhiṣṭhātā",
+      "jāmbavān",
+      "netā",
+      "syād",
+      "tasya",
+      "yatra"
+    ],
+    "overlap_n": 9,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.62.32",
+    "verse_map": [
+      {
+        "critical": "5.62.32",
+        "vulgate": null,
+        "status": "critical_only"
+      }
+    ],
+    "edition": "critical"
+  },
+  {
+    "shloka": "V.63.13,16",
+    "lemma_iast": "devī eva rakṣ bhartṛ tvad",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); Rām 5.57.11,12,14 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "tataḥ saṁbhāṣitā caiva sarvam arthaṁ ca darśitā |rāmasugrīvasakhyaṁ ca śrutvā prītim upāgatā ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.57.11,12,14 (крит. изд.)",
+    "sundara_sa_iast": "tataḥ saṁbhāṣitā devī sarvam arthaṁ ca darśitā |rāmasugrīvasakhyaṁ ca śrutvā prītim upāgatā ||",
+    "quality": "PARTLY",
+    "matched_words": "+ bhartṛ - tvad · + devī - eva · + eva - devī · + rakṣ - hi · + tvad - bhartṛ",
+    "overlap_tokens": [
+      "arthaṁ",
+      "darśitā",
+      "prītim",
+      "rāmasugrīvasakhyaṁ",
+      "sarvam",
+      "saṁbhāṣitā",
+      "tataḥ",
+      "upāgatā",
+      "śrutvā"
+    ],
+    "overlap_n": 9,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.63.13,16",
+    "verse_map": [
+      {
+        "critical": "5.63.13",
+        "vulgate": null,
+        "status": "critical_only"
+      },
+      {
+        "critical": "5.63.16",
+        "vulgate": null,
+        "status": "critical_only"
+      }
+    ],
+    "edition": "critical"
+  },
+  {
+    "shloka": "V.1.155",
+    "lemma_iast": "hanumant mad vā",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); Rām 5.56.26–27 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "atha maithilīṁ dṛṣṭvā rāmaṁ cākliṣṭakāriṇam |āgamiṣyāmi te vaktraṁ satyaṁ pratiśṛṇoti me ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.56.26–27 (крит. изд.)",
+    "sundara_sa_iast": "atha vā maithilīṁ dṛṣṭvā rāmaṁ cākliṣṭakāriṇam |āgamiṣyāmi te vaktraṁ satyaṁ pratiśṛṇomi te ||",
+    "quality": "PARTLY",
+    "matched_words": "+ hanumant - tu · + mad - vā · + vā - mad",
+    "overlap_tokens": [
+      "cākliṣṭakāriṇam",
+      "dṛṣṭvā",
+      "maithilīṁ",
+      "rāmaṁ",
+      "satyaṁ",
+      "vaktraṁ",
+      "āgamiṣyāmi"
+    ],
+    "overlap_n": 7,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.1.141",
+    "verse_map": [
+      {
+        "critical": "5.1.141",
+        "vulgate": "5.1.155",
+        "status": "identical"
+      }
+    ],
+    "edition": "vulgate"
+  },
+  {
+    "shloka": "V.34.6",
+    "lemma_iast": "i e",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); Rām 6.114.2 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "kalyāṇī bata gātheyaṁ laukikī pratibhāti me |eti jīvantam ānando naraṁ varṣaśatād api ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 6.114.2 (крит. изд.)",
+    "sundara_sa_iast": "kalyāṇī bata gātheyaṁ laukikī pratibhāti me |ehi jīvantamānando naraṁ varṣaśatād api ||",
+    "quality": "PARTLY",
+    "matched_words": "+ e - i · + i - e",
+    "overlap_tokens": [
+      "bata",
+      "gātheyaṁ",
+      "kalyāṇī",
+      "laukikī",
+      "naraṁ",
+      "pratibhāti",
+      "varṣaśatād"
+    ],
+    "overlap_n": 7,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.32.6",
+    "verse_map": [
+      {
+        "critical": "5.32.6",
+        "vulgate": "5.34.6",
+        "status": "variant"
+      }
+    ],
+    "edition": "vulgate"
+  },
+  {
+    "shloka": "V.56.26–27",
+    "lemma_iast": "hanumant mad vā",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); Rām 5.1.141 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "atha vā maithilīṁ dṛṣṭvā rāmaṁ cākliṣṭakāriṇam |āgamiṣyāmi te vaktraṁ satyaṁ pratiśṛṇomi te ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 5.1.141 (крит. изд.)",
+    "sundara_sa_iast": "atha maithilīṁ dṛṣṭvā rāmaṁ cākliṣṭakāriṇam |āgamiṣyāmi te vaktraṁ satyaṁ pratiśṛṇoti me ||",
+    "quality": "PARTLY",
+    "matched_words": "+ hanumant - tu · + mad - vā · + vā - mad",
+    "overlap_tokens": [
+      "cākliṣṭakāriṇam",
+      "dṛṣṭvā",
+      "maithilīṁ",
+      "rāmaṁ",
+      "satyaṁ",
+      "vaktraṁ",
+      "āgamiṣyāmi"
+    ],
+    "overlap_n": 7,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.56.26–27",
+    "verse_map": [
+      {
+        "critical": "5.56.26",
+        "vulgate": null,
+        "status": "critical_only"
+      },
+      {
+        "critical": "5.56.27",
+        "vulgate": null,
+        "status": "critical_only"
+      }
+    ],
+    "edition": "critical",
+    "verse_address_vulgate": "Rām V.1.155 (вульгата)"
+  },
+  {
+    "shloka": "V.31.?",
+    "lemma_iast": "varānanā",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); Rām 3.44.26 (крит. изд.)",
+    "subtype": "cross_text",
+    "scope": "intratext",
+    "parallel_sa_iast": "kā tvaṁ bhavasi rudrāṇāṁ marutāṁ vā śucismite |vasūnāṁ vā varārohe devatā pratibhāsi me ||",
+    "parallel_ru": "",
+    "work_label": "Rām",
+    "verse_address": "Rām 3.44.26 (крит. изд.)",
+    "sundara_sa_iast": "vasūnāṁ vā varārohe devatā pratibhāsi me ||",
+    "quality": "PARTLY",
+    "matched_words": "+ varānanā - smita",
+    "overlap_tokens": [
+      "devatā",
+      "pratibhāsi",
+      "varārohe",
+      "vasūnāṁ"
+    ],
+    "overlap_n": 4,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "review_required": true,
+    "shloka_critical": "V.31.?",
+    "edition": "critical",
+    "verse_map": []
+  }
+]

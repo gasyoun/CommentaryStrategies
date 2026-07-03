@@ -10,6 +10,24 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+**H141 — unified per-sarga apparatus, pilot sargas 35/36/37** (Fable 5, `claude-fable-5`)
+- [scripts/remap_archive_parallels.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/remap_archive_parallels.py) —
+  deterministic critical (Baroda) → southern-vulgate remap of the 31 DCS archive parallels via the
+  verse-level concordance ([data/edition_comparison/concordance.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_comparison/concordance.json)):
+  23 fully remapped, 1 partial, 7 kept with `edition:"critical"` (verses `critical_only` in the
+  concordance — kept, never dropped). Output:
+  [data/crosstext/archive_parallels_vulgate.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/crosstext/archive_parallels_vulgate.json).
+- [scripts/build_sarga_apparatus.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_sarga_apparatus.py) —
+  merges the FIVE note sources per verse (ярус 1 Leonov/Kostina · Фаза-1 lexical · Фаза-2 pilot ·
+  edition footnotes · cross-text incl. remapped archive layer) into interactive per-sarga pages
+  [data/apparatus/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/apparatus)`sarga_{NN}.html`
+  + machine `sarga_{NN}.json`. Provenance + review-status badges, vote controls on non-tier-1 notes
+  (localStorage, «Скачать decisions.json»), tier-1 collisions flagged; notes anchored inside merged
+  verse bundles (e.g. `5.35.4347`) re-anchored, not dropped. Pilot totals: 71/34/38 notes for
+  sargas 35/36/37; gate-pending layers marked «ожидает гейта М.Г.» until H142.
+
 ## [1.3.1] - 2026-07-02
 
 ### Changed

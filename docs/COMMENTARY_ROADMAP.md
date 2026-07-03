@@ -121,10 +121,19 @@ _Created: 01-07-2026 · Last updated: 03-07-2026_
    ([`data/edition_footnotes/`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_footnotes/)).
    Гитапресс — drop-in слот, **вне критического пути** (рулинг R4: текста пока нет, держим @WAITING).
 5. **Cross-text** — рукокурируемые кластеры + машинный слой Bridge 2 (VisualDCS `archive.sqlite`,
-   31 параллель, PR #44); ⚠️ нумерация критическая → нужен remap на вульгату через `per_sarga_aligned`.
-6. **Сводный аппарат по саргам** (рулинг R3 — строить СЕЙЧАС): один интерактивный HTML на песнь,
-   сливающий все 5 источников с пометой происхождения; пилот на саргах 35/36/37 → handoff **H141**.
-   Это и есть наглядный артефакт для встречи по §3 и каркас «чернового полного аппарата» 09-2026.
+   31 параллель, PR #44); ✅ remap на вульгату выполнен (H141, 03-07-2026):
+   [`scripts/remap_archive_parallels.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/remap_archive_parallels.py)
+   → [`data/crosstext/archive_parallels_vulgate.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/crosstext/archive_parallels_vulgate.json)
+   (23 vulgate / 1 partial / 7 сохранены с флагом `edition:"critical"` — стихи `critical_only` конкорданса).
+6. **Сводный аппарат по саргам** (рулинг R3) — ✅ пилот 35/36/37 построен (H141, 03-07-2026):
+   [`scripts/build_sarga_apparatus.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_sarga_apparatus.py)
+   → интерактивные страницы [`data/apparatus/sarga_35.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/apparatus/sarga_35.html) ·
+   [`sarga_36.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/apparatus/sarga_36.html) ·
+   [`sarga_37.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/apparatus/sarga_37.html)
+   (+ машинные `sarga_{NN}.json`): 5 источников на стих, бейджи происхождения и статуса, голосование
+   с экспортом decisions.json, ярус 1 — только показ; коллизии с ярусом 1 помечены (71/34/38 нот).
+   Полная сборка 68 песней — после одобрения пилота. Это наглядный артефакт для встречи по §3
+   и каркас «чернового полного аппарата» 09-2026.
 7. **Масштаб Фазы 2** — после decisions.json М.Г.: 🟡 песни, затем 🔴/⚪; сборка → гейт → влитие
    принятого → handoff **H142**.
 
