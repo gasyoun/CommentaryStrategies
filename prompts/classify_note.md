@@ -40,6 +40,18 @@ This codebook follows the gold-coder mapping (the classical Russian textology se
 
 **Decision rule (prevents the realia→B error):** Ask "is this note about the TEXT or about the WORLD?" A concrete thing IN the story — caste, river, deity, people, weapon, ritual object — is a real-world referent → **V** (or **G** if the note interprets/compares rather than identifies it). It is **NEVER `B`**. Reserve `B` strictly for metatext: an omission, a variant reading, a source attribution, or an interpolation/authenticity judgment about the Sanskrit or its translation. Word-vs-thing splits A from V (A unpacks the WORD/epithet; V names WHO/WHAT it denotes); interpretive-lift splits V from G (V identifies, G abstracts or compares). **A-vs-B litmus:** if removing the note would change how you understand the SANSKRIT word or form, it is `A`; if the note instead documents an editorial or transmission decision about the text — an omission, a variant reading, a source attribution, or an interpolation/authenticity verdict — it is `B`.
 
+### Worked examples — the two recurring errors
+
+Two mistakes dominate real annotation, and BOTH pull toward `V` because `V` is the largest class. Guard against them: **(1) collapsing `A` into `V`** — a word/epithet gloss misread as mere realia; and **(2) ignoring the `G` system-concept override** — a rite, cosmic time-unit, or doctrinal term misread as `V`, or such a term misread as a bare word-gloss `A`. Study these:
+
+- `kaunteya — «сын Кунти»`, `pārtha — «сын Притхи»`, `indrajit — «победитель Индры»` → **A**. A patronymic or epithet gloss stays `A` even though it also points to a person. *If the note unpacks the WORD, it is `A`, not `V`.*
+- a role-word given its literal sense (e.g. `«… — колесничий; придворный певец-сказитель»`), or a term rendered by direct translation (`«… — букв. „живущий неузнанным“»`) → **A**. Naming the caste, station, or plot-episode the word belongs to does NOT flip it to `V`. *Translating or glossing the word itself = `A`.*
+- `rājasūya`, `aśvamedha`, `soma` (жертвоприношения / обряды) → **G**, not `V`. A one-line gloss that NAMES a rite of the sacrificial SYSTEM triggers the system-concept override.
+- `kalpa`, `yuga`, `kṛtayuga` (космические единицы времени, «день Брахмы») → **G**, not `V`. Cosmic time-units are system-concepts, not in-world objects.
+- `tapas`, `artha`/`puruṣārtha`, `avatāra` (доктринальные понятия в системе) → **G** — neither `V` nor `A`. A doctrinal / soteriological concept placed in a system is `G` even when glossed in a single line, and even though a bare word-gloss might superficially look like `A`.
+
+Contrast — these correctly stay **V** (low-interpretation who/what/where of an in-world referent): `kṣatriya — воинская варна`, `gaṅgā — священная река`, `indra — царь богов`, a `vyūha` troop-formation, a plot beat. `V` is never a word-gloss (that is `A`) and never a named element of the ritual / cosmological / doctrinal system (that is `G`).
+
 ---
 
 ## Axis 3 — Lakṣaṇa structure  (array, optional)
