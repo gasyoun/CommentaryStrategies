@@ -25,9 +25,13 @@ sys.stderr.reconfigure(encoding="utf-8")
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 COMM_DIR = os.path.join(REPO, "data", "valmiki_commentaries", "kanda_5_sundarakanda")
+sys.path.insert(0, HERE)
+from sa_align import find_sibling  # noqa: E402
+
+_SM = find_sibling("SamudraManthanam")
 JSONL = os.path.join(
-    REPO, "..", "SamudraManthanam", "web", "corpus_builder", "jsonl",
-    "05_ramayana-sundarakanda.jsonl",
+    _SM or os.path.join(REPO, "..", "SamudraManthanam"),
+    "web", "corpus_builder", "jsonl", "05_ramayana-sundarakanda.jsonl",
 )
 OUT = os.path.join(REPO, "data", "analysis", "sundara_commentary_segmented.json")
 

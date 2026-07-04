@@ -82,7 +82,10 @@ def load_sources():
     bnotes = book["notes"] if isinstance(book, dict) and "notes" in book else book
     lexical, seen_lex = {}, set()
     for n in bnotes:
-        if "_meta" in n or n.get("subtype") == "cross_text":
+        # commentator-subtype notes are the gated Phase-2 layer (they enter the
+        # book aggregate via apply_phase2_decisions.py) — shown in the phase2
+        # layer, not duplicated here
+        if "_meta" in n or n.get("subtype") in ("cross_text", "commentator"):
             continue
         vid = shloka_to_vid(n.get("shloka", ""))
         if not vid:
@@ -103,8 +106,14 @@ def load_sources():
                 lexical.setdefault(vid, []).append(n)
 
     pilot = {}
-    for n in json.load(open(PILOT, encoding="utf-8"))["notes"]:
-        pilot.setdefault(n["verse_id"], []).append(n)
+    phase2_files = [PILOT] + sorted(
+        glob.glob(os.path.join(DATA, "analysis", "phase2_batch*", "batch*_candidates.json")))
+    for path in phase2_files:
+        if not os.path.exists(path):
+            continue
+        doc = json.load(open(path, encoding="utf-8"))
+        for n in doc.get("notes", []):
+            pilot.setdefault(n["verse_id"], []).append(n)
 
     fd = json.load(open(FOOTNOTES, encoding="utf-8"))
     edition = {}
@@ -179,8 +188,16 @@ def mk_note(layer, vid, idx, src):
             "source": src.get("source", ""),
         })
     elif layer == "phase2":
+        gate = src.get("gate") or {}
+        if gate.get("action") in ("accept", "edit"):
+            status = f"принято гейтом М.Г. ({gate.get('gated_date', '')})"
+        elif gate.get("action") == "reject":
+            status = f"отклонено М.Г.: {gate.get('reject_reason', '')}"
+        else:
+            status = "ожидает гейта М.Г."
         n.update({
-            "status": "ожидает гейта М.Г.",
+            "status": status,
+            "mg_comment": gate.get("mg_comment", ""),
             "lemma_iast": src.get("lemma_iast", ""),
             "note_ru": src.get("note_ru", ""),
             "type": src.get("kazansky_type", ""),
@@ -188,6 +205,8 @@ def mk_note(layer, vid, idx, src):
             "why_proposed": src.get("why_proposed", ""),
             "provenance": src.get("provenance", {}),
         })
+        if gate.get("action"):          # already gated — no second vote control
+            n["votable"] = False
     elif layer == "edition":
         n.update({
             "status": "ожидает гейта М.Г.",
@@ -463,6 +482,7 @@ function noteHtml(n,vi,ni){
   body+=esc(n.note_ru||"");
   let extra="";
   if(n.why_proposed) extra+=`<div class="meta"><b>Зачем предложено:</b> ${esc(n.why_proposed)}</div>`;
+  if(n.mg_comment) extra+=`<div class="meta"><b>Ремарка М.Г.:</b> ${esc(n.mg_comment)}</div>`;
   if(n.layer==="crosstext"&&n.parallel_sa_iast){
     extra+=`<div class="par"><b>${esc(n.work_label||"")}</b> ${esc(n.verse_address||"")}${n.verse_address_vulgate?` · ${esc(n.verse_address_vulgate)}`:""}<br><span class="sa">${esc(n.parallel_sa_iast)}</span></div>`;
   }

@@ -6,21 +6,27 @@ review_required) and writes a combined data/analysis/phase2_pilot/pilot_candidat
 plus prints reconciliation stats. Deterministic, stdlib-only. Does NOT approve
 anything — every note stays review_required until a human gates it.
 
-Usage: python scripts/merge_phase2_pilot.py
+Usage: python scripts/merge_phase2_pilot.py [batch_dir_name]
+       (default batch_dir_name: phase2_pilot; e.g. phase2_batch2 -> merges
+        data/analysis/phase2_batch2/sarga_*_candidates.json into
+        batch2_candidates.json + batch2_rejected.json in the same dir)
 """
 import sys
 import os
 import re
 import glob
 import json
+import datetime
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
-PILOT_DIR = os.path.join(REPO, "data", "analysis", "phase2_pilot")
-OUT = os.path.join(PILOT_DIR, "pilot_candidates.json")
+BATCH = sys.argv[1] if len(sys.argv) > 1 else "phase2_pilot"
+PREFIX = BATCH.replace("phase2_", "")
+PILOT_DIR = os.path.join(REPO, "data", "analysis", BATCH)
+OUT = os.path.join(PILOT_DIR, f"{PREFIX}_candidates.json")
 
 
 def sarga_verse_key(verse_id):
@@ -87,13 +93,22 @@ def main():
 
     from collections import Counter
     reject_taxonomy = dict(Counter(r["bucket"] for r in rejected))
-    common_meta = {
-        "layer": "phase2 commentator-dialogue (model II tier-2)",
-        "status": "PILOT — all notes review_required, human gate pending",
-        "drafted_by": "claude-sonnet-5 (Sonnet); orchestrated by claude-opus-4-8 (Opus)",
-        "date": "2026-07-01",
-        "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md",
-    }
+    if BATCH == "phase2_pilot":
+        common_meta = {
+            "layer": "phase2 commentator-dialogue (model II tier-2)",
+            "status": "PILOT — all notes review_required, human gate pending",
+            "drafted_by": "claude-sonnet-5 (Sonnet); orchestrated by claude-opus-4-8 (Opus)",
+            "date": "2026-07-01",
+            "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md",
+        }
+    else:
+        common_meta = {
+            "layer": "phase2 commentator-dialogue (model II tier-2)",
+            "status": f"{BATCH} — all notes review_required, human gate (М.Г.) pending",
+            "drafted_by": "claude-sonnet-5 (Sonnet 5); orchestrated by claude-fable-5 (Fable 5)",
+            "date": datetime.date.today().isoformat(),
+            "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md",
+        }
     payload = {
         "_meta": {
             **common_meta,
@@ -107,12 +122,13 @@ def main():
             "reject_taxonomy": reject_taxonomy,
             "per_sarga": per_sarga,
             "caveats": [
-                "verse_id alignment is corpus-derived (।। markers); the human gate must confirm each against print.",
-                "known source glitch: 5.36.45 bhusana chunk held commentary for v.4 (rejected, no note rests on it).",
+                "verse_id alignment is corpus-derived (।। markers + pratīka reassignment); the human gate must confirm each against print.",
                 "merged-range markers (e.g. 5.s.810 = vv.8-10) were mostly rejected; not independent verses.",
+            ] + ([
+                "known source glitch: 5.36.45 bhusana chunk held commentary for v.4 (rejected, no note rests on it).",
                 "counts do not fully reconcile: agents grouped some rejects (e.g. '5.35.17-20') so "
                 "notes + reject-entries < verses_considered; this is expected, not data loss.",
-            ],
+            ] if BATCH == "phase2_pilot" else []),
         },
         "notes": notes,
     }
@@ -131,7 +147,7 @@ def main():
         },
         "rejected": rejected,
     }
-    rej_out = os.path.join(PILOT_DIR, "pilot_rejected.json")
+    rej_out = os.path.join(PILOT_DIR, f"{PREFIX}_rejected.json")
     with open(rej_out, "w", encoding="utf-8") as fh:
         json.dump(rej_payload, fh, ensure_ascii=False, indent=2)
 
