@@ -8,7 +8,173 @@
       "generated": "2026-06-26",
       "chapter": 36,
       "verses_total": 47,
-      "notes_count": 0
+      "notes_count": 6,
+      "phase2_gate": "2026-07-03: +6 комментаторских примечаний (гейт М.Г., пилот Фазы-2)"
+    }
+  },
+  {
+    "shloka": "V.36.13",
+    "lemma_iast": "kuśalī yadi kākutsthaḥ",
+    "note_ru": "По Бхушане, здесь возможно и другое прочтение: не риторический довод, а ревнивый попрёк — Сита при после́ Ханумане с горечью упрекает Раму («если он и вправду благополучен, почему не сжёг гневом землю ради меня?»), и лишь после этого укора обращается к прямой мольбе.",
+    "type": "Б",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "bhusana"
+    ],
+    "why_proposed": "Предлагает альтернативное прочтение (ревнивый упрёк vs риторический довод) — расхождение интерпретаций, важное для тона сцены.",
+    "review_required": true,
+    "gate": {
+      "action": "accept",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03"
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
+    }
+  },
+  {
+    "shloka": "V.36.17",
+    "lemma_iast": "dvividhaṃ trividhopāyam",
+    "note_ru": "По Тилаке и Широмани, речь о традиционной доктрине четырёх средств политики (upāya) — увещевание (sāma), подкуп (dāna), раскол (bheda) и насилие (daṇḍa): к друзьям применимы первые два («двойное» средство), к врагам — все три или, по другому счёту, оставшиеся («тройное»).",
+    "type": "В",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "tilaka",
+      "siromani"
+    ],
+    "why_proposed": "Разъясняет шастрическую доктрину четырёх upāya за «двойным/тройным средством» — доктринальная реалия.",
+    "review_required": true,
+    "gate": {
+      "action": "edit",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03",
+      "mg_comment": "Нужно объединить с комментарием Костиной."
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
+    }
+  },
+  {
+    "shloka": "V.36.33",
+    "lemma_iast": "śacīm iva purandaraḥ",
+    "note_ru": "Согласно Тилаке и Широмани, сравнение опирается на миф: Индра медлил забрать похищенную демоном (Анухрадой) Шачи именно потому, что не знал о месте её пребывания, — так и Рама, по мысли Ханумана, не идёт за Ситой лишь по неведению, а не по охлаждению чувств.",
+    "type": "В",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "tilaka",
+      "siromani"
+    ],
+    "why_proposed": "Раскрывает миф (Индра/Шачи/Анухрада), на который опирается сравнение — иначе троп непрозрачен.",
+    "review_required": true,
+    "gate": {
+      "action": "edit",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03",
+      "mg_comment": "Нужно объединить с комментарием Костиной."
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
+    }
+  },
+  {
+    "shloka": "V.36.38",
+    "lemma_iast": "mandareṇa... mūlaphalena ca",
+    "note_ru": "По Тилаке и Бхушане, клятва построена не случайно: Хануман клянётся горами и кореньями-плодами именно потому, что это места его собственного обитания и источники его пропитания, — присяга собственной жизнью, а не отвлечённый перечень святынь.",
+    "type": "Б",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "tilaka",
+      "bhusana"
+    ],
+    "why_proposed": "Показывает, что клятва не случайна (жизнью, не набор святынь) — логика образа.",
+    "review_required": true,
+    "gate": {
+      "action": "edit",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03",
+      "mg_comment": "\"присяга собственной жизнью, а не отвлечённый перечень святынь\" дополняет Костину"
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
+    }
+  },
+  {
+    "shloka": "V.36.40",
+    "lemma_iast": "nāgapṛṣṭhasya mūrdhani",
+    "note_ru": "Чтение неоднозначно: Тилака и Широмани понимают nāgapṛṣṭha как «на спине слона [Айраваты]», тогда как в изводе Бхушаны читается nākapṛṣṭha — «на вершине особой небесной обители Индры»; перевод следует первому варианту.",
+    "type": "Б",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "tilaka",
+      "bhusana",
+      "siromani"
+    ],
+    "why_proposed": "Текстологический вариант (nāga-/nāka-) с расхождением комментаторов; фиксирует, какому чтению следует перевод.",
+    "review_required": true,
+    "gate": {
+      "action": "accept",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03"
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
+    }
+  },
+  {
+    "shloka": "V.36.41",
+    "lemma_iast": "bhaktam aśnāti pañcamam",
+    "note_ru": "По Бхушане, «пятая доля пищи» — не количество, а время: Рама ест единожды в день, в пятый из пяти дневных периодов (на закате), — форма аскетического воздержания отшельника, а не буквальная порция еды.",
+    "type": "Б",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "bhusana"
+    ],
+    "why_proposed": "Исправляет вероятное недопонимание: «пятая доля» = время трапезы, не количество — иначе теряется смысл аскезы.",
+    "review_required": true,
+    "gate": {
+      "action": "edit",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03",
+      "mg_comment": "\"не количество, а время\" - важное дополнение Костиной"
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
     }
   }
 ]
