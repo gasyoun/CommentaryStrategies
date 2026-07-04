@@ -184,6 +184,16 @@ per-verse reject entries so the arithmetic closes.
 
 - **Provenance:** every note carries `provenance: {model: "claude-sonnet-5", tier: "Sonnet", step:
   "phase2_pilot_draft"}` and `review_required: true`. The reject log records the drafter's reason.
+- **Decision logs (added 04-07-2026, MG request):** each drafting batch preserves the agents' FULL
+  transcripts — the verse-by-verse draft/reject reasoning — in the repo via
+  [`scripts/export_agent_logs.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/export_agent_logs.py)
+  → `data/analysis/<batch>/logs/` (raw `.jsonl` + readable `*_reasoning.md` per sarga +
+  orchestrator extract; see the batch-2
+  [logs/README.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/logs/README.md)).
+  Run it at batch close-out **while the session cache is still alive** — the source transcripts
+  live in `~/.claude/projects/<slug>/<session-id>/subagents/` and are otherwise lost. The raw main
+  session transcript is never committed (it embeds injected private context); only the
+  orchestrator's own messages are extracted.
 - **Reproducibility caveat:** because the pilot was drafted by Sonnet *inside Claude Code*, the committed
   standalone `scripts/` cannot reproduce the exact note texts without Claude Code. Steps 1, 3 (Python) are
   fully deterministic and reproducible; Step 2 (drafting) is model-mediated and human-gated, so the record

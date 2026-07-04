@@ -10,6 +10,21 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+**Agent decision logs preserved in-repo** (MG request 04-07-2026; Fable 5, `claude-fable-5`)
+- [scripts/export_agent_logs.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/export_agent_logs.py) —
+  copies each drafting agent's full Claude Code transcript (the verse-by-verse draft/reject
+  reasoning) out of the ephemeral session cache into the repo, as raw `.jsonl` (harness
+  `attachment` noise stripped) + a readable `*_reasoning.md` per sarga (assistant text +
+  thinking + one-line tool summaries) + an orchestrator extract (assistant messages only —
+  the raw main transcript embeds injected private context and is never committed).
+- [data/analysis/phase2_batch2/logs/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/analysis/phase2_batch2/logs) —
+  the H142 batch-2 logs: 7 Sonnet 5 (`claude-sonnet-5`) drafting transcripts (sargas
+  22/24/26/30/34/39/51) + Fable 5 (`claude-fable-5`) orchestrator log + README.
+  [docs/PHASE2_METHOD.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/PHASE2_METHOD.md) §8
+  now mandates this export at every batch close-out.
+
 ## [1.5.0] - 2026-07-04
 
 ### Added
