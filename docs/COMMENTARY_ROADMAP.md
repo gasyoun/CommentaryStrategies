@@ -1,6 +1,6 @@
 # Сундараканда (Леонов/Костина) — манифест стратегии и план работы
 
-_Created: 01-07-2026 · Last updated: 03-07-2026_
+_Created: 01-07-2026 · Last updated: 04-07-2026_
 
 > **Что это.** Roadmap комментаторского аппарата Сундараканды: сверху — манифест стратегии и
 > редакционная политика (что и как комментируем), снизу — план, сроки и открытые решения. Вырос из
@@ -109,14 +109,13 @@ _Created: 01-07-2026 · Last updated: 03-07-2026_
 
 1. **Ярус 1 оцифрован** — 1058 нот Леонова/Костиной (готово); служит **обязательным dedup-базисом**.
 2. **Фаза 1 (лексический слой)** — ~24%, 68/68 песней, готово.
-3. **Фаза 2 (комментаторский диалог)** — пилот песней 35/36/37 (16 нот). **Гейт пилота проходит М.Г.
-   сам** (рулинг R1, 03-07-2026) в
-   [`review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_pilot/review.html)
-   → decisions.json; гейт Леонова/Костиной остаётся на итоговой сборке. Движок масштаба =
+3. **Фаза 2 (комментаторский диалог)** — ✅ **пилот гейтирован М.Г. 03-07-2026: 16/16 принято**
+   (9 accept / 7 edit / 0 reject; правки — директивы «объединить с комментарием Костиной», сохранены
+   в `gate.mg_comment`). Применено 04-07-2026
+   ([`scripts/apply_phase2_decisions.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/apply_phase2_decisions.py)):
+   примечания в файлах глав 35/36/37 + книжном агрегате (итого 903 ноты), `review_required` остаётся —
+   финальный гейт Леонова/Костиной на сборке. Движок масштаба =
    **Sonnet-агенты Claude Code** (рулинг R2; уточнение D-P2-4 — DeepSeek больше не план по умолчанию).
-   ⚠️ Перед масштабом: (а) dedup против яруса 1 (пилот дал 9/16 пересечений); (б) предобработка
-   выравнивания (PHASE2_METHOD §11, precision уже 0.896); (в) ратификация §3 НЕ блокирует масштаб —
-   всё `review_required`, финальное слово за редакторами на сборке.
 4. **Слой изданий** — сравнение критическое (Барода) ↔ южное готово; **51 сноска-кандидат** ждёт гейта
    ([`data/edition_footnotes/`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_footnotes/)).
    Гитапресс — drop-in слот, **вне критического пути** (рулинг R4: текста пока нет, держим @WAITING).
@@ -125,7 +124,9 @@ _Created: 01-07-2026 · Last updated: 03-07-2026_
    [`scripts/remap_archive_parallels.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/remap_archive_parallels.py)
    → [`data/crosstext/archive_parallels_vulgate.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/crosstext/archive_parallels_vulgate.json)
    (23 vulgate / 1 partial / 7 сохранены с флагом `edition:"critical"` — стихи `critical_only` конкорданса).
-6. **Сводный аппарат по саргам** (рулинг R3) — ✅ пилот 35/36/37 построен (H141, 03-07-2026):
+6. **Сводный аппарат по саргам** (рулинг R3) — ✅ пилот 35/36/37 построен (H141, 03-07-2026);
+   ✅ расширен на все 10 🟡-сарг 04-07-2026 (H142: + `sarga_{22,24,26,30,34,39,51}.html`, слой Фазы-2
+   показывает статус гейта М.Г. и `mg_comment`, гейтированные ноты без повторного голосования):
    [`scripts/build_sarga_apparatus.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_sarga_apparatus.py)
    → интерактивные страницы [`data/apparatus/sarga_35.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/apparatus/sarga_35.html) ·
    [`sarga_36.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/apparatus/sarga_36.html) ·
@@ -134,8 +135,12 @@ _Created: 01-07-2026 · Last updated: 03-07-2026_
    с экспортом decisions.json, ярус 1 — только показ; коллизии с ярусом 1 помечены (71/34/38 нот).
    Полная сборка 68 песней — после одобрения пилота. Это наглядный артефакт для встречи по §3
    и каркас «чернового полного аппарата» 09-2026.
-7. **Масштаб Фазы 2** — после decisions.json М.Г.: 🟡 песни, затем 🔴/⚪; сборка → гейт → влитие
-   принятого → handoff **H142**.
+7. **Масштаб Фазы 2** — ✅ 🟡-песни выполнены 04-07-2026 (H142, Sonnet 5 `claude-sonnet-5` ×7 агентов,
+   Fable 5 `claude-fable-5` оркестрация): песни 22/24/26/30/34/39/51 — **38 кандидатов** из 350
+   стихов (10.9%; 312 per-verse отказов с причинами, новая корзина `duplicate_of_tier1` = 41 —
+   dedup-контекст яруса 1 сработал). Гейт М.Г.:
+   [`data/analysis/phase2_batch2/review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/review.html)
+   → decisions.json → следующая сессия (**H159**). 🔴/⚪ песни — после гейта партии 2.
 
 ## 6. Сроки
 
@@ -156,10 +161,12 @@ _Created: 01-07-2026 · Last updated: 03-07-2026_
   2488 vs 2859 шлок; [`data/edition_comparison/`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_comparison/README.md)).
 - **Ратификация всех позиций §3** на ближайшей встрече Леонов/Костина — сводный аппарат (H141)
   готовится как демонстрационный артефакт этой встречи.
-- **[@DO М.Г.] Два гейта в браузере**: (1) пилот Фазы-2 —
-  [`review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_pilot/review.html);
+- **[@DO М.Г.] Гейты в браузере**: ~~(1) пилот Фазы-2~~ — ✅ пройден 03-07-2026, применён (H142);
   (2) сноски изданий — [`data/edition_footnotes/`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_footnotes/)
-  review-страница. Каждый → «Скачать decisions.json» → передать в сессию H142.
+  review-страница — **всё ещё ждёт** decisions.json;
+  (3) **новый**: партия 2 Фазы-2 (38 кандидатов, 7 песней) —
+  [`data/analysis/phase2_batch2/review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/review.html).
+  Каждый → «Скачать decisions.json» → передать в сессию **H159**.
 
 ## 8. Логистика / деливераблы (памятка)
 
@@ -183,5 +190,12 @@ _Created: 01-07-2026 · Last updated: 03-07-2026_
   - Non-goals (рассмотрено и отклонено): масштаб Фазы-2 до гейта пилота; DeepSeek-батч как
     дефолтный движок; чистый JSON-merge без интерактивной страницы; рескрейп Yuddhakāṇḍa-пробелов
     (постоянные, решение 01-07-2026).
+- 2026-07-04 — H142 выполнен (Fable 5 `claude-fable-5` оркестрация, Sonnet 5 `claude-sonnet-5`
+  драфтинг): (а) decisions.json М.Г. применён — 16/16 пилотных нот принято (9 accept / 7 edit),
+  влиты в главы 35/36/37 и книжный агрегат со штампом `gate`; (б) Фаза-2 масштабирована на
+  оставшиеся 🟡 песни 22/24/26/30/34/39/51 — 38 кандидатов / 350 стихов (10.9%), dedup против
+  яруса 1 в промпте (41 отказ `duplicate_of_tier1`); (в) сводный аппарат расширен до 10 песней.
+  Стоп-условие H142 (негативный регистр-фидбек) не сработало — 0 отказов в пилоте. Гейт сносок
+  изданий не предоставлен — остаётся открытым. Следующий гейт М.Г. → партия 2, затем H159.
 
 _Dr. Mārcis Gasūns_
