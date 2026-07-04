@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-07-04
+
 ### Added
 
 **Agent decision logs preserved in-repo** (MG request 04-07-2026; Fable 5, `claude-fable-5`)
