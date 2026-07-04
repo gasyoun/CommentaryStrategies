@@ -15,7 +15,7 @@ lang: en
 
 Manuscript: [`article3_nilakantha.md`](article3_nilakantha.md) (352 lines, ~5,266 words, UTF-8, no BOM — confirmed: first bytes `2d 2d 2d`).
 Cover letter (this pass): [`cover_letter_A21.md`](cover_letter_A21.md).
-Handoff of record: [`A21_nilakantha_ru.md`](../../Uprava/handoffs/A21_nilakantha_ru.md).
+Handoff of record: [`H006-Fable_CommentaryStrategies_nilakantha_ru_26.06.26.md`](../../Uprava/handoffs/H006-Fable_CommentaryStrategies_nilakantha_ru_26.06.26.md).
 
 This is a Month-1 *confirmation* pass on a paper already at 5/5 (revising / ready-to-send). No body rewrite was performed; all proposed edits below are for the author to apply.
 

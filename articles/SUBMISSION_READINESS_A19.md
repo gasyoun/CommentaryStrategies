@@ -13,7 +13,7 @@ lang: ru
 # A19 — Submission-readiness report (Вопросы языкознания)
 
 Manuscript reviewed in full (484 lines): [article1_vya.md](article1_vya.md).
-Handoff: [../../Uprava/handoffs/A19_untranslatability.md](../../Uprava/handoffs/A19_untranslatability.md).
+Handoff: [../../Uprava/handoffs/H005-Fable_CommentaryStrategies_untranslatability_26.06.26.md](../../Uprava/handoffs/H005-Fable_CommentaryStrategies_untranslatability_26.06.26.md).
 This report is **additive** — no body text was rewritten. All edits below are proposals
 for the author to apply.
 

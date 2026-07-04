@@ -3,7 +3,7 @@
 _Model: `claude-fable-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
 
 
-- 🔧 `Read` — C:\Users\user\Documents\GitHub\Uprava\handoffs\H142_commentarystrategies_phase2_scale.md
+- 🔧 `Read` — C:\Users\user\Documents\GitHub\Uprava\handoffs\H142-Fable_CommentaryStrategies_phase2_scale_03.07.26.md
 The handoff is gated on your decisions.json files. Let me first check whether they're already in the repo or Downloads before asking.
 
 - 🔧 `Glob` — data/analysis/phase2_pilot/*.json
@@ -205,7 +205,7 @@ Final validation, commit, push, and PR:
 [PR #48](https://github.com/gasyoun/CommentaryStrategies/pull/48) created. Verifying auto-merge, then wiring Uprava (H159 handoff, registry, GTD):
 
 - 🔧 `Bash` — Check PR auto-merge status
-- 🔧 `Write` — C:\Users\user\Documents\GitHub\Uprava\handoffs\H159_commentarystrategies_batch2_apply.md
+- 🔧 `Write` — C:\Users\user\Documents\GitHub\Uprava\handoffs\H159-Fable_CommentaryStrategies_batch2_apply_04.07.26.md
 - 🔧 `PowerShell` — Locate H141/H142 registry rows
 - 🔧 `Read` — C:\Users\user\Documents\GitHub\Uprava\handoffs\README.md
 - 🔧 `Edit` — C:\Users\user\Documents\GitHub\Uprava\handoffs\README.md
@@ -234,14 +234,14 @@ Now the GTD rollup — locating the CommentaryStrategies rows:
 
 **Step 3 — artifacts.** [Batch-2 review.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/review.html) built for your gate; H141 apparatus extended to all 10 🟡 sargas with MG-gate status badges. `validate.py` green.
 
-**Not done:** the edition-footnotes decisions.json was never provided — that gate (51 candidates) remains open and is carried in [H159](https://github.com/gasyoun/Uprava/blob/main/handoffs/H159_commentarystrategies_batch2_apply.md) as the optional slot. 🔴/⚪ sargas are out of scope per the handoff's stop conditions.
+**Not done:** the edition-footnotes decisions.json was never provided — that gate (51 candidates) remains open and is carried in [H159](https://github.com/gasyoun/Uprava/blob/main/handoffs/H159-Fable_CommentaryStrategies_batch2_apply_04.07.26.md) as the optional slot. 🔴/⚪ sargas are out of scope per the handoff's stop conditions.
 
 Hubs synced: H142 → ✅ in the registry, H159 minted, GTD gates updated, roadmap §5/§7/§9 + PHASE2_METHOD change record current.
 
 When you've voted on the 38 batch-2 notes:
 
 ```
-Read C:\Users\user\Documents\GitHub\Uprava\handoffs\H159_commentarystrategies_batch2_apply.md and execute it. Batch2 decisions.json: <PASTE OR PATH>. Footnotes decisions.json (optional): <PASTE OR PATH>.
+Read C:\Users\user\Documents\GitHub\Uprava\handoffs\H159-Fable_CommentaryStrategies_batch2_apply_04.07.26.md and execute it. Batch2 decisions.json: <PASTE OR PATH>. Footnotes decisions.json (optional): <PASTE OR PATH>.
 ```
 
 ⭐ Next: vote the 38 batch-2 notes in [batch2 review.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/review.html) (+ the still-open edition-footnotes page) → download decisions.json → paste into H159 (М.Г., CommentaryStrategies)

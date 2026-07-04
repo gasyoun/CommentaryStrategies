@@ -3,7 +3,7 @@
 _Created: 02-07-2026 · Last updated: 02-07-2026_
 
 **Статус: ПРИНЯТО** (адьюдикация делегирована М. Г. через handoff
-[FABLE_S4_CommentaryStrategies_A21_A19_KD.md](https://github.com/gasyoun/Uprava/blob/main/handoffs/FABLE_S4_CommentaryStrategies_A21_A19_KD.md);
+[H015-Fable_CommentaryStrategies_A21_A19_KD_02.07.26.md](https://github.com/gasyoun/Uprava/blob/main/handoffs/H015-Fable_CommentaryStrategies_A21_A19_KD_02.07.26.md);
 выполнена Fable 5 (`claude-fable-5`), 02-07-2026). Финальный гейт для формулировок
 в статьях — сверка М. Г. с печатным текстом Парибок 2011 (с. 86), см. §5.
 
