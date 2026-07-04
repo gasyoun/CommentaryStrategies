@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-07-04
+
 ### Added
 
 **H142 — Phase-2 pilot gate applied + scale to all 🟡 sargas** (orchestration Fable 5, `claude-fable-5`; drafting Sonnet 5, `claude-sonnet-5`)
