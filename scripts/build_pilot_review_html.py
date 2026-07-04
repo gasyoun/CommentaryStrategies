@@ -8,8 +8,10 @@ and any existing Phase-1 note on the same verse. Emits a self-contained page
 (inline JSON + JS) that lets M.G./Kostina click принять / править / отклонить,
 persists choices in localStorage, and exports decisions.json — no printing.
 
-Usage: python scripts/build_pilot_review_html.py
-Output: data/analysis/phase2_pilot/review.html
+Usage: python scripts/build_pilot_review_html.py [batch_dir_name]
+       (default: phase2_pilot; e.g. phase2_batch2 reads batch2_candidates.json
+        and writes data/analysis/phase2_batch2/review.html)
+Output: data/analysis/<batch>/review.html
 """
 import sys
 import os
@@ -21,7 +23,9 @@ sys.stderr.reconfigure(encoding="utf-8")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
-PILOT_DIR = os.path.join(REPO, "data", "analysis", "phase2_pilot")
+BATCH = sys.argv[1] if len(sys.argv) > 1 else "phase2_pilot"
+PREFIX = BATCH.replace("phase2_", "")
+PILOT_DIR = os.path.join(REPO, "data", "analysis", BATCH)
 SEG = os.path.join(REPO, "data", "analysis", "sundara_commentary_segmented.json")
 BOOK = os.path.join(REPO, "data", "sundara_commentary_to_add.json")
 LEONOV = os.path.join(REPO, "data", "leonov_own_notes.json")
@@ -41,7 +45,7 @@ def parse_vid(vid):
 
 
 def main():
-    cand = json.load(open(os.path.join(PILOT_DIR, "pilot_candidates.json"), encoding="utf-8"))
+    cand = json.load(open(os.path.join(PILOT_DIR, f"{PREFIX}_candidates.json"), encoding="utf-8"))
     notes = cand["notes"]
     seg = json.load(open(SEG, encoding="utf-8"))
     seg_idx = {b["verse_id"]: b for b in seg["verses"]}
@@ -106,7 +110,14 @@ def main():
 
     data = {"generated": cand["_meta"].get("date"), "stats": stats, "notes": review,
             "labels": COMM_LABEL}
-    html = PAGE.replace("/*DATA*/null", json.dumps(data, ensure_ascii=False))
+    sargas = sorted(int(s) for s in stats)
+    srange = ", ".join(str(s) for s in sargas)
+    title = ("Сундараканда · пилот примечаний (песни 35–37) — интерактивная сверка"
+             if BATCH == "phase2_pilot" else
+             f"Сундараканда · примечания Фазы-2, партия {PREFIX} (песни {srange}) — интерактивная сверка")
+    html = (PAGE.replace("/*DATA*/null", json.dumps(data, ensure_ascii=False))
+                .replace("__TITLE__", title)
+                .replace("__KEY__", f"sundara_{PREFIX}_decisions_v1"))
     with open(OUT, "w", encoding="utf-8") as fh:
         fh.write(html)
     print(f"wrote {OUT} ({len(review)} notes)")
@@ -115,7 +126,7 @@ def main():
 PAGE = r"""<!DOCTYPE html>
 <html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Пилот Сундараканды — интерактивная сверка примечаний</title>
+<title>__TITLE__</title>
 <link rel="stylesheet" href="../../../css/commentary.css">
 <style>
 :root{--bg:#faf8f4;--card:#fff;--ink:#222;--mut:#777;--line:#e4ddd0;--acc:#7a5c2e;
@@ -168,7 +179,7 @@ textarea,.rr{width:100%;font:14px Georgia,serif;padding:8px;border:1px solid var
 .hidden{display:none}
 </style></head><body>
 <header>
-<h1>Сундараканда · пилот примечаний (песни 35–37) — интерактивная сверка</h1>
+<h1>__TITLE__</h1>
 <div class="bar">
 <span id="progress">—</span>
 <button onclick="dl()">⬇ Скачать decisions.json</button>
@@ -179,7 +190,7 @@ textarea,.rr{width:100%;font:14px Georgia,serif;padding:8px;border:1px solid var
 <main class="container"><div id="app"></div></main>
 <script>
 const D = /*DATA*/null;
-const KEY = "sundara_pilot_decisions_v1";
+const KEY = "__KEY__";
 const dec = JSON.parse(localStorage.getItem(KEY) || "{}");
 const $ = (h)=>{const t=document.createElement("template");t.innerHTML=h.trim();return t.content.firstChild;};
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}

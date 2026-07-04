@@ -8,7 +8,116 @@
       "generated": "2026-06-26",
       "chapter": 37,
       "verses_total": 68,
-      "notes_count": 0
+      "notes_count": 4,
+      "phase2_gate": "2026-07-03: +4 комментаторских примечаний (гейт М.Г., пилот Фазы-2)"
+    }
+  },
+  {
+    "shloka": "V.37.3",
+    "lemma_iast": "kṛtāntaḥ parikarṣati",
+    "note_ru": "По Широмани, за общим утверждением о всесильности рока скрыт конкретный намёк: раз судьба одинаково властна и над величием (aiśvarya), и над бедствием (vyasana), из этого следует, что и всемогущество Раваны обречено рухнуть — «этим предвещается неизбежная гибель Раваны» (rāvaṇavidhvaṃso 'vaśyaṃ bhaviteti sūcitam).",
+    "type": "Б",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "siromani"
+    ],
+    "why_proposed": "Вскрывает подтекст-предвестие гибели Раваны за общей сентенцией о роке — экзегетический слой.",
+    "review_required": true,
+    "gate": {
+      "action": "edit",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03",
+      "mg_comment": "важное дополнение Костиной"
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
+    }
+  },
+  {
+    "shloka": "V.37.12",
+    "lemma_iast": "avindhyaḥ",
+    "note_ru": "По Тилаке, эпизод с Авиндхьей и Каньяналой — не случайная деталь: он называет его bīja, «семенем», из которого в дальнейшем повествовании вырастет решение Вибхишаны безоговорочно перейти на сторону Рамы и принять от него помазание на царство.",
+    "type": "Б",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "tilaka"
+    ],
+    "why_proposed": "Тилака маркирует эпизод как «семя» будущего перехода Вибхишаны — нарративная связка для читателя целого.",
+    "review_required": true,
+    "gate": {
+      "action": "accept",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03"
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
+    }
+  },
+  {
+    "shloka": "V.37.25",
+    "lemma_iast": "nāgarājasya mūrdhani",
+    "note_ru": "Леонов передаёт nāgarājasya как «на [спине] великого слона» (namek на Айравату), однако Тилака и Бхушана, ссылаясь на вариант nagarājasya, поясняют иначе: «на вершине лучшей из гор», то есть Рама восседает на вершине [горы] Прасраваны подобно Индре на Меру — расхождение чтений меняет сам образ.",
+    "type": "Б",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "tilaka",
+      "bhusana"
+    ],
+    "why_proposed": "Текстологический вариант (nāga-/naga-), меняющий образ (слон Айравата vs вершина горы); перевод следует одному чтению.",
+    "review_required": true,
+    "gate": {
+      "action": "edit",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03",
+      "mg_comment": "Костина и традиционные комментарии об одном и том же - текстологическом уровне"
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
+    }
+  },
+  {
+    "shloka": "V.37.36",
+    "lemma_iast": "pādapād āplutya",
+    "note_ru": "По Тилаке, Хануман нарочно спрыгивает именно с дерева на землю, прежде чем начать увеличиваться в размерах: треск ломающихся под его тяжестью ветвей выдал бы его ракшасини-стражницам, а рост на земле остаётся неслышным — деталь, которую подстрочник не проясняет.",
+    "type": "Б",
+    "trigger": "commentator",
+    "priority": "high",
+    "subtype": "commentator",
+    "source": "Phase-2: комментаторский диалог (Tilaka/Bhūṣaṇa/Śiromaṇi; Gita Supersite, CC BY 4.0)",
+    "source_commentary": [
+      "tilaka"
+    ],
+    "why_proposed": "Объясняет постановочную деталь (спрыгивает, чтобы треск ветвей не выдал) — мотивировка, не проясняемая подстрочником.",
+    "review_required": true,
+    "gate": {
+      "action": "edit",
+      "gated_by": "М.Г. (review.html → decisions.json)",
+      "gated_date": "2026-07-03",
+      "mg_comment": "Комментарий Тилака дополняет Костину, разные грани"
+    },
+    "provenance": {
+      "model": "claude-sonnet-5",
+      "tier": "Sonnet",
+      "step": "phase2_pilot_draft",
+      "applied_by": "scripts/apply_phase2_decisions.py"
     }
   }
 ]

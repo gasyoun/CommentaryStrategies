@@ -1,5 +1,7 @@
 # Phase-2 method manual — Sundarakāṇḍa commentator-dialogue layer
 
+_Created: 01-07-2026 · Last updated: 04-07-2026_
+
 > **What this is:** the complete, reproducible procedure for generating the Type-Б/В
 > "commentator-dialogue" note layer for the Russian Sundarakāṇḍa — every step, *when* it runs, *how* to
 > run it, and *why* it is done that way. Written so M.G./Kostina can review and correct the method **before
@@ -262,3 +264,15 @@ verse word. Reassignment is heuristic; all downstream notes stay `review_require
 - 2026-07-01 — C0/D2 = model II (two-tier hybrid); D-P2-1 pilot 35/36/37; D-P2-2 name commentator in-note;
   D-P2-3 RU + IAST pratīka; D-P2-4 hybrid (Sonnet drafts, human gates); D-P2-5 ~36 % post-approval.
 - 2026-07-01 — pilot drafted (16 notes), reject log consolidated + taxonomy added; awaiting human gate.
+- 2026-07-03 — **pilot gated by M.G.: 16/16 passed** (9 accept / 7 edit / 0 reject). Edit-directives
+  («объединить с комментарием Костиной») preserved as `gate.mg_comment`, note text kept clean.
+- 2026-07-04 — decisions applied by [`scripts/apply_phase2_decisions.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/apply_phase2_decisions.py)
+  (the §5 apply step, now written): grafted into ch35/36/37 + book aggregate with `gate` stamps,
+  `review_required` stays true until the Leonov/Kostina assembly gate. **Scale batch 2 drafted**
+  (H142): sargas 22/24/26/30/34/39/51, 38 candidates / 350 verses (10.9%), per-verse rejects (§7
+  fixed — counts reconcile exactly), tier-1 dedup context in every drafting prompt (§3.3 satisfied;
+  41 rejects bucketed `duplicate_of_tier1`), pratīka precision 0.889 across all 10 yellow sargas.
+  Review page: [`data/analysis/phase2_batch2/review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/review.html).
+  Drafting Sonnet 5 (`claude-sonnet-5`), orchestration Fable 5 (`claude-fable-5`).
+
+_Dr. Mārcis Gasūns_

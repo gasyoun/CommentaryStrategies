@@ -18,9 +18,22 @@ import re
 import difflib
 import unicodedata
 
-_UTIL = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                     "..", "sanskrit-util", "py")
-if os.path.isdir(_UTIL) and _UTIL not in sys.path:
+def find_sibling(name):
+    """Locate a sibling repo by walking up from this repo's root — a git
+    worktree can sit nested (e.g. .claude/worktrees/X), so REPO/.. is not
+    guaranteed to be the GitHub/ root."""
+    d = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    for _ in range(6):
+        cand = os.path.join(d, name)
+        if os.path.isdir(cand):
+            return cand
+        d = os.path.dirname(d)
+    return None
+
+
+_UTIL_ROOT = find_sibling("sanskrit-util")
+_UTIL = os.path.join(_UTIL_ROOT, "py") if _UTIL_ROOT else ""
+if _UTIL and os.path.isdir(_UTIL) and _UTIL not in sys.path:
     sys.path.insert(0, _UTIL)
 
 try:

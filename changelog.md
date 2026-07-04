@@ -10,6 +10,34 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+**H142 — Phase-2 pilot gate applied + scale to all 🟡 sargas** (orchestration Fable 5, `claude-fable-5`; drafting Sonnet 5, `claude-sonnet-5`)
+- [scripts/apply_phase2_decisions.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/apply_phase2_decisions.py) —
+  the PHASE2_METHOD §5 apply step: M.G.'s decisions.json (16/16 passed: 9 accept / 7 edit / 0 reject)
+  grafted into [data/sundara_ch35/36/37_commentary_to_add.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara_ch35_commentary_to_add.json)
+  + book aggregate (903 notes) with `gate` stamps; reviewer edit-directives preserved in
+  `gate.mg_comment`; stats rebuilt. `review_required` stays true until the Leonov/Kostina assembly gate.
+- **Phase-2 batch 2** — sargas 22/24/26/30/34/39/51 drafted per ruling R2 (Sonnet agents, ≤3-wide):
+  [data/analysis/phase2_batch2/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/analysis/phase2_batch2)
+  38 candidates / 350 verses considered (10.9%), 312 per-verse rejects with reasons (§7 count
+  reconciliation now exact), mandatory tier-1 dedup context in every prompt (41 rejects in the new
+  `duplicate_of_tier1` bucket — the pilot's 9/16-collision defect fixed), MG-gate review page
+  [review.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/review.html).
+- Unified apparatus extended to all 10 🟡 sargas
+  ([data/apparatus/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/apparatus)):
+  phase2 layer shows MG gate status + `mg_comment`, gated notes are display-only; commentator-subtype
+  notes excluded from the lexical layer (no double display).
+
+### Changed
+
+- [scripts/merge_phase2_pilot.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/merge_phase2_pilot.py) +
+  [scripts/build_pilot_review_html.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_pilot_review_html.py)
+  take a batch-dir argument (default `phase2_pilot`; per-batch localStorage keys, dynamic title).
+- [scripts/sa_align.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/sa_align.py) `find_sibling()` —
+  sibling repos (`sanskrit-util`, `SamudraManthanam`) located by walking up ancestors, fixing
+  segmentation runs from nested git worktrees; pratīka precision 0.889 (981/1104) across 10 sargas.
+
 ## [1.4.0] - 2026-07-03
 
 ### Added
