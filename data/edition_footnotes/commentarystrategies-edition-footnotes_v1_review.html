@@ -81,7 +81,7 @@ function prog(){const n=D.items.length;const done=D.items.filter((c,i)=>dec[c.an
  const a=Object.values(dec).filter(x=>x.action==="accept").length,e=Object.values(dec).filter(x=>x.action==="edit").length,j=Object.values(dec).filter(x=>x.action==="reject").length;
  document.getElementById("prog").innerHTML=`<b>${done}/${n}</b> решено · ✅ ${a} · ✏️ ${e} · ❌ ${j}`;}
 function payload(){return JSON.stringify({source:"edition_footnotes",reviewed_at:new Date().toISOString(),decisions:dec},null,2);}
-function dl(){const b=new Blob([payload()],{type:"application/json"});const u=URL.createObjectURL(b);const a=document.createElement("a");a.href=u;a.download="decisions.json";a.click();URL.revokeObjectURL(u);}
+function dl(){const b=new Blob([payload()],{type:"application/json"});const u=URL.createObjectURL(b);const a=document.createElement("a");a.href=u;a.download="commentarystrategies-edition-footnotes_v1_decisions.json";a.click();URL.revokeObjectURL(u);}
 function cp(){navigator.clipboard.writeText(payload()).then(()=>alert("JSON скопирован"));}
 function rs(){if(confirm("Сбросить все решения?")){localStorage.removeItem(KEY);for(const k in dec)delete dec[k];render();}}
 render();

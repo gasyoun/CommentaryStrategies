@@ -151,7 +151,7 @@ function prog(){
 function payload(){return JSON.stringify({generated:D.generated,reviewer_decisions:dec,
   reviewed_at:new Date().toISOString()},null,2);}
 function dl(){const b=new Blob([payload()],{type:"application/json"});const u=URL.createObjectURL(b);
-  const a=document.createElement("a");a.href=u;a.download="decisions.json";a.click();URL.revokeObjectURL(u);}
+  const a=document.createElement("a");a.href=u;a.download="commentarystrategies-sundarakanda-commentaries_35-37_decisions.json";a.click();URL.revokeObjectURL(u);}
 function cp(){navigator.clipboard.writeText(payload()).then(()=>alert("JSON скопирован в буфер обмена"));}
 function reset(){if(confirm("Сбросить все решения?")){localStorage.removeItem(KEY);for(const k in dec)delete dec[k];render();}}
 render();
