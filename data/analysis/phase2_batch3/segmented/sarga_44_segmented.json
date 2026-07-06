@@ -1,0 +1,543 @@
+{
+  "_meta": {
+    "generated_by": "scripts/extract_yellow_sargas.py",
+    "purpose": "Phase-2 deterministic commentary segmentation (no LLM); input to Sonnet drafting",
+    "sargas": [
+      44
+    ],
+    "commentators": [
+      "tilaka",
+      "bhusana",
+      "siromani",
+      "tattvadipika"
+    ],
+    "verse_count": 25,
+    "verses_all_three": 4,
+    "ambiguous_markers": 4,
+    "corpus_aligned": 20,
+    "align_backend": "sanskrit_util",
+    "reassigned_moves": 1841,
+    "content_moves": 84,
+    "pratika_checkable": 4647,
+    "pratika_matched": 3983,
+    "alignment_precision": 0.857,
+    "anchor_verified": 4391,
+    "alignment_precision_verified": 0.945,
+    "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md"
+  },
+  "preambles": {
+    "44.pre": {
+      "tilaka": "अथ जम्बुमाल्यागमनं तद्वधश्च-- सन्दिष्ट इति ।। 5.44.1,2 ।।\n\nधनुर्विस्फारयाणो विस्फारयमाणः विस्फारो ज्याघोषः",
+      "bhusana": "सन्दिष्टो राक्षसेन्द्रेण प्रहस्तस्य सुतो बली ।\n\nजम्बुमाली महादंष्ट्रो निर्जगाम धनुर्धरः",
+      "siromani": "रावणप्रेषितप्रहस्तपुत्रवृत्तान्तमाह-- संदिष्ट इत्यादिभिः । राक्षसेन्द्रेण संदिष्टः रक्तमाल्याम्बरधरः रुचिराः सायका यस्मिन् तत् शक्रधनुःप्रख्यं धनुर्विस्फारयाणः प्रहस्तस्य सुतो धनुर्धरो ऽनेकधनुर्धरविशिष्टो जम्बुमाली निर्जगाम । श्लोकत्रयमेकान्वयि"
+    }
+  },
+  "verses": [
+    {
+      "verse_id": "5.44.1",
+      "sarga": 44,
+      "verse": "1",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "saṃdiṣṭo rākṣasendreṇa prahastasya suto balī । jambumālī mahādaṃṣṭro nirjagāma dhanurdharaḥ ॥1॥",
+      "leonov_ru": "По приказу владыки ракшасов могучий сын Прахасты Джамбумалин с огромными клыками, вышел, вооруженный луком.",
+      "commentary": {
+        "bhusana": "सन्दिष्टो राक्षसेन्द्रेण प्रहस्तस्य सुतो बली ।\n\nजम्बुमाली महादंष्ट्रो निर्जगाम धनुर्धरः\nसंदिष्ट इत्यादि"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sandisto raksasendrena prahastasya suto",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.2",
+      "sarga": 44,
+      "verse": "2",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "raktamālyāmbaradharaḥ sragvī rucirakuṇḍalaḥ । mahān vivṛttanayanaś caṇḍaḥ samaradurjayaḥ ॥2॥",
+      "leonov_ru": "В красных гирляндах и одеждах, с венком, с сияющими серьгами Огромный, с округленными глазами, свирепый, трудноодолимый в битве.",
+      "commentary": {
+        "bhusana": "रक्तमाल्याम्बरधरः स्रग्वी रुचिरगुण्डलः ।\n\nमहान् विवृत्तनयनश्चण्डः समरदुर्जयः\nविवृत्तनयनः मण्डलीकृतनयनः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "raktanalyanbaradharah sragvi ruciragundalah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.3",
+      "sarga": 44,
+      "verse": "3",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "dhanuḥ śakradhanuḥprakhyaṃ mahad rucirasāyakam । visphārayāṇo vegena vajrāśanisamasvanam ॥3॥",
+      "leonov_ru": "Лук, подобный луку Шакры, великий, со сверкающими стрелами Натягивающий с силой, звучащий подобно молнии Индры.",
+      "commentary": {
+        "bhusana": "धनुः शक्रधनुः प्रख्यं महद्रुचिरसायकम् ।\n\nविस्फारयानो वेगेन वज्राशनिसमस्वनम्\nरुचिरसायकं रुचिरसायकार्हम् । विस्फारयानः विस्फारयमाणः, ज्याकर्षणं कुर्वन्नित्यर्थः । वज्राशनिसमस्वनमिति विस्फारणक्रियाविशेषणम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "dhanuh sakradhanuh prakhyan nahadrucirasayakan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.4",
+      "sarga": 44,
+      "verse": "4",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasya visphāraghoṣeṇa dhanuṣo mahatā diśaḥ । pradiśaś ca nabhaś caiva sahasā samapūryata ॥4॥",
+      "leonov_ru": "Звуком натягивания того великого лука [все] стороны света, [Все] направления и небо внезапно наполнились.",
+      "commentary": {
+        "tilaka": "समपूर्यत दिगादिसमुदायापेक्षमेकवचनम्",
+        "bhusana": "तस्य विस्फारघोषेण धनुषो महता दिशः ।\n\nप्रदिशश्च नभश्चैव सहसा समपूर्यत",
+        "siromani": "तस्येति । तस्य जम्बुमालिनो धनुषो महता विस्तारघोषेण दिक्प्रभृतिः समपूर्यत । अन्यत्र वचनविपरिणामेनान्वयः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sanapuryata digadisanudayapeksanekavacanan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tasya vispharaghosena dhanuso nahata",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tasyeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.5",
+      "sarga": 44,
+      "verse": "5",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "rathena kharayuktena tam āgatam udīkṣya saḥ । hanūmān vegasaṃpanno jaharṣa ca nanāda ca ॥5॥",
+      "leonov_ru": "Видя его, едущего на колеснице, запряженной ослами, Хануман, наделенный мощью, обрадовался и закричал.",
+      "commentary": {
+        "tilaka": "जहर्ष स्वबलानुरूपशत्रुप्राप्त्या",
+        "bhusana": "रथेन खरयुक्तेन तमागतमुदीक्ष्य सः ।\n\nहनुमान् वेगसम्पन्नौ जहर्ष च ननाद च",
+        "siromani": "रथेनेति । खरयुक्तेन रथेनागतं तं जम्बुमालिनमुदीक्ष्य स हनूमान् जहर्ष ननाद च"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "jaharsa svabalanurupasatrupraptya",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "rathena kharayuktena tanagatanudiksya sah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "ratheneti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.6",
+      "sarga": 44,
+      "verse": "6",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "taṃ toraṇaviṭaṅkasthaṃ hanūmantaṃ mahākapim । jambumālī mahātejā vivyādha niśitaiḥ śaraiḥ ॥6॥",
+      "leonov_ru": "Стоящего на вершине арки ворот великую обезьяну Ханумана Джамбумалин, наделенный великой мощью, поразил острыми стрелами.",
+      "commentary": {
+        "tilaka": "तोरणविटङ्कस्तोरणस्तम्भयोरुपरितिर्यक्प्रतिष्ठापितकपोतपालिकादारु",
+        "bhusana": "तं तोरणविटङ्कस्थं हनुमन्तं महाकिपम् ।\n\nजम्बुमाली महाबाहुर्विव्याध निशितैः शरैः\nतोरणविटङ्कं तोरणस्य कपोतपालिका । \"कपोतपालिकायां तु विटङ्कं पुन्नपुंसकम्\" इत्यमरः । स्तम्भोपरि तिर्यङ्निहितदार्वित्यर्थः",
+        "siromani": "तमिति । तोरणविटङ्कस्थं तोरणविटङ्कः तोरणस्तम्भयोरुपरि तिर्यक्प्रतिष्ठापितकपोतपालिकाकाष्ठं तत्स्थं हनूमन्तं निशितैः शरैः जम्बुमाली विव्याध"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "toranavitankastoranastanbhayoruparitiryakpratisthapitakapotapalikadaru",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "tan toranavitankasthan hanunantan nahakipan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "taniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.7",
+      "sarga": 44,
+      "verse": "7",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ardhacandreṇa vadane śirasy ekena karṇinā । bāhvor vivyādha nārācair daśabhis tu kapīśvaram ॥7॥",
+      "leonov_ru": "[Одной] стрелой, подобной полумесяцу, в лицо, одной [стрелой] с колючками (с ушами) в голову, В обе руки поразил десятью стрелами владыку обезьян.",
+      "commentary": {
+        "tilaka": "कर्ण्यङ्कुशाकाराग्रशरविशेषः",
+        "bhusana": "अर्धचन्द्रेण वदने शिरस्येकेन कर्णिना ।\n\nबाह्वोर्विव्याध नाराचैर्दशभिस्तं कपीश्वरम्\nएकेनेत्येतदर्धचन्द्रस्यापि विशेषणम् । अर्धचन्द्राकाराग्रशरेणेत्यर्थः । कर्णिना कर्णवच्छरेण"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "karnyankusakaragrasaravisesah",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "ardhacandrena vadane sirasyekena karnina",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.8",
+      "sarga": 44,
+      "verse": "8",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasya tac chuśubhe tāmraṃ śareṇābhihataṃ mukham । śaradīvāmbujaṃ phullaṃ viddhaṃ bhāskararaśminā ॥8॥",
+      "leonov_ru": "Его (Ханумана) лицо, медно-красное, пораженное стрелой, стало подобным Раскрытому лотосу осенью, озаренному лучами солнца.",
+      "commentary": {
+        "bhusana": "तस्य तच्छुशुभे ताम्रं शरेणाभिहतं मुखम् ।\n\nशरदीवाम्बुजं फुल्लं विद्धं भास्कररश्मिना\nअम्बुजं रक्तपद्मम् । भास्कररश्मिना विद्धम् अत एव फुल्लमित्यर्थः",
+        "siromani": "तस्येति । शरेण अभिहतं तस्य हनूमतस्ताम्रं मुखं भास्कररश्मिना सूर्यकिरणेन विद्धं विकाशितं फुल्लमम्बुजमिव शुशुभे"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tasya tacchusubhe tanran sarenabhihatan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tasyeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.9",
+      "sarga": 44,
+      "verse": "9",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tattasya raktaṃ raktena rañjitaṅ śuśubhe mukham । yathākāśe mahāpadmaṃ siktaṃ kāñcanabindubhiḥ ॥9॥",
+      "leonov_ru": "Его лицо красное, красным окрашенное, стало подобным Великому лотосу в небе, окропленному золотыми каплями.",
+      "commentary": {
+        "tilaka": "अम्बुजं रक्ताम्बुजम्\nतत्तस्य रक्तम् । स्वत इति शेषः । रक्तेन क्षतजेन रञ्जितं मुखमाकाशे काञ्चनबिन्दुभी रक्ताशोकपुष्परसबिन्दुभिः सिक्तं महापद्मं महत्तरं रक्तपद्ममिवेत्यभूतोपमेयम् । अशोकः काञ्चनाह्वयः ।। 5.44.9,10 ।।\n\nताडयामास बिभेद",
+        "bhusana": "तत्तस्य रक्तं रक्तेन ऱञ्जितं शुशुभे मुखम् ।\n\nयथा ऽ ऽकाशे महापद्मं सिक्तं चन्दनबिन्दुभिः\nरक्तं स्वत एव रक्तम् । रक्तेन शोणितेन । महापद्मं रक्तोत्पलम् । चन्दनबिन्दुभिः रक्तचन्दनबिन्दुभिः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "anbujan raktanbujan tattasya raktan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tattasya raktan raktena ranjitan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.10",
+      "sarga": 44,
+      "verse": "10",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "cukopa bāṇābhihato rākṣasasya mahākapiḥ । tataḥ pārśve 'tivipulāṃ dadarśa mahatīṃ śilām ॥10॥",
+      "leonov_ru": "Разгневалась пораженная стрелою ракшаса великая обезьяна. Тогда рядом увидел [Хануман] огромный, очень широкий камень.",
+      "commentary": {
+        "bhusana": "ततः पार्श्वे ऽतिविपुला ददर्श महतीं शिलाम् ।\n\nतरसा तां समुत्पाट्य चिक्षेप बलवद्बली ।\n\nतां शरैर्दशभिः क्रुद्धस्ताडयामास राक्षसः\nचुकोप बाणाभिहतो राक्षसस्य महाकपिः",
+        "siromani": "चुकोपेति । राक्षसस्य बाणाभिहतो महाकपिः चुकोप पार्श्वे स्थितां अतिविपुलां विशालां महतीं गुर्वीं शिलां ददर्श च"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tatah parsve tivipula dadarsa",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "cukopeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.11",
+      "sarga": 44,
+      "verse": "11",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tarasā tāṃ samutpāṭya cikṣepa balavad balī । tāṃ śarair daśabhiḥ kruddhas tāḍayām āsa rākṣasaḥ ॥11॥",
+      "leonov_ru": "Быстро схватив его, с силой метнул могучий. Его (камень) десятью стрелами поразил разгневанный ракшас.",
+      "commentary": {
+        "siromani": "तरसेति । जववान् अतिवेगवान् स एव बलीति कर्मधारयः । तां शिलां समुत्पाट्य चिक्षेप क्रुद्धो राक्षसः तां हनुमत्प्रक्षेपितशिलां दशभिः शरैस्ताडयामास\nतदेव भङ्ग्यन्तरेणाह तदिति । रक्तेन रुधिरेण रञ्जितम् अत एव रक्तमत्यरुणं तस्य मुखं काञ्चनबिन्दुभिः सिक्तम् आकाशे महापद्ममिव शुशुभे"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "taraseti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.12",
+      "sarga": 44,
+      "verse": "12",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vipannaṃ karma tad dṛṣṭvā hanūmāṃś caṇḍavikramaḥ । sālaṃ vipulam utpāṭya bhrāmayām āsa vīryavān ॥12॥",
+      "leonov_ru": "Видя, что это дело не удалось, Хануман, наделенный свирепой (неистовой) мощью, Схватив огромное дерево сала, стал вращать [его], могучий.",
+      "commentary": {
+        "tilaka": "अथ जम्बुमाल्यागमनं तद्वधश्च-- सन्दिष्ट इति ।। 5.44.1,2 ।।\n\nधनुर्विस्फारयाणो विस्फारयमाणः विस्फारो ज्याघोषः",
+        "siromani": "तदाकारमाह-- अर्धेति । अर्धचन्द्रेण अर्धचन्द्राकारशरविशेषेण वदने एकेन कर्णिना अङ्कुशाकाराग्रभागकशरविशेषेण शिरसि दशभिर्नाराचैः शरविशेषैर्बाह्वोः कपीश्वरं विव्याध\nविपन्नमिति । चण्डविक्रमो हनूमान् विपन्नं विनष्टं कर्म स्वव्यापारं दृष्ट्वा विपुलं बृहत् शालमुत्पाट्यभ्रामयामास",
+        "bhusana": "विपन्नं कर्म तद् दृष्ट्वा हनुमांश्चण्डविक्रमः ।\n\nसालं विपुलमुत्पाट्य भ्रामयामास वीर्यवान्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "atha janbunalyagananan tadvadhasca",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tadakaranaha",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "vipannan karna tad drstva",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.13",
+      "sarga": 44,
+      "verse": "13",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "bhrāmayantaṃ kapiṃ dṛṣṭvā sālavṛkṣaṃ mahābalam । cikṣepa subahūn bāṇāñ jambumālī mahābalaḥ ॥13॥",
+      "leonov_ru": "Видя могучую обезьяну, вращающую деревом сала, Выпустил могучий Джамбумалин множество стрел.",
+      "commentary": {
+        "bhusana": "भ्रामयन्तं कपिं दृष्ट्वा सालवृक्षं महाबलम् ।\n\nचिक्षेप सुबहून् बाणान् जम्बुमाली महाबलः",
+        "siromani": "रावणप्रेषितप्रहस्तपुत्रवृत्तान्तमाह-- संदिष्ट इत्यादिभिः । राक्षसेन्द्रेण संदिष्टः रक्तमाल्याम्बरधरः रुचिराः सायका यस्मिन् तत् शक्रधनुःप्रख्यं धनुर्विस्फारयाणः प्रहस्तस्य सुतो धनुर्धरो ऽनेकधनुर्धरविशिष्टो जम्बुमाली निर्जगाम । श्लोकत्रयमेकान्वयि\nभ्रामयन्तमिति । शालवृक्षं भ्रामयंतं कपिं दृष्ट्वा सुबहून् बाणन् चिक्षेप"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "bhranayantan kapin drstva salavrksan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "ravanapresitaprahastaputravrttantanaha",
+          "matches_verse": false,
+          "content_containment": 0.8,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.14",
+      "sarga": 44,
+      "verse": "14",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sālaṃ caturbhir ciccheda vānaraṃ pañcabhir bhuje । urasy ekena bāṇena daśabhis tu stanāntare ॥14॥",
+      "leonov_ru": "Рассек он [дерево] сала четырьмя, обезьяну в руку [поразил] пятью, В грудь одной стрелой, десятью же – в середину груди (между сосками).",
+      "commentary": {
+        "bhusana": "सालं चतुर्भिश्चिच्छेद वानरं पञ्चभिर्भुजे ।\n\nउरस्येकेन बाणेन दशभिस्तु स्तनान्तरे",
+        "siromani": "तत्प्रकारमाह शालमिति । चतुर्भिः शालं चिच्छेद दशभिस्तु वानरं स्तनान्तरे चिच्छेद"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "salan caturbhisciccheda vanaran pancabhirbhuje",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tatprakaranaha salaniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.15",
+      "sarga": 44,
+      "verse": "15",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa śaraiḥ pūritatanuḥ krodhena mahatā vṛtaḥ । tameva parighaṃ gṛhya bhrāmayāmāsa vegitaḥ ॥15॥",
+      "leonov_ru": "Он, чье тело было утыкано (наполнено) стрелами, объятый великим гневом Схватив железную балку, стал размахивать [ею], стремительный (возбужденный).",
+      "commentary": {
+        "bhusana": "स शरैः पूरिततनुः क्रोधेन महता वृतः ।\n\nतमेव परिघं गृह्य भ्रामयामास वेगतः",
+        "siromani": "स इति । शरैः पूरिततनुः स हनूमान् तं पूर्वगृहीतं परिघं गृह्य गृहीत्वा भ्रामयामास"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sa saraih puritatanuh krodhena",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.545,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.16",
+      "sarga": 44,
+      "verse": "16",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ativego 'tivegena bhrāmayitvā balotkaṭaḥ । parighaṃ pātayām āsa jambumāler mahorasi ॥16॥",
+      "leonov_ru": "Очень быстрый очень быстро завращав [ее], могучий, Железную балку швырнул в огромную грудь Джамбумалина.",
+      "commentary": {
+        "bhusana": "अतिवेगो ऽतिवेगेन भ्रामयित्वा बलोत्कटः ।\n\nपरिघं पातयामास जम्बुमालेर्महोरसि",
+        "siromani": "अतीति । मदोत्कटो हनूमान् परिघं भ्रामयित्वा जम्बुमालेर्महोरसि पातयामास"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "ativego tivegena bhranayitva balotkatah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "atiti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.17",
+      "sarga": 44,
+      "verse": "17",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasya caiva śiro nāsti na bāhū jānunī na ca । na dhanur na ratho nāśvās tatrādṛśyanta neṣavaḥ ॥17॥",
+      "leonov_ru": "Нет [теперь] у него (Джамбумалина) ни головы, ни рук, ни коленей. Не видно там ни лука, ни колесницы, ни коней (ослов), ни стрел.",
+      "commentary": {
+        "bhusana": "तस्य चैव शिरो नास्ति न बाहू न च जानुनी ।\n\nन धनुर्न रथो नाश्वास्तत्रादृश्यन्त नेषवः",
+        "siromani": "तस्येति । तस्य हनुमता हतस्य जम्बुमालेः शिरः प्रभृतयो नादृश्यन्त विनष्टा इत्यर्थः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tasya caiva siro nasti",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tasyeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.18",
+      "sarga": 44,
+      "verse": "18",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa hatas tarasā tena jambumālī mahārathaḥ । papāta nihato bhūmau cūrṇitāṅga iva drumaḥ ॥18॥",
+      "leonov_ru": "Им (Хануманом) стремительно убитый великий воин Джамбумалин Упал замертво на землю, словно срубленное дерево.",
+      "commentary": {
+        "bhusana": "स हतस्तरसा तेन जम्बुमाली महाबलः ।\n\nपपात निहतो भूमौ चूर्णिताङ्गविभूषणः",
+        "siromani": "स इति । तेन हतो जम्बुमाली चूर्णिताङ्गो द्रुम इव भूमौ पपात"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sa hatastarasa tena janbunali",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.5,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.19",
+      "sarga": 44,
+      "verse": "19",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "jambumāliṃ sunihataṃ kiṃkarāṃś ca mahābalān । cukrodha rāvaṇaḥ śrutvā krodhasaṃraktalocanaḥ ॥19॥",
+      "leonov_ru": "О том, что убиты Джамбумалин и кинкары могучие, Услышав, Равана разгневался, и глаза его покраснели от гнева.",
+      "commentary": {
+        "bhusana": "जम्बुमालिं च निहतं किङ्करांश्च महाबलान् ।\n\nचुक्रोध रावणः श्रुत्वा कोपसंरक्तलोचनः",
+        "siromani": "जम्बुमालिमिति । रावणः जम्बुमालिप्रभृतिं सुनिहतं श्रुत्वा चुक्रोध"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "janbunalin ca nihatan kinkaransca",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "janbunaliniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.20",
+      "sarga": 44,
+      "verse": "20",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa roṣasaṃvartitatāmralocanaḥ । prahastaputre nihate mahābale । amātyaputrān ativīryavikramān । samādideśāśu niśācareśvaraḥ ॥20॥",
+      "leonov_ru": "Он, чьи покрасневшие глаза завращались от гнева, После того, как был убит могучий сын Прахасты, Сыновьям советников, наделенным мужеством и силой, Тут же отдал приказ [выступить против Ханумана] владыка ракшасов.",
+      "commentary": {
+        "bhusana": "स रोषसंवर्तितताम्रलोचनः प्रहस्तपुत्रे निहते महाबले ।\n\nअमात्यपुत्रानतिवीर्यविक्रमान् समादिदेशाशु निशाचरेश्वरः",
+        "siromani": "स इति । स रावणः प्रहस्तपुत्रे निहते सति अमात्यपुत्रान् समादिदेश"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sa rosasanvartitatanralocanah prahastaputre nihate",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.444,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.44.45",
+      "sarga": 44,
+      "verse": "45",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "तस्येति । नभस्समपूर्यत, दिशः प्रदिशश्च समपूर्यन्तेति विपरिणामेनानुषङ्गः"
+      }
+    },
+    {
+      "verse_id": "5.44.1013",
+      "sarga": 44,
+      "verse": "1013",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "चुकोपेत्यर्धम् । राक्षसस्य राक्षसविषये"
+      }
+    },
+    {
+      "verse_id": "5.44.1216",
+      "sarga": 44,
+      "verse": "1216",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "विपन्नं व्यर्थीकृतम्"
+      }
+    },
+    {
+      "verse_id": "5.44.1416",
+      "sarga": 44,
+      "verse": "1416",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "सालमिति । प़ञ्चभिर्भुजे इत्यादौ विव्याधेत्यध्याहारः"
+      }
+    },
+    {
+      "verse_id": "5.44.1720",
+      "sarga": 44,
+      "verse": "1720",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "नाश्वा रथेन खरयुक्तेनेत्युक्तेरश्वशब्देनात्र स्वरा उच्यन्ते",
+        "bhusana": "इत्यार्षे श्रीरामायणे वाल्मीकीये आदिकाव्ये श्रीमत्सुन्दकाण्डे चतुश्चत्वारिंशः सर्गः ।। 5.44।।\n\nतस्य चैवेति । नाश्वा इति अश्वशब्देनात्र खरा उच्यन्ते । \"रथेन खरयुक्तेन\" इति पूर्वमुक्तत्वात्"
+      }
+    }
+  ]
+}

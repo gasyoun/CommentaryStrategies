@@ -1,0 +1,861 @@
+{
+  "_meta": {
+    "generated_by": "scripts/extract_yellow_sargas.py",
+    "purpose": "Phase-2 deterministic commentary segmentation (no LLM); input to Sonnet drafting",
+    "sargas": [
+      33
+    ],
+    "commentators": [
+      "tilaka",
+      "bhusana",
+      "siromani",
+      "tattvadipika"
+    ],
+    "verse_count": 40,
+    "verses_all_three": 9,
+    "ambiguous_markers": 7,
+    "corpus_aligned": 31,
+    "align_backend": "sanskrit_util",
+    "reassigned_moves": 1841,
+    "content_moves": 84,
+    "pratika_checkable": 4647,
+    "pratika_matched": 3983,
+    "alignment_precision": 0.857,
+    "anchor_verified": 4391,
+    "alignment_precision_verified": 0.945,
+    "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md"
+  },
+  "preambles": {
+    "33.pre": {
+      "tilaka": "स इति । अत्यूर्ध्वशाखातः सीतासंमुखशाखायामवतीर्य द्रुमशब्दस्तदवयवपरः । अत एवाग्रे \"द्रुमाश्रितम्\" इति वक्ष्यति । कृपणो मातुः सीताया दुःखदर्शनाद्दीनः । दूरात्प्रणिपत्य तत उपसृत्य समीपमागत्य",
+      "bhusana": "सो ऽवतीर्य द्रुमात्तस्माद्विद्रुमप्रतिमाननः ।\n\nविनीतवेषः कृपणः प्रणिपत्योपसृत्य च",
+      "siromani": "जानकीवचनश्रवणानन्तरकालिकं हनुमद्वृत्तान्तमाह स इत्यादिभिः । विद्रुमप्रतिमं विद्रुमसदृशमाननं यस्य स हनूमान् शिरसि अञ्जलिमाधाय धृत्वा मधुरया गिरा अब्रवीत् । श्लोकद्वयमेकान्वयि ।। 5.33.1,2 ।।\n\nतद्वचनाकारमाह केत्यादिभिः । द्रुमस्य शाखामवलम्ब्य या त्वं तिष्ठसि सा त्वं का ऽसि"
+    }
+  },
+  "verses": [
+    {
+      "verse_id": "5.33.1",
+      "sarga": 33,
+      "verse": "1",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "so 'vatīrya drumāt tasmād vidrumapratimānanaḥ । vinītaveṣaḥ kṛpaṇaḥ praṇipatyopasṛtya ca ॥1॥",
+      "leonov_ru": "Он, спустившись с того дерева, лицом подобный кораллу, Скромно одетый, [выглядящий] ничтожным (униженным) склонившись и приблизившись,",
+      "commentary": {
+        "tilaka": "स इति । अत्यूर्ध्वशाखातः सीतासंमुखशाखायामवतीर्य द्रुमशब्दस्तदवयवपरः । अत एवाग्रे \"द्रुमाश्रितम्\" इति वक्ष्यति । कृपणो मातुः सीताया दुःखदर्शनाद्दीनः । दूरात्प्रणिपत्य तत उपसृत्य समीपमागत्य",
+        "bhusana": "सो ऽवतीर्य द्रुमात्तस्माद्विद्रुमप्रतिमाननः ।\n\nविनीतवेषः कृपणः प्रणिपत्योपसृत्य च"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "so vatirya drunattasnadvidrunapratinananah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.2",
+      "sarga": 33,
+      "verse": "2",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tām abravīn mahātejā hanūmān mārutātmajaḥ । śirasy añjalim ādhāya sītāṃ madhurayā girā ॥2॥",
+      "leonov_ru": "Сказал доблестный Хануман, сын Ветра, Сложенные почтительно ладони поднеся голове, Сите сладостными словами:",
+      "commentary": {
+        "bhusana": "तामब्रवीन्महातेजा हनूमान् मारुतात्मजः ।\n\nशिरस्यञ्जलिमाधाय सीतां मधुरया गिरा",
+        "tilaka": "अथ लिङ्गैः सीतेति निश्चये ऽपि तयैव साक्षद्वाचयितुमजानान इव पृच्छति-- का न्विति"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tanabravinnahateja hanunan narutatnajah",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "atha lingaih siteti niscaye",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.3",
+      "sarga": 33,
+      "verse": "3",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kā nu padmapalāśākṣi kliṣṭakauśeyavāsini । drumasya śākhām ālambya tiṣṭhasi tvam anindite ॥3॥",
+      "leonov_ru": "«Кто ты, чьи глаза подобны лепесткам лотоса, носящая истрепанную шелковую одежду, Ухватившись (оперевшись) за ветку дерева стоишь ты, безупречная?",
+      "commentary": {
+        "bhusana": "कानु पद्मपलाशाक्षि क्लिष्टकौशेयवासिनि ।\n\nद्रुमस्य शाखामालम्ब्य तिष्ठसि त्वमनिन्दिते",
+        "siromani": "जानकीवचनश्रवणानन्तरकालिकं हनुमद्वृत्तान्तमाह स इत्यादिभिः । विद्रुमप्रतिमं विद्रुमसदृशमाननं यस्य स हनूमान् शिरसि अञ्जलिमाधाय धृत्वा मधुरया गिरा अब्रवीत् । श्लोकद्वयमेकान्वयि ।। 5.33.1,2 ।।\n\nतद्वचनाकारमाह केत्यादिभिः । द्रुमस्य शाखामवलम्ब्य या त्वं तिष्ठसि सा त्वं का ऽसि"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "kanu padnapalasaksi klistakauseyavasini",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "janakivacanasravananantarakalikan hanunadvrttantanaha sa ityadibhih",
+          "matches_verse": false,
+          "content_containment": 0.4,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.4",
+      "sarga": 33,
+      "verse": "4",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kimarthaṃ tava netrābhyāṃ vāri sravati śokajam । puṇḍarīkapalāśābhyāṃ viprakīrṇam ivodakam ॥4॥",
+      "leonov_ru": "Почему из глаз твоих течет влага, рожденная скорбью, Словно вода, падающая с двух лотосовых лепестков?",
+      "commentary": {
+        "tilaka": "विप्रकीर्णं भिन्नघटादिव प्रसृतम्",
+        "bhusana": "किमर्थं तव नेत्राभ्यां वारि स्रवति शोकजम् ।\n\nपुण्डरीकपलाशाभ्यां विप्रकीर्णमिवोदकम्\nकिमर्थमिति । तव नेत्राभ्याम् आनन्दाश्रुयोगार्हाभ्याम् । किमर्थं कस्य कुलच्छेदाय । यद्वा किमर्थं किं चेतसि कृत्वा । पुण्डरीकेत्यादि । हन्तैतत्सौन्दर्यं प्रणयिना रामेण दृष्टमासीदिति भावः",
+        "siromani": "किमिति । विप्रकीर्णं स्फुटितघटादिभ्यो निःसृतमुदकमिव नेत्राभ्यां वारि किमर्थं स्रवति"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "viprakirnan bhinnaghatadiva prasrtan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "kinarthan tava netrabhyan vari",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "kiniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.5",
+      "sarga": 33,
+      "verse": "5",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "surāṇām asurāṇāṃ ca nāgagandharvarakṣasām । yakṣāṇāṃ kiṃnarāṇāṃ ca kā tvaṃ bhavasi śobhane ॥5॥",
+      "leonov_ru": "Кто ты, прекрасная – из богов, асуров, нагов, Гандхарвов, ракшасов, якшей, киннаров?",
+      "commentary": {
+        "tilaka": "का न्वित्यादिश्लोकद्वयोक्तार्थस्यैव प्रपञ्चः सुराणामिति । सुरादिजातिमध्ये त्वं का किंजातीया",
+        "bhusana": "सुराणामसुराणां वा नागगन्धर्वरक्षसाम् ।\n\nयक्षाणां किन्नराणां वा का त्वं भवसि शोभने",
+        "siromani": "सुराणामिति । हे शोभने सुरादीनां मध्ये त्वं का भवसि रुद्राणां मरुतां वा मध्ये का त्वं भवसि । ननु त्वमेव विचारयेत्यत आह मे मम तु वसूनामग्नीनां देवता त्वं प्रतिभासि । किंच सुराद्यन्यतमानां का काचित् देवता त्वं मे प्रतिभासि । श्लोकद्वयमेकान्वयि ।। 5.33.5,6 ।।\n\nतत्रापि दृढतरगमकाभावादाह किमित्यादिभिः । विबुधालयात् पतिता अत एव चन्द्रमसा हीना ज्योतिषां श्रेष्ठा रोहिणी किं त्वमसि\nकेति । हे अनिन्दितलोचने । अस्माल्लोकात् अमुं परोक्षं देशं गतं प्राप्तं त्वं प्राकृतभिन्नं जनं या त्वमनुशोचसि सा त्वं का ऽसि"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "ka nvityadislokadvayoktarthasyaiva prapancah surananiti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "surananasuranan va nagagandharvaraksasan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "surananiti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.6",
+      "sarga": 33,
+      "verse": "6",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kā tvaṃ bhavasi rudrāṇāṃ marutāṃ vā varānane । vasūnāṃ vā varārohe devatā pratibhāsi me ॥6॥",
+      "leonov_ru": "Кто ты, прекрасноликая – из рудр или марутов, Или из васу, дивнобедрая? Божеством ты кажешься мне.",
+      "commentary": {
+        "tilaka": "देवता प्रतिभासि दिव्यरूपलक्षणवत्त्वादिति भावः",
+        "bhusana": "का त्वं भवसि रुद्राणां मरुतां वा वरानने ।\n\nवसूनां वा वरारोहे देवता प्रतिभासे मे"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "devata pratibhasi divyarupalaksanavattvaditi bhavah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "ka tvan bhavasi rudranan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.7",
+      "sarga": 33,
+      "verse": "7",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kiṃ nu candramasā hīnā patitā vibudhālayāt । rohiṇī jyotiṣāṃ śreṣṭhā śreṣṭhā sarvaguṇādhikā ॥7॥",
+      "leonov_ru": "Быть может ты покинутая Месяцем, упавшая [на землю] из обители богов Рохини, лучшая из звезд, превосходящая всех своими добрыми качествами?",
+      "commentary": {
+        "tilaka": "कान्त्या रोहिणीत्वाशङ्का । श्रेष्ठैः सर्वैर्गुणैरधिका । एतदग्रे \"का त्वं भवसि कल्याणि त्वमनिन्दितलोचने\" इत्यर्धं प्रक्षिप्तम्",
+        "bhusana": "किन्नु चन्द्रमसा हीना पतिता विबुधालयात् ।\n\nरोहिणी ज्योतिषां श्रेष्ठा श्रेष्ठसर्वगुणान्विता"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "kantya rohinitvasanka",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "kinnu candranasa hina patita",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.8",
+      "sarga": 33,
+      "verse": "8",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kopād vā yadi vā mohād bhartāram asitekṣaṇe । vasiṣṭhaṃ kopayitvā tvaṃ vāsi kalyāṇy arundhatī ॥8॥",
+      "leonov_ru": "Или же, о черноглазая, из гнева или заблуждения на мужа Васиштху разгневавшись, ты прекрасная Арундхати?",
+      "commentary": {
+        "tilaka": "कोपाद्वेति । अत्रापि किं न्विति संबध्यते । कोपादिना वसिष्ठं कोपयित्वेहागता कल्याण्यरुन्धती किं नु वासि । पातिव्रत्यादरुन्धतीत्वशङ्का",
+        "bhusana": "का त्वं भवसि कल्याणि कत्वमनिन्दितलोचने\nका त्वमिति । हे कल्याणि । त्वं का । अनिन्दितलोचने । त्वं का भवसीति योजना\nकोपाद्वा यदि वा मोहाद्भर्तारमसितेक्षणे ।\n\nवसिष्ठं कोपयित्वा त्वं नासिकल्याण्यरुन्धती\nवसिष्ठं कोपयित्वेत्यत्रापि पतिता विबुधालयादित्यनुषज्यते । नासीत्यत्र काकुरनुसन्धेया",
+        "siromani": "कोपादिति । कोपात् यदि वा मोहात् भर्तारं वशिष्ठं कोपयित्वा गता त्वमरुन्धती वासि"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "kopadveti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "ka tvan bhavasi kalyani",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "kopaditi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.9",
+      "sarga": 33,
+      "verse": "9",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ko nu putraḥ pitā bhrāta bhartā vā te sumadhyame । asmāl lokād amuṃ lokaṃ gataṃ tvam anuśocasi ॥9॥",
+      "leonov_ru": "Кто же твой сын, отец, брат или муж, о стройная станом? По которому, ушедшему из этого мира в тот мир, ты горюешь?",
+      "commentary": {
+        "tilaka": "अथ शोककारणं पुत्रादिवियोगो ऽन्यद्वेति पृच्छति को नु पुत्र इति । अस्माल्लोकादमुं लोकं परलोकं गतं यं त्वमनुशोचसि स पुत्रादिः को न्विति योजना",
+        "bhusana": "को नु पुत्रः पिता भ्राता भर्ता वा ते सुमध्यमे ।\n\nअस्माल्लोकादमुं लोकं गतं त्वमनुशोचसि\nकोन्विति । अमुं लोकं गतम्, यमिति शेषः । परलोकं गतं यं पुत्रं पितरं भ्रातरं भर्तारं वा अनुशोचसि स क इत्यर्थः । गता त्वमित्यपि पाठः । अस्मात् स्वर्गादमुं मनुष्यलोकम् गता या त्वमनुशोचसि । तस्यास्ते को वा पुत्रादिरिति योजना"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "atha sokakaranan putradiviyogo nyadveti",
+          "matches_verse": false,
+          "content_containment": 0.25,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "ko nu putrah pita",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.10",
+      "sarga": 33,
+      "verse": "10",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "rodanād atiniḥśvāsād bhūmisaṃsparśanādapi । na tvāṃ dēvīm ahaṃ manyē rājñaḥ saṃjñāvadhāraṇāt ॥10॥",
+      "leonov_ru": "Поскольку ты плачешь и громко вздыхаешь, и стопы твои касаются земли, И по тому, что ты упоминаешь имя царя [Рамы], думаю я, что ты не богиня.",
+      "commentary": {
+        "bhusana": "रोदनादतिनिःश्वासाद्भूतमिसंस्पर्शनादपि ।\n\nन त्वां देवीमहं मन्ये राज्ञः संज्ञावधारणात्\nदेवीं देवस्त्रियम् । संज्ञावधारणात् संज्ञायते अनयेति संज्ञा लक्षणम् । राजलक्षणनिश्चयादित्यर्थः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "rodanadatinihsvasadbhutanisansparsanadapi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.11",
+      "sarga": 33,
+      "verse": "11",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vyañjanāni hi te yāni lakṣaṇāni ca lakṣaye । mahiṣī bhūmipālasya rājakanyā ca me matā ॥11॥",
+      "leonov_ru": "Ибо замечаю я у тебя явные знаки, По которым мне кажется, что ты жена царя и царская дочь.",
+      "commentary": {
+        "bhusana": "व्यञ्जनानि च ते यानि लक्षणामनि च लक्षये ।\n\nमहिषी भूमिपालस्य राजकन्या ऽसि मे मता",
+        "siromani": "क इति । ते पुत्रादिः कः । अर्धं पृथक्-- रोदनादिति । रोदनादिना त्वां देवीं देवस्त्रियं न मन्ये किंतु राज्ञो रामस्य संज्ञावधारणात् अत्यन्तं नामग्रहणात् यानि व्यञ्जनानि बोधकानि ते लक्षणानि असाधारणचिह्नानि लक्षये तेभ्यश्च भूमिपालस्य निखिलब्रह्माण्डाधिपतेः रामस्य महिषी राजकन्या जनकराजपुत्री च मे मम मता निश्चिता । श्लोकद्वयं संमिलितान्वयि ।। 5.33.10,11 ।।\n\nरावणेनेति । जनस्थानात् रावणेन प्रमथिता सीता यदि त्वमसि तदा पृच्छतो मे आचक्ष्व"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "vyanjanani ca te yani",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "ka",
+          "matches_verse": false,
+          "content_containment": 0.917,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.12",
+      "sarga": 33,
+      "verse": "12",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "rāvaṇena janasthānād balāt pramathitā yadi । sītā tvam asi bhadraṃ te tan mamācakṣva pṛcchataḥ ॥12॥",
+      "leonov_ru": "Раваной из Джанастханы силой похищенная если Сита ты, благо тебе, скажи о том мне, спрашивающему.",
+      "commentary": {
+        "tilaka": "राक्षसीनां निशाजागरतो निद्राजाड्यात्त्रिजटास्वप्नश्रवणजन्यभयोनात्मत्राणाय सीतैकशरणत्वेनोपेक्षणाच्च दैवानुग्रहाच्चाप्रत्यूहः सीताहनूमतोः संलाप इति बोध्यम्",
+        "bhusana": "सो ऽवतीर्येत्यादि । सः राक्षसीषु सुप्तासु लब्धावसर इत्यर्थः । कृपणः सीतादौस्थ्यदर्शनेन दीनः । जानन्नपि वैदेह्यैव वाचयितुमब्रवीत्\nरावणेन जनस्थानाद् बलादपहृता यदि ।\n\nसीता त्वमसि भद्रं ते तन्ममाचक्ष्व पृच्छतः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "raksasinan nisajagarato nidrajadyattrijatasvapnasravanajanyabhayonatnatranaya sitaikasaranatvenopeksanacca",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "so vatiryetyadi",
+          "matches_verse": false,
+          "content_containment": 0.538,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.13",
+      "sarga": 33,
+      "verse": "13",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "yathā hi tava vai dainyaṃ rūpaṃ cāpyatimānuṣam । tapasā cānvito veṣas tvaṃ rāmamahiṣī dhruvam ॥13॥",
+      "leonov_ru": "[Судя] по твоей печали, а также божественной красоте, И одеянию подвижницы ты, несомненно, жена Рамы.",
+      "commentary": {
+        "tilaka": "सीता रामं स्तौति दद्यादिति",
+        "siromani": "यथेति । यथा यथावत् तव दैन्यं वियोगदुःखजनितदीनता अतिमानुषं मानुषानतिक्रान्तम् अत्यद्भुतमित्यर्थः । तव रूपं च तपसा अन्वितस्तव वेषश्च अस्तीति शेषः अतस्त्वं राममहिष्येव"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sita ranan stauti dadyaditi",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "yatheti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.14",
+      "sarga": 33,
+      "verse": "14",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sā tasya vacanaṃ śrutvā rāmakīrtanaharṣitā । uvāca vākyaṃ vaidehī hanūmantaṃ drumāśritam ॥14॥",
+      "leonov_ru": "Услышав эти слова, обрадованная (взволнованная) упоминанием Рамы, Сказала Вайдехи Хануману, сидящему на дереве.",
+      "commentary": {
+        "bhusana": "यथा हि तव वै दैन्यं रूपं चाप्यतिमानुषम् ।\n\nतपसा चान्वितो वेषस्त्वं राममहिषी ध्रुवम्\nयथा यादृशम्\nसा तस्य वचनं श्रुत्वा रामकीर्तनहर्षिता ।\n\nउवाच वाक्यं वैदेही हनुमन्तं द्रुमाश्रितम्\nद्रुमाश्रितं द्रुममूलाश्रितम् । सो ऽवतीर्येति द्रुमावतरणस्य पूर्वमुक्तत्वात् । यद्वा पूर्वमग्रादवतरणमुक्तमिति ज्ञेयम्",
+        "siromani": "सेति । सा सीता तस्य हनूमतो वचनं श्रुत्वा रामकीर्तनहर्षिता सती द्रुमाश्रितं हनूमन्तमुवाच"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "yatha hi tava vai",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "seti",
+          "matches_verse": false,
+          "content_containment": 0.6,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.15",
+      "sarga": 33,
+      "verse": "15",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "pṛthivyāṃ rājasiṃhānāṃ mukhyasya viditātmanaḥ । snuṣā daśarathasyāhaṃ śatrusainyapratāpinaḥ ॥15॥",
+      "leonov_ru": "На земле царей львов прославленного предводителя Невестка Дашаратхи я, губителя вражеских ратей.",
+      "commentary": {
+        "siromani": "तद्वचनाकारमाह पृथिव्यामित्यादिभिः । विदितात्मनः प्रख्यातस्वरूपस्य राजसिंहानां मुख्यस्य दशरथस्य स्नुषा ऽहमस्मि",
+        "bhusana": "पृथिव्यां राजसिहानां मुख्यस्य विदितात्मनः ।\n\nस्नुषा दशरथस्याहं शत्रुसैन्यप्रतापिनः\nपृथिव्यामिति । शत्रुसैन्यप्रतापिनः शत्रुषु जीवत्सु न मे श्वशुरो जीवितवान् । स चेदिदानीं वर्तेत कथमहमेतादृशीमवस्थां प्राप्नुयामिति भावः"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "tadvacanakaranaha prthivyanityadibhih",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "prthivyan rajasihanan nukhyasya viditatnanah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.16",
+      "sarga": 33,
+      "verse": "16",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "duhitā janakasyāhaṃ vaidehasya mahātmanaḥ । sīteti nāmnā coktāhaṃ bhāryā rāmasya dhīmataḥ ॥16॥",
+      "leonov_ru": "Несчастная Джанаки я царя Видехи великого духом По имени Сита, жена мудрого Рамы.",
+      "commentary": {
+        "siromani": "दुहितेति । महात्मनो जनकस्याहं दुहिता सीतेति नाम्ना उक्ता जतैरभिहिता रामस्य भार्या ऽहमस्मीति शेषः",
+        "bhusana": "दुहिता जनकस्याहं वैदेहस्य महात्मनः ।\n\nसीता च नाम नाम्ना ऽहं भार्या रामस्य धीमतः\nदुहितेति । सीता च नामेत्यत्र नामशब्दः प्रासिद्धौ"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "duhiteti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "duhita janakasyahan vaidehasya nahatnanah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.17",
+      "sarga": 33,
+      "verse": "17",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "samā dvādaśa tatrāhaṃ rāghavasya niveśane । bhuñjānā mānuṣān bhogān sarvakāmasamṛddhinī ॥17॥",
+      "leonov_ru": "Двенадцать лет я в доме Рагхавы Наслаждалась человеческими радостями, все желания удовлетворяла.",
+      "commentary": {
+        "tilaka": "समादिशद्बहुप्रकारं रक्षणाय निवेदितवान्",
+        "siromani": "समा इति । मानुषान् मनुष्यसंबन्धिनो भोगान् पदार्थान् भुञ्जाना ऽहं राघवस्य निवेशने द्वादश समाः वर्षाणि अवसमिति शेषः",
+        "bhusana": "समा द्वादश तत्राहं राघवस्य निवेशने ।\n\nभुञ्जाना मानुषान् भोगान् सर्वकामसमृद्धिनी"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sanadisadbahuprakaran raksanaya niveditavan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "sana",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sana dvadasa tatrahan raghavasya",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.18",
+      "sarga": 33,
+      "verse": "18",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tatas trayodaśe varṣe rājye cekṣvākunandanam । abhiṣecayituṃ rājā sopādhyāyaḥ pracakrame ॥18॥",
+      "leonov_ru": "Затем, на тринадцатый год в [том] царстве потомка Икшваку Стал короновать царь вместе с наставниками.",
+      "commentary": {
+        "bhusana": "तत्र त्रयोदशे वर्षे राज्येनेक्ष्वाकुनन्दनम् ।\n\nअभिषेचयितुं राजा सोपाध्यायः प्रचक्रमे",
+        "siromani": "तत इति । ततः तत्र त्रयोदशे वर्षे इक्ष्वाकुनन्दनं राममभिषेचयितुं प्रचक्रमे"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tatra trayodase varse rajyeneksvakunandanan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.19",
+      "sarga": 33,
+      "verse": "19",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasmin sambhriyamāṇe tu rāghavasyābhiṣecane । kaikeyī nāma bhartāraṃ idaṃ vacanam abravīt ॥19॥",
+      "leonov_ru": "Когда же готовилась коронация Рагхавы [Жена Дашаратхи] по имени Кайкейи мужу [своему] сказала:",
+      "commentary": {
+        "tilaka": "इदानीं देवयोनित्वाशङ्कां स्वयमेव निवर्तयति रोदनादिति । अश्रुसंबन्धो भूस्पर्शश्च देवानां नास्तीति श्रुतम्, तद्वत्वात्त्वां देवीं न मन्ये । किं च राज्ञो रामस्य सञ्ज्ञावधारणान्नामग्रहणात्\nनाम प्रसिद्धमित्यर्थः",
+        "siromani": "तस्मिन्निति । राघवस्याभिषेचने संभ्रियमाणे सति कैकेयी भर्तारमब्रवीत्",
+        "bhusana": "तस्मिन् संभ्रियमाणे तु राघवस्याभिषेचने ।\n\nकैकेयी नाम भर्तारं देवी वचनमब्रवीत्\nतस्मिन्निति । संभ्रियमाणे संभारान् संपादयति सति । राघवस्याभिषेचने रामाभिषेकनिमित्तम् । देवी महिषी"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "idanin devayonitvasankan svayaneva nivartayati",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tasninniti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tasnin sanbhriyanane tu raghavasyabhisecane",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.20",
+      "sarga": 33,
+      "verse": "20",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na pibeyaṃ na khādeyaṃ pratyahaṃ mama bhojanam । eṣa me jīvitasyānto rāmo yady abhiṣicyate ॥20॥",
+      "leonov_ru": "«Не буду я пить, не буду я есть каждый день мою пищу, Это конец моей жизни, если Рама будет возведен на царство.",
+      "commentary": {
+        "tilaka": "प्रत्यहं यन्मम भोजनं भोज्यं वस्तु तन्न पिबेयं न खादेयमित्यन्वयः",
+        "bhusana": "न पिबेयं न खादेयं प्रत्यहं मम भोजनम् ।\n\nएष मे जीवितस्यान्तो रामो यद्यभिषिच्यते\nन पिबेयमिति । भुज्यत इति भोजनं खाद्यं पेयं च । रामो यद्यभिषिच्यते तदा मम संबन्धि यत् भोजनं तन्न पिबेयं न खादेयम् । एषः अयमभिषेकः जीवितस्यान्तश्च",
+        "siromani": "यदिति । यत् तत् औदार्यपोषकत्वेन अनुत्तमं वाक्यं त्वया उक्तं तत् वितर्थं व्यर्थं न कार्यमतो राघवो वनं गच्छतु"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "pratyahan yannana bhojanan bhojyan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "na pibeyan na khadeyan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "yaditi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.21",
+      "sarga": 33,
+      "verse": "21",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "yat tad uktaṃ tvayā vākyaṃ prītyā nṛpatisattama । tac cen na vitathaṃ kāryaṃ vanaṃ gacchatu rāghavaḥ ॥21॥",
+      "leonov_ru": "Те слова, которые были сказаны тобою, [моим] любимым, о лучший из царей, Если они неложны, пусть в лес уйдет Рагхава».",
+      "commentary": {
+        "siromani": "तद्वचनाकारमाह नेति । एष रामाभिषेकः मम जीवितस्यान्तः अतः यदि रामो ऽभिषिच्यते तर्हि प्रत्यह प्रतिदिनं यन्मम भोजनम् उदरे प्रापणीयं तत् न पिबेयं न खादेयम्",
+        "tilaka": "तद्देवासुरे युद्धे वरदानरूपम् ।। 5.33.21,22 ।।\n\nराज्यमयाचत । भरताय दातुमिति शेषः",
+        "bhusana": "यत्तदुक्तं त्वया वाक्यं प्रीत्या नृपतिसत्तम ।\n\nतच्चेन्न वितथं कार्यं वनं गच्छतु राघवः\nयत्तदिति । तत्पूर्वोक्तं यद्वरदानरूपं वाक्यं तन्न वितथं कार्यं चेत्तदा रामो वनं गच्छतु"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "tadvacanakaranaha neti",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "taddevasure yuddhe varadanarupan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "yattaduktan tvaya vakyan pritya",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.22",
+      "sarga": 33,
+      "verse": "22",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa rājā satyavāg devyā varadānam anusmaran । mumoha vacanaṃ śrutvā kaikeyyāḥ krūram apriyam ॥22॥",
+      "leonov_ru": "Царь правдоречивый, вспомнив о даре [обещанном] царице, Потерял сознание, услышав слова Кайкейи, жестокие и неприятные. У Гринцера (Рамаяна II, гл. 12, строфы 54-55): Вспомнив свое обещание Исполнить желание царицы, Царь со вздохом: «О Рама!» — Упал, как подрубленное дерево. Владыка людей лишился чувств И казался больным, безумным, Утратившим волю к жизни, Словно змея, потерявшая силу.",
+      "commentary": {
+        "siromani": "स इति । सत्यवाक् स राजा देव्याः वरदानमनुस्मरन् सन् क्रूरं वियोगबोधकत्वेन घातुकम् अत एव अप्रियं कैकेय्या वचनं श्रुत्वा मुमोह"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.583,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.23",
+      "sarga": 33,
+      "verse": "23",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tatas taṃ sthaviro rājā satyadharme vyavasthitaḥ । jyeṣṭhaṃ yaśasvinaṃ putraṃ rudan rājyam ayācata ॥23॥",
+      "leonov_ru": "Тогда старый царь, приверженный истинной дхарме, У старшего [своего] славного сына, плача, попросил царство [чтобы отдать его Бхарате].",
+      "commentary": {
+        "bhusana": "स राजा सत्यवाग् देव्या वरदानमनुस्मरन् ।\n\nमुमोह वचनं श्रुत्वा कैकेय्याः क्रूरमप्रियम्\nततस्तु स्थविरो राजा सत्ये धर्मे व्यवस्थितः ।\n\nज्येष्ठं यशस्विनं पुत्रं रुदन् राज्यमयाचत",
+        "siromani": "तत इति । ततस्तस्मात् हेतो रुदन् राजा ज्येष्ठं पुत्रं राज्यं वनराज्यमयाचत"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sa raja satyavag devya",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.24",
+      "sarga": 33,
+      "verse": "24",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa pitur vacanaṃ śrīmān abhiṣekāt paraṃ priyam । manasā pūrvam āsādya vācā pratigṛhītavān ॥24॥",
+      "leonov_ru": "Тот благой (величественный), которому слова отца были милее царства, Всей душой сразу приняв [их], послушался.",
+      "commentary": {
+        "tilaka": "अभिषेकादपि परमधिकं प्रियं यथा भवति तथा मनसा पूर्वमङ्गीकृत्य वाचाप्यङ्गीकृतवान्",
+        "siromani": "स इति । स रामः अभिषेकात् परमधिकं प्रियं पितुर्वचनं पूर्वं मनसा आसाद्य अङ्गीकृत्य वाचापि प्रतिगृहीतवान्",
+        "bhusana": "स पितुर्वचनं श्रीमानभिषेकात् परं प्रियम् ।\n\nमनसा पूर्वमासाद्य वाचा प्रतिगृहीतवान्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "abhisekadapi paranadhikan priyan yatha",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.583,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa piturvacanan srinanabhisekat paran",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.25",
+      "sarga": 33,
+      "verse": "25",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "dadyān na pratigṛhṇīyāt satyaṃ brūyan na cānṛtam । api jīvitahetor hi rāmaḥ satyaparākramaḥ ॥25॥",
+      "leonov_ru": "Должен давать, не отнимать, правду говорить, не ложь Даже ради собственной жизни Рама, истинно-доблестный.",
+      "commentary": {
+        "bhusana": "दद्यान्न प्रतिगृह्णीयान्न ब्रूयात् किंचिदप्रियम् ।\n\nअपि जीवितहेतोर्वा रामः सत्यपराक्रमः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "dadyanna pratigrhniyanna bruyat kincidapriyan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.26",
+      "sarga": 33,
+      "verse": "26",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa vihāyottarīyāṇi mahārhāṇi mahāyaśāḥ । visṛjya manasā rājyaṃ jananyai māṃ samādiśat ॥26॥",
+      "leonov_ru": "Он, верхние одежды многоценные многославный Сбросив и оставив душою царство, велел мне отправиться к [его] матери.",
+      "commentary": {
+        "bhusana": "स विहायोत्तरीयाणि महार्हाणि महायशाः ।\n\nविसृज्य मनसा राज्यं जनन्यै मां समादिशत्\nउत्तरीयाणि वासांसि । जनन्यै कौसल्यायै । मां समादिशत्, तन्निकटे त्वया स्थातव्यमित्युक्तवानित्यर्थः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sa vihayottariyani naharhani nahayasah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.27",
+      "sarga": 33,
+      "verse": "27",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sāhaṃ tasyāgratas tūrṇaṃ prasthitā vanacāriṇī । na hi me tena hīnāyā vāsaḥ svarge 'pi rocate ॥27॥",
+      "leonov_ru": "Я же вперед него быстро отправилась, [чтобы стать] лесной отшельницей, Ибо не мила мне без него жизнь даже на небесах.",
+      "commentary": {
+        "tilaka": "तस्याग्रतः प्रस्थिता वनचारिणी । अभूवमिति शेषः ।। 5.33.27,28 ।।\n\nभर्तुर्दशरथस्य पुरा अदृष्टमिति छेदः ।। 5.33.29,30 ।।\n\nजीवितानुग्रहो जीवितानुग्रहकरः कालः कृतः परिच्छिन्नः",
+        "siromani": "दद्यादिति । यो रामः यत् दद्यात् तत् जीवितहेतोरपि न प्रतिगृह्णीयात् स रामः उत्तरीयाणि राज्यं च मनसा विसृज्य त्यक्त्वा समादिशत् वनगमनबोधकवचनमकथयत् । श्लोकद्वयमेकान्वयि ।। 5.33.25,26 ।।\n\nसेति । तेन रामेण हीनाया यस्या मे स्वर्गे ऽपि वासो न रोचते सा ऽहं वनचारिणी सती तस्य रामस्य अग्रतः प्रस्थिता",
+        "bhusana": "सा ऽहं तस्याग्रतस्तूर्णं प्रस्थिता वनचारिणी ।\n\nन हि मे तेन हीनाया वासः स्वर्गे ऽपि रोचते\nसा ऽहमिति । अग्रतः प्रस्थाने हेतुमाहन हीति"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tasyagratah prasthita vanacarini",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "dadyaditi",
+          "matches_verse": false,
+          "content_containment": 0.643,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa han tasyagratasturnan prasthita",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.28",
+      "sarga": 33,
+      "verse": "28",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "prāg eva tu mahābhāgaḥ saumitrir mitranandanaḥ । pūrvajasyānuyātrārthe kuśacīrair alaṃkṛtaḥ ॥28॥",
+      "leonov_ru": "Но еще до того наделенный великой долей сын Сумитры (Лакшмана), радующий друзей, Украсился одеждой из лыка, чтобы следовать за старшим братом.",
+      "commentary": {
+        "siromani": "प्रागिति । सौमित्रिः पूर्वजस्य रामस्यानुयात्रार्थे प्रागेव कुशचीरैरलंकृतो ऽभवदिति शेषः",
+        "bhusana": "प्रागेव तु महाभागः सौमित्रिर्मित्रनन्दनः ।\n\nपूर्वजस्यानुयात्रार्थे द्रुमचीररैलङ्कृतः\nप्रागेवेति । प्रागेव यद्यपि रामानन्तरमेव लक्ष्मणेन द्रुमचीरादिस्वीकारः तथापि तस्य त्वरातिशयव्यञ्जनाय तथोक्तिः । महाभागः \"अहं सर्वं करिष्यामि\" इति प्रतिज्ञानुसारेण सर्वविधकैङ्कर्यकरणोचिताभिषेकविघ्नहेतुभाग्यसम्पन्नः । सौमित्रिः 'सृष्टस्त्वं वनवासाय' इत्युक्तवत्याः गर्भे सञ्जातः । मित्रनन्दनः स लक्ष्मणः सर्वविधकैङ्कर्यकर्तेत्यनुकूलैरभिनन्दनीयः । पूर्वजस्येत्यादि । रामकैङ्कर्यानुरूपत्वेन द्रुमचीरादीनामलङ्करणत्वमित्यर्थः"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "pragiti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "prageva tu nahabhagah saunitrirnitranandanah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.29",
+      "sarga": 33,
+      "verse": "29",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "te vayaṃ bhartur ādeśaṃ bahumānya dṛḍhavratāḥ । praviṣṭāḥ sma purādṛṣṭaṃ vanaṃ gambhīradarśanam ॥29॥",
+      "leonov_ru": "Мы, чтя приказ [нашего] повелителя, верные обету, Вошли в непроходимый лес, который прежде нам не доводилось видеть.",
+      "commentary": {
+        "siromani": "ते इति । भर्तुः पालयितुर्दशरथस्य आदेशमाज्ञां बहुमान्य अत्यन्तं सत्कृत्य पुरा पूर्वमदृष्टं वनं वयं प्रविष्टाः स्म",
+        "bhusana": "त वयं भर्तुरादेशं बहुमान्य दृढव्रताः ।\n\nप्रविष्टाः स्म पुरा ऽदृष्टं वन गम्भीरदर्शनम्"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "te",
+          "matches_verse": false,
+          "content_containment": 0.545,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "ta vayan bharturadesan bahunanya",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.30",
+      "sarga": 33,
+      "verse": "30",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vasato daṇḍakāraṇye tasyāham amitaujasaḥ । rakṣasāpahṛtā bhāryā rāvaṇena durātmanā ॥30॥",
+      "leonov_ru": "Того живущего в лесу Дандака, наделенного безмерной мощью я Похищенная ракшасом, злобным душою Раваной, жена.",
+      "commentary": {
+        "bhusana": "वसतो दण्डकारण्ये तस्याहममितौजसः ।\n\nरक्षसा ऽपहृता भार्या रावणेन दुरात्मना",
+        "siromani": "वसत इति । दण्डकारण्ये वसतः तस्य रामस्य भार्या ऽहं रक्षसा ऽपहृता"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "vasato dandakaranye tasyahananitaujasah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "vasata",
+          "matches_verse": false,
+          "content_containment": 0.25,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.31",
+      "sarga": 33,
+      "verse": "31",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "dvau māsau tena me kālo jīvitānugrahaḥ kṛtaḥ । ūrdhvaṃ dvābhyāṃ tu māsābhyāṃ tatas tyakṣyāmi jīvitam ॥31॥",
+      "leonov_ru": "Дано им мне время два месяца жизни, После того, как эти два месяца истекут, тогда расстанусь я с жизнью.",
+      "commentary": {
+        "siromani": "द्वाविति । [द्वाभ्यां मासाभ्यामूर्ध्वं ते जीवितं त्यक्ष्यामि त्याजयिष्यामीति वदतेति शेषः? ] तेन रक्षसा द्वौ मासौ मे जीवितानुग्रहः जीवनावधिरित्यर्थः कृतः । किंच द्वौ मासौ जीवितानुग्रहः कृतः अतः ततः ताभ्यां मासाभ्यामूर्ध्वं जीवितं त्यक्ष्यामि रामानागमने त्यक्तुमिच्छामि"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "dvaviti",
+          "matches_verse": false,
+          "content_containment": 0.643,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.33.32",
+      "sarga": 33,
+      "verse": "32",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "द्वौ मासौ तेन मे कालो जीवितानुग्रहः कृतः ।\n\nऊर्ध्वं द्वाभ्यां तु मासाभ्यां ततस्त्यक्ष्यामि जीवितम्\nइत्यार्षे श्रीरामायणे वाल्मीकीये आदिकाव्ये श्रामत्सुन्दरकाण्डे त्रयस्त्रिंशः सर्गः ।। 5.33।।\n\nद्वौ मासौ द्विमासरूपः कालः । मे जीवितानुग्रहः जीवितानुग्राहकः, जीवितधारणानुकूलः कृतः । त्यक्ष्यामि, स्वयमेवेति भावः"
+      }
+    },
+    {
+      "verse_id": "5.33.57",
+      "sarga": 33,
+      "verse": "57",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "सुराणामित्यादिषु निर्धारणे षष्ठी । का त्वं कस्य सम्बन्धिनीत्यर्थः"
+      }
+    },
+    {
+      "verse_id": "5.33.1213",
+      "sarga": 33,
+      "verse": "1213",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "व्यञ्जनामि स्तनजघनादीनि । \"व्यञ्जनं तेमने चिह्ने श्मश्रुण्यवयवे ऽपि च\" इति विश्वः । लक्षणानि शुभावर्तरेखादिसामुद्रिकलक्षणानि"
+      }
+    },
+    {
+      "verse_id": "5.33.1315",
+      "sarga": 33,
+      "verse": "1315",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "भूमिपालस्य रामस्य महिषीति मे मतिः, यतो व्यञ्जनानि राममहिषीत्वप्रकाशकानि ते सामुद्रिकालक्षणानि च लक्षये, अतो रावणेन जनस्थानाद्बलात्प्रमथिता प्रमथ्य हृता यदि सीता त्वं तदा पृच्छतो ममाचक्ष्व तत्त्वं ब्रूहि । ते भद्रमस्तु ।। 5.33.11,12 ।।\n\nअनुक्ते ऽपि त्वत्स्वरूपनिश्चयो ममास्तीति प्रौढ्याह यथा हीति । अपरोक्षानुभवविषयामित्यर्थः"
+      }
+    },
+    {
+      "verse_id": "5.33.1618",
+      "sarga": 33,
+      "verse": "1618",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "अहं नाम्ना सीता इति"
+      }
+    },
+    {
+      "verse_id": "5.33.1819",
+      "sarga": 33,
+      "verse": "1819",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "समा इति । अहम् एतादृशावस्था अहम् । तत्र मम श्वशुरगृहे । द्वादशसमाः द्वादशसंवत्सरान् । अत्यन्तसंयोगे द्वितीया । तेनाविच्छोन्नैकरूपभोगभोक्तृत्वमुच्यते । मानुषानित्यनेन नात्मनो मानुषत्वं स्वाभाविकमिति सूच्यते । भोगान् भुञ्जाना अनुभवन्ती । काम्यन्त इति कामाः भोगोपकरणानि स्रक्चन्दनादीनि । तेषां समृद्धं समृद्धिः । भावे निष्ठा । तदस्या अस्तीति सर्वकामसमृद्विनी । \"अत इनिठनौ\" इति इनिप्रत्ययः । अभवमिति शेषः"
+      }
+    },
+    {
+      "verse_id": "5.33.2324",
+      "sarga": 33,
+      "verse": "2324",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "स इति । देव्यास्संबन्धि स्वकृतं वरदानं स्मृत्वा कैकेय्याः वचनं श्रुत्वा मुमोह"
+      }
+    },
+    {
+      "verse_id": "5.33.2526",
+      "sarga": 33,
+      "verse": "2526",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "अभिषेकात्परं प्रियं पितुर्वचनं विवासयाचनारूपम्, पूर्वं मनसा आसाद्य अङ्गीकृत्य अथ वाचा प्रतिगृहीतवान्, मनः पूर्वकमङ्गीकृतवानित्यर्थः"
+      }
+    },
+    {
+      "verse_id": "5.33.3031",
+      "sarga": 33,
+      "verse": "3031",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "ते वयमिति । पुरा ऽदृष्टं पूर्वमदृष्टम् । अत्र गम्भीरशब्देन दुष्प्रवेशत्वम्, दर्शनशब्देन स्वरूपमप्युच्यते"
+      }
+    }
+  ]
+}

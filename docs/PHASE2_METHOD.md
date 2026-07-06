@@ -1,6 +1,6 @@
 # Phase-2 method manual — Sundarakāṇḍa commentator-dialogue layer
 
-_Created: 01-07-2026 · Last updated: 04-07-2026_
+_Created: 01-07-2026 · Last updated: 07-07-2026_
 
 > **What this is:** the complete, reproducible procedure for generating the Type-Б/В
 > "commentator-dialogue" note layer for the Russian Sundarakāṇḍa — every step, *when* it runs, *how* to
@@ -83,11 +83,28 @@ resolved decisions, the input path, and an output schema; each writes exactly
 `data/analysis/phase2_pilot/sarga_NN_candidates.json` and returns a count summary. No agent runs git.
 
 ### 3.1 Style contract (the ЛП register — non-negotiable)
+
+> **Contrastive-first (H268 decision 3, M.G. 07-07-2026).** The volume's distinguishing feature is
+> Leonov's commentator-dialogue layer, so the agent's **preferred output form is the contrastive
+> note** — «в „Тилаке“ — X; в „Широмани“ — Y; перевод следует …» — emitted **wherever the ṭīkā
+> corpus shows ≥2 commentators diverging on the same verse**, with the reading the translation
+> actually took named explicitly («переводчик следует Тилаке»; «волевое решение переводчика», where
+> the translation goes against the ṭīkās — compare `leonov_ru` against the divergent readings).
+> A single-commentator gloss is the **fallback**, not the default: draft it only when one
+> commentator alone resolves a real translation choice, textual variant, ellipsis, or myth.
+> Cite in Leonov's own hierarchy: **Тилака** first (≈70 % of his citations), **Бхушана** as
+> counterpoint, **Широмани** for figurative readings, **Таттвадипика** for hard compounds
+> (available for sargas 1–6), «Амритакатака» only for especially disputed passages (not in corpus —
+> never invent it).
+
 - 1–3 sentences, затекстовое примечание. Terse. No essay, no Devanagari, no block quotes.
 - Russian scholarly voice — *distil* the commentator, do not translate his Sanskrit syntax.
 - **Name the commentator in-note** («по Тилаке», «Бхушана поясняет…») — decision [D-P2-2]; this is tier-2
   of model II. (Hard-rule #4 forbids naming them in the *article title* only — not in the apparatus.)
 - Short **IAST pratīka** lemma; keep IAST ≈12 % of the note (Grintser calibration) — decision [D-P2-3].
+  Under the ЛП calibration (H268 decision 2) the *merged* apparatus trends toward Leonov's own
+  register (mean ≈310 chars); the per-note ≈12 % IAST share stays, but do not artificially shorten
+  a contrastive note that needs its second clause.
 - Kazansky type per note: **Б** = textological (wording / meaning / ellipsis / variant); **В** =
   realia/historical-cultural (place, custom, myth, epithet). Realia → В, never Б.
 - **`why_proposed`** (required label): one clause stating *why this note earns a place* — what it gives
@@ -116,6 +133,40 @@ deduped only against the подстрочник): 9 of the 16 candidates landed 
 and several (e.g. 5.37.25 nāgarājasya, 5.35.82 Śambasādana, 5.36.17 upāya, 5.36.33 Śachī) are effective
 duplicates. The interactive review page now shows Leonov's own note per verse in red so the reviewer sees
 the overlap; when scaling, the drafting prompt must include the sarga's Leonov notes as dedup context.
+
+### 3.4 STEP 2b — LLM-as-judge scoring (H268 WS-C1; ACL-informed, added 07-07-2026)
+
+**When:** after drafting, before the review sheet is built. **Why:** the reject taxonomy showed
+~67 % of drafter rejects are "restates the crib" — the same failure mode slips *into* accepted
+candidates at some rate, and a heuristic filter can't measure faithfulness. The judge converts the
+adversarial filter into a scored rubric so the printed note set is *earned* (see
+[`docs/ACL_METHODS_ADOPTED.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ACL_METHODS_ADOPTED.md)
+for the literature each design choice comes from).
+
+Design (each choice bias-motivated):
+- **Pointwise, rubric-anchored, reason-then-score** (G-Eval pattern) — no pairwise comparisons, so
+  no position bias; anchors below, not a bare 1–10 scale.
+- **Refute-framed**: the judge's default is *park*; a note must earn `keep`. Counters judge
+  leniency/verbosity bias and matches the layer's adversarial-filter tradition.
+- **Drafter ≠ judge**: a fresh agent instance judges, never the drafting instance
+  (self-preference mitigation).
+- **The judge ranks; the human gates.** Verdicts partition candidates for the review sheet —
+  nothing loses `review_required` and nothing is deleted; `park` verdicts stay visible with scores.
+
+Rubric (0–2 each; **gates, not a sum** — one axis can veto):
+
+| Axis | 2 | 1 | 0 | Gate |
+|---|---|---|---|---|
+| `faithfulness` | every claim entailed by the cited commentary text | minor overreach in wording | misstates / invents | **must be 2** — else `reject` |
+| `non_triviality` | adds a fact/reading absent from подстрочник + tier-1 + Phase-1 | partially new | restates the crib | ≥1 — else `park` |
+| `contrastive_value` | ≥2 commentators contrasted OR translation-choice resolved | single commentator, real exegetical gain | ornament | 0 ⇒ `park` unless non_triviality = 2 |
+| `register` | ЛП contract (§3.1) holds | fixable wording (→ `edit`) | essay/anachronism | ≥1 — else `edit` |
+| `anchoring` | segmenter verified (pratīka ∪ content anchor) | unverified, plausible | contradicted (`suggest_verse` elsewhere) | 0 ⇒ `flag_anchor` |
+
+Verdicts: `keep` (all gates pass) · `edit` (register-only issues) · `park` (fails
+non-triviality/contrastive gates) · `reject` (faithfulness < 2) · `flag_anchor` (anchoring
+contradicted — never print without a human fixing the verse). Judge output per note:
+`judge: {scores, verdict, reason}` merged into the candidates JSON; the review page shows it.
 
 ## 4. STEP 3 — merge + reject taxonomy
 
@@ -260,6 +311,20 @@ southern-only into `structural_absence` (307, best Jaccard vs any critical verse
 safe footnote) vs `reworded` (435, 0.25–0.5 → variant reading, NOT an absence)** — the real accuracy win
 for footnotes (item 4): only the 307 + whole extra sargas are truly "absent in critical."
 
+**Item 3 completion — content anchor (H268 WS-C2, 07-07-2026).** The residual ~10 % (pronominal
+pratīkas + paraphrasing ṭīkās) is now covered by a second, independent signal: **containment** —
+the fraction of the verse's canon tokens echoed anywhere in the chunk (`sa_align.containment`;
+asymmetric on purpose, so chunk length doesn't dilute the score, unlike Jaccard). Where the leading
+pratīka matches no verse, the chunk is (a) *moved* to a ±3-window verse only on a clear margin
+(containment ≥ 0.20 and ≥ 0.08 over the current verse), and (b) *verified* in place when the
+current verse is the local containment argmax at ≥ 0.15. Two precisions are now reported honestly:
+`alignment_precision` (strict pratīka-only, old definition — **0.888** on the 10 gated sargas,
+unchanged) and `alignment_precision_verified` (pratīka ∪ content — **0.964** on the 10 gated
+sargas, **0.945** across the 58 batch-3 sargas), clearing the H268 >0.90 print-safety target.
+Chunks failing both signals keep `suggest_verse` and are surfaced to the judge (§3.4 `flag_anchor`)
+and the review page; nothing unverified prints without a human. Tattvadīpikā (sargas 1–6) was also
+added as a fourth segmented commentator.
+
 **Item 1b (segmenter reassignment) 2026-07-01 — done.** `extract_yellow_sargas.py` now re-anchors each
 commentary chunk to the verse its leading pratīka actually matches (nearest in the sarga), fixing the
 systematic marker offset instead of only flagging it. **179 chunks reassigned; pratīka alignment precision
@@ -284,5 +349,13 @@ verse word. Reassignment is heuristic; all downstream notes stay `review_require
   41 rejects bucketed `duplicate_of_tier1`), pratīka precision 0.889 across all 10 yellow sargas.
   Review page: [`data/analysis/phase2_batch2/review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/review.html).
   Drafting Sonnet 5 (`claude-sonnet-5`), orchestration Fable 5 (`claude-fable-5`).
+- 2026-07-07 — **H268 (ЛП camera-ready reset): §3.1 rewritten contrastive-first** (decision 3 —
+  preferred output = «в „Тилаке“ X / в „Широмани“ Y / перевод следует …», single-commentator gloss
+  demoted to fallback; Leonov citation hierarchy made explicit; Tattvadīpikā added for sargas 1–6);
+  **§3.4 LLM-as-judge rubric added** (WS-C1 — pointwise refute-framed scoring, drafter ≠ judge,
+  faithfulness veto); **§11 item 3 closed by the content anchor** (WS-C2 — verified precision
+  0.964/0.945, strict pratīka metric kept unchanged at 0.888). Batch-3 = the remaining 58 sargas,
+  drafted per-sarga off `data/analysis/phase2_batch3/segmented/`. Orchestration Fable 5
+  (`claude-fable-5`), drafting/judging Sonnet 5 (`claude-sonnet-5`).
 
 _Dr. Mārcis Gasūns_

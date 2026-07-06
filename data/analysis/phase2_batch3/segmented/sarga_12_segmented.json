@@ -1,0 +1,623 @@
+{
+  "_meta": {
+    "generated_by": "scripts/extract_yellow_sargas.py",
+    "purpose": "Phase-2 deterministic commentary segmentation (no LLM); input to Sonnet drafting",
+    "sargas": [
+      12
+    ],
+    "commentators": [
+      "tilaka",
+      "bhusana",
+      "siromani",
+      "tattvadipika"
+    ],
+    "verse_count": 29,
+    "verses_all_three": 4,
+    "ambiguous_markers": 4,
+    "corpus_aligned": 25,
+    "align_backend": "sanskrit_util",
+    "reassigned_moves": 1841,
+    "content_moves": 84,
+    "pratika_checkable": 4647,
+    "pratika_matched": 3983,
+    "alignment_precision": 0.857,
+    "anchor_verified": 4391,
+    "alignment_precision_verified": 0.945,
+    "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md"
+  },
+  "preambles": {
+    "12.pre": {
+      "tilaka": "अथ बहुदुःखचिन्ताकुलो ऽन्विष्टमेव पुनः पुनरन्वेषयति स्मेत्याह स तस्येति । तस्य भवनस्य रावणभवनस्य निशागृहा रात्रिनिवासगृहास्तान्विचेतुं जगाम",
+      "bhusana": "स तस्य मध्ये भवनस्य मारुतिर्लतागृहांश्चित्रगृहान्निशागृहान् ।\n\nजगाम सीतां प्रति दर्शनोत्सुको न चैव तां पश्यति चारुदर्शनाम्",
+      "siromani": "अन्वेषणान्तरमुपक्रमते स इति । तस्य रावणस्य भवनस्य मध्ये संस्थितो हनूमान् सीतां प्रति दर्शनोत्सुकः सन् लतागृहान् लताच्छादितवेश्मानि चित्रगृहान् अनेकविधचित्रलिखितभवनानि निशागृहान् रात्रिनिवासयोग्यभवनानि च जगाम । सीतां च नैव पश्यति"
+    }
+  },
+  "verses": [
+    {
+      "verse_id": "5.12.1",
+      "sarga": 12,
+      "verse": "1",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa tasya madhye bhavanasya saṃsthito । latāgṛhāṃś citragṛhān niśāgṛhān । jagāma sītāṃ pratidarśanotsuko । na caiva tāṃ paśyati cārudarśanāṃ ॥1॥",
+      "leonov_ru": "Он (Хануман), находясь среди того дворца Беседки, картинные залы, спальни Обошел, горя желанием увидеть Ситу Но, не нашел ее, прекрасную обликом.",
+      "commentary": {
+        "bhusana": "स तस्य मध्ये भवनस्य मारुतिर्लतागृहांश्चित्रगृहान्निशागृहान् ।\n\nजगाम सीतां प्रति दर्शनोत्सुको न चैव तां पश्यति चारुदर्शनाम्\nस तस्येत्यादि । निशागृहान् । रात्रिनिवासयोग्यगृहान् । \"गृहाः पुंसि च भूम्न्येव\" इति पुँल्लिङ्गत्वम् । पश्यति अपश्यत्",
+        "siromani": "अन्वेषणान्तरमुपक्रमते स इति । तस्य रावणस्य भवनस्य मध्ये संस्थितो हनूमान् सीतां प्रति दर्शनोत्सुकः सन् लतागृहान् लताच्छादितवेश्मानि चित्रगृहान् अनेकविधचित्रलिखितभवनानि निशागृहान् रात्रिनिवासयोग्यभवनानि च जगाम । सीतां च नैव पश्यति\nसमिति । ततः तस्मिन् समये रघुनन्दनस्य प्रियाम् अपश्यन् महाकपिः संचिन्तयामास । चिन्ताकारमाह यथा यथावद्विचिन्वतो मम दर्शनं दृष्टिपथं मैथिली न एति अतः ध्रुवं नित्यमपि स्वजीवनं न ध्रियते । एतेन सीतायाः अघटितघटनापटीयस्त्वं व्यञ्जितम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sa tasya nadhye bhavanasya",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "anvesanantaranupakranate sa",
+          "matches_verse": false,
+          "content_containment": 0.688,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.2",
+      "sarga": 12,
+      "verse": "2",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa cintayām āsa tato mahākapiḥ । priyām apaśyan raghunandanasya tām । dhruvaṃ na sītā dhriyate yathā na me । vicinvato darśanam eti maithilī ॥2॥",
+      "leonov_ru": "Подумала тогда та великая обезьяна, Не видя возлюбленную потомка Рагху: «Несомненно, нет в живых Ситы, раз мне, Который разыскивает [ее], не попалась на глаза Майтхили.",
+      "commentary": {
+        "tilaka": "न ध्रियते न जीवति स्म । \"ध्रुवं नु सीता म्रियते\" इति क्वचित्पाठः । तत्र हेतुः यथेति । यत इत्यर्थः",
+        "bhusana": "स चिन्तयामास ततो महाकपिः प्रियामपश्यन् रघुनन्दनस्य ताम् ।\n\nध्रुवं हि सीता म्रियते यथा न मे विचिन्वतो दर्शनमेति मैथिला\nस इति । यथा यस्मात् कारणात् । विचिन्वतो मे मैथिली दर्शनं नैति तस्मात् म्रियते ममार । यद्वा अथवा नेति वाक्यं पठनीयम् । तदा अपश्यन्निति हेतुगर्भम् । अदर्शनात् मृता वा अथवा दर्शनं नैति । कुत्रचित् गहने प्रदेशे स्थिता वेत्यर्थः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "na dhriyate na jivati",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa cintayanasa tato nahakapih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.3",
+      "sarga": 12,
+      "verse": "3",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sā rākṣasānāṃ pravareṇa jānakī । svaśīlasaṃrakṣaṇatatparā satī । anena nūnaṃ prati duṣṭakarmaṇā । hatā bhaved āryapathe pare sthitā ॥3॥",
+      "leonov_ru": "Джанаки, будучи сосредоточена на сохранении добродетели, Стоящая на наилучшем пути благородных, Верно, убита предводителем ракшасов, Творящим дурные дела.",
+      "commentary": {
+        "tilaka": "स्वशीलं पातिव्रत्यम् । प्रतिदुष्टकर्मणा प्रति इष्टं दुष्टं कर्म यस्य तेन सकलसज्जनानर्थकारिणेत्यर्थः । आर्यपथे आर्याणां पतिव्रतानां मार्गे",
+        "bhusana": "सा राक्षसानां प्रवरेण जानकी स्वशीलसंरक्षणतत्परा सती ।\n\nअनेन नूनं प्रतिदुष्टकर्मणा हता भवेदार्यपथे परे स्थिता\nसेति । प्रतिदुष्टकर्मणा अतिदुष्टकर्मणा । वीप्सायां प्रतिः । \"प्रति प्रतिनिधौ वीप्सालक्षणादौ\" इत्यमरः । परे उत्कृष्टे । आर्यपथे सन्मार्गे"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "svasilan pativratyan",
+          "matches_verse": false,
+          "content_containment": 0.133
+        },
+        "bhusana": {
+          "pratika_iast": "sa raksasanan pravarena janaki",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.4",
+      "sarga": 12,
+      "verse": "4",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "virūparūpā vikṛtā vivarcaso । mahānanā dīrghavirūpadarśanāḥ । samīkṣya tā rākṣasarājayoṣito । bhayād vinaṣṭā janakeśvarātmajā ॥4॥",
+      "leonov_ru": "[Или] увидев тех женщин царя ракшасов, Отвратительных, уродливых, темных, С большими пастями, высоких и мерзких видом (или «с длинными уродливыми глазами), От страха умерла дочь Джанаки.",
+      "commentary": {
+        "bhusana": "विरूपरूपा विकृता विवर्चसो महानना दीर्घविरूपदर्शनाः ।\n\nसमीक्ष्य सा राक्षसराजयोषितो भयाद्विनष्टा जनकेश्वरात्मजा\nविरूपाणि न्यूनाधिकानि रूपाणि शरीरावयवाः यासां ताः । विकृताः विकृतवेषाः । विवर्चसो निस्तेजस्काः । महाननाः अतिविशालमुखाः । दीर्घाणि विरूपाणि दर्शनानि चक्षूंषि यासां ता । राक्षसराजयोषितः रावणस्याज्ञाकारिणीः स्त्रियः",
+        "siromani": "चिन्तान्तरमाह विरूपेति । विरूपाणि छिन्नैकनासिकादिमन्ति शरीराणि यासामत एव विकृताः विविधविकारविशिष्टाः अत एव दीर्घाः बृहच्छरीराः विरूपाणां राक्षसानां दर्शनं निरन्तरं दृष्टिर्यासु ता एव ता इति कर्मधारयः । अत एव विवर्चसः भयंकरवर्चोविशिष्टा राक्षसराजयोषितः ताः राक्षसीः समीक्ष्यावलोक्य जनकेश्वरात्मजा भयाद्विनष्टा"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "viruparupa vikrta vivarcaso nahanana",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "cintantaranaha virupeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.5",
+      "sarga": 12,
+      "verse": "5",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sītām adṛṣṭvā hy anavāpya pauruṣaṃ । vihṛtya kālaṃ saha vānaraiś ciram । na me 'sti sugrīvasamīpagā gatiḥ । sutīkṣṇadaṇḍo balavāṃś ca vānaraḥ ॥5॥",
+      "leonov_ru": "Не увидев Ситу и не получив (плода моего) мужества Потратив вместе с (другими) обезьянами много времени, Я не могу вернуться к Сугриве, Обезьяне сурово наказывающей и сильной.",
+      "commentary": {
+        "tilaka": "पौरुषं समुद्रलङ्घनरूपपराक्रमसाध्यं प्रयोजनम् । कालं विहृत्य सुग्रीवकृतं कालमतिक्रम्य सुग्रीवसमीपं गम्यते यया सा गतिर्मार्गो नास्ति । तत्र हेतुः सु तीक्ष्णेति ।। 5.12.5,6 ।।\n\nअस्तु सुग्रीवसमीपगमनवार्ता, अङ्गदादिसमीपगमनमपि दुर्लभमित्याह किं न्विति । किं नु वक्ष्यन्तीति चिन्तां कृत्वा पुनर्विचार्य यद्वक्तव्यं तत्स्वयमेवानुवदति गत्वेत्यादि । वदस्वेति वक्ष्यन्तीत्यर्थः",
+        "bhusana": "सीतामदृष्ट्वा ह्यनवाप्य पौरुषं विहृत्य कालं सह वानरैश्चिरम् ।\n\nन मे ऽस्ति सुग्रीवसमीपगा गतिः सुतीक्ष्णदण्डो बलवांश्च वानरः\nचिरं निर्वेद कार्यहानिः स्यादिति मत्वा अनिर्वेदमवलम्बते अनिर्वेद इति । अनिर्वेद उत्साहः तत्कृतं तत्प्रयुक्तं यत्नम् । चेष्टे, करोमीत्यर्थः । यत्करोति जन्तुरिति सिद्धम् । जन्तोस्सम्बन्धि तत्सर्वं कर्म सः अनिर्वेद एव सफलं करोतीत्यन्वयः ।। 5.12.10,11।।\n\nभूयस्तावद्विचेष्यामि देशान् रावणपालितान् ।\n\nआपानशाला विचितास्तथा पुष्पगृहाणि च\nआपानेति । एता विचिताः अथापि पुनर्विचेष्यामीत्यनुषज्यते",
+        "siromani": "चिन्तान्तरमाह सीतामिति । वानरैः सह चिरंकालं विहृत्य सीताम् अदृष्ट्वा अत एव पौरुषं पुरुषार्थम् अनवाप्य अप्राप्य सुग्रीवसमीपगा सुग्रीवसमीपप्रापिका मे गतिर्मार्गो नास्ति । तत्र हेतुः वानरः सुग्रीवः तीक्ष्णदण्डः बलवांश्च"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "paurusan sanudralanghanarupaparakranasadhyan prayojanan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sitanadrstva hyanavapya paurusan vihrtya",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "cintantaranaha sitaniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.6",
+      "sarga": 12,
+      "verse": "6",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "dṛṣṭam antaḥpuraṃ sarvaṃ dṛṣṭā rāvaṇayoṣitaḥ । na sītā dṛśyate sādhvī vṛthā jāto mama śramaḥ ॥6॥",
+      "leonov_ru": "Увидены [мной] все внутренние покои, Увидены женщины Раваны, Не найдена добродетельная Сита, Напрасными оказались мои усилия.",
+      "commentary": {
+        "bhusana": "दृष्टमन्तःपुरं सर्वं दृष्टा रावणयोषितः ।\n\nन सीता दृश्यते साध्वी वृथा जातो मम श्रमः ।। 5.12.6।\n\nसीतामिति । पौरुषं शत्रुविषयपराक्रमम् । चिरं कालं विहृत्य अतिक्रम्येत्यर्थः । एवम्भूतस्य मे सुग्रीवसमीपगा तत्समीपगामिनी गतिः मार्गः नास्ति । सुग्रीवसमीपगतिः लममायोग्येत्यर्थः । तत्र हेतुमाह सुतीक्ष्णेति । त इति शेषः ।। 5.12.5,6।।\n\nकिन्नु मां वानराः सर्वे गतं वक्ष्यन्ति सङ्गताः ।\n\nगत्वा तत्र त्वया वीर किं कृतं तद्वदस्व नः ।\n\nअदृष्ट्वा किं प्रवक्ष्यामि तामहं जनकात्मजाम्\nकिंन्विति समान्येन निर्वेदोक्तिः । विशेषतश्चाह गत्वेति । इत्युक्त इति शेषः । वदस्व न इत्युक्तः किं प्रवक्ष्यामि । यद्वा किन्त्विति पाठः । पूर्ववदर्धत्रयमेकं वाक्यम् । किन्त्विति पूर्वस्माद्विशेषोक्तिः । मां वानराः वदस्वः नः इति वक्ष्यन्ति तदा अदृष्ट्वा किं प्रवक्ष्यामीति योजना",
+        "siromani": "दृष्टमिति । राक्षसयोषितो दृष्ट्वा सर्वमन्तःपुरं मया दृष्टं सीता तु न दृश्यते । अतः मम श्रमः समुद्रलङ्घनादिजनितखेदः वृथा"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "drstanantahpuran sarvan drsta ravanayositah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "drstaniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.7",
+      "sarga": 12,
+      "verse": "7",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kiṃ nu māṃ vānarāḥ sarve gataṃ vakṣyanti saṃgatāḥ । gatvā tatra tvayā vīra kiṃ kṛtaṃ tad vadasva naḥ ॥7॥",
+      "leonov_ru": "Что же мне, пришедшему (к ним) скажут, собравшись, все обезьяны? «Пойдя туда, герой, расскажи нам, что было тобою сделано».",
+      "commentary": {
+        "tilaka": "रावणस्यानुरागात्स्त्रीवधदोषाद्वा तद्वधे ऽप्रवृत्तावपि स्वयमेव भयान्नष्टेत्याह विरूपेति । दीर्घाणि विरूपाणि दर्शनानि यासां ताः दीर्घपदेन कर्मधारयो वा । राक्षसराजयोषितस्तदाज्ञाकारिणीः",
+        "siromani": "किमिति । गतं सीतासंदेशं विना प्राप्तं मां हे वीर तत्र लंकायां गत्वा त्वया किं कृतं तत् नो वदस्व इति किं नु वक्ष्यन्ति प्रक्ष्यन्त्येवेत्यर्थः\nतदेव भङ्ग्यन्तरेणाह-- अवतीर्येति । हनूमान् शोकोपहतचेतनः सन् चिन्तामुपजगाम\nतदेव भङ्ग्यन्तरेणाह-- प्रमथ्येति"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "ravanasyanuragatstrivadhadosadva tadvadhe pravrttavapi svayaneva",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "kiniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.8",
+      "sarga": 12,
+      "verse": "8",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "adṛṣṭvā kiṃ pravakṣyāmi tām ahaṃ janakātmajām । dhruvaṃ prāyam upāsiṣye kālasya vyativartane ॥8॥",
+      "leonov_ru": "Не увидев ту дочь Джанаки, что я расскажу? Несомненно, лучше было мне погибнуть с истечением срока (обещания).",
+      "commentary": {
+        "tilaka": "किं प्रवक्ष्यामि तान्प्रतीति शेषः । न किमपीत्यर्थः । यदेवम् अतो ध्रुवमिति । कालस्य सुग्रीवकल्पितस्य व्यतिवर्तने ऽतिक्रमे",
+        "bhusana": "ध्रुवं प्रायमुपैष्यन्ति कालस्य व्यतिवर्तने\nतर्हि अत्रैव कालविलम्बः क्रियतां तत्राह ध्रुवमिति । कालस्य व्यतिवर्तने अस्मदागमनकाले ऽतीते प्रायमुपैष्यन्ति, जाम्बवत्प्रभृतय इति शेषः",
+        "siromani": "ननु किं तेनेत्यत आह-- अदृष्ट्वेति । जनकात्मजाम् अदृष्ट्वा अहं किं प्रवक्ष्यामि नोत्तरमस्तीत्यर्थः, अतः कालस्य सुग्रीवपरिकल्पितसमयस्य व्यतिवर्तने उल्लङ्गने स्थितो ऽहं प्रायं प्रायोपवेशनं ध्रुवमासिष्ये"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "kin pravaksyani tanpratiti sesah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "dhruvan prayanupaisyanti kalasya vyativartane",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "nanu kin tenetyata aha",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.9",
+      "sarga": 12,
+      "verse": "9",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kiṃ vā vakṣyati vṛddhaś ca jāmbavān aṅgadaś ca saḥ । gataṃ pāraṃ samudrasya vānarāś ca samāgatāḥ ॥9॥",
+      "leonov_ru": "Что скажет старец Джамбаван, и что Ангада И собравшиеся обезьяны на том берегу океана?",
+      "commentary": {
+        "tilaka": "किं वा वक्ष्यति माम् धिक्करिष्यतीत्यर्थः । समागतः मिलिता अन्ये वानराश्च धिक्करिष्यन्ति",
+        "bhusana": "किं वा वक्ष्यति वृद्धश्च जाम्बवानङ्गदश्च सः ।\n\nगतं पारं समुद्रस्य वानराश्च समागताः\nसमान्येन निर्वेदं प्रतिवक्ति किं वेति । समुद्रलङ्घनरूपं महत् कर्म कृतवन्तं मां ते किं वक्ष्यन्ति किमपि वक्ष्यन्ति । यद्वा मद्वृत्तान्तं प्रशंसन् जाम्बवान् तदुत्साहको ऽङ्गदस्तदुपशृण्वन्तो ऽन्ये च मां किं वा जुगुप्सितं वक्ष्यन्ति ।। \"किं पृच्छायां जुगुप्सने\" इत्यमरः",
+        "siromani": "किमिति । समुद्रस्य पारम् उत्तरतीरं गतं प्राप्तं मां जाम्बवान् किं वक्ष्यति वानराश्च किं वक्ष्यन्तीति वचनविपरिणामेनान्वयः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "kin va vaksyati nan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "kin va vaksyati vrddhasca",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "kiniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.10",
+      "sarga": 12,
+      "verse": "10",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "anirvedaḥ śriyo mūlam anirvedaḥ paraṃ sukham । bhūyas tatra viceṣyāmi na yatra vicayaḥ kṛtaḥ ॥10॥",
+      "leonov_ru": "Мужество – основа (корень) могущества, мужество – высшая отрада. Лучше пока буду искать там, где (еще) не искал.",
+      "commentary": {
+        "bhusana": "अनिर्वेदः श्रियो मूलमनिर्वेदः परं सुखम् ।\n\nअनिर्वेदो हि सततं सर्वार्थेषु प्रवर्तकः",
+        "siromani": "स्वामिकार्यविघातः दुःसहः इत्युत्साहावलम्बिचिन्तान्तरमाह अनिर्वेद इत्यादिभिः । अनिर्वेदः कृत्यात् निवृत्तिर्यस्मात् सः उत्साह इत्यर्थः । श्रियः संपत्तेः मूलं कारणम् अत एव अनिर्वेदः परं सुखं परमसुखहेतुः । अत एव यत्र विचयो ऽन्वेषणं न कृतः तत्र भूयो विचेष्यामि\nउत्साहस्य संपत्तिमूलत्वमुपपादयन्नाह अनिर्वेद इति । सर्वार्थेषु निखिलकर्तव्येषु प्रवर्तकः सो ऽनिर्वेदः यत् कर्म जन्तुः करोति तत् जन्तोः कर्म सफलं करोति"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "anirvedah sriyo nulananirvedah paran",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "svanikaryavighatah duhsahah ityutsahavalanbicintantaranaha anirveda",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.11",
+      "sarga": 12,
+      "verse": "11",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "anirvedo hi satataṃ sarvārtheṣu pravartakaḥ । karoti saphalaṃ jantoḥ karma yac ca karoti saḥ ॥11॥",
+      "leonov_ru": "Мужество всегда придает нам бодрость во всех предприятиях (намерениях), Оно приносит успех делам живых существ.",
+      "commentary": {
+        "tilaka": "यत्कर्म स करोति तत्कर्म सफलं करोति",
+        "bhusana": "करोति सफलं जन्तोः कर्म यत्तत्करोति सः ।\n\nतस्मादनिर्वेदकृतं यत्नं चेष्टे ऽहमुत्तमम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "yatkarna sa karoti tatkarna",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "karoti saphalan jantoh karna",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.12",
+      "sarga": 12,
+      "verse": "12",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasmād anirvedakaraṃ yatnaṃ ceṣṭe 'ham uttamam । adṛṣṭāṃś ca viceṣyāmi deśān rāvaṇapālitān ॥12॥",
+      "leonov_ru": "Потому с мужеством предприму я последнее усилие И буду искать места под властью Раваны, которые я еще не видел.",
+      "commentary": {
+        "siromani": "तस्मादिति । तस्मात् अनिर्वेदस्य फलसंपादकत्वात् हेतोः अनिर्वेदकरम् अनिर्वेदनोत्थापितं यत्नमहं चेष्टे करोमि । चेष्टामेवाह अदृष्टान् देशान् विचेष्यामि"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "tasnaditi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.13",
+      "sarga": 12,
+      "verse": "13",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "āpānaśālā vicitās tathā puṣpagṛhāṇi ca । citraśālāś ca vicitā bhūyaḥ krīḍāgṛhāṇi ca ॥13॥",
+      "leonov_ru": "Обыскал я пиршественные залы и оранжереи, Картинные залы обыскал и площадки для игр,",
+      "commentary": {
+        "bhusana": "चित्रशालाश्च विचिता भूयः क्रीडागृहाणि च ।\n\nनिष्कुटान्तररथ्याश्च विमानानि च सर्वशः\n[भूयस्तत्र विचेष्यामि न यत्र विचयः कृतः ।]\n\nनिष्कुटाः गृहारामाः, अन्तररथ्याः अवान्तरवीथ्यः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "citrasalasca vicita bhuyah kridagrhani",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.14",
+      "sarga": 12,
+      "verse": "14",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "niṣkuṭāntararathyāś ca vimānāni ca sarvaśaḥ । iti saṃcintya bhūyo 'pi vicetum upacakrame ॥14॥",
+      "leonov_ru": "И дорожки в садах, и дворцы (большие здания) повсюду», Так поразмыслив, он снова взялся за поиски.",
+      "commentary": {
+        "bhusana": "इति संचिन्त्य भुयो ऽपि विचेतुमुपचक्रमे ।\n\nभूमीगूहांश्चैत्यगृहान् गृहातिगृहकानपि\nभूमीगृहान् भूमीबिलगृहान् । चैत्यगृहान् चतुष्पथमण्डपान् । गृहातिगृहकान् गृहानतीत्य दूरे स्वैरविहारार्थं निर्मितान् गृहान्"
+      }
+    },
+    {
+      "verse_id": "5.12.15",
+      "sarga": 12,
+      "verse": "15",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "bhūmīgṛhāṃś caityagṛhān gṛhātigṛhakān api । utpatan nipataṃś cāpi tiṣṭhan gacchan punaḥ kva cit ॥15॥",
+      "leonov_ru": "Подвалы, святилища, террасы домов [Осмотрел он], то поднимаясь, то спускаясь, то останавливаясь, то снова идя куда-либо.",
+      "commentary": {
+        "tilaka": "अथ बहुदुःखचिन्ताकुलो ऽन्विष्टमेव पुनः पुनरन्वेषयति स्मेत्याह स तस्येति । तस्य भवनस्य रावणभवनस्य निशागृहा रात्रिनिवासगृहास्तान्विचेतुं जगाम\nअनिर्वेदकरमुत्साहजननं यत्नं चित्तस्थैर्थं चेष्टे करोमि ।। 5.12.12,13 ।।\n\nनिष्कुटान्तररथ्या गृहाराममध्यगता वीथीः । विमानानि फुष्पकादीनि\nभूमीगृहान्भूबिलगृहान् । गृहातिगृहका गृहोपरिगृहा इति कतकः । गृहानतीत्यानतिदूरे स्वैरविहारार्थं निर्मितगृहा इति तीर्थः । विचेतुमुपचक्रमे इत्यनुकर्षः । उत्पतन्नुन्नतमारुहन् । निपतनमवरोहः",
+        "bhusana": "उत्पतन्निपतंश्चापि तिष्ठन् गच्छन् पुनः पुनः ।\n\nअपावृण्वंश्च द्वाराणि कपाटान्यवघाटयन्\nउत्पतन्निपतन् पूर्वमुच्चस्थानान्यधिरुह्य ततो ऽवरोहन् । अवघाटयन् पाटयन्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "atha bahuduhkhacintakulo nvistaneva punah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "utpatannipatanscapi tisthan gacchan punah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.16",
+      "sarga": 12,
+      "verse": "16",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "apāvṛṇvaṃś ca dvārāṇi kapāṭāny avaghaṭṭayan । praviśan niṣpataṃś cāpi prapatann utpatann iva ॥16॥",
+      "leonov_ru": "Открывая ворота, выбивая двери, Входя и выходя, спускаясь и поднимаясь.",
+      "commentary": {
+        "tilaka": "निष्पतनं निष्क्रमणम् । अवघट्टनं संवरणम्",
+        "bhusana": "प्रविशन्निष्पतंश्चापि प्रपतन्नुत्पतन्नपि ।\n\nसर्वमप्यवकासं स विचचार महाकपिः\nनिष्पतन् निर्गच्छन् । प्रपतन्नुत्पतन् बिलगृहादीनि नीचस्थानानि प्रथममधिरुह्य ततः समुद्गच्छन् ।। 5.12.16,17।।\n\nप्राकारान्तररथ्याश्च वेदिकाश्चैत्यसंश्रयाः ।\n\nदीर्घिकाः पुष्करिण्यश्च सर्वं तेनावलोकितम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "nispatanan niskrananan",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "pravisannispatanscapi prapatannutpatannapi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.17",
+      "sarga": 12,
+      "verse": "17",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sarvam apy avakāśaṃ sa vicacāra mahākapiḥ । caturaṅgulamātro 'pi nāvakāśaḥ sa vidyate । rāvaṇāntaḥpure tasmin yaṃ kapir na jagāma saḥ ॥17॥",
+      "leonov_ru": "И все комнаты обошла великая обезьяна. И не было помещений даже величиной в четыре пальца В покоях Раваны, где бы ни побывала та обезьяна.",
+      "commentary": {
+        "tilaka": "यं स कपिर्न जगाम स तादृशश्चतुरङ्गुलमात्रो ऽप्यवकाशो न विद्यते",
+        "bhusana": "चतुरङ्गुलमात्रो ऽपि नावकाशः स विद्यते ।\n\nरावणान्तःपुरे तस्मिन् यं कपिर्न जगाम सः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "yan sa kapirna jagana",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "caturangulanatro pi navakasah sa",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.18",
+      "sarga": 12,
+      "verse": "18",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "prākarāntaravīthyāś ca vedikāś caityasaṃśrayāḥ । śvabhrāś ca puṣkariṇyaś ca sarvaṃ tenāvalokitam ॥18॥",
+      "leonov_ru": "Улицы между крепостными стенами, возвышения вокруг святилищ, Погреба и лотосовые пруды все были им осмотрены.",
+      "commentary": {
+        "siromani": "प्राकारेति । प्राकारान्तरवीथ्यादि सर्वं तेन हनूमता ऽवलोकितं चैत्यः चतुष्पथवर्ती तरुः"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "prakareti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.19",
+      "sarga": 12,
+      "verse": "19",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "rākṣasyo vividhākārā virūpā vikṛtās tathā । dṛṣṭā hanūmatā tatra na tu sā janakātmajā ॥19॥",
+      "leonov_ru": "Ракшаси с различными обликами, уродливых, безобразных Увидел там Хануман, но не дочь Джанаки.",
+      "commentary": {
+        "bhusana": "राक्षस्यो विविधाकारा विरूपा विकृतास्तथा ।\n\nदृष्टा हनुमता तत्र न तु सा जनकात्मजा"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "raksasyo vividhakara virupa vikrtastatha",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.20",
+      "sarga": 12,
+      "verse": "20",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "rūpeṇāpratimā loke varā vidyādharastriyaḥ । dṛṣṭā hanūmatā tatra na tu rāghavanandinī ॥20॥",
+      "leonov_ru": "Лучших жен видьядхаров, обладающих несравненной в мире красотой, Увидел там Хануман, но не отраду Рагхавы.",
+      "commentary": {
+        "bhusana": "रूपेणाप्रतिमा लोके वरा विद्याधरस्त्रियः ।\n\nदृष्टा हनुमता तत्र न तु राघवनन्दिनी",
+        "siromani": "रूपेणेति । रूपेण अप्रतिमाः विद्याधरस्त्रियः हनूमता दृष्टाः राघवनन्दिनी सीता तु न दृष्टा"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "rupenapratina loke vara vidyadharastriyah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "rupeneti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.21",
+      "sarga": 12,
+      "verse": "21",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "nāgakanyā varārohāḥ pūrṇacandranibhānanāḥ । dṛṣṭā hanūmatā tatra na tu sā janakātmajā ॥21॥",
+      "leonov_ru": "Дивнобедрых дочерей нагов, чьи лица подобны полной луне, Увидел там Хануман, но не дочь Джанаки.",
+      "commentary": {
+        "siromani": "राक्षसस्य इति । विविधाकाराः राक्षस्यः हनूमता दृष्टाः जनकात्मजा तु न दृष्टा\nनागेति । नागकन्या दृष्टाः जनकात्मजा न दृष्टा",
+        "bhusana": "नागकन्या वरारोहाः पूर्णचन्द्रनिभाननाः ।\n\nदृष्टा हनुमता तत्र न तु सीता सुमध्यमा"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "raksasasya",
+          "matches_verse": false,
+          "content_containment": 0.6,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "nagakanya vararohah purnacandranibhananah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.22",
+      "sarga": 12,
+      "verse": "22",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "pramathya rākṣasendreṇa nāgakanyā balād dhṛtāḥ । dṛṣṭā hanūmatā tatra na sā janakanandinī ॥22॥",
+      "leonov_ru": "Дочерей нагов, которых царь ракшасов, похитив, удерживал силой, Увидел там Хануман, но не отраду Джанаки.",
+      "commentary": {
+        "bhusana": "प्रमथ्य राक्षसेन्द्रेण नागकन्या बलाद्धृताः ।\n\nदृष्टा हनुमता तत्र न सा जनकनन्दिनी ।"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "pranathya raksasendrena nagakanya baladdhrtah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.23",
+      "sarga": 12,
+      "verse": "23",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "so 'paśyaṃs tāṃ mahābāhuḥ paśyaṃś cānyā varastriyaḥ । viṣasāda mahābāhur hanūmān mārutātmajaḥ ॥23॥",
+      "leonov_ru": "Не видя ее (Ситу) и видя иных прекрасных женщин, Могучерукий Хануман, сын Ветра, пришел в отчаяние.",
+      "commentary": {
+        "bhusana": "सो ऽपश्यंस्तां महाबाहुः पश्यंश्चान्या वरस्त्रियः ।\n\nविषसाद मुहुर्धीमान् हनुमान् मारुतात्मजः",
+        "siromani": "स इति । अन्याः स्त्रियः पश्यन् तां सीताम् अपश्यंश्च महाबाहुरतिप्रयत्नवान् महाबाहुर्हनुमान् विषसाद"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "so pasyanstan nahabahuh pasyanscanya",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.2,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.24",
+      "sarga": 12,
+      "verse": "24",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "udyogaṃ vānarendrāṇāṃ plavanaṃ sāgarasya ca । vyarthaṃ vīkṣyānilasutaś cintāṃ punar upāgamat ॥24॥",
+      "leonov_ru": "Снова задумался сын Ветра, видя, что были напрасными Старания предводителей обезьян и перелет через океан.",
+      "commentary": {
+        "siromani": "चिन्तान्तरमाह सेति । परे सर्वोत्कृष्टे आर्यपथे महात्मनां रीतौ स्थिता अत एव स्वशीलस्य स्वपतिमात्रनिष्ठत्वस्य संरक्षणे तत्परा अत एव सती पतिव्रताशिरोमणिः सा सीता प्रतिदुष्टकर्मणा सर्वं प्रति दुष्टचरणेन अनेन रावणेन हता भवेत्\nउद्योगमिति । वानरेन्द्राणाम् उद्योगमन्वेषणं सागरस्य प्लवनं च व्यर्थं निष्फलं वीक्ष्य अनिलसुतः चिन्तामुपागतः",
+        "tilaka": "एवं क्षणमात्रं निर्विद्य पुनरुत्साहमवलम्ब्याह अनिर्वेद इति । निर्वेदः करणग्रामस्य प्रवृत्तिवैमुख्यं तदभाव उत्साहः",
+        "bhusana": "उद्योगं वानरेन्द्राणां प्लवनं सागरस्य च ।\n\nव्यर्थं वीक्ष्यानिलसुतश्चिन्तां पुनरुपागमत्"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "cintantaranaha seti",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "evan ksananatran nirvidya punarutsahanavalanbyaha",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "udyogan vanarendranan plavanan sagarasya",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.25",
+      "sarga": 12,
+      "verse": "25",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "avatīrya vimānāc ca hanūmān mārutātmajaḥ । cintām upajagāmātha śokopahatacetanaḥ ॥25॥",
+      "leonov_ru": "Сойдя с виманы, Хануман, сын ветра, Душа которого была охвачена скорбью, погрузился в раздумья.",
+      "commentary": {
+        "tilaka": "अवतीर्य विमानाच्चेति । पुनरारुह्यावरुह्य चेत्यर्थः । विमान एवैतत्सर्वदर्शनमिति तत्त्वम्",
+        "bhusana": "अवतीर्य विमानाच्च हनुमान् मारुतात्मजः ।\n\nचिन्तामुपजगामाथ शोकोपहतचेतनः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "avatirya vinanacceti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "avatirya vinanacca hanunan narutatnajah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.12.1517",
+      "sarga": 12,
+      "verse": "1517",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "siromani": "आपानेति । आपानशालाप्रभृतयो मया विचिताः अतः अन्यत्र विचेतव्यमित्यर्थः, इति संचिन्त्य विचेतुमुपचक्रमे । तत्र निष्कुटान्तररथ्याः गृहारामवीथ्यः भूमीगृहाः भुवो ऽन्तराले निर्मितभवनानि गृहात् गृहकाः गृहोपरिविद्यमानगृहाणीति कतकः मुख्यगृहाद्दूरे विहारार्थं निर्मितानीति तीर्थः । सार्धश्लोक एकान्यी ।। 5.12.13,14 ।।\n\nउत्पतन्निति । उत्पतनादि कुर्वन् महाकपिः अवकाशम् अन्वेषितातिरिक्तदेशमपि विचचार । अत एव यमवकाशं महाकपिर्न जगाम सो ऽवकाशो देशः चतुरङ्गलमात्रो ऽपि न विद्यते । अर्धषट्कमेकान्वयि"
+      }
+    },
+    {
+      "verse_id": "5.12.1821",
+      "sarga": 12,
+      "verse": "1821",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "प्राकारान्तरथ्याः प्राकारमध्यवर्तिवीथ्यः । वेदिकाश्चैत्यसंश्रयाः चैत्यवृक्षमूलपीठिकाबन्धाः"
+      }
+    },
+    {
+      "verse_id": "5.12.2224",
+      "sarga": 12,
+      "verse": "2224",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "प्राकारान्तरवीथ्यः प्रकारमध्यवर्तिमन्त्रिकुमारादिगृहवीथ्यः चैत्यश्चतुष्पथवर्तिवृक्षः श्वभ्रा गर्ताः ।। 5.12.18,19 ।।\n\nराघवनन्दिनी रामप्रिया ।। 5.12.20,21 ।।\n\nप्रमथ्य नागकन्या बलाद्धृता इत्यनेन बन्दीकृतानां ग्रहणम्, पूर्वं तूढानां नागकन्यानां ग्रहणम्, अतो न पुनरुक्तिः"
+      }
+    },
+    {
+      "verse_id": "5.12.2225",
+      "sarga": 12,
+      "verse": "2225",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "इत्यार्षे. श्रीमत्सुन्दरकाण्डे द्वादशः सर्गः ।। 5.12 ।।\n\nप्रमथ्य प्रसह्य । बलाद्धृता नागकन्या इत्यभिधानादत्र बन्दीकृतानां ग्रहणम् । पूर्वश्लोके ऊढानां नागकन्यानामित्यपुनरुक्तिः"
+      }
+    }
+  ]
+}
