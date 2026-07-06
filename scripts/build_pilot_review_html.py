@@ -222,6 +222,8 @@ function render(){
         <div class="ru">${esc(n.leonov_ru)||'<i>подстрочник не найден</i>'}</div>
       </div>
       <div class="why"><b>Зачем предложено:</b> ${esc(n.why_proposed)}</div>
+      ${n.contrastive?`<div class="why"><b>Контрастивная нота</b> — расхождение комментаторов (форма H268, реш. 3)</div>`:''}
+      ${n.judge?`<div class="why"><b>Судья (Sonnet 5, рубрика §3.4):</b> вердикт <b>${esc(n.judge.verdict)}</b> — ${esc(n.judge.reason||'')} <span class="badge">Ф${n.judge.scores.faithfulness}·Н${n.judge.scores.non_triviality}·К${n.judge.scores.contrastive_value}·Р${n.judge.scores.register}·А${n.judge.scores.anchoring}</span></div>`:''}
       ${n.leonov_here.length?`<div class="leo"><b>⚠ Леонов/Костина УЖЕ комментируют этот стих</b> — проверьте на дублирование:${
         n.leonov_here.map(l=>`<div><span class="who">${l.editor||'Леонов'}:</span> ${esc(l.note).slice(0,260)}</div>`).join("")
       }</div>`:''}

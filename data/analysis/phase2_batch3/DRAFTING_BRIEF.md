@@ -48,8 +48,8 @@ textual variant, supplied ellipsis, or myth. Citation hierarchy (Leonov's own): 
 - `kazansky_type`: **Б** = textological (wording / meaning / supplied ellipsis / variant reading);
   **В** = realia/historical-cultural (place, custom, myth, epithet). Realia → В, never Б.
 - `why_proposed` (required): one clause stating what the note gives beyond the подстрочник.
-- Hard rules: never «М.: Наука, 2022» as Leonov's edition; the only oblique form of Парибок is
-  «Парибка».
+- Hard rules: never cite Leonov's edition as «М.: Наука 2022» (that volume does not exist — use
+  «продолжающийся перевод; лит. ред. Е. Костина»); the only oblique form of Парибок is «Парибка».
 
 ## Register feedback from M.G.'s pilot gate (2026-07-03) — apply it
 
