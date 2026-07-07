@@ -1,0 +1,624 @@
+{
+  "_meta": {
+    "generated_by": "scripts/extract_yellow_sargas.py",
+    "purpose": "Phase-2 deterministic commentary segmentation (no LLM); input to Sonnet drafting",
+    "sargas": [
+      68
+    ],
+    "commentators": [
+      "tilaka",
+      "bhusana",
+      "siromani",
+      "tattvadipika"
+    ],
+    "verse_count": 34,
+    "verses_all_three": 0,
+    "ambiguous_markers": 4,
+    "corpus_aligned": 29,
+    "align_backend": "sanskrit_util",
+    "reassigned_moves": 1841,
+    "content_moves": 84,
+    "pratika_checkable": 4647,
+    "pratika_matched": 3983,
+    "alignment_precision": 0.857,
+    "anchor_verified": 4391,
+    "alignment_precision_verified": 0.945,
+    "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md"
+  },
+  "preambles": {
+    "68.pre": {
+      "tilaka": "तव स्नेहान्मयि सौहृदात्सुहृद्भावान्मामनुमान्य संमान्य ससंभ्रमो गन्तुं सत्वरो ऽहमुत्तरं कार्यं प्रति पुनः पुनरुक्तः",
+      "bhusana": "अथाहमुत्तरं देव्या पुनरुक्तः ससम्भ्रमः ।\n\nतव स्नेहान्नरव्याघ्र सौहार्दादनुमान्य वै"
+    }
+  },
+  "verses": [
+    {
+      "verse_id": "5.68.1",
+      "sarga": 68,
+      "verse": "1",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "athāham uttaraṃ devyā punar uktaḥ sasambhramam । tava snehān naravyāghra sauhāryād anumānya ca ॥1॥",
+      "leonov_ru": "И вот еще сказала царевна мне взволнованно С любовью к тебе, о тигр среди мужей, с дружбой и уважением [ко мне]:",
+      "commentary": {
+        "tilaka": "तव स्नेहान्मयि सौहृदात्सुहृद्भावान्मामनुमान्य संमान्य ससंभ्रमो गन्तुं सत्वरो ऽहमुत्तरं कार्यं प्रति पुनः पुनरुक्तः",
+        "bhusana": "अथाहमुत्तरं देव्या पुनरुक्तः ससम्भ्रमः ।\n\nतव स्नेहान्नरव्याघ्र सौहार्दादनुमान्य वै"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tava snehannayi sauhrdatsuhrdbhavannananunanya sannanya",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "athahanuttaran devya punaruktah sasanbhranah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.2",
+      "sarga": 68,
+      "verse": "2",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "evaṃ bahuvidhaṃ vācyo rāmo dāśarathis tvayā । yathā mām āpnuyāc chīghraṃ hatvā rāvaṇam āhave ॥2॥",
+      "leonov_ru": "«Должен ты так сказать различными способами Раме, сыну Дашаратхи, Чтобы скорее он вызволил меня, убив в бою Равану.",
+      "commentary": {
+        "bhusana": "एवं बहुविधं वाच्यो रामो दाशरथिस्त्वया ।\n\nयथा मामाप्नुयाच्छीघ्रं हत्वा रावणमाहवे"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "evan bahuvidhan vacyo rano",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.3",
+      "sarga": 68,
+      "verse": "3",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "yadi vā manyase vīra vasaikāham ariṃdama । kasmiṃś cit saṃvṛte deśe viśrāntaḥ śvo gamiṣyasi ॥3॥",
+      "leonov_ru": "Если ты согласен, герой, останься на день, о губитель врагов. Отдохнув где-нибудь в укромном месте, завтра ты отправишься в путь.",
+      "commentary": {
+        "bhusana": "अथेत्यादि । हे नरव्याघ्र  तव स्नेहात्, मयीति शेषः । सौहार्दात् सुहृद्भावात्, आप्तत्वादिति यावत् । अनुमान्य सम्यान्य । उत्तरं ततः परम् उत्तरं कार्यं वा । पुनर्देव्या ऽहमुक्त इत्यन्वयः । ससम्भ्रमः गमनत्वरान्वित इत्यर्थः ।। 5.68.1,2 ।।\n\nयदि वा मन्यसे वीर वसैकाहमरिन्दम ।\n\nकस्मिंश्चित्संवृते देशे विश्रान्तः श्वो गमिष्यसि"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "athetyadi",
+          "matches_verse": false,
+          "content_containment": 0.615,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.4",
+      "sarga": 68,
+      "verse": "4",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "mama cāpy alpabhāgyāyāḥ sāmnidhyāt tava vānara । asya śokavipākasya muhūrtaṃ syād vimokṣaṇam ॥4॥",
+      "leonov_ru": "Благодаря твоему присутствию рядом [со мной], о обезьяна, у меня, обделенной счастьем, Будет на некоторое время освобождение от плода скорби (от глубокой скорби).",
+      "commentary": {
+        "tilaka": "यथा मां प्राप्नुयात्तथा यतस्वेति शेषः ।। 5.68.2,3 ।।\n\nएकदिनवासफलमाह-- मम चेति । तव सांनिध्यादल्पभाग्याया ममास्य महतः शोकविपाकस्य शोकरूपस्य पापफलस्य मुहूर्तं मोक्षणं स्यादित्यन्वयः",
+        "bhusana": "मम चाप्यल्पभाग्यायाः सान्निध्यात्तव वीर्यवन् ।\n\nअस्य शोकविपाकस्य मुहूर्तं स्याद्विमोक्षणम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "yatha nan prapnuyattatha yatasveti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "nana capyalpabhagyayah sannidhyattava viryavan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.5",
+      "sarga": 68,
+      "verse": "5",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "gate hi tvayi vikrānte punarāgamanāya vai । prāṇānām api saṃdeho mama syān nātra saṃśayaḥ ॥5॥",
+      "leonov_ru": "После того как ты, отважный, уйдешь, вряд ли я буду жива, Когда ты вернешься, нет в том сомнения.",
+      "commentary": {
+        "bhusana": "गते हि त्वयि विक्रान्ते पुनरागमनाय वै ।\n\nप्राणानामपि सन्देहो मम स्यान्नात्र संशयः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "gate hi tvayi vikrante",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.6",
+      "sarga": 68,
+      "verse": "6",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tavādarśanajaḥ śoko bhūyo māṃ paritāpayet । duḥkhād duḥkhaparābhūtāṃ durgatāṃ duḥkhabhāginīm ॥6॥",
+      "leonov_ru": "Скорбь, возникшая из-за того, что не вижу тебя, дальше будет терзать меня, Которую терзает горе за горем, несчастную, чей удел – страдание.",
+      "commentary": {
+        "bhusana": "तवादर्शनजः शोको भूयो मां परितापयेत् ।\n\nदुःखाद्दुःखपराभूतां दुर्गतां दुःखभागिनीम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tavadarsanajah soko bhuyo nan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.7",
+      "sarga": 68,
+      "verse": "7",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ayaṃ tu vīra saṃdehas tiṣṭhatīva mamāgrataḥ । sumahāṃs tvatsahāyeṣu haryṛkṣeṣu harīśvara ॥7॥",
+      "leonov_ru": "И еще одно большое сомнение словно бы стоит передо мной, О владыка обезьян, в твоих помощниках, обезьянах и медведях.",
+      "commentary": {
+        "tilaka": "पुनरागमनाय प्रतिक्षमाणाया मम प्राणानामपि सन्देहः स्यादिति योजना ।। 5.68.5,6 ।।\n\nउत्तरकार्यविषयामुक्तिमाह अयं चेति । असंशयो बाधकसंशयरहितः",
+        "bhusana": "अयं च वीर सन्देहस्तिष्ठतीव ममाग्रतः ।\n\nसुमहांस्त्वत्सहायेषु हर्यृक्षेषु हरीश्वर"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "punaragananaya pratiksananaya nana pranananapi",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "ayan ca vira sandehastisthativa",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.8",
+      "sarga": 68,
+      "verse": "8",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kathaṃ nu khalu duṣpāraṃ tariṣyanti mahodadhim । tāni haryṛkṣasainyāni tau vā naravarātmajau ॥8॥",
+      "leonov_ru": "Как же воистину переправятся через неодолимый океан Эти войска обезьян и медведей и эти два сына лучшего из людей?",
+      "commentary": {
+        "bhusana": "कथं नु खलु दुष्पारं तरिष्यन्ति महोदधिम् ।\n\nतानि हर्यृक्षसैन्यानि तौ वा नरवरात्मजौ"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "kathan nu khalu dusparan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.9",
+      "sarga": 68,
+      "verse": "9",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "trayāṇām eva bhūtānāṃ sāgarasyāsya laṅghane । śaktiḥ syād vainateyasya vāyor vā tava cānagha ॥9॥",
+      "leonov_ru": "Только у трех существ есть способность пересечь океан – У Вайнатейи (Гаруды), у Вайю (Ветра) и у тебя, о безупречный.",
+      "commentary": {
+        "bhusana": "त्रयाणामेव भूतानां सागरस्यास्य लङ्घने ।\n\nशक्तिः स्याद्वैनतेयस्य तव वा मारुतस्य वा"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "trayananeva bhutanan sagarasyasya langhane",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.10",
+      "sarga": 68,
+      "verse": "10",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tad asmin kāryaniyoge vīraivaṃ duratikrame । kiṃ paśyasi samādhānaṃ brūhi kāryavidāṃ vara ॥10॥",
+      "leonov_ru": "В этой задаче, о герой, так трудновыполнимой, Какое ты видишь решение? Поведай, о лучший из знающих, как надлежит действовать.",
+      "commentary": {
+        "bhusana": "तदस्मिन् कार्यनिर्योगे वीरैवं दुरतिक्रमे ।\n\nकिं पश्यसि समाधानं ब्रूहि कार्यविदां वर"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tadasnin karyaniryoge viraivan duratikrane",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.11",
+      "sarga": 68,
+      "verse": "11",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kāmam asya tvam evaikaḥ kāryasya parisādhane । paryāptaḥ paravīraghna yaśasyas te balodayaḥ ॥11॥",
+      "leonov_ru": "Конечно, ты и один способен завершить это дело, О губитель вражеских героев, [будет] славен твой успех (твой успех принесет тебе славу).",
+      "commentary": {
+        "tilaka": "यद्यपि त्वमेव पर्याप्तः । सकलराक्षसवधपूर्वं मन्मोचन इति शेषः । तथापीदृशो बलोदयस्तवैव यशस्यो यशोवर्धकः स्यात्",
+        "bhusana": "काममस्य त्वमेवैकः कार्यस्य परिसाधने ।\n\nपर्याप्तः परवीरघ्न यशस्यस्ते बलोदयः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "yadyapi tvaneva paryaptah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "kananasya tvanevaikah karyasya parisadhane",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.12",
+      "sarga": 68,
+      "verse": "12",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "balaiḥ samagrair yadi māṃ hatvā rāvaṇam āhave । vijayī svapurīṃ rāmo nayet tat syād yaśaskaram ॥12॥",
+      "leonov_ru": "Если вместе с войсками убив Равану в бою, Победитель Рама меня вернет в свой город, то это увеличит его славу.",
+      "commentary": {
+        "tilaka": "यदि तु रामो रावणं हत्वा मां नयेत्, तदा तन्नयनं तस्य यशस्करं स्यात् । अतस्तेनैवागत्य मोचनं युक्तमिति भावः",
+        "bhusana": "बलैः समग्रैर्यदि मां हत्वा रावणमाहवे ।\n\nविजयी स्वां पुरीं रामो नयेत्तत् स्याद्यशस्करम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "yadi tu rano ravanan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "balaih sanagrairyadi nan hatva",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.13",
+      "sarga": 68,
+      "verse": "13",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "yathāhaṃ tasya vīrasya vanād upadhinā hṛtā । rakṣasā tad bhayād eva tathā nārhati rāghavaḥ ॥13॥",
+      "leonov_ru": "Не надлежит Рагхаве [действовать] так, как [действовал] ракшас из страха перед тем героем, Похитив меня из лесу при помощи уловки.",
+      "commentary": {
+        "tilaka": "उपधिना छलेन ।। 5.68.13,14 ।।\n\nयथा तस्यानुरूपं विक्रान्तं भवति तथा त्वमेवोपपादय",
+        "bhusana": "यथा ऽहं तस्य वीरस्य वनादुपधिना हृता ।\n\nरक्षसा तद्भया देव तथा नार्हति राघवः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "upadhina chalena",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "yatha han tasya virasya",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.14",
+      "sarga": 68,
+      "verse": "14",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "balais tu saṃkulāṃ kṛtvā laṅkāṃ parabalārdanaḥ । māṃ nayed yadi kākutsthas tat tasya sadṛśaṃ bhavet ॥14॥",
+      "leonov_ru": "Войсками наполнив Ланку, губитель вражеских воинств Если меня отведет [обратно] Какутстха, то будет его достойно.",
+      "commentary": {
+        "bhusana": "बलैस्तु सङ्कुलां कृत्वा लङ्कां परबलार्दनः ।\n\nमां नयेद्यदि काकुत्स्थस्तत्तस्य सदृशं भवेत्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "balaistu sankulan krtva lankan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.15",
+      "sarga": 68,
+      "verse": "15",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tad yathā tasya vikrāntam anurūpaṃ mahātmanaḥ । bhavaty āhavaśūrasya tathā tvam upapādaya ॥15॥",
+      "leonov_ru": "Ты добейся того, чтобы великий духом, отважный в битвах [Рама] Был достоин своей отваги.",
+      "commentary": {
+        "bhusana": "तद्यथा तस्य विक्रान्तमनुरूपं महात्मनः ।\n\nभवत्याहवशूरस्य तथा त्वमुपपादय"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tadyatha tasya vikrantananurupan nahatnanah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.16",
+      "sarga": 68,
+      "verse": "16",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tad arthopahitaṃ vākyaṃ praśritaṃ hetusaṃhitam । niśamyāhaṃ tataḥ śeṣaṃ vākyam uttaram abravam ॥16॥",
+      "leonov_ru": "Тогда, слова, исполненные смысла, скромные и разумные Услышав, я сказал оставшиеся (последние) слова:",
+      "commentary": {
+        "bhusana": "तदर्थोपहितं वाक्यं प्रश्रितं हेतुसंहितम् ।\n\nनिशम्याहं ततः शेषं वाक्यमुत्तरमब्रुवम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tadarthopahitan vakyan prasritan hetusanhitan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.17",
+      "sarga": 68,
+      "verse": "17",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "devi haryṛkṣasainyānām īśvaraḥ plavatāṃ varaḥ । sugrīvaḥ sattvasampannas tvadarthe kṛtaniścayaḥ ॥17॥",
+      "leonov_ru": "«Царевна, владыка войск обезьян и медведей, лучший из обезьян, Сугрива, наделенный мощью, исполнен решимости относительно тебя.",
+      "commentary": {
+        "bhusana": "देवि हर्यृक्षसैन्यानामीश्वरः प्लवतां वरः ।\n\nसुग्रीवः सत्त्वसम्पन्नस्तवार्थे कृतनिश्चयः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "devi haryrksasainyananisvarah plavatan varah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.18",
+      "sarga": 68,
+      "verse": "18",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasya vikramasampannāḥ sattvavanto mahābalāḥ । manaḥsaṃkalpasadṛśā nideśe harayaḥ sthitāḥ ॥18॥",
+      "leonov_ru": "Находятся под его началом наделенные доблестью, мощью и великой силой Подобные [быстротой] желанию сердца обезьяны,",
+      "commentary": {
+        "bhusana": "तस्य विक्रमसम्पन्नाः सत्त्ववन्तो महाबलाः ।\n\nमनस्सङ्कल्पसम्पाता निदेशे हरयः स्थिताः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tasya vikranasanpannah sattvavanto nahabalah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.19",
+      "sarga": 68,
+      "verse": "19",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "yeṣāṃ nopari nādhastān na tiryak sajjate gatiḥ । na ca karmasu sīdanti mahatsv amitatejasaḥ ॥19॥",
+      "leonov_ru": "Движение которых вверх, вниз или горизонтально не остановить, И которые, наделенные безмерной мощью, не падают духом в великих делах.",
+      "commentary": {
+        "bhusana": "येषां नोपरि नाधस्तान्न तिर्यक् सज्जते गतिः ।\n\nन च कर्मसु सीदन्ति महत्स्वमिततेजसः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "yesan nopari nadhastanna tiryak",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.20",
+      "sarga": 68,
+      "verse": "20",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "asakṛt tair mahābhāgair vānarair balasaṃyutaiḥ । pradakṣiṇīkṛtā bhūmir vāyumārgānusāribhiḥ ॥20॥",
+      "leonov_ru": "Не один раз теми наделенными великой долей могучими обезьянами, Следующими дорогой ветра, была почтительно обойдена земля.",
+      "commentary": {
+        "bhusana": "असकृत्तैर्महाभागैर्वानरैर्बलदर्पितैः ।\n\nप्रदक्षिणीकृता भूमिर्वायुमार्गानुसारिभिः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "asakrttairnahabhagairvanarairbaladarpitaih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.21",
+      "sarga": 68,
+      "verse": "21",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "madviśiṣṭāś ca tulyāś ca santi tatra vanaukasaḥ । mattaḥ pratyavaraḥ kaś cin nāsti sugrīvasaṃnidhau ॥21॥",
+      "leonov_ru": "Обезьяны там превосходят меня или равны [мне]. Нет никого у Сугривы, кто бы был хуже (ниже) меня.",
+      "commentary": {
+        "bhusana": "मद्विशिष्टाश्च तुल्याश्च सन्ति तत्र वनौकसः ।\n\nमत्तः प्रत्यवरः कश्चिन्नास्ति सुग्रीवसन्निधौ"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nadvisistasca tulyasca santi tatra",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.22",
+      "sarga": 68,
+      "verse": "22",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ahaṃ tāvad iha prāptaḥ kiṃ punas te mahābalāḥ । na hi prakṛṣṭāḥ preṣyante preṣyante hītare janāḥ ॥22॥",
+      "leonov_ru": "Раз я добрался сюда, тем более [смогут] и те могучие. Ведь лучших не посылают, посылают иных (худших) людей.",
+      "commentary": {
+        "bhusana": "अहं तावदिह प्राप्तः किं पुनस्ते महाबलाः ।\n\nन हि प्रकृष्टाः प्रेष्यन्ते प्रेष्यन्ते हीतरे जनाः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "ahan tavadiha praptah kin",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.23",
+      "sarga": 68,
+      "verse": "23",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tad alaṃ paritāpena devi manyur apaitu te । ekotpātena te laṅkām eṣyanti hariyūthapāḥ ॥23॥",
+      "leonov_ru": "Потому не печалься, царевна, пусть оставит тебя горе. Одним прыжком те обезьяны достигнут Ланки.",
+      "commentary": {
+        "bhusana": "तदलं परितापेन देवि मन्युर्व्यपैतु ते ।\n\nएकोत्पातेन वै लङ्कामेष्यन्ति हरियूथपाः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tadalan paritapena devi nanyurvyapaitu",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.24",
+      "sarga": 68,
+      "verse": "24",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "mama pṛṣṭhagatau tau ca candrasūryāv ivoditau । tvatsakāśaṃ mahābhāge nṛsiṃhāv āgamiṣyataḥ ॥24॥",
+      "leonov_ru": "На моей спине те два льва среди мужей, подобные восходящим солнцу и луне, Прилетят к тебе, о наделенная великой долей.",
+      "commentary": {
+        "bhusana": "मम पृष्ठगतौ तौ च चन्द्रसूर्याविवोदितौ ।\n\nत्वत्सकाशं महाभागे नृसिंहावागमिष्यतः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nana prsthagatau tau ca",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.25",
+      "sarga": 68,
+      "verse": "25",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "arighnaṃ siṃhasaṃkāśaṃ kṣipraṃ drakṣyasi rāghavam । lakṣmaṇaṃ ca dhanuṣpāṇiṃ laṅkādvāram upāgatam ॥25॥",
+      "leonov_ru": "Скоро увидишь ты Рагхаву, губителя врагов, подобного льву, И Лакшману с луком в руке, пришедшего к воротам Ланки.",
+      "commentary": {
+        "bhusana": "अरिघ्नं सिंहसङ्काशं क्षिप्रं द्रक्ष्यसि राघवम् ।\n\nलक्ष्मणं च धनुष्पाणीं लङ्काद्वारमुपस्थितम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "arighnan sinhasankasan ksipran draksyasi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.26",
+      "sarga": 68,
+      "verse": "26",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "nakhadaṃṣṭrāyudhān vīrān siṃhaśārdūlavikramān । vānarān vāraṇendrābhān kṣipraṃ drakṣyasi saṃgatān ॥26॥",
+      "leonov_ru": "Вооруженных когтями и клыками, отважных, мощью подобных львам и тиграм, Обезьян, подобных могучим слонам увидишь ты собравшихся [здесь].",
+      "commentary": {
+        "bhusana": "नखदंष्ट्रायुधान् वीरान् सिंहशार्दूलविक्रमान् ।\n\nवानरान् वारणेन्द्राभान् क्षिप्रं द्रक्ष्यसि सङ्गतान्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nakhadanstrayudhan viran sinhasardulavikranan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.27",
+      "sarga": 68,
+      "verse": "27",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "śailāmbudanikāśānāṃ laṅkāmalayasānuṣu । nardatāṃ kapimukhyānāṃ nacirāc chroṣyase svanam ॥27॥",
+      "leonov_ru": "Подобных горам или облакам (или облакам на горах) на пиках горы Малайя на Ланке. Кричащих вождей обезьян голоса скоро ты услышишь.",
+      "commentary": {
+        "bhusana": "शैलाम्बुदनिकाशानां लङ्कामलयसानुषु ।\n\nनर्दतां कपिमुख्यानामचिराच्छ्रोष्यसि स्वनम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sailanbudanikasanan lankanalayasanusu",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.28",
+      "sarga": 68,
+      "verse": "28",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "nivṛttavanavāsaṃ ca tvayā sārdham ariṃdamam । abhiṣiktam ayodhyāyāṃ kṣipraṃ drakṣyasi rāghavam ॥28॥",
+      "leonov_ru": "Скоро увидишь ты Рагхаву, помазанного на трон Айодхьи, Губителя врагов, срок лесной жизни которого завершен, вместе с тобой».",
+      "commentary": {
+        "bhusana": "निवृत्तवनवासं च त्वया सार्धमरिन्दमम् ।\n\nअभिषिक्तमयोध्यायां क्षिप्रं द्रक्ष्यसि राघवम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nivrttavanavasan ca tvaya sardhanarindanan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.29",
+      "sarga": 68,
+      "verse": "29",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tato mayā vāgbhir adīnabhāṣiṇī । śivābhir iṣṭābhir abhiprasāditā । uvāha śāntiṃ mama maithilātmajā । tavātiśokena tathābhipīḍitā ॥29॥",
+      "leonov_ru": "Тогда обрадованная моими речами благими и желанными, Беспечально говорившая [в моем присутствии], Успокоилась дочь царя Митхилы, Хоть и терзалась она твоей скорбью.",
+      "commentary": {
+        "tilaka": "पूर्वमुक्तया मदुक्त्या श्रुतेन त्वच्छोकेनातिपीडिताप्यदीनभाषिणी सा मया शिवाभिर्वाग्भिरभिप्रसादिता शान्तिं दुःखनिवृत्तिमुवाह । प्रापेत्यर्थः",
+        "bhusana": "ततो मया वाग्भिरदीनभाषिणा शिवाभिरिष्टाभिरभिप्रसादिता ।\n\nजगाम शान्तिं मम मैथिलात्मजा तवापि शोकेन तदा ऽभिपीडिता"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "purvanuktaya naduktya srutena tvacchokenatipiditapyadinabhasini",
+          "matches_verse": false,
+          "content_containment": 0.154,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "tato naya vagbhiradinabhasina sivabhiristabhirabhiprasadita",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.68.39",
+      "sarga": 68,
+      "verse": "39",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "शोकविपाकस्य शोकवृद्धेरित्यर्थः"
+      }
+    },
+    {
+      "verse_id": "5.68.810",
+      "sarga": 68,
+      "verse": "810",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "सन्देहमेवाह कथं न्विति"
+      }
+    },
+    {
+      "verse_id": "5.68.1022",
+      "sarga": 68,
+      "verse": "1022",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "कार्यनिर्योगे कार्यगतौ । दुरतिक्रमे दुर्निर्वहे"
+      }
+    },
+    {
+      "verse_id": "5.68.1622",
+      "sarga": 68,
+      "verse": "1622",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "शेषं शिष्टम्"
+      }
+    },
+    {
+      "verse_id": "5.68.2328",
+      "sarga": 68,
+      "verse": "2328",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "मन्युर्दैन्यम्",
+        "bhusana": "तदलमिति । मन्युः दैन्यम् । \"मन्युर्दैन्ये क्रतौ क्रुधि \" इत्यमरः"
+      }
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "_meta": {
+    "sarga": 21,
+    "drafted_by": "claude-sonnet-5",
+    "tier": "Sonnet",
+    "date": "2026-07-07",
+    "style": "ЛП tier-2 (model II), commentator-dialogue, contrastive-first",
+    "batch": "phase2_batch3",
+    "verses_considered": 37,
+    "notes_drafted": 5,
+    "notes_rejected": 32,
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 4, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 1}
+  },
+  "notes": [
+    {
+      "verse_id": "5.21.3",
+      "lemma_iast": "tṛṇam antarataḥ kṛtvā",
+      "note_ru": "По «Тилаке», соломинка между Ситой и Раваной — не просто жест на слова прямо ему, недопустимо для добродетельной женщины, как разделяющий предмет кладут при осквернении. Само двукратное «pratyuvāca» показывает, что она ответила без страха, обращаясь с ним как с соломинкой — не более значимым.",
+      "source_commentary": [
+        "tilaka"
+      ],
+      "contrastive": false,
+      "kazansky_type": "В",
+      "subtype": "commentator",
+      "review_required": true,
+      "provenance": {
+        "model": "claude-sonnet-5",
+        "tier": "Sonnet",
+        "step": "phase2_batch3_draft"
+      },
+      "why_proposed": "объясняет ритуальную логику жеста с соломинкой (защита от осквернения прямым обращением к чужому мужчине) и добавляет прочтение «Тилаки»: соломинка приравнивает Равану к ничтожеству.",
+      "complements_leonov": "собственное примечание Костиной ограничивается ссылкой на параллель в «Араньяканде» (56 песнь) и запросом «нужен также комментарий о самой соломинке»; комментарий Тилаки как раз дает недостающее объяснение ритуального смысла жеста.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms both claims (parapuruṣasya sākṣāt-sambhāṣaṇānarhatvāt ritual-barrier logic; tṛṇīkṛtaprāṇatayā tṛṇatulyatayā rāvaṇasya grahaṇāt = treating Rāvaṇa as mere straw) and fills exactly the gap Kostina's own note flags ('нужен также комм. о самой соломинке'); pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
+    },
+    {
+      "verse_id": "5.21.9",
+      "lemma_iast": "santo na vā santi",
+      "note_ru": "«Тилака» и «Широмани» понимают фразу как открытый вопрос («праведных ли здесь нет, или ты им не следуешь»). «Бхушана» же настаивает на риторическом ответе: праведные в Ланке есть — существование Вибхишаны и ему подобных доказывает это, — так что вина лежит целиком на самом Раване, не внимающем им.",
+      "source_commentary": [
+        "tilaka",
+        "siromani",
+        "bhusana"
+      ],
+      "contrastive": true,
+      "kazansky_type": "Б",
+      "subtype": "commentator",
+      "review_required": true,
+      "provenance": {
+        "model": "claude-sonnet-5",
+        "tier": "Sonnet",
+        "step": "phase2_batch3_draft"
+      },
+      "why_proposed": "показывает, что Бхушана дает содержательно иной, не нейтрально-вопросительный, а обвинительный ответ на риторический вопрос, называя Вибхишану доказательством существования праведных в Ланке — деталь, предвосхищающая его будущую роль.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhushana's chunk confirms the accusatory answer verbatim (santaḥ ... na santi vā na santi kim? santy eva, śrī-vibhīṣaṇa-prabhṛtīnāṃ sambhavāt); Tilaka/Siromani remain open-question in phrasing — a genuine three-way contrast absent from any baseline; all pratīkas verified (Siromani via content_anchor).",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
+    },
+    {
+      "verse_id": "5.21.17",
+      "lemma_iast": "viprasya viditātmanaḥ",
+      "note_ru": "Основной текст сравнивает Ситу со «знанием ученого брахмана» (viprasya). «Тилака» приводит вариант чтения «dhīrasya» («стойкого/разумного») вместо «viditātmanaḥ», замечая, что часть толкователей относит слово «випра» здесь не только к брахманам, но ко всем трем дваждырожденным варнам, поскольку правом на брахмавидью, по их мнению, обладает любой из трех, а не только брахман.",
+      "source_commentary": [
+        "tilaka"
+      ],
+      "contrastive": false,
+      "kazansky_type": "Б",
+      "subtype": "commentator",
+      "review_required": true,
+      "provenance": {
+        "model": "claude-sonnet-5",
+        "tier": "Sonnet",
+        "step": "phase2_batch3_draft"
+      },
+      "why_proposed": "фиксирует доктринальный вариант чтения, расширяющий круг тех, кому доступна брахмавидья, за пределы одних брахманов — деталь, отсутствующая в подстрочнике.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms both the dhīrasya variant and the trai-varṇika broadening verbatim (anye tu viprapadaṃ traivarṇikaparam ... ata eva dhīrasya iti kvacit pāṭha ityāhuḥ); no baseline note covers this verse; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
+    },
+    {
+      "verse_id": "5.21.19",
+      "lemma_iast": "sādhu rāvaṇa",
+      "note_ru": "«Бхушана» поясняет, что обращение Ситы к Равану («sādhu rāvaṇa») звучит как мольба путника к разбойнику или нищего, просящего воды у чужого: сама вынужденная просительность ее речи, по его прочтению, свидетельствует, что разлука с ней лишь усилила жестокость Раваны.",
+      "source_commentary": [
+        "bhusana"
+      ],
+      "contrastive": false,
+      "kazansky_type": "Б",
+      "subtype": "commentator",
+      "review_required": true,
+      "provenance": {
+        "model": "claude-sonnet-5",
+        "tier": "Sonnet",
+        "step": "phase2_batch3_draft"
+      },
+      "why_proposed": "дает характерологическое прочтение сцены (вынужденная просительность Ситы как знак усилившейся жестокости Раваны), не выводимое из одного подстрочника.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 0},
+        "verdict": "flag_anchor",
+        "reason": "Content is faithful to the cited Bhushana text (pathicoraṃ pānīyayācakavad rāvaṇam arthayate sādhu iti), but the lemma 'sādhu rāvaṇa' is v.18's opening words (5.21.18: sādhu rāvaṇa rāmeṇa māṃ samānaya), not v.19's (mitram aupayikaṃ kartuṃ...); the segmenter's own 5.21.19 bhusana chunk carries a mid-text marker '।। 4.21.18 ।।' before switching to v.19's actual content, and pratika_check flags this Bhushana sub-chunk as content_anchor-only (matches_verse: false) — the chunk is misplaced from v.18 into the v.19 bundle. Kostina's own tier-1 note on v.19 independently flags this exact boundary risk ('в 18 стихе речь про слона, потом появляется бык... читатель может запутаться'). Needs re-anchoring to 5.21.18 before print.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
+    },
+    {
+      "verse_id": "5.21.32",
+      "lemma_iast": "vṛtrasyevendrabāhubhyāṃ",
+      "note_ru": "Подстрочник уже передает образ «однорукого Вритры против двух рук Индры», но не поясняет, откуда взялась эта однорукость. «Тилака» уточняет: одна рука Вритры была отсечена ваджрой, и он еще долго сражался оставшейся рукой против обеих рук Индры, прежде чем был побежден, — сюжет, который комментатор прямо возводит к Бхагавата-пуране.",
+      "source_commentary": [
+        "tilaka"
+      ],
+      "contrastive": false,
+      "kazansky_type": "В",
+      "subtype": "commentator",
+      "review_required": true,
+      "provenance": {
+        "model": "claude-sonnet-5",
+        "tier": "Sonnet",
+        "step": "phase2_batch3_draft"
+      },
+      "why_proposed": "восполняет предысторию мифологического сравнения (почему Вритра однорукий), отсутствующую в подстрочнике, со ссылкой на источник.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms the backstory and source verbatim (vajracchinnaikabāhur vṛtro bahukālam indreṇa sahaikabāhunā yuddhaṃ kṛtavān parājitaś ceti bhāgavate prasiddham); no baseline note covers this verse; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "verse_id": "5.21.1",
+      "reason": "восстанавливает подстрочник (dīnam как наречие); без нового факта."
+    },
+    {
+      "verse_id": "5.21.2",
+      "reason": "дублирует Phase-1 (развернутое примечание о pativratā, Ману 3.262/9.3, уже покрывает этот стих); Тилака дает лишь синтаксическую связку."
+    },
+    {
+      "verse_id": "5.21.4",
+      "reason": "дублирует собственное примечание Леонова/Костиной (siddhi = brahmalokaprāpti по Тилаке уже отмечено)."
+    },
+    {
+      "verse_id": "5.21.5",
+      "reason": "восстанавливает подстрочник (Сита отворачивается от Раваны)."
+    },
+    {
+      "verse_id": "5.21.6",
+      "reason": "дублирует собственное примечание Леонова/Костиной (двусмысленность «satī» со ссылкой на Голдманов уже разобрана); комментарий Широмани в связке относится к иному стиху (сегментационный сдвиг)."
+    },
+    {
+      "verse_id": "5.21.7",
+      "reason": "дублирует Phase-1 (два примечания — dārā rakṣyā/Ману 9.5 и dharma/Шантипарва 12.128.47 — уже покрывают этот стих)."
+    },
+    {
+      "verse_id": "5.21.8",
+      "reason": "дублирует собственное примечание Костиной (цитаты из Тилаки и Бхушаны о симметрии охраны жен уже приведены) и Phase-1 (upamā, paradāra/Ману 4.134)."
+    },
+    {
+      "verse_id": "5.21.10",
+      "reason": "восстанавливает подстрочник (mithyāpraṇītātmā = ложно направленный ум)."
+    },
+    {
+      "verse_id": "5.21.11",
+      "reason": "восстанавливает подстрочник (гибель царств от нечестивого правителя)."
+    },
+    {
+      "verse_id": "5.21.12",
+      "reason": "восстанавливает подстрочник; собственное примечание Костиной уже отмечает эллипсис «aparādhāt»."
+    },
+    {
+      "verse_id": "5.21.13",
+      "reason": "дублирует Phase-1 (примечание о карме/посмертном воздаянии, Ману 12.54-69, уже покрывает этот стих)."
+    },
+    {
+      "verse_id": "5.21.14",
+      "reason": "восстанавливает подстрочник (радость людей при гибели грешника); собственное примечание Костиной уже отмечает связь с недальновидностью из предыдущего стиха."
+    },
+    {
+      "verse_id": "5.21.15",
+      "reason": "восстанавливает подстрочник (Сита неотделима от Рагхавы, как свет от солнца)."
+    },
+    {
+      "verse_id": "5.21.16",
+      "reason": "восстанавливает подстрочник; эпитет «локанатха» разворачивается панегирически, без нового факта."
+    },
+    {
+      "verse_id": "5.21.18",
+      "reason": "комментарий Тилаки лишь оправдывает риторическую асимметрию сравнения (Сита сравнивает себя со слонихой) как допустимую для гневной, разлученной женщины — техническая деталь поэтики, не значимая для образа."
+    },
+    {
+      "verse_id": "5.21.20",
+      "reason": "дублирует Phase-1 (примечание о dharmajña/śaraṇāgatavatsala, Ману 6.92 и Шантипарва 12.69.16, уже покрывает этот стих)."
+    },
+    {
+      "verse_id": "5.21.21",
+      "reason": "восстанавливает подстрочник; собственное примечание Костиной уже поясняет буквальный смысл «prayato bhūtvā»."
+    },
+    {
+      "verse_id": "5.21.22",
+      "reason": "восстанавливает подстрочник (sampradāya = передав)."
+    },
+    {
+      "verse_id": "5.21.23",
+      "reason": "восстанавливает подстрочник (ни молния, ни смерть не пощадят, но Рагхава — тем более); собственное примечание Костиной уже отмечает опущенное «lokanāthaḥ»."
+    },
+    {
+      "verse_id": "5.21.24",
+      "reason": "восстанавливает подстрочник (звук лука подобен грому молнии Индры)."
+    },
+    {
+      "verse_id": "5.21.25",
+      "reason": "дублирует собственное примечание Леонова/Костиной (прочтение Широмани «выпущенные [Рамой и Лакшманой]» против «отмеченные их именами» уже приведено)."
+    },
+    {
+      "verse_id": "5.21.26",
+      "reason": "восстанавливает подстрочник (падающие стрелы не оставляют промежутка)."
+    },
+    {
+      "verse_id": "5.21.27",
+      "reason": "миф о трех шагах Вишну уже дан в Phase-1 к стиху 28; связка, которую делает Широмани между гарудовым и вишнуистским сравнениями, не самостоятельна без этого же примечания."
+    },
+    {
+      "verse_id": "5.21.28",
+      "reason": "дублирует Phase-1 (примечание об образе тривикрамы Вишну и БхГ 13.16 уже покрывает этот стих)."
+    },
+    {
+      "verse_id": "5.21.29",
+      "reason": "уточнение Бхушаны («без битвы, кражей») лишь конкретизирует то, что уже подразумевает подстрочник («бессильным... сделано было это нечестивое дело»)."
+    },
+    {
+      "verse_id": "5.21.30",
+      "reason": "дублирует собственное примечание Костиной (толкование «gocara» как леса по Тилаке уже приведено)."
+    },
+    {
+      "verse_id": "5.21.31",
+      "reason": "восстанавливает подстрочник (собака перед тиграми)."
+    },
+    {
+      "verse_id": "5.21.33",
+      "reason": "восстанавливает подстрочник (Рама — владыка, отнимающий жизнь, как солнце — каплю воды)."
+    },
+    {
+      "verse_id": "5.21.34",
+      "reason": "дублирует собственное примечание Леонова/Костиной (вариант Кайласа/Гандхамадана по Тилаке/Таттвадипике и двусмысленность «kālahata» уже полностью приведены, включая ссылку на Г-пресс)."
+    },
+    {
+      "verse_id": "5.21.1012",
+      "reason": "ambiguous_marker: объединенный диапазон стихов без отдельной привязки — независимая глосса невозможна."
+    },
+    {
+      "verse_id": "5.21.1921",
+      "reason": "ambiguous_marker: объединенный диапазон стихов без отдельной привязки — независимая глосса невозможна."
+    },
+    {
+      "verse_id": "5.21.3031",
+      "reason": "ambiguous_marker: объединенный диапазон стихов без отдельной привязки — независимая глосса невозможна."
+    }
+  ]
+}

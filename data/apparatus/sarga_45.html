@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сундараканда · песнь 45 — сводный аппарат (5 источников)</title>
+<link rel="stylesheet" href="../../css/commentary.css">
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#222;--mut:#777;--line:#e4ddd0;--acc:#7a5c2e;
+--ok:#2e7d32;--edit:#b8860b;--no:#b23b3b;--t1:#8b2f2f;--lex:#2e5d7d;--p2:#6a4fa0;
+--ed:#8a6d1f;--ct:#3e7d5c;}
+*{box-sizing:border-box}
+body{font:16px/1.55 Georgia,serif;margin:0;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;background:#fff;border-bottom:2px solid var(--acc);
+padding:12px 20px;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h1{font-size:19px;margin:0 0 4px}
+.breadcrumb{font:12px system-ui,sans-serif;color:var(--mut);margin:0 0 4px}
+.breadcrumb a{color:var(--acc)}
+.bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font:13px/1.4 system-ui,sans-serif;color:var(--mut)}
+.bar b{color:var(--ink)}
+button{font:13px system-ui,sans-serif;padding:6px 12px;border:1px solid var(--acc);
+background:#fff;color:var(--acc);border-radius:5px;cursor:pointer}
+button:hover{background:var(--acc);color:#fff}
+main{max-width:960px;margin:0 auto;padding:18px}
+.legend{font:12px system-ui,sans-serif;background:#f2ecdd;border:1px solid var(--line);
+border-radius:6px;padding:8px 12px;margin:0 0 14px;line-height:2}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:8px;
+padding:14px 18px;margin:0 0 20px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.vhead{font:13px system-ui,sans-serif;color:var(--mut);margin-bottom:6px}
+.vhead b{font-size:15px;color:var(--ink)}
+.verse{background:#f7f2e8;border-radius:6px;padding:8px 12px;margin:6px 0 10px}
+.verse .sa{font-style:italic;color:#4a3f2c}
+.verse .ru{color:#333}
+.note{border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:6px;
+padding:10px 12px;margin:10px 0}
+.note.l-tier1{border-left-color:var(--t1);background:#fdf6f6}
+.note.l-lexical{border-left-color:var(--lex)}
+.note.l-phase2{border-left-color:var(--p2)}
+.note.l-edition{border-left-color:var(--ed);background:#fbf8ef}
+.note.l-crosstext{border-left-color:var(--ct)}
+.note.d-accept{outline:2px solid var(--ok)}
+.note.d-edit{outline:2px solid var(--edit)}
+.note.d-reject{opacity:.6;outline:2px solid var(--no)}
+.badge{font:11px system-ui,sans-serif;padding:1px 8px;border-radius:10px;
+background:#eee5d3;color:var(--acc);margin-right:5px;white-space:nowrap}
+.badge.b-tier1{background:var(--t1);color:#fff}
+.badge.b-lexical{background:var(--lex);color:#fff}
+.badge.b-phase2{background:var(--p2);color:#fff}
+.badge.b-edition{background:var(--ed);color:#fff}
+.badge.b-crosstext{background:var(--ct);color:#fff}
+.badge.b-status{background:#fff;border:1px solid var(--line);color:var(--mut)}
+.badge.b-gate{background:#fff3cd;border:1px solid var(--edit);color:#7a5c00}
+.badge.b-crit{background:#f8d7da;border:1px solid var(--no);color:#842029}
+.lemma{font-style:italic;color:var(--acc)}
+.ntext{margin:6px 0 0;font-size:15px}
+.collide{font:12px system-ui,sans-serif;background:#fff0f0;border:1px dashed var(--no);
+color:var(--no);border-radius:5px;padding:3px 8px;margin:6px 0 0;display:inline-block}
+.meta{font:12px system-ui,sans-serif;color:var(--mut);margin-top:4px}
+.par{background:#f2f7f4;border-radius:5px;padding:6px 10px;margin:6px 0 0;font-size:13px}
+.par .sa{font-style:italic}
+details{margin:6px 0 0;font-size:13px}
+summary{cursor:pointer;color:var(--acc);font:12px system-ui,sans-serif}
+.comm{margin:5px 0;padding:5px 9px;background:#f6f6f2;border-radius:5px;font-size:13px}
+.comm .who{font:11px system-ui,sans-serif;color:var(--mut);display:block}
+.dev{font-family:"Nirmala UI","Noto Sans Devanagari",serif}
+.controls{margin-top:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+font:13px system-ui,sans-serif}
+.controls label{display:inline-flex;gap:4px;align-items:center;padding:4px 10px;
+border:1px solid var(--line);border-radius:20px;cursor:pointer}
+.controls input[type=radio]{accent-color:var(--acc)}
+textarea,.rr{width:100%;font:14px Georgia,serif;padding:8px;border:1px solid var(--line);
+border-radius:5px;margin-top:6px}
+.hidden{display:none}
+</style></head><body>
+<header>
+<div class="breadcrumb"><a href="../../index.html">Commentary Strategies</a> › Сундараканда · сводный аппарат</div>
+<h1>Песнь 45 — сводный аппарат из 5 источников (пилот H141)</h1>
+<div class="bar">
+<span id="progress">—</span>
+<button onclick="dl()">⬇ Скачать decisions.json</button>
+<button onclick="cp()">⧉ Копировать JSON</button>
+<button onclick="reset()">↺ Сброс</button>
+<span>Нумерация — южная вульгата (перевод М. Леонова). Голосование сохраняется в браузере (localStorage); ярус 1 — только показ, без голосования.</span>
+</div></header>
+<main class="container"><div id="app"></div></main>
+<script>
+const D = {"_meta": {"generated_by": "scripts/build_sarga_apparatus.py", "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)", "sarga": 45, "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py", "sources": {"tier1": "ярус 1 · Леонов/Костина", "lexical": "Фаза 1 · лексич.", "phase2": "Фаза 2 · комментаторы", "edition": "издания · сноска", "crosstext": "cross-text"}, "verses_total": 21, "verses_with_notes": 8, "notes_by_layer": {"tier1": 5, "lexical": 5, "phase2": 1, "edition": 1, "crosstext": 0}}, "sarga": 45, "verses": [{"verse_id": "5.45.1", "verse": "1", "sanskrit_iast": "tatas te rākṣasendreṇa coditā mantriṇaḥ sutāḥ । niryayur bhavanāt tasmāt sapta saptārcivarcasaḥ ॥1॥", "leonov_ru": "И вот те сыновья советников по приказу владыки ракшасов Вышли из того дворца семеро, сияющие, подобно пламени.", "commentary": {"tilaka": "सप्तार्चिवर्चसो ऽग्नितुल्यतेजसः । आर्षो रेफलोपः", "bhusana": "ततस्ते राक्षसेन्द्रेण चोदिता मन्त्रिणः सुताः ।\n\nनिर्युयुर्भवनात्तस्मात् सप्त सप्तार्चिवर्चसः\nततस्त इत्यादि । भवनात् तस्मात् रावणभवनात् । सप्तार्चिवर्चस इत्यत्र सप्तार्चीति इकारान्तत्वमार्षम्"}, "has_tier1": false, "notes": [{"id": "lexical:5.45.1:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "saptārcivarcas", "note_ru": "Саптарчиварчас (sapta-arci-varcas, adj.) — бахуврихи: sapta «семь» + arci (acc./instr. от arcis «луч, язык пламени») + varcas «блеск, сияние, энергия» (√vṛc-/vṛj-). MW: varcas 'vital energy, brilliance'; arcis 'ray of light, flame'. Семеро сыновей советников описаны как «сияющие подобно пламени» (ср. с подстрочником «подобно пламени»); однако varcas — специфически «телесное/ритуальное сияние», связанное с brahmavarcastva (сиянием брахманической силы). Формула semiotics: воины-ракшасы описаны через категорию, обычно применяемую к брахманической энергии, что создаёт иронический контраст.", "type": "А", "subtype": "lexical", "trigger": "etymology", "source": "dic_mw:varcas+dic_mw:arcis"}]}, {"verse_id": "5.45.2", "verse": "2", "sanskrit_iast": "mahābalaparīvārā dhanuṣmanto mahābalāḥ । kṛtāstrāstravidāṃ śreṣṭhāḥ parasparajayaiṣiṇaḥ ॥2॥", "leonov_ru": "Сопровождаемые огромным войском, вооруженные луками, обладающие великой силой, Искусные лучники, лучшие из владеющих искусством стрельбы, желающие превзойти друг друга,", "commentary": {"tilaka": "महद्बलं महती सेना परीवारो येषाम् । कृतास्त्रास्त्रेत्यार्षः सन्धिः । कृतास्त्राः शिक्षितास्त्रा अस्त्रविदां श्रेष्ठाः । परस्परजयैषिणो ऽहमहमिकया स्वस्वोत्कर्षापेक्षिणः", "bhusana": "३\n\nमहाबलपरीवारा धनुष्मन्तो महाबलाः ।\n\nकृतास्त्रास्त्रविदां श्रेष्ठाः परस्परजयैषिणः\nकृतास्त्राः शिक्षिताश्त्राः । आर्षः सन्धिः । कृतास्त्राणामस्त्रविदां च श्रेष्ठा इति वा । ज्ञानसिक्षे उभे अप्येषां स्त इति भावः । परस्परजयैषिणः प्रत्यकं हनुमज्जयैषिण इत्यर्थः"}, "has_tier1": true, "notes": [{"id": "tier1:5.45.2:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "Соперничающие друг с другом (parasparajayaiṣiṇaḥ) – букв. «желающие победить друг друга»"}, {"id": "phase2:5.45.2:0", "layer": "phase2", "layer_label": "Фаза 2 · комментаторы", "votable": true, "status": "ожидает гейта М.Г.", "mg_comment": "", "lemma_iast": "parasparajayaiṣiṇaḥ", "note_ru": "«Соперничающие друг с другом» (parasparajayaiṣiṇaḥ) в «Тилаке» — соперничество семерых сыновей советников между собой (аhamahamikā, «кто первый»); в «Бхушане» — иначе: каждый из них порознь жаждет победить именно Ханумана, а не друг друга. Перевод следует Тилаке (взаимное соперничество братьев).", "type": "Б", "source_commentary": ["tilaka", "bhusana"], "why_proposed": "показывает расхождение комментаторов в адресате соперничества (друг с другом vs каждый против Ханумана) и называет чтение, которому фактически следует перевод.", "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"}, "collision_tier1": true}]}, {"verse_id": "5.45.3", "verse": "3", "sanskrit_iast": "hemajālaparikṣiptair dhvajavadbhiḥ patākibhiḥ । toyadasvananirghoṣair vājiyuktair mahārathaiḥ ॥3॥", "leonov_ru": "На огромных колесницах, запряженных конями, звучащими (чье ржание) подобно голосу тучи, Украшенными золотыми сетками, с флагами и знаменами.", "commentary": {"tilaka": "ध्वजवद्भिर्विशिष्टध्वजदण्डयुक्तैः, पताकिभिः प्रशस्तपताकावद्भिर्महारथैर्निर्युयुरिति संबन्धः ।। 5.45.3,4 ।।\n\nशोकसंभ्रान्ताः । निश्चितमरणबुद्ध्येति शेषः", "bhusana": "हेमजालपरिक्षिप्तैर्ध्वजवद्भिः पताकिभिः ।\n\nतोयदस्वननिर्घोषैर्वाजियुक्तैर्महारथैः"}, "has_tier1": false, "notes": [{"id": "lexical:5.45.3:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "hemajāla", "note_ru": "Хемаджала (hema-jāla, n.) — «золотая сеть»: hema «золото» + jāla «сеть, плетение» (√jal- «замерзать, сплетаться»). MW: hemajāla 'a golden net or woven fabric'. Это — роскошное покрывало-орнамент, накидываемое на колесницу: золочёная сетчатая ткань, защищающая или украшающая кузов. В контексте описания семи воинских колесниц hemajāla — маркер статуса (не бедные ракшасы-солдаты, а сыновья советников-amātya). Подстрочник «украшенными золотыми сетками» передаёт значение, не раскрывая, что это функциональный и статусный элемент военной колесницы.", "type": "А", "subtype": "lexical", "trigger": "realia", "source": "dic_mw:hemajAla"}]}, {"verse_id": "5.45.7", "verse": "7", "sanskrit_iast": "sṛjanto bāṇavṛṣṭiṃ te rathagarjitaniḥsvanāḥ । pravṛṭkāla ivāmbhodā vicerur nairṛtāmbudāḥ ॥7॥", "leonov_ru": "Выпуская дождь стрел, грохочущие колесницами, Помчались тучи ракшасов, словно тучи в пору дождей.", "commentary": {"tilaka": "सृजन्तो विसृजन्तः", "bhusana": "सृजन्तो बाणवृष्टिं ते रथगर्जितनिःस्वनाः ।\n\nवृष्टिमन्त इवाम्भोदा विचेरुर्नैर्ऋताम्बुदाः", "siromani": "सृजन्त इति । प्रावृट्काले अम्भोदाः जलबिन्दुमोचकाः मेघा इव बाणवृष्टिं सृजन्तः रथगर्जितनिःस्वनाः नैऋताम्बुदाः अम्बुदसदृशनैऋताः विचेरुः"}, "has_tier1": true, "notes": [{"id": "tier1:5.45.7:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "kostina", "note_ru": "[Е. Костина] «Ливень стрел изливая,Ракшасов тучи, подобныеТучам в дождливую пору.» Колесницы=гром, стрелы=дождь, ракшасы=тучи считывается не с первого раза. Тучи ракшасов воспринимается как \"множество ракшасов\", а не тучи-ракшасы"}, {"id": "lexical:5.45.7:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "nairṛta", "note_ru": "Найррита (nairṛta, m.) — «потомок/относящийся к Нирртти»: nirṛti (f.) «разложение, смерть, несчастье» (MW: nirṛti 'dissolution, destruction; goddess of death and corruption') + суф. -ta. Nairṛta = ракшас в его архетипическом измерении: не просто «демон», а существо, связанное с Нирртти — ведийской богиней хаоса и распада. Сравнение войска ракшасов с «тучами найррита» (nairṛtāmbudāḥ) перед сезоном дождей — образ неизбежного, разрушительного нашествия. Подстрочник опускает связь с именем Нирртти.", "type": "А", "subtype": "lexical", "trigger": "etymology", "source": "dic_mw:nErfta+dic_mw:nirfti", "collision_tier1": true}]}, {"verse_id": "5.45.10", "verse": "10", "sanskrit_iast": "sa taiḥ krīḍan dhanuṣmadbhir vyomni vīraḥ prakāśate । dhanuṣmadbhir yathā meghair mārutaḥ prabhur ambare ॥10॥", "leonov_ru": "Играя с теми лучниками, в небе был виден отважный [Хануман], Как сильный ветер в небе [играет] с тучами, пересеченными радугой.", "commentary": {"bhusana": "स तैः क्रीडन् धनुष्मद्भिर्व्योम्नि वीरः प्रकाशते ।\n\nधनुष्मद्भिर्यथा मेघैर्मारुतः प्रभुरम्बरे", "siromani": "स इति । धनुष्मद्भिस्तैः राक्षसैः व्योम्नि क्रीडन् स हनूमान् धनुष्मद्भिः इन्द्रचापविशिष्टैर्मेघैरम्बरे प्रभुर्मारुत इव प्रकाशते"}, "has_tier1": true, "notes": [{"id": "tier1:5.45.10:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "…с тучами, / Пересеченными радугой (dhanuṣmadbhir yathā meghaiḥ) – игра слов: dhanuṣmat означает и «лучник» и «обладающий радугой». В комментарии «Тилака» отмечается, что слово dhanus (лук) в третьей строке следует понимать как «лук Индры» (aindradhanus), то есть «радуга»."}, {"id": "lexical:5.45.10:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "māruteśvara", "note_ru": "В V.45.10 Хануман уподобляется ветру (mārutaḥ prabhur ambare) — «владыке ветров в небе», играющему с тучами-лучниками. māruteśvara / mārutaḥ prabhu — не просто «ветер», а Ваю в его ипостаси prabhу «господина»: MW: mārutа 'the wind-god Vāyu'; prabhu 'master, lord'. Метафора инвертирует облачную иконографию: в V.45.7 ракшасы = «тучи»; теперь Хануман = «ветер», рассеивающий тучи. Двойная метафора туча→ветер замыкает кольцевую структуру боевой сцены. Кроме того, mārutaḥ prabhu — скрытое самоназвание Ханумана (сын Ваю), превращающее сравнение в игру идентичностей.", "type": "А", "subtype": "lexical", "trigger": "compound", "source": "dic_mw:mAruta+dic_mw:prabhu", "collision_tier1": true}]}, {"verse_id": "5.45.12", "verse": "12", "sanskrit_iast": "talenābhihanat kāṃś cit pādaiḥ kāṃś cit paraṃtapaḥ । muṣṭinābhyahanat kāṃś cin nakhaiḥ kāṃś cid vyadārayat ॥12॥", "leonov_ru": "Одних бил ладонями, других ступнями губитель врагов, Одних бил кулаком, других разрывал когтями.", "commentary": {"bhusana": "तलेनाभ्यहनत् कांश्चित् पादैः कांश्चित् परन्तपः ।\n\nमुष्टिना ऽभ्यहनत् कांश्चिन्नखैः कांश्चिद् व्यदारयत्", "siromani": "तलेनेति । परंतपो हनूमान् कांश्चित् राक्षसान् तलेन अभिहनत् अभ्यहन् कांश्चिच्च मुष्टिभिः अहनत् अहन् कांश्चित् नखैर्व्यदारयत्"}, "has_tier1": true, "notes": [{"id": "tier1:5.45.12:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "…ступнями (pādaiḥ) – в комментарии «Бхушана» отмечается, что множественное число использовано здесь вместо двойственного, поскольку можно сказать, что у обезьян четыре ступни."}, {"id": "lexical:5.45.12:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "paraṃtapa", "note_ru": "Парантапа (paraṃ-tapa, adj./m.) — «сжигающий врагов»: para «иной, враг» (в Acc. paraṃ) + √tap- «жечь, пылать» (Whitney #182). MW: paraṃtapa 'scorcher of foes — an epithet of heroes'. Это один из наиболее семантически насыщенных воинских эпитетов: герой уподобляется огню (tapas), а враги — его топливу. В V.45.12 paraṃtapa отнесено к Хануману именно в момент физической расправы (ладонями, ногами, кулаками, когтями) — пик «жара» эпизода. Подстрочник опускает эпитет («губитель врагов»), теряя огненную метафору.", "type": "А", "subtype": "lexical", "trigger": "etymology", "source": "dic_mw:paraMtapa", "collision_tier1": true}]}, {"verse_id": "5.45.15", "verse": "15", "sanskrit_iast": "vinedur visvaraṃ nāgā nipetur bhuvi vājinaḥ । bhagnanīḍadhvajacchatrair bhūś ca kīrṇābhavad rathaiḥ ॥15॥", "leonov_ru": "Трубили невлад слоны, пали на землю кони, И земля была покрыта колесницами с разбитыми сиденьями, знаменами и зонтами.", "commentary": {"tilaka": "नीडं रथस्थं रथ्याधिष्ठानस्थानम्", "bhusana": "विनेदुर्विस्वरं नागा निपेतुर्भुवि वाजिनः ।\n\nभग्ननीडध्वजच्छत्त्रैर्भूश्च कीर्णा ऽभवद्रथैः\nनीडं ध्वजावयवविशेषः", "siromani": "विनेदुरिति । नागाः गजाः विस्वरं यथा भवति तथा विनेदुः वाजिनो भुवि निपेतुः भग्नानि नीडध्वजच्छत्राणि येषां तैः रथैः कीर्णा व्याप्ता भूरभवत् तत्र नीडं रविस्थितिस्थानम्"}, "has_tier1": true, "notes": [{"id": "tier1:5.45.15:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "И покрылась она / разбитыми колесницами (bhagnanīḍadhvajacchatrair bhūś ca kīrṇābhavad rathaiḥ) – букв.: «И земля была покрыта колесницами, у которых были разбиты сиденья, знамена и зонты»."}]}, {"verse_id": "5.45.16", "verse": "16", "sanskrit_iast": "sravatā rudhireṇātha sravantyo darśitāḥ pathi । vividhaiś ca svanair laṅkā nanāda vikṛtaṃ tadā ॥16॥", "leonov_ru": "От текущей крови тогда потоки были видны на дороге, Тогда Ланка огласилась ужасно различными криками [ракшасов].", "commentary": {"bhusana": "स्रवता रुधिरेणाथस्रवन्त्यो दर्शिताः पथि ।\n\nविविधैश्च स्वरैर्लङ्का ननाद विकृतं तदा", "siromani": "स्रवतेति । स्रवता प्रच्युतेन रुधिरेण स्रवन्त्यः नद्यः पथि दर्शिताः दृष्टाः रामो राज्यमचीकरदित्यादाविव णिच् । विविधैः स्वनैः राक्षसनादैः लङ्का विकृतं ननाद"}, "has_tier1": false, "notes": [{"id": "edition:5.45.16:0", "layer": "edition", "layer_label": "издания · сноска", "votable": true, "status": "ожидает гейта М.Г.", "note_ru": "Шлока 5.45.16 отсутствует в критическом издании (Барода).", "kind": "single", "range": "5.45.16", "confidence": "structural_absence (best_crit_jaccard < 0.25)", "verses_iast": [{"verse_id": "5.45.16", "iast": "sravatā rudhireṇātha sravantyo darśitāḥ pathi । vividhaiś ca svanair laṅkā nanāda vikṛtaṃ tadā ॥16॥"}]}]}], "labels": {"tilaka": "Тилака", "bhusana": "Бхушана", "siromani": "Широмани"}};
+const KEY = "sundara_apparatus_s45_v1";
+const dec = JSON.parse(localStorage.getItem(KEY) || "{}");
+const $ = (h)=>{const t=document.createElement("template");t.innerHTML=h.trim();return t.content.firstChild;};
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+const STATUS_CLS = s => s==="ожидает гейта М.Г." ? "b-gate" : "b-status";
+
+function commBlock(comm){
+  return Object.keys(comm||{}).map(c=>`<div class="comm"><span class="who">${D.labels[c]||c}</span><span class="dev">${esc(comm[c])}</span></div>`).join("");
+}
+
+function noteHtml(n,vi,ni){
+  const d=dec[n.id]||{};
+  const badges=[`<span class="badge b-${n.layer}">${esc(n.layer_label)}</span>`,
+    `<span class="badge ${STATUS_CLS(n.status)}">${esc(n.status)}</span>`];
+  if(n.layer==="tier1"&&n.editor) badges.push(`<span class="badge b-status">${esc(n.editor)}</span>`);
+  if(n.type) badges.push(`<span class="badge b-status">тип ${esc(n.type)}</span>`);
+  if(n.cluster_label) badges.push(`<span class="badge b-status">${esc(n.cluster_label)}</span>`);
+  if(n.quality) badges.push(`<span class="badge b-status">${esc(n.quality)}</span>`);
+  if(n.edition_flag && n.edition_flag!=="vulgate")
+    badges.push(`<span class="badge b-crit">⚠ нумерация: ${esc(n.edition_flag)} (${esc(n.shloka_critical)})</span>`);
+  let body="";
+  if(n.lemma_iast) body+=`<span class="lemma">${esc(n.lemma_iast)}</span> — `;
+  body+=esc(n.note_ru||"");
+  let extra="";
+  if(n.why_proposed) extra+=`<div class="meta"><b>Зачем предложено:</b> ${esc(n.why_proposed)}</div>`;
+  if(n.mg_comment) extra+=`<div class="meta"><b>Ремарка М.Г.:</b> ${esc(n.mg_comment)}</div>`;
+  if(n.layer==="crosstext"&&n.parallel_sa_iast){
+    extra+=`<div class="par"><b>${esc(n.work_label||"")}</b> ${esc(n.verse_address||"")}${n.verse_address_vulgate?` · ${esc(n.verse_address_vulgate)}`:""}<br><span class="sa">${esc(n.parallel_sa_iast)}</span></div>`;
+  }
+  if(n.layer==="edition"&&(n.verses_iast||[]).length){
+    extra+=`<details><summary>Текст отсутствующих в критическом издании шлок</summary>${
+      n.verses_iast.map(v=>`<div class="par"><b>${esc(v.verse_id)}</b> <span class="sa">${esc(v.iast)}</span></div>`).join("")}</details>`;
+  }
+  if(n.source) extra+=`<div class="meta">Источник: ${esc(n.source)}</div>`;
+  if((n.source_commentary||[]).length) extra+=`<div class="meta">Комментаторы: ${n.source_commentary.map(c=>D.labels[c]||c).join(", ")}</div>`;
+  const collide=n.collision_tier1?`<div class="collide">⚠ на этом стихе уже есть примечание яруса 1 (Леонов/Костина) — см. выше, проверьте на дублирование</div>`:"";
+  const controls=n.votable?`
+    <div class="controls">
+      <label><input type="radio" name="a_${n.id}" value="accept"> ✅ принять</label>
+      <label><input type="radio" name="a_${n.id}" value="edit"> ✏️ править</label>
+      <label><input type="radio" name="a_${n.id}" value="reject"> ❌ отклонить</label>
+    </div>
+    <textarea class="hidden" id="e_${n.id}" rows="3">${esc(d.edited_note||n.note_ru||"")}</textarea>
+    <input class="rr hidden" id="r_${n.id}" placeholder="Причина отклонения / замечание…" value="${esc(d.reject_reason||"")}">`:"";
+  return `<div class="note l-${n.layer} ${d.action?("d-"+d.action):""}" id="n_${n.id}">
+    <div>${badges.join("")}</div>
+    <div class="ntext">${body}</div>${extra}${collide}${controls}</div>`;
+}
+
+function render(){
+  const app=document.getElementById("app");
+  app.innerHTML="";
+  const m=D._meta, bl=m.notes_by_layer, L=m.sources;
+  app.appendChild($(`<div class="legend"><b>Песнь ${D.sarga}</b>: стихов ${m.verses_total}, с примечаниями ${m.verses_with_notes}. Слои: <span class="badge b-tier1">${L.tier1}</span> ${bl.tier1} (без голосования) · <span class="badge b-lexical">${L.lexical}</span> ${bl.lexical} · <span class="badge b-phase2">${L.phase2}</span> ${bl.phase2} · <span class="badge b-edition">${L.edition}</span> ${bl.edition} · <span class="badge b-crosstext">${L.crosstext}</span> ${bl.crosstext}. Статус <span class="badge b-gate">ожидает гейта М.Г.</span> — решение по пилоту (H142) ещё не применено.</div>`));
+  D.verses.forEach((v,vi)=>{
+    const card=$(`<div class="vcard"></div>`);
+    card.innerHTML=`
+      <div class="vhead"><b>${v.verse_id}</b>${v.has_tier1?' · <span class="badge b-tier1">есть примечание яруса 1</span>':''}</div>
+      <div class="verse">
+        <div class="sa dev">${esc(v.sanskrit_iast)||'<i>—</i>'}</div>
+        <div class="ru">${esc(v.leonov_ru)||'<i>подстрочник не найден</i>'}</div>
+      </div>
+      ${Object.keys(v.commentary||{}).length?`<details><summary>Санскритские комментаторы к стиху</summary>${commBlock(v.commentary)}</details>`:''}
+      ${v.notes.map((n,ni)=>noteHtml(n,vi,ni)).join("")}`;
+    app.appendChild(card);
+    v.notes.filter(n=>n.votable).forEach(n=>{
+      const d=dec[n.id]||{};
+      card.querySelectorAll(`input[name="a_${CSS.escape(n.id)}"]`).forEach(r=>{
+        if(d.action===r.value) r.checked=true;
+        r.onchange=()=>set(n,r.value);
+      });
+      toggle(n.id,d.action);
+    });
+  });
+  prog();
+}
+function toggle(id,action){
+  const e=document.getElementById("e_"+id),r=document.getElementById("r_"+id);
+  if(e)e.classList.toggle("hidden",action!=="edit");
+  if(r)r.classList.toggle("hidden",action!=="reject");
+}
+function set(n,action){
+  const id=n.id,rec=dec[id]||{};
+  rec.action=action;
+  rec.verse_id=n.verse_id||id.split(":")[1];
+  rec.layer=n.layer;
+  if(n.lemma_iast)rec.lemma_iast=n.lemma_iast;
+  const e=document.getElementById("e_"+id),r=document.getElementById("r_"+id);
+  rec.edited_note=e?e.value:"";
+  rec.reject_reason=r?r.value:"";
+  rec.ts=new Date().toISOString();
+  dec[id]=rec;
+  if(e)e.oninput=()=>{rec.edited_note=e.value;save();};
+  if(r)r.oninput=()=>{rec.reject_reason=r.value;save();};
+  const el=document.getElementById("n_"+id);
+  el.className=el.className.replace(/\bd-(accept|edit|reject)\b/g,"").trim()+" d-"+action;
+  toggle(id,action);save();prog();
+}
+function allVotable(){const a=[];D.verses.forEach(v=>v.notes.forEach(n=>{if(n.votable)a.push(n);}));return a;}
+function save(){localStorage.setItem(KEY,JSON.stringify(dec));}
+function prog(){
+  const all=allVotable();
+  const done=all.filter(n=>dec[n.id]&&dec[n.id].action).length;
+  const a=all.filter(n=>(dec[n.id]||{}).action==="accept").length;
+  const e=all.filter(n=>(dec[n.id]||{}).action==="edit").length;
+  const r=all.filter(n=>(dec[n.id]||{}).action==="reject").length;
+  document.getElementById("progress").innerHTML=`<b>${done}/${all.length}</b> решено · ✅ ${a} · ✏️ ${e} · ❌ ${r}`;
+}
+function payload(){
+  return JSON.stringify({sarga:D.sarga,generated_by:D._meta.generated_by,
+    decisions:dec,reviewed_at:new Date().toISOString()},null,2);
+}
+function dl(){const b=new Blob([payload()],{type:"application/json"});const u=URL.createObjectURL(b);
+  const a=document.createElement("a");a.href=u;a.download="decisions_sarga_"+D.sarga+".json";a.click();URL.revokeObjectURL(u);}
+function cp(){navigator.clipboard.writeText(payload()).then(()=>alert("JSON скопирован в буфер обмена"));}
+function reset(){if(confirm("Сбросить все решения по этой песни?")){localStorage.removeItem(KEY);for(const k in dec)delete dec[k];render();}}
+// verse_id onto each note for the export
+D.verses.forEach(v=>v.notes.forEach(n=>n.verse_id=v.verse_id));
+render();
+</script></body></html>

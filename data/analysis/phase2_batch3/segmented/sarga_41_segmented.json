@@ -1,0 +1,595 @@
+{
+  "_meta": {
+    "generated_by": "scripts/extract_yellow_sargas.py",
+    "purpose": "Phase-2 deterministic commentary segmentation (no LLM); input to Sonnet drafting",
+    "sargas": [
+      41
+    ],
+    "commentators": [
+      "tilaka",
+      "bhusana",
+      "siromani",
+      "tattvadipika"
+    ],
+    "verse_count": 25,
+    "verses_all_three": 10,
+    "ambiguous_markers": 3,
+    "corpus_aligned": 21,
+    "align_backend": "sanskrit_util",
+    "reassigned_moves": 1841,
+    "content_moves": 84,
+    "pratika_checkable": 4647,
+    "pratika_matched": 3983,
+    "alignment_precision": 0.857,
+    "anchor_verified": 4391,
+    "alignment_precision_verified": 0.945,
+    "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md"
+  },
+  "preambles": {
+    "41.pre": {
+      "tilaka": "तस्माद्देशादपाक्रम्य सीतासमीपात्किञ्चिद्दूरं गत्वा",
+      "bhusana": "स च वाग्भिः प्रशन्ताभिर्गमिष्यन् पूजितस्तया ।\n\nतस्माद्देशादपक्रम्य चिन्तयामास वानरः",
+      "siromani": "प्रस्थानानन्तरकालिकां हनुमतश्चिन्तामाह स इत्यादिभिः । तया सीतया प्रशस्ताभिर्वाग्भिः पूजितः स हनूमान् गमिष्यन् सन् तस्मात् देशादपक्रम्य निर्गत्य चिन्तयामास"
+    }
+  },
+  "verses": [
+    {
+      "verse_id": "5.41.1",
+      "sarga": 41,
+      "verse": "1",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa ca vāgbhiḥ praśastābhir gamiṣyan pūjitas tayā । tasmād deśād apakramya cintayām āsa vānaraḥ ॥1॥",
+      "leonov_ru": "Уходя, он (Хануман) был почтен ею хвалебными словами. Покинув то место, задумалась обезьяна.",
+      "commentary": {
+        "tilaka": "तस्माद्देशादपाक्रम्य सीतासमीपात्किञ्चिद्दूरं गत्वा\nचिन्तयामासेत्युक्तां चिन्तां दर्शयति-- अल्पशेषमिति । इयं सीता दृष्टेतीदं प्रधानकार्यं निष्पन्नमिति आनुषङ्गिकं परबलदर्शनमवशिष्टमित्यल्पशेषत्वम् । इह कार्ये परबलज्ञानलक्षणे त्रीनुपायान्सामादीनतिक्रम्य चतुर्थो दण्ड एव साधनत्वेन दृश्यते\nतस्मादन्वदपि स्वाम्यभीष्टं कृत्वैव गन्तव्यमित्याह-- इहैवेति । यद्यप्यहमिहैव सीतान्वेषण एव तावत्प्रथमं कृतनिश्चयः, तथापि यदि परात्मसंमर्दविशेषतत्त्ववित्परस्यात्मनः स्वस्य च संमर्दे युद्धे यो विशेषस्तत्तत्त्वविद्भूत्वा यदि प्लवगेश्वरालयं सुग्रीवालयं व्रजेयं ततस्तदा भर्तृशासनं सम्यक्कृतं स्यात् । अन्यथा राक्षसबलं कीदृशमिति पृष्टे निरुत्तरः स्यामिति भावः\nएवं निश्चितार्थो युद्धप्रवृत्तिप्रकारं चिन्तयति-- कथं न्विति । अद्य खलु ममेहागतमागमनं सुखागतं सुखफलक्रमागमनं कथं भवेत्, तथा राक्षसैः सह प्रसह्य स्वयमेव बलात्कृत्य युद्धं च कथं मम भवेत्, तथा तथैव करणे सति सारवदूर्जितं स्वबलं मां च स दशाननः कथं मानयेच्छ्लाघयेत् । यद्वा तथैव युद्धकरणे खलु दशानन आत्मबलं मां च सारवत्समानयेत्सम्यक्परिच्छिन्द्यादित्यर्थेन युद्धफलमुक्तम्",
+        "bhusana": "स च वाग्भिः प्रशन्ताभिर्गमिष्यन् पूजितस्तया ।\n\nतस्माद्देशादपक्रम्य चिन्तयामास वानरः\nस चेत्यादि",
+        "siromani": "प्रस्थानानन्तरकालिकां हनुमतश्चिन्तामाह स इत्यादिभिः । तया सीतया प्रशस्ताभिर्वाग्भिः पूजितः स हनूमान् गमिष्यन् सन् तस्मात् देशादपक्रम्य निर्गत्य चिन्तयामास"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tasnaddesadapakranya sitasanipatkincidduran gatva cintayanasetyuktan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa ca vagbhih prasantabhirganisyan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "prasthananantarakalikan hanunatascintanaha sa ityadibhih",
+          "matches_verse": false,
+          "content_containment": 0.231,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.2",
+      "sarga": 41,
+      "verse": "2",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "alpaśeṣam idaṃ kāryaṃ dṛṣṭeyam asitekṣaṇā । trīn upāyān atikramya caturtha iha dṛśyate ॥2॥",
+      "leonov_ru": "«Осталось сделать немного. Нашел я черноглазую. Помимо трех средств (sāman, dana, bheda), вижу здесь четвертое (daṇḍa).",
+      "commentary": {
+        "bhusana": "अल्पशेषमिदं कार्यं दृष्टेयमसितेक्षणा ।\n\nत्रीनुपायानतिक्रम्य चतुर्थ इह दृश्यते\nअल्पेति । \"अभिगम्य तु वैदेहीं निलयं रावणस्य च\" इत्युक्तकार्यद्वये सीतादर्शनरूपं कार्यं जातम् । इदं कार्यं रावणनिलयपरिज्ञानरूपम् । अल्पशेषम् अल्पावशिष्टम् । सान्तःपुरलङ्कायाः सम्यक् परिज्ञातत्वे ऽपि राक्षसबलाबलरावणहृदयाद्यपरिज्ञानात्कार्यस्याल्पशेषत्वोक्तिः । इह राक्षसबलाबलरावणहृदयपरिज्ञानरूपकार्ये । त्रीनुपायानतिक्रम्य सामदानभेदानतिक्रम्य । चतुर्थो लक्ष्यते साधनतया दण्ड एव दृश्यत इत्यर्थः",
+        "siromani": "चिन्ताकारमाह अल्पेत्यादिभिः । इयं सीता दृष्टा प्रधानकार्यं सिद्धमित्यर्थः । इदं परबलदर्शनरूपं कार्यमल्पशेषं स्वल्पं सत् शिष्यते इह परबलदर्शनरूपकार्ये तु यतः त्रीन् सामादीन् उपायान् अतिक्रम्य त्यक्त्वा चतुर्थो दण्ड एव उपायः दृश्यते"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "alpasesanidan karyan drsteyanasiteksana",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "cintakaranaha alpetyadibhih",
+          "matches_verse": false,
+          "content_containment": 0.545,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.3",
+      "sarga": 41,
+      "verse": "3",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na sāma rakṣaḥsu guṇāya kalpate । na danam arthopaciteṣu yujyate । na bhedasādhyā baladarpitā janāḥ । parākramas tv eṣa mameha rocate ॥3॥",
+      "leonov_ru": "Не подходит для ракшасов примирение (sāman), Не годятся дары для тех, которыми скоплены богатства, Не посеять рознь среди тех, кто гордится силой, Только сила мне здесь по нраву.",
+      "commentary": {
+        "bhusana": "न साम रक्षस्सु गुणाय कल्पते न दानमर्थोपचितेषु युज्यते ।\n\nन भेदसाध्या बलदर्पिता जनाः पराक्रमस्त्वेव ममेह रोचते"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "na sana raksassu gunaya",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.4",
+      "sarga": 41,
+      "verse": "4",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na cāsya kāryasya parākramād ṛte । viniścayaḥ kaś cid ihopapadyate । hatapravīrāś ca raṇe tu rākṣasāḥ । kathaṃ cid īyur yad ihādya mārdavam ॥4॥",
+      "leonov_ru": "В этом деле кроме силы Бесполезно какое-либо [иное] решение. Ракшасы, у которых герои будут убиты в бою, Так или иначе, смягчатся.",
+      "commentary": {
+        "tilaka": "अस्य कार्यस्य परबलाशयपरिज्ञानरूपस्य सर्वातिशायिपराक्रमवतो मम पराजय एव नास्तीत्याशयेनाह-- पराक्रमादृते इति । विनिश्चयो निश्चितोपायः । स्वबलप्रकाशने प्रयोजनान्तरमप्यस्तीत्याह-- हतेति । अद्य हताः प्रवीराः श्रेष्ठा येषां ते राक्षसा यद्यस्मादिह भाविनि रणे मार्दवमेकेनैवैवं पराक्रमः कृतस्तादृशैरनेकैः कथमस्माकं जयाशेति रणप्रवृत्तिराहित्यं प्राप्नुयुः, अतः पराक्रमात्परबलस्य मनोभङ्गरूपं कार्यं सिद्ध्यतीत्याशयः",
+        "bhusana": "न चास्य कार्यस्य पराक्रमादृते विनिश्चयः कश्चिदिहोपपद्यते ।\n\nहतप्रवीरा हि रणे राक्षसाः कथंचिदीयुर्यदिहाद्य मार्दवम्",
+        "siromani": "नेति । पराक्रमात् ऋते विना अस्य सीताप्राप्तिरूपस्य कार्यस्य विनिश्चयः विनिश्चायकः कश्चित्सामादिर्नोपपद्यते अतः इहास्मिन् समये राक्षसाः कथञ्चित् केनाप्युपायेन यदि हतप्रवीराः तर्हि मार्दवं किंचिन्नम्रतामीयुः । एतेन नम्रीभूय यदि सीतां रामाय समर्पयेत्तर्हि राक्षसकुलविध्वंसो न भवेदिति सूचितं तेन हनुमतो दयालुत्वं व्यक्तम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "asya karyasya parabalasayaparijnanarupasya sarvatisayiparakranavato",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "na casya karyasya parakranadrte",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "neti",
+          "matches_verse": false,
+          "content_containment": 0.316,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.5",
+      "sarga": 41,
+      "verse": "5",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kārye karmaṇi nirvṛtte yo bahūny api sādhayet । pūrvakāryavirodhena sa kāryaṃ kartum arhati ॥5॥",
+      "leonov_ru": "Тот, кто завершив [главное] дело, завершит успешно многие [другие] дела Без расхождения с первым (главным) делом, тот достоин делать дело.",
+      "commentary": {
+        "bhusana": "कार्ये कर्मणि निर्दिष्टे यो बहून्यपि साधयेत् ।\n\nपूर्वकार्याविरोधेन स कार्यं कर्तुमर्हति\n\"अभिगम्य तु वैदेहीं निलयं रावणस्य च\" इत्यनुज्ञातस्यातिरिक्तकार्यकरणे दोषमाशङ्क्य परिहरति कार्य इति । कार्ये विहिते कर्तव्ये, बहूनि कार्याणि",
+        "siromani": "ननु कार्ये निष्पन्ने क्रियान्तरकरणं निरर्थकमित्यत आह नहीति । स्वल्पस्यापि कर्मणः रामकार्यस्य सीताप्राप्तेरित्यर्थः, साधको हेतुरेक एव न बहवः सन्तीत्यर्थः । सीतादर्शनमात्रेण रामकार्यसिद्धिर्न भवतीति तात्पर्यम् । अतः अर्थं रामकार्यसाधकहेतुं बहुवा बहुप्रकारेण यो वेद स एव अर्थसाधने समर्थः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "karye karnani nirdiste yo",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "nanu karye nispanne kriyantarakaranan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.6",
+      "sarga": 41,
+      "verse": "6",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na hy ekaḥ sādhako hetuḥ svalpasyāpīha karmaṇaḥ । yo hy arthaṃ bahudhā veda sa samartho 'rthasādhane ॥6॥",
+      "leonov_ru": "Не одно средство существует для выполнения даже маловажных дел. Тот, кто знает о многообразии средств, тот способен успешно исполнить дело.",
+      "commentary": {
+        "tilaka": "उक्तमेव विवृणोति-- नहीति । यस्तु स्वल्पस्यापि कर्मणो ऽतिशयितयत्नेन सिद्धिहेतुर्भवत्यसावेको मुख्यः साधको हेतुर्न भवति, अपि तु यो ह्यर्थं प्रयोजनमल्पेन यत्नेन बहुधा कर्तुं वेद स एवार्थसाधने समर्थः",
+        "bhusana": "न ह्येकः साधको हेतुः स्वल्पस्यापीह कर्मणः ।\n\nयो ह्यर्थं बहुधा वेद स समर्थो ऽर्थसाधने\nन हीति । अल्पस्यापि कर्मणः एको हेतुस्साधको न किमुत महतः कर्मण इति भावः । बहुधा बहुभिर्हेतुभिः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "uktaneva vivrnoti",
+          "matches_verse": false,
+          "content_containment": 0.357,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "na hyekah sadhako hetuh",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.7",
+      "sarga": 41,
+      "verse": "7",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ihaiva tāvat kṛtaniścayo hy ahaṃ । vrajeyam adya plavageśvarālayam । parātmasammardaviśeṣatattvavit । tataḥ kṛtaṃ syān mama bhartṛśāsanam ॥7॥",
+      "leonov_ru": "[Если] я, выполнивший свое дело (досл. решение) здесь, Пойду сейчас в обитель владыки обезьян, Зная разницу в военной силе врагов и нашей, Тогда будет исполнен приказ, данный мне владыкой.",
+      "commentary": {
+        "bhusana": "इहैव तावत् कृतनिश्चयो ह्याहं यदि व्रजेयं प्लवगेश्वरालयम् ।\n\nपरात्मसंमर्दविशेषतत्त्ववित् ततः कृतं स्यान्मम भर्तृशासनम्\nपूर्वोक्तसमर्थनायाह इहैवेति । अहमिहैव । परात्मसंमर्दविशेषतत्त्ववित् परात्मनोर्युद्धतारतम्यतत्त्ववित् कृतनिश्चयः कृतबलाबलनिश्चयः सन् यदि प्लवगेश्वरालयं व्रजेयं ततः भर्तृशासनं सीतादर्शनरावणनिलयसम्यक्परिज्ञानविषयं शासनम् । तावत् साकल्येन कृतं स्यात् । अन्यथा राक्षसबलाबलं कीदृशमिति भर्त्रा पृष्टे निरुत्तरः स्यामिति भावः",
+        "siromani": "इहेति । इह अस्मिन्नागमने एव परमात्मसंमर्दविशेषतत्ववित् परस्य शत्रोः आत्मनो मनसः यः संमर्दविशेषः आत्यन्तिको ध्वंसः तस्य तत्ववित् याथार्थ्यवेदिता अत एव कृतः निश्चयः जानकीप्राप्तिविषयकनिश्चयविशेषो येन सो ऽहं यदि व्रजेयं ततस्तदा भर्तृशासनं कृतं स्यात् । अन्यथा भर्तृशासनकरणे न्यूनता स्यादिति तात्पर्यम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "ihaiva tavat krtaniscayo hyahan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "iheti",
+          "matches_verse": false,
+          "content_containment": 0.214,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.8",
+      "sarga": 41,
+      "verse": "8",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kathaṃ nu khalv adya bhavet sukhāgataṃ । prasahya yuddhaṃ mama rākṣasaiḥ saha । tathaiva khalv ātmabalaṃ ca sāravat । sa mānayen māṃ ca raṇe daśānanaḥ ॥8॥",
+      "leonov_ru": "Как же воистину сегодня будет успешной Жестокая битва моя с ракшасами, Так чтобы воистину собственной могучей силой Почтил меня в бою Десятиликий (Равана)?",
+      "commentary": {
+        "tilaka": "ननु स्वामिसन्दिष्टकार्यातिरिक्तकार्यकरणे दोषः, स्वामिना हि \"अभिगम्य तु वैदेहीं निलयं रावणस्य च इत्येतावदेव सन्दिष्टमित्याशङ्क्य सन्दिष्टकार्याविरोधेन स्वामिहितं कार्यान्तरसाधनं दूतस्यालङ्कार इत्याह-- कार्ये इति । कार्ये प्रधानकार्ये निर्वृत्ते । स कार्यं कर्तुमर्हति, न तु सन्दिष्टमात्रस्य कथञ्चित्साधक इत्याशयः",
+        "siromani": "नन्वभिगम्य तु वैदेहीं निलयं रावणस्य चेत्यादिना दर्शनमात्रनियुक्तेन त्वया नाज्ञापितराक्षसवधः किमर्थमभिकाङ्क्ष्यते इत्यत आह कार्य इति । कार्ये स्वाम्याज्ञप्तकर्तव्ये कर्मणि निर्वृत्ते सिद्धे यो बहूनि कृतकार्यपोषकतया विपुलकार्याणि साधयेत् साधितुमिच्छेत् । सः पूर्वकार्याविरोधेन साधितकार्यप्रातिकूल्यराहित्येन कार्यं कर्तुमर्हति\nउपायमेव चिन्तयति कथमिति । राक्षसैः सह मम युद्धं कथं भवेत् तथा सारवद्बलवत् आत्मबलं स्वसेनां मां च रणे दशाननः स रावणः कथं मानयेत् प्रशंसेत्",
+        "bhusana": "कथं नु खल्वद्य भवेत् सुखागतं प्रसह्य युद्धं मम राक्षसैः सह ।\n\nतथैव खल्वात्मबलं च सारवत् संमानयेन्मां च रणे दशाननः\nकथं न्विति । युद्धं कथं सुखागतं सुखेन प्राप्तं भवेत्तथा कर्तव्यमित्यर्थः । युद्धस्य फलमाह तथैवेत्यादिना सार्द्धश्लोकेन । तथैव खलु युद्धकरणे खलु । सः दशाननः । रणे आत्मबलं स्वपक्षबलं मां च । सारवत् मानयेत्परिच्छिन्द्यात्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "nanu svanisandistakaryatiriktakaryakarane dosah svanina",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "nanvabhiganya tu vaidehin nilayan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "kathan nu khalvadya bhavet",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.9",
+      "sarga": 41,
+      "verse": "9",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tataḥ samāsādya raṇe daśānanaṃ । samantrivargaṃ sabalaṃ sayāyinam । hṛdi sthitaṃ tasya mataṃ balaṃ ca । sukhena mattvāhamitaḥ punar vraje ॥9॥",
+      "leonov_ru": "Тогда, встретив в бою Десятиликого (Равану) С советниками, войском и колесничим, В сердце установленную его мысль (стратегию) и силу, Легко поняв, я отсюда снова улечу.",
+      "commentary": {
+        "tilaka": "ततो मद्बलवशादेव मां रणे समासाद्य वर्तमानं सबलं सयायिनं ससारथिम् । अन्तर्भावितण्यर्थाद्यतिर्णिनौ यापयिता यायी सारथिस्तेन सहितं रावणं ज्ञात्वा हृदि स्थितं तस्य मतमभीष्टं बलं च सुखेनाक्लेशतो मत्वा ज्ञात्वा पुनरितो व्रजे व्रजिष्ये । \"सबलं सयायिनम्\" इति पाठः । \"सबलं प्रयायिनम्\" इत्याधुनिककल्पितः पाठः",
+        "bhusana": "ततः समासाद्य रणे दशाननं समन्त्रिवर्गं सबलप्रयायिनम् ।\n\nहृदि स्थितं तस्य मतं बलं च वै सुखेन मत्वा ऽहमितः पुनर्व्रजे\nबलप्रयायिना सेनान्या सह वर्तत इति सबलप्रयायी तम् । तस्य हृदि स्थितं मतं सीताविषयाध्यवसायं बलं च मत्वा सुखेन इतः अस्मात् स्थानात् पुनः व्रजे व्रजिष्यामि",
+        "siromani": "युद्धेच्छायां प्रयोजनमाह तत इति । ततः तस्मिन् रणे सयायिनं ससारथिं दशाननं समासाद्य प्राप्य तस्य रावणस्य हृदि स्थितं मतमभिप्रायं बलं च मत्वा ज्ञात्वा इतः लङ्कायाः पुनर्व्रजे"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tato nadbalavasadeva nan rane",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tatah sanasadya rane dasananan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "yuddhecchayan prayojananaha tata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.10",
+      "sarga": 41,
+      "verse": "10",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "idam asya nṛśaṃsasya nandanopamam uttamam । vanaṃ netramanaḥkāntaṃ nānādrumalatāyutam ॥10॥",
+      "leonov_ru": "Вот того жестокого великолепный, подобный роще Нандане, Лес, приятный для глаз и для души, с множеством разнообразных деревьев и лиан.",
+      "commentary": {
+        "bhusana": "इदमस्य नृशंसस्य नन्दनोपममुत्तमम् ।\n\nवनं नेत्रमनःकान्तं नानाद्रुमलतायुतम्",
+        "siromani": "विचारेण निश्चतमाह इदमिति । नानाद्रुमलतायुतम् इदं वनम् अस्य रावणस्य मनःकान्तं मनसः प्रियमस्तीति शेषः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "idanasya nrsansasya nandanopananuttanan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "vicarena niscatanaha idaniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.11",
+      "sarga": 41,
+      "verse": "11",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "idaṃ vidhvaṃsayiṣyāmi śuṣkaṃ vanam ivānalaḥ । asmin bhagne tataḥ kopaṃ kariṣyati sa rāvaṇaḥ ॥11॥",
+      "leonov_ru": "Его уничтожу я, как огонь [уничтожает] сухой лес. После этого уничтожения, придет в гнев Равана.",
+      "commentary": {
+        "siromani": "तत इति । ततः वनविध्वंसानन्तरं साश्वमहारथद्विपम् अश्वमहारथद्विपसहितं त्रिशूलादीनि आयुधानि यस्मिन् तन्महद्बलं राक्षसाधिपः समानेष्यति अत एव ततस्तस्मिन् समये महद्युद्धं भविष्यति\nइदमिति । इदं वनं शुष्कं वनमनल इव विध्वंसयिष्यामि अस्मिन् भग्ने सति रावणः कोपं करिष्यति यदि त्वेतच्छ्लोकघटकस्येदमित्यस्य कामदमित्यर्थस्तदा पूर्वस्यापीहैवान्वयः । एवं च पूर्वत्रास्तेरध्याहारस्य न प्रयोजनम्",
+        "bhusana": "इदं विध्वंसयिष्यामि शुष्कं वनमिवानलः ।\n\nअस्मिन् भग्ने ततः कोपं करिष्यति दशाननः"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "idan vidhvansayisyani suskan vananivanalah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.12",
+      "sarga": 41,
+      "verse": "12",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tato mahat sāśvamahārathadvipaṃ । balaṃ samāneṣyati rākṣasādhipaḥ । triśūlakālāyasapaṭṭiśāyudhaṃ । tato mahad yuddham idaṃ bhaviṣyati ॥12॥",
+      "leonov_ru": "Тогда владыка ракшасов пошлет войско Великое, с конями, большими колесницами и слонами, Вооруженное трезубцами и железными копьями, Тогда будет великая битва.",
+      "commentary": {
+        "bhusana": "ततो महत् साश्वमहारथद्विपं बलं समादेक्ष्यति राक्षसाधिपः ।\n\nत्रिशूलकालायसपट्टसायुधं ततो महद्युद्धमिदं भविष्यति"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tato nahat sasvanaharathadvipan balan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.13",
+      "sarga": 41,
+      "verse": "13",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ahaṃ ca taiḥ saṃyati caṇḍavikramaiḥ । sametya rakṣobhir abhaṅgavikramaḥ । nihatya tad rāvaṇacoditaṃ balaṃ । sukhaṃ gamiṣyāmi kapīśvarālayam ॥13॥",
+      "leonov_ru": "И я сойдусь с жестокосильными, Сойдясь с ракшасами, [я], обладающий несокрушимой силой, Истребив то войско, посланное Раваной, Счастливо (легко) отправлюсь в обитель владыки обезьян».",
+      "commentary": {
+        "siromani": "तदेवोपपादयन्नाह नेत्यादिभिः । रक्षस्सु साम गुणाय न कल्पते तेषामतिक्रूरत्वात्समानार्हत्वमित्यर्थः । अर्थोपचितेषु अतिधनवत्सु दानं गुणाय न कल्पते तेषामल्पधनाकाङ्क्षाभावादिति भावः । बलदर्पिता जना भेदसाध्या भेदेनानुकूल्यं प्रापयितुं न शक्या अत एष राक्षसगर्वनिवारकः पराक्रम एव मम रोचते\nअहमिति । चण्ढविक्रमैः रक्षोभिः संयति संग्रामे समेत्य संयुध्य रावणचोदितं तद्बलं निहत्य हरीश्वरालयं सुखं गमिष्यामि",
+        "tilaka": "ततो हरीश्वरालयं गमिष्यामीति चिन्तयामासेत्यन्वयः",
+        "bhusana": "अहं तु तैः संयति चण्डविक्रमैः समेत्य रक्षोभिरसह्यविक्रमः ।\n\nनिहत्य तद्रावणचोदितं बलं सुखं गमिष्यामि कपीश्वरालयम्"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "tadevopapadayannaha netyadibhih",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "tato harisvaralayan ganisyaniti cintayanasetyanvayah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "ahan tu taih sanyati",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.14",
+      "sarga": 41,
+      "verse": "14",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tato mārutavat kruddho mārutir bhīmavikramaḥ । ūruvegena mahatā drumān kṣeptum athārabhat ॥14॥",
+      "leonov_ru": "Тогда подобный ветру, разгневанный сын ветра, наделенный грозной мощью, Великой силой бедер начал тогда валить деревья.",
+      "commentary": {
+        "tilaka": "अथ प्रसह्य रणप्रवर्तनोपायं चिन्तयति-- इदमिति । अस्येदं वनं नेत्रमनःक्रान्तं भवति, अत इदं विध्वंसयामि ।। 5.41.10,11 ।।\n\nसमानेष्यति मां प्रति युद्धाय प्रापयिष्यति । महद्युद्धं मन्मनस्तोषकृत्",
+        "bhusana": "ततो मारुतवत् क्रुद्धो मारुतिर्भीमविक्रमः ।\n\nउरुवेगेन महता द्रुमान् क्षेप्तुमथारभत्\nततः तेन चिन्तितेन हेतुना"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "atha prasahya ranapravartanopayan cintayati",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tato narutavat kruddho narutirbhinavikranah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.15",
+      "sarga": 41,
+      "verse": "15",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tatas tad dhanumān vīro babhañja pramadāvanam । mattadvijasamāghuṣṭaṃ nānādrumalatāyutam ॥15॥",
+      "leonov_ru": "Тогда Хануман отважный, уничтожил царский парк, Который оглашали голоса радостных птиц, где росли разнообразные деревья и лианы.",
+      "commentary": {
+        "tilaka": "तत एवंनिश्चयानन्तरम् ।। 5.41.14,15 ।।\n\nपर्वताग्रैः क्रीडापर्वताग्रैः । उपलक्षितमिति शेषः ।। 5.41.16,17 ।।\n\nव्याकुलं स्रस्तमावरणं यासां ताः, अत एव विह्वलाः स्त्रिय इवा ता लता रेजुः",
+        "siromani": "तत इति । ततो ऽनन्तरं क्रुद्धः आश्रितकोपः भीमविक्रमो मारुतिः महता ऊरुवेगेन मारुतवत् द्रुमान् क्षेप्तुमारभत्\nतत इति । ततो ऽनन्तरं प्रमदावनं प्रमदाकुलवनिकां बभञ्ज",
+        "bhusana": "ततस्तु हनुमान् वीरो बभञ्च प्रमदावनम् ।\n\nमत्तद्विजसमाघुष्टं नानाद्रुमलतायुतम्\nप्रमदावनम् अन्तःपुरवनम् । \"प्रमदावनमन्तः पुरोचितम्\" इत्यमरः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tata evanniscayanantaran",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tatastu hanunan viro babhanca",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.16",
+      "sarga": 41,
+      "verse": "16",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tad vanaṃ mathitair vṛkṣair bhinnaiś ca salilāśayaiḥ । cūrṇitaiḥ parvatāgraiś ca babhūvāpriyadarśanam ॥16॥",
+      "leonov_ru": "Тот лес с поваленными деревьями, уничтоженными прудами, Разбитыми на куски горными вершинами, стал неприятен на вид.",
+      "commentary": {
+        "bhusana": "तद्वनं मथितैर्वृक्षैर्भिन्नैश्च सलिलाशयैः ।\n\nचूर्णितैः पर्वताग्रैश्च बभूवाप्रियदर्शनम्",
+        "siromani": "तदिति । मथितैः सलिलाशयैर्भिन्नैर्भञ्जितैर्वृक्षैश्च चूर्णितैः पर्वताग्रैश्च तद्वनमप्रियदर्शनं बभूव"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tadvanan nathitairvrksairbhinnaisca salilasayaih",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "taditi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.17",
+      "sarga": 41,
+      "verse": "17",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "nānāśakuntavirutaiḥ prabhinnasalilāśayaiḥ । tāmraiḥ kisalayaiḥ klāntaiḥ klāntadrumalatāyutaiḥ ॥17॥",
+      "leonov_ru": "С криками разнообразных птиц, с разрушенными прудами, С изломанными красными веточками, с поваленными деревьями и изорванными лианами,",
+      "commentary": {
+        "bhusana": "नानाशकुन्तविरुतैः प्रभिन्नैः सलिलाशयैः ।\n\nताम्रैः किसलयैः क्लान्तैः क्लान्तद्रुमलतायुतम् ।\n\nन बभौ तद्वनं तत्र दावानलहतं यथा",
+        "siromani": "नानेति । नानाशकुन्तविरुतैः पक्षिणामुत्कटशब्दैः प्रभिन्नसलिसाशयैश्च क्लान्तैर्म्लानैः किसलयैश्च क्लान्तद्रुमलतानामयुतैश्च उपलक्षितं दावानलहतमिव तद्वनं तत्र तस्मिन् समये न बभौ । सार्धश्लोक एकान्वयी"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nanasakuntavirutaih prabhinnaih salilasayaih",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "naneti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.18",
+      "sarga": 41,
+      "verse": "18",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na babhau tad vanaṃ tatra dāvānalahataṃ yathā । vyākulāvaraṇā rejur vihvalā iva tā latāḥ ॥18॥",
+      "leonov_ru": "Утратил тот лес свою красоту, словно сожженный пожаром. [Его] дрожащие лианы были подобны печальным женщинам.",
+      "commentary": {
+        "tilaka": "तत्र युक्तिमाह-- नेति । ऋजुषु साम फलाय न शूरेषु तदाह-- रक्षःस्विति । बलदर्पिता भेदसाध्या न । भेद उपायः । बलवन्तो हि कुतो ऽप्यनिष्टं न गणयन्तीत्यर्थः",
+        "bhusana": "व्याकुलावरणा रेजुर्विह्वला इव ता लताः\nव्याकुलावरणाः आवरणादुपघ्नाद्व्याकुलाः । विह्वलाः स्त्रियः इव",
+        "siromani": "व्याकुलेति । व्याकुलानि संचलितानि आवरणानि यासां ताः लताः विह्वला नार्य इव रेजुः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tatra yuktinaha",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "vyakulavarana rejurvihvala iva ta",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "vyakuleti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.19",
+      "sarga": 41,
+      "verse": "19",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "latāgṛhaiś citragṛhaiś ca sāditair । vyālair mṛgair ārtaravaiś ca pakṣibhiḥ । śilāgṛhair unmathitais tathā gṛhaiḥ । pranaṣṭarūpaṃ tad abhūn mahad vanam ॥19॥",
+      "leonov_ru": "С разрушенными беседками и картинными залами, С хищниками и травоядными и птицами, кричащими от боли, С сотрясенными (разрушенными) гротами и домами (павильонами), Утратил свою красоту великий лес.",
+      "commentary": {
+        "tilaka": "सादितैर्विशीर्णैः । व्यालैः शार्दूलैः",
+        "bhusana": "लतागृहैश्चित्रगृहैश्च नाशितैर्महोरगैर्व्यालमृगैश्च निर्धुतैः ।\n\nशिलागृहैरुन्मथितैस्तथा गृहैः प्रनष्टरूपं तदभून्महद्वनम्\nव्यालमृगैः श्वापदादिहिंस्रमृगैः । निर्धुतैः पीडितैः । गृहैः केवलगृहैः",
+        "siromani": "लतेति । सादितैर्विध्वंसितैः लतागृहादिभिः आर्तः रवो येषां तैः व्यालैः शार्दूलैः पक्षिभिश्च उन्मथितैः प्रचालितैः शिलागृहैः गृहैस्तदितरनिर्मितभवनैश्च प्रनष्टरूपं तन्महद्वनमभूत्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "saditairvisirnaih",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "latagrhaiscitragrhaisca nasitairnahoragairvyalanrgaisca nirdhutaih",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "lateti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.20",
+      "sarga": 41,
+      "verse": "20",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sā vihvalāśokalatāpratānā । vanasthalī śokalatāpratānā । jātā daśāsyapramadāvanasya । kapērbalāddhi pramadāvanasya ॥20॥",
+      "leonov_ru": "[Прежде] покрытое дрожащими лианами ашоки, Это лесистое место, бывшее местом развлечений для жен Раваны, Стало покрытым лианами печали Благодаря силе обезьяны (Ханумана), защиты женщины (Ситы).",
+      "commentary": {
+        "tilaka": "प्रमदावनस्यान्तःपुरविहारोचितवनस्य । \"स्यादेतदेव प्रमदवनमन्तःपुरोचितम्\" इत्यमरः । दशास्यस्य प्रमदानां स्त्रीणां कामसंवर्धनद्वारावनस्य रक्षकस्यास्य वनस्य सा विह्वलाशोकलताप्रताना चञ्चलाशोकलतासमूहवती, वनस्थली तृणगुल्मलताजलाशयादियुक्ता भूमिः । कपेर्बलाच्छोच्यत इति शोका शोच्यलताप्रताना जाता द्रष्टृचितशोकजनिका जातेत्यर्थः",
+        "bhusana": "सा विह्वला ऽशोकलताप्रताना वनस्थली शोकलताप्रताना ।\n\nजाता दशास्यप्रमदावनस्य कपेर्बलाद्धि प्रमदावनस्य\nसेति । शोच्यत इति शोकः । प्रतानं विततिः । अशोकम् अशोच्यम् लताप्रतानं यस्यास्सा अशोकलताप्रताना । दशास्यप्रमदावनस्य भोगवर्धनेन रावणवनितारक्षकस्य । प्रमदावनस्य अन्तःपुरोद्यानस्य । सा वनस्थली तृणगुल्मलतादिविशिष्टप्रदेशः । कपेर्बलाद्धि विह्वला लुलिता शोकलताप्रताना च जाता । यद्वा शोकलताश्शोकरताः । रलयोरभेदः । अप्प्रतानाः अप्सु प्रतानाः कमलकल्हारादयो ऽस्यां सा शोकलताप्प्रताना । म्लानजलजेति यावत् । दशास्यप्रमदावनस्य रावणप्रमदावनस्य 'ङ्यापोस्संज्ञाच्छान्दसोर्बहुलम्\" इति बहुलवचनाद्ध्रस्वाभावः । दशास्यप्रमदावनस्य वनस्थलीत्यत्र शिलापुत्रकस्य शरीरमितिवदुपचारात् षष्ठी । प्रमदावनस्य सीतारूपप्रमदापालकस्य । वनस्थली कपेर्बलाद्विह्वला शोकलताप्रताना च जाता । अशोकलतेत्युपलक्षणम्",
+        "siromani": "सेति । विह्वलाः अशोकलताप्रतानाः विस्तृताशोकलताः यस्यां सा वनस्थली प्रमदस्य उत्कृष्टमदस्य अवनं रक्षणं यस्मिन् तस्य नित्यं मदविशिष्टस्येत्यर्थः, दशास्यप्रमदावनस्य रावणस्त्रीसमूहस्य कपेर्बलात् शोकरूपलताप्रतानः लताविस्तारो यस्यां सा जाता"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "pranadavanasyantahpuraviharocitavanasya",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa vihvala sokalatapratana vanasthali",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "seti",
+          "matches_verse": false,
+          "content_containment": 0.5,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.21",
+      "sarga": 41,
+      "verse": "21",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tataḥ sa kṛtvā jagatīpater mahān । mahad vyalīkaṃ manaso mahātmanaḥ । yuyutsur eko bahubhir mahābalaiḥ । śriyā jvalaṃs toraṇam āśritaḥ kapiḥ ॥21॥",
+      "leonov_ru": "Тогда тот великий (Хануман) сделав царю (Раване) Великую неприятность для души великого духом (Раваны), Желая сразиться один со многими обладающими великой силой, Сияющий доблестью, оперся на арку обезьяна.",
+      "commentary": {
+        "tilaka": "जगतीपते राज्ञो रावणस्य । व्यलीकमप्रियम्",
+        "bhusana": "स तस्य कृत्वा ऽर्थपतेर्महाकपिर्महद्व्यलीकं मनसो महात्मनः ।\n\nयुयुत्सुरेको बहुभिर्महाबलैः श्रिया ज्वलंस्तोरणमास्थितः कपिः\nइत्यार्षे श्रीरामायणे वाल्मीकीये आदिकाव्ये श्रीमत्सुन्दरकाण्डे एकचत्वारिंशः सर्गः ।। 5.41।।\n\nस इति । अर्थपतेः राज्ञो रावणस्य । मनसः व्यलीकम् अप्रियम् पीडनं वा । \"अलीकं त्वप्रियाकार्यवैलक्ष्यानृतपीडने\" इति निघण्टुः । युयुत्सुः योद्धुमिच्छुः । तोरणम् उद्यानबहिर्द्वारम् । \"तोरणो ऽस्त्री बहिर्द्वारम्\" इत्यमरः",
+        "siromani": "तत इति । बहुभिर्महाबलैर्युयुत्सुः अत एव श्रिया युद्धोत्साहसंपत्त्या ज्वलन् एकः महान् कपिः स हनूमान् जगतीपतेः रावणस्य मनसः महद्व्यलीकम् अप्रियं दुःखकारणमित्यर्थः, कृत्वा संपाद्य तोरणं बहिर्द्वारमाश्रितः स्थितः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "jagatipate rajno ravanasya",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa tasya krtva rthapaternahakapirnahadvyalikan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.41.34",
+      "sarga": 41,
+      "verse": "34",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "उपपत्तिपूर्वकमेतदेव विवृणोति न सामेति । \"अनित्यो विजयो यस्माद्दृश्यते युद्ध्यमानयोः । पराजयश्च संग्रामे तस्माद्युद्धं विसर्जयेत् ।।\" इति युद्धस्य अव्यवस्थितफलकत्वेऽपि सर्वं बलवतः पथ्यम्' इति न्यायेन सर्वातिशायिबलपराक्रमस्य मम पराजयप्रसङ्ग एव नास्तीत्यभिप्रायेणाह पराक्रम इति। मम तु इह रक्षोविषये पराक्रम एव रोचत इति संबन्धः"
+      }
+    },
+    {
+      "verse_id": "5.41.1011",
+      "sarga": 41,
+      "verse": "1011",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "इदमिति । नेत्रमनःकान्तम्, वर्तत इति शेषः"
+      }
+    },
+    {
+      "verse_id": "5.41.1213",
+      "sarga": 41,
+      "verse": "1213",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "तत इति । समादेक्ष्यति नियोजयिष्यति । इदम् अव्यवहितोत्तरकालिकम् । कपीश्वरालयमित्यनन्तरमितिकरणं द्रष्टव्यम् । इति चिन्तयामासेत्यन्वयः"
+      }
+    },
+    {
+      "verse_id": "5.41.1617",
+      "sarga": 41,
+      "verse": "1617",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "पर्वताग्रैः क्रीडापर्वताग्रैः"
+      }
+    }
+  ]
+}

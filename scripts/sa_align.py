@@ -69,6 +69,22 @@ def canon_tokens(text):
     return [t for t in canon(text).split() if t]
 
 
+def containment(chunk_tokens, verse_tokens):
+    """Fraction of the verse's canon tokens echoed in a commentary chunk.
+
+    The content-anchor signal for ṭīkā→verse quotation linking (H268 WS-C2):
+    a commentator quotes/glosses the verse's own words, so the right verse has
+    the highest containment in a local window even when the leading pratīka is
+    a pronoun ('sa'/'te') or the gloss paraphrases. Asymmetric on purpose —
+    chunk length must not dilute the score (Jaccard does; containment doesn't).
+    """
+    if not verse_tokens:
+        return 0.0
+    ct = set(chunk_tokens) if not isinstance(chunk_tokens, set) else chunk_tokens
+    vt = set(verse_tokens) if not isinstance(verse_tokens, set) else verse_tokens
+    return len(ct & vt) / len(vt)
+
+
 def sim(a, b):
     ca, cb = canon(a), canon(b)
     if not ca and not cb:

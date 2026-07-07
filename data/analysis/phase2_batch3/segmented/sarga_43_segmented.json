@@ -1,0 +1,654 @@
+{
+  "_meta": {
+    "generated_by": "scripts/extract_yellow_sargas.py",
+    "purpose": "Phase-2 deterministic commentary segmentation (no LLM); input to Sonnet drafting",
+    "sargas": [
+      43
+    ],
+    "commentators": [
+      "tilaka",
+      "bhusana",
+      "siromani",
+      "tattvadipika"
+    ],
+    "verse_count": 33,
+    "verses_all_three": 5,
+    "ambiguous_markers": 8,
+    "corpus_aligned": 24,
+    "align_backend": "sanskrit_util",
+    "reassigned_moves": 1841,
+    "content_moves": 84,
+    "pratika_checkable": 4647,
+    "pratika_matched": 3983,
+    "alignment_precision": 0.857,
+    "anchor_verified": 4391,
+    "alignment_precision_verified": 0.945,
+    "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md"
+  },
+  "preambles": {
+    "43.pre": {
+      "tilaka": "अथ रावणसन्दिष्टसेनान्तरागमनात्पूर्वं तूष्णीं स्थित्वा न किञ्चित्प्रयोजनमिति विचार्य प्रासादभङ्गादि चिकीर्षति-- तत इति । ध्यानं विचारः । चैत्यप्रासादो रक्षःकुलदेवताप्रासादः",
+      "bhusana": "ततः स किङ्करान् हत्वा हनुमान् स्थानमास्थितः",
+      "siromani": "किंकराभिधराक्षसविध्वंसानन्तरकालिकं हनुमद्वृत्तान्तमाह तत इत्यादिभिः । किंकरान् हत्वा ध्यानं विचारमास्थितः । विचाराकारमाह मया वनं भग्नं चैत्यप्रासादः राक्षसकुलदेवताधिष्ठानीभूतप्रासादविशेषः न विनाशितः तस्मात् बलं स्वपराक्रमं दर्शयन् सन् इमं प्रासादमपि विध्वंसयामि इति अनेन प्रकारेण मनसा संचिन्त्य अवर्ततेति शेषः । श्लोकद्वयमेकान्वयि ।। 5.43.1,2 ।।\n\nचैत्येति । हनूमानुत्प्लुत्य मेरुशृङ्गमिवोन्नतं चैत्यप्रासादमारुरोह"
+    }
+  },
+  "verses": [
+    {
+      "verse_id": "5.43.1",
+      "sarga": 43,
+      "verse": "1",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tataḥ sa kiṃkarān hatvā hanūmān dhyānam āsthitaḥ । vanaṃ bhagnaṃ mayā caityaprāsādo na vināśitaḥ ॥1॥",
+      "leonov_ru": "Тогда, перебив кинкар, Хануман погрузился в размышления: «Разорил я лес, [но] не разрушил дворец-святилище».",
+      "commentary": {
+        "tilaka": "अथ रावणसन्दिष्टसेनान्तरागमनात्पूर्वं तूष्णीं स्थित्वा न किञ्चित्प्रयोजनमिति विचार्य प्रासादभङ्गादि चिकीर्षति-- तत इति । ध्यानं विचारः । चैत्यप्रासादो रक्षःकुलदेवताप्रासादः",
+        "bhusana": "ततः स किङ्करान् हत्वा हनुमान् स्थानमास्थितः\nततः स किङ्करानित्यादि\nवनं भग्नं मया चैत्यप्रसादो न विनाशितः ।\n\nतस्मात् प्रासादमप्येव भीमं विध्वंसयाम्यहम् ।\n\nइति स़ञ्चिन्त्य मनसा हनुमान् दर्शयन् बलम्\nवनमित्यादि । ध्वंसनफलमाह दर्शयन् बलमिति । बलदर्शनार्थमित्यर्थः",
+        "siromani": "किंकराभिधराक्षसविध्वंसानन्तरकालिकं हनुमद्वृत्तान्तमाह तत इत्यादिभिः । किंकरान् हत्वा ध्यानं विचारमास्थितः । विचाराकारमाह मया वनं भग्नं चैत्यप्रासादः राक्षसकुलदेवताधिष्ठानीभूतप्रासादविशेषः न विनाशितः तस्मात् बलं स्वपराक्रमं दर्शयन् सन् इमं प्रासादमपि विध्वंसयामि इति अनेन प्रकारेण मनसा संचिन्त्य अवर्ततेति शेषः । श्लोकद्वयमेकान्वयि ।। 5.43.1,2 ।।\n\nचैत्येति । हनूमानुत्प्लुत्य मेरुशृङ्गमिवोन्नतं चैत्यप्रासादमारुरोह"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "atha ravanasandistasenantaragananatpurvan tusnin sthitva",
+          "matches_verse": false,
+          "content_containment": 0.231,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "tatah sa kinkaran hatva",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "kinkarabhidharaksasavidhvansanantarakalikan hanunadvrttantanaha tata ityadibhih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.3",
+      "sarga": 43,
+      "verse": "3",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "caityaprāsādam utlutya meruśṛṅgam ivonnatam । āruroha hariśreṣṭho hanūmān mārutātmajaḥ ॥3॥",
+      "leonov_ru": "Запрыгнув на святилище-дворец, который возвышался, подобно пику горы Меру. Поднялся [на него] лучший из обезьян Хануман, сын ветра,",
+      "commentary": {
+        "bhusana": "चैत्यप्रासादमाप्लुत्य मेरुशृङ्गमिवोन्नतम् ।\n\nआरुरोह हरिश्रेष्ठो हनुमान् मारुतात्मजः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "caityaprasadanaplutya nerusrnganivonnatan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.4",
+      "sarga": 43,
+      "verse": "4",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "āruhya girisaṃkāśaṃ prāsādaṃ hariyūthapaḥ । babhau sa sumahātejāḥ pratisūrya ivoditaḥ ॥4॥",
+      "leonov_ru": "Поднявшись на дворец, подобный горе, вождь обезьяньих стай Обладающий великой мощью, был подобен второму солнцу.",
+      "commentary": {
+        "tilaka": "प्रासादमुत्प्लुत्यारुरोह ।। 5.43.3,4 ।।\n\nसंप्रधृष्य भङ्क्त्वा । पारियात्रः पर्वतविशेषः । औन्नत्यं साधारणो धर्मः",
+        "bhusana": "आरुह्य गिरिसङ्काशं प्रासादं हरियूथपः ।\n\nबभौ स सुमहातेजाः प्रतिसूर्य इवोदितः",
+        "siromani": "आरुह्येति । प्रासादमारुह्य उदितः प्रतिसूर्य इव हरियूथपो बभौ"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "prasadanutplutyaruroha",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "aruhya girisankasan prasadan hariyuthapah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "aruhyeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.5",
+      "sarga": 43,
+      "verse": "5",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sampradhṛṣya tu durdharṣaś caityaprāsādam unnatam । hanūmān prajvalaṃl lakṣmyā pāriyātropamo 'bhavat ॥5॥",
+      "leonov_ru": "Разрушив же высокий святилище-дворец, непобедимый Хануман, сияющий великолепием, был подобен [горе] Париятре",
+      "commentary": {
+        "bhusana": "संप्रधृष्य च दुर्धर्षं चैत्यप्रासादमुत्तमम् ।\n\nहनुमान् प्रज्वलन् लक्ष्म्या पारियात्रोपमो ऽभवत्",
+        "siromani": "समिति । चैत्यप्रासादं संप्रधृष्य पराभवं प्रापय्य लक्ष्म्या स्वविजयसंपत्त्या प्रज्वलन् हनूमान् पारियात्रोपमकुलाचलसदृशः अभवत्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sanpradhrsya ca durdharsan caityaprasadanuttanan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "saniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.6",
+      "sarga": 43,
+      "verse": "6",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa bhūtvā sumahākāyaḥ prabhāvān mārutātmajaḥ । dhṛṣṭam āsphoṭayām āsa laṅkāṃ śabdena pūrayan ॥6॥",
+      "leonov_ru": "Увеличившись в размерах (став огромным), из своей мощи сын ветра Бесстрашно стал рушить [дворец], наполняя Ланку шумом.",
+      "commentary": {
+        "tilaka": "धृष्टं निर्भयम्",
+        "bhusana": "स भूत्वा सुमहाकायः प्रभावान्मारुतात्मजः ।\n\nधृष्टमास्फोटयामास लङ्कां शब्देन पूरयन्",
+        "siromani": "स इति । प्रभावात् स्वमहिमातिशयात् महाकायो भूत्वा शब्देन लङ्कां पूरयन् सन् धृष्टं यथा भवति तथा आस्फोटयामास चैत्यं प्रासादं विदारयामास"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "dhrstan nirbhayan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa bhutva sunahakayah prabhavannarutatnajah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.545,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.7",
+      "sarga": 43,
+      "verse": "7",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasyāsphoṭitaśabdena mahatā śrotraghātinā । petur vihaṃgamās tatra caityapālāśca mohitāḥ ॥7॥",
+      "leonov_ru": "От громкого оглушительного шума, который он производил, разрушая [дворец] Упали птицы [с неба], и были поражены (упали без сознания) охранники святилища (-дворца).",
+      "commentary": {
+        "bhusana": "तस्यास्फोटितशब्देन महता श्रोत्रघातिना ।\n\nपेतुर्विहङ्गमास्तत्र चैत्यपालाश्च मोहिताः",
+        "siromani": "तस्येति । श्रोत्रघातिना तस्य प्रासादस्य स्फोटितशब्देन विमोहिता विहङ्गमाश्चैत्यपालाश्च पेतुः पृथिव्यामिति शेषः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tasyasphotitasabdena nahata srotraghatina",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tasyeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.8",
+      "sarga": 43,
+      "verse": "8",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "astravijjayatāṃ rāmo lakṣmaṇaśca mahābalaḥ । rājā jayati sugrīvo rāghaveṇābhipālitaḥ ॥8॥",
+      "leonov_ru": "«Победа великому лучнику (или «владеющему оружием богов») Раме и могучему Лакшмане! Победа царю Сугриве, находящемуся под защитой Рагхавы!",
+      "commentary": {
+        "bhusana": "अस्त्रविज्जयतां रामो लक्ष्मणश्च महाबलः ।\n\nराजा जयति सुग्रीवो राघवेणाभिपालितः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "astravijjayatan rano laksnanasca nahabalah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.9",
+      "sarga": 43,
+      "verse": "9",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "dāso 'haṃ kosalendrasya rāmasyākliṣṭakarmaṇaḥ । hanumāñ śatrusainyānāṃ nihantā mārutātmajaḥ ॥9॥",
+      "leonov_ru": "Я слуга владыки Косалы, Рамы, неутомимого в деяниях, Хануман, губитель вражеских ратей, сын ветра.",
+      "commentary": {
+        "bhusana": "दासो ऽहं कोसलेन्द्रस्य रामस्याक्लिष्टकर्मणः ।\n\nहनुमान् शत्रुसैन्यानां निहन्ता मारुतात्मजः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "daso han kosalendrasya ranasyaklistakarnanah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.10",
+      "sarga": 43,
+      "verse": "10",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na rāvaṇasahasraṃ me yuddhe pratibalaṃ bhavet । śilābhis tu praharataḥ pādapaiś ca sahasraśaḥ ॥10॥",
+      "leonov_ru": "«Тысяча Раван не выстоит против меня в битве, Когда я мечу камни и деревья тысячами.",
+      "commentary": {
+        "bhusana": "न रावणसहस्रं मे युद्धे प्रतिबलं भवेत् ।\n\nशिलाभिस्तु प्रहरतः पादपैश्च सहस्रशः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "na ravanasahasran ne yuddhe",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.11",
+      "sarga": 43,
+      "verse": "11",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ardayitvā purīṃ laṅkām abhivādya ca maithilīm । samṛddhārtho gamiṣyāmi miṣatāṃ sarvarakṣasām ॥11॥",
+      "leonov_ru": "Сотряся (Разрушив) Ланку и поговорив с Майтхили, Достигший своей цели, уйду я на глазах у всех ракшасов».",
+      "commentary": {
+        "bhusana": "अर्दयित्वा पुरीं लङ्कामभिवाद्य च मैथिलीम् ।\n\nसमृद्धार्थो गमिष्यामि मिषतां सर्वरक्षसाम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "ardayitva purin lankanabhivadya ca",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.12",
+      "sarga": 43,
+      "verse": "12",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "evam uktvā mahākayaś caityastho hariyūthapaḥ । nanāda bhīmanirhrādo rakṣasāṃ janayan bhayam ॥12॥",
+      "leonov_ru": "Так сказав, великий телом, стоящий на святилище вождь обезьяньих стай Издал устрашающий рык, рождая страх у ракшасов.",
+      "commentary": {
+        "tilaka": "एवं प्रमदवनवत्",
+        "bhusana": "एमुक्त्वा विमानस्थश्चैत्यस्थान् हरियूथपः ।\n\nननाद भीमनिर्ह्रादो रक्षसां जनयन् भयम् ।"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "evan pranadavanavat",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "enuktva vinanasthascaityasthan hariyuthapah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.13",
+      "sarga": 43,
+      "verse": "13",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tena nādena mahatā caityapālāḥ śataṃ yayuḥ । gṛhītvā vividhān astrān prāsān khaḍgān paraśvadhān ॥13॥",
+      "leonov_ru": "На этот мощный рык охранники святилища вышли сотней, Взяв разнообразное оружие – дротики, мечи, боевые топоры.",
+      "commentary": {
+        "bhusana": "तेन शब्देन महता चैत्यपालाः शतं ययुः ।\n\nगृहीत्वा विविधानस्त्रान् प्रासान् खड्गान् परश्वधान् ।\n\nविसृजन्तो महाकाया मारुतिं प्रर्यवारयन्",
+        "siromani": "तेनेति । तेन शब्देन हेतुना विविधान् अस्त्रादीन् गृहीत्वा विसृजन्तः सन्तः महाकायाः शतं चैत्यपाला ययुः मारुतिं पर्यवारयँश्च । सार्द्धश्लोक एकान्वयी"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tena sabdena nahata caityapalah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "teneti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.14",
+      "sarga": 43,
+      "verse": "14",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "visṛjanto mahākayā mārutiṃ paryavārayan । te gadābhir vicitrābhiḥ parighaiḥ kāñcanāṅgadaiḥ ॥14॥",
+      "leonov_ru": "Окружая сына ветра, огромные телом метнули [в него]. Они c различными палицами и железными булавами с золотыми навершьями",
+      "commentary": {
+        "bhusana": "ते गदाभिर्विचित्राभिः परिघैः काञ्चनाङ्गदैः ।\n\nआजघ्नुर्वानरश्रेष्ठं बाणैश्चादित्यसन्निभैः",
+        "siromani": "ते इति । काञ्चनाङ्गदैः काञ्चनपट्टावृत्तैः परिघैः वानरश्रेष्ठम् आजध्नुः । अर्धद्वयमेकान्वयि"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "te gadabhirvicitrabhih parighaih kancanangadaih",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "te",
+          "matches_verse": false,
+          "content_containment": 0.333,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.15",
+      "sarga": 43,
+      "verse": "15",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ājagmur vānaraśrēṣṭhaṃ bāṇaiś cādityasannibhaiḥ । āvarta iva gaṅgāyāstoyasya vipulo mahān ॥15॥",
+      "leonov_ru": "Приблизились к лучшему из обезьян со стрелами, [сияющими] подобно солнцу, Словно великий широкий водоворот в водах Ганга,",
+      "commentary": {
+        "tilaka": "महान्मारुतात्मज इत्यन्वयः",
+        "bhusana": "आवर्त इव गङ्गायास्तोयस्य विपुलो महान् ।\n\nपरिक्षिप्य हरिश्रेष्ठं स बभौ रक्षसां गणः",
+        "siromani": "आवर्त इति । गङ्गायाः तोयस्य महान् आवर्त इव विपुलो रक्षसां गणः हरिश्रेष्ठं परिक्षिप्य गदादिभिः संताड्य बभौ"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "nahannarutatnaja ityanvayah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "avarta iva gangayastoyasya vipulo",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "avarta",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.16",
+      "sarga": 43,
+      "verse": "16",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "parikṣipya hariśreṣṭhaṃ sa babhau rakṣasāṃ gaṇaḥ । tato vātātmajaḥ kruddho bhīmarūpaṃ samāsthitaḥ ॥16॥",
+      "leonov_ru": "Окружив лучшего из обезьян, выглядел тот отряд ракшасов. Тогда сын ветра, разгневанный, принял ужасный облик.",
+      "commentary": {
+        "tilaka": "परिक्षिप्येत्यंशे तोयस्यावर्त इवेति दृष्टान्तः",
+        "bhusana": "ततो वातात्मजः क्रुद्धो भीमरूपं समास्थितः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "pariksipyetyanse toyasyavarta iveti drstantah",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "tato vatatnajah kruddho bhinarupan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.17",
+      "sarga": 43,
+      "verse": "17",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "prāsādasya mahāṃs tasya stambhaṃ hemapariṣkṛtam । utpāṭayitvā vegena hanūmān mārutātmajaḥ ॥17॥",
+      "leonov_ru": "Огромную колонну дворца, украшенную золотом С силой подняв, Хануман, сын ветра,",
+      "commentary": {
+        "bhusana": "प्रासादस्य महान्तस्य स्तम्भं हेमपरिष्कृतम् ।\n\nउत्पाटयित्वा वेगेन हनुमान् पवनात्मजः ।\n\nततस्तं भ्रामयामास शताधारं महाबलः\nप्रासादस्येति । पवनात्मजः भ्रामयामासेत्यन्वयः । शतधारं धारा कोटिः । वज्रवत् स्थितमित्यर्थः, यद्वा शतधा अरमिति च्छेदः । अरं शीघ्रम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "prasadasya nahantasya stanbhan henapariskrtan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.18",
+      "sarga": 43,
+      "verse": "18",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tatas taṃ bhrāmayām āsa śatadhāraṃ mahābalaḥ । tatra cāgniḥ samabhavat prāsādaś cāpy adahyata ॥18॥",
+      "leonov_ru": "Тогда стал вертеть [ее], имеющую сотню концов (подобную ваджре) наделенный великой силой, И там возник огонь, и дворец запылал.",
+      "commentary": {
+        "siromani": "तत इति । तातो ऽनन्तरं वातात्मजः क्रुद्धो ऽभवदिति शेषः । अर्धं पृथक्\nप्रासादस्येति । महान् हनूमान् शतधारं तं प्रसिद्धं प्रासादस्य स्तम्भं वेगेन उत्पाटयित्वा उत्पाट्य भ्रामयामास । तत्र तस्मिन् अग्निः समभवत् । अत एव प्रासादो ऽदह्यत । श्लोकद्वयमेकान्वयि ।। 5.43.17,18 ।।\n\nदह्यमान इति । स हनूमान् प्रासादं दह्यमानं दृष्ट्वा वज्रेण असुरान् इन्द्र इव राक्षसशतं हत्वा अन्तरिक्षस्थितः सन् इदमब्रवीत् । सार्द्धश्लोक एकान्वयी",
+        "tilaka": "उत्पाटयित्वा तं शतधारं स्तम्भं भ्रामयामास । तत्र च भ्राम्यमाणे स्तम्भान्तरेण घट्टनवशादग्निः समभवत्तेन प्रासादश्चाप्यदह्यत",
+        "bhusana": "तत्र चाग्निः समभवत् प्रासादश्चाप्यदह्यत"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "utpatayitva tan satadharan stanbhan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tatra cagnih sanabhavat prasadascapyadahyata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.19",
+      "sarga": 43,
+      "verse": "19",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "dahyamānaṃ tato dṛṣṭvā prāsādaṃ hariyūthapaḥ । sa rākṣasaśataṃ hatvā vajreṇendra ivāsurān ॥19॥",
+      "leonov_ru": "Увидев горящий дворец, вождь обезьяньих стай, Перебив сотню ракшасов, словно Индра ваджрой асуров,",
+      "commentary": {
+        "bhusana": "दह्यमानं ततो दृष्ट्वा प्रासादं हरियूथपः ।\n\nस राक्षसशतं हत्वा वज्रेणेन्द्र इवासुरान् ।\n\nअन्तरिक्षे स्थितः श्रीमानिदं वचनमब्रवीत्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "dahyananan tato drstva prasadan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.20",
+      "sarga": 43,
+      "verse": "20",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "antarikṣasthitaḥ śrīmān idaṃ vacanam abravīt । mādṛśānāṃ sahasrāṇi visṛṣṭāni mahātmanām ॥20॥",
+      "leonov_ru": "Паря в воздухе, доблестный, сказал такие слова: «Тысячи посланы великих духом, подобных мне,",
+      "commentary": {
+        "bhusana": "मादृशानां सहस्राणि विसृष्टानि महात्मनाम् ।\n\nबलिनां वानरेन्द्राणां सुग्रीववशवर्तिनाम्",
+        "siromani": "तद्वचनाकारमाह मादृशानामित्यादिभिः । मादृशानां वानरेन्द्राणां सहस्राणि विसृष्टानि सुग्रीवेण प्रेषितानि सन्तीति शेषः । अत एव अन्ये अस्मद्भिन्नाः वसुधामटन्ति वयं च अटामः । सार्धश्लोक एकान्वयी ।। 5.43.20,21 ।।\n\nदशेति । केचिद्दशनागबलाः सन्तीति शेषः । केचित् नागसहस्रस्य तुल्यबलविक्रमाः बभूवुः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nadrsanan sahasrani visrstani nahatnanan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tadvacanakaranaha nadrsananityadibhih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.21",
+      "sarga": 43,
+      "verse": "21",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "balināṃ vānarendrāṇāṃ sugrīvavaśavartinām । aṭanti vasudhāṃ kṛtsnāṃṅ vayam anye ca vānarāḥ ॥21॥",
+      "leonov_ru": "Могучих владык обезьян, верных слуг Сугривы. Обошли всю землю мы и другие обезьяны.",
+      "commentary": {
+        "bhusana": "अटन्ति वसुधां कृत्स्नां वयमन्ये च वानराः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "atanti vasudhan krtsnan vayananye",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.22",
+      "sarga": 43,
+      "verse": "22",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "daśanāgabalāḥ kecit kecid daśaguṇottarāḥ । kecin nāgasahasrasya babhūvus tulyavikramāḥ ॥22॥",
+      "leonov_ru": "Некоторые сильны, словно десять слонов, некоторые в десять раз сильнее, Некоторые были равны в мощи тысяче слонов.",
+      "commentary": {
+        "bhusana": "दशनागबलाः केचित् केचिद्दशगुणोत्तराः ।\n\nकेचिन्नागसहस्रस्य बभूवुस्तुल्यविक्रमाः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "dasanagabalah kecit keciddasagunottarah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.23",
+      "sarga": 43,
+      "verse": "23",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "santi caughabalāḥ kecit kecid vāyubalopamāḥ । aprameyabalāḥ kecit tatrāsan hariyūthapāḥ ॥23॥",
+      "leonov_ru": "Есть некоторые мощные словно поток, некоторые по мощи равные ветру, Мощь некоторых безмерна – [таковы] там были вожди обезьяньих стай.",
+      "commentary": {
+        "bhusana": "सन्ति चौघबलाः केचित् केचिद्वायुबलोपमाः ।\n\nअप्रमेयबलाश्चान्ये तत्रासन् हरियूथपाः",
+        "siromani": "सन्तीति । केचिदोघबलाः ओघसंख्याकगजबलसदृशबलवन्तः सन्ति"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "santi caughabalah kecit kecidvayubalopanah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "santiti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.24",
+      "sarga": 43,
+      "verse": "24",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "īdṛgvidhais tu haribhir vṛto dantanakhāyudhaiḥ । śataiḥ śatasahasraiś ca koṭībhiś cāyutair api ॥24॥",
+      "leonov_ru": "Окруженный такими обезьянами, вооруженными клыками и когтями, Сотнями, сотнями тысяч, десятками миллионов и десятками тысяч,",
+      "commentary": {
+        "bhusana": "ईदृग्विधैस्तु हरिभिर्वृतो दन्तनखायुधैः ।\n\nशतैः शतसहस्रैश्च कोटीभिरयुतैरपि ।\n\nआगमिष्यति सुग्रीवः सर्वेषां वो निषूदनः",
+        "siromani": "ईदृगिति । इदृग्विधैः शतादिसंख्याकैः हरिभिः सह वो युष्माकं निषूदनः सुग्रीवः आगमिष्यति । सार्धश्लोक एकान्वयी"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "idrgvidhaistu haribhirvrto dantanakhayudhaih",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "idrgiti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.25",
+      "sarga": 43,
+      "verse": "25",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "āgamiṣyati sugrīvaḥ sarveṣāṃ vo niṣūdanaḥ । neyam asti purī laṅkā na yūyaṃ na ca rāvaṇaḥ । yasya tv ikṣvākuvīreṇa baddhaṃ vairaṃ mahātmanā ॥25॥",
+      "leonov_ru": "Придет Сугрива, который уничтожит вас всех. Не будет ни города Ланки, ни вас, ни Раваны, У которого завязана вражда с великим духом героем из рода Икшваку».",
+      "commentary": {
+        "bhusana": "नेयमस्ति पुरी लङ्का न यूयं न च रावणः ।\n\nयस्मादिक्ष्वाकुनाथेन बद्धं वैरं महात्मना",
+        "siromani": "नेति । इक्ष्वाकुवीरेण महात्मना यस्येदं वैरं बद्धं प्रवृद्धं तस्य इयं पुरी लङ्का नास्ति नङ्क्ष्यतीत्यर्थः । यूयं न रावणश्च न । अर्धद्वयमेकान्वयि"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "neyanasti puri lanka na",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "neti",
+          "matches_verse": false,
+          "content_containment": 0.421,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.43.34",
+      "sarga": 43,
+      "verse": "34",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "ध्वंसनप्रकारमाह चैत्येति । चैत्यं देवायतनम्, तद्रूपः प्रासादः चैत्यप्रसादः तम् । आप्लुत्य तोरणाल्लङ्घयित्वा । हरिश्रेष्ठो हनुमान् मारुतात्मज इत्यस्योत्तश्लोकेनान्वयः । हरियूथपत्वेप्यहरिर्भविष्यतीति तद्व्यावृत्त्यर्थं हरिश्रेष्ठ इत्युक्तम् । प्रतिसूर्यः द्वितीयसूर्य इत्यर्थः । अनेन सूर्योदयस्सूचितः"
+      }
+    },
+    {
+      "verse_id": "5.43.511",
+      "sarga": 43,
+      "verse": "511",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "संप्रधृष्येति । संप्रधृष्य आक्रम्य । पारियात्रो नाम कुलपर्वतः"
+      }
+    },
+    {
+      "verse_id": "5.43.712",
+      "sarga": 43,
+      "verse": "712",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "विहङ्गाश्चैत्यपालाश्च मोहिताः पेतुः"
+      }
+    },
+    {
+      "verse_id": "5.43.812",
+      "sarga": 43,
+      "verse": "812",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "siromani": "अस्त्रविदिति । अस्त्रवित् रामादिर्जयताम् इत्याद्येवमुक्त्वा चैत्यस्थः हनूमान् रक्षसां भयं जनयन् सन् ननाद । श्लोकपञ्चकमेकान्वयि"
+      }
+    },
+    {
+      "verse_id": "5.43.1216",
+      "sarga": 43,
+      "verse": "1216",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "चैत्यस्थान् चैत्यपालान्"
+      }
+    },
+    {
+      "verse_id": "5.43.1315",
+      "sarga": 43,
+      "verse": "1315",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "शतं ययुः । अनेके इत्यर्थः"
+      }
+    },
+    {
+      "verse_id": "5.43.1819",
+      "sarga": 43,
+      "verse": "1819",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "तत्रेति । अग्निः समभवत्, भ्रामितस्तम्भैः स्तम्भान्तरसङ्घट्टनादिति भावः"
+      }
+    },
+    {
+      "verse_id": "5.43.2022",
+      "sarga": 43,
+      "verse": "2022",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "राक्षसानामुत्साहभङ्गं कारयितुमाह मादृशानामित्यादि"
+      }
+    },
+    {
+      "verse_id": "5.43.2325",
+      "sarga": 43,
+      "verse": "2325",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "ततः स राक्षसशतं हत्वा दह्यमानं प्रासादं दृष्ट्वा चान्तरिक्षे स्थित इदं वचो ऽब्रवीत् ।। 5.43.19,20 ।।\n\nएतदुक्तिप्रयोजनं च राक्षसहृदयपीडा ।। 5.43.21,22 ।।\n\nओघबला ओघसङ्ख्यातगजबलाः",
+        "bhusana": "इत्यार्षे श्रीरामायणे वाल्मीकीये आदिकाव्ये श्रीमत्सुन्दरकाण्डे त्रिचत्वारिंशः सर्गः ।। 5.43।।\n\nओघबलाः ओघाख्यसङ्ख्याकबलाः"
+      }
+    }
+  ]
+}

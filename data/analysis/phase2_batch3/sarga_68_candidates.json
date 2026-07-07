@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "sarga": 68,
+    "drafted_by": "claude-sonnet-5",
+    "tier": "Sonnet",
+    "date": "2026-07-07",
+    "style": "ЛП tier-2 (model II), commentator-dialogue, contrastive-first",
+    "batch": "phase2_batch3",
+    "verses_considered": 34,
+    "notes_drafted": 2,
+    "notes_rejected": 32,
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 2, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
+  },
+  "notes": [
+    {
+      "verse_id": "5.68.12",
+      "lemma_iast": "tan nayanaṃ yaśaskaram",
+      "note_ru": "По Тилаке, довод Ситы в 68.11-12 не противоречие, а уступительная конструкция: хотя Хануман один вполне способен исполнить дело (yadyapi tvam eva paryāptaḥ), больший подвиг — победа над Раваной и возвращение Ситы самим Рамой с войском — принесёт славу именно ему (tasyaiva yaśaskaram); поэтому, заключает Тилака, «правильно, чтобы он сам пришёл и освободил» (tenaiva āgatya mocanam yuktam).",
+      "source_commentary": ["tilaka"],
+      "contrastive": false,
+      "kazansky_type": "Б",
+      "subtype": "commentator",
+      "review_required": true,
+      "provenance": {
+        "model": "claude-sonnet-5",
+        "tier": "Sonnet",
+        "step": "phase2_batch3_draft"
+      },
+      "why_proposed": "снимает кажущуюся избыточность между «Хануман один справится» (68.11) и «пусть Рама придёт с войском» (68.12) — Тилака поясняет это как дипломатический ход Ситы (уступительная конструкция, а не противоречие), ориентированный на славу Рамы; ни подстрочник, ни Леонов/Костина, ни Phase-1 эту связку не разбирают.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's remark spanning vv.11-12 ('yadyapi tvam eva paryāptaḥ...tathāpīdṛśo balodayas tavaiva yaśasyaḥ'; 'yadi tu rāmo rāvaṇaṃ hatvā māṃ nayet, tadā tannayanaṃ tasya yaśaskaraṃ syāt. atas tenaivāgatya mocanaṃ yuktam iti bhāvaḥ') is verified verbatim, resolving the apparent redundancy as a concessive move rather than a contradiction; Leonov's own notes on both verses address only formulaic-repetition parallels (cf. V.39), leaving this reasoning untouched. Pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
+    },
+    {
+      "verse_id": "5.68.23",
+      "lemma_iast": "manyur apaitu",
+      "note_ru": "У Тилаки и Бхушаны отмечено, что manyu здесь означает не «гнев» и не «решимость», а «уныние, скорбь» (dainyam) — оба комментатора ссылаются на «Амаракошу» («manyur dainye kratau krudhi» — manyu значит «уныние», «решимость» или «гнев» в зависимости от контекста), и здесь применимо только первое значение.",
+      "source_commentary": ["tilaka", "bhusana"],
+      "contrastive": false,
+      "kazansky_type": "Б",
+      "subtype": "commentator",
+      "review_required": true,
+      "provenance": {
+        "model": "claude-sonnet-5",
+        "tier": "Sonnet",
+        "step": "phase2_batch3_draft"
+      },
+      "why_proposed": "разрешает многозначность слова manyu (уныние / решимость / гнев) ссылкой на именованный лексикографический авторитет (Амаракоша) и объясняет, почему в подстрочнике «горе» — точный, а не приблизительный перевод; ни подстрочник сам по себе, ни Леонов/Костина, ни Phase-1 эту многозначность не оговаривают.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Both Tilaka ('manyur dainyam') and Bhūṣaṇa ('manyuḥ dainyam. \"manyur dainye kratau krudhi\" ity amaraḥ') are verified verbatim, converging on the same lexicographic disambiguation via the named Amarakośa citation — a genuine two-commentator agreement absent from подстрочник/tier-1. The chunk sits in a merged-range marker bundle (ambiguous_marker: true, no pratika_check) rather than v.23's own clean bundle, so anchoring is unverified by the automated check though the content is manually confirmed and unambiguous.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
+    }
+  ],
+  "rejected": [
+    {"verse_id": "5.68.1", "reason": "Тилака и Бхушана дают дословную грамматическую цитату/перифраз преамбулы без независимого толкования."},
+    {"verse_id": "5.68.2", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.3", "reason": "чанк Бхушаны (content_anchor) — построчный грамматический разбор слов стиха 1 (anumānya, uttaram, sasambhramaḥ), чистая грамматика без интерпретационного выхода, невидимая русскому читателю."},
+    {"verse_id": "5.68.4", "reason": "Тилака поясняет śokavipāka как «плод греха» (pāpaphala) — по существу дублирует уже развёрнутый разбор кармической метафоры vipāka в Phase-1 (V.68.4b)."},
+    {"verse_id": "5.68.5", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.6", "reason": "у Бхушаны — дословная цитата стиха; duḥkhabhāginī уже разобрано в Phase-1 (V.68.6)."},
+    {"verse_id": "5.68.7", "reason": "Тилака даёт чисто грамматическую глоссу (asaṃśayaḥ = bādhakasaṃśayarahitaḥ), невидимую русскому читателю; у Бхушаны — цитата стиха."},
+    {"verse_id": "5.68.8", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.9", "reason": "у Бхушаны — дословная цитата стиха; trayāṇāṃ bhūtānām уже разобрано в Phase-1 (V.68.9) с полным космологическим комментарием."},
+    {"verse_id": "5.68.10", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.11", "reason": "покрыто примечанием к V.68.12: аргумент Тилаки о «достаточности Ханумана vs. славе Рамы» — единая мысль, продолженная и завершённая в комментарии к следующему стиху."},
+    {"verse_id": "5.68.13", "reason": "Тилака даёт чисто синонимическую глоссу (upadhinā = chalena), дублирующую разбор upādhi в Phase-1 (V.68.13); второе предложение — грамматический перифраз подстрочника."},
+    {"verse_id": "5.68.14", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.15", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.16", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.17", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.18", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.19", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.20", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.21", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.22", "reason": "у Бхушаны — дословная цитата стиха; prakṛṣṭa уже разобрано в Phase-1 (V.68.22)."},
+    {"verse_id": "5.68.24", "reason": "у Бхушаны — дословная цитата стиха; mama pṛṣṭhagata уже разобрано в Phase-1 (V.68.24) с параллелью к V.67.38."},
+    {"verse_id": "5.68.25", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.26", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.27", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.28", "reason": "у Бхушаны — дословная цитата стиха без толкования."},
+    {"verse_id": "5.68.29", "reason": "Тилака даёт грамматический перифраз, дословно повторяющий содержание подстрочника (успокоилась речами, хоть и была потрясена скорбью)."},
+    {"verse_id": "5.68.39", "reason": "изолированный маркер без текста стиха/подстрочника (вероятен сегментаторный сдвиг); глосса Бхушаны (śokavipāka = śokavṛddhiḥ) дублирует и разбор Тилаки на V.68.4, и развёрнутую лексическую статью Phase-1 (V.68.4b)."},
+    {"verse_id": "5.68.810", "reason": "merged-range маркер (ambiguous_marker); Тилака лишь указывает риторическую функцию фразы («вводит сомнение»), без содержательного толкования, невидимого русскому читателю без разбора синтаксиса."},
+    {"verse_id": "5.68.1022", "reason": "merged-range маркер (ambiguous_marker); Бхушана даёт чисто синонимические глоссы (kāryaniryoge = kāryagatau, duratikrame = durnirvahe)."},
+    {"verse_id": "5.68.1622", "reason": "merged-range маркер (ambiguous_marker); Тилака даёт единственную синонимическую глоссу (śeṣam = śiṣṭam)."},
+    {"verse_id": "5.68.2328", "reason": "merged-range маркер; содержательная часть (manyu = dainyam, ссылка на Амаракошу) вынесена отдельной записью к V.68.23."}
+  ]
+}

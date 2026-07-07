@@ -10,6 +10,45 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+**H268 — ЛП camera-ready build: alignment, judge, contrastive scale-out, print master** (Fable 5 `claude-fable-5` orchestration, Sonnet 5 `claude-sonnet-5` drafting/judging)
+- **Content-anchor alignment** ([scripts/sa_align.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/sa_align.py) `containment` +
+  [scripts/extract_yellow_sargas.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/extract_yellow_sargas.py)):
+  second independent ṭīkā→verse signal for pronominal/paraphrase chunks; verified precision
+  (pratīka ∪ content) **0.964** on the 10 gated sargas / **0.949** book-wide (strict pratīka
+  metric kept unchanged at 0.888 for honesty); Tattvadīpikā added as 4th segmented commentator
+  (sargas 1–6); `--outdir` per-sarga split mode.
+- **LLM-as-judge rubric** ([docs/PHASE2_METHOD.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/PHASE2_METHOD.md) §3.4,
+  STEP 2b): pointwise refute-framed 5-axis scoring (faithfulness veto · non-triviality ·
+  contrastive value · register · anchoring), drafter ≠ judge; review sheet displays verdicts.
+  Method provenance: [docs/ACL_METHODS_ADOPTED.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ACL_METHODS_ADOPTED.md) (new).
+- **Contrastive-first style contract** (§3.1 rewritten per H268 decision 3): preferred note form
+  «в „Тилаке“ — X; в „Широмани“ — Y; перевод следует …»; single-commentator gloss demoted to fallback.
+- **Batch-3 scale-out EXECUTED**: the remaining 58 sargas segmented
+  ([data/analysis/phase2_batch3/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/analysis/phase2_batch3),
+  2,734 verse bundles) and drafted by ≤3-wide Sonnet 5 agents under
+  [DRAFTING_BRIEF.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/DRAFTING_BRIEF.md) /
+  [JUDGE_BRIEF.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/JUDGE_BRIEF.md): **227 candidates
+  from 2,734 verses (8.3% accept, 36 contrastive), judged keep 209 / edit 5 / park 1 / reject 11 /
+  flag_anchor 1** (faithfulness veto caught real misattributions; one wrong-verse anchor caught);
+  M.G. gate sheet
+  [commentarystrategies-sundarakanda-commentaries_batch3_review.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/commentarystrategies-sundarakanda-commentaries_batch3_review.html);
+  agent decision logs in [logs/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/analysis/phase2_batch3/logs); all notes `review_required`.
+  Merged apparatus ceiling now **46.2%** of verses (target 37%); per-sarga apparatus pages rebuilt for all 68 sargas.
+- **ЛП print master** ([scripts/build_book_apparatus.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_book_apparatus.py) →
+  [data/book/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/book)): translation body (68 songs — complete, §8.3 answered) +
+  merged status-slotted endnotes + Kostina editorial stratum (WS-E) + appendices skeleton, MD + DOCX;
+  [BOOK_BUILD_REPORT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/BOOK_BUILD_REPORT.md) + intro-article skeleton.
+- **Density measurement** ([scripts/book_density_stats.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/book_density_stats.py)):
+  Leonov reader tier-1 = 21.5% of verses (the ~36% benchmark conflated Kostina's 427 editorial-mark
+  verses); merged tier-1∪tier-2 ceiling already **41.1%** vs the 37% target; residual gap 73 verses.
+
+### Changed
+- [docs/COMMENTARY_ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/COMMENTARY_ROADMAP.md) §6/§7/§9 —
+  publisher resolved (**ЛП/Наука**), camera-ready target **~07-08-2026** (decision record:
+  [docs/LP_APPARATUS_DESIGN.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LP_APPARATUS_DESIGN.md), PR #51).
+
 ## [1.6.0] - 2026-07-04
 
 ### Added

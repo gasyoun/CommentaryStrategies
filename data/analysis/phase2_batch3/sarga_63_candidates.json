@@ -1,0 +1,209 @@
+{
+  "_meta": {
+    "sarga": 63,
+    "drafted_by": "claude-sonnet-5",
+    "tier": "Sonnet",
+    "date": "2026-07-07",
+    "style": "ЛП tier-2 (model II), commentator-dialogue, contrastive-first",
+    "batch": "phase2_batch3",
+    "verses_considered": 37,
+    "notes_drafted": 2,
+    "notes_rejected": 35,
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 2, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
+  },
+  "notes": [
+    {
+      "verse_id": "5.63.29",
+      "lemma_iast": "sugrīva",
+      "note_ru": "Сугрива (sugrīva) — по Бхушане и Широмани, второе появление имени в этом эпизоде (29-й стих вслед за 28-м) не тавтология: слово здесь «оживляет» собственную этимологию — śobhanagrīva, «прекрасношеий», — чтобы избежать буквального повтора (punarukti) одного и того же имени подряд. Подстрочник передаёт оба вхождения одинаково как имя собственное, теряя эту игру со значением имени царя.",
+      "source_commentary": [
+        "bhusana",
+        "siromani"
+      ],
+      "contrastive": false,
+      "kazansky_type": "Б",
+      "subtype": "commentator",
+      "review_required": true,
+      "provenance": {
+        "model": "claude-sonnet-5",
+        "tier": "Sonnet",
+        "step": "phase2_batch3_draft"
+      },
+      "why_proposed": "Бхушана и независимо Широмани фиксируют этимологическую игру на имени Сугривы (лит. «прекрасношеий»), не переданную подстрочником и не отмеченную ни у Леонова/Костиной, ни в Phase-1.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's remark ('dvitīya-sugrīva-śabdasya śobhanagrīva ity avayavārtho vivakṣitaḥ, kriyābhedena apunaruktir vā') and Siromani's independent gloss ('sugrīvaḥ śobhanagrīvāviśiṣṭaḥ') both verified verbatim confirm the etymological wordplay and the punarukti-avoidance point exactly as claimed. The Bhūṣaṇa evidence sits mainly in v.28's bundle (adjacent, discussing the same 'second occurrence'), while Siromani's own chunk verifies directly in v.29 — so anchoring is scored as partially confirmed at the filed verse, fully confirmed one verse over.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
+    },
+    {
+      "verse_id": "5.63.33",
+      "lemma_iast": "saṃprahṛṣṭa",
+      "note_ru": "Сампрахришта (saṃprahṛṣṭa) — по Бхушане, здесь подразумевается не просто «обрадованный», а буквально «с вставшими дыбом волосками» (hṛṣitaromāṇau): корень hṛṣ- в грамматической традиции относится именно к волоскам тела, так что «дрожь членов» дальше в том же стихе описывает то же явление — горестный жест радости (horripilatio) как физиологический маркер сильного чувства, а не метафора. Подстрочник передаёт это общим «обрадованные», теряя конкретный телесный образ.",
+      "source_commentary": [
+        "bhusana"
+      ],
+      "contrastive": false,
+      "kazansky_type": "Б",
+      "subtype": "commentator",
+      "review_required": true,
+      "provenance": {
+        "model": "claude-sonnet-5",
+        "tier": "Sonnet",
+        "step": "phase2_batch3_draft"
+      },
+      "why_proposed": "Бхушана уточняет saṃprahṛṣṭa как горестное вздыбление волосков тела (грамматически обосновано через корень hṛṣ-), меняя образ с общей радости на конкретный телесный жест — не в подстрочнике и не у Леонова/Костиной.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's gloss ('saṃprahṛṣṭau... hṛṣitaromāṇāv ity arthaḥ, \"hṛṣer lomasu\" iti vikalpād iḍbhāvaḥ') is verified verbatim, giving the precise grammatical basis for a bodily horripilation image absent from the подстрочник's generic 'обрадованные'; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "verse_id": "5.63.1",
+      "reason": "restates_podstrochnik — Бхушана лишь повторяет текст стиха без глоссы"
+    },
+    {
+      "verse_id": "5.63.2",
+      "reason": "restates_podstrochnik — Широмани уточняет abhayam как «избавление от страха перед врагом», но это частная спецификация уже полного разбора формулы abhayapradāna в Phase-1"
+    },
+    {
+      "verse_id": "5.63.3",
+      "reason": "restates_podstrochnik — Широмани поясняет saṃbhramāt («из почтения/спешки») без интерпретационного расхождения с подстрочником"
+    },
+    {
+      "verse_id": "5.63.4",
+      "reason": "pure_grammar — Широмани разбирает суффиксальное образование prājña, грамматика невидима для русского читателя"
+    },
+    {
+      "verse_id": "5.63.5",
+      "reason": "pure_grammar — Бхушана аргументирует логическую непротиворечивость атрибуции vānaraiḥ (=Ангада и его отряд), это текстологическая аргументация, не образ или факт, различимый в переводе"
+    },
+    {
+      "verse_id": "5.63.6",
+      "reason": "дублирует собственное примечание Леонова/Костиной (Таттвадипика/Бхушана «едят плоды и пьют мёд» уже приведено)"
+    },
+    {
+      "verse_id": "5.63.8",
+      "reason": "дублирует примечание Phase-1 (bhrūkuṭi разобрано этимологически); Тилака даёт лишь синонимичную глоссу «изогнутые брови»"
+    },
+    {
+      "verse_id": "5.63.9",
+      "reason": "restates_podstrochnik — Бхушана и Широмани пересказывают, как стражей изгоняют из леса"
+    },
+    {
+      "verse_id": "5.63.10",
+      "reason": "restates_podstrochnik — Бхушана и Широмани пересказывают бегство стражей"
+    },
+    {
+      "verse_id": "5.63.11",
+      "reason": "дублирует собственное примечание Леонова/Костиной (devamārga уже разобрано на сарге 62 и здесь лишь повторяется без нового толкования)"
+    },
+    {
+      "verse_id": "5.63.12",
+      "reason": "restates_podstrochnik — Бхушана и Широмани пересказывают итог избиения стражей"
+    },
+    {
+      "verse_id": "5.63.13",
+      "reason": "restates_podstrochnik — Широмани и Бхушана пересказывают, как Лакшмана спрашивает Сугриву"
+    },
+    {
+      "verse_id": "5.63.14",
+      "reason": "restates_podstrochnik — Бхушана и Широмани пересказывают вопрос Лакшманы без глоссы"
+    },
+    {
+      "verse_id": "5.63.15",
+      "reason": "restates_podstrochnik — Широмани лишь повторяет текст стиха"
+    },
+    {
+      "verse_id": "5.63.16",
+      "reason": "pure_grammar — Бхушана аргументирует логическую связь атрибуции vānarapuṅgavaiḥ/aṅgadapramukhaiḥ между стихами, текстологическая аргументация без видимого для читателя следствия"
+    },
+    {
+      "verse_id": "5.63.17",
+      "reason": "дублирует примечание Phase-1 (vyatikrama уже разобрано); Тилака, Бхушана и Широмани лишь пересказывают логику стиха"
+    },
+    {
+      "verse_id": "5.63.18",
+      "reason": "restates_podstrochnik — Тилака пересказывает стих без глоссы; пропуск «balī», отмеченный Костиной, в тике не разбирается"
+    },
+    {
+      "verse_id": "5.63.19",
+      "reason": "restates_podstrochnik — Тилака и Широмани пересказывают логическую цепь (только Хануман мог найти Ситу), уже данную в подстрочнике"
+    },
+    {
+      "verse_id": "5.63.20",
+      "reason": "restates_podstrochnik — Бхушана перечисляет вождей войска без нового толкования"
+    },
+    {
+      "verse_id": "5.63.21",
+      "reason": "restates_podstrochnik — Широмани пересказывает перечисление вождей войска"
+    },
+    {
+      "verse_id": "5.63.22",
+      "reason": "restates_podstrochnik — Бхушана и Широмани пересказывают, что Мадхувана разорена Ангадой и товарищами"
+    },
+    {
+      "verse_id": "5.63.23",
+      "reason": "дублирует примечание Phase-1 (dakṣiṇā āśā уже разобрано); Бхушана лишь повторяет текст стиха"
+    },
+    {
+      "verse_id": "5.63.24",
+      "reason": "restates_podstrochnik — Тилака и Широмани пересказывают избиение стражей без нового толкования"
+    },
+    {
+      "verse_id": "5.63.25",
+      "reason": "restates_podstrochnik — Бхушана лишь повторяет текст стиха без глоссы"
+    },
+    {
+      "verse_id": "5.63.26",
+      "reason": "restates_podstrochnik — Бхушана лишь повторяет текст стиха без глоссы"
+    },
+    {
+      "verse_id": "5.63.27",
+      "reason": "дублирует собственное примечание Леонова/Костиной (dattavaram как дар богов, со ссылкой на «Тилаку», уже приведено)"
+    },
+    {
+      "verse_id": "5.63.28",
+      "reason": "restates_podstrochnik — Бхушана и Широмани пересказывают радость Лакшманы и Рамы; этимологическая игра на имени Сугривы учтена в примечании к 5.63.29"
+    },
+    {
+      "verse_id": "5.63.30",
+      "reason": "дублирует примечание Phase-1 (marṣaṇīya/vyatikrama уже разобраны); Бхушана, Широмани и Тилака пересказывают прощение Сугривы"
+    },
+    {
+      "verse_id": "5.63.31",
+      "reason": "restates_podstrochnik — Широмани пересказывает распоряжение Сугривы без нового толкования"
+    },
+    {
+      "verse_id": "5.63.32",
+      "reason": "дублирует примечание Phase-1 (mṛgarājadarpa уже разобрано); Широмани пересказывает желание Сугривы повидать обезьян"
+    },
+    {
+      "verse_id": "5.63.713",
+      "reason": "ambiguous_marker — слитный диапазонный маркер (5.63.7-13), формальная частица hi, не образует независимой глоссы"
+    },
+    {
+      "verse_id": "5.63.912",
+      "reason": "ambiguous_marker — слитный диапазонный маркер (5.63.9-12), Тилака лишь подставляет местоимение «мои [стражи]», не образует независимой глоссы"
+    },
+    {
+      "verse_id": "5.63.1316",
+      "reason": "ambiguous_marker — слитный диапазонный маркер (5.63.13-16), Тилака лишь подставляет опущенное действующее лицо, не образует независимой глоссы"
+    },
+    {
+      "verse_id": "5.63.1823",
+      "reason": "ambiguous_marker — слитный диапазонный маркер (5.63.18-23), формальная связка «уточняет kṛtakṛtyatvam», не образует независимой глоссы"
+    },
+    {
+      "verse_id": "5.63.2023",
+      "reason": "ambiguous_marker — слитный диапазонный маркер (5.63.20-23), Тилака лишь поясняет местоимение anyaḥ (= Хануман), не образует независимой глоссы"
+    }
+  ]
+}

@@ -1,0 +1,1335 @@
+{
+  "_meta": {
+    "generated_by": "scripts/extract_yellow_sargas.py",
+    "purpose": "Phase-2 deterministic commentary segmentation (no LLM); input to Sonnet drafting",
+    "sargas": [
+      3
+    ],
+    "commentators": [
+      "tilaka",
+      "bhusana",
+      "siromani",
+      "tattvadipika"
+    ],
+    "verse_count": 61,
+    "verses_all_three": 22,
+    "ambiguous_markers": 11,
+    "corpus_aligned": 49,
+    "align_backend": "sanskrit_util",
+    "reassigned_moves": 1841,
+    "content_moves": 84,
+    "pratika_checkable": 4647,
+    "pratika_matched": 3983,
+    "alignment_precision": 0.857,
+    "anchor_verified": 4391,
+    "alignment_precision_verified": 0.945,
+    "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md"
+  },
+  "preambles": {
+    "3.pre": {
+      "tilaka": "लम्बशिखरे उन्नतशिखरे लम्बे लम्बाख्यपर्वते, अत एव लम्बतोयदसन्निभे । सत्त्वं सत्त्वगुणमपेक्षितबलं च । रजस्तमःप्रधानरक्षोजयाय सत्त्वगुणाश्रयणम् । मेधावी कालोचितविचारज्ञः ।। 5.3.1,2 ।।\n\nसागरोपमनिर्घोषां सागरशब्दसदृशरक्षःशब्दवतीम्",
+      "bhusana": "स लम्बसिखरे लम्बे लम्बतोयदसन्निभे ।\n\nसत्त्वमास्ताय मेधावी हनुमान्मारुतात्मजः",
+      "siromani": "हनुमत्कर्तृकलङ्काप्रवेशनमेव वर्णयति स इत्यादिभिः । लम्बतोयदसंनिभे महामेघसदृशे लम्बे विस्तीर्णे लम्बशिखरे लम्बाभिधगिरिशिखरसमीपे सत्त्वं प्रवेशनयोग्यशनैर्गतिमास्थाय निश्चित्य महासत्त्वो ऽतिबलवान् हनूमान् निशि लङ्कां प्रविवेश । सार्धश्लोक एकान्वयी । लङ्कां वर्णयन्नाह रम्येत्यादिभिः । रम्यकाननतोयाभ्यामाढ्यां पूर्णाम् ।। 5.3.1,2 ।।\n\nशारदाः शरत्कालप्रभवाः ये अम्बुधरा मेघाः तत्प्रख्यैः श्वेतत्वेन तत्सदृशैः राजतैरित्यर्थः, भवनैरुपशोभितां सागरोपमः निर्घोषः राक्षसस्वनो यस्याम्",
+      "tattvadipika": "स इति । लम्बे लम्बाकारे लम्बशिखरे लम्बगिरिश्रृङ्गे । सत्त्वमास्थाय बलमास्थाय"
+    }
+  },
+  "verses": [
+    {
+      "verse_id": "5.3.1",
+      "sarga": 3,
+      "verse": "1",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa lambaśikhare lambe lambatoyadasaṃnibhe । sattvam āsthāya medhāvī hanumān mārutātmajaḥ ॥1॥",
+      "leonov_ru": "На высокой горе Ламбе (Трикуте), подобной высокому облаку, Опираясь на собственную мощь, мудрый Хануман, сын ветра,",
+      "commentary": {
+        "tilaka": "लम्बशिखरे उन्नतशिखरे लम्बे लम्बाख्यपर्वते, अत एव लम्बतोयदसन्निभे । सत्त्वं सत्त्वगुणमपेक्षितबलं च । रजस्तमःप्रधानरक्षोजयाय सत्त्वगुणाश्रयणम् । मेधावी कालोचितविचारज्ञः ।। 5.3.1,2 ।।\n\nसागरोपमनिर्घोषां सागरशब्दसदृशरक्षःशब्दवतीम्",
+        "bhusana": "स लम्बसिखरे लम्बे लम्बतोयदसन्निभे ।\n\nसत्त्वमास्ताय मेधावी हनुमान्मारुतात्मजः\nस लम्बेत्यादि । लम्बे लम्बाख्ये । लम्बशिखरे लम्बगिरिशिखरे इति चाहुः । यद्वा लम्बे लम्बमान इव स्थिते । लम्बशिखरे त्रिकूटशिखरे । सत्त्वं व्यवसायम् । धैर्यमिति यावत् । विवेश प्राप\nतां समीक्ष्य पुरीं रम्यां राक्षसाधिपतेः शुभाम् ।\n\nअनुत्तमामृद्धियुतां चिन्तयामास वीर्यवान्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "lanbasikhare unnatasikhare lanbe lanbakhyaparvate",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa lanbasikhare lanbe lanbatoyadasannibhe",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.2",
+      "sarga": 3,
+      "verse": "2",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "niśi laṅkāṃ mahāsattvo viveśa kapikuñjaraḥ । ramyakānanatoyāḍhyāṃ purīṃ rāvaṇapālitām ॥2॥",
+      "leonov_ru": "Ночью в Ланку вошел могучий слон между обезьянами, Богатый прекрасными рощами и водами город, хранимый Раваной,",
+      "commentary": {
+        "bhusana": "निशि लङ्कां महासत्त्वो विवेश कपिकुञ्जरः ।\n\nरम्यकाननतोयाढ्यां पुरीं रावणपालिताम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nisi lankan nahasattvo vivesa",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.3",
+      "sarga": 3,
+      "verse": "3",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "śāradāmbudharaprakhyair bhavanair upaśobhitām । sāgaropamanirghoṣāṃ sāgarānilasevitām ॥3॥",
+      "leonov_ru": "Украшенный домами, подобными осенним облакам, Оглашаемый шумом океана, овеваемый морскими ветрами,",
+      "commentary": {
+        "bhusana": "शारदाम्बुधरप्रख्यैर्भवनैरुपशोभिताम् ।\n\nसागरोपमनिर्घोषां सागरानिलसेविताम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "saradanbudharaprakhyairbhavanairupasobhitan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.4",
+      "sarga": 3,
+      "verse": "4",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "supuṣṭabalasampuṣṭāṃ yathaiva viṭapāvatīm । cārutoraṇaniryūhāṃ pāṇḍuradvāratoraṇām ॥4॥",
+      "leonov_ru": "Полный сильными войсками подобно Витапавати (Алаке, городу Куберы), С прекрасными арками и башенками, с белыми дверями и арками,",
+      "commentary": {
+        "tilaka": "विटपावत्यलकापुरी । निर्यूहो मत्तवारणः । चारुस्तोरणस्थनिर्यूहो यस्यास्ताम् । पाण्डुरे सुधाधवले द्वारे तोरणं यस्यां ताम्",
+        "bhusana": "सुपुष्टबलसंघुष्टां यथैव विटपावतीम् ।\n\nचारुतोरणनिर्यूहां पाण्डुरद्वारतोरणाम्\nविटपावतीम् अलकाम् । निर्यूहो मत्तवारणः । पाण्डुरद्वारतोरणां पाण्डुरे द्वारतोरणे यस्यास्ताम्\nइदं तु तथ्यं वै ब्रुवन्त्या मे हरीश्वर ।\n\nस्वयंभुवा पुरा दत्तं वरदानं यथा मम",
+        "tattvadipika": "सुपुष्टेति । विटपावतीम् अलकापुरीम् । चारुतारेणनिर्यूहां निर्यूहः मत्तवारणः, तोरणस्य निर्यूहः तोरणनिर्यूहः, चारुः तोरणनिर्यूहो यस्यो ताम् । पाण्डरद्वारतोरणाम् पाण्डरे सुधा धवलिते द्वारे तोरणं यस्यां ताम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "vitapavatyalakapuri",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "supustabalasanghustan yathaiva vitapavatin",
+          "matches_verse": true
+        },
+        "tattvadipika": {
+          "pratika_iast": "supusteti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.5",
+      "sarga": 3,
+      "verse": "5",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "bhujagācaritāṃ guptāṃ śubhāṃ bhogavatīm iva । tāṃ savidyudghanākīrṇāṃ jyotirmārganiṣevitām ॥5॥",
+      "leonov_ru": "Защищенный и прекрасный, словно Бхогавати, населенный змеями. Того покрытого тучами с молниями, расположенного на дороге светил,",
+      "commentary": {
+        "tilaka": "भूजगैराचरितां कृतसञ्चाराम् । भोगवतीं सर्पनगरीम् । सविद्युद्भिर्घनैर्व्याप्ताम् । ज्योतिषां ग्रहर्क्षादीनां गणैर्निषेवितामित्युत्तरान्वयि",
+        "bhusana": "भुजगाचरितां गुप्तां शुभां भोगवतीमिव ।\n\nतां सविद्युद्घनाकीर्णां ज्योतिर्मार्गनिषेविताम्",
+        "siromani": "भुजगानां नागानामाचरितं रक्षणार्थं संचारो यस्यां तामत एव गुप्तां नागैरभिरक्षितां भोगवतीं सर्पपुरीमिव सविद्युद्धनैः राक्षसमायानिर्मितविद्युत्सहितमेघैः आकीर्णां व्याप्तां ज्योतिर्गणैर्निषेविताम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "bhujagairacaritan krtasancaran",
+          "matches_verse": false,
+          "content_containment": 0.125
+        },
+        "bhusana": {
+          "pratika_iast": "bhujagacaritan guptan subhan bhogavatiniva",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "bhujaganan nagananacaritan raksanarthan sancaro",
+          "matches_verse": false,
+          "content_containment": 0.25,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.6",
+      "sarga": 3,
+      "verse": "6",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "caṇḍamārutanirhrādāṃ yathā cāpyāmarāvatīm । śātakumbhena mahatā prākāreṇābhisaṃvṛtām ॥6॥",
+      "leonov_ru": "Звучащего суровыми ветрами, словно Амаравати, [город Индры], Обнесенного высокой золотой стеной,",
+      "commentary": {
+        "tilaka": "चण्डमारुतानां परिवहादीनां शब्दो यस्यां तादृशीममरावतीमिव स्थिताम् । अत्रामराः सन्त्यस्यामित्यमरावती द्यौः असञ्ज्ञायामपि \"मतौ बह्वचः\" इत्यार्षो दीर्घः । न त्विहेन्द्रपुर्यमरावती उक्तलक्षणाभावात् लङ्काया उक्तद्युसादृश्यं च\n\nसालङ्कारराक्षसवत्त्वाद्बलवद्धोषबाहुल्याच्चेति कतकः । शातकुम्भेन स्वर्णमयेन",
+        "siromani": "चण्डमारुतस्य निर्हादो यस्याम् अमरावतीं यथा संपत्त्या इन्द्रपुरीसदृशीं शातकुम्भेन सुवर्णप्राकारेण अभिसंवृताम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "candanarutanan parivahadinan sabdo yasyan",
+          "matches_verse": false,
+          "content_containment": 0.167,
+          "content_anchor": true
+        },
+        "siromani": {
+          "pratika_iast": "candanarutasya nirhado yasyan anaravatin",
+          "matches_verse": false,
+          "content_containment": 0.333,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.7",
+      "sarga": 3,
+      "verse": "7",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kiṅkiṇījālaghoṣābhiḥ patākābhir alaṃkṛtām । āsādya sahasā hṛṣṭaḥ prākāram abhipedivān ॥7॥",
+      "leonov_ru": "Оглашаемого звоном колокольчиков, украшенного знаменами, [Города] быстро достигнув, подошел к стене взволнованный [Хануман].",
+      "commentary": {
+        "tilaka": "किङ्किणीजालैः क्षुद्रघण्टिकासमूहैः शब्दो यासां ताभिः",
+        "bhusana": "किङ्किणीजालघोषाभिः पताकाभिरलङ्कृताम् ।\n\nआसाद्य सहसा हृष्टः प्राकारमभिपेदिवान्",
+        "siromani": "पताकाभिरलंकृतां रावणपालितां पुरीमासाद्य प्राप्य हृष्टो हनूमान् प्राकारमभिषेदिवान् प्राप्तवान् । सार्धपञ्चकमेकान्वयि"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "kinkinijalaih ksudraghantikasanuhaih sabdo yasan",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "kinkinijalaghosabhih patakabhiralankrtan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "patakabhiralankrtan ravanapalitan purinasadya prapya",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.8",
+      "sarga": 3,
+      "verse": "8",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vismayāviṣṭahṛdayaḥ purīm ālokya sarvataḥ । jāmbūnadamayair dvārair vaidūryakṛtavedikaiḥ ॥8॥",
+      "leonov_ru": "[Он], в чье сердце вошло изумление, оглядев город со всех сторон, С воротами из золота, с сиденьями (алтарями, возвышениями), выложенными изумрудами,",
+      "commentary": {
+        "bhusana": "विस्मयाविष्टहृदयः पुरीमालोक्य सर्वतः\nविस्मयाविष्टहृदयः, अभूदिति शेषः\nजाम्बूनदमयैर्द्वारैर्वैडूर्यकृतवेदिकैः ।\n\nवज्रस्फाटिकमुक्ताभिर्मणिकुट्टिमभूषितैः ।\n\nतप्तहाटकनिर्यूहै राजतामलपाण्डुरैः\nपुनर्हर्षहेतूनाह जाम्बूनदमयैरित्यादिना । जाम्बूनदमयैर्द्वारैरित्यादौ सहयोगे तृतीया । वज्रस्फटिकमुक्ताभिरित्यत्रापि कृतवेदिकैरिति सम्बध्यते । राजतामलपाण्डुरैः अवयवैः",
+        "tilaka": "मणिस्फटिकमुक्ताभिश्च कृतवेदिकैर्द्वारैः सर्वत उपलक्षिताम् कुट्टिमो निबद्धा भूः निर्यूहो मत्तवारणः राजतामलपाण्डुरै रजतमयामलपाण्डुरोपरिप्रदेशैः । सर्वत्र द्वारं विशेष्यम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "visnayavistahrdayah purinalokya sarvatah visnayavistahrdayah",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "nanisphatikanuktabhisca krtavedikairdvaraih sarvata upalaksitan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.10",
+      "sarga": 3,
+      "verse": "10",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vaidūryakṛtasopānaiḥ sphāṭikāntarapāṃsubhiḥ । cārusaṃjavanopetaiḥ kham ivotpatitaiḥ śubhaiḥ ॥10॥",
+      "leonov_ru": "С лестницами, выложенными изумрудами, покрытыми хрустальной пылью, С четырехугольными дворами, прекрасными, словно бы вздымающимися в небо,",
+      "commentary": {
+        "bhusana": "वैडूर्यकृतसोपानैः स्फाटिकान्तरपांसुभिः ।\n\nचारुसञ्जवनोपेतैः खमिवोत्पतितैः शुभैः\nस्फाटिकान्तरपांसुभिः स्फटिकमयाङ्गणपांसुभिः । सञ्जवनं चतुश्शालम् ।। 5.3.10,11।।\n\nवस्वोकसाराप्रतिमां तां वीक्ष्य नगरीं ततः ।\n\nखमिवोत्पतितुं कामां जहर्ष हनुमान् कपिः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "vaiduryakrtasopanaih sphatikantarapansubhih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.11",
+      "sarga": 3,
+      "verse": "11",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "krauñcabarhiṇasaṃghuṣṭai rājahaṃsaniṣevitaiḥ । tūryābharaṇanirghoṣaiḥ sarvataḥ parināditām ॥11॥",
+      "leonov_ru": "Оглашаемые криками краунчей и павлинов, населенные царскими гусями. Оглашаемый со всех сторон звуками музыкальных инструментов и украшений,",
+      "commentary": {
+        "tilaka": "सङ्घुष्टैः कृतघोषैर्द्वारैः",
+        "bhusana": "क्रौञ्चबर्हिणसंघुष्टैराजहंसनिषेवितैः ।\n\nतूर्याभरणनिर्घोषैः सर्वतः प्रतिनादिताम्",
+        "siromani": "तूर्येति । तूर्याणामाभरणानां नूपुरादीनां च निर्घोषैः सर्वतः परिनादिताम् अत एव वस्वोकसारप्रतिमाम् अलकासदृशीं समुत्पत्तितामिव लङ्कां समीक्ष्य हनूमान् जहर्ष । सार्धश्लोक एकान्वयी ।। 5.3.11,12 ।।\n\nतामिति । अनुत्तमां सर्वश्रेष्ठान् ऋद्धिमतीं सकलर्द्धिविशिष्टां राक्षसाधिपतेः रावणस्य पुरीं लङ्कां समीक्ष्य वीर्यवान् हनूमान् चिन्तयामास"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sanghustaih krtaghosairdvaraih",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "krauncabarhinasanghustairajahansanisevitaih",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "turyeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.13",
+      "sarga": 3,
+      "verse": "13",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tāṃ samīkṣya purīṃ laṅkāṃ rākṣasādhipateḥ śubhām । anuttamām ṛddhimatīṃ cintayām āsa vīryavān ॥13॥",
+      "leonov_ru": "Увидев тот прекрасный город Ланку владыки ракшасов, Несравненный, процветающий, подумал отважный (Хануман):",
+      "commentary": {
+        "tilaka": "वामहस्तमुष्टिबन्धे आशयमाह-- स्त्री चेति । तेन प्रहारेण वाममुष्टिकृतसदयताडनेनापीत्यर्थः । विकृताननदर्शना विकृतवक्रदृष्टिः ।। 5.3.41,42।।\n\nउद्विग्ना भीतां । अगर्वितं गर्वरहितम्",
+        "tattvadipika": "स इति । लम्बे लम्बाकारे लम्बशिखरे लम्बगिरिश्रृङ्गे । सत्त्वमास्थाय बलमास्थाय"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "vanahastanustibandhe asayanaha",
+          "matches_verse": true
+        },
+        "tattvadipika": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.0
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.14",
+      "sarga": 3,
+      "verse": "14",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "neyam anyena nagarī śakyā dharṣayituṃ balāt । rakṣitā rāvaṇabalair udyatāyudhapāṇibhiḥ ॥14॥",
+      "leonov_ru": "«Невозможно для других захватить силой этот город, Находящийся под защитой войск Раваны, держащих в руках воздетое оружие.",
+      "commentary": {
+        "tilaka": "अनेन धर्षयितुमशक्या किम्, सर्वथा नेत्याह कुमुदेत्यादि । प्रिसद्धा प्रकर्षेण सिद्धगतिका",
+        "bhusana": "नेयमन्येन नगरी शक्या धर्षयितुं बलात् ।\n\nरक्षिता रावणबलैरुद्यतायुधधारिभिः",
+        "siromani": "चिन्ताकारमाह नेति । उद्यतायुधाः पाणयो येषां तैः रावणबलैः रक्षिता इयं लङ्का अन्येन रामभिन्नेन जनेन बलात् पराक्रमात् धर्षयितुं न शक्या"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "anena dharsayitunasakya kin sarvatha",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "neyananyena nagari sakya dharsayitun",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "cintakaranaha neti",
+          "matches_verse": false,
+          "content_containment": 0.556,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.15",
+      "sarga": 3,
+      "verse": "15",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kumudāṅgadayor vāpi suṣeṇasya mahākapeḥ । prasiddheyaṃ bhaved bhūmir maindadvividayor api ॥15॥",
+      "leonov_ru": "Для Кумуды и Ангады или для великой обезьяны Сушены Достижима эта прославленная земля, а также для Майнды и Двивинды.",
+      "commentary": {
+        "bhusana": "कुमुदाङ्गदयोर्वापि सुषेणस्य महाकपेः ।\n\nप्रसिद्धेयं भवेद्भूमिर्मैन्दद्विविदयोरपि\nप्रसिद्धेयमिति । इयं लङ्का विदिता भवेत्",
+        "siromani": "तत्र हेतुमाह कुमुदेति । प्रसिद्धा इयं लङ्का, कुमुदादीनामेव गतिः प्राप्या भवेत् । अन्येषां न गतिरित्यर्थः । तेन नगरीपराभवस्य अशक्यत्वं सूचितम् । श्लोकद्वयमेकान्वयि ।। 5.3.15,16 ।।\n\nचिन्तान्तरमाह समीक्ष्येति । राघवस्य रामस्य लक्ष्मणस्य च पराक्रमं विक्रान्तं वेगं च समीक्ष्य संचिन्त्य कपिः प्रीतिमान् अभवत् । एतेन तत्पराक्रमविक्रान्तयोः सर्वोत्कर्षत्वं ध्वनितम्",
+        "tattvadipika": "अन्येषामसाध्यत्वे ऽप्येतेषां साध्येत्याह कुमुदाङ्गदयोरिति । प्रसिद्धा दुष्प्रवेशत्वेन प्रसिद्धेयं नगरी कुमुदाङ्गदादीनामपि भूमिः विषयः भवेत् । विवस्वतस्तनूजस्य सुग्रीवस्य कुशपर्वणः मम च गतिर्भवेत् गम्या भवेत् ।। 5.3.15,16 ।।\n\nविक्रान्तं विक्रमम् । रामलक्ष्मणाभ्यामनायासेन जेतुं शक्येति मत्वा प्रीतिमानभूदित्यर्थः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "kunudangadayorvapi susenasya nahakapeh",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tatra hetunaha kunudeti",
+          "matches_verse": true
+        },
+        "tattvadipika": {
+          "pratika_iast": "anyesanasadhyatve pyetesan sadhyetyaha kunudangadayoriti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.16",
+      "sarga": 3,
+      "verse": "16",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vivasvatas tanūjasya hareś ca kuśaparvaṇaḥ । ṛkṣasya kapimukhyasya mama caiva gatir bhavet ॥16॥",
+      "leonov_ru": "И только сын солнца (Сугрива) и обезьяна Кушапарван, Вождь обезьян Рикша (Джамбаван) и я войти в него могут».",
+      "commentary": {
+        "tilaka": "कुशपर्वण इति कुशपर्वसदृशलोमवत इत्यर्थकमृक्षस्य विशेषणम् । अतिदीर्घकठोरलोमावृतत्वात्कपिमुख्यस्येति विशेषणं च । तस्यैव मम चैव गतिः । अस्यामिति शेषः",
+        "bhusana": "विवस्वतस्तनूजस्य हरेश्च कुशपर्वणः ।\n\nऋक्षस्य केतुमालस्य मम चैव गतिर्भवेत्\nविवस्वत इति । गतिस्तु सुग्रीवस्य कुशपर्वणः केतुमालस्य मम चैव भवेत् । पूर्वं नीलादीनामेव गतिरुक्ता । अत्र त्वन्येषाभिमित्युक्तिश्चिन्ताप्राकारविशेषः ।। 5.3.16,17।।\n\nतां रत्नवसनोपेतां गोष्ठागारावतंसकाम् ।\n\nयन्त्रागारस्तनीमृद्धां प्रमदामिव भूषिताम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "kusaparvana",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "vivasvatastanujasya haresca kusaparvanah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.17",
+      "sarga": 3,
+      "verse": "17",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "samīkṣya ca mahābāho rāghavasya parākramam । lakṣmaṇasya ca vikrāntam abhavat prītimān kapiḥ ॥17॥",
+      "leonov_ru": "И подумав о мощи могучерукого Рагхавы И доблести Лакшманы, обрадовался [Хануман]-обезьяна.",
+      "commentary": {
+        "tilaka": "रामस्य पराक्रमं लक्ष्मणस्य विक्रान्तं शौर्यं च समीक्ष्येदृश्यपि तदीयबाणैरीषत्करध्वंसेति विचार्य प्रीतिमानभूदविषण्णो ऽभूत्",
+        "bhusana": "समीक्ष्य तु महाबाहू राघवस्य पराक्रमम् ।\n\nलक्ष्मणस्य च विक्रान्तमभवत्प्रीतिमान् कपिः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "ranasya parakranan laksnanasya vikrantan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "saniksya tu nahabahu raghavasya",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.18",
+      "sarga": 3,
+      "verse": "18",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tāṃ ratnavasanopetāṃ goṣṭhāgārāvataṃsakām । yantrāgārastanīm ṛddhāṃ pramadām iva bhūṣitām ॥18॥",
+      "leonov_ru": "На тот в одежде из драгоценных камней, в гирлянде коровников, С гирляндою катапульт, украшенный словно богатая красавица,",
+      "commentary": {
+        "tilaka": "रत्नवसनोपेतां रत्नप्राकारवाससं च । गोष्ठान्यागाराणि चावतंसो यस्यास्ताम् । गोष्ठं गोशाला । इदं वाजिशालादेरप्युपलक्षणम् । यन्त्राणि प्राकारोपरि स्थापितानि क्षेपण्यादीनि तद्गृहस्तनीम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "ratnavasanopetan ratnaprakaravasasan ca",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.19",
+      "sarga": 3,
+      "verse": "19",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tāṃ naṣṭatimirāṃ dīpair bhāsvaraiś ca mahāgṛhaiḥ । nagarīṃ rākṣasendrasya sa dadarśa mahākapiḥ ॥19॥",
+      "leonov_ru": "На тот город владыки ракшасов, где тьма была рассеяна светильниками И сияющими дворцами смотрела великая обезьяна.",
+      "commentary": {
+        "tilaka": "तां प्रसिद्धां लङ्काम् । भास्वरैश्च महाग्रहैः चाच्चन्द्रकिरणैः",
+        "bhusana": "तां नष्टतिमिरां दीप्तैर्भास्वरैश्च महागृहैः ।\n\nनगरीं राक्षसेन्द्रस्य ददर्श स महाकपिः",
+        "siromani": "तामिति । रत्नवसनोपेतां रत्नं रत्नाकरः रत्नमयप्राकारादिश्च तदेव वसनं तेन उपेतां युक्तां गोष्ठा अगाराणि अवतंसः कर्णभूषणं यस्याः तां यन्त्रागाराणि प्राकारोपरि स्थापितनिःक्षेपणीप्रभृतीनां गृहाण्येव स्तनानि यस्याः तां दीपैः प्रकाशकैः दीपचन्द्रादिभिः भास्वरैः प्रकाशमानैर्महागृहैर्मणिभवनैश्च नष्टतिमिरां ध्वस्तान्धकारां तां चोररूपराक्षसाश्रितां तां प्रसिद्धां राक्षसेन्द्रस्य नगरीं ददर्श । श्लोकद्वयमेकान्वयि ।। 5.3.18,19 ।।\n\nअथेति । अथ प्रवेशानन्तरं प्रविशन्तं हरिशार्दूलं नगरी लङ्का स्वेन अधिष्ठात्रीत्वेन रूपेण ददर्श"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tan prasiddhan lankan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tan nastatiniran diptairbhasvaraisca nahagrhaih",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "taniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.20",
+      "sarga": 3,
+      "verse": "20",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "atha sā hariśārdūlaṃ praviśantam mahākapim । nagarī svena rūpeṇa dadarśa pavanātmajam ॥20॥",
+      "leonov_ru": "И от тигра среди обезьян, великую обезьяну, вошедшую [в город], Город [Ланка] в собственном облике увидела сына ветра.",
+      "commentary": {
+        "tilaka": "सा नगरी स्वेन रूपेणाधिष्ठातृदेवतारूपेण युक्ता ददर्श",
+        "bhusana": "अथ सा हरिशार्दूलं प्रविशन्तं महाबलम् ।\n\nनगरी स्वेन रूपेण ददर्श पवनात्मजम् ।। 4.3.20।।\n\nसा तं हरिवरं दृष्ट्वा लङ्का रावणपालिता ।\n\nस्वयमेवोत्थिता तत्र विकृताननदर्शना ।। 4.3.21।।\n\nपुरस्तात्कपिवर्यस्य वायुसूनोरतिष्ठत ।\n\nमुञ्चमाना महानादमब्रवीत्पवनात्मजम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sa nagari svena rupenadhisthatrdevatarupena",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "atha sa harisardulan pravisantan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.21",
+      "sarga": 3,
+      "verse": "21",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sā taṃ harivaraṃ dṛṣṭvā laṅkā rāvaṇapālitā । svayamevotthitā tatra vikṛtānanadarśanā ॥21॥",
+      "leonov_ru": "Увидев того лучшего из обезьян, Ланка, хранимая Раваной, Сама предстала там [перед ним] в уродливом облике.",
+      "commentary": {
+        "tilaka": "स्वयमेवोत्थिता । अनन्यप्रेरितेति यावत्",
+        "tattvadipika": "तां रत्नेत्यादिश्लोकद्वयमेकं वाक्यम् । तत्रैकस्तच्छब्दः प्रसिद्धिपरः अपर  प्रकृतपरामर्शी ।। 5.3.18,19 ।।\n\nअथेति । स्वेन रूपेण अधिदेवतारूपेण ।। 5.3.20,21 ।।\n\nपुरस्तादिति । अतिष्ठत स्वात्मानं प्रकाशितवती"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "svayanevotthita",
+          "matches_verse": true
+        },
+        "tattvadipika": {
+          "pratika_iast": "tan ratnetyadislokadvayanekan vakyan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.22",
+      "sarga": 3,
+      "verse": "22",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "purastāt tasya vīrasya vāyusūnor atiṣṭhata । muñcamānā mahānādam abravīt pavanātmajam ॥22॥",
+      "leonov_ru": "Встала она перед тем отважным сыном ветра, И громким голосом сказала сыну ветра:",
+      "commentary": {
+        "tilaka": "अतिष्ठत देवतारूपं प्रकाशितवती"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "atisthata devatarupan prakasitavati",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.23",
+      "sarga": 3,
+      "verse": "23",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kas tvaṃ kena ca kāryeṇa iha prāpto vanālaya । kathayasveha yat tattvaṃ yāvat prāṇā dharanti te ॥23॥",
+      "leonov_ru": "«Кто ты и по какому делу явился сюда, житель леса? Говори истинно, пока держится в тебе жизнь.",
+      "commentary": {
+        "bhusana": "मन्दमारुतसञ्चारां यथेन्द्रस्यामरावतीम् ।\n\nशातकुम्भेन महता प्राकारेणाभिसंवृताम्\nकस्त्वं केन च कार्येण इह़ प्राप्तो वनालय ।\n\nकथयस्वेह यत्तत्त्वं यावत्प्राणा धरन्ति ते",
+        "tilaka": "वनालय वानर तत्त्वं सत्यात्",
+        "siromani": "दर्शनप्रकारमाह सेति । सा लङ्का हरिवरं दृष्ट्वा स्वयमेव उत्थिता महानादं मुञ्चमाना च सती वायुसूनोः पुरस्तात् अग्रे अतिष्ठत् इदमब्रवीच्च । श्लोकद्वयमेकान्वयि ।। 5.3.21,22 ।।\n\nतद्वचनाकारमाह क इति । वनालय हे वानर त्वं कः कस्य पुत्रादिरित्यर्थः । केन कार्येण च त्वम् इह प्राप्तः यावत्प्राणास्ते त्वां धरन्ति न त्यजन्तीत्यर्थः, तावत् तत्त्वं यथार्थं कथयस्व"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nandanarutasancaran yathendrasyanaravatin",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "vanalaya vanara tattvan satyat",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "darsanaprakaranaha seti",
+          "matches_verse": false,
+          "content_containment": 0.533,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.24",
+      "sarga": 3,
+      "verse": "24",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na śakyaṃ khalv iyaṃ laṅkā praveṣṭuṃ vānara tvayā । rakṣitā rāvaṇabalair abhiguptā samantataḥ ॥24॥",
+      "leonov_ru": "Воистину, невозможно для тебя войти в эту Ланку, Которую защищают войска Раваны, которая охраняется со всех сторон».",
+      "commentary": {
+        "bhusana": "न शक्यं खल्वियं लङ्का प्रवेष्टुं वानर त्वया ।\n\nरक्षिता रावणबलैरभिगुप्ता समन्ततः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "na sakyan khalviyan lanka",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.25",
+      "sarga": 3,
+      "verse": "25",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "atha tām abravīd vīro hanuman agrataḥ sthitām । kathayiṣyāmi tat tattvaṃ yan māṃ tvaṃ paripṛcchase ॥25॥",
+      "leonov_ru": "Тогда сказал ей отважный Хануман, стоящий перед [ней]: «Расскажу я правду, о которой ты спрашиваешь.",
+      "commentary": {
+        "siromani": "सुपुष्टानि यानि बलानि सैन्यानि तैः संपुष्टां दृढां विटपावतीं यथा अलकापुरीसदृशीं चारुतोरणेषु बहिर्द्वारेषु निर्यूहा मत्तगजा यस्यां पाण्डुराः सुधासंस्कारादिना श्वेताः द्वारतोरणाः अन्तर्द्वारबहिर्द्वारे यस्यां ताम्\nननु किमर्थं पृच्छसीत्यत आह नेति । रावणबलैः समन्ततो ऽभिगुप्ता व्याप्ता अत एव रक्षिता इयं लङ्का त्वया प्रवेष्टुं न शक्या । किंच अभितश्चतुर्दिक्षु गुप्ता राक्षसविजातीयनिरीक्षणार्थमलक्षरूपेण स्थिताः राक्षसाः यस्यास्ताम्\nअथेति । अथ तत्प्रश्नश्रवणानन्तरं यत्त्वं पृच्छसि तदहं कथयिष्यामि इति हनूमान् अब्रवीत् । कथयामीत्यपहाय कथयिष्यामीत्युक्त्या अहमपि किंचित्पृच्छामीति सूचितम्\nतत्प्रश्नाकारमाह केति । विरूपनयना त्वं पुरद्वारे अवतिष्ठसे सा का किंनामादिरित्यर्थः, मां च किमर्थं क्रोधात् निर्भर्त्सयसि",
+        "bhusana": "अथ तामब्रवीद्वीरो हनूमानग्रतः स्थिताम् ।\n\nकथयिष्यामि ते तत्त्वं यन्मां त्वं परिपृच्छसि"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "supustani yani balani sainyani",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "atha tanabravidviro hanunanagratah sthitan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.26",
+      "sarga": 3,
+      "verse": "26",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kā tvaṃ virūpanayanā puradvāre 'vatiṣṭhase । kimarthaṃ cāpi māṃ krodhān nirbhartsayasi dāruṇe ॥26॥",
+      "leonov_ru": "Кто ты, уродивоглазая? Стоишь ты в воротах города, И зачем ты мне угрожаешь гневно, жестокая (ужасная)?»",
+      "commentary": {
+        "bhusana": "का त्वं विरूपनयना पुरद्वारे ऽवतिष्ठसि ।\n\nकिमर्थं चापि मां रुद्ध्वा निर्भिर्त्सयसि दारुणा"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "ka tvan virupanayana puradvare",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.27",
+      "sarga": 3,
+      "verse": "27",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "hanumadvacanaṃ śrutvā laṅkā sā kāmarūpiṇī । uvāca vacanaṃ kruddhā paruṣaṃ pavanātmajam ॥27॥",
+      "leonov_ru": "Услышав слова Ханумана, та Ланка, свободно меняющая облик, Сказала, разгневанная, грубые слова сыну ветра:",
+      "commentary": {
+        "bhusana": "हनुमद्वचनं श्रुत्वा लङ्का सा कामरूपिणी ।\n\nउवाच वचनं क्रुद्धा परुषं पवनात्मजम्",
+        "siromani": "हनुमदिति । हनुमद्वचनं श्रुत्वा क्रुद्धा कामरूपिणी लङ्का परुषं वचनमब्रवीत्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "hanunadvacanan srutva lanka sa",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "hanunaditi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.28",
+      "sarga": 3,
+      "verse": "28",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ahaṃ rākṣasarājasya rāvaṇasya mahātmanaḥ । ājñāpratīkṣā durdharṣā rakṣāmi nagarīm imām ॥28॥",
+      "leonov_ru": "«Я владыки ракшасов Раваны, великого духом, Повеление исполняя, неодолимая, охраняю этот город.",
+      "commentary": {
+        "bhusana": "अहं हाक्षसराजस्य रावणस्य महात्मनः ।\n\nआज्ञा प्रतीक्षा दुर्धर्षा रक्षामि नगरीमिमाम्",
+        "siromani": "तद्वचनाकारमाह अहमिति । दुर्धर्षा धर्षयितुमशक्या अहं रावणस्य आज्ञाप्रतीक्षा सती इमां नगरीं रक्षामि"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "ahan haksasarajasya ravanasya nahatnanah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tadvacanakaranaha ahaniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.29",
+      "sarga": 3,
+      "verse": "29",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na śakyaṃ mām avajñāya praveṣṭuṃ nagarīṃ imām । adya prāṇaiḥ parityaktaḥ svapsyase nihato mayā ॥29॥",
+      "leonov_ru": "Невозможно без моего ведома войти в этот город. Сейчас, расставшись с жизнью, уснешь ты, убитый мною.",
+      "commentary": {
+        "tilaka": "त्वयैषा प्रवेष्टुं न शक्यम् । क्षुदुपहन्तुं शक्यमितिवत् । \"न शक्या\" इति पाठस्तु सुगम एव ।। 5.3.24,25 ।।\n\nअथ तया पृष्टो हनूमांस्तां प्रति तत्प्रश्नोत्तरकथनं प्रतिज्ञाय, सुरसावदेषा पूज्या वा सिंहिकावद्वध्या वेति निर्णेतुं पृच्छति-- का त्वमिति ।। 5.3.26,27 ।।\n\nआज्ञाप्रतीक्षा नियोगपरिपालिका ।। 5.3.28,29 ।।\n\nअथापि का त्वं तत्राह-- अहं हीति । स्वयम् स्वदेवतास्वरूपेणेत्यर्थः",
+        "bhusana": "न शक्या मामवज्ञाय प्रवेष्टुं नगरी त्वया ।\n\nअद्य प्राणैः परित्यक्तः स्वप्स्यसे निहतो मया",
+        "siromani": "नेति । माम् अवज्ञाय अनादृत्य इमां नगरीं प्रवेष्टुं न शक्यं कैश्चिदिति शेषः, अतः मया निहतः अत एव प्राणैस्त्यक्तस्त्वं स्वप्स्यसे स्वप्स्यसि"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tvayaisa pravestun na sakyan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "na sakya nanavajnaya pravestun",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "neti",
+          "matches_verse": false,
+          "content_containment": 0.692,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.30",
+      "sarga": 3,
+      "verse": "30",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ahaṃ hi nagarī laṅkā svayameva plavaṃgama । sarvataḥ parirakṣāmi atas te kathitaṃ mayā ॥30॥",
+      "leonov_ru": "Ибо я сама Ланка, о обезьяна! Защищаю я [этот город] со всех сторон. Потому тебе и сказала я [такие слова]».",
+      "commentary": {
+        "siromani": "अहमिति । हे प्लवङ्गम अहं स्वयं स्वेन रूपेण नगरी लङ्का ऽस्मीति शेषः, अतः सर्वतः परिरक्षामि अत एव मया कथितं परुषमुक्तम्"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "ahaniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.31",
+      "sarga": 3,
+      "verse": "31",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "laṅkāyā vacanaṃ śrutvā hanumān mārutātmajaḥ । yatnavān sa hariśreṣṭhaḥ sthitaḥ śaila ivāparaḥ ॥31॥",
+      "leonov_ru": "Услышав слова Ланки, Хануман, сын ветра, Стоял в готовности (исполненный мощи) лучший из обезьян, словно другая гора.",
+      "commentary": {
+        "tilaka": "यत्नवाँल्लङ्काधिष्ठातृत्वेनावगतत्वात्तद्विजयोपाये यत्नवान्",
+        "bhusana": "अहं हि नगरी लङ्का स्वयमेव प्लवङ्गम ।\n\nसर्वतः परिरक्षामि ह्येतत्ते कथितं मया ।। 4.3.30।।\n\nलङ्काया वचनं श्रुत्वा हनुमान् मारुतात्मजः ।\n\nयत्नवान् स हरिश्श्रेष्ठः स्थितः शैल इवापरः",
+        "siromani": "लङ्काया इति । यत्नवान् अतिप्रयत्नशीलो हनूमान् अपरशैल इव स्थित इति शेषः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "yatnavanllankadhisthatrtvenavagatatvattadvijayopaye yatnavan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "ahan hi nagari lanka",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "lankaya",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.32",
+      "sarga": 3,
+      "verse": "32",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa tāṃ strīrūpavikṛtāṃ dṛṣṭvā vānarapuṃgavaḥ । ābabhāṣe 'tha medhāvī sattvavān plavagarṣabhaḥ ॥32॥",
+      "leonov_ru": "Глядя на это чудовище в облике женщины, бык среди обезьян Сказал тогда мудрый, могучий бык среди обезьян:",
+      "commentary": {
+        "tilaka": "स्त्रीरूपविकृतां विकृतस्त्रीरूपाम् । अथ लब्धप्रश्नोत्तरस्तत्प्रश्नोत्तरमाह-- आबभाष इति",
+        "bhusana": "स तां स्त्रीरूपविकृतां दृष्ट्वा वानरपुङ्गवः ।\n\nआबभाषे ऽथ मेधावी सत्त्ववान् प्लवगर्षभः",
+        "siromani": "स इति । स्त्रीरूपं विकृतं यस्याः तां कर्मधारयो वा, किंच स्त्रीरूपेण विकृतां प्रकटितां तां लङ्कां स हनूमान् आबभाषे"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "strirupavikrtan vikrtastrirupan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa tan strirupavikrtan drstva",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.3,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.33",
+      "sarga": 3,
+      "verse": "33",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "drakṣyāmi nagarīṃ laṅkāṃ sāṭṭaprākāratoraṇām । ity artham iha samprāptaḥ paraṃ kautūhalaṃ hi me ॥33॥",
+      "leonov_ru": "«Увижу я город Ланку с его рыночными площадями, стенами и арками, Вот зачем я сюда прибыл, есть у меня великое любопытство.",
+      "commentary": {
+        "siromani": "हनुमत्कर्तृकलङ्काप्रवेशनमेव वर्णयति स इत्यादिभिः । लम्बतोयदसंनिभे महामेघसदृशे लम्बे विस्तीर्णे लम्बशिखरे लम्बाभिधगिरिशिखरसमीपे सत्त्वं प्रवेशनयोग्यशनैर्गतिमास्थाय निश्चित्य महासत्त्वो ऽतिबलवान् हनूमान् निशि लङ्कां प्रविवेश । सार्धश्लोक एकान्वयी । लङ्कां वर्णयन्नाह रम्येत्यादिभिः । रम्यकाननतोयाभ्यामाढ्यां पूर्णाम् ।। 5.3.1,2 ।।\n\nशारदाः शरत्कालप्रभवाः ये अम्बुधरा मेघाः तत्प्रख्यैः श्वेतत्वेन तत्सदृशैः राजतैरित्यर्थः, भवनैरुपशोभितां सागरोपमः निर्घोषः राक्षसस्वनो यस्याम्\nतद्भाषणप्रकारमाह द्रक्ष्यामीति । साट्टप्राकारतोरणाम् अट्टादिसहितां नगरीम् अहं द्रक्ष्यामि इत्यर्थमिह संप्राप्तः । दर्शने हेतुः मे परं कौतूहलमाश्चर्यं भातीति शेषः",
+        "tilaka": "द्रक्ष्यामीत्यर्थमिह संप्राप्त इत्यन्वयः । दर्शनं प्रयोजनमुद्दिश्येत्यर्थः",
+        "bhusana": "द्रक्ष्यामि नगरीं लङ्कां साट्टप्राकारतोरणाम् ।\n\nइत्यर्थमिह संप्राप्तः परं कौतूहलं हि मे"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "hanunatkartrkalankapravesananeva varnayati sa ityadibhih",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "draksyanityarthaniha sanprapta ityanvayah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "draksyani nagarin lankan sattaprakaratoranan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.34",
+      "sarga": 3,
+      "verse": "34",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vanānyupavanānīha laṅkāyāḥ kānanāni ca । sarvato gṛhamukhyāni draṣṭum āgamanaṃ hi me ॥34॥",
+      "leonov_ru": "Леса и рощи и сады Ланки, Главные здания повсюду чтобы увидеть, пришел я сюда».",
+      "commentary": {
+        "tilaka": "वनं कृत्रिमम्, काननमकृत्रिमम्",
+        "bhusana": "वनान्युपवनानीह लंकायाः काननानि च ।\n\nसर्वतो गृहमुख्यानि द्रष्टुमागमनं हि मे\nउपवनानि गृहोद्यानानि । काननानि शून्यारण्यानि",
+        "siromani": "तदेव भङ्ग्यन्तरेणाह वनानीति । इह अस्मिन् समये लङ्काया वनादीनि द्रष्टुं मे आगमनम् । तत्र वनमकृत्रिमं, काननं कृत्रिमम् इति न पौनरुक्त्यम्",
+        "tattvadipika": "वनानीति । उपवनानि कुत्रिमवनानि । वनानि क्षुद्राणि"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "vanan krtrinan kanananakrtrinan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "vananyupavananiha lankayah kananani ca",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tadeva bhangyantarenaha vananiti",
+          "matches_verse": true
+        },
+        "tattvadipika": {
+          "pratika_iast": "vananiti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.35",
+      "sarga": 3,
+      "verse": "35",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasya tad vacanaṃ śrutvā laṅkā sā kāmarūpiṇī । bhūya eva punar vākyaṃ babhāṣe paruṣākṣaram ॥35॥",
+      "leonov_ru": "Услышав такие его слова, Ланка, меняющая облик по собственной воле, Снова сказала в ответ слова, грубо (резко) звучащие:",
+      "commentary": {
+        "tilaka": "भूयो ऽधिकं परुषाक्षरं वाक्यं पुनर्बभाष इति संबन्धः ।। 5.3.35,36 ।।\n\nअनिर्जित्य द्रष्टुं न शक्यमित्युक्ते ऽपि कस्यापि वस्तुनो ऽग्रहणपूर्वकं केवलं दर्शनमात्रे तव का क्षतिरित्याशयेनाह-- ततः स इति । स हनूमान्",
+        "bhusana": "तस्य तद्वचनं श्रुत्वा लंङ्का सा कामरूपिणी ।\n\nभूय एव पुर्नवाक्यं बभाषे परुषाक्षरम्\nभूयः अतिशयेन परुषाक्षरमित्यन्वयः",
+        "siromani": "तस्येति । तस्य हनूमतः तद्वचनं श्रुत्वा लङ्का परुषाक्षरं पुनर्बभाषे"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "bhuyo dhikan parusaksaran vakyan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tasya tadvacanan srutva lannka",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tasyeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.36",
+      "sarga": 3,
+      "verse": "36",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "mām anirjitya durbuddhe rākṣaseśvarapālitāṃ । na śakyam adya te draṣṭuṃ purīyaṃ vānarādhama ॥36॥",
+      "leonov_ru": "«Не победив меня, скудоумный, хранимую владыкой ракшасов, Невозможно тебе теперь увидеть этот город, о наихудший из обезьян».",
+      "commentary": {
+        "bhusana": "मामनिर्जित्य दुर्बुद्धे राक्षसेश्वरपालिताम् ।\n\nन शक्यमद्य ते द्रष्टुं पुरीयं वानराधम\nमामिति । शक्यमित्येतदव्ययम् । तदाह कालिदासः \"शक्यमरविन्दसुरभिः कणवाही मालिनीतरङ्गाणाम् । अङ्गैरनङ्गतप्तैरविरलमालिङ्गितुं पवनः ।।\" इति। पुरीरूपं वस्तु शक्यमिति शक्यपुर्योस्सामानाधिकरण्यं वा",
+        "siromani": "तद्वचनाकारमाह मामिति । राक्षसेश्वरपालितां मामनिर्जित्य इयं लङ्का ते द्रष्टुं न शक्या"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nananirjitya durbuddhe raksasesvarapalitan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tadvacanakaranaha naniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.37",
+      "sarga": 3,
+      "verse": "37",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tataḥ sa hariśārdūlas tām uvāca niśācarīm । dṛṣṭvā purīm imāṃ bhadre punar yāsye yathāgatam ॥37॥",
+      "leonov_ru": "Тогда тот тигр среди обезьян сказал той демонице: «Увидев город этот, госпожа, снова уйду я, как пришел».",
+      "commentary": {
+        "bhusana": "ततः स कपिशार्दूलस्तामुवाच निशाचराम् ।\n\nदृष्ट्वा पुरीमिमां भद्रे पुनर्यास्ये यथागतम्\nतत इति । यास्ये यास्यामि । इत्युवाचेति सम्बन्धः",
+        "siromani": "तत इति । ततस्तद्वचनश्रवणानन्तरं पुरीं दृष्ट्वा अहं यथागतं यास्ये किंचन न ग्रहीष्यामीत्यर्थः, इति निशाचरीं लङ्कामुवाच"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tatah sa kapisardulastanuvaca nisacaran",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.38",
+      "sarga": 3,
+      "verse": "38",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tataḥ kṛtvā mahānādaṃ sā vai laṅkā bhayākaram । talena vānaraśreṣṭhaṃ tāḍayāmāsa vegitā ॥38॥",
+      "leonov_ru": "Тогда, испустив громкий крик, вызывающий ужас, та Ланка Стремительно ударила ладонью лучшего из обезьян.",
+      "commentary": {
+        "tilaka": "वैदूर्यमणिभिः कृता वेदिकाश्चत्वरा येषु तादृशैर्द्वारैः\nवैदूर्यमणिभिः कृतानि सोपानानि येषु तैः । स्फाटिका स्फटिकरचिता अन्तर्मध्यप्रदेशा अपांसवश्च येषु तैर्द्वारैः । चारुसञ्जवनैः सभाभिरुपेतैर्द्वारैः खमुत्पतितैरिव शुभैर्गृहैरुपलक्षितैर्द्वारैः\nवेगिता सञ्जातवेगा",
+        "bhusana": "ततः कृत्वा महानादं सा वै लङ्का भयावहम् ।\n\nतलेन वानरश्रेष्ठं ताडयामास वेगिता\nवेगिता साञ्जातवेगा",
+        "siromani": "तत इति । ततः हनुमद्वचनश्रवणानन्तरं सा लङ्का वानरश्रेष्ठं हनूमन्तं तलेन ताडयामास"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "vaiduryananibhih krta vedikascatvara yesu",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tatah krtva nahanadan sa",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.39",
+      "sarga": 3,
+      "verse": "39",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tataḥ sa hariśārdūlo laṅkayā tāḍito bhṛśam । nanāda sumahānādaṃ vīryavān mārutātmajaḥ ॥39॥",
+      "leonov_ru": "Тогда тот тигр среди обезьян, которого сильно ударила Ланка, Издал очень громкий крик отважный сын ветра.",
+      "commentary": {
+        "tilaka": "महानादं ननादेति निर्भयत्वद्योतनम्",
+        "bhusana": "ततः स कपिशार्दूलो लङ्कया ताडितो भृशम् ।\n\nननाद सुमहानादं वीर्यवान् पवनात्मजः",
+        "siromani": "तत इति । ततः लङ्काकर्तृकताडनानन्तरं लङ्कया ताडितो हरिशार्दूलः सुमहानादं यथा भवति तथा ननाद"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "nahanadan nanadeti nirbhayatvadyotanan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tatah sa kapisardulo lankaya",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.40",
+      "sarga": 3,
+      "verse": "40",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tataḥ saṃvartayāmāsa vāmahastasya so 'ṅgulīḥ । muṣṭinābhijaghānaināṃ hanumān krodhamūrchitaḥ ॥40॥",
+      "leonov_ru": "Тогда, сжав пальцы левой руки В кулак, ударил ее (Ланку) Хануман, охваченный гневом.",
+      "commentary": {
+        "tilaka": "अङ्गुलीः संवर्तयामास । मुष्टिं बबन्धेत्यर्थः",
+        "bhusana": "ततः संवर्तयामास वामहस्तस्य सो ऽङ्गुलीः ।\n\nमुष्टिना ऽभिजघानैनां हनूमान् क्रोधमूर्च्छितः",
+        "siromani": "तत इति । ततः स्वकृतमहानादानन्तरं वामहस्तस्य अङ्गुलीः संवर्तयामास एकीचकार मुष्टिं बबन्धेत्यर्थः । एनां लङ्कां मुष्टिना ऽभिजघान च"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "angulih sanvartayanasa",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tatah sanvartayanasa vanahastasya so",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.41",
+      "sarga": 3,
+      "verse": "41",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "strī ceti manyamānena nātikrodhaḥ svayaṃ kṛtaḥ । sā tu tena prahāreṇa vihvalāṅgī niśācarī । papāta sahasā bhūmau vikṛtānanadarśanā ॥41॥",
+      "leonov_ru": "[Но] думая: «Это женщина», не слишком он разгневался. А демоница, чьи члены тела были разбиты ударом, Упала тут же на землю с искаженным лицом.",
+      "commentary": {
+        "bhusana": "स्त्री चेति मन्यमानेन नातिक्रोधस्स्वयं कृतः\nसा तु तेन प्रहारेण विह्वलाङ्गी निशाचरी ।\n\nपपात सहसा भूमौ विकृताननदर्शना",
+        "siromani": "स्त्रीति । इयं स्त्री क्रोधानर्हेत्यर्थः । इति स्वयं मन्यमानेन हनुमता अतिक्रोधो न कृतः । अर्धं पृथक् । सेति । तेन हनुमत्कर्तृकेण प्रहारेण विह्वलाङ्गी निशाचरी सा लङ्का विकृताननं दर्शयति सा सती भूमौ सहसा पपात । अर्धद्वयमेकान्वयि"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "stri ceti nanyananena natikrodhassvayan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "striti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.42",
+      "sarga": 3,
+      "verse": "42",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tatas tu hanumān vīras tāṃ dṛṣṭvā vinipātitām । kṛpāṃ cakāra tejasvī manyamānaḥ striyaṃ ca tām ॥42॥",
+      "leonov_ru": "Тогда отважный Хануман, увидев, что она упала, Почувствовал жалость сияющий, думая, что она ведь женщина.",
+      "commentary": {
+        "siromani": "तत इति । ततः निपतनानन्तरं भृशमुद्विग्ना लङ्का अगर्वितं गद्गदाक्षरं वाक्यमुवाच\nतत इति । ततः लङ्काया निपातनानन्तरं वीरो हनुमान् तान्दृष्ट्वा स्त्रियं मन्यमानः सन् कृपां चकार कृपालुत्वचेष्टया तस्थावित्यर्थः"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "tata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.43",
+      "sarga": 3,
+      "verse": "43",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tato vai bhṛśam udvignā laṅkā sā gadgadākṣaram । uvācāgarvitaṃ vākyaṃ hanūmantaṃ plavaṃgamam ॥43॥",
+      "leonov_ru": "Тогда сильно испуганная Ланка невнятно из-за слез Сказала Хануман-обезьяне слова, лишенные гордости:",
+      "commentary": {
+        "bhusana": "ततस्तु हनुमान् प्राज्ञस्तां दृष्ट्वा विनिपातिताम् ।\n\nकृपां चकार तेजस्वी मन्यमानः स्त्रियं तु ताम्\nततो वै भृशसंविग्ना लङ्का सा गद्गदाक्षरम् ।\n\nउवाचागर्वितं वाक्यं हनुमान्तं प्लवङ्गमम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tatastu hanunan prajnastan drstva",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.44",
+      "sarga": 3,
+      "verse": "44",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "prasīda sumahābāho trāyasva harisattama । samaye saumya tiṣṭhanti sattvavanto mahābalāḥ ॥44॥",
+      "leonov_ru": "«Смилуйся, могучерукий, пощади, лучший из обезьян. Господин, могучие, наделенные благородством, останавливаются вовремя.",
+      "commentary": {
+        "tilaka": "त्रायस्व मा प्राणनाशं कुर्वित्यर्थः । तत्र हेतुः-- समय इति । स्त्री न हन्तव्येति शास्त्रमर्यादायामित्यर्थः",
+        "siromani": "तद्वचनाकारमाह प्रसीदस्वेति । यतः सत्त्ववन्तः पुरुषा समये प्रार्थनाकाले तिष्ठन्ति अनुग्रहं कुर्वन्तीत्यर्थः, अतः प्रसीदस्व अत एव त्रायस्व",
+        "bhusana": "प्रसीद सुमहाबाहो त्रायस्व हरिसत्तम ।\n\nसमये सौम्य तिष्ठन्ति सत्त्ववन्तो महाबलाः\nप्रसीदेति । समये स्त्रीवधवर्जनव्यवस्थायाम् । सत्त्ववन्तः धैर्यवन्तः",
+        "tattvadipika": "प्रसीदेति । समये स्त्री न हन्तव्येति व्यवस्थायाम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "trayasva na prananasan kurvityarthah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tadvacanakaranaha prasidasveti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "prasida sunahabaho trayasva harisattana",
+          "matches_verse": true
+        },
+        "tattvadipika": {
+          "pratika_iast": "prasideti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.45",
+      "sarga": 3,
+      "verse": "45",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "ahaṃ tu nagarī laṅkā svayameva plavaṃgama । nirjitāhaṃ tvayā vīra vikrameṇa mahābala ॥45॥",
+      "leonov_ru": "Ведь я, город Ланка во плоти, о обезьяна, Побеждена тобой, доблестным, о могучий герой!",
+      "commentary": {
+        "tilaka": "यद्यप्यहं लङ्काधिष्ठातृदेवतात्वाद्दुर्जया, तथापि त्वया निर्जिता",
+        "siromani": "अहमिति । लङ्का ऽहं विक्रमेण स्वयं त्वयैव निर्जिता ऽस्मीति शेषः, हं महान् खेदोयम्",
+        "bhusana": "अहं तु नगरी लङ्का स्वयमेव प्लवङ्गम ।\n\nनिर्जिता ऽहं त्वया वीर विक्रमेण महाबल\nअहं त्वित्यर्धं भिन्नं वाक्यम्, एकवाक्यत्वे ऽहंशब्दस्य पुनरुक्तिः ।। 5.3.46,47।।\n\nयदा त्वां वानरः कश्चिद्विक्रमाद्वशमानयेत् ।\n\nतदा त्वया हि विज्ञेयं रक्षसां भयमगतम्",
+        "tattvadipika": "दुर्जयत्वज्ञापनाय स्वस्वरूपं तावदाह अहं त्विति । अहं स्वयं साक्षात् लङ्कानगर्येव लङ्कानगर्यधिष्ठात्री देवतैव, अधिष्ठानदेवतात्वादेवाहं दुर्जयेत्यर्थः । ततः किमत आह निर्जितेति । दुर्जया ऽप्यहं त्वया बलान्निर्जिता अतः सत्यं सर्वे लङ्कान्तर्वर्तिनो राक्षसाः निर्जिता इति भावः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "yadyapyahan lankadhisthatrdevatatvaddurjaya tathapi tvaya",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "ahaniti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "ahan tu nagari lanka",
+          "matches_verse": true
+        },
+        "tattvadipika": {
+          "pratika_iast": "durjayatvajnapanaya svasvarupan tavadaha ahan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.46",
+      "sarga": 3,
+      "verse": "46",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "idaṃ ca tathyaṃ śṛṇu vai bruvantyā me harīśvara । svayaṃ svayaṃbhuvā dattaṃ varadānaṃ yathā mama ॥46॥",
+      "leonov_ru": "Выслушай эту правду, которую я тебе скажу, о владыка обезьян, Как сам Брахма дал мне дар.",
+      "commentary": {
+        "tilaka": "इदं च तथ्यं शृणु । त्वदनुग्रहार्थमुच्यमानमित्यर्थः । वरदानं दत्तम् कृतमित्यर्थः",
+        "siromani": "इदमिति । हे हरीश्वर तथ्यं ब्रुवन्त्या मम वचो यथावत् शृणु । तद्वचनाकारमाह-- स्वयंभुवा ब्रह्मणा मम वरदानं दत्तम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "idan ca tathyan srnu",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "idaniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.47",
+      "sarga": 3,
+      "verse": "47",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "yadā tvāṃ vānaraḥ kaścid vikramād vaśamānayet । tadā tvayā hi vijñeyaṃ rakṣasāṃ bhayam āgatam ॥47॥",
+      "leonov_ru": "«Когда тебя некая обезьяна силой одолеет, Тогда узнаешь ты, что к ракшасам пришел страх» [так сказал он].",
+      "commentary": {
+        "tilaka": "रक्षसां भयमिति । एवं च मज्जयो ऽयं सर्वरक्षोजयसूचक इति भावः",
+        "siromani": "तद्वरदानाकारमाह यदेति । यदा कश्चिद्वानरः विक्रमात्त्वां वशमानयेत् तदा आगतं रक्षसां भयं विनाशः त्वया विज्ञेयम्",
+        "tattvadipika": "स्वनिर्जयेन रक्षसां निर्जितत्वप्रतिपादनस्य कारणमाह इदमित्यादिना । वरदानं दत्तम् वरदानं कृतमित्यर्थः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "raksasan bhayaniti",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tadvaradanakaranaha yadeti",
+          "matches_verse": true
+        },
+        "tattvadipika": {
+          "pratika_iast": "svanirjayena raksasan nirjitatvapratipadanasya karananaha",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.48",
+      "sarga": 3,
+      "verse": "48",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa hi me samayaḥ saumya prāpto 'dya tava darśanāt । svayaṃbhūvihitaḥ satyo na tasyāsti vyatikramaḥ ॥48॥",
+      "leonov_ru": "Ныне пришло ко мне это время в твоем облике (при виде тебя), Не нарушена истина, произнесенная Брахмой.",
+      "commentary": {
+        "tilaka": "न तस्यास्ति व्यतिक्रमः भगवद्दत्तवरस्य रावणस्य स्वकृताधिक्षेपक्षुभितनन्दिकेश्वरशापात्तु सद्यः प्राप्तो विनाशः, स्वयंभूवरवशाद्वानरास्कन्दनपर्यन्तं प्रतिबद्ध इति कथात्रानुसन्धेयेति तीर्थः ।। 5.3.48,49 ।।\n\nविधत्स्वानुतिष्ठ",
+        "bhusana": "स हि मे समयस्सौम्य प्राप्तो ऽद्य तव दर्शनात् ।\n\nस्वयम्भूविहितस्सत्यो न तस्यास्ति व्यतिक्रमः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "na tasyasti vyatikranah bhagavaddattavarasya",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa hi ne sanayassaunya",
+          "matches_verse": false,
+          "content_containment": 0.714,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.49",
+      "sarga": 3,
+      "verse": "49",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sītānimittaṃ rājñas tu rāvaṇasya durātmanaḥ । rakṣasāṃ caiva sarveṣāṃ vināśaḥ samupāgataḥ ॥49॥",
+      "leonov_ru": "Из-за Ситы приблизилась гибель Злобного духом царя Раваны и всех ракшасов.",
+      "commentary": {
+        "bhusana": "सीतानिमित्तं राज्ञस्तु रावणस्य दुरात्मनः ।\n\nराक्षसां चैव सर्वेषां विनाशः समुपागतः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sitaninittan rajnastu ravanasya duratnanah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.50",
+      "sarga": 3,
+      "verse": "50",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tat praviśya hariśreṣṭha purīṃ rāvaṇapālitām । vidhatsva sarvakāryāṇi yāni yānīha vāñchasi ॥50॥",
+      "leonov_ru": "Поэтому, войдя, о лучший из обезьян, в город, хранимый Раваной, Соверши все дела, какие желаешь.",
+      "commentary": {
+        "siromani": "स इति । तव दर्शनात् त्वत्कर्तृकदर्शनपूर्वकपराभवात् स राक्षसविनाशकारी समयः प्राप्तः । तत्र हेतुः स्वयंभूविहितः ब्रह्मणोक्तः सत्यः अतस्तस्य समयस्य व्यतिक्रमो विपर्ययो नास्ति । अतः सीतानिमित्तं रावणस्य रक्षसां च विनाशः समुपागतः ।। 5.3.48,49 ।।\n\nतदिति । तत् राक्षसविनाशस्यावश्यकत्वाद्धेतोः पुरीं लङ्कां प्रविश्य यानि यानि कार्याणि वाञ्छसि तानि सर्वकार्याणि विधत्स्व"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.7,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.51",
+      "sarga": 3,
+      "verse": "51",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "praviśya śāpopahatāṃ harīśvara । purīṃ śubhāṃ rākṣasamukhyapālitām । yadṛcchayā tvaṃ janakātmajāṃ satīṃ । vimārga sarvatra gato yathāsukham ॥51॥",
+      "leonov_ru": "Войдя в пораженный проклятием, о владыка обезьян, Прекрасный город, хранимый предводителем ракшасов, Как пожелаешь добродетельную дочь Джанаки Ищи повсюду свободно.",
+      "commentary": {
+        "tilaka": "शापोपहतां सत्यसङ्कल्पभगवद्वचनेन नन्दिकेश्वरशापेन च प्रापितनाशकालां हरीश्वरस्त्वं प्रविश्य यदृच्छया सर्वत्र रावणान्तःपुरपर्यन्तं यथासुखं गतः सन्सतीमप्रच्युतपातिव्रत्यां जानकीं विमार्गान्वेषय । अनेन च वचनेन सीता ऽकल्मषात्र पुरे वर्तत इत्युपदिष्टम्",
+        "bhusana": "तत्प्रविश्य हरिश्रेष्ठ पुरीं रावणपालिताम् ।\n\nविधत्स्व सर्वकार्याणि यानि यानीह वाञ्छसि",
+        "siromani": "उपसंहरन्नाह प्रविश्येति । हरीश्वरस्त्त्वं शापोपहतां पुरीं लङ्कां यदृच्छया प्रविश्य सतीं पतिव्रताशिरोमणिं सर्वत्रगः सन् यथासुखं विमार्ग"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sapopahatan satyasankalpabhagavadvacanena nandikesvarasapena ca",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tatpravisya harisrestha purin ravanapalitan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "upasanharannaha pravisyeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.3.52",
+      "sarga": 3,
+      "verse": "52",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "प्रविश्य शापोपहतां हरीश्वरः शुभां पुरीं राक्षसमुख्यपालिताम् ।\n\nयदृच्छया त्वं जनकात्मजां सतीं विमार्ग सर्वत्र गतो यथासुखम्\nइत्यार्षे श्रारामायणे वाल्मीकीये आदिकाव्ये श्रीमत्सुन्दरकाण्डे तृतीयः सर्गः ।। 5.3।।\n\nप्रविश्येति शापो नन्दिकेश्वरादिकृतः । यदृच्छयेत्यस्य गत इति सम्बन्धः । यदृच्छाया ऽत्र प्राप्तस्त्वमित्यर्थः",
+        "tattvadipika": "प्रविश्येति । यदृच्छया स्वैरम्"
+      }
+    },
+    {
+      "verse_id": "5.3.810",
+      "sarga": 3,
+      "verse": "810",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "siromani": "विस्मयेति । वैदूर्यैस्तदभिधमणिभिः कृता वेदिका येषु तैर्मणिकुट्टिमैर्मणिमयबद्धभूमिभिर्भूषितैर्जाम्बूनदमयैः मणिस्फटिकमुक्ताभिः शोभितैरिति शेषः, तप्तहाटकनिर्युहैः प्रतप्तसुवर्णमयमत्तगजविशिष्टैः राजता रजतमया अमलपाण्डुरा उपरिप्रदेशा येषु ते वैदूर्यकृतानि सोपानानि येषु स्फटिकेन निर्मितमन्तर्येषु अत एव न पांशुर्धूली येषु तान्येव तानीति कर्मधारयः । तैश्चारुसंजवनैः रमणीयसभाभिरुपेतैः युक्तैः क्रौञ्चबर्हिणानां संघुष्टानि येषु तै राजहंसनिषेवितैः  खमुत्पतितैरिव शुभैर्द्वारैरुपलक्षितां पुरीमालोक्य विस्मयाविष्टहृदय आसीदिति शेषः । सार्धश्लोकत्रयमेकान्वयि"
+      }
+    },
+    {
+      "verse_id": "5.3.911",
+      "sarga": 3,
+      "verse": "911",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tattvadipika": "जाम्बूनदमयैर्द्वारैरित्युपलक्षणे तृतीया । राजहंसनिषेवितैरित्यन्तविशेषणविशिष्टैर्द्वारैरुपलक्षितां लङ्कानगरीं समीक्ष्य हनुमान् जहर्षेति सम्बन्धः । वज्रस्फटिकमुक्ताभिः, भूषितैरिति शेषः । राजतामलपाण्डरैः रजतमयामलपाण्डरोपरिप्रदेशैः । चारुसञ्जवनोपेतैः रमणीयचतुश्शालोपेतैः । \"सभा सञ्जवनं त्विदम् । चतुःशालम्\" इत्यमरः"
+      }
+    },
+    {
+      "verse_id": "5.3.1214",
+      "sarga": 3,
+      "verse": "1214",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "वस्वोकसारालका तत्सदृशीम् । ह्रस्व आर्षः । जम्बूनदमयद्वारत्वादिना सादृश्यम् । खमिवोत्पतिताम् । गिरिमूर्ध्नि प्रतिष्ठितत्वात्",
+        "bhusana": "वस्वोकसारा अलका । यद्वा वस्वोकसारा पूर्वदिगवस्थिता शक्रपुरी । \"वस्वोकसरा शक्रस्य पूर्वस्यां दिशि वै पुरी\" इति पुराणवचनात्",
+        "tattvadipika": "वस्वोकसारा पूर्वदिक्स्थेन्द्रपुरी । उत्पतितुंकामाम् उत्पतितुमिव स्थिताम्"
+      }
+    },
+    {
+      "verse_id": "5.3.1823",
+      "sarga": 3,
+      "verse": "1823",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "तां रात्नेत्यत्र ददर्शेत्यपकृष्यते । न त्वेकं वाक्यं श्लोकद्वयम्, तच्छब्दद्वयप्रयोगात्प्रथमे श्लोके स्त्रीसाम्योक्तेश्च"
+      }
+    },
+    {
+      "verse_id": "5.3.2327",
+      "sarga": 3,
+      "verse": "2327",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tattvadipika": "ते तव प्राणा यावद्धरन्ति ध्रियन्ते तावत् यत्तत्त्वं तत्कथयस्त्र"
+      }
+    },
+    {
+      "verse_id": "5.3.2433",
+      "sarga": 3,
+      "verse": "2433",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "नेति । अभिगुप्ता समावृतेत्यर्थः । अतो न रक्षितेत्यनेन पुनरुक्तिः"
+      }
+    },
+    {
+      "verse_id": "5.3.2833",
+      "sarga": 3,
+      "verse": "2833",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tattvadipika": "अहमिति । आज्ञाप्रतीक्षा आज्ञानुवर्तिनी"
+      }
+    },
+    {
+      "verse_id": "5.3.3537",
+      "sarga": 3,
+      "verse": "3537",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tattvadipika": "भूयः भृशं परुषाक्षरं वाक्यं पुनर्बभाषे इति सम्बन्धः"
+      }
+    },
+    {
+      "verse_id": "5.3.3944",
+      "sarga": 3,
+      "verse": "3944",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "संवर्तयामास सङ्कोचयामास"
+      }
+    },
+    {
+      "verse_id": "5.3.4244",
+      "sarga": 3,
+      "verse": "4244",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tattvadipika": "वेगिता सञ्जातवेगा ।। 5.3.38,39 ।।\n\nअङ्गुलीः संवर्तयामास मुष्टिमाबबन्धेत्यर्थः ।। 5.3.40,41 ।।\n\nविकृताननदर्शना विकृताननदृष्टिः"
+      }
+    },
+    {
+      "verse_id": "5.3.4851",
+      "sarga": 3,
+      "verse": "4851",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "वरदानस्वरूपमाह-- यदेति । अत्र रावणस्य दिग्विजये नन्दिकेश्वरादिभिर्लङ्कायाः कृते विनाशशापे दत्ते सा ब्रह्माणं गत्वा प्रार्थयामास । विनाशो मे मा भूदिति । स च तस्यै वरमदात्, तव सद्यो विनाशो न भविष्यति यदा तु वानरस्त्वामभिभविष्यति तदा तु विनाशो भविष्यतीति कथोन्नीयते",
+        "tattvadipika": "वरस्वरूपमाह यदेति । अत्र रावणाधिक्षेपक्षुभितनन्दिकेश्वरशापात् सद्यः प्राप्तो विनाशः स्वयम्भूवरप्रसादात् वानरास्कन्दनपर्यन्तं प्रतिबद्ध इति कथा ऽनुसन्धेया"
+      }
+    }
+  ]
+}

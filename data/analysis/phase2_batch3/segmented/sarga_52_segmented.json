@@ -1,0 +1,735 @@
+{
+  "_meta": {
+    "generated_by": "scripts/extract_yellow_sargas.py",
+    "purpose": "Phase-2 deterministic commentary segmentation (no LLM); input to Sonnet drafting",
+    "sargas": [
+      52
+    ],
+    "commentators": [
+      "tilaka",
+      "bhusana",
+      "siromani",
+      "tattvadipika"
+    ],
+    "verse_count": 31,
+    "verses_all_three": 12,
+    "ambiguous_markers": 3,
+    "corpus_aligned": 28,
+    "align_backend": "sanskrit_util",
+    "reassigned_moves": 1841,
+    "content_moves": 84,
+    "pratika_checkable": 4647,
+    "pratika_matched": 3983,
+    "alignment_precision": 0.857,
+    "anchor_verified": 4391,
+    "alignment_precision_verified": 0.945,
+    "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md"
+  },
+  "preambles": {
+    "52.pre": {
+      "tilaka": "स इति",
+      "bhusana": "तस्य तद्वचनं श्रुत्वा वानरस्य महात्मनः ।\n\nआज्ञापयद्वधं तस्य रावणः क्रोधमूर्च्छितः",
+      "siromani": "रावणं प्रति विभीषणोक्तिं वर्णयितुं प्रसङ्गमुत्थापयन्नाह स इति । तस्य हनूमतः वचनं श्रुत्वा क्रोधमूर्छितो रावणः तस्य हनूमतो वधमाज्ञापयत्"
+    }
+  },
+  "verses": [
+    {
+      "verse_id": "5.52.1",
+      "sarga": 52,
+      "verse": "1",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa tasya vacanaṃ śrutvā vānarasya mahātmanaḥ । ājñāpayad vadhaṃ tasya rāvaṇaḥ krodhamūrchitaḥ ॥1॥",
+      "leonov_ru": "Услышав слова великой духом обезьяны, Равана, охваченный гневом, приказал убить ее.",
+      "commentary": {
+        "tilaka": "स इति",
+        "bhusana": "तस्य तद्वचनं श्रुत्वा वानरस्य महात्मनः ।\n\nआज्ञापयद्वधं तस्य रावणः क्रोधमूर्च्छितः\nतस्य तद्वचनं श्रुत्वेति श्लोकस्सर्गस्य प्रथमः",
+        "siromani": "वध इति । रावणेन वधे समाज्ञप्ते सति दौत्यं स्वनिष्ठदूतधर्मं निवेदितवतो हनूमतः वधे विभीषणो नानुमेने ऽनुमतिं चकार । वध इत्युभान्वयि"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sa",
+          "matches_verse": false,
+          "content_containment": 0.1
+        },
+        "bhusana": {
+          "pratika_iast": "tasya tadvacanan srutva vanarasya",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "vadha",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.2",
+      "sarga": 52,
+      "verse": "2",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vadhe tasya samājñapte rāvaṇena durātmanā । niveditavato dautyaṃ nānumene vibhīṣaṇaḥ ॥2॥",
+      "leonov_ru": "Когда Равана, злой душою, приказал убить его (Ханумана), Сообщившего о том, что он вестник, не согласился [с этим решением] Вибхишана.",
+      "commentary": {
+        "tilaka": "दौत्यं स्वीयं दूतकर्म यथावन्निवेदितवतो हनूमतो ऽवध्यत्वं मत्वा रावणाज्ञप्तं वधं नानुमेने",
+        "bhusana": "वधे तस्य समाज्ञप्ते रावणेन दुरात्मना ।\n\nनिवेदितवतो दौत्यं नानुमेने विभीषणः\nदौत्यं दूतकर्म । ब्राह्मणादेराकृतिगणत्वात् ष्यञ् । तन्निवेदितवतः उक्तवतः । नानुमेने, वधमित्यनुवर्तनीयम् । निवेदितमतौ दूत्यमिति पाठान्तरम् । मन्यत इति मतिः कार्यम् । निवेदितमतौ निवेदितकार्यांशे यथार्थवादित्वेनावध्ये हनुमति दूत्यं दूतसंबन्धितया रावणादिष्टं वधम् । \"दूतवणिग्भ्यां चेति वक्तव्यम्\" इति भावकर्मणोर्विहितो यप्रत्ययः अर्थानुगुण्यात्सम्बन्धमात्रे गमयितव्यः",
+        "siromani": "ननु क्रोधवशं प्राप्तस्य विवेको न भवतीत्यत आह कथमिति । परावरप्रत्ययेन उत्कृष्टापकृष्टज्ञानेन निश्चितः अर्थो येन अत एव धर्मार्थयोर्विनीता निविष्टा बुद्धिर्यस्य सः भवद्विधः जनः कोपवशे कथं तिष्ठेत् हि यतः सत्त्ववन्तो जनाः कोपं न गच्छन्ति प्राप्नुवन्ति\nननु खेचरदूतरक्षणेन किं साध्यमित्यत आह अस्मिन्निति । अस्मिन्दूते विनष्टे सति युद्धप्रियावेव दुर्विनीतौ दुष्करशिक्षौ नरराजपुत्रौ युद्धाय य उद्योजयेत् तं दूतमहं न पश्यामि"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "dautyan sviyan dutakarna yathavanniveditavato",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "vadhe tasya sanajnapte ravanena",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "nanu krodhavasan praptasya viveko",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.3",
+      "sarga": 52,
+      "verse": "3",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "taṃ rakṣo'dhipatiṃ kruddhaṃ tac ca kāryam upasthitam । viditvā cintayām āsa kāryaṃ kāryavidhau sthitaḥ ॥3॥",
+      "leonov_ru": "Видя, что владыка ракшасов разгневан, и что это дело (убийство Ханумана) близко, Подумал о том, что надлежит делать (Вибхишана), придерживающийся правильного поведения.",
+      "commentary": {
+        "tilaka": "तच्च कार्यं दूतवधरूपम् । कार्यविधादुचितकृत्यसंपादने स्थितः । निश्चितबुद्धिरित्यर्थः\nशत्रुजितं च तमग्रजं च",
+        "bhusana": "तं रक्षोधिपतिं क्रुद्धं तच्च कार्यमुपस्थितम् ।\n\nविदित्वा चिन्तयामास कार्यं कार्यविधौ स्थितः\nतच्च कार्यं दूतवधरूपकार्यम् । कार्यम् अनन्तरानुष्ठेयम् । कार्यविधौ कार्यकरणे । स्थितः निश्चितार्थः, साध्वसाधुविवेकनिश्तिकार्य इत्यर्थः",
+        "siromani": "तमिति । तं रावणं क्रुद्धमत एव उपस्थितं संप्राप्तं कार्यं दूतवधक्रियां च विदित्वा कार्यविधौ यथोचितकृत्यसंपादने स्थितः रावणेन संस्थापितः विभीषणः कार्यं स्वकर्तव्यं चिन्तयामास"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tacca karyan dutavadharupan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tan raksodhipatin kruddhan tacca",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "taniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.4",
+      "sarga": 52,
+      "verse": "4",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "niścitārthas tataḥ sāmnā pūjya śatrujid agrajam । uvāca hitam atyarthaṃ vākyaṃ vākyaviśāradaḥ ॥4॥",
+      "leonov_ru": "Принявший решение, от чистого сердца отказав почтение старшему брату, победитель врагов, В речах искусный (Вибхишана) сказал слова полезные, наделенные смыслом.",
+      "commentary": {
+        "bhusana": "निश्चितार्थस्ततः साम्ना ऽ ऽपूज्य शत्रुजिदग्रजम् ।\n\nउवाच हितमत्यर्थं वाक्यं वाक्यविशारदः\nनिश्चितार्थ इति । आपूज्येति च्छेदः",
+        "siromani": "निश्चितेति । निश्चितः अर्थो येन सः शत्रुजिद्विभीषणः पूज्यमग्रजम् अत्यर्थमत्यन्तं हितं वाक्यं साम्ना सामरूपोपायेन उवाच"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "niscitarthastatah sanna pujya satrujidagrajan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "nisciteti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.5",
+      "sarga": 52,
+      "verse": "5",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kṣamasva roṣaṃ tyaja rākṣasendra । prasīda madvākyam idaṃ śṛṇuṣva । vadhaṃ na kurvanti parāvarajñā । dūtasya santo vasudhādhipendrāḥ ॥5॥",
+      "leonov_ru": "«Будь терпеливым (снисходительным), отбрось гнев, о владыка ракшасов, Милостиво выслушай мои слова. Не убивают послов знающие далекое и близкое (правильное и неправильное) Праведные владыки владык земли.",
+      "commentary": {
+        "siromani": "रावणं प्रति विभीषणोक्तिं वर्णयितुं प्रसङ्गमुत्थापयन्नाह स इति । तस्य हनूमतः वचनं श्रुत्वा क्रोधमूर्छितो रावणः तस्य हनूमतो वधमाज्ञापयत्",
+        "tilaka": "प्रतिज्ञां त्यज्य रोषं क्षमस्वेत्यन्वयः । परावरज्ञाः सर्वकार्यविषयकोत्कर्षापकर्षज्ञाः सन्तो दूतस्य वधं न कुर्वन्ति",
+        "bhusana": "क्षमस्व रोषं त्यज राक्षसेन्द्र प्रसीद मद्वाक्यमिदं शृणुष्व ।\n\nवधं न कुर्वन्ति परावरज्ञा दूतस्य सन्तो वसुधाधिपेन्द्राः\nपरावरज्ञाः त्याज्योपादेय विवेकयुक्ताः"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "ravanan prati vibhisanoktin varnayitun",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "pratijnan tyajya rosan ksanasvetyanvayah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "ksanasva rosan tyaja raksasendra",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.6",
+      "sarga": 52,
+      "verse": "6",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "rājan dharmaviruddhaṃ ca lokavṛtteś ca garhitam । tava cāsadṛśaṃ vīra kaper asya pramāpaṇam ॥6॥",
+      "leonov_ru": "О царь, неправедно и порицаемо обычаями мира, Недостойно тебя, отважный, убийство этой обезьяны.",
+      "commentary": {
+        "bhusana": "राजधर्मविरुद्धं च लोकवृत्तेश्च गर्हितम् ।\n\nतव चासदृशं वीर कपेरस्य प्रमापणम्\nप्रमापण मारणम्",
+        "siromani": "राजन्निति । हे राजन् कपेः प्रमापणं विघातनं धर्मविरुद्धं वेदोक्ताद्विपरीतम् अत एव लोकवृत्तेः लोकाचारात् गर्हितं निन्दितम् अत एव तव असदृशमयोग्यमस्तीति शेषः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "rajadharnaviruddhan ca lokavrttesca garhitan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "rajanniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.7",
+      "sarga": 52,
+      "verse": "7",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "dharmajñaśca kṛtajñaśca rājadharmaviśāradaḥ । parāvarajño bhūtānāṃ tvameva paramārthavit ॥7॥",
+      "leonov_ru": "Благочестив ты, знаешь, что правильно, а что нет, искусен в законе правления. Знаешь ты далекое и близкое (правильное и неправильное), из живых существ лишь ты постиг высшее знание.",
+      "commentary": {
+        "tilaka": "कृतज्ञत्वेनापकारिण्येव वधो न्याय्यो न तादृशे ऽस्मिन्",
+        "bhusana": "धर्मज्ञश्च कृतज्ञश्च राजधर्मविशारदः ।\n\nपरावरज्ञो भूतानां त्वमेव परमार्थवित्\nभूतानामिति निर्धारणे षष्ठी । भूतानां मध्ये",
+        "siromani": "असदृशत्वमुपपादयन्नाह धर्मज्ञ इति । धर्मज्ञत्वादिविशिष्टस्त्वमेवासीति शेषः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "krtajnatvenapakarinyeva vadho nyayyo na",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "dharnajnasca krtajnasca rajadharnavisaradah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "asadrsatvanupapadayannaha dharnajna",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.8",
+      "sarga": 52,
+      "verse": "8",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "gṛhyante yadi roṣeṇa tvādṛśo 'pi vicakṣaṇaḥ । tataḥ śāstravipaścittvaṃ śrama eva hi kevalam ॥8॥",
+      "leonov_ru": "Если гнев охватывает даже мудреца, подобного тебе, То изучение шастр – [напрасное] утомление, и только.",
+      "commentary": {
+        "tilaka": "त्वादृश इति क्लिन्नन्तबहुवचनम् । शास्त्रविपश्चित्त्वं शास्त्रपाण्डित्यसंपादनम् श्रमः केवलं श्रम एव व्यर्थप्रयास एवेत्यर्थः",
+        "bhusana": "गृह्यन्ते यदि रोषेण त्वादृशो ऽपि विपश्चितः ।\n\nततः शास्त्रधर्मविपश्चित्त्वं श्रम एव हि केवलम्\nशास्त्रविपश्चित्त्वं विविधं पश्यतीति विपश्चित् तस्य भावः विपश्चित्त्वम्, शास्त्रविषये विविधज्ञानोपेतत्वमिति यावत्",
+        "siromani": "गृह्यन्ते इति । त्वादृशो विचक्षणा अपि यदि दोषेण कर्त्रा गृह्यन्ते तदा शास्त्रविपश्चित्त्वं शास्त्रज्ञानं श्रम एव"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tvadrsa",
+          "matches_verse": false,
+          "content_containment": 0.333,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "grhyante yadi rosena tvadrso",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "grhyante",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.9",
+      "sarga": 52,
+      "verse": "9",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasmāt prasīda śatrughna rākṣasendra durāsada । yuktāyuktaṃ viniścitya dūtadaṇḍo vidhīyatām ॥9॥",
+      "leonov_ru": "Потому смилуйся, о губитель врагов, непобедимый владыка ракшасов, Рассудив [сперва] о том, что должно и что недолжно, подвергни наказанию вестника».",
+      "commentary": {
+        "tilaka": "दूतदण्डो दूते विहितो दण्डः ।। 5.52.9,10 ।।\n\nपापकारिणं राजद्रोहिणम्",
+        "bhusana": "तस्मात् प्रसीद शत्रुघ्न राक्षसेन्द्र दुरासद ।\n\nयुक्तायुक्तं विनिश्चित्य दूतदण्डे विधीयताम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "dutadando dute vihito dandah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tasnat prasida satrughna raksasendra",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.10",
+      "sarga": 52,
+      "verse": "10",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vibhīṣaṇavacaḥ śrutvā rāvaṇo rākṣaseśvaraḥ । roṣeṇa mahatāviṣṭo vākyam uttaram abravīt ॥10॥",
+      "leonov_ru": "Услышав речь Вибхишаны, Равана, владыка ракшасов, Охваченный сильным гневом, сказал в ответ:",
+      "commentary": {
+        "bhusana": "विभीषणवचः श्रुत्वा रावणो राक्षसेश्वरः ।\n\nरोषेण महताविष्टो वाक्यमुत्तरमब्रवीत्",
+        "siromani": "विभीषणेति । रावणः उत्तरं वाक्यमब्रवीत्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "vibhisanavacah srutva ravano raksasesvarah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "vibhisaneti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.11",
+      "sarga": 52,
+      "verse": "11",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na pāpānāṃ vadhe pāpaṃ vidyate śatrusūdana । tasmād imaṃ vadhiṣyāmi vānaraṃ pāpakāriṇam ॥11॥",
+      "leonov_ru": "Нет в убийстве злодеев зла, о губитель врагов. Потому убью я эту обезьяну, совершающую злые деяния».",
+      "commentary": {
+        "bhusana": "न पापानां वधे पापं विद्यते शत्रुसूदन ।\n\nतस्मादेनं वधिष्यामि वानरं पापचारिणम्",
+        "siromani": "तस्मादिति । तस्मात् मदुक्तहेतोः प्रसीद चित्तप्रसादं कुरु अत एव युक्तायुक्तं विनिश्चित्य दूतदण्डः दूतोचितक्रिया विधीयताम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "na papanan vadhe papan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tasnaditi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.12",
+      "sarga": 52,
+      "verse": "12",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "adharmamūlaṃ bahudoṣayuktam । anāryajuṣṭaṃ vacanaṃ niśamya । uvāca vākyaṃ paramārthatattvaṃ । vibhīṣaṇo buddhimatāṃ variṣṭhaḥ ॥12॥",
+      "leonov_ru": "Основанную на неправедности, соединенную с множеством зол, Недостойную благородного речь выслушав, Сказал слова, исполненные высшего знания, Вибхишана, лучший из мудрецов:",
+      "commentary": {
+        "tilaka": "अधर्मस्य मूलमधर्ममूलम् । दोषो ऽपकीर्तिरूपः",
+        "bhusana": "अधर्ममूलं बहुरोषयुक्तमनार्यजुष्टं वचनं निशम्य ।\n\nउवाच वाक्यं परमार्थतत्त्वं विभीषणो बुद्धिमतां वरिष्ठः",
+        "siromani": "अधर्मेति । बहुदोषयुक्तम् अत एव अधर्ममूलम् अत एव अनार्यजुष्टं क्षुद्रैः सेवितं रावणोक्तिं निशम्य श्रुत्वा परमार्थतत्त्वं परमार्थस्य निश्चायकं वाक्यं विभीषण उवाच"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "adharnasya nulanadharnanulan",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "adharnanulan bahurosayuktananaryajustan vacanan nisanya",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "adharneti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.13",
+      "sarga": 52,
+      "verse": "13",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "prasīda laṅkeśvara rākṣasendra । dharmārthayuktaṃ vacanaṃ śṛṇuṣva । dūtā na vadhyāḥ samayeṣu rājan । sarveṣu sarvatra vadanti santaḥ ॥13॥",
+      "leonov_ru": "«Смилуйся, владыка Ланки, повелитель ракшасов. Выслушай слова, соединенные с праведностью и пользой. Во всех собраниях повсюду говорят праведники, Что не надлежит убивать послов, о царь.",
+      "commentary": {
+        "tilaka": "समयेषु स्वस्वामिनियोगानुष्ठानकालेषु ।। 5.52.13,14 ।।\n\nमौण्ड्यं मुण्डनम् । लक्षणसंनिपातो दूतयोग्याङ्कनसंभूत इति तीर्थः । वैरूप्यादीनामेकैकं वा । तथा लक्षणानां संनिपातः सर्वानुष्ठानं वेत्यर्थ इत्यन्ये । नो ऽस्माकं श्रुतो ऽपि नास्ति दर्शनं तु दूरापास्तमिति भावः",
+        "bhusana": "प्रसीद लङ्केश्वर राक्षसेन्द्र धर्मार्थयुक्तं वचनं शृणुष्व ।\n\nदूता न वध्याः समयेषु राजन् सर्वेषु सर्वत्र वदन्ति सन्तः\nप्रसीदेति । सर्वेषु सर्वत्र सर्वदेशेषु सर्वजातिष्वित्यर्थः",
+        "siromani": "तद्वचनाकारमाह प्रसीदेति । हे लङ्केश्वर समयेषु स्वस्वामिनियोगकालेषु दूताः सर्वत्र सर्वदेशेषु न वध्याः इति सन्तो वदन्ति तत् धर्मार्थतत्त्वं वचनं शृणुष्व\nनन्वनेन शत्रुत्वमाचरितमिति नास्मिन् दूतत्वमात्रमिति नास्य वधे दोष इत्यत आह असंशयमिति । हि यतः अप्रमेयं बहु अप्रियम् अनेन कृतम् अतो ऽयं प्रवृद्धो महान् शत्रुः तथापि सन्तः दूतवध्यां दूतानां वधं न प्रवदन्ति अत एव दूतस्य दुष्टत्वे इति शेषः, बहवः दण्डाः दृष्टा शास्त्रेष्ववलोकिताः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sanayesu svasvaniniyoganusthanakalesu",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "prasida lankesvara raksasendra dharnarthayuktan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tadvacanakaranaha prasideti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.14",
+      "sarga": 52,
+      "verse": "14",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "asaṃśayaṃ śatrur ayaṃ pravṛddhaḥ । kṛtaṃ hy anenāpriyam aprameyam । na dūtavadhyāṃ pravadanti santo । dūtasya dṛṣṭā bahavo hi daṇḍāḥ ॥14॥",
+      "leonov_ru": "Несомненно, он (Хануман) – могучий враг, Ибо сделано им беспримерное зло. [Но] не одобряют праведники убийства вестников, Ибо есть много [иных] наказаний в отношении вестников.",
+      "commentary": {
+        "bhusana": "असंशयं शत्रुरयं प्रवृद्धः कृतं ह्यनेनाप्रियमप्रमेयम् ।\n\nन दूतवध्यां प्रवदन्ति सन्तो दूतस्य दृष्टा बहवो हि दण्डाः\nन केवलं दूतो ऽयम् अक्षादिवधेन शत्रुश्च, तथाच हन्तव्य इत्याशङ्क्याह असंशयमिति । दूतवध्यां दूतवधम् । स्त्रियां भावे क्यप् । हन्तेर्वधादेश आर्षः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "asansayan satrurayan pravrddhah krtan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.15",
+      "sarga": 52,
+      "verse": "15",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vairūpyām aṅgeṣu kaśābhighāto । mauṇḍyaṃ tathā lakṣmaṇasaṃnipātaḥ । etān hi dūte pravadanti daṇḍān । vadhas tu dūtasya na naḥ śruto 'sti ॥15॥",
+      "leonov_ru": "Уродование тела, порка Обритие головы, клеймение – Эти наказания предписаны в отношении вестника, Об убийстве же вестника я не слышал.",
+      "commentary": {
+        "bhusana": "वैरूप्यमङ्गेषु कशाभिघातो मौण्ड्यं(ढ्यं) तथा लक्षणसन्निपातः ।\n\nएतान् हि दूते प्रवदन्ति दण्डान् वधस्तु दूतस्य न नः श्रुतो ऽपि\nलक्षणसन्निपातः दूतयोग्याङ्कनसंबन्धः । नः अस्माभिः",
+        "siromani": "तद्दण्डाकारमाह वैरूप्यमिति । अङ्गेषु वैरूप्यं नासिकाछेदादिना विरूपकरणं कशाभिघातः कशया तोत्रेण अभिघातः ताडनं मौण्ड्यं भ्रुकुट्यादिमुण्डनं लक्षणसंनिपातः ताम्रखण्डदाहादिना ललाटादौ चिह्नकरणम् एतान् दण्डान् दूते प्रवदन्ति दूतस्य वधस्तु नो ऽस्माकं न श्रुतो ऽस्ति"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "vairupyanangesu kasabhighato naundyan dhyan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "taddandakaranaha vairupyaniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.16",
+      "sarga": 52,
+      "verse": "16",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "kathaṃ ca dharmārthavinītabuddhiḥ । parāvarapratyayaniścitārthaḥ । bhavadvidhaḥ kopavaśe hi tiṣṭhet । kopaṃ na gacchanti hi sattvavantaḥ ॥16॥",
+      "leonov_ru": "Как же тот, чей ум познал дхарму и артху, Кто принимает решения, различая правое и неправое, Подобный тебе, окажется во власти гнева? Ибо истинно доблестные не приходят в гнев.",
+      "commentary": {
+        "tilaka": "परावरप्रत्ययनिश्चितार्थ उत्कर्षापकर्षज्ञानेन निश्चितकार्यः",
+        "bhusana": "कथं च धर्मार्थविनीतबुद्धिः परावरप्रत्ययनिश्चितार्थः ।\n\nभवद्विधः कोपवशे हि तिष्ठेत् कोपं नियच्छन्ति हि सत्त्ववन्तः\nधर्मार्थविनीतबुद्धिः धर्मार्थयोश्शिक्षितबुद्धिः । परावरप्रत्ययनिश्चितार्थः उत्कृष्टापकृष्टपरिज्ञाननिश्चितार्थः । अस्मिन् विषये इदं कार्यं परम् इदमवरमिति विवेकनिश्चितकार्य इत्यर्थः । नियच्छन्ति निगृह्णन्ति । सत्त्ववन्तः व्यवसायवन्तः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "paravarapratyayaniscitartha utkarsapakarsajnanena niscitakaryah",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "kathan ca dharnarthavinitabuddhih paravarapratyayaniscitarthah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.17",
+      "sarga": 52,
+      "verse": "17",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na dharmavāde na ca lokavṛtte । na śāstrabuddhigrahaṇeṣu vāpi । vidyeta kaś cit tava vīra tulyas । tvaṃ hy uttamaḥ sarvasurāsurāṇām ॥17॥",
+      "leonov_ru": "Ни в изъяснении дхармы, ни в обычаях мира, Ни в понимании мыслей, [изложенных] в шастрах Нет никого, равного тебе, о отважный, Ибо ты наилучший среди всех богов и асуров.",
+      "commentary": {
+        "tilaka": "लोकवृत्तेर्लोकव्यवहारस्य प्रमाणं वधः\nकिं च त्वं नोपदेश्यो ऽस्माकमित्याह-- नेति । शास्त्राणां बुद्ध्या निश्चयात्मिकया ग्रहणेष्वित्यर्थः",
+        "bhusana": "न धर्मवादे न च लोकवृत्ते न शास्त्रबुद्धिग्रहणेषु चापि ।\n\nविद्येत कश्चित्तव वीरतुल्यस्त्वं ह्युत्तमः सर्वसुरासुराणाम्\nधर्मवादे धर्मशास्त्रे । लोकवृत्ते लौकिकाचारे । शास्त्रबुद्धिग्रहणेषु शास्त्रशब्देन शास्त्रार्थ उच्यते । शास्त्रर्थज्ञानतद्धारणेष्वित्यर्थः",
+        "siromani": "स्वविज्ञापितस्वीकरणायैतत्प्रशंसामाह नेति । धर्मवादादौ तव तुल्यः कश्चिन्न विद्येत अतः सर्वसुरासुराणां त्वमोवोत्तमो ऽसि"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "lokavrtterlokavyavaharasya prananan vadhah kin",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "na dharnavade na ca",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "svavijnapitasvikaranayaitatprasansanaha neti",
+          "matches_verse": false,
+          "content_containment": 0.188,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.18",
+      "sarga": 52,
+      "verse": "18",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "parākramotsāhamanasvināṃ ca । surāsurāṇam api durjayena । tvayāprameyeṇa surendrasaṃdhā । jitāś ca yuddheṣv asakṛn narendrāḥ ॥18॥",
+      "leonov_ru": "Отважным, могучим и мудрым, Непобедимым даже для богов и асуров, Тобой, неизмеримым, войска владыки богов Были побеждены в боях неоднократно и владыки людей.",
+      "commentary": {
+        "tilaka": "एतदुत्तरम् \"पराक्रमोत्साहमनस्विनां च सुरासुराणामपि दुर्जयेन । त्वया ऽप्रमेयेण सुरेन्द्रसङ्घा जिताश्च युद्धेष्वसकृन्नरेन्द्राः ।। इत्थंविधस्यामरदैत्यशत्रोः शूरस्य वीरस्य तवाजितस्य कुर्वन्ति वीरा मनसाप्यलीकं प्राणैर्विमुक्ता न तु भोः पुरा ते\" ।। इति श्लोकद्वयं प्रक्षिप्तमिति कतकः । न चाप्यस्य कपेरिति\nननु युद्धे कदाचिद्विपरीतमपि संभाव्येत तत्राह-- हिताश्चेति । समाहिता दानादिभिर्वशीकृताः । सुभृताः सम्यक्पालिताः तादृशभृत्यवतो जय एव भावीति भावः",
+        "siromani": "तत्र हेतुमाह पराक्रमेति । पराक्रमोत्साहमनस्विनां पराक्रमोत्साहविशिष्टमनोविशिष्टानां सुरासुराणामपि दुर्जयेन अत एव अप्रमेयेण बलवत्त्वादिना इयत्तारहितेन त्वया सुरेन्द्रसंघाः नरेन्द्राश्च युद्धेषु असकृज्जिताः",
+        "bhusana": "अपि चास्मिन् हते राजन् नान्यं पश्यामि खेचरम् ।\n\nइह यः पुनरागच्छेत् परं पारं महोदधेः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "etaduttaran parakranotsahananasvinan ca surasurananapi",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "tatra hetunaha parakraneti",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "api casnin hate rajan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.19",
+      "sarga": 52,
+      "verse": "19",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "itthaṃvidhasyāmaradaytaśatroḥ । śūrasya vīrasya tavājitasya । kurvanti vīrā manasāpyalīkaṃ । prāṇair vimuktā na tu bhoḥ purā te ॥19॥",
+      "leonov_ru": "Тебе, наделенному такими качествами, врагу бессмертных (богов) и дайтьев, Отважному герою, непобедимому, Причиняли герои нечто неприятное хотя бы мысленно, Но жизни не лишались тобою прежде.",
+      "commentary": {
+        "siromani": "इत्थमिति । इत्थंविधस्य तव अलीकमपराधं पुरा प्राणैर्विमुक्ताः अपहृतसर्वस्वा इत्यर्थः । वीराः मनसा ऽपि न कुर्वन्ति"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "itthaniti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.20",
+      "sarga": 52,
+      "verse": "20",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "na cāpy asya kaper ghāte kaṃ cit paśyāmy ahaṃ guṇam । teṣv ayaṃ pātyatāṃ daṇḍo yair ayaṃ preṣitaḥ kapiḥ ॥20॥",
+      "leonov_ru": "И в убийстве этой обезьяны я не вижу ничего доброго. Тех подвергни наказанию, которыми была послана эта обезьяна.",
+      "commentary": {
+        "bhusana": "न चाप्यस्य कपेर्घाते कञ्चित् पश्याम्यहं गुणम् ।\n\nतेष्वयं पात्यतां दण्डो यैरयं प्रेषितः कपिः\nन केवलं दूतस्य वधे शास्त्रविरोधः गुणमपि न कंचित्पश्यामि अतः एतत्प्रेषकेष्वेव वधरूपो दण्डः पात्यतामित्याह  न चेत्यादि",
+        "tilaka": "समर्पितः प्रेषितः\nनन्वस्मिन्हते ऽन्यस्यानागमने च काममक्षतिर्विपरीतमिष्टमेवेदं तत्राह-- अस्मिन्विनष्टे इति । तौ राजपुत्रौ । यो योद्धोद्योजयेत्तं न पश्यामि, ननु तदुद्योगाभावो ऽपि ममेष्ट एव नेत्याह-- युद्धप्रियेति संबोधनेन रणपराक्रमविजयकीर्ती तवेष्टे किल, ते उभे अप्येतद्विनाशे नश्यत इत्याशयः । रावणस्य रजःप्रकृतित्वात्तत्प्रकृत्यनुसारेण युद्धादिव्यापारेण प्रलोबनम् तत्प्रीत्यर्थमेव दुर्विनीतावित्याद्युक्तिः\nतत्तस्मादुपगृह्य आयान्त्विति शेषः । परेषु ते प्रभावं भावयितुं प्रकाशयितुम् युक्तमिति शेषः",
+        "siromani": "नेति । अस्य कपेर्घाते कंचित् गुणं न पश्यामि । अतः परैरयं कपिः प्रेषितः तेषु अयं प्राणान्तः दण्डः पात्यताम्\nननु किं तेनेत्यत आह तदिति । तत् शराधिक्याद्धेतोः केचित्तवादेशकृतः बलस्य सैन्यस्य एकदेशेन सह किंचिद्बलं गृहीत्वेत्यर्थः, अद्य यान्तु रामसमीपमिति शेषः । गमनप्रयोजनमाह परेषु शत्रुषु ते प्रभावं भावयितुं बोधयितुं मूढौ प्रियावियोगदुःखे अस्वस्थचित्तौ तौ रामलक्ष्मणौ उपगृह्य आयान्त्विति शेषः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "na capyasya kaperghate kancit",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "sanarpitah presitah nanvasninhate nyasyanaganane",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "neti",
+          "matches_verse": false,
+          "content_containment": 0.412,
+          "content_anchor": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.21",
+      "sarga": 52,
+      "verse": "21",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sādhur vā yadi vāsādhuḥ parair eṣa samarpitaḥ । bruvan parārthaṃ paravān na dūto vadham arhati ॥21॥",
+      "leonov_ru": "Хорош он (Хануман) или плох, он послан другими. Высказывающий чужие намерения, зависящий от других, не заслуживает вестник смерти.",
+      "commentary": {
+        "bhusana": "साधुर्वा यदिवा ऽसाधुः परैरेष समर्पितः ।\n\nब्रुवन् परार्थं परवान् न दूतो वधमर्हति\nसाधुर्वेति । सपर्पितः प्रेषितः",
+        "siromani": "साधुरिति । परैः रिपुभिः समर्पितः प्रेषितः अत एव परार्थं ब्रुवन् साधुर्वा ऽसाधुर्वा एष दूतः वधं नार्हति"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sadhurva yadiva sadhuh parairesa",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "sadhuriti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.22",
+      "sarga": 52,
+      "verse": "22",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "api cāsmin hate nānyaṃ rājan paśyāmi khecaram । iha yaḥ punar āgacchet paraṃ pāraṃ mahodadheḥ ॥22॥",
+      "leonov_ru": "К тому же, после того, как он будет убит, не вижу я, царь, иного, летающего по небу Здесь, который смог бы снова прийти на другой берег океана.",
+      "commentary": {
+        "tilaka": "नान्यं पश्यामि । यो ऽत्रागच्छेदित्यर्थः",
+        "siromani": "अपीतिति । अस्मिन् दूते हते सति अन्यं दूतं खेचरम् आकाशगमनशीलं न पश्यामि तस्मात् अस्य वधे यत्नो न कार्यः । किंतु सेन्द्रेषु देवेषु तद्विध्वंसार्थं यत्नमास्थातुं भवान् अर्हति । सार्धश्लोक एकान्वयी"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "nanyan pasyani",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "apititi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.23",
+      "sarga": 52,
+      "verse": "23",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tasmān nāsya vadhe yatnaḥ kāryaḥ parapuraṃjaya । bhavān sendreṣu deveṣu yatnam āsthātum arhati ॥23॥",
+      "leonov_ru": "Потому, о покоритель вражеских крепостей, не стоит труда убивать его. Ты должен приложить силы по отношению к богам с Индрой (на борьбу с богами во главе с Индрой).",
+      "commentary": {
+        "bhusana": "तस्मान्नास्य वदे यत्नः कार्यः परपुरञ्जय ।\n\nभवान् सेन्द्रेषु देवेषु यत्नमास्तातुमर्हति"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tasnannasya vade yatnah karyah",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.24",
+      "sarga": 52,
+      "verse": "24",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "asmin vinaṣṭe na hi dūtam anyaṃ । paśyāmi yas tau nararājaputrau । yuddhāya yuddhapriya durvinītāv । udyojayed vai bhavatā viruddhau ॥24॥",
+      "leonov_ru": "Ибо после его гибели иного посланника Не вижу я, который обоих царских сынов Плохо воспитанных, о любящий битвы, к битве Смог бы побудить, враждебных тебе.",
+      "commentary": {
+        "bhusana": "अस्मिन् विनष्टे नहि दूतमन्यं पश्यामि यस्तौ नरराजपुत्रौ ।\n\nयुद्धाय युद्धप्रिय दुर्विनीतावुद्योजयेद्दीर्घपथावरुद्धौ"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "asnin vinaste nahi dutananyan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.25",
+      "sarga": 52,
+      "verse": "25",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "parākramotsāhamanasvināṃ ca । surāsurāṇām api durjayena । tvayā manonandana nairṛtānāṃ । yuddhāya nirnāśayituṃ na yuktam ॥25॥",
+      "leonov_ru": "Отважному, могучему и мудрому, Непобедимому даже для богов и асуров, Тебе, о радующий сердца, у ракшасов [Жажду] битвы рушить не следует.",
+      "commentary": {
+        "tilaka": "हे नैऋ़तानां मनोनन्दन सुरासुराणामपि दुर्जयेन त्वया पराक्रमे य उत्साहस्तत्र प्रशस्तमनोवतां नैर्ऋतानां मनो युद्धाय प्रवृत्तं निर्नाशयितुं न युक्तम् । नैर्ऋतानामित्यत्र मन इत्यत्र च तन्त्रम् । यद्वा तादृशानां नैर्ऋतानां मनोनन्दन तादृशेन त्वया युद्धापत्तिर्युद्धागमो नाशयितुं न युक्तमित्यर्थः",
+        "bhusana": "पराक्रमोत्साहमनस्विनां च सुरासुराणामपि दुर्जयेन ।\n\nत्वया मनोनन्दन नैर्ऋतानां युद्धायतिर्नाशयितुं न युक्ता"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "he nairtanan nanonandana surasurananapi",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "parakranotsahananasvinan ca surasurananapi durjayena",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.26",
+      "sarga": 52,
+      "verse": "26",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "hitāś ca śūrāś ca samāhitāś ca । kuleṣu jātāś ca mahāguṇeṣu । manasvinaḥ śastrabhṛtāṃ variṣṭhāḥ । kopapraśastāḥ subhṛtāś ca yodhāḥ ॥26॥",
+      "leonov_ru": "Преданные [тебе], отважные, собранные (дисциплинированные), Рожденные в семьях, наделенных великими достоинствами, Разумные, лучшие из носящих меч, Прославленные [своей] яростью воины, которых ты хорошо содержишь.",
+      "commentary": {
+        "bhusana": "हिताश्च शूराश्च समाहिताश्च कुलेषु जाताश्च महागुणेषु ।\n\nमनस्विनः शस्त्रभृतां वरिष्ठाः कोट्यग्रतस्ते सुभृताश्च योधाः",
+        "siromani": "हिता इति । महागुणेषु बहुगुणविशिष्टेषु कुलेषु जाताः शराः नागाश्च सुभृताः अत्यन्तं पोषिताः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "hitasca surasca sanahitasca kulesu",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "hita",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.27",
+      "sarga": 52,
+      "verse": "27",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tad ekadeśena balasya tāvat । ke cit tavādeśakṛto 'dya yāntu । tau rājaputrāv upagṛhya mūḍhau । pareṣu te bhāvayituṃ prabhāvam ॥27॥",
+      "leonov_ru": "Пусть пока с частью [твоего] войска Кто-либо по твоему приказу пойдет, Чтобы, тех двух неразумных царевичей схватив, Установили [твою] власть над врагами».",
+      "commentary": {
+        "siromani": "तद्वचनाकारमाह क्षमस्वेत्यादिभिः । हे राक्षसेन्द्र वसुधाधिपेन्द्राः दूतस्य वधं न कुर्वन्ति इदं मे वाक्यं शृणुष्व अत एव रोषं त्यज अत एव क्षमस्व दूतवाक्यं सहस्व\nतद्वचनाकारमाह नेति । शत्रुसूदन हे विभीषण पापानां पापकर्माचरणशीलानां वधे पापं न विद्यते तस्माद्धेतोः पापकारिणमिमं वधिष्यामि\nननु किं तद्युद्धप्रवृत्येत्यत आह पराक्रमेति । हे नन्दन राक्षसाभिरामदातः  युद्धाय समुत्सुकमिति शेषः । नैऋ़तानां मनः निर्नाशयितुं त्वया न युक्तम्",
+        "bhusana": "तदेकदेशेन बलस्य तावत् केचित्तवादेशकृतो ऽभियान्तु ।\n\nतौ राजपुत्रौ विनिगृह्य मूढौ परेषु ते भावयितुं प्रभावम्"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "tadvacanakaranaha ksanasvetyadibhih",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "tadekadesena balasya tavat kecittavadesakrto",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.28",
+      "sarga": 52,
+      "verse": "28",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "niśācarāṇāmadhipo 'nujasya । vibhīṣaṇasyuttamavākyam iṣṭam । jagrāha buddhyā suralokaśatrur । mahābalo rākṣasarājamukhyaḥ ॥28॥",
+      "leonov_ru": "Владыка ракшасов [своего] младшего брата Вибхишаны ответ приятный (желанный) Принял [всем] сердцем, враг мира богов, Наделенный великой силой, предводитель царей ракшасов.",
+      "commentary": {
+        "tilaka": "उत्तमवाक्यनिष्ठं तत्प्रतिपाद्यमर्थतत्त्वं जग्राह",
+        "bhusana": "निशाचराणामधिपो ऽनुजस्य विभीषणस्योत्तमवाक्यमिष्टम् ।\n\nजग्राह बुद्ध्या सुरलोकशत्रुर्महाबलो राक्षसराजमुख्यः",
+        "siromani": "निशाचराणामिति । राक्षसराजेषु मुख्यः निशाचरणामधिपो रावणः विभीषणस्येष्टमुत्तमवाक्यं बुद्ध्या अन्तःकरणवृत्त्या जग्राह"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "uttanavakyanisthan tatpratipadyanarthatattvan jagraha",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "nisacarananadhipo nujasya vibhisanasyottanavakyanistan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "nisacarananiti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.52.912",
+      "sarga": 52,
+      "verse": "912",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "दूतदण्डः दूतयोग्य दण्डः"
+      }
+    },
+    {
+      "verse_id": "5.52.2021",
+      "sarga": 52,
+      "verse": "2021",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "अस्मिन् हते सति वृत्तान्तनिवेदकाभावाद्रामलक्ष्मणयोरिहागमनाभावेन तव शत्रुक्षयो न स्यात्, विमुक्ते ऽस्मिन् एतन्निवेदितवृत्तान्तयोस्तयोरिहागमनादयत्नेन तव शत्रुनाशो भवेदित्यभिप्रेत्याह अपि चेत्यादिना । इह परं पारम् इह विद्यमानं महोदधेः परं पारम्, इदं दक्षिणकूलमित्यर्थः"
+      }
+    },
+    {
+      "verse_id": "5.52.2224",
+      "sarga": 52,
+      "verse": "2224",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "अस्मिन् विनष्ट इति । दीर्घपथावरुद्धौ दूरमार्गेण निरुद्धगमनावित्यर्थः । एतच्छ्लोकानन्तरं पराक्रमोत्साहमनस्विनां चेति श्लोकः । ततो हिताश्चेति श्लोकः । अथ तदेकदेशेनेति श्लोकः । अथ निशाचराणामिति सर्गान्तश्लोकः । अयमेव पाठक्रमः समीचीनः । अन्येप्यत्र सर्गे श्लोकाः कल्पिता दृश्यन्ते"
+      }
+    }
+  ]
+}

@@ -1,0 +1,537 @@
+{
+  "_meta": {
+    "generated_by": "scripts/extract_yellow_sargas.py",
+    "purpose": "Phase-2 deterministic commentary segmentation (no LLM); input to Sonnet drafting",
+    "sargas": [
+      49
+    ],
+    "commentators": [
+      "tilaka",
+      "bhusana",
+      "siromani",
+      "tattvadipika"
+    ],
+    "verse_count": 27,
+    "verses_all_three": 3,
+    "ambiguous_markers": 6,
+    "corpus_aligned": 19,
+    "align_backend": "sanskrit_util",
+    "reassigned_moves": 1841,
+    "content_moves": 84,
+    "pratika_checkable": 4647,
+    "pratika_matched": 3983,
+    "alignment_precision": 0.857,
+    "anchor_verified": 4391,
+    "alignment_precision_verified": 0.945,
+    "rights": "Gita Supersite, used by permission (CC BY 4.0); see data/valmiki_PERMISSION.md"
+  },
+  "preambles": {
+    "49.pre": {
+      "tilaka": "तस्येन्द्रजितः । यत्तु रावणस्येति तन्न, तेन हनूमति कस्यापि कर्मणो ऽकृतत्वादिति कतकः । पुत्रद्वारा स्वबन्धनकर्मणेत्यर्थ इति तीर्थः ।। 5.49.1,2।।\n\nवज्रसंयोगेन तद्घट्टनेन संयुक्तैर्घटितैर्महार्हमणिविग्रहैर्बहुमूल्यमणिप्रधानस्वरूपैः",
+      "bhusana": "ततः स कर्मणा तस्य विस्मितो भीमविक्रमः ।\n\nहनुमान् रोषताम्राक्षो रक्षोधिपमवैक्षत",
+      "siromani": "हनुमतो वृत्तमाह तत इत्यादिभिः । ततः तस्मिन् समये तस्य इन्द्रजितः कर्मणा विस्मितः तस्य रावणस्य कर्मणा सीतापहरणक्रियया क्रोधताम्राक्षः स हनूमान् रक्षोधिपं रावणमवैक्षत । कर्मणेति तस्येति चावृत्त्योभयान्वयि"
+    }
+  },
+  "verses": [
+    {
+      "verse_id": "5.49.1",
+      "sarga": 49,
+      "verse": "1",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "tataḥ sa karmaṇā tasya vismito bhīmavikramaḥ । hanumān krodhatāmrākṣo rakṣo'dhipam avaikṣata ॥1॥",
+      "leonov_ru": "Тогда деяниями его изумленный, наделенный грозной мощью Хануман, глаза которого покраснели от гнева, смотрел на владыку ракшасов.",
+      "commentary": {
+        "bhusana": "ततः स कर्मणा तस्य विस्मितो भीमविक्रमः ।\n\nहनुमान् रोषताम्राक्षो रक्षोधिपमवैक्षत\nततः स इत्यादि । कर्मणा तस्य विस्मितः, युद्धार्थं रावणेनागन्तवन्यमिति यत्नः कृतः । स तु नीतिज्ञ आसनस्थ एव इन्द्रजिन्मुखेन मां निबध्यानीतवानित्यानयनकर्मणा जातविस्मय इत्यर्थः",
+        "siromani": "हनुमतो वृत्तमाह तत इत्यादिभिः । ततः तस्मिन् समये तस्य इन्द्रजितः कर्मणा विस्मितः तस्य रावणस्य कर्मणा सीतापहरणक्रियया क्रोधताम्राक्षः स हनूमान् रक्षोधिपं रावणमवैक्षत । कर्मणेति तस्येति चावृत्त्योभयान्वयि"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "tatah sa karnana tasya",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "hanunato vrttanaha tata ityadibhih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.2",
+      "sarga": 49,
+      "verse": "2",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "bhājamānaṃ mahārheṇa kāñcanena virājatā । muktājālāvṛtenātha mukuṭena mahādyutim ॥2॥",
+      "leonov_ru": "Сияющего, наделенного великим сиянием короны, Украшенной жемчужными нитями, сияющей золотом,",
+      "commentary": {
+        "bhusana": "भ्राजमानं महार्हेण काञ्चनेन विराजता ।\n\nमुक्ताजालावृतेनाथ मुकुटेन महाद्युतिम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "bhrajananan naharhena kancanena virajata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.3",
+      "sarga": 49,
+      "verse": "3",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vajrasaṃyogasaṃyuktair mahārhamaṇivigrahaiḥ । haimair ābharaṇaiś citrair manaseva prakalpitaiḥ ॥3॥",
+      "leonov_ru": "С украшенными соединением алмазов, разделенными многоценными жемчужинами, Золотыми украшениями разнообразными, словно бы созданными умом (воображением),",
+      "commentary": {
+        "tilaka": "तस्येन्द्रजितः । यत्तु रावणस्येति तन्न, तेन हनूमति कस्यापि कर्मणो ऽकृतत्वादिति कतकः । पुत्रद्वारा स्वबन्धनकर्मणेत्यर्थ इति तीर्थः ।। 5.49.1,2।।\n\nवज्रसंयोगेन तद्घट्टनेन संयुक्तैर्घटितैर्महार्हमणिविग्रहैर्बहुमूल्यमणिप्रधानस्वरूपैः",
+        "bhusana": "वज्रसंयोगसंयुक्तैर्महार्हमणिविग्रहैः ।\n\nहैमैराभरणैश्चित्रैर्मनसेव प्रकल्पितैः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "tasyendrajitah",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "vajrasanyogasanyuktairnaharhananivigrahaih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.4",
+      "sarga": 49,
+      "verse": "4",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "mahārhakṣaumasaṃvītaṃ raktacandanarūṣitam । svanuliptaṃ vicitrābhir vividhabhiś ca bhaktibhiḥ ॥4॥",
+      "leonov_ru": "Облаченного в многоценные шелка, умащенного красным сандалом, [Тело которого] было покрыто разноцветными разнообразными линиями (орнаментами),",
+      "commentary": {
+        "tilaka": "भक्तिभिः शैवत्रिपुण्ड्रवद्रचनाविशेषैः",
+        "bhusana": "महार्हक्षौमसंवीतं रक्तचन्दनरूषितम् ।\n\nस्वनुलिप्तं विचित्राभिर्विविधाभिश्च भक्तिभिः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "bhaktibhih saivatripundravadracanavisesaih",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "naharhaksaunasanvitan raktacandanarusitan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.5",
+      "sarga": 49,
+      "verse": "5",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "vicitraṃ darśanīyaiśca raktākṣair bhīmadarśanaiḥ । dīptatīkṣṇamahādaṃṣṭraṃ pralambaṃ daśanacchadaiḥ ॥5॥",
+      "leonov_ru": "Удивительного, с прекрасными красными глазами грозными, С огромными клыками, сияющими и острыми, с отвисшими губами,",
+      "commentary": {
+        "tilaka": "विचित्रमाश्चर्यभूतैर्दशनच्छदैः प्रलम्बं लम्बदशनच्छदवन्तम्",
+        "bhusana": "विवृतैर्दर्शनीयैश्च रक्ताक्षैर्भीमदर्शनैः ।\n\nदीप्ततीक्ष्णमहादंष्ट्रैः प्रलम्बदशनच्छदैः",
+        "siromani": "भीमदर्शनैः रक्ताक्षैररुणनयनैर्विचित्रमाश्चर्यीभूतं दीप्ता प्रकाशिता तीक्ष्णा महादंष्ट्रा यस्य दशनच्छदैः ओष्ठैः प्रलम्बं प्रलम्बौष्ठवन्तमित्यर्थः । समस्तपाठे तु भ्राजमानमित्युत्तरेणान्वयः । नानाव्यालसमाकीर्णैः अनेकसर्पव्याप्तैः शिखरैर्मन्दरमिव प्रलम्बदशनैर्दशभिः शिरोभिश्च भ्राजमानम् ।। 5.49.5,6 ।।\n\nनीलाञ्जनचयवत् प्रख्या प्रतीतिर्यस्य उरसि राजता हारेण शोभितमिति शेषः । पूर्णचन्द्राभवक्त्रेण पूर्णचन्द्रसदृशमूखेन च सबालार्कं बालार्कसहितमम्बुदमिव प्रतीयमानम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "vicitranascaryabhutairdasanacchadaih pralanban lanbadasanacchadavantan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "vivrtairdarsaniyaisca raktaksairbhinadarsanaih",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "bhinadarsanaih raktaksairarunanayanairvicitranascaryibhutan dipta prakasita",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.6",
+      "sarga": 49,
+      "verse": "6",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "śirobhir daśabhir vīro bhrājamānaṃ mahaujasaṃ । nānāvyālasamākīrṇaiḥ śikharair iva mandaram ॥6॥",
+      "leonov_ru": "Десятью головами отважный (Хануман) [смотрел на] сияющего, обладающего великой мощью, Подобного горе Мандаре, на вершинах которой обитают разнообразные хищные звери,",
+      "commentary": {
+        "siromani": "भ्राजमानमिति । महार्हेण बहुमूल्येन काञ्चनेन सुवर्णमयेन मुक्ताजालवृत्तेन यथायोग्यं मुक्तासमूहविन्यस्तेन विराजता प्रकाशमानेन मुकुटेन वज्रस्य संयोगेन यथोचितं विन्यासेन संयुक्तैः महार्हमणीनां विग्रहैर्थयोचितं विघटनविशिष्टैर्मनसेव प्रकल्पितैः हैमेः हेममयैः आभरणैर्भ्राजमानम् अत एव महाद्युतिम् ।। 5.49.2,3 ।।\n\nमहार्हक्षौमेन पट्टवस्त्रविशेषेण संवीतमाच्छादितं रक्तचन्दनेन रूपितं विविधाभिर्भक्तिभिः सेवनीयकस्तूर्यादिभिः स्वनुलिप्तम्",
+        "tilaka": "शिरोभिर्दशभिरिति हनूमतो दर्शनकाले रणे इव भीषणरूपकरणादिति बोध्यम्",
+        "bhusana": "शिरोभिर्दशभिर्वीरं भ्राजमानं महौजसम् ।\n\nनानाव्यालसमाकीर्णैः शिखरैरिव मन्दरम्"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "bhrajanananiti",
+          "matches_verse": true
+        },
+        "tilaka": {
+          "pratika_iast": "sirobhirdasabhiriti hanunato darsanakale rane",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sirobhirdasabhirviran bhrajananan nahaujasan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.7",
+      "sarga": 49,
+      "verse": "7",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "nīlāñjanacayaprakhyaṃ hāreṇorasi rājatā । pūrṇacandrābhavaktreṇa sabālārkam ivāmbudam ॥7॥",
+      "leonov_ru": "Подобного массе черной сурьмы, с сияющим жемчужным ожерельем на груди, С лицом, подобным полной луне, подобного грозовой туче, озаренной восходящим солнцем,",
+      "commentary": {
+        "tilaka": "हारेणोपलक्षितम्",
+        "bhusana": "नीलाञ्जनचयप्रख्यं हारेणोरसि राजता ।\n\nपूर्णचन्द्राभवक्रेण सबलाकमिवाम्बुदम्\nपूर्णचन्द्राभवक्त्रेण पूर्णचन्द्रतुल्यनायकरत्नेन । वक्त्रं नायकरत्नम् अभितोलग्नमुक्तामणिमण्डलम्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "harenopalaksitan",
+          "matches_verse": false,
+          "content_containment": 0.0
+        },
+        "bhusana": {
+          "pratika_iast": "nilanjanacayaprakhyan harenorasi rajata",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.8",
+      "sarga": 49,
+      "verse": "8",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "bāhubhir baddhakeyūraiś candanottamarūṣitaiḥ । bhrājamānāṅgadair bhīmaiḥ pañcaśīrṣair ivoragaiḥ ॥8॥",
+      "leonov_ru": "С руками, украшенными браслетами, умащенными великолепным сандалом, С сияющими браслетами, подобными пятиглавым змеям, (NB подобны змеям были руки, а не браслеты!)",
+      "commentary": {
+        "bhusana": "बाहुभिर्बद्धकेयूरैश्चन्दनोत्तमरूषितैः ।\n\nभ्राजमानाङ्गदैः पीनैः पञ्चशीर्षौरिवोरगैः"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "bahubhirbaddhakeyuraiscandanottanarusitaih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.9",
+      "sarga": 49,
+      "verse": "9",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "mahati sphāṭike citre ratnasaṃyogacitrite । uttamāstaraṇāstīrṇe upaviṣṭaṃ varāsane ॥9॥",
+      "leonov_ru": "Сидящего на троне из хрусталя, великолепном, Украшенном соединением драгоценных камней, покрытого превосходными покрывалами (подушками),",
+      "commentary": {
+        "bhusana": "महति स्फाटिके चित्रे रत्नसंयोगसंस्कृते ।\n\nउत्तमास्तरणास्तीर्णे सूपविष्टं वरासने",
+        "siromani": "रत्नसंयोगेन चित्रिते स्फाटिके स्फटिकनिर्मिते उत्तमास्तरणैरास्तीर्णे चित्रे आश्चर्यीभूते वरासने सूपविष्टम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "nahati sphatike citre ratnasanyogasanskrte",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "ratnasanyogena citrite sphatike sphatikanirnite",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.10",
+      "sarga": 49,
+      "verse": "10",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "alaṃkṛtābhir atyarthaṃ pramadābhiḥ samantataḥ । vālavyajanahastābhir ārāt samupasevitam ॥10॥",
+      "leonov_ru": "Со всех сторон его окружали присутствовавшие рядом женщины, Великолепно украшенные, держащие в руках опахала из ячьих хвостов.",
+      "commentary": {
+        "bhusana": "अलंकृताभिरत्यर्थं प्रमदाभिः समन्ततः ।\n\nवालव्यजनहस्ताभिरारात् समुपसेवितम्",
+        "siromani": "आरात् समीपे समन्ततो विद्यमानाभिः प्रमदाभिः समुपसेवितम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "alankrtabhiratyarthan pranadabhih sanantatah",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "arat sanipe sanantato vidyananabhih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.11",
+      "sarga": 49,
+      "verse": "11",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "durdhareṇa prahastena mahāpārśvena rakṣasā । mantribhir mantratattvajñair nikumbhena ca mantriṇā ॥11॥",
+      "leonov_ru": "Дурдхара, Прахастра, ракшас Махапаршва, Советники, знающие толк в советах, и советник Никумбха,",
+      "commentary": {
+        "bhusana": "दुर्धरेण प्रहस्तेन महापार्श्वेन रक्षसा ।\n\nमन्त्रिभिर्मन्त्रतत्त्वज्ञैर्निकुम्भेन च मन्त्रिणा"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "durdharena prahastena nahaparsvena raksasa",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.12",
+      "sarga": 49,
+      "verse": "12",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "upopaviṣṭaṃ rakṣobhiś caturbhir baladarpitam । kṛtsnaṃ parivṛtaṃ lokaṃ caturbhir iva sāgaraiḥ ॥12॥",
+      "leonov_ru": "Сидящие рядом [с троном] четверо, гордых [своей] мощью. [Был он подобен], целому миру (земле), окруженному четырьмя океанами,",
+      "commentary": {
+        "tilaka": "चतुर्भिः सागरैः परिवृतं तं कृत्स्नं लोकं भूमण्डलमिवेत्यर्थः",
+        "bhusana": "सुखोपविष्टं रक्षोभिश्चतुर्भिर्बलदर्पितैः ।\n\nकृत्स्न परिवृतं लोकं चतुर्भिरिव सागरैः"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "caturbhih sagaraih parivrtan tan",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sukhopavistan raksobhiscaturbhirbaladarpitaih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.13",
+      "sarga": 49,
+      "verse": "13",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "mantribhir mantratattvajñair anyaiś ca śubhabuddhibhiḥ । anvāsyamānaṃ sacivaiḥ surair iva sureśvaram ॥13॥",
+      "leonov_ru": "И прочими советниками, умелыми в совете, и другими светлыми разумом Был окружен [он] министрами, словно владыка богов – богами.",
+      "commentary": {
+        "bhusana": "सचिवैर्मन्त्रतत्त्वज्ञैरन्यैश्च शुभबुद्धिभिः ।\n\nअन्वास्यमानं रक्षोभिः सुरैरिव सुरेश्वरम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "sacivairnantratattvajnairanyaisca subhabuddhibhih",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.14",
+      "sarga": 49,
+      "verse": "14",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "apaśyad rākṣasapatiṃ hanūmān atitejasaṃ । viṣṭhitaṃ meruśikhare satoyam iva toyadam ॥14॥",
+      "leonov_ru": "Увидел Хануман владыку ракшасов, наделенного великим блеском, Сидящего перед ним, словно туча, наполненная водой, на пике горы Меру.",
+      "commentary": {
+        "bhusana": "अपश्यद्राक्षसपतिं हनुमानतितेजसम् ।\n\nविष्ठितं मेरुशिखरे सतोयमिव तोयदम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "apasyadraksasapatin hanunanatitejasan",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.15",
+      "sarga": 49,
+      "verse": "15",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "sa taiḥ sampīḍyamāno 'pi rakṣobhir bhīmavikramaiḥ । vismayaṃ paramaṃ gatvā rakṣo'dhipam avaikṣata ॥15॥",
+      "leonov_ru": "Хотя его и мучили ракшасы, наделенные свирепой мощью, Придя в великое изумление, смотрел он (Хануман) на владыку ракшасов.",
+      "commentary": {
+        "siromani": "बद्धानि केयूराणि येषु तैः भ्राजमानाः अङ्गदाः येषु तैः चन्दनोत्तमरूषितैः पञ्चशीर्षैरुरगैरिव प्रतीयमानमिति शेषः, केयूरो ऽङ्गदावान्तरभेदः\nस इति । तैः रक्षोभिः संपीड्यमानो ऽपि स हनूमान् विस्मयं गत्वा रक्षोधिपमवैक्षत",
+        "bhusana": "स तैः संपीड्यमानो ऽपि रक्षोभिर्भीमविक्रमैः ।\n\nविस्मयं परमं गत्वा रक्षोधिपमवैक्षत"
+      },
+      "pratika_check": {
+        "siromani": {
+          "pratika_iast": "baddhani keyurani yesu taih",
+          "matches_verse": true
+        },
+        "bhusana": {
+          "pratika_iast": "sa taih sanpidyanano pi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.16",
+      "sarga": 49,
+      "verse": "16",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "bhrājamānaṃ tato dṛṣṭvā hanumān rākṣaseśvaram । manasā cintayām āsa tejasā tasya mohitaḥ ॥16॥",
+      "leonov_ru": "Тогда Хануман, увидев сияющего владыку ракшасов, Задумался, подавленный его величием:",
+      "commentary": {
+        "bhusana": "भ्राजमानं ततो दृष्ट्वा हनुमान् राक्षसेश्वरम् ।\n\nमनसा चिन्तयामास तेजसा तस्य मोहितः",
+        "siromani": "भ्राजमानमिति । भ्राजमानं राक्षसेश्वरं दृष्ट्वा तस्य राक्षसेश्वरस्य तेजसा मोहितः कर्तव्यविषयकविवेकरहितो हनूमान् चिन्तयामास"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "bhrajananan tato drstva hanunan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "bhrajanananiti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.17",
+      "sarga": 49,
+      "verse": "17",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "aho rūpam aho dhairyam aho sattvam aho dyutiḥ । aho rākṣasarājasya sarvalakṣaṇayuktatā ॥17॥",
+      "leonov_ru": "«Какая красота! Какая стойкость! Какая мощь! Какой блеск! Какая у царя ракшасов наделенность всеми благими знаками!",
+      "commentary": {
+        "bhusana": "अहो रूपमहो धैर्यमहो सत्त्वमहो द्युतिः ।\n\nअहो राक्षसराजस्य सर्वलक्षणयुक्तता",
+        "siromani": "चिन्ताकारमाह अहो इति । राक्षसराजस्य रूपादिसर्वलक्षणयुक्तता च अहो आश्चर्यम्"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "aho rupanaho dhairyanaho sattvanaho",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "cintakaranaha aho",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.18",
+      "sarga": 49,
+      "verse": "18",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "yady adharmo na balavān syād ayaṃ rākṣaseśvaraḥ । syād ayaṃ suralokasya saśakrasyāpi rakṣitā ॥18॥",
+      "leonov_ru": "Если бы не был нечестивым этот могучий владыка ракшасов, Был бы он защитником даже мира богов вместе с Шакрой.",
+      "commentary": {
+        "tilaka": "सर्वसंपत्तिमतो ऽप्यधर्मवतो महान्दोष इत्याह-- यदीति । बलवानेवंविधसमृद्धो ऽप्युन्मूलनक्षमो ऽधर्मो यद्यस्मिन्न स्यात्तदा ऽयं राक्षसेश्वरः शक्रम्य सुरलोकस्यापि विष्णुवद्रक्षिता स्यात् । यद्वा धर्म इत्यर्शआद्यजन्तम् अयं बलवान्राक्षसेश्वरो यद्यधर्मवान्न स्यात्तदा शक्रस्येत्यादि प्राग्वत् । अधर्महतत्वात्तु स्वप्रजानामपि नाशक एवेति भावः",
+        "bhusana": "यद्यधर्मो न बलवान् स्यादयं राक्षसेश्वरः ।\n\nस्यादय सुरलोकस्य सशक्रस्यापि रक्षिता\nअयं रावणकृतः अधर्मः बलवान्न स्याद्यदि । तदा ऽयं राक्षसेश्वरः सशक्रस्य सुरलोकस्यापि रक्षिता स्यात्",
+        "siromani": "यदीति । अयं राक्षसेश्वरः यदि अधर्मः धर्मविरोधी न स्यात् तर्हि सुरलोकस्यापि रक्षिता स्यात्"
+      },
+      "pratika_check": {
+        "tilaka": {
+          "pratika_iast": "sarvasanpattinato pyadharnavato nahandosa ityaha",
+          "matches_verse": false,
+          "content_containment": 0.2,
+          "content_anchor": true
+        },
+        "bhusana": {
+          "pratika_iast": "yadyadharno na balavan syadayan",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "yaditi",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.19",
+      "sarga": 49,
+      "verse": "19",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "asya krūrair nṛśaṃsaiś ca karmabhir lokakutsitaiḥ । sarve bibhyati khalv asmāl lokāḥ sāmaradānavāḥ । ayaṃ hy utsahate kruddhaḥ kartum ekārṇavaṃ jagat ॥19॥",
+      "leonov_ru": "Из-за его жестоких деяний, порицаемых миром, Все живые существа вместе с богами и данавами боятся его, Ибо он способен, разгневанный, сделать вселенную одним океаном».",
+      "commentary": {
+        "bhusana": "अस्य क्रूरैर्नृशंसैश्च कर्मभिर्लोककुत्सितैः ।\n\nतेन बिभ्यति खल्वस्माल्लोकाः सामरदानवाः\nअयं ह्युत्सहते क्रुद्धः कर्तुमेकार्णवं जगत् ।\n\nइति चिन्तां बहुविधामकरोन्मतिमान् हरिः ।\n\nदृष्ट्वा राक्षसराजस्य प्रभावममितौजसः",
+        "siromani": "अस्येति । लोककुत्सितैः सर्वजननिन्दितैः नृशंसैः घातुकैः अत एव क्रूरैः अस्य कर्मभिः सामरदानवाः सर्वे लोकाः अस्मात् रावणाद्ब्रिभ्यति\nअयमिति । क्रुद्धः अयं जगदेकार्णवं कर्तुम् उत्सहते समर्थो भवति इति बहुविधां चिन्तां राक्षसराजस्य प्रभावं दृष्ट्वा ऽपि अकरोत् । सार्धश्लोक एकान्वयी"
+      },
+      "pratika_check": {
+        "bhusana": {
+          "pratika_iast": "asya krurairnrsansaisca karnabhirlokakutsitaih",
+          "matches_verse": true
+        },
+        "siromani": {
+          "pratika_iast": "asyeti",
+          "matches_verse": true
+        }
+      }
+    },
+    {
+      "verse_id": "5.49.23",
+      "sarga": 49,
+      "verse": "23",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "भ्राजमानमित्यादि । वज्रसंयोगसंयुक्तैः वज्रकीलनेन संबद्धैः । अत्र भ्राजमानमित्यनुषज्यते"
+      }
+    },
+    {
+      "verse_id": "5.49.46",
+      "sarga": 49,
+      "verse": "46",
+      "ambiguous_marker": false,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "भक्तिभिः पङ्क्तिभिः । इत्थभूतलक्षणे तृतीया । यथा पङ्क्तयो भवन्ति तथा ऽनुलिप्त इत्यर्थः"
+      }
+    },
+    {
+      "verse_id": "5.49.810",
+      "sarga": 49,
+      "verse": "810",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "केयूरं भुजोपरि धार्यमाणमाभरणम् । अङ्गदं बाहुमध्यस्थाभरणम्"
+      }
+    },
+    {
+      "verse_id": "5.49.811",
+      "sarga": 49,
+      "verse": "811",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "केयूराङ्गदयोरवान्तरविशेष ऊह्यः"
+      }
+    },
+    {
+      "verse_id": "5.49.1114",
+      "sarga": 49,
+      "verse": "1114",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "siromani": "महापार्श्वेन स्थूलपार्श्ववता प्रहस्तेन रक्षसा मन्त्रतत्त्वज्ञैः मन्त्रिभिश्च मन्त्रिणा निकुम्भेन चोपोपविष्टं चतुर्भिः रक्षोभिः कृत्स्नं लोकं भुवनं परिवृतं तैर्मन्त्रतत्त्वज्ञैर्मन्त्रिभिः दुर्धरादिभिश्चतुर्भिरुपोपविष्टम् सचिवैः मन्त्रिभिः अन्यैर्मन्त्रिभिश्च सुरैः सुरेश्वरमिव आश्वास्यमानं मेरुशिखरे सतोयं तोयदमिव विष्ठितं राक्षसपतिं हनूमान् अपश्यत् त्रयोदशानामेकत्रान्वयः"
+      }
+    },
+    {
+      "verse_id": "5.49.1117",
+      "sarga": 49,
+      "verse": "1117",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "मन्त्रिभिः प्रशस्तमन्त्रैः । अतस्सचिवैरित्यपुनरुक्तिः"
+      }
+    },
+    {
+      "verse_id": "5.49.1517",
+      "sarga": 49,
+      "verse": "1517",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "tilaka": "मन्त्री बुद्धिसहायः । सचिवः कार्यसहायः ।। 5.49.13,14 ।।\n\nरक्षोधिपमवैक्षत, न तु रक्षः कृतपीडामित्यर्थः"
+      }
+    },
+    {
+      "verse_id": "5.49.1920",
+      "sarga": 49,
+      "verse": "1920",
+      "ambiguous_marker": true,
+      "sanskrit_iast": "",
+      "leonov_ru": "",
+      "commentary": {
+        "bhusana": "इत्यार्षे श्रीरामायणे वाल्मीकीये आदिकाव्ये श्रीमत्सुन्दरकाण्डे एकोनपञ्चाशः सर्गः ।। 5.49।।\n\nअस्येति । तेन कर्मभिः कृतेन पूर्वोक्तेनाधर्मेण हेतुना"
+      }
+    }
+  ]
+}
