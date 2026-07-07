@@ -125,6 +125,10 @@ def gate_status(note):
     g = note.get("gate") or {}
     if g.get("action") in ("accept", "edit") or g.get("decision") in ("accept", "edit"):
         return "⟦гейт М.Г. ✓ · сборочный гейт Леонова/Костиной⟧"
+    if note.get("_pending_batch"):
+        jv = (note.get("judge") or {}).get("verdict")
+        tag = f", судья: {jv}" if jv else ""
+        return f"⟦ожидает гейта М.Г. ({note['_pending_batch']}{tag})⟧"
     return "⟦ожидает гейта⟧"
 
 
@@ -137,6 +141,23 @@ def main():
     t1 = json.load(open(T1, encoding="utf-8"))["notes"]
     t2 = [n for n in json.load(open(T2, encoding="utf-8")) if "shloka" in n]
     canon = canonical_counts()
+
+    # gate-pending Phase-2 batches (batch-2/3): slot judge-passed candidates
+    # (keep/edit; no judge field = not yet judged → include, gate decides).
+    # park/reject/flag_anchor stay in the review sheets only — never in print.
+    import glob as _glob
+    pending = []
+    for bp in sorted(_glob.glob(os.path.join(DATA, "analysis", "phase2_batch*",
+                                             "batch*_candidates.json"))):
+        batch = os.path.basename(os.path.dirname(bp))
+        for n in json.load(open(bp, encoding="utf-8")).get("notes", []):
+            v = (n.get("judge") or {}).get("verdict")
+            if v in ("park", "reject", "flag_anchor"):
+                continue
+            m = re.match(r"5\.(\d+)\.(\d+)$", n.get("verse_id", ""))
+            if not m:
+                continue
+            pending.append((int(m.group(1)), int(m.group(2)), n, batch))
 
     leo = defaultdict(list)
     kos = defaultdict(list)
@@ -151,6 +172,11 @@ def main():
         m = re.match(r"V\.(\d+)\.(\d+)", n["shloka"])
         if m:
             t2map[(int(m.group(1)), int(m.group(2)))].append(n)
+    for s, v, n, batch in pending:
+        jn = dict(n)
+        jn["subtype"] = "commentator"
+        jn["_pending_batch"] = batch
+        t2map[(s, v)].append(jn)
 
     sargas = sorted(p.trans)
     body = []

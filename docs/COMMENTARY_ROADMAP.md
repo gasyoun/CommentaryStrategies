@@ -140,7 +140,15 @@ _Created: 01-07-2026 · Last updated: 07-07-2026_
    стихов (10.9%; 312 per-verse отказов с причинами, новая корзина `duplicate_of_tier1` = 41 —
    dedup-контекст яруса 1 сработал). Гейт М.Г.:
    [`data/analysis/phase2_batch2/review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/review.html)
-   → decisions.json → следующая сессия (**H159**). 🔴/⚪ песни — после гейта партии 2.
+   → decisions.json → следующая сессия (**H159**). ~~🔴/⚪ песни — после гейта партии 2.~~
+   ✅ **Партия 3 выполнена 07-07-2026 (H268)**: все **58 оставшихся сарг** сегментированы
+   (контент-анкор, verified precision 0.945–0.964) и отрисованы (Sonnet 5 `claude-sonnet-5` ×≤3,
+   контраст-первый контракт) — **227 кандидатов / 2734 стиха (8.3%)**, затем **LLM-судья §3.4**:
+   keep 209 / edit 5 / park 1 / reject 11 / flag_anchor 1. Гейт М.Г.:
+   [`commentarystrategies-sundarakanda-commentaries_batch3_review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/commentarystrategies-sundarakanda-commentaries_batch3_review.html)
+   (вердикты судьи показаны на карточках). Основание для запуска до гейта партии 2: регистр
+   утверждён пилотным гейтом (16/16), контентный гейт партий 2–3 остаётся обязательным —
+   ничто не применяется без decisions.json.
 
 ## 6. Сроки
 
@@ -211,5 +219,12 @@ _Created: 01-07-2026 · Last updated: 07-07-2026_
   Канон решений — [`LP_APPARATUS_DESIGN.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LP_APPARATUS_DESIGN.md);
   исполнение — [`H268`](https://github.com/gasyoun/Uprava/blob/main/handoffs/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md).
   Открытые предпосылки (человек): сборочный гейт, шаблон ЛП, полнота перевода 68 песней, судьба помет Костиной.
+- 2026-07-07 (позже) — **H268 машинная фаза ВЫПОЛНЕНА** (Fable 5 `claude-fable-5` оркестрация,
+  Sonnet 5 `claude-sonnet-5` ×20 драфтинг + ×3 судьи, ≤3 параллельно): партия 3 на все 58 сарг
+  (227 кандидатов, судья: keep 209); выравнивание >0.90 (контент-анкор, WS-C2); рубрика судьи §3.4
+  (WS-C1); контракт §3.1 контраст-первый (WS-B2); плотность измерена — ярус-1 Леонова-читательский
+  21.5%, merged-потолок **46.2%** > цели 37% (WS-A; «~36%» включал пометы Костиной);
+  **печатный ЛП-мастер собран** (`data/book/`, MD+DOCX, перевод полон — §8.3 закрыт; WS-D/WS-E).
+  Остались человеческие гейты §8 (зеркалированы в GTD 07-07).
 
 _Dr. Mārcis Gasūns_

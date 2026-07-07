@@ -78,6 +78,21 @@ def main():
         t2v[s].add(v)
         t2_by_sub[n.get("subtype", "base")][s].add(v)
 
+    # gate-pending Phase-2 batches (judge keep/edit or not yet judged) — the
+    # same inclusion rule as the print master (build_book_apparatus.py).
+    import glob
+    for bp in sorted(glob.glob(os.path.join(REPO, "data", "analysis",
+                                            "phase2_batch*", "batch*_candidates.json"))):
+        for n in json.load(open(bp, encoding="utf-8")).get("notes", []):
+            if (n.get("judge") or {}).get("verdict") in ("park", "reject", "flag_anchor"):
+                continue
+            m = re.match(r"5\.(\d+)\.(\d+)$", n.get("verse_id", ""))
+            if not m:
+                continue
+            s, v = int(m.group(1)), int(m.group(2))
+            t2v[s].add(v)
+            t2_by_sub["commentator_pending"][s].add(v)
+
     rows = []
     tot = defaultdict(int)
     for s in sorted(vc):

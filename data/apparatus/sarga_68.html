@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сундараканда · песнь 68 — сводный аппарат (5 источников)</title>
+<link rel="stylesheet" href="../../css/commentary.css">
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#222;--mut:#777;--line:#e4ddd0;--acc:#7a5c2e;
+--ok:#2e7d32;--edit:#b8860b;--no:#b23b3b;--t1:#8b2f2f;--lex:#2e5d7d;--p2:#6a4fa0;
+--ed:#8a6d1f;--ct:#3e7d5c;}
+*{box-sizing:border-box}
+body{font:16px/1.55 Georgia,serif;margin:0;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;background:#fff;border-bottom:2px solid var(--acc);
+padding:12px 20px;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+h1{font-size:19px;margin:0 0 4px}
+.breadcrumb{font:12px system-ui,sans-serif;color:var(--mut);margin:0 0 4px}
+.breadcrumb a{color:var(--acc)}
+.bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font:13px/1.4 system-ui,sans-serif;color:var(--mut)}
+.bar b{color:var(--ink)}
+button{font:13px system-ui,sans-serif;padding:6px 12px;border:1px solid var(--acc);
+background:#fff;color:var(--acc);border-radius:5px;cursor:pointer}
+button:hover{background:var(--acc);color:#fff}
+main{max-width:960px;margin:0 auto;padding:18px}
+.legend{font:12px system-ui,sans-serif;background:#f2ecdd;border:1px solid var(--line);
+border-radius:6px;padding:8px 12px;margin:0 0 14px;line-height:2}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:8px;
+padding:14px 18px;margin:0 0 20px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.vhead{font:13px system-ui,sans-serif;color:var(--mut);margin-bottom:6px}
+.vhead b{font-size:15px;color:var(--ink)}
+.verse{background:#f7f2e8;border-radius:6px;padding:8px 12px;margin:6px 0 10px}
+.verse .sa{font-style:italic;color:#4a3f2c}
+.verse .ru{color:#333}
+.note{border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:6px;
+padding:10px 12px;margin:10px 0}
+.note.l-tier1{border-left-color:var(--t1);background:#fdf6f6}
+.note.l-lexical{border-left-color:var(--lex)}
+.note.l-phase2{border-left-color:var(--p2)}
+.note.l-edition{border-left-color:var(--ed);background:#fbf8ef}
+.note.l-crosstext{border-left-color:var(--ct)}
+.note.d-accept{outline:2px solid var(--ok)}
+.note.d-edit{outline:2px solid var(--edit)}
+.note.d-reject{opacity:.6;outline:2px solid var(--no)}
+.badge{font:11px system-ui,sans-serif;padding:1px 8px;border-radius:10px;
+background:#eee5d3;color:var(--acc);margin-right:5px;white-space:nowrap}
+.badge.b-tier1{background:var(--t1);color:#fff}
+.badge.b-lexical{background:var(--lex);color:#fff}
+.badge.b-phase2{background:var(--p2);color:#fff}
+.badge.b-edition{background:var(--ed);color:#fff}
+.badge.b-crosstext{background:var(--ct);color:#fff}
+.badge.b-status{background:#fff;border:1px solid var(--line);color:var(--mut)}
+.badge.b-gate{background:#fff3cd;border:1px solid var(--edit);color:#7a5c00}
+.badge.b-crit{background:#f8d7da;border:1px solid var(--no);color:#842029}
+.lemma{font-style:italic;color:var(--acc)}
+.ntext{margin:6px 0 0;font-size:15px}
+.collide{font:12px system-ui,sans-serif;background:#fff0f0;border:1px dashed var(--no);
+color:var(--no);border-radius:5px;padding:3px 8px;margin:6px 0 0;display:inline-block}
+.meta{font:12px system-ui,sans-serif;color:var(--mut);margin-top:4px}
+.par{background:#f2f7f4;border-radius:5px;padding:6px 10px;margin:6px 0 0;font-size:13px}
+.par .sa{font-style:italic}
+details{margin:6px 0 0;font-size:13px}
+summary{cursor:pointer;color:var(--acc);font:12px system-ui,sans-serif}
+.comm{margin:5px 0;padding:5px 9px;background:#f6f6f2;border-radius:5px;font-size:13px}
+.comm .who{font:11px system-ui,sans-serif;color:var(--mut);display:block}
+.dev{font-family:"Nirmala UI","Noto Sans Devanagari",serif}
+.controls{margin-top:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+font:13px system-ui,sans-serif}
+.controls label{display:inline-flex;gap:4px;align-items:center;padding:4px 10px;
+border:1px solid var(--line);border-radius:20px;cursor:pointer}
+.controls input[type=radio]{accent-color:var(--acc)}
+textarea,.rr{width:100%;font:14px Georgia,serif;padding:8px;border:1px solid var(--line);
+border-radius:5px;margin-top:6px}
+.hidden{display:none}
+</style></head><body>
+<header>
+<div class="breadcrumb"><a href="../../index.html">Commentary Strategies</a> › Сундараканда · сводный аппарат</div>
+<h1>Песнь 68 — сводный аппарат из 5 источников (пилот H141)</h1>
+<div class="bar">
+<span id="progress">—</span>
+<button onclick="dl()">⬇ Скачать decisions.json</button>
+<button onclick="cp()">⧉ Копировать JSON</button>
+<button onclick="reset()">↺ Сброс</button>
+<span>Нумерация — южная вульгата (перевод М. Леонова). Голосование сохраняется в браузере (localStorage); ярус 1 — только показ, без голосования.</span>
+</div></header>
+<main class="container"><div id="app"></div></main>
+<script>
+const D = {"_meta": {"generated_by": "scripts/build_sarga_apparatus.py", "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)", "sarga": 68, "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py", "sources": {"tier1": "ярус 1 · Леонов/Костина", "lexical": "Фаза 1 · лексич.", "phase2": "Фаза 2 · комментаторы", "edition": "издания · сноска", "crosstext": "cross-text"}, "verses_total": 34, "verses_with_notes": 19, "notes_by_layer": {"tier1": 13, "lexical": 9, "phase2": 2, "edition": 0, "crosstext": 2}}, "sarga": 68, "verses": [{"verse_id": "5.68.1", "verse": "1", "sanskrit_iast": "athāham uttaraṃ devyā punar uktaḥ sasambhramam । tava snehān naravyāghra sauhāryād anumānya ca ॥1॥", "leonov_ru": "И вот еще сказала царевна мне взволнованно С любовью к тебе, о тигр среди мужей, с дружбой и уважением [ко мне]:", "commentary": {"tilaka": "तव स्नेहान्मयि सौहृदात्सुहृद्भावान्मामनुमान्य संमान्य ससंभ्रमो गन्तुं सत्वरो ऽहमुत्तरं कार्यं प्रति पुनः पुनरुक्तः", "bhusana": "अथाहमुत्तरं देव्या पुनरुक्तः ससम्भ्रमः ।\n\nतव स्नेहान्नरव्याघ्र सौहार्दादनुमान्य वै"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.1:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "Мне сказала взволнованно (punar uktaḥ sasambhramam) – во многих южных рукописях «Рамаяны» имеется вариант sasambhramaḥ, что комментаторы истолковывают как [мне], торопящемуся в дорогу.Почтительно и сердечно (sauhāryād anumānya ca) – букв. «почтив из дружеского чувства». Комментаторы полагают, что здесь речь идет об отношении Ситы к Хануману."}, {"id": "lexical:5.68.1:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "naravyāghra", "note_ru": "Тигр среди людей (naravyāghra) — nara-vyāghra «тигр среди людей» — animal-metaphor ранга, симметричная puruṣarṣabha. Первое вхождение в кн. V.", "type": "А", "subtype": "base", "trigger": "epithet", "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)", "collision_tier1": true}]}, {"verse_id": "5.68.2", "verse": "2", "sanskrit_iast": "evaṃ bahuvidhaṃ vācyo rāmo dāśarathis tvayā । yathā mām āpnuyāc chīghraṃ hatvā rāvaṇam āhave ॥2॥", "leonov_ru": "«Должен ты так сказать различными способами Раме, сыну Дашаратхи, Чтобы скорее он вызволил меня, убив в бою Равану.", "commentary": {"bhusana": "एवं बहुविधं वाच्यो रामो दाशरथिस्त्वया ।\n\nयथा मामाप्नुयाच्छीघ्रं हत्वा रावणमाहवे"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.2:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "kostina", "note_ru": "[Е. Костина] «Отпрыска» У слова отрицательная коннотация"}]}, {"verse_id": "5.68.3", "verse": "3", "sanskrit_iast": "yadi vā manyase vīra vasaikāham ariṃdama । kasmiṃś cit saṃvṛte deśe viśrāntaḥ śvo gamiṣyasi ॥3॥", "leonov_ru": "Если ты согласен, герой, останься на день, о губитель врагов. Отдохнув где-нибудь в укромном месте, завтра ты отправишься в путь.", "commentary": {"bhusana": "अथेत्यादि । हे नरव्याघ्र  तव स्नेहात्, मयीति शेषः । सौहार्दात् सुहृद्भावात्, आप्तत्वादिति यावत् । अनुमान्य सम्यान्य । उत्तरं ततः परम् उत्तरं कार्यं वा । पुनर्देव्या ऽहमुक्त इत्यन्वयः । ससम्भ्रमः गमनत्वरान्वित इत्यर्थः ।। 5.68.1,2 ।।\n\nयदि वा मन्यसे वीर वसैकाहमरिन्दम ।\n\nकस्मिंश्चित्संवृते देशे विश्रान्तः श्वो गमिष्यसि"}, "has_tier1": false, "notes": [{"id": "crosstext:5.68.3:0", "layer": "crosstext", "layer_label": "cross-text", "votable": true, "status": "review_required", "lemma_iast": "manyu vāraṇa - mahāsattva mahābhāga śoka", "note_ru": "", "type": "А", "cluster": "archive_parallels", "cluster_label": "DCS parallel-search (archive.sqlite)", "shloka_ref": "V.68.3,8,11,14–15,17–19,21–24,26", "work_label": "Rām", "verse_address": "Rām 5.37.19,24,27,29,30,32,34,35,37,38,39,40,48 (крит. изд.)", "parallel_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastat tasya sadṛśaṁ bhavet ||", "sundara_sa_iast": "balais tu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthas tat tasya sadṛśaṁ bhavet ||", "quality": "GOOD", "source": "DCS parallel-search (GOOD); Rām 5.37.19,24,27,29,30,32,34,35,37,38,39,40,48 (крит. изд.)", "edition_flag": "vulgate", "shloka_critical": "V.66.3,8,11,14,15,17,18,19,21,22,23,24,26", "verse_address_vulgate": "Rām V.39.20,25,28,30–31,33,35–36,38–41,49 (вульгата)"}]}, {"verse_id": "5.68.4", "verse": "4", "sanskrit_iast": "mama cāpy alpabhāgyāyāḥ sāmnidhyāt tava vānara । asya śokavipākasya muhūrtaṃ syād vimokṣaṇam ॥4॥", "leonov_ru": "Благодаря твоему присутствию рядом [со мной], о обезьяна, у меня, обделенной счастьем, Будет на некоторое время освобождение от плода скорби (от глубокой скорби).", "commentary": {"tilaka": "यथा मां प्राप्नुयात्तथा यतस्वेति शेषः ।। 5.68.2,3 ।।\n\nएकदिनवासफलमाह-- मम चेति । तव सांनिध्यादल्पभाग्याया ममास्य महतः शोकविपाकस्य शोकरूपस्य पापफलस्य मुहूर्तं मोक्षणं स्यादित्यन्वयः", "bhusana": "मम चाप्यल्पभाग्यायाः सान्निध्यात्तव वीर्यवन् ।\n\nअस्य शोकविपाकस्य मुहूर्तं स्याद्विमोक्षणम्"}, "has_tier1": false, "notes": [{"id": "lexical:5.68.4:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "alpabhāgyā", "note_ru": "Альпабхагья (alpa-bhāgyā, f.) — «наделённая малой долей (судьбы)», alpa («маленький, ничтожный») + bhāgya («удел, судьба, счастье», от √bhaj- «разделять», Whitney #517). MW: alpabhāgya 'having little fortune, unfortunate'. Самоопределение Ситы mama cāpy alpabhāgyāyāḥ — «а у меня, обделённой счастьем» — работает в терминах концепции daiva / bhāgya: судьба как заранее распределённая «доля» существа. Alpa здесь не просто «несчастная», а констатация онтологического дефицита: её bhāgya мало по размеру. Это создаёт напряжение с pativratā-статусом Ситы (V.11.46): сверхъестественная мощь pativratā не конвертируется в личное bhāgya — парадокс, на котором строится её трагедия.", "type": "А", "subtype": "lexical", "trigger": "etymology", "source": "dic_mw:alpaBAgya+warnemyr(bhaj)"}, {"id": "lexical:5.68.4:1", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "śokavipāka", "note_ru": "Шокавипака (śoka-vipāka, m.) — «плод / созревание скорби», śoka + vipāka (vi+√pac-, «созревать, вариться», Whitney #758; MW: vipāka 'ripeness, maturation; the consequence of past actions'). Термин vipāka восходит к агрономической метафоре: зерно вызревает → последствие (karma) «вызревает» → даёт плод. Śoka-vipāka = скорбь, достигшая полного созревания, вся сила которой теперь ощущается. Апте: vipāka 'the result of actions done in a former state of existence'. В подстрочнике «плод глубокой скорби» сохраняет метафору, но теряется отсылка к кармической технологии. Sītā говорит о присутствии Ханумана как о «моменте освобождения от vipāka» — технически точно: временное облегчение не уничтожает кармическое последствие.", "type": "А", "subtype": "lexical", "trigger": "etymology", "source": "dic_mw:vipAka+warnemyr(pac)"}]}, {"verse_id": "5.68.6", "verse": "6", "sanskrit_iast": "tavādarśanajaḥ śoko bhūyo māṃ paritāpayet । duḥkhād duḥkhaparābhūtāṃ durgatāṃ duḥkhabhāginīm ॥6॥", "leonov_ru": "Скорбь, возникшая из-за того, что не вижу тебя, дальше будет терзать меня, Которую терзает горе за горем, несчастную, чей удел – страдание.", "commentary": {"bhusana": "तवादर्शनजः शोको भूयो मां परितापयेत् ।\n\nदुःखाद्दुःखपराभूतां दुर्गतां दुःखभागिनीम्"}, "has_tier1": false, "notes": [{"id": "lexical:5.68.6:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "duḥkhabhāginī", "note_ru": "Духкхабхагини (duḥkha-bhāginī, f.) — «наделённая скорбью как своей долей», duḥkha + bhāginī (f. от bhāgin «имеющий долю», bhāga + суфф. -in-). MW: bhāgin 'partaking of, sharing in; prosperous, fortunate'. Ironical application: bhāgin/bhāginī в обычном употреблении означает «удачливый, владеющий долей»; здесь — «владеющая долей» (bhāginī), но «доля» — duḥkha. Это зеркало к alpabhāgyā в 68.4: там «мало bhāgya», здесь «много duḥkha в качестве bhāga». Двойная аббревиация той же мысли: Сита «богата» страданием и «бедна» счастьем. Тройная анафора страдания в 68.6 (duḥkhād duḥkhaparābhūtāṃ durgatāṃ duḥkhabhāginīm) создаёт ритуал-фигуру накопления, стирающую эту «кандидата на красоту» до формулы скорби.", "type": "А", "subtype": "lexical", "trigger": "compound", "source": "dic_mw:BAgin+warnemyr(bhaj)"}]}, {"verse_id": "5.68.8", "verse": "8", "sanskrit_iast": "kathaṃ nu khalu duṣpāraṃ tariṣyanti mahodadhim । tāni haryṛkṣasainyāni tau vā naravarātmajau ॥8॥", "leonov_ru": "Как же воистину переправятся через неодолимый океан Эти войска обезьян и медведей и эти два сына лучшего из людей?", "commentary": {"bhusana": "कथं नु खलु दुष्पारं तरिष्यन्ति महोदधिम् ।\n\nतानि हर्यृक्षसैन्यानि तौ वा नरवरात्मजौ"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.8:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "[Claude.AI — не обязательно] ? [кат.8 — поэтика] Формульный повтор — ср. V.39.25"}]}, {"verse_id": "5.68.9", "verse": "9", "sanskrit_iast": "trayāṇām eva bhūtānāṃ sāgarasyāsya laṅghane । śaktiḥ syād vainateyasya vāyor vā tava cānagha ॥9॥", "leonov_ru": "Только у трех существ есть способность пересечь океан – У Вайнатейи (Гаруды), у Вайю (Ветра) и у тебя, о безупречный.", "commentary": {"bhusana": "त्रयाणामेव भूतानां सागरस्यास्य लङ्घने ।\n\nशक्तिः स्याद्वैनतेयस्य तव वा मारुतस्य वा"}, "has_tier1": false, "notes": [{"id": "lexical:5.68.9:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "trayāṇāṃ bhūtānām", "note_ru": "Траяням бхутанам (trayāṇāṃ bhūtānām) — «[только] трёх существ» (trayāṇāṃ, gen. pl. от traya «тройка» + bhūtānām, gen. pl. от bhūta «существо, живое»). Структурно фраза выполняет функцию «нумеративного исключения» (vyatireka-alaṃkāra): из всего множества существ только три (Gаруда / Вайю / Хануман) способны на невозможное. Сита формулирует тройную иерархию не случайно: Гаруда = птица (надвоздушный мир), Вайю = ветер (воздушный мир), Хануман = ваю-путра, сын ветра. Тройка охватывает три уровня вертикального космоса (div / antarikṣa / dvīpa). Тем самым переправа через океан — это не просто физическая задача, а задача, требующая космического масштаба существа. Подстрочник «только у трёх существ» передаёт факт, но не космологическую структуру аргумента.", "type": "А", "subtype": "lexical", "trigger": "realia", "source": "warnemyr(traya+bhUta)"}]}, {"verse_id": "5.68.10", "verse": "10", "sanskrit_iast": "tad asmin kāryaniyoge vīraivaṃ duratikrame । kiṃ paśyasi samādhānaṃ brūhi kāryavidāṃ vara ॥10॥", "leonov_ru": "В этой задаче, о герой, так трудновыполнимой, Какое ты видишь решение? Поведай, о лучший из знающих, как надлежит действовать.", "commentary": {"bhusana": "तदस्मिन् कार्यनिर्योगे वीरैवं दुरतिक्रमे ।\n\nकिं पश्यसि समाधानं ब्रूहि कार्यविदां वर"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.10:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "[Claude.AI — не обязательно] ? [кат.8 — поэтика] Формульный повтор — ср. V.39.27"}]}, {"verse_id": "5.68.11", "verse": "11", "sanskrit_iast": "kāmam asya tvam evaikaḥ kāryasya parisādhane । paryāptaḥ paravīraghna yaśasyas te balodayaḥ ॥11॥", "leonov_ru": "Конечно, ты и один способен завершить это дело, О губитель вражеских героев, [будет] славен твой успех (твой успех принесет тебе славу).", "commentary": {"tilaka": "यद्यपि त्वमेव पर्याप्तः । सकलराक्षसवधपूर्वं मन्मोचन इति शेषः । तथापीदृशो बलोदयस्तवैव यशस्यो यशोवर्धकः स्यात्", "bhusana": "काममस्य त्वमेवैकः कार्यस्य परिसाधने ।\n\nपर्याप्तः परवीरघ्न यशस्यस्ते बलोदयः"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.11:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "[Claude.AI — не обязательно] ? [кат.8 — поэтика] Формульный повтор — ср. V.39.28"}, {"id": "lexical:5.68.11:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "parisādhana", "note_ru": "Парисадхана (pari-sādhana, n.) — «полное осуществление, завершение», pari- (усилительная приставка «кругом, вокруг, полностью») + sādhana (√sādh-, «достигать, совершать», Whitney #224). MW: sādhana 'accomplishment, performance; a means of accomplishing'. Pari-sādhana — не просто «выполнение», а завершение в полной мере, без остатка. Сита говорит: kāmam asya tvam evaikaḥ kāryasya parisādhane / paryāptaḥ «ты один вполне достаточен для parisādhana этого дела». Это признание абсолютной компетентности Ханумана — но именно через термин parisādhana Сита оговаривает, что желает иного (68.12–13): победы Рамы с армией, а не тихого одиночного подвига. Лексическая точность отражает её дипломатическую задачу.", "type": "А", "subtype": "lexical", "trigger": "gloss", "source": "warnemyr(sAdh)+dic_mw:sADana", "collision_tier1": true}, {"id": "crosstext:5.68.11:0", "layer": "crosstext", "layer_label": "cross-text", "votable": true, "status": "review_required", "lemma_iast": "tathā eva", "note_ru": "", "type": "А", "cluster": "archive_parallels", "cluster_label": "DCS parallel-search (archive.sqlite)", "shloka_ref": "V.68.11,14–15", "work_label": "Rām", "verse_address": "Rām 5.54.3–5 (крит. изд.)", "parallel_sa_iast": "balaistu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthastasya tat sadṛśaṁ bhavet ||", "sundara_sa_iast": "balais tu saṁkulāṁ kṛtvā laṅkāṁ parabalārdanaḥ |māṁ nayed yadi kākutsthas tat tasya sadṛśaṁ bhavet ||", "quality": "GOOD", "source": "DCS parallel-search (GOOD); Rām 5.54.3–5 (крит. изд.)", "edition_flag": "vulgate", "shloka_critical": "V.66.11,14,15", "verse_address_vulgate": "Rām V.56.11–13 (вульгата)", "collision_tier1": true}]}, {"verse_id": "5.68.12", "verse": "12", "sanskrit_iast": "balaiḥ samagrair yadi māṃ hatvā rāvaṇam āhave । vijayī svapurīṃ rāmo nayet tat syād yaśaskaram ॥12॥", "leonov_ru": "Если вместе с войсками убив Равану в бою, Победитель Рама меня вернет в свой город, то это увеличит его славу.", "commentary": {"tilaka": "यदि तु रामो रावणं हत्वा मां नयेत्, तदा तन्नयनं तस्य यशस्करं स्यात् । अतस्तेनैवागत्य मोचनं युक्तमिति भावः", "bhusana": "बलैः समग्रैर्यदि मां हत्वा रावणमाहवे ।\n\nविजयी स्वां पुरीं रामो नयेत्तत् स्याद्यशस्करम्"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.12:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "Строфы 4-12 с небольшими изменениями повторяют строфы V,39,20-29."}, {"id": "phase2:5.68.12:0", "layer": "phase2", "layer_label": "Фаза 2 · комментаторы", "votable": true, "status": "ожидает гейта М.Г.", "mg_comment": "", "lemma_iast": "tan nayanaṃ yaśaskaram", "note_ru": "По Тилаке, довод Ситы в 68.11-12 не противоречие, а уступительная конструкция: хотя Хануман один вполне способен исполнить дело (yadyapi tvam eva paryāptaḥ), больший подвиг — победа над Раваной и возвращение Ситы самим Рамой с войском — принесёт славу именно ему (tasyaiva yaśaskaram); поэтому, заключает Тилака, «правильно, чтобы он сам пришёл и освободил» (tenaiva āgatya mocanam yuktam).", "type": "Б", "source_commentary": ["tilaka"], "why_proposed": "снимает кажущуюся избыточность между «Хануман один справится» (68.11) и «пусть Рама придёт с войском» (68.12) — Тилака поясняет это как дипломатический ход Ситы (уступительная конструкция, а не противоречие), ориентированный на славу Рамы; ни подстрочник, ни Леонов/Костина, ни Phase-1 эту связку не разбирают.", "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"}, "collision_tier1": true}]}, {"verse_id": "5.68.13", "verse": "13", "sanskrit_iast": "yathāhaṃ tasya vīrasya vanād upadhinā hṛtā । rakṣasā tad bhayād eva tathā nārhati rāghavaḥ ॥13॥", "leonov_ru": "Не надлежит Рагхаве [действовать] так, как [действовал] ракшас из страха перед тем героем, Похитив меня из лесу при помощи уловки.", "commentary": {"tilaka": "उपधिना छलेन ।। 5.68.13,14 ।।\n\nयथा तस्यानुरूपं विक्रान्तं भवति तथा त्वमेवोपपादय", "bhusana": "यथा ऽहं तस्य वीरस्य वनादुपधिना हृता ।\n\nरक्षसा तद्भया देव तथा नार्हति राघवः"}, "has_tier1": false, "notes": [{"id": "lexical:5.68.13:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "upādhi", "note_ru": "Упадхи (upādhi, m.) — «уловка, обман, хитрость, подмена», upa- + ādhi (√dhā-, «класть»; буквально «подкладывание»). MW: upādhi 'a condition, qualification; fraud, imposition, disguise'. В 68.13 Сита характеризует похищение Раваной: vanād upadhinā hṛtā «похищена из леса при помощи upadhi». Upādhi здесь — конкретная хитрость с золотым оленем (Mārica): форма мошенничества, а не открытое нападение. Термин несёт правовую коннотацию в дхармашастре: upādhi = fraudulent possession, недействительное завладение, полученное обманом. Сита тем самым юридически определяет своё похищение как незаконное по основанию: Равана не победил Раму в bою, а прибегнул к upādhi. Подстрочник «уловка» близко к тексту, но упускает правовую специфику.", "type": "А", "subtype": "lexical", "trigger": "gloss", "source": "dic_mw:upADi+warnemyr(dhA)"}]}, {"verse_id": "5.68.15", "verse": "15", "sanskrit_iast": "tad yathā tasya vikrāntam anurūpaṃ mahātmanaḥ । bhavaty āhavaśūrasya tathā tvam upapādaya ॥15॥", "leonov_ru": "Ты добейся того, чтобы великий духом, отважный в битвах [Рама] Был достоин своей отваги.", "commentary": {"bhusana": "तद्यथा तस्य विक्रान्तमनुरूपं महात्मनः ।\n\nभवत्याहवशूरस्य तथा त्वमुपपादय"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.15:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "Строфы 14 и 15 повторяют с небольшими изменениями строфы V,39,30-31.[Claude.AI — не обязательно] ? [кат.8 — поэтика] Формульный повтор — ср. V.39.31"}]}, {"verse_id": "5.68.16", "verse": "16", "sanskrit_iast": "tad arthopahitaṃ vākyaṃ praśritaṃ hetusaṃhitam । niśamyāhaṃ tataḥ śeṣaṃ vākyam uttaram abravam ॥16॥", "leonov_ru": "Тогда, слова, исполненные смысла, скромные и разумные Услышав, я сказал оставшиеся (последние) слова:", "commentary": {"bhusana": "तदर्थोपहितं वाक्यं प्रश्रितं हेतुसंहितम् ।\n\nनिशम्याहं ततः शेषं वाक्यमुत्तरमब्रुवम्"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.16:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "Строфа является повтором V,39, 32 с заменой «Хануман» на «я»."}]}, {"verse_id": "5.68.17", "verse": "17", "sanskrit_iast": "devi haryṛkṣasainyānām īśvaraḥ plavatāṃ varaḥ । sugrīvaḥ sattvasampannas tvadarthe kṛtaniścayaḥ ॥17॥", "leonov_ru": "«Царевна, владыка войск обезьян и медведей, лучший из обезьян, Сугрива, наделенный мощью, исполнен решимости относительно тебя.", "commentary": {"bhusana": "देवि हर्यृक्षसैन्यानामीश्वरः प्लवतां वरः ।\n\nसुग्रीवः सत्त्वसम्पन्नस्तवार्थे कृतनिश्चयः"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.17:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "kostina", "note_ru": "Буквальный повтор строфы V,39,33.[Е. Костина] «водитель войск» Этот термин точно применим в таком контексте?[Claude.AI — не обязательно] ? [кат.8 — поэтика] Формульный повтор — ср. V.56.15"}]}, {"verse_id": "5.68.21", "verse": "21", "sanskrit_iast": "madviśiṣṭāś ca tulyāś ca santi tatra vanaukasaḥ । mattaḥ pratyavaraḥ kaś cin nāsti sugrīvasaṃnidhau ॥21॥", "leonov_ru": "Обезьяны там превосходят меня или равны [мне]. Нет никого у Сугривы, кто бы был хуже (ниже) меня.", "commentary": {"bhusana": "मद्विशिष्टाश्च तुल्याश्च सन्ति तत्र वनौकसः ।\n\nमत्तः प्रत्यवरः कश्चिन्नास्ति सुग्रीवसन्निधौ"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.21:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "[Claude.AI — не обязательно] ? [кат.8 — поэтика] Формульный повтор — ср. V.39.38"}]}, {"verse_id": "5.68.22", "verse": "22", "sanskrit_iast": "ahaṃ tāvad iha prāptaḥ kiṃ punas te mahābalāḥ । na hi prakṛṣṭāḥ preṣyante preṣyante hītare janāḥ ॥22॥", "leonov_ru": "Раз я добрался сюда, тем более [смогут] и те могучие. Ведь лучших не посылают, посылают иных (худших) людей.", "commentary": {"bhusana": "अहं तावदिह प्राप्तः किं पुनस्ते महाबलाः ।\n\nन हि प्रकृष्टाः प्रेष्यन्ते प्रेष्यन्ते हीतरे जनाः"}, "has_tier1": false, "notes": [{"id": "lexical:5.68.22:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "prakṛṣṭa", "note_ru": "Пракришта (prakṛṣṭa, adj.) — «выдающийся, лучший», pra- (усил.) + kṛṣṭa (p.p.p. от √kṛṣ-, «тянуть, влечь», Whitney #267). MW: prakṛṣṭa 'drawn forward, eminent, excellent'. Хануман формулирует принцип na hi prakṛṣṭāḥ preṣyante / preṣyante hītare janāḥ — «лучших не посылают, посылают людей по чину ниже». Это стандартный принцип дипломатии и военной стратегии: prakṛṣṭa сберегается для финального удара, а не для разведки. Хануман позиционирует себя как «не лучшего», тем самым косвенно превознося армию Сугривы. Лексически prakṛṣṭa противопоставляется itara («прочим, другим») — структурная пара, образующая аргумент a minori ad maius.", "type": "А", "subtype": "lexical", "trigger": "etymology", "source": "dic_mw:prakfzwa+warnemyr(kRz)"}]}, {"verse_id": "5.68.23", "verse": "23", "sanskrit_iast": "tad alaṃ paritāpena devi manyur apaitu te । ekotpātena te laṅkām eṣyanti hariyūthapāḥ ॥23॥", "leonov_ru": "Потому не печалься, царевна, пусть оставит тебя горе. Одним прыжком те обезьяны достигнут Ланки.", "commentary": {"bhusana": "तदलं परितापेन देवि मन्युर्व्यपैतु ते ।\n\nएकोत्पातेन वै लङ्कामेष्यन्ति हरियूथपाः"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.23:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "[Claude.AI — не обязательно] ? [кат.8 — поэтика] Формульный повтор — ср. V.39.40"}, {"id": "phase2:5.68.23:0", "layer": "phase2", "layer_label": "Фаза 2 · комментаторы", "votable": true, "status": "ожидает гейта М.Г.", "mg_comment": "", "lemma_iast": "manyur apaitu", "note_ru": "У Тилаки и Бхушаны отмечено, что manyu здесь означает не «гнев» и не «решимость», а «уныние, скорбь» (dainyam) — оба комментатора ссылаются на «Амаракошу» («manyur dainye kratau krudhi» — manyu значит «уныние», «решимость» или «гнев» в зависимости от контекста), и здесь применимо только первое значение.", "type": "Б", "source_commentary": ["tilaka", "bhusana"], "why_proposed": "разрешает многозначность слова manyu (уныние / решимость / гнев) ссылкой на именованный лексикографический авторитет (Амаракоша) и объясняет, почему в подстрочнике «горе» — точный, а не приблизительный перевод; ни подстрочник сам по себе, ни Леонов/Костина, ни Phase-1 эту многозначность не оговаривают.", "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"}, "collision_tier1": true}]}, {"verse_id": "5.68.24", "verse": "24", "sanskrit_iast": "mama pṛṣṭhagatau tau ca candrasūryāv ivoditau । tvatsakāśaṃ mahābhāge nṛsiṃhāv āgamiṣyataḥ ॥24॥", "leonov_ru": "На моей спине те два льва среди мужей, подобные восходящим солнцу и луне, Прилетят к тебе, о наделенная великой долей.", "commentary": {"bhusana": "मम पृष्ठगतौ तौ च चन्द्रसूर्याविवोदितौ ।\n\nत्वत्सकाशं महाभागे नृसिंहावागमिष्यतः"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.24:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "Придут к тебе, о благая (tvatsakāśaṃ mahābhāge… āgamiṣyataḥ) – букв. «придут к тебе, наделенная великой долей». Строфы 17-24 с некоторыми изменениями повторяют строфы V,39, 33-41."}, {"id": "lexical:5.68.24:0", "layer": "lexical", "layer_label": "Фаза 1 · лексич.", "votable": true, "status": "review_required", "lemma_iast": "mama pṛṣṭhagata", "note_ru": "Мама пришхагата (mama pṛṣṭha-gata, adj.) — «сидящие у меня на спине», mama (gen. «мой») + pṛṣṭha («спина, хребет») + gata (p.p.p. от √gam- «идти, прибывать»). Образ Рамы и Лакшманы, летящих на спине Ханумана (mama pṛṣṭhagatau... āgamiṣyataḥ) — уникальная инверсия обычной эпической иконографии: герои не едут на ваhane-звере (вахане), но сам Хануман как ваhana. В пуранической традиции Хануман — «безвозмездный носитель» (naiṣkarmya-sevaka) Рамы; эта сцена — одно из немногих мест Вальмики, где образ буквализируется. Кроме того, mama pṛṣṭhagata создаёт симметрию с ранней сценой Ситы и её отказа (naiṣa dharmo mahākape... yat te pṛṣṭhaṃ siṣeve 'haṃ, 67.38): Сита отказалась, теперь именно то же действие предлагается Раме как победоносный финал.", "type": "А", "subtype": "lexical", "trigger": "compound", "source": "dic_mw:pRzWa+warnemyr(gam)", "collision_tier1": true}]}, {"verse_id": "5.68.27", "verse": "27", "sanskrit_iast": "śailāmbudanikāśānāṃ laṅkāmalayasānuṣu । nardatāṃ kapimukhyānāṃ nacirāc chroṣyase svanam ॥27॥", "leonov_ru": "Подобных горам или облакам (или облакам на горах) на пиках горы Малайя на Ланке. Кричащих вождей обезьян голоса скоро ты услышишь.", "commentary": {"bhusana": "शैलाम्बुदनिकाशानां लङ्कामलयसानुषु ।\n\nनर्दतां कपिमुख्यानामचिराच्छ्रोष्यसि स्वनम्"}, "has_tier1": true, "notes": [{"id": "tier1:5.68.27:0", "layer": "tier1", "layer_label": "ярус 1 · Леонов/Костина", "votable": false, "status": "принято (печать)", "editor": "Леонов", "note_ru": "Строфы 25-27 с вариациями повторяют строфы V,39,48-50."}]}], "labels": {"tilaka": "Тилака", "bhusana": "Бхушана", "siromani": "Широмани"}};
+const KEY = "sundara_apparatus_s68_v1";
+const dec = JSON.parse(localStorage.getItem(KEY) || "{}");
+const $ = (h)=>{const t=document.createElement("template");t.innerHTML=h.trim();return t.content.firstChild;};
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+const STATUS_CLS = s => s==="ожидает гейта М.Г." ? "b-gate" : "b-status";
+
+function commBlock(comm){
+  return Object.keys(comm||{}).map(c=>`<div class="comm"><span class="who">${D.labels[c]||c}</span><span class="dev">${esc(comm[c])}</span></div>`).join("");
+}
+
+function noteHtml(n,vi,ni){
+  const d=dec[n.id]||{};
+  const badges=[`<span class="badge b-${n.layer}">${esc(n.layer_label)}</span>`,
+    `<span class="badge ${STATUS_CLS(n.status)}">${esc(n.status)}</span>`];
+  if(n.layer==="tier1"&&n.editor) badges.push(`<span class="badge b-status">${esc(n.editor)}</span>`);
+  if(n.type) badges.push(`<span class="badge b-status">тип ${esc(n.type)}</span>`);
+  if(n.cluster_label) badges.push(`<span class="badge b-status">${esc(n.cluster_label)}</span>`);
+  if(n.quality) badges.push(`<span class="badge b-status">${esc(n.quality)}</span>`);
+  if(n.edition_flag && n.edition_flag!=="vulgate")
+    badges.push(`<span class="badge b-crit">⚠ нумерация: ${esc(n.edition_flag)} (${esc(n.shloka_critical)})</span>`);
+  let body="";
+  if(n.lemma_iast) body+=`<span class="lemma">${esc(n.lemma_iast)}</span> — `;
+  body+=esc(n.note_ru||"");
+  let extra="";
+  if(n.why_proposed) extra+=`<div class="meta"><b>Зачем предложено:</b> ${esc(n.why_proposed)}</div>`;
+  if(n.mg_comment) extra+=`<div class="meta"><b>Ремарка М.Г.:</b> ${esc(n.mg_comment)}</div>`;
+  if(n.layer==="crosstext"&&n.parallel_sa_iast){
+    extra+=`<div class="par"><b>${esc(n.work_label||"")}</b> ${esc(n.verse_address||"")}${n.verse_address_vulgate?` · ${esc(n.verse_address_vulgate)}`:""}<br><span class="sa">${esc(n.parallel_sa_iast)}</span></div>`;
+  }
+  if(n.layer==="edition"&&(n.verses_iast||[]).length){
+    extra+=`<details><summary>Текст отсутствующих в критическом издании шлок</summary>${
+      n.verses_iast.map(v=>`<div class="par"><b>${esc(v.verse_id)}</b> <span class="sa">${esc(v.iast)}</span></div>`).join("")}</details>`;
+  }
+  if(n.source) extra+=`<div class="meta">Источник: ${esc(n.source)}</div>`;
+  if((n.source_commentary||[]).length) extra+=`<div class="meta">Комментаторы: ${n.source_commentary.map(c=>D.labels[c]||c).join(", ")}</div>`;
+  const collide=n.collision_tier1?`<div class="collide">⚠ на этом стихе уже есть примечание яруса 1 (Леонов/Костина) — см. выше, проверьте на дублирование</div>`:"";
+  const controls=n.votable?`
+    <div class="controls">
+      <label><input type="radio" name="a_${n.id}" value="accept"> ✅ принять</label>
+      <label><input type="radio" name="a_${n.id}" value="edit"> ✏️ править</label>
+      <label><input type="radio" name="a_${n.id}" value="reject"> ❌ отклонить</label>
+    </div>
+    <textarea class="hidden" id="e_${n.id}" rows="3">${esc(d.edited_note||n.note_ru||"")}</textarea>
+    <input class="rr hidden" id="r_${n.id}" placeholder="Причина отклонения / замечание…" value="${esc(d.reject_reason||"")}">`:"";
+  return `<div class="note l-${n.layer} ${d.action?("d-"+d.action):""}" id="n_${n.id}">
+    <div>${badges.join("")}</div>
+    <div class="ntext">${body}</div>${extra}${collide}${controls}</div>`;
+}
+
+function render(){
+  const app=document.getElementById("app");
+  app.innerHTML="";
+  const m=D._meta, bl=m.notes_by_layer, L=m.sources;
+  app.appendChild($(`<div class="legend"><b>Песнь ${D.sarga}</b>: стихов ${m.verses_total}, с примечаниями ${m.verses_with_notes}. Слои: <span class="badge b-tier1">${L.tier1}</span> ${bl.tier1} (без голосования) · <span class="badge b-lexical">${L.lexical}</span> ${bl.lexical} · <span class="badge b-phase2">${L.phase2}</span> ${bl.phase2} · <span class="badge b-edition">${L.edition}</span> ${bl.edition} · <span class="badge b-crosstext">${L.crosstext}</span> ${bl.crosstext}. Статус <span class="badge b-gate">ожидает гейта М.Г.</span> — решение по пилоту (H142) ещё не применено.</div>`));
+  D.verses.forEach((v,vi)=>{
+    const card=$(`<div class="vcard"></div>`);
+    card.innerHTML=`
+      <div class="vhead"><b>${v.verse_id}</b>${v.has_tier1?' · <span class="badge b-tier1">есть примечание яруса 1</span>':''}</div>
+      <div class="verse">
+        <div class="sa dev">${esc(v.sanskrit_iast)||'<i>—</i>'}</div>
+        <div class="ru">${esc(v.leonov_ru)||'<i>подстрочник не найден</i>'}</div>
+      </div>
+      ${Object.keys(v.commentary||{}).length?`<details><summary>Санскритские комментаторы к стиху</summary>${commBlock(v.commentary)}</details>`:''}
+      ${v.notes.map((n,ni)=>noteHtml(n,vi,ni)).join("")}`;
+    app.appendChild(card);
+    v.notes.filter(n=>n.votable).forEach(n=>{
+      const d=dec[n.id]||{};
+      card.querySelectorAll(`input[name="a_${CSS.escape(n.id)}"]`).forEach(r=>{
+        if(d.action===r.value) r.checked=true;
+        r.onchange=()=>set(n,r.value);
+      });
+      toggle(n.id,d.action);
+    });
+  });
+  prog();
+}
+function toggle(id,action){
+  const e=document.getElementById("e_"+id),r=document.getElementById("r_"+id);
+  if(e)e.classList.toggle("hidden",action!=="edit");
+  if(r)r.classList.toggle("hidden",action!=="reject");
+}
+function set(n,action){
+  const id=n.id,rec=dec[id]||{};
+  rec.action=action;
+  rec.verse_id=n.verse_id||id.split(":")[1];
+  rec.layer=n.layer;
+  if(n.lemma_iast)rec.lemma_iast=n.lemma_iast;
+  const e=document.getElementById("e_"+id),r=document.getElementById("r_"+id);
+  rec.edited_note=e?e.value:"";
+  rec.reject_reason=r?r.value:"";
+  rec.ts=new Date().toISOString();
+  dec[id]=rec;
+  if(e)e.oninput=()=>{rec.edited_note=e.value;save();};
+  if(r)r.oninput=()=>{rec.reject_reason=r.value;save();};
+  const el=document.getElementById("n_"+id);
+  el.className=el.className.replace(/\bd-(accept|edit|reject)\b/g,"").trim()+" d-"+action;
+  toggle(id,action);save();prog();
+}
+function allVotable(){const a=[];D.verses.forEach(v=>v.notes.forEach(n=>{if(n.votable)a.push(n);}));return a;}
+function save(){localStorage.setItem(KEY,JSON.stringify(dec));}
+function prog(){
+  const all=allVotable();
+  const done=all.filter(n=>dec[n.id]&&dec[n.id].action).length;
+  const a=all.filter(n=>(dec[n.id]||{}).action==="accept").length;
+  const e=all.filter(n=>(dec[n.id]||{}).action==="edit").length;
+  const r=all.filter(n=>(dec[n.id]||{}).action==="reject").length;
+  document.getElementById("progress").innerHTML=`<b>${done}/${all.length}</b> решено · ✅ ${a} · ✏️ ${e} · ❌ ${r}`;
+}
+function payload(){
+  return JSON.stringify({sarga:D.sarga,generated_by:D._meta.generated_by,
+    decisions:dec,reviewed_at:new Date().toISOString()},null,2);
+}
+function dl(){const b=new Blob([payload()],{type:"application/json"});const u=URL.createObjectURL(b);
+  const a=document.createElement("a");a.href=u;a.download="decisions_sarga_"+D.sarga+".json";a.click();URL.revokeObjectURL(u);}
+function cp(){navigator.clipboard.writeText(payload()).then(()=>alert("JSON скопирован в буфер обмена"));}
+function reset(){if(confirm("Сбросить все решения по этой песни?")){localStorage.removeItem(KEY);for(const k in dec)delete dec[k];render();}}
+// verse_id onto each note for the export
+D.verses.forEach(v=>v.notes.forEach(n=>n.verse_id=v.verse_id));
+render();
+</script></body></html>
