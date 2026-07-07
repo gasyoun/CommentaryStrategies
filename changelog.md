@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-07-07
+
 ### Added
 
 **H268 — ЛП camera-ready build: alignment, judge, contrastive scale-out, print master** (Fable 5 `claude-fable-5` orchestration, Sonnet 5 `claude-sonnet-5` drafting/judging)
