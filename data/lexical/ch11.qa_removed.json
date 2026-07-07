@@ -1,0 +1,264 @@
+[
+  {
+    "_meta": {
+      "description": "Отклонённые заметки QA-прохода, гл. 11",
+      "chapter": 11,
+      "layer": "lexical",
+      "qa_pruned": "2026-07-07",
+      "removed_count": 7,
+      "qa_pass": "H276 WS-3b (phantom verse anchors)"
+    }
+  },
+  {
+    "shloka": "V.11.6",
+    "lemma_iast": "mālyahīna",
+    "note_ru": "Мальяхина (mālya-hīna, adj.) — бахуврихи: mālya «цветочная гирлянда» + hīna (p.p.p. от √hā-, «оставлять, лишаться», Whitney #567) = «лишённая гирлянд». MW: hīna 'left, abandoned; deprived of, deficient in'. В индийской эпической традиции mālya — неотъемлемый атрибут нарядной женщины и ритуальный знак статуса (брачная mālā, победная mālā). Mālyahīna — маркер социального и ритуального исключения: Сита лишена внешних знаков своего положения супруги царевича.",
+    "type": "А",
+    "subtype": "lexical",
+    "trigger": "compound",
+    "priority": "med",
+    "source": "dic_mw:mAlya+dic_mw:hIna (√hā-)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "auto/sundara/11.6.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 0,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "anchor_precheck=absent подтверждён: в V.11.6 (\"murajeṣu mṛdaṅgeṣu celikāsu ca saṃsthitāḥ / tathāstaraṇamukhyeṣu saṃviṣṭāś cāparāḥ striyaḥ\") нет ни mālya, ни hīna — стих описывает спящих на барабанах и покрывалах женщин гарема Раваны (продолжение сцены сарг 9-10), Сита вообще не упомянута. Заметка описывает именно Ситу, лишённую гирлянд, — содержание другой сцены. Судя по мотиву (утрата украшений как маркер горя Ситы), заметка, по всей видимости, относится к описанию Ситы в ашока-ване (более поздняя сарга, ~15-16), а не к сарге 11.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    },
+    "qa_removed": {
+      "fixed_by": "scripts/fix_ch11_lexical_anchors.py",
+      "handoff": "H276",
+      "date": "2026-07-07",
+      "confirmed_by": "batch-3 sarga-11 drafter caveat + lexical judge pass (flag_anchor) + corpus/GRETIL lemma search",
+      "reason": "лемма не встречается в вульгате Сундараканды; фантомный якорь",
+      "original_shloka": "V.11.6"
+    }
+  },
+  {
+    "shloka": "V.11.7",
+    "lemma_iast": "dhūmajvāla",
+    "note_ru": "Дхумаджвала (dhūma-jvāla, m.) — тат-пуруша: dhūma «дым» + jvāla «пламя» (√jval-, класс I, Whitney #268, «пылать»). MW: dhūma 'smoke'; jvāla 'flame, blaze'. Составное обозначает огонь, подавленный влагой: дымящееся, но не горящее пламя — образ скрытой энергии без выхода. В сравнении с Ситой это ключевой образ: её внутренняя жизненная сила (tejas) не уничтожена, но лишена видимого проявления. Образ перекликается с V.11.16 (śoka-agni) — двойная метафора огня скорби в главе.",
+    "type": "А",
+    "subtype": "lexical",
+    "trigger": "compound",
+    "priority": "high",
+    "source": "dic_mw:DUmajvAla+warnemyr(jval)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "auto/sundara/11.7.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 0,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "anchor_precheck=absent подтверждён: в V.11.7 (\"aṅganānāṃ sahasreṇa bhūṣitena vibhūṣaṇaiḥ / rūpasaṃlāpaśīlena yuktagītārthabhāṣiṇā\") нет ни dhūma, ни jvāla — стих описывает тысячу украшенных женщин, обсуждающих красоту и песни. Заметка про подавленный внутренний огонь (tejas) Ситы не имеет отношения к этому стиху. По содержанию (образ скрытого горя) заметка, вероятно, принадлежит описанию Ситы в ашока-ване, а не сарге 11.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    },
+    "qa_removed": {
+      "fixed_by": "scripts/fix_ch11_lexical_anchors.py",
+      "handoff": "H276",
+      "date": "2026-07-07",
+      "confirmed_by": "batch-3 sarga-11 drafter caveat + lexical judge pass (flag_anchor) + corpus/GRETIL lemma search",
+      "reason": "в тексте стоит dhūma-jāla «сеть дыма» (15.20, 15.32), не dhūma-jvāla «пламя дыма» — заметку можно вернуть только переписав лемму и глоссу под dhūmajāla (гейт человека)",
+      "original_shloka": "V.11.7"
+    }
+  },
+  {
+    "shloka": "V.11.12",
+    "lemma_iast": "rājīvanetri",
+    "note_ru": "Раджива-нетри (rājīva-netrī, f.) — бахуврихи: rājīva + netra «глаз». Rājīva — конкретный вид лотоса (Nelumbo nucifera в синей разновидности, Nymphaea stellata), специфически синеватого оттенка. MW: rājīva 'a kind of lotus'. В отличие от padma (белый или розовый) и utpala (синий), rājīva несёт полутон: мерцающий синевато-фиолетовый, «тёмный». Глаза Ситы — не «лотосовые» вообще, а конкретно rājīva: влажный, тёмно-мерцающий цветок. Ботаническая специфика эпитета утрачивается при любом переводе.",
+    "type": "А",
+    "subtype": "lexical",
+    "trigger": "compound",
+    "priority": "high",
+    "source": "dic_mw:rAjIva+dic_mw:netra",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "auto/sundara/11.12.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 0,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "anchor_precheck=absent подтверждён: в V.11.12 (\"sa rākṣasendraḥ śuśubhe tābhiḥ parivṛtaḥ svayam / kareṇubhir yathāraṇye parikīrṇo mahādvipaḥ\") нет rājīva/netra — стих сравнивает Равану, окружённого жёнами, со слоном среди слоних. Заметка про лотосовые глаза Ситы описывает другую сцену; по содержанию, вероятно, принадлежит её портрету в ашока-ване.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    },
+    "qa_removed": {
+      "fixed_by": "scripts/fix_ch11_lexical_anchors.py",
+      "handoff": "H276",
+      "date": "2026-07-07",
+      "confirmed_by": "batch-3 sarga-11 drafter caveat + lexical judge pass (flag_anchor) + corpus/GRETIL lemma search",
+      "reason": "утверждение заметки противоречит тексту: глаза Ситы — utpalapatrākṣī (13.16), а rājīvalocana описывает Раму (26.39); сама заметка противопоставляет rājīva и utpala",
+      "original_shloka": "V.11.12"
+    }
+  },
+  {
+    "shloka": "V.11.16",
+    "lemma_iast": "śokaparipluta",
+    "note_ru": "Шокапариплута (śoka-paripluta, adj.) — кармадхарайя: śoka «скорбь» (√śuc-, класс I, Whitney #147, «гореть, скорбеть») + paripluta «затопленный» (pari+√plu-, «плыть, затоплять»). MW: paripluta 'flooded, overflowed'. Метафора строится на пересечении двух стихий: огненный корень √śuc- лежит в основе śoka, но образ «затоплен» водой (plu-). Это не случайный оксюморон — эпос регулярно описывает горе через огонь (śokāgni V.11.35) и одновременно через утопление. Скорбь = стихия, захватывающая со всех сторон.",
+    "type": "А",
+    "subtype": "lexical",
+    "trigger": "compound",
+    "priority": "high",
+    "source": "dic_mw:Sokaparipluta+warnemyr(Suc, plu)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "auto/sundara/11.16.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 0,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "anchor_precheck=absent подтверждён: V.11.16 (\"varāhavādhrīṇasakān dadhisauvarcalāyutān / śalyān mṛgamayūrāṃś ca hanūmān anvavaikṣata\") перечисляет мясные блюда (кабан, носорог с сыром и солью, дикобразы, олени, павлины) — кулинарная сцена пиршественного зала, нет ни śoka, ни paripluta. Заметка о «затопленном скорбью» состоянии (предположительно Ситы) не имеет отношения к этому стиху; вероятно, ошибочно привязана вместо сцены с Ситой в ашока-ване.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    },
+    "qa_removed": {
+      "fixed_by": "scripts/fix_ch11_lexical_anchors.py",
+      "handoff": "H276",
+      "date": "2026-07-07",
+      "confirmed_by": "batch-3 sarga-11 drafter caveat + lexical judge pass (flag_anchor) + corpus/GRETIL lemma search",
+      "reason": "лемма не встречается в вульгате (в 15.32 стоит śokajālena); фантомный якорь",
+      "original_shloka": "V.11.16"
+    }
+  },
+  {
+    "shloka": "V.11.21",
+    "lemma_iast": "duḥkha",
+    "note_ru": "Духкха (duḥkha, n.) — «страдание, боль». Народная этимология фиксирует: duḥ- (плохой, «дурной») + kha («пространство, отверстие», первоначально — ступичное отверстие колеса). MW: duḥkha 'uneasy, uncomfortable; pain, grief'. Пара duḥkha / sukha (счастье, букв. «хорошая ось / хорошее ступичное отверстие») указывает на колесничный образ: жизнь = езда, страдание = плохо подогнанная ось. Буддийская традиция сделала duḥkha ключевым термином (1-я благородная истина), но в эпосе он шире — любое препятствие дхармическому порядку жизни.",
+    "type": "А",
+    "subtype": "lexical",
+    "trigger": "etymology",
+    "priority": "high",
+    "source": "dic_mw:duHKa",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "auto/sundara/11.21.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 0,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "anchor_precheck=absent подтверждён: V.11.21 (\"pānabhūmir vinā vahniṃ pradīptevopalakṣyate / bahuprakārair vividhair varasaṃskārasaṃskṛtaiḥ\") описывает пиршественный зал, сияющий без огня, — нет duḥkha. Заметка про этимологию страдания не связана с содержанием стиха; заметка о духкхе, вероятно, ошибочно привязана вместо реального фрагмента о горе Ситы.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    },
+    "qa_removed": {
+      "fixed_by": "scripts/fix_ch11_lexical_anchors.py",
+      "handoff": "H276",
+      "date": "2026-07-07",
+      "confirmed_by": "batch-3 sarga-11 drafter caveat + lexical judge pass (flag_anchor) + corpus/GRETIL lemma search",
+      "reason": "слово частотно, но в V.11.21 его нет; универсальная этимология духкхи без честной версовой привязки в этой сарге",
+      "original_shloka": "V.11.21"
+    }
+  },
+  {
+    "shloka": "V.11.23",
+    "lemma_iast": "nīlotpala",
+    "note_ru": "Нилотпала (nīla-utpala, n.) — тат-пуруша: nīla «тёмно-синий, чёрный» + utpala «голубой лотос (Nymphaea caerulea)». MW: utpala 'the blossom of the blue lotus'. Utpala специфически обозначает синий водный лотос в отличие от padma (розовый / белый). Nīla-utpala = «синий синий лотос» — двойное усиление синевы, поэтически создающее образ максимальной глубины цвета: тёмный, влажный, мерцающий. Глаза, уподоблённые nīlotpala, несут оттенок ночного, почти чёрного блеска — семантика, полностью утрачиваемая в переводе «голубой лотос».",
+    "type": "А",
+    "subtype": "lexical",
+    "trigger": "compound",
+    "priority": "high",
+    "source": "dic_mw:nIlotpala",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "auto/sundara/11.23.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 0,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "anchor_precheck=absent подтверждён: V.11.23 (\"śarkarāsavamādhvīkāḥ puṣpāsavaphalāsavāḥ / vāsacūrṇaiś ca vividhair mṛṣṭās tais taiḥ pṛthakpṛthak\") перечисляет вина и ароматные порошки — нет nīlotpala, нет речи о глазах. Заметка про синий лотос глаз (предположительно Ситы) описывает совершенно другую сцену; вероятно, принадлежит портрету Ситы в ашока-ване.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    },
+    "qa_removed": {
+      "fixed_by": "scripts/fix_ch11_lexical_anchors.py",
+      "handoff": "H276",
+      "date": "2026-07-07",
+      "confirmed_by": "batch-3 sarga-11 drafter caveat + lexical judge pass (flag_anchor) + corpus/GRETIL lemma search",
+      "reason": "лемма не встречается в вульгате Сундараканды в применении к глазам Ситы; фантомный якорь",
+      "original_shloka": "V.11.23"
+    }
+  },
+  {
+    "shloka": "V.11.35",
+    "lemma_iast": "śokāgni",
+    "note_ru": "Шокагни (śoka-agni, m.) — тат-пуруша: śoka «скорбь» (√śuc-, «гореть, скорбеть») + agni «огонь». MW фиксирует śokāgni как самостоятельную поэтическую метафору. Примечательно: основа śoka уже несёт семантику горения (√śuc-), так что śoka-agni = «огонь-огонь скорби» — сознательное этимологическое удвоение. Это ключевая метафора «Сундараканды»: Хануман наблюдает, как Сита «сгорает» в огне разлуки (ср. V.11.16 paripluta — «затопленная», то же состояние через другую стихию). Двойная стихийная метафорика главы — структурная черта описания.",
+    "type": "А",
+    "subtype": "lexical",
+    "trigger": "compound",
+    "priority": "high",
+    "source": "dic_mw:SokAgni+warnemyr(Suc)",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "auto/sundara/11.35.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 0,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "anchor_precheck=absent подтверждён: V.11.35 (\"kāś cit kāñcanavarṇāṅgyaḥ pramadā rākṣasālaye / tāsāṃ nidrāvaśatvāc ca madanena vimūrchitam\") описывает золотистокожих женщин дворца, обессиленных сном после любовных утех, — нет śokāgni. Заметка про «огонь скорби», сжигающий Ситу, описывает иную сцену; тематически заметка, вероятно, относится к более поздней сарге (ашока-вана), а не к V.11.35.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    },
+    "qa_removed": {
+      "fixed_by": "scripts/fix_ch11_lexical_anchors.py",
+      "handoff": "H276",
+      "date": "2026-07-07",
+      "confirmed_by": "batch-3 sarga-11 drafter caveat + lexical judge pass (flag_anchor) + corpus/GRETIL lemma search",
+      "reason": "лемма не встречается в вульгате Сундараканды; фантомный якорь",
+      "original_shloka": "V.11.35"
+    }
+  }
+]

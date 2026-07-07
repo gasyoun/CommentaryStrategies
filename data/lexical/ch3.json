@@ -11,7 +11,16 @@
       "verses_total": 51,
       "notes_kept": 13,
       "notes_rejected": 39,
-      "density_pct": "25.5%"
+      "density_pct": "25.5%",
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 7,
+          "reject": 2,
+          "park": 1
+        }
+      }
     }
   },
   {
@@ -23,7 +32,21 @@
     "priority": "high",
     "subtype": "lexical",
     "source": "MW s.v. lamba; Apte s.v. lamba; поэтика yamaka в Alaṃkāraśāstra",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "lamba MW gloss correct; the triple lamba-repetition (lambaśikhare lambe lambatoyadasaṃnibhe) is a genuine, verifiable poetic figure the crib's plain translation does not flag — real added value.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.3.1",
@@ -45,7 +68,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. śārada; Apte s.v. śārada; кавья-топос «осенних облаков»",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "anchor_precheck flagged 'absent' but śāradāmbudhara- stands in the verse (lemma spelling ambuda vs verse's ambudhara, same root/sense) — confirmed by inspection. The śārada 'autumn cloud' kāvya-topos (white/high/pure vs dark monsoon clouds) is a well-established convention and adds real depth beyond crib's plain 'осенние облака'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.3.5",
@@ -56,7 +93,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. bhujaga; Apte s.v. bhujaga",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "anchor_precheck flagged 'absent' but 'bhujagācaritāṃ' stands verbatim in the verse — confirmed. bhuja+ga etymology and the hedged dual reading (guard-serpents vs serpent-traversed) are sound, and the note usefully links back to the V.2.24 bhogavatī note — real added value.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.3.6",
@@ -78,7 +129,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. śātakumbha; Apte s.v. śātakumbha",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 0,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "reject",
+      "reason": "The 'hundred pots of refining' etymology presented as literal fact is not supported by MW, which derives śātakumbha from Mt. Śatakumbha (a toponym, 'hundred-peaked mountain') rather than a refining process — an invented folk-etymology stated as established fact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.3.7",
@@ -89,7 +154,21 @@
     "priority": "low",
     "subtype": "lexical",
     "source": "MW s.v. kiṅkiṇī; Apte s.v. kiṅkiṇī",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "park",
+      "reason": "kiṅkiṇī MW gloss is correct but the crib's own 'звоном колокольчиков' already conveys the full sense; the note's only real addition is a weak onomatopoeic aside and a cross-reference to V.2.17 — content is essentially transparent, short of the bar for lexical_value.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.3.12",
@@ -100,7 +179,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. vasvokaṣārā; Apte s.v. vasu",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "anchor_precheck flagged 'absent' but 'vasvokasārāpratimāṃ' stands in the verse (minor spelling variant ṣ/s) — confirmed. MW's celestial-Ganga identification is correct and adds real content beyond crib's untranslated proper name.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.3.16",
@@ -111,7 +204,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. vivasvant; Apte s.v. vivasvat; Rām. Kiṣk. passim",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 1,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "reject",
+      "reason": "MW content on Vivasvant (sun-god, father of Manu/Aśvins) is sound, but the note fails to engage with the obvious referent Leonov's own crib already supplies (Sugrīva, 'сын солнца') and instead offers a garbled, unresolved alternative ('либо Яма, либо Суrya-son' — note the stray Latin fragment in Cyrillic text), which muddies rather than clarifies the verse's actual reference.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.3.18",
@@ -122,7 +229,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. yantra; Arthaśāstra II.18 (yantrāgāra)",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "yantra+āgāra etymology and MW gloss correct; the Arthaśāstra II.18 military-technical framing (arsenal/siege-engine store) adds real content beyond crib's loose 'гирлянда катапульт'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.3.27",
@@ -144,7 +265,21 @@
     "priority": "high",
     "subtype": "lexical",
     "source": "MW s.v. svayaṃbhū; Apte s.v. svayaṃbhū",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "svayaṃbhū MW gloss and the contrast with aja ('unborn') are sound; adds theological nuance beyond crib's bare 'Брахма'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.3.49",
@@ -155,6 +290,20 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. durātman; Apte s.v. ātman",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "dur+ātman etymology and MW gloss correct; the ontological-vs-situational-evil distinction is a modest but real addition beyond crib's already-close 'злобного духом'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]

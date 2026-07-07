@@ -1,0 +1,1918 @@
+{
+  "_meta": {
+    "chunk": 5,
+    "chapters": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "notes_count": 52,
+    "generated_by": "scripts/lexical_judge_prep.py",
+    "date": "2026-07-07",
+    "task": "H276 WS-2 lexical judge pass (rubric: PHASE2_METHOD §3.4, contrastive_value -> lexical_value)",
+    "judged": true,
+    "verdict_counts": {
+      "keep": 40,
+      "edit": 1,
+      "park": 1,
+      "reject": 3,
+      "flag_anchor": 7
+    }
+  },
+  "items": [
+    {
+      "note": {
+        "shloka": "V.21.1",
+        "lemma_iast": "kāmarūpī",
+        "note_ru": "Камарупи (kāmarūpin, adj.) — «принимающий любой желаемый облик», kāma «желание» + rūpa «форма, облик» + суфф. -in-. MW: kāmarūpin 'assuming any desired form at will'. Это специфический атрибут ракшасов и якшей в эпосе — shapeshifting по воле: способность принимать любой rūpa. Именно это свойство Раваны объясняет структуру всей сцены его прихода к Сите в облике странствующего брахмана. Kāmarūpin = ключевое слово для понимания обманного сватовства.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:kAmarUpin",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/21.1.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "kāmarūpī does not occur anywhere in V.21.1 (Sita's reply after hearing Ravana's words); the note's content (shapeshifting explanation of Ravana's approach disguised as a wandering brahmin) belongs to an earlier scene (the abduction/disguise episode, ch.1-3 area), not to this shloka. Etymology and epic-shapeshifter point are otherwise sound and non-trivial, but the anchor is wrong.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "21.1",
+      "verse_iast": "tasya tad vacanaṃ śrutvā sītā raudrasya rakṣasaḥ । ārtā dīnasvarā dīnaṃ pratyuvāca tataḥ śanaiḥ ॥1॥",
+      "leonov_ru": "Услышав эти слова того жестокого ракшаса, Сита Страдающая, с печальным голосом, печально отвечала тогда тихо.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.21.2",
+        "lemma_iast": "māyāvī",
+        "note_ru": "Маяви (māyāvin, adj./m.) — «маг, иллюзионист, обладатель māyā», от māyā (f.) + суфф. -vin-. Māyā: в Ригведе «магическая власть богов» (Варуны, Индры); в Упанишадах — «космическая иллюзия»; в эпосе — прагматическое «волшебство, обман». Whitney: √māy- не выделяет как независимый корень; māyā, вероятно, от √mā- («мерить, создавать») или √man-. MW: māyāvin 'illusory, deceitful; a juggler'. Māyāvī Равана — не просто обманщик, но носитель māyā как онтологической магической силы, противоположной satya (истине). Сита — satī, он — māyāvī.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:mAyAvin+warnemyr(mA)",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/21.2.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "māyāvī is absent from V.21.2, which describes Sita's grief/trembling, not Ravana. The māyā-etymology and satya/māyā antithesis are accurate and add real depth, but nothing in this verse concerns Ravana's deceit — the note is misattached, likely belongs near a verse actually characterizing Ravana as māyāvī.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "21.2",
+      "verse_iast": "duḥkhārtā rudatī sītā vepamānā tapasvinī । cintayantī varārohā patim eva pativratā ॥2॥",
+      "leonov_ru": "Страдающая от горя, плачущая Сита дрожащая, Погруженная в думы, прекраснобедрая, мужу только преданная.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "pativratā",
+          "note_ru": "Сита названа pativratā «преданная мужу» — технический термин женской дхармы, для которого Ману служит locus classicus. Manu 3.262 задаёт само определение: pativratā dharmapatnī pitṛpūjanatatparā «Преданная мужу законная жена, имеющая высшей целью почитание предков» — ему точно соответствует ананья-преданность, которую Сита формулирует сама (V.28.12 ananyadevatvam «нет для меня иного божества кроме тебя»). Manu 9.3 добавляет нормативную цепочку опеки: pitā rakṣati kaumāre bhartā rakṣati yauvane / rakṣanti sthavire putrā na strī svātantryam arhati «Отец охраняет в детстве, муж — в молодости, сыновья — в старости; женщина никогда не пригодна для самостоятельности». Драма Сундараканды — именно в разрыве этой цепочки: муж (Рама) разлучён, и pativratā Ситы держится не внешней охраной (как требует 9.3), а внутренним обетом — переосмысление жёсткой шастрической формулы поверх locus classicus самого термина (3.262). Эпитет прилагается к Сите неоднократно (ср. V.59.23) — кавья-воплощение шастрического стандарта верной жены."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.21.9",
+        "lemma_iast": "avamāna",
+        "note_ru": "Авамана (avamāna, m.) — «пренебрежение, унижение», от ava+√man- («думать, почитать», Whitney #773): приставка ava- («вниз, от») инвертирует почтение → «думать о ком-то как о нижестоящем». MW: avamāna 'disrespect, contempt'. Пара avamāna / sammāna (уважение) — дхармическая антитеза. Ravana, совершая avamāna дхармапатни Ситы, нарушает не просто личную этику, но ритуальный порядок: оскорбление dharmapatnī приравнивается к оскорблению самой дхармы — с неизбежными кармическими последствиями.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:avamAna+warnemyr(man)",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/21.9.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "avamāna is not present anywhere in V.21.9 (checked full text: 'iha santo na vā santi...'); the verse is about Rama/Sita accusing Ravana of a perverted mind, not using this specific term. Etymology (ava+√man) is correct and the dharmic point is real, but the lemma is not textually anchored here.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "21.9",
+      "verse_iast": "iha santo na vā santi sato vā nānuvartase । yatha hi viparītā te buddhirācāravarjitā ॥9॥",
+      "leonov_ru": "Или нет здесь праведных, или не следуешь ты праведным, Так что разум твой извращен и не придерживается правил.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.21.11",
+        "lemma_iast": "lobha",
+        "note_ru": "Лобха (lobha, m.) — «жадность, алчность, вожделение», от √lubh- (класс IV, «желать сильно, соблазняться», Whitney #194). MW: lobha 'covetousness, cupidity, greed'. В этической системе эпоса и брахманических текстов lobha — один из трёх «корневых ядов» (наряду с kāma и moha). В речи Раваны lobha и kāma соседствуют как взаимно различимые мотивы: lobha = стяжательство / жажда обладания, kāma = эротическое желание. Эпическая традиция строго разграничивает их.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:loBa+warnemyr(luB)",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/21.11.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "lobha does not occur in V.21.11 ('akṛtātmānam āsādya...'); the word actually present there is anaya (covered separately at 22.31), not lobha. √lubh- etymology and kāma/lobha distinction are sound but unanchored to this shloka.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "21.11",
+      "verse_iast": "akṛtātmānam āsādya rājānam anaye ratam । samṛddhāni vinaśyanti rāṣṭrāṇi nagarāṇi ca ॥11॥",
+      "leonov_ru": "Приблизившись к нечестивому царю (оказавшись под властью), находящему удовольствие в недолжном поведении, Гибнут процветающие царства и города.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.21.22",
+        "lemma_iast": "asura",
+        "note_ru": "Асура (asura, m.) — «демон». Этимологическая история слова — семантическая инверсия: в Ригведе asura = «обладающий [жизненной] силой» (asu «жизненная сила» + ra «обладающий»), употреблялось о богах. Позднее: a-sura = «не-sura (не-бог)» — народная переинтерпретация с отрицательной приставкой. MW фиксирует оба значения. Равана — asura в обоих смыслах одновременно: он и «могущественный» (ведийское), и «демон» (классическое). Эта двойственность — структурный элемент его образа в тексте.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:asura",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/21.22.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "asura is absent from V.21.22, a verse about Sita urging Ravana to hand her back to Rama or face calamity — no asura reference at all. The Rigvedic asura->demon semantic-inversion story is a real and accurate etymological fact, but it is not anchored to this particular shloka.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "21.22",
+      "verse_iast": "evam hi te bhavet svasti sampradāya raghūttame । anyathā tvam hi kurvaṇaḥ parāṃ prāpsyasi cāpadam ॥22॥",
+      "leonov_ru": "Ибо так будет у тебя благополучие, отдав (меня) лучшему из (рода) Рагху. Ибо ты, делая иначе, обретешь высшее несчастье",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.21.24",
+        "lemma_iast": "śāpa",
+        "note_ru": "Шапа (śāpa, m.) — «проклятие, заклятие», от √śap- (класс I/IV, «клясться, проклинать», Whitney #115). MW: śāpa 'a curse, imprecation'. В эпосе śāpa — конструктивный нарративный элемент: проклятие обладает силой закона и порождает сюжет (Равана прокляt несколькими персонажами, в том числе Ведавати). Противоположность — āśīs / āśīrvāda «благословение». Śāpa = перформативный речевой акт: в эпическом мире его произнесение неотвратимо влечёт за собой следствие, независимо от воли проклятого.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:SApa+warnemyr(Sap)",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/21.24.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "śāpa is absent from V.21.24, which is about the sound of Rama's bow (no curse vocabulary present). √śap etymology is fine but the note describes a different theme (curse-as-speech-act) not present in this verse.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "21.24",
+      "verse_iast": "rāmasya dhanuṣaḥ śabdaṃ śroṣyasi tvaṃ mahāsvanam । śatakratuvisṛṣṭasya nirghoṣam aśaner iva ॥24॥",
+      "leonov_ru": "Звук лука Рамы услышишь ты оглушительный Подобный звучанию молнии, извергнутой Шатакрату.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.21.27",
+        "lemma_iast": "vara",
+        "note_ru": "Вара (vara, m./adj.) — «дар, милость богов; лучший, превосходнейший», от √vṛ- («избирать, желать», Whitney #690). MW: vara 'choosing; a boon, gift, blessing; best, excellent'. Семантика vara охватывает одновременно «выбор» и «полученный дар»: получить vara от бога = быть «избранным». В эпосе vara Раваны — бессмертие, полученное от Брахмы в обмен на тапас. Трагическая ирония: vara = «лучший выбор», но выбор Раваны ведёт к гибели — в самом слове заложена двусмысленность, которую Рамаяна реализует сюжетно.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:vara+warnemyr(vf)",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/21.27.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "vara is absent from V.21.27, a verse comparing Rama-Garuda to the destroyer of serpent-demons — nothing about a boon. √vṛ etymology and the boon/hubris reading of Ravana's immortality are accurate content but describe a different passage, not this one.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "21.27",
+      "verse_iast": "rākṣasendramahāsarpān sa rāmagaruḍo mahān । uddhariṣyati vegena vainateya ivoragān ॥27॥",
+      "leonov_ru": "Великих змей владыки ракшасов тот Рама-Гаруда Искоренит быстро как Вайнатейя – великих змей.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.22.3",
+        "lemma_iast": "susārathi",
+        "note_ru": "Сусаратхи (su-sārathi, m.) — «хороший возница»: su- «хорошо» + sārathi (√sṛ- «двигаться» или sa-+ratha «при колеснице») — «возница, правящий колесницей». MW: sārathi 'a charioteer'. Сравнение kāma с вожжами, а sārathi — с мудрецом — типичная упанишадическая метафора (Катха-упанишада 3.3–4: тело = колесница, манас = вожжи, буддхи = возница). Равана здесь переключает её в bhauma-регистр: речь идёт не об аллегории освобождения, а о самообладании (krodha-nigrahe). Эта аллюзия — показатель культурного кода текста: читатель опознаёт упанишадический образ.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:sAraTi",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/22/3.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "susārathiḥ is literally in the verse. Etymology (su+sārathi) is correct; the Kaṭha Upaniṣad 3.3-4 chariot allegory is a well-known real parallel, and noting Ravana's shift from the allegorical to the literal register (self-control) is a genuine interpretive addition beyond the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "22.3",
+      "verse_iast": "saṃniyacchati me krodhaṃ tvayi kāmaḥ samutthitaḥ । dravato 'mārgam āsādya hayān iva susārathiḥ ॥3॥",
+      "leonov_ru": "Сдерживает мой гнев к тебе любовь (во мне) возникшая, Как хороший возница сдерживает коней, бегущих по дурной дороге.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.22.12",
+        "lemma_iast": "vṛttaśauṭīrya",
+        "note_ru": "Вриттташаутирья (vṛtta-śauṭīrya, n.) — «гордость добродетелью / доблестью»: vṛtta «поведение, добродетель, прожитая жизнь» (p.p.p. от √vṛt-, «вращаться, действовать») + śauṭīrya «гордость, высокомерие в смысле достоинства» (MW: śauṭīrya 'bravery, manliness; pride'). Составное — оксюморон: garvita (гордость) традиционно отрицательное, но vṛtta-гордость = «гордость, вытекающая из добродетели». Подстрочник «гордая из-за ее добродетели» передаёт это, но теряет напряжение между правомерной гордостью и грехом высокомерия. Это ключевое описание речевого акта Ситы: она говорит «полезные слова» (ātmahita), но от позиции силы.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:SAuTIrya",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/22/12.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "vṛttaśauṭīryagarvitam is literally present. Compound analysis (vṛtta 'conduct' + śauṭīrya 'pride/bravery') is correct per MW. The 'oxymoron' framing adds some nuance, but the crib already conveys 'proud because of her virtue/courage', so the net-new content is modest.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "22.12",
+      "verse_iast": "tābhir āśvāsitā sītā rāvaṇaṃ rākṣasādhipam । uvācātmahitaṃ vākyaṃ vṛttaśauṭīryagarvitam ॥12॥",
+      "leonov_ru": "Ими ободренная, Сита Раване, владыке ракшасов Сказала полезные для него слова, гордые из-за ее добродетели и гордости (мужества).",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.22.14",
+        "lemma_iast": "śacīpati",
+        "note_ru": "Шачипати (śacī-pati, m.) — «повелитель Шачи», эпитет Индры: śacī (имя жены Индры; MW: śacī 'the wife of Indra; might, power') + pati «господин». Важна двойная этимология śacī: либо «сила, мощь» (śak- «мочь»), либо собственное имя. Шача = Индрани — канонический образец верной жены в индийской традиции. Сита уподобляет себя Шаче: обе — законные, нерушимо преданные жёны своих сверхмощных мужей. Имплицитная угроза: тот, кто посягнул на Шачу, поплатился перед Индрой; обидчик Ситы поплатится перед Рамой.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:SacIpati",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/22/14.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "śacīpateḥ is in the verse. Śacī = Indra's consort is correct; the dual etymology note (śak- 'power' vs proper name) is a real point, and framing Sita's comparison as an implicit threat (whoever wrongs Śacī answers to Indra) is genuine added value beyond the crib's bare translation.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "22.14",
+      "verse_iast": "māṃ hi dharmātmanaḥ patnīṃ śacīm iva śacīpateḥ । tvadanyas triṣu lokeṣu prārthayen manasāpi kaḥ ॥14॥",
+      "leonov_ru": "Ибо меня, благочестивого (Рамы) жену, подобно Шачи, супруге Индры, Кроме тебя в трех мирах возжелает хотя бы в душе кто?",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.22.24",
+        "lemma_iast": "nīlajīmūtasaṃkāśa",
+        "note_ru": "Ниладжимутасанкаша (nīla-jīmūta-saṃkāśa, adj.) — «подобный тёмной (дождевой) туче»: nīla «тёмно-синий, чёрный» + jīmūta «туча» (MW: jīmūta 'a cloud; a kind of large plant') + saṃkāśa «подобный» (от saṃkāś-, «казаться, быть подобным»). Это один из стандартных эпических эпитетов для тёмнокожих героев / демонов. Примечательно: nīla — цвет Кришны и Вишну (nīlavarṇa), но и тьмы. Для Раваны nīlajīmūtasaṃkāśa = демоническое великолепие. В экфрасисе Раваны (22.24–30) читатель видит его через тот же образный словарь что и Вишну/Раму, но с демоническим знаком.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:nIlajImUta",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/22/24.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "nīlajīmūtasaṃkāśa is verbatim in the verse. Compound etymology is correct; linking nīla to the Kṛṣṇa/Viṣṇu color-code and reading the ekphrasis as sharing divine iconographic vocabulary with a demonic sign is a solid literary observation not present in the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "22.24",
+      "verse_iast": "nīlajīmūtasaṃkāśo mahābhujaśirodharaḥ । siṃhasattvagatiḥ śrīmān dīptajihvogralocanaḥ ॥24॥",
+      "leonov_ru": "Он, с огромными руками и шеей, был подобен темной туче, Обладающий храбростью и поступью льва, величественный, язык его был подобен пламени, взгляд его был грозен.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.22.29",
+        "lemma_iast": "kalpavṛkṣa",
+        "note_ru": "Кальпаврикша (kalpa-vṛkṣa, m.) — «дерево желаний»: kalpa «всё возможное, упорядоченное» (MW: kalpa 'practicable, feasible; the period of time between the creation and destruction of the world') + vṛkṣa «дерево». MW: kalpavṛkṣa 'the tree of paradise, the wish-granting tree'. Одно из пяти небесных деревьев (pañca-devavṛkṣa): любое желание, высказанное под ним или у него, исполняется. Равана сравнивается с kalpavṛkṣa: то есть он предлагает себя как исполнителя желаний — семантика слова подтверждает его риторику в главе 20 («желай чего хочешь, дам»). Но тут же — śmaśānacaitya: погребальная ступа на кладбище. Антитеза двух сравнений в одном стихе — показатель демонической амбивалентности.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:kalpavfkza",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/22/29.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "kalpavṛkṣapratimo is in the verse. kalpa+vṛkṣa etymology and the pañca-devavṛkṣa identification are accurate. Tying the simile to Ravana's own rhetoric in ch.20 and to the śmaśānacaitya antithesis in the same line is genuine interpretive value beyond the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "22.29",
+      "verse_iast": "sa kalpavṛkṣapratimo vasanta iva mūrtimān । śmaśānacaityapratimo bhūṣito 'api bhayamkaraḥ ॥29॥",
+      "leonov_ru": "Даже подобный дереву кальпаврикша или воплощенной весне, Словно погребальная ступа на кладбище (шмашане), даже украшенный, внушал он страх.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.22.31",
+        "lemma_iast": "anaya",
+        "note_ru": "Аная (anaya, m.) — «беззаконие, неправедный путь»: an- (отрицание) + naya «путь, разум, политика, ведение» (√nī-, «вести»). MW: anaya 'bad conduct; ill-luck, misfortune'. Специфически: naya в нити-шастрах = политическое искусство управления (в т.ч. «четыре упайя»). Anaya = следование антинити. Равана характеризует Раму именно как anaya-sampanna — «наделённого беззаконием», т.е. политически несостоятельного. В этой атаке на Раму через понятие нити читается ключевое мировоззренческое расхождение: Равана мыслит в категориях артха-шастры, Рама — в категориях дхармы.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:anaya",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/22/31.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anayena is in the verse (instr. of anaya). an+naya etymology is correct; framing Ravana's insult as an artha-śāstra/nīti-vs-dharma worldview clash is real added depth beyond the crib's flat translation.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "22.31",
+      "verse_iast": "anayenābhisaṃpannam arthahīnam anuvrate । nāśayāmy aham adya tvāṃ sūryaḥ saṃdhyām ivaujasā ॥31॥",
+      "leonov_ru": "О ты, которая верна тому, кто поступает недолжным образом, от которого нет никакого толку (или у которого нет никаких богатств – arthahīna), Уничтожу я тебя сейчас как солнце тьму (своим) светом.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.22.33",
+        "lemma_iast": "karṇaprāvaraṇā",
+        "note_ru": "Карнаправарана (karṇa-prāvaraṇā, f.) — «покрытая ушами»: karṇa «ухо» + prāvaraṇā «покрывало, оболочка» (pra+√vṛ-, «покрывать»). MW: prāvaraṇa 'a cover, cloak'. Один из перечисляемых уродливых типов ракшаси: «покрытая ушами» — те, у кого уши столь велики, что служат плащом. Каталог уродств ракшаси (22.33–36) построен на системе нарушений анатомической нормы: количественные (одно ухо/один глаз/одна нога), пропорциональные (огромные / крошечные части тела) и функциональные (уши вместо одежды). Это жанр тератологического описания — литература уродств, параллельная индийской демонологии.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "med",
+        "source": "dic_mw:prAvaraRa",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/22/33.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "karṇaprāvaraṇāṃ is verbatim in the verse. karṇa+prāvaraṇa etymology is correct (MW: prāvaraṇa 'a cover, cloak'). Framing the rākṣasī catalogue as a systematic teratology (quantitative/proportional/functional deformities) is a genuine literary-critical addition, not in the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "22.33",
+      "verse_iast": "ekākṣīm ekakarṇāṃ ca karṇaprāvaraṇāṃ tathā । gokarṇīṃ hastikarṇīṃ ca lambakarṇīm akarṇikām ॥33॥",
+      "leonov_ru": "Одноглазым, одноухим, покрытым ушами, С ушами как у коров, с ушами как у слонов, с обвислыми ушами, безухим.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.23.7",
+        "lemma_iast": "viśravas",
+        "note_ru": "Вишравас (viśravas, m.) — «прославленный, известный»: vi- + śravas «слава, слух» (√śru-, «слышать»; ср. греч. κλέος, авест. sravah-). MW: viśravas 'widely renowned; a Ṛishi and father of Kubera and Rāvaṇa'. Отец как Куберы, так и Раваны (от разных жён). Имя этимологически прозрачно: viśravas = «тот, о ком слышат повсюду (vi = по всему [миру])». Важно: ракшаси намеренно начинают генеалогию с mānasa-sutas (сынов-мысли Брахмы), чтобы показать, что даже духовная линия ведёт к Раване. Контраст: Рама = потомок ikṣvāku (по крови); Равана = потомок Брахмы (через духовную преемственность риши).",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:viSravas",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/23/7.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck said 'absent' but viśravā nāma is literally in the verse ('nāmnā sa viśravā nāma') — the deterministic matcher missed the sandhi form. vi+śravas etymology with the śru- Greek/Avestan cognates is accurate (real IE cognate set), and the Ikṣvāku-blood vs Brahma-lineage contrast is a genuine interpretive addition.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "23.7",
+      "verse_iast": "pulastyasya tu tejasvī mahārṣir mānasaḥ sutaḥ | । nāmnā sa viśravā nāma prajāpatisamaprabhaḥ || ॥7॥",
+      "leonov_ru": "Ума Пауластьи же сын был сиятельный великий риши По имени Вишравас, величием равный Праджапати.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.23.11",
+        "lemma_iast": "vīryotsikta",
+        "note_ru": "Вирьотсикта (vīrya-utsikta, adj.) — «пьяный от мужества, опьянённый доблестью»: vīrya «мужество, доблесть, мощь» (от vīra «герой») + utsikta (ud+√sic-, «лить через край; быть переполненным») = «переполненный, гордый до предела». MW: utsikta 'overflowing; proud, arrogant'. Буквально: тот, в ком vīrya бьёт через край. Это не комплимент: utsikta несёт коннотацию «слишком много», гибриса. Ракшаси преподносят это как достоинство, но читатель-эпик слышит предупреждение: utsikta = hubris → nemesis. Аналогичная логика в образе гордого śatru- против Рамы.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:utsikta",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/23/11.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "vīryotsiktasya is verbatim in the verse. vīrya+utsikta (ud+sic 'overflow') etymology is correct (MW: utsikta 'overflowing; proud, arrogant'). Reading the rākṣasīs' praise as containing an epic hubris/nemesis warning is a real interpretive addition beyond the crib's plain translation.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "23.11",
+      "verse_iast": "tasya tvaṃ rākṣasendrasya bhāryā bhavitumarhasi । vīryotsiktasya śūrasya saṃgrāmeṣv anivartinaḥ । balino vīryayuktasyā bhāryātvaṃ kiṃ na lipsase ॥11॥",
+      "leonov_ru": "Того владыки ракшасов женою должна стать. Гордого своим мужеством героя, в битвах не отступающего, Могучего, доблестного супружество почему ты не желаешь принять?",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.23.17",
+        "lemma_iast": "puṣpavṛṣṭi",
+        "note_ru": "Пушпавришти (puṣpa-vṛṣṭi, f.) — «дождь цветов»: puṣpa «цветок, цветение» + vṛṣṭi «дождь» (√vṛṣ-, «лить, орошать»). MW: vṛṣṭi 'rain, a shower'. Puṣpavṛṣṭi — не только метафора: в эпической и пуранической традиции боги, гандхарвы и само небо «проливают» цветочный дождь как знак божественного одобрения (прежде всего после победы или подвига). Ракшаси описывает, как деревья льют puṣpavṛṣṭi из страха перед Раваной — то есть ритуальный знак почитания извращается в акт страха. Парадокс: обряд восхваления (puṣpavṛṣṭi) производится принудительно, через terror.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:puzpavfzwi",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/23/17.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "puṣpavṛṣṭiṃ is verbatim in the verse. puṣpa+vṛṣṭi etymology is correct and the ritual-approval convention (flower-rain as divine assent) is standard epic/puranic motif. The observed paradox — reverence extracted through terror — is a genuine literary point not present in the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "23.17",
+      "verse_iast": "puṣpavṛṣṭiṃ ca taravo mumucur yasya vai bhayāt । śailāś susruvuḥ pānīyaṃ jaladāś ca yadecchati ॥17॥",
+      "leonov_ru": "Из страха перед которым деревья проливали дождь из цветов, По воле которого горы и тучи обрушивали потоки вод,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.23.18",
+        "lemma_iast": "nairṛtarāja",
+        "note_ru": "Найрритараджа (nairṛta-rāja, m.) — «царь нирритов (ракшасов)»: nairṛta «принадлежащий Нирри́ти» → nairṛta = ракшас (юго-западная сторона света принадлежит Нирри́ти, богине разрушения). MW: nairṛta 'belonging to Nirṛti; a Rākṣasa'. Nirṛti (ni+√ṛ-, «тот, кто разрушает») — ведийское божество-персонификация распада и несчастья. Ракшасы — её «подданные» по космологии стран света. Этот эпитет для Раваны — один из наиболее точных в теологическом смысле: он не просто «царь ракшасов» (rākṣasādhipa), но rāja nairṛtas = повелитель сил деструктуры. Для понимания его роли в Рамаяне это важная космологическая характеристика.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:nairfta",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/23/18.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "nairṛtarājasya is verbatim in the verse. nairṛta<-Nirṛti etymology is correct (Nirṛti = Vedic goddess of the southwest/destruction). Framing Ravana as 'lord of destructive cosmic forces' rather than merely 'king of the rakshasas' is a real theological/cosmological addition beyond the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "23.18",
+      "verse_iast": "tasya nairṛtarājasya rājarājasya bhāmini । kiṃ tvaṃ na kuruṣe buddhiṃ bhāryārthe rāvaṇasya hi ॥18॥",
+      "leonov_ru": "Того владыку ракшасов, царя царей, о прекрасная, Равану, почему не обратишь мысли к супружеству с ним?",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.1",
+        "lemma_iast": "paruṣa",
+        "note_ru": "Паруша (paruṣa, adj.) — «узловатый, жёсткий, грубый» (о словах — «жестокие, бранные»). Первичное значение — «покрытый узлами» (о тростнике), от par- «наполнять, перегружать»; MW: paruṣa 'knotty (as reed); hard, rough; harsh, unkind (of speech)'. В стихе употреблено дважды: paruṣam (acc., об словах) и paruṣānarhām (сложное прилагательное «не заслуживающей жестокости»). Двойное повторение — фигура epanalepsis с усилением: грубость слов противопоставлена достоинству Ситы, выраженному тем же корнем со знаком a-privativum.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:paruSa",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.1.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "paruṣaṃ paruṣānarhām is verbatim in the verse. paruṣa etymology (knotty reed -> harsh) is standard MW. Identifying the epanalepsis figure (paruṣaṃ ... paruṣānarhām, harshness vs. one undeserving of harshness) is a genuine rhetorical-critical addition not in the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.1",
+      "verse_iast": "tataḥ sītām samastāstā rākṣasyo vikṛtānanāḥ । paruṣaṃ paruṣānarhām ūcus tad vākyam apriyam ॥1॥",
+      "leonov_ru": "Тогда Ситу все ракшаси, собравшись, с уродливыми лицами, Жестокие слова те неприятные сказали той, которая не заслуживает жестокости.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.4",
+        "lemma_iast": "trailokya",
+        "note_ru": "Трайлокья (trailokya, n.) — «совокупность трёх миров», стандартная тройная вертикаль индийской космологии: svarga (небо), antarikṣa (воздушное пространство/средний мир) и pṛthivī (земля), или в эпической версии — дэвалока, мануṣялока, пāтāла. MW: trailokya 'the 3 Lokas or worlds'. Равана назван trailokya-vasu-bhoktā — «потребляющим (bhoktā от √bhuj-) богатства (vasu) всей тройной вселенной»: это эпитет абсолютного господства, превышающего даже власть Индры (который правит лишь svarga). Подстрочник переводит нейтрально «трёх миров»; космологический смысл притязания Раваны теряется.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "med",
+        "source": "dic_mw:trElokya",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.4.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck said 'absent' but trailōkyavasubhoktāraṃ opens the verse — the matcher missed the compound-initial form. trailokya = 3 worlds is standard; the point that Ravana's claimed dominion exceeds even Indra's (who rules only svarga) is an accurate cosmological addition beyond the crib's neutral 'трех миров'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.4",
+      "verse_iast": "trailōkyavasubhoktāraṃ rāvaṇaṃ rākṣasēśvaram । bhartāram upasaṅgamya viharasva yathāsukham ॥4॥",
+      "leonov_ru": "За Равану, владыку ракшасов, который наслаждается богатствами трех миров, Выйдя замуж, наслаждайся, как тебе угодно.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.9",
+        "lemma_iast": "suvarcalā",
+        "note_ru": "Суварчала (suvarcalā, f.) — супруга Солнца (Sūrya) в одном из ведийских мифографических слоёв. В стихе Сита уподобляет свою верность мужу преданности Суварчалы Сурье: «как Суварчала к Сурье, так и я привязана к моему мужу». MW знает suvarcalā прежде всего как лекарственное растение (Ruta Graveolens), но в эпическом контексте это имя супруги Солнца (ср. MBh). Апте также фиксирует это значение. Выбор именно этой параллели неслучаен: Сурья — вечно движущийся и никогда не оставляющий своей орбиты; верность Суварчалы кодирует неотклонимость, а не просто преданность.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:suvarcalA",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.9.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "suvarcalā is verbatim in the verse. The note correctly hedges the MW ambiguity (primarily a plant name in MW, but epic/Apte usage as Sūrya's wife) rather than asserting it flatly. The 'unwavering as the sun's motion' reading of the simile is a real interpretive addition beyond the crib's plain translation.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.9",
+      "verse_iast": "dīno vā rājyahīno vā yo me bhartā sa me guruḥ । taṃ nityaṃ anuraktāsmi yatha sūryaṃ suvarcalā ॥9॥",
+      "leonov_ru": "Печален ли он, лишен ли царства, он мой муж и наставник. К нему я навеки привязана, как к Сурье Суварчала",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.11",
+        "lemma_iast": "lopāmudrā",
+        "note_ru": "Лопамудра (lopāmudrā, f.) — супруга мудреца Агастьи, один из ключевых образцов pativratā в ведийской и эпической традиции. MW: lopāmudrā 'N. of the reputed wife of the sage Agastya (formed by the sage himself and secretly introduced into the palace of the king of Vidarbha)'. Имя объясняется как «та, по образцу (mudrā) которой потеряны (lopita) красивейшие черты животных» — Агастья создал её, взяв лучшие черты у разных созданий. Цепочка верных жён в стихах 10–13 — риторический приём «enumeration of exempla» (dṛṣṭānta-mālā), характерный для защитных речей героинь.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "med",
+        "source": "dic_mw:lopAmudrA",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.11.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "lopāmudrā is verbatim in the verse. Identification as Agastya's wife and the traditional 'composite beauty' etymology match MW. Naming the rhetorical device (dṛṣṭānta-mālā, enumeration of exempla) across vv.10-13 is a genuine literary-critical addition beyond the crib's bare name list.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.11",
+      "verse_iast": "lopāmudrā yathāgastyaṃ sukanyā cyavanaṃ yathā । sāvitrī satyavantaṃ ca kapilaṃ śrīmatī yathā ॥11॥",
+      "leonov_ru": "Как Лопамудра как Агастье, как Суканья к Чьяване, Как Савитри к Сатьявану, как Шримати к Капиле.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.12",
+        "lemma_iast": "saudāsa",
+        "note_ru": "Саудаса (saudāsa, m.) — «(сын) Судасы», царь Мит(ра)саха из рода Икшваку, проклятый мудрецом Вāсиштхой и ставший на время людоедом (rākṣasa-vṛtti). Подстрочник не объясняет, почему именно Саудаса и Мадаянти включены в список pativratā: Мадаянти сохранила верность мужу именно в период его «нечистого» состояния — прямая параллель к ситуации Ситы при «нечистом» Раване. Это не просто пример преданности, но пример верности в условиях осквернения мужа — единственная из всего списка такая параллель.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:saudAsa",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.12.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "saudāsam is verbatim in the verse. The Saudāsa/Kalmāṣapāda cannibal-curse backstory and Madayantī's fidelity during his defilement are accurate Ramayana lore. The parallel drawn to Sita's fidelity toward the currently 'impure' captor Ravana is the unique added insight in this exemplum, distinct from the sibling cross_text note (which addresses narrative provenance, not this parallel).",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.12",
+      "verse_iast": "saudāsaṃ madayantīva keśinī sagaraṃ yathā । naiṣadhaṃ damayantīva bhaimī patimanuvratā ॥12॥",
+      "leonov_ru": "Как Мадаянти к Саудасе, как Кешини к Сагаре, Как Дамаянти, дочь Бхимы верная мужу – к Нишадцу (Нале).",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "damayantī … sagara … saudāsa",
+          "note_ru": "Хануман ободряет Ситу списком образцовых верных жён: «как Мадаянти к Саудасе, как Кешини к Сагаре, как Дамаянти, дочь Бхимы, верная мужу — к Нишадцу (Нале)» (V.24.12). Все три pativratā-пары — герои именно Араньякапарвы. Сагара — герой кумулятивного сказания Āraṇyaka 3.106 сл. («etatte sarvamākhyātaṃ… sagareṇa vivāsitaḥ»), а Дамаянти, дочь Бхимы (bhaimī) — героиня Нала-упакхьяны (Āraṇyaka 3.50-78), откуда уже извлечены формульные параллели V.15.20 и V.19.17. Таким образом, перечень эталонных жён у Ханумана опирается на тот же повествовательный фонд Vana-parvan, что и описания самой Ситы. Свидетельство: уровень шлоки (мягкое; связь по корпусу имён)."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.24.26",
+        "lemma_iast": "svāhā",
+        "note_ru": "Свāха (svāhā, f. и ind.) — ритуальный возглас при жертвенном возлиянии в огонь; одновременно персонифицируется как дочь Дакши и супруга Агни (MW: 'hail to!; the wife of Agni'). Рāкшасийя Вина(тā) называет её «богиней» (devī), ставя Ситу в ряд: Свāха при Агни, Шачи при Индре — и т.д. Невидимая для подстрочника деталь: Свāха в ритуальном контексте не просто «жена Агни», она — посредник между жертвователем и богом, та, чьим именем передаётся подношение. Включение её в список — тонкая ирония: ракшасийя предлагает Сите роль «посредника», приближённого к силе через мужа.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "med",
+        "source": "dic_mw:svAhA",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.26.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "agneḥ svāhā ... devī is verbatim in the verse. Svāhā as Agni's consort and ritual exclamation is correct per MW. The 'mediator who conveys the offering' ritual-functional reading, and the irony of a rākṣasī casting Sita in that intermediary role, is genuine added depth beyond the crib's plain simile.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.26",
+      "verse_iast": "agneḥ svāhā yathā devī śacī vendrasya śobhane । kiṃ te rāmeṇa vaidehi kṛpaṇena gatāyuṣā ॥26॥",
+      "leonov_ru": "Подобно богине Свахе, жене бога Агни, или подобно богине Шачи, жене Индры, о прекрасная. К чему тебе, Вайдехи, жалкий Рама, жизнь которого скоро оборвется?",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.32",
+        "lemma_iast": "purandarā",
+        "note_ru": "Пурандара (purandarā, m.) — эпитет Индры, «разрушающий крепости» (pura + dara от √dṛ-, «разрывать, дробить»). В «Ригведе» это центральный эпитет Индры как бога-завоевателя, сокрушителя асурских городищ. MW: purandara 'destroying castles; N. of Indra'. Угроза рāкшасий «не спасёт даже Пурандара» особенно значима: это не просто «даже Индра», но именно «разрушитель крепостей» не сможет разрушить крепость-Лāнку. Косвенная игра смыслов: тот, кто разрушал крепости асуров, бессилен перед крепостью Раваны, победившего тех же богов.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:puranDara",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.32.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck said 'absent' but puraṃdaraḥ is literally in the verse (anusvara vs -n- spelling tripped the matcher). pura+dara (from √dṝ) etymology is standard for this Indric epithet of Indra. The irony that the 'fort-destroyer' is powerless against Ravana's own fortress (which had already defeated the gods) is a genuine literary point beyond the crib's flat 'even Indra himself'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.32",
+      "verse_iast": "na tvāṃ śaktaḥ paritrātum api sākṣāt puraṃdaraḥ । kuruṣva hitavādinyā vacanaṃ mama maithili ॥32॥",
+      "leonov_ru": "Не в силах тебя вызволить даже сам Пурандара (Индра). Последуй словам меня, говорящей полезное, Майтхили.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.40",
+        "lemma_iast": "yakṛt-plīha",
+        "note_ru": "Якрит-плиха (yakṛt-plīhan, n.+m.) — «печень и селезёнка» как пара органов. В медицинских текстах (Charaka, Suśruta) yakṛt и plīhan — стандартная анатомическая пара, соответствующая кровеносным органам; их совместное упоминание с hṛdaya (сердце) и baddha (связи/сосуды) формирует анатомически подробный перечень. Подстрочник (Леонов) передаёт это технически; примечательна именно детализация: рāкшасийя перечисляет органы в медицинском порядке (периферия → центр: печень, селезёнка, грудь, сердце с сосудами), что указывает на ритуальное расчленение (viviccheda), а не просто поедание — этот ужас эпоса имеет ритуальную подоплёку.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "med",
+        "source": "dic_mw:yakft+dic_mw:plIhan",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.40.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 1,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "yakṛtplīhaṃ is in the verse and the liver/spleen anatomical pairing matches MW/Suśruta (blood held to flow from liver and spleen) — that much is faithful. But the leap to 'ritual dismemberment (viviccheda)' as opposed to ordinary eating is an unsupported interpretive claim dressed up with an unattested technical term ('viviccheda' is not a recognized ritual-dismemberment term in the sources cited); presented flatly as fact rather than hedged, this is an overreach that fails the faithfulness gate.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.40",
+      "verse_iast": "rāvaṇena hṛtāṃ dṛṣṭvā daurhṛdo me mahānayam । yakṛtplīhaṃ mahat kroḍaṃ hṛdayam ca sabandham ॥40॥",
+      "leonov_ru": "Плененную Раваной видя, желание (или враждебность) у меня возникло сильное. Печень (ее), селезенку, огромную грудь и сердце с венами и артериями",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.45",
+        "lemma_iast": "śūrpaṇakhā",
+        "note_ru": "Шурпанакха (śūrpaṇakhā, f.) — «чьи ногти (nakha) как веяльные лопаты (śūrpa)». MW: śūrpa 'a winnowing basket or fan'. Имя — говорящее: śūrpa (веяльная корзина) имеет форму большой лопаты, ногти рāкшасийи описываются как устрашающе большие и загнутые — предметный образ, понятный слушателям. Принципиально важно: Шурпанакха появляется в этой сцене не в качестве сестры Раваны (что известно читателю), а именно как рāкшасийя в ряду других — её имя здесь, по сути, первый её жест в пространстве Сундаракāнды. Появление в сцене угроз имеет нарративную функцию: именно она «понравилась» предложению поедания (стих 46).",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:SUrpaRAKA (составное: SUrpa+nAKa)",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.45.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "śūrpaṇakhā nāma is verbatim in the verse. śūrpa 'winnowing fan' + nakha 'nail' folk-etymology is the standard account of this figure's name. The observation that this is her first narrative appearance in Sundarakāṇḍa (introduced here simply as one rākṣasī, not yet flagged as Ravana's sister) is a genuine text-critical/narrative addition beyond the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.45",
+      "verse_iast": "peyam ānīyatāṃ kṣipraṃ mālyaṃ ca vividhaṃ bahu । tataḥ śūrpaṇakhā nāma rākṣasī vākyam abravīt ॥45॥",
+      "leonov_ru": "Выпивку принесите быстро и разные цветочные гирлянды в большом количестве. Затем ракшаси по имени Шурпанакха сказала:",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.47",
+        "lemma_iast": "nikumbhilā",
+        "note_ru": "Никумбхила (nikumbhilā, f.) — священное место в западной части Лāнки, предназначенное для жертвоприношений (MW: nikumbhila 'a place where oblations are offered, esp. a grove at the western gate of Laṅkā for the performance of sacrificial rites'; согласно другой версии — изображение Бхадракāли). Рāкшасийи говорят, что отпразднуют убийство Ситы, станцевав у Никумбхилā: это ритуальное место, не просто «богиня». Никумбхила играет ключевую роль в дальнейшей нарративной дуге Сундаракāнды и Юддхакāнды (именно здесь Индраджит совершает яджню перед последней битвой). Первое появление этого топонима здесь — зловещая антиципация.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:nikumBila",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.47.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "nikumbhilām is verbatim in the verse. Identification of Nikumbhilā as the ritual grove at Lanka's west gate is accurate per MW/tradition, and its later crucial role in Indrajit's yajña before the final battle (Yuddhakāṇḍa) is a correct epic fact. Flagging this as a foreshadowing first mention is real added value beyond the crib's plain 'богиня Никумбхила'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.47",
+      "verse_iast": "mānuṣaṃ māṃsam āsvādya nṛtyāmo 'tha nikumbhilām । evaṃ saṃbhartsyamānā sā sītā surasutopamā । rākṣasībhiḥ sughorābhir dhairyam utsṛjya roditi ॥47॥",
+      "leonov_ru": "Человечиной насладившись, станцуем перед (богиней) Никумбхилой. Так подвергаемая оскорблениям, Сита, равная дочерям богов, Ракшаси весьма ужасными, утратив стойкость, плачет.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.24.47",
+        "lemma_iast": "piśitāśana",
+        "note_ru": "Пишитāшана (piśitāśana, m./f.) — «питающийся мясом (piśita)», эпитет рāкшасов. piśita — «отрезанное, разделанное мясо» (от √piś-, «резать, украшать»); āśana — «едящий» (√aś-, «есть», + суфф. -ana). MW: piśitāśana 'a flesh-eater; a rākṣasa'. Характерно, что в стихе 34 перечислены именно «пожиратели плоти»: māṃsa («мясо», в том числе в стихах 40–47) последовательно уточняется до «человеческого мяса» (mānuṣaṃ māṃsam, 47). Эпитет piśitāśana — не просто диетическая характеристика, но ритуально-онтологическое определение рāкшасов как «нечистых» в противовес brāhmaṇa и devī.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "med",
+        "source": "dic_mw:piSitASana",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/24.47b.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 1
+          },
+          "verdict": "keep",
+          "reason": "piśitāśana itself is not literally in this pada (which has mānuṣaṃ māṃsam āsvādya, not the compound), but the epithet exactly matches the scene's content (rākṣasīs about to eat human flesh), so it is contextually apt though textually unverifiable — anchoring capped at 1. piśita+āśana etymology is correct; net-new content beyond the crib's already-explicit 'human flesh' is modest (mainly the ritual-purity framing of rākṣasas as impure), keeping non_triviality and lexical_value moderate rather than high.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "24.47",
+      "verse_iast": "mānuṣaṃ māṃsam āsvādya nṛtyāmo 'tha nikumbhilām । evaṃ saṃbhartsyamānā sā sītā surasutopamā । rākṣasībhiḥ sughorābhir dhairyam utsṛjya roditi ॥47॥",
+      "leonov_ru": "Человечиной насладившись, станцуем перед (богиней) Никумбхилой. Так подвергаемая оскорблениям, Сита, равная дочерям богов, Ракшаси весьма ужасными, утратив стойкость, плачет.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.25.2",
+        "lemma_iast": "bāṣpagadgada",
+        "note_ru": "Бāшпагадгада (bāṣpa-gadgada, adj.) — «(речь,) прерывающаяся (gadgada) от слёз (bāṣpa)». gadgada — звукоподражательное слово (√gad- «говорить неясно» + редупликация), MW: gadgada 'stammering, stuttering; indistinct or convulsive utterance (as sobbing)'. bāṣpa «слеза» восходит к корню √bāṣp- или связывается народной этимологией с «паром, испарением» (ср. bahiṣpavamāna). Сложное слово gadgada-gir/gadgada-vācā — устойчивая формула эпической речи в состоянии аффекта; принципиально, что gadgada означает именно конвульсивную, «захлёбывающуюся» речь, а не простую неясность — это маркер предельного горя, близкого к потере речи.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "med",
+        "source": "dic_mw:gadgada",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/25.2.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "bāṣpagadgadayā is verbatim in the verse. bāṣpa (hedged folk-etymology) and gadgada (onomatopoeic stammering, MW: 'indistinct or convulsive utterance as sobbing') are correctly glossed. The point that gadgada specifically marks near-loss-of-speech (not mere unclearness) is a real semantic addition beyond the crib's plain 'словами, неясными из-за слез'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "25.2",
+      "verse_iast": "evam uktā tu vaidehī rākṣasībhir manasvinī । uvāca paramatrastā bāṣpagadgadayā girā ॥2॥",
+      "leonov_ru": "Вайдехи, добродетельная жена, которой так было сказано ракшаси, Сказала, сильно испуганная, словами, неясными из-за слез.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.25.5",
+        "lemma_iast": "koka",
+        "note_ru": "Кока (koka, m.) — «волк» (в эпике) или «утка-кокā (cakravāka)» в зависимости от контекста. MW: koka m. 'a wolf; the cakravāka bird'. Стих: «как антилопа в лесу, отбившаяся от стада, терзаемая kokaḥ». Переводчик (Леонов) переводит «волками» — и это правильно для данного контекста; однако без пояснения неясно, почему кока (а не vṛka, стандартный «волк»). koka в эпическом языке — волк именно как охотник на одиночных животных, семантически выделяющийся из vṛka своей «стайной» агрессией против выбившихся из группы. Параллель к положению Ситы: она отделена от «стаи» (Рāмы и ванаров) и уязвима именно как единица без группы.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "med",
+        "source": "dic_mw:koka",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/25.5.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 1,
+            "non_triviality": 2,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "kokair is verbatim in the verse, but MW's koka entry (checked in dic_mw.jsonl) glosses it flatly as 'a wolf' (plus unrelated senses: cuckoo, ruddy goose, frog, lizard...) with no support for the note's specific claim that koka is semantically distinguished from vṛka as 'a wolf preying on solitary strays vs. pack aggression' — that fine-grained lexical-semantic distinction appears to be invented and stated as established fact rather than hedged, failing the faithfulness gate.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "25.5",
+      "verse_iast": "vepate smādhikaṃ sītā viśantīvāṅgam ātmanaḥ । vane yūthaparibhraṣṭā mṛgī kokair ivārditā ॥5॥",
+      "leonov_ru": "Сильно задрожала Сита, будто уйдя в себя, Подобная антилопе в лесу, отбившейся от стада и терзаемой волками.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.25.12",
+        "lemma_iast": "akāla",
+        "note_ru": "Акāла (akāla, m./ind.) — «не-время, неподходящий момент» (a-privativum + kāla «время, смерть, Яма»). MW: akāla 'wrong or bad time; unseasonable'. В стихе loka-pravāda «народная мудрость»: «в недолжное время (akāle) смерть трудна (durlabha)» — смерть приходит только в нужный момент. Здесь ключевая двусмысленность: kāla означает и «время», и «Яма» (бог смерти). Akāla — буквально «отсутствие Ямы», то есть Яма не пришёл за ней. Это не пессимизм, а констатация дхармического закона: невозможно умереть «вне расписания» даже при желании. Подстрочник передаёт «трудно умереть», но не объясняет, почему это «народная мудрость» (paṇḍita-udāhṛta).",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:akAla",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/25.12.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "akāle is verbatim in the verse. a+kāla etymology is correct, and the kāla=time/kāla=death-Yama double sense is genuine, attested Sanskrit polysemy (not fabricated), used here as a real interpretive wordplay explaining why this is called a paṇḍita-maxim — distinct from the sibling cross_text note, which instead supplies the Mahābhārata Śāntiparva parallel.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "25.12",
+      "verse_iast": "lokapravādaḥ satyo 'yaṃ paṇḍitaiḥ samudāhṛtaḥ । akāle durlabho mṛtyuḥ striyā vā puruṣasya vā ॥12॥",
+      "leonov_ru": "Верны эти слова, которые произнесены пандитами: «В недолжное время трудно умереть женщине или мужчине».",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "mṛtyu",
+          "note_ru": "akāle durlabho mṛtyuḥ — «не в срок смерть труднодостижима». Сита прямо ссылается на ходячую максиму пандитов: «lokapravādaḥ satyo 'yaṃ paṇḍitaiḥ samudāhṛtaḥ । akāle durlabho mṛtyuḥ striyā vā puruṣasya vā» (V.25.12). Зеркальная сентенция Шантипарвы переворачивает ту же мысль о неотменимости часа смерти в призыв к безотлагательному долгу: «śvaḥkāryam adya kurvīta... na hi pratīkṣate mṛtyuḥ kṛtaṃ vāsya na vā kṛtam» (MBh XII.169.14) — «Завтрашнее дело пусть сделает сегодня... ибо смерть не ждёт, исполнено ли [должное] или нет». Подстрочник верно передаёт смысл реплики; параллель раскрывает её статус общеэпической гномы о kāla."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.25.18",
+        "lemma_iast": "dehāntara",
+        "note_ru": "Дехāнтара (dehāntara, n.) — «другое тело, иное воплощение» (deha «тело» + antara «иное»). MW: dehāntara 'another body; obtaining another body — transmigration'. В стихе Сита спрашивает: «какой великий грех совершила я в прошлом воплощении (dehāntare)?» — это прямое указание на доктрину кармы и перевоплощения. Примечательно, что dehāntara (а не janmāntara «иное рождение» или pūrvajanna «прошлая жизнь») акцентирует именно смену телесной оболочки — технический термин, близкий к буддийскому pudgala-parāvṛtti, хотя здесь он в контексте брāхманической кармической доктрины.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "med",
+        "source": "dic_mw:dehAntara",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/25.18.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 1,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "dehāntare is verbatim in the verse and deha+antara = 'another body' matches MW exactly (checked in dic_mw.jsonl: 'dehāntara n. another body {MW.}'). However the comparison to a Buddhist technical term 'pudgala-parāvṛtti' is not a recognized/attested Buddhist doctrinal term (standard vocabulary is punarbhava/saṃsāra/pudgala-nairātmya) and reads as an invented-sounding gloss presented as established cross-tradition terminology — fails the faithfulness gate.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "25.18",
+      "verse_iast": "kīdṛśaṃ tu mahāpāpaṃ mayā dehāntare kṛtam । tenedaṃ prāpyate ghoraṃ mahāduḥkham sudāruṇam ॥18॥",
+      "leonov_ru": "Какой великий грех я совершила в прошлой жизни, Из-за которого обретается мной (теперь) это ужасное, весьма жестокое великое несчастье?",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.26.2",
+        "lemma_iast": "pramatta",
+        "note_ru": "Прамāтта (pramatta, adj.) — «беспечный, невнимательный; опьянённый, потерявший рассудок» (pra- + matta, p.p.p. от √mad- «опьяняться, радоваться»). MW: pramāda 'negligence, carelessness; madness, insanity'. В стихе три сравнения в одном: unmattā («безумная»), pramattā («утратившая рассудок»), bhrānta-cittā («блуждающего ума»). Это не просто нагнетание синонимов: unmatta — клиническое безумие (madenness), pramatta — состояние опьянения или аффекта, bhrānta-citta — дезориентация мысли. Три уровня: потеря нормы, потеря контроля, потеря направления — постепенная эскалация через синонимический ряд, невидимая при переводе «словно безумная».",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "med",
+        "source": "dic_mw:pramAda",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/26.2.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "pramatteva is verbatim in the verse. pra+mad- (Whitney matta) etymology is correct. Distinguishing the three near-synonyms (unmatta/pramatta/bhrāntacitta) as an escalating triad — loss of norm, loss of control, loss of direction — is a genuine philological/literary addition invisible in the crib's flat 'словно безумная'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "26.2",
+      "verse_iast": "unmatteva pramatteva bhrāntacitteva śocatī । upāvṛttā kiśorīva viceṣṭantī mahītale ॥2॥",
+      "leonov_ru": "Горюющая, словно безумная, словно бы разум ее блуждает, Каталась по земле, подобно жеребенку.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.26.6",
+        "lemma_iast": "aśmasāra",
+        "note_ru": "Ашмасāра (aśmasāra, n./adj.) — «железо (sāra) как камень (aśman)», то есть «сталь, наилучшее железо». Сложное: aśman «камень, скала, также молния» + sāra «суть, лучшее вещество». MW: aśmasāra 'iron; the essence of stone'. Буквально — «(сделанное) из каменной сути». В стихе Сита восклицает: «видно, из aśmasāra или из бессмертного (ajarāmara) сделано моё сердце». Aśmasāra — не просто «железо», но категория твердейшего из твёрдого; ajarāmara («не-стареющее и не-умирающее») — противоположный полюс. Антитеза создаёт риторику: два крайних объяснения (природная непробиваемость ИЛИ магическая неуязвимость) — оба отказывают сердцу в человеческой норме.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:aSmasAra",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/26.6.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "aśmasāramidaṃ is verbatim in the verse. aśman+sāra etymology is correct (MW: aśmasāra 'iron; the essence of stone'). Identifying the aśmasāra/ajarāmara antithesis (two opposite explanations, both denying the heart a human norm) is a real rhetorical-critical addition beyond the crib's plain translation.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "26.6",
+      "verse_iast": "aśmasāramidaṃ nūnam athavāpy ajarāmaram । hṛdayaṃ mama yenedaṃ na duḥkhena viśīryate ॥6॥",
+      "leonov_ru": "Видно, из железа или же не стареющее и бессмертное Сердце мое, раз оно не разрывается от горя.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.26.14",
+        "lemma_iast": "virādha",
+        "note_ru": "Вирāдха (virādha, m.) — ракшас, убитый Рāмой в начале лесного изгнания (Āraṇyakāṇḍa, гл. 2–4). MW: virādha 'N. of a Rākṣasa'. По мифологии, Вирāдха был небесным гандхарвой Тумбуру, проклятым Куберой и принявшим облик ракшаса; убийство Рāмой освободило его от проклятья. Именно поэтому Вирāдха — первый из рāкшасов, убитых Рāмой в лесу, и его упоминание Ситой открывает ряд побед-аргументов (Вирāдха → 14000 в Джанастхāне). Нарратив строится от первой победы к крупнейшей — риторика ingressus ad conclusionem.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "med",
+        "source": "dic_mw:virADa",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/26.14.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 1,
+            "anchoring": 2
+          },
+          "verdict": "edit",
+          "reason": "virādho is verbatim in the verse. Virādha's identity (rakshasa killed by Rama in Daṇḍaka forest, cursed gandharva Tumburu backstory) is accurate epic lore, and the escalation reading (Virādha as the first of Rama's rakshasa kills, building toward the Janasthāna 14,000) is a genuine addition. Register concern: the coined Latin tag 'ingressus ad conclusionem' is not an attested rhetorical term and reads as pseudo-erudite decoration — fix: drop the invented Latin label, keep the etymology and the escalation observation, which stand on their own.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "26.14",
+      "verse_iast": "virādho daṇḍakāraṇye yena rākṣasapuṃgavaḥ । raṇe rāmeṇa nihataḥ sa māṃ kiṃ nābhipadyate ॥14॥",
+      "leonov_ru": "Рама, которым в лесу Дандака был в бою убит Вирадха, бык среди ракшасов, Почему ко мне не приходит?",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.26.18",
+        "lemma_iast": "gṛdhrarāja",
+        "note_ru": "Гридхрарāджа (gṛdhrarāja, m.) — «царь коршунов/стервятников», то есть Джатāюс. gṛdhra (MW: 'vulture; desiring greedily') — стервятник как символ жадности, но в эпическом контексте гриф/орёл — царская птица. Джатāюс (Jaṭāyu) — сын Аруны, брат Сампāти; его гибель в поединке с Раваной (Āraṇyakāṇḍa) — один из ключевых эпических эпизодов. Сита называет его gṛdhrarāja — «царь птиц» (а не просто «птица») — акцентируя его царское достоинство и добровольный жертвенный выбор. Подстрочник Леонова «царь коршунов» технически точен; без пояснения о Джатāюсе как герое-жертвенике смысл стиха («он мог бы сообщить Рāме, но был убит») не раскрывается.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:gfDra",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/26.18.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "gṛdhrarājo is verbatim in the verse. gṛdhra 'vulture' (MW) is correct, Jaṭāyu's identity (son of Aruṇa, brother of Sampāti, slain by Ravana in Āraṇyakāṇḍa) is accurate. Distinguishing the dignified 'king of birds' reading from a flat 'vulture-king' and spelling out the narrative stakes (he could have told Rama) is genuine added value beyond the crib's bare 'царь коршунов'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "26.18",
+      "verse_iast": "hṛteti yo 'dhigatvā māṃ rāghavāya nivedayet । gṛdhrarājo 'pi sa raṇe rāvaṇena nipātitaḥ ॥18॥",
+      "leonov_ru": "Узнав, что меня похитили, царь коршунов, который должен был сообщить (об этом) Рагхаве, Был в бою повержен Раваной.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.26.24",
+        "lemma_iast": "śmaśāna",
+        "note_ru": "Шмашāна (śmaśāna, n.) — «место сожжения трупов, кремационная площадка», этимология неясна; MW предлагает связь с «śmaśayana» («ложе мертвецов»), но Кирāтāрджунийя (iii, 5) трактует как aśma-śayana («каменное ложе»). В любом случае — место контакта с нечистотой и смертью, «нечистое место». Сита предсказывает: Лāнка превратится в śmaśāna — «место сожжения трупов с улицами, полными дыма от погребальных костров». Это не просто «кладбище»: śmaśāna в Индии — место, где живут привидения (pretā), бесы (piśāca), где совершаются тантрические rites. Превращение царского города в śmaśāna — предельный образ инверсии.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:SmaSAna",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/26.24.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "śmaśānasadṛśī is verbatim in the verse. The etymology is correctly hedged as disputed (śmaśayana per MW vs aśmaśayana per Kirātārjunīya), and the cultural point about śmaśāna as haunt of pretas/piśācas and tantric ritual is standard. The 'royal city inverted into cremation ground' reading adds real interpretive depth beyond the crib's plain 'кладбище'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "26.24",
+      "verse_iast": "citādhūmākulapathā gṛdhramaṇḍalamaṇditā । acireṇaiva laṅkeyaṃ (GP kālena) śmaśānasadṛśī bhavet ॥24॥",
+      "leonov_ru": "С улицами, заполненными дымом от погребальных костров, с кружащимися в небе стаями коршунов В недолгое время стала бы (Ланка) подобной кладбищу (месту сожжения трупов).",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.26.27",
+        "lemma_iast": "vidhavā",
+        "note_ru": "Видхавā (vidhavā, f.) — «вдова», буквально «лишённая мужа» (vi- «без» + dhava «муж»). MW: vidhavā 'a husbandless woman, widow' (с указанием на параллели: др.-греч. ἡθεος, лат. viduus, нем. Witwe). В стихе Лāнка уподобляется «юной вдове» (pramadā vidhavā): pramadā — «молодая (страстная) женщина», vidhavā — «вдова». Это двойная антитеза: pramadā подразумевает расцвет и желание, vidhavā — социальную смерть и ритуальную нечистоту. Лāнка как pramadā vidhavā — образ нечестивого процветания, обречённого на иссыхание. Подстрочник «подобно юной вдове» передаёт образ, но не ритуальный ужас vidhavā-состояния.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:viDavA",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/26.27.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "pramadā vidhavā is verbatim in the verse. vi+dhava etymology is correct; checked dic_mw.jsonl — MW's own entry for vidhavā lists a Greek cognate alongside Latin vidua / Gothic widuwo / German Witwe, confirming the IE cognate set claimed in the note is faithfully drawn from MW, not invented. The pramadā/vidhavā oxymoron (bloom vs. ritual death) is a real added reading beyond the crib's plain 'юная вдова'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "26.27",
+      "verse_iast": "nūnaṃ laṅkā hate pāpe rāvaṇe rākṣasādhipe । śoṣam eṣyati durdharṣā pramadā vidhavā yathā ॥27॥",
+      "leonov_ru": "Несомненно, когда будет убит грешный Равана, владыка ракшасов, Ланка Иссохнет, неприступная, словно юная вдова.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.26.36",
+        "lemma_iast": "vaivasvata",
+        "note_ru": "Вайвасвата (vaivasvata, m.) — «(сын) Вивасвата (Солнца)», то есть Яма, бог смерти и справедливости. MW: vaivasvata 'patr. of Yama'. Яма — сын Сурьи (Vivasvat) и Саранью; он же первый смертный (prathama mṛtyu) и судья мёртвых. В стихе Сита говорит: «скоро увижу я бога Вайвасвату» (= умру). Примечательно: Сита употребляет эпитет Ямы по отцу — vaivasvata — а не стандартный «Яма» или «Dharmarāja». Выбор эпитета апеллирует к Солнцу (Vivasvat): она только что вспомнила о Сурье (через параллель suvarcalā в гл. 24). Солнце → Яма: хожу по этой цепочке от жизни к смерти.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "med",
+        "source": "dic_mw:vEvasvata",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/26.36.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "vaivasvataṃ devaṃ is verbatim in the verse. Vaivasvata as Yama's patronymic (son of Vivasvat/Sūrya) is correct per MW, and Yama-as-first-mortal is accurate epic-puranic lore. Tracing why THIS solar epithet (rather than plain Yama/Dharmarāja) is chosen — via the Sūrya association just invoked through suvarcalā in ch.24 — is a genuine intra-textual addition beyond the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "26.36",
+      "verse_iast": "rāmaṃ raktāntanayanam apaśyantī suduḥkhitā । kṣipraṃ vaivasvataṃ devaṃ paśyeyaṃ patinā vinā ॥36॥",
+      "leonov_ru": "Рамы с красными уголками глаз не видя, страдающая, Лишенная мужа, скоро увижу я бога Вайвасвату (Яму, бога смерти).",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.26.43",
+        "lemma_iast": "akliṣṭacāritrā",
+        "note_ru": "Акліштачāритра (akliṣṭa-cāritra, adj.) — «чьи деяния/поведение (cāritra) неутомимы (akliṣṭa)». akliṣṭa — «не измученный, неустанный» (a- + kliṣṭa, p.p.p. от √kliś- «утомляться, страдать»); cāritra «поведение, доблесть, образ действий». Сочетание означает «тот, в чьей доблести нет усталости», то есть неутомимый в праведных деяниях. MW: kliṣṭa 'pained, afflicted'; cāritra 'conduct, behaviour; celebrated exploits'. Этот эпитет — часть триады в характеристике Рāмы: mahātman (великодушный) + akliṣṭacāritra (неутомимо-доблестный) + śūra (герой). Подстрочник «неутомимый в деяниях» — точен, но не объясняет этимологический парадокс: kliṣṭa («страдающий») дало akliṣṭa («не-страдающий»), то есть тот, кого доблесть не изматывает.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "med",
+        "source": "dic_mw:akliSTa+dic_mw:cAritra",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/26.43.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "akliṣṭacāritrāc is verbatim in the verse. a+kliṣṭa+cāritra etymology is correct (MW: kliṣṭa 'pained, afflicted'; cāritra 'conduct'). Flagging the etymological paradox (kliṣṭa 'suffering' -> akliṣṭa 'one whose valor never tires') and its place in a triadic epithet structure (mahātman/akliṣṭacāritra/śūra) is a real addition beyond the crib's plain 'неутомимого в деяниях'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "26.43",
+      "verse_iast": "śreyo me jīvitān martuṃ vihīnā yā mahātmanā । rāmād akliṣṭacāritrāc chūrāc chatrunibarhaṇāt ॥43॥",
+      "leonov_ru": "Лучше мне умереть, чем жить без великого духом Рамы, неутомимого в деяниях героя, губителя врагов.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.26.47",
+        "lemma_iast": "jitātman",
+        "note_ru": "Джитāтман (jitātman, adj.) — «победивший (jita, p.p.p. от √ji-) себя (ātman)». MW: jitātman 'one who has subdued his soul or passions'. Технический термин йоги и аскетики: тот, кто преодолел не внешних врагов, а внутренние силы (desire, aversion, ego). Контекст: Сита завершает плач восхвалением муни, у которых нет «приятного и неприятного» (priyāpriye). jitātman — высшая стадия этого пути: не просто «не имеющий предпочтений», но «победивший саму структуру желания». Горькая ирония: именно она, Сита, невольно достигает состояния, описываемого ascetical ideal — она лишена и желаемого (Рāмы), и нежелаемого (смерти). Но это не jitātman, а mṛtātman — сломленная, а не победившая душа.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:jitAtman",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/26.47.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck said 'absent' but jitātmāno is literally in the verse ('jitātmāno mahābhāgā') — the deterministic matcher missed the sandhi/case form. jita+ātman as a technical term for the ascetic who has conquered self/passions is correct MW usage. The ironic contrast with Sita's own broken state is clearly framed as the note's own interpretive move, not a false factual claim, and adds real depth beyond the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "26.47",
+      "verse_iast": "dhanyāḥ khalu mahātmāno munayaḥ satyasammatāḥ । jitātmāno mahābhāgā yeṣāṃ na staḥ priyāpriye ॥47॥",
+      "leonov_ru": "Счастливы, воистину, наделенные великим духом муни, почитаемые за (свою) правдивость, Победившие себя, наделенные великой долей, для которых нет приятного и неприятного.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.3",
+        "lemma_iast": "pāpaviniścaya",
+        "note_ru": "Папавинишчая (pāpa-viniścaya, f. voc.) — «решившаяся на грех»: pāpa «зло» + viniścaya «твёрдое решение» (vi+ni+корень ci-, «устанавливать»). MW: viniścaya 'decided opinion, certainty'. Ракшаси обращаются к Сите именно этим составным эпитетом pāpaviniścaye. Парадокс: pāpaviniścaya — термин для того, кто сознательно выбирает adharma; именно Сита воплощает śīla (безупречное поведение). Инверсия обвинения — структурная ирония текста.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:pApa+viniScaya",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.3.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "pāpaviniścaye is verbatim in the verse. pāpa+viniścaya compound analysis is correct. Reading the epithet as an ironic inversion (the rākṣasīs accuse the paragon of dharma of being 'set upon sin') is a genuine literary-critical addition beyond the crib's plain 'упорствующая в грехе'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.3",
+      "verse_iast": "adyedānīṃ tavānārye sīte pāpaviniścaye । rākṣasyo bhakṣayiṣyanti māṃsam etad yathāsukham ॥3॥",
+      "leonov_ru": "Нынче же твоим, неблагородная Сита, упорствующая в грехе, Ракшаси наедятся мясом вволю.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.5",
+        "lemma_iast": "snuṣā",
+        "note_ru": "Сноха (snuṣā, f.) — «невестка, жена сына»; MW: snuṣā 'a daughter-in-law'. Триджата называет Ситу «снузой Дашаратхи» (daśarathasya ca snuṣā). В дхармашастрической традиции snuṣā защищена патриархальным авторитетом свекра. Называя Ситу snuṣā (а не bharya Rāmy), Триджата апеллирует к клановой иерархии: посягательство на snuṣā — оскорбление рода Дашаратхи как целого, стоящее выше воли Раваны.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "high",
+        "source": "dic_mw:snuzA",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.5.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "snuṣāṃ is verbatim in the verse. snuṣā = daughter-in-law is correct MW gloss. The clan-hierarchy reading (calling Sita snuṣā rather than bhāryā invokes the whole lineage of Daśaratha, an authority transcending Ravana's will) is a real cultural-legal addition beyond the crib's flat translation.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.5",
+      "verse_iast": "ātmānaṃ khādatānāryā na sītāṃ bhakṣayiṣyatha । janakasya sutām iṣṭāṃ snuṣāṃ daśarathasya ca ॥5॥",
+      "leonov_ru": "Себя ешьте, неблагородные, Ситу вы есть не будете, Любимую дочь Джанаки и невестку Дашаратхи.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.6",
+        "lemma_iast": "romāharṣaṇa",
+        "note_ru": "Ромахаршана (roma-harṣaṇa, n.) — «подъём телесных волос»: roma «тонкие волоски тела» + harṣaṇa «возбуждение» (корень hṛṣ-, «ощетиниваться, радоваться»). MW: harṣa 'erection of the hairs of the body (as a symptom of joy or horror)'. Парадокс: harṣaṇa несёт одновременно «восторг» и «рефлекторный ужас» — оба состояния вызывают romāharṣa. Триджата ощущает «dāruṇo romāharṣaṇaḥ» — уточнение dāruṇa («жестокий, ужасный») снимает двусмысленность harṣa в сторону пророческого трепета, а не радости.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:harza+roman",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.6.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck said 'absent' but romaharṣaṇaḥ is literally in the verse (ā vs a vowel-length variance tripped the matcher). roma+harṣaṇa etymology is correct (MW harṣa: 'erection of the hairs of the body, from joy or horror'). Resolving the harṣa ambiguity (joy vs. horror) via the qualifier dāruṇa is a real close-reading addition beyond the crib's plain 'волосы... встают дыбом'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.6",
+      "verse_iast": "svapno hy adya mayā dṛṣṭo dāruṇo romaharṣaṇaḥ । rākṣasānām abhāvāya bhartur asyā bhavāya ca ॥6॥",
+      "leonov_ru": "Видела я сейчас сон страшный, от которого волосы на теле встают дыбом, [Предвещающий] гибель ракшасам и победу ее мужу.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.10",
+        "lemma_iast": "śuklamālyāmbara",
+        "note_ru": "Шуклямальябхара (śukla-mālya-ambara, adj.) — «в белых гирляндах и белых одеждах»: śukla «белый, чистый» + mālya «гирлянда» + ambara «одежда». MW: śukla 'white, pure'. В эпическом цветовом коде белый (śukla) — цвет саттвы, победы, царской удачи и ритуальной чистоты. Тройная «белизна» Рамы (одежды, гирлянды, белая гора V.27.11) — систематический иконографический образ; его антипод — тройная «краснота и чернота» Раваны (V.27.22–24). Цветовая антитеза выстраивает всю онирическую сцену.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:Sukla+mAlya+ambara",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.10.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "śuklamālyāmbaradharo is verbatim in the verse. śukla+mālya+ambara etymology is correct, and the sattva/purity/royal-fortune value of white in epic color-coding is standard. Tracing the systematic triple-white(Rama)/triple-red-black(Ravana, vv.22-24) antithesis across the dream sequence is a genuine cross-verse literary addition beyond the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.10",
+      "verse_iast": "yuktāṃ vājisahasreṇa svayam āsthāya rāghavaḥ । śuklamālyāmbaradharo lakṣmaṇena samāgataḥ ॥10॥",
+      "leonov_ru": "Запряженный тысячей коней взойдя, сам Рагхава Одетый в белые одежды и гирлянды летел вместе с Лакшманой.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.22",
+        "lemma_iast": "tailasamukṣita",
+        "note_ru": "Тайлесамукшита (taila-samukṣita, adj.) — «обрызганный маслом с головы до ног»: taila «кунжутное масло» + samukṣita (sam+ud+корень ukṣ-, «смачивать»). MW: taila 'oil, sesame oil'. Обрызгивание маслом + бритьё головы (muṇḍa) — двойной ритуальный знак: обряд pitṛmedha (кремационного ритуала) и траура. Антитеза к śuklamālya Рамы: Равана в «траурном масле» vs Рама в «победных белых гирляндах».",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:taila+samukzita",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.22.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "tailasamukṣitaḥ is verbatim in the verse. taila+samukṣita etymology is correct, and oil-anointing plus a shaved head (muṇḍa) as funerary/mourning ritual markers (pitṛmedha) is an accurate cultural point. The explicit antithesis to Rama's white garlands (previous note, V.27.10) is a genuine cross-referential addition beyond the crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.22",
+      "verse_iast": "rākṣasair vāpi cānyair vā svargaḥ pāpajaneiriva । rāvaṇaś ca mayā dṛṣṭo muṇḍas tailasamukṣitaḥ ॥22॥",
+      "leonov_ru": "Ракшасами или иными, как грешными [не могут обрести] небеса. И видела я Равану, обритого наголо, обрызганного кунжутным маслом.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.23",
+        "lemma_iast": "karavīra",
+        "note_ru": "Каравира (karavīra, m.) — Nerium indicum, красный олеандр; MW: karavīra 'the Oleander (Nerium Indicum)'. В классической символике karavīra — цветок смерти и жертвы: красные цветы подносились Яме. Сон: Равана в «karavīrakṛtasrajāḥ» — в гирляндах из каравиры. Это не декорация роскоши, а символика смертного приговора. Подстрочник переводит нейтрально «красные гирлянды»; ботаническая специфика (именно karavīra, а не kumuda или padma) здесь принципиальна.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:karavIra",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.23.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "park",
+          "reason": "karavīrakṛtasrajaḥ is verbatim in the verse, and the oleander identification is correct — but the crib (leonov_ru) already states essentially the same content verbatim, including Goldman's observation that red garlands in dreams are an ill omen and the oleander identification ('Каравира – красно-белые или красные цветы олеандра'). The only genuinely new fact is that karavīra flowers were offered specifically to Yama, which is real but thin; the bulk of the note restates the crib rather than adding independent value.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.23",
+      "verse_iast": "raktavāsāḥ pibanmattaḥ karavīrakṛtasrajaḥ । vimānāt puṣpakād adya rāvaṇaḥ patito ksitau ॥23॥",
+      "leonov_ru": "Одетого в красное, пьющего [масло], пьяного, в красной гирлянде из цветов каравиры. С виманы Пушпаки ныне Равана упал на землю. Голдмен отмечает, что видеть красные гирлянды во сне – неблагоприятный знак (см. стр. 424). Каравира – красно-белые или красные цветы олеандра (Nerium odorum)",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.25",
+        "lemma_iast": "dakṣiṇā-diś",
+        "note_ru": "Южное направление (dakṣiṇā diś) — «правая / южная сторона»: dakṣiṇā «правая, южная» (корень dakṣ-). MW: dakṣiṇā 'south (regarded as inauspicious)'. В ведийской ориентации юг — направление Ямы (бога смерти) и мёртвых предков (pitṛ). Равана едет на юг верхом на осле (gardabha — нечистое животное, связанное с Ямой): двойная символика «движения к смерти». Подстрочник указывает «в южную сторону», не расшифровывая космологического смысла.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:dakziRA",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.25.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "dakṣiṇāṃ diśam is verbatim in the verse. dakṣiṇā as the inauspicious/Yama-associated direction is correct Vedic cosmology, and the donkey (gardabha) as a ritually impure/inauspicious animal is an accurate cultural point. The double death-symbolism (south + donkey) is a genuine cosmological addition beyond the crib's flat 'направлялся на юг'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.25",
+      "verse_iast": "pibaṃs tailaṃ hasannṛtyan bhrāntacittākulendriyaḥ । gardabhena yayau śīghraṃ dakṣiṇāṃ diśam āsthitaḥ ॥25॥",
+      "leonov_ru": "Пьющий кунжутное масло, смеющийся, пританцовывающий, с помраченным умом и в смятенных чувствах, На осле он быстро направлялся на юг.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.40",
+        "lemma_iast": "gomayahrada",
+        "note_ru": "Гомайяхрада (gomaya-hrada, m.) — «озеро коровьего навоза»: gomaya «навоз» (go «корова» + maya «состоящий из») + hrada «глубокий водоём». MW: gomaya 'cow-dung'. Погружение ракшасов — ритуальная инверсия: вместо коровьего молока (kṣīra, священная очищающая жидкость) — навоз. «Законы Ману» (2.54) описывают очищение gomaya-нанесением; полное погружение инвертирует этот ритуал: не очищение, но поглощение нечистотой = небытие.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:gomaya+hrada",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.40.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "gomayahradam is verbatim in the verse. gomaya+hrada etymology is correct, and cow-dung's role in dharmaśāstric purification (Manu) is a standard, well-attested practice. The 'ritual inversion' reading (immersion in dung rather than purifying milk = a mark of impurity, not cleansing) is a genuine interpretive addition beyond the crib's plain 'озеро коровьего навоза'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.40",
+      "verse_iast": "kumbhakarṇādayaś ceme sarve rākṣasapuṃgavāḥ । raktaṃ nivasanaṃ gṛhya praviṣṭā gomayahradam ॥40॥",
+      "leonov_ru": "И все быки-ракшасы начиная с Кумбхакарны Надев красные одежды, вошли в озеро коровьего навоза.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.46",
+        "lemma_iast": "praṇipātaprasannā",
+        "note_ru": "Пранипата-прасанна (praṇipāta-prasannā, f.) — «умиротворённая поклоном»: praṇipāta «простирание ниц» (pra+ni+корень pat-) + prasannā «благосклонная» (pra+корень sad-). MW: praṇipāta 'prostration'; prasanna 'pleased'. Простирание ниц — высший жест смирения. Триджата предрекает: Сита «умиротворённая поклоном» ракшасок способна их спасти. Это не благородство — это структура дхармы: правомерная просьба с правомерным жестом обязывает к милосердному ответу.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:praRipAta+prasanna",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.46.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "praṇipātaprasannā is verbatim in the verse. praṇipāta+prasannā compound analysis is correct. Framing Trijaṭā's prediction as a dharmic-structural claim (a rightful gesture of submission obligates a merciful response) is a genuine interpretive addition beyond the crib's plain translation.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.46",
+      "verse_iast": "praṇipātaprasannā hi maithilī janakātmajā । alam eṣā paritrātuṃ rākṣasyo mahato bhayāt ॥46॥",
+      "leonov_ru": "Довольная [нашим] простиранием к ногам Майтхили, дочь Джанаки, Только она способна спасите ракшаси от великой опасности.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.27.50",
+        "lemma_iast": "sphurat-cakṣus",
+        "note_ru": "Спхуратчакшус (sphurat-cakṣus, adj.) — «с трепещущим глазом»: sphurat (ppr. корень sphur-, «дрожать, пульсировать») + cakṣus «глаз». MW: sphur 'to throb, quiver'. В джйотиш-традиции (Bṛhatsaṃhitā, гл. 45–51) непроизвольная пульсация левого глаза у женщины — «śubha-śakuna» (благое предзнаменование). Триджата фиксирует это как третье независимое подтверждение: дрожание глаза + дрожание бедра + пение птицы (V.27.50–53) = ритуальный триплет omina.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:sPur+cakzus",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/27.50.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck said 'absent' but sphurac cakṣuḥ is literally in the verse (sphurat+cakṣuḥ with c-sandhi) — the matcher missed the sandhi form. sphurat 'throbbing' (√sphur) is correct, and the jyotiṣa reference (Bṛhatsaṃhitā aṅga-vikāra/limb-twitch omens) is an accurate traditional framework. Identifying the triple-omen structure (eye + thigh + bird-song, vv.50-53) is a genuine structural addition beyond the crib's plain description.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "27.50",
+      "verse_iast": "nimittabhūtam etat tu śrotum asyā mahat priyam । dṛśyate ca sphurac cakṣuḥ padmapatram ivāyatam ॥50॥",
+      "leonov_ru": "Это знамение, что услышит она очень приятные для нее [вести]. И видно, как подрагивает ее глаз, широкий, словно лепестки лотосов.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    }
+  ]
+}

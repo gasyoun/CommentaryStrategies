@@ -11,7 +11,15 @@
       "verses_total": 58,
       "notes_kept": 16,
       "notes_rejected": 34,
-      "density_pct": "27.6%"
+      "density_pct": "27.6%",
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 12,
+          "reject": 2
+        }
+      }
     }
   },
   {
@@ -23,7 +31,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. anādhṛṣya; Apte s.v. ādhṛṣ",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Etymology a+ādhṛṣya < ādhṛṣ and MW gloss are sound; adds synonym differentiation (durbheda/durgama) absent from crib/tier1; register clean; lemma stands exactly in verse.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.3",
@@ -34,7 +56,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. yojana; Apte s.v. yojana",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 1,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "reject",
+      "reason": "MW gives ~9 (or 5) English miles per yojana, so 100 yojanas ≈ 1290-1450 km (or ~800 km on the 5-mile estimate) — the note's '800-900 км (по MW)' figure misattributes an incorrect conversion to MW and the '~500 км' alt figure also conflates miles/km; a false quantitative claim presented as dictionary fact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.5",
@@ -45,7 +81,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. mahodadhi; Apte s.v. udadhi",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "mahā+udadhi(<uda+dhā) etymology and MW gloss correct; adds real distinction among ocean-synonyms (sāgara/varuṇālaya/arṇava/mahodadhi) not present in crib or tier1.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.6",
@@ -56,7 +106,21 @@
     "priority": "low",
     "subtype": "lexical",
     "source": "MW s.v. śādvala; Apte s.v. śādvala",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "MW gloss for śādvala ('fresh/green grass') correct; adds a real (if modest) distinction from tṛṇa/vana beyond crib's generic 'луга'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.7",
@@ -67,7 +131,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. ṛṣabha; Apte s.v. plavaga",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "anchor_precheck flagged 'absent' but the compound stands verbatim in the verse (hanumān plavagarṣabhaḥ, lemma's ṛ placement is a typo for the sandhi form) — anchoring confirmed by direct inspection. Etymology plavaga+ṛṣabha and the parallel kapikuñjara/kapiśārdūla formula-set are sound and add real content beyond crib's bare 'бык среди обезьян'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.12",
@@ -78,7 +156,21 @@
     "priority": "low",
     "subtype": "lexical",
     "source": "MW s.v. haṃsa; Apte s.v. haṃsa; ChaUp 3.15 (haṃsa как символ)",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "haṃsa/kāraṇḍava MW glosses correct; the Upanishadic haṃsa-as-Brahman resonance (cited ChaUp 3.15) is real added cultural depth absent from crib.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.16",
@@ -89,7 +181,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. prākāra; Apte s.v. prākāra; Arthaśāstra II (укреплённые города)",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "prākāra etymology (pra-ā-√kṛ) and MW gloss correct; architectural distinction from antaḥpura/bāhya-vāstu and the 'golden city' topos add modest value beyond crib's plain 'стена'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.17",
@@ -100,7 +206,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. aṭṭālaka; Arthaśāstra II.4 (nāgara-rakṣā)",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "aṭṭālaka MW gloss correct; Arthaśāstra fortification-term framing and the 'hundred towers' hyperbole-topos add value beyond crib's bare 'башни'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.18",
@@ -111,7 +231,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. toraṇa; Apte s.v. toraṇa; иконография toraṇa в Санчи",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "toraṇa MW gloss correct; Sanchi iconographic parallel is accurate and gives real art-historical depth absent from crib/tier1.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.20",
@@ -122,7 +256,21 @@
     "priority": "high",
     "subtype": "lexical",
     "source": "MW s.v. viśvakarman; Apte s.v. viśvakarman; Mbh Ādi passim",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "anchor_precheck flagged 'absent' but 'viśvakarmaṇā' (instr. of viśvakarman) stands verbatim in the verse — confirmed by inspection. MW gloss and the Dvārakā/Amarāvatī/Lankā architect-mythology are standard and correct, adding real depth beyond crib's bare name.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.21",
@@ -133,7 +281,21 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. vaprā; Arthaśāstra II.4",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 0,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "reject",
+      "reason": "The claimed body-metaphor mapping is wrong: the verse's actual bahuvrīhi structure pairs vapra+prākāra JOINTLY as jaghanā ('hips', not vaprā=hips/prākāra=torso separately), and aṭṭālaka is the avataṃsaka ('ear-ornament/crest', matching Leonov's own 'гирлянда башен'), not 'голова' ('head') as the note invents. A fabricated anatomical correspondence not supported by the cited verse.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.24",
@@ -144,7 +306,21 @@
     "priority": "high",
     "subtype": "lexical",
     "source": "MW s.v. bhogavatī; Apte s.v. bhoga; Mbh Ādi 28 (описание Бхогавати)",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "bhogavatī MW gloss and the bhoga (pleasure/serpent-coil) double meaning are correct and add real interpretive depth (naga-capital + city-of-pleasures pun) beyond crib's bare name.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.24",
@@ -166,7 +342,21 @@
     "priority": "high",
     "subtype": "lexical",
     "source": "MW s.v. sāman, dāna, bheda; Arthaśāstra VII.1-2 (четыре упāи)",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Correctly identifies the verse's four terms as Kauṭilya's canonical caturupāya (sāma/dāna/bheda/daṇḍa) framework — real technical-political content the crib and tier1 do not supply.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.2.39",
@@ -188,6 +378,20 @@
     "priority": "med",
     "subtype": "lexical",
     "source": "MW s.v. jyotsnā; Apte s.v. jyotsnā",
-    "review_required": true
+    "review_required": true,
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "jyotsnā MW gloss correct, distinguished from jyoti/prabhā; adds modest value over crib's already-explicit 'обилием света', mostly a definitional gloss rather than deep cultural content.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]

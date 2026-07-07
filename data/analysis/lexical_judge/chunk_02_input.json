@@ -1,0 +1,1863 @@
+{
+  "_meta": {
+    "chunk": 2,
+    "chapters": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "notes_count": 51,
+    "generated_by": "scripts/lexical_judge_prep.py",
+    "date": "2026-07-07",
+    "task": "H276 WS-2 lexical judge pass (rubric: PHASE2_METHOD §3.4, contrastive_value -> lexical_value)",
+    "judged": true,
+    "verdict_counts": {
+      "keep": 42,
+      "edit": 1,
+      "park": 1,
+      "reject": 7,
+      "flag_anchor": 0
+    }
+  },
+  "items": [
+    {
+      "note": {
+        "shloka": "V.2.1",
+        "lemma_iast": "anādhṛṣya",
+        "note_ru": "Неодолимый / непреступный (anādhṛṣya) — MW: anādhṛṣya — «not to be approached, inaccessible, irresistible». Букв. a+ādhṛṣya от ādhṛṣ «дерзать, нападать» → «тот, на кого нельзя напасть / не поддающийся дерзанию». В V.2.1 sa sāgaram anādhṛṣyam atikramya — «перейдя непреступный океан». Anādhṛṣya применяется как к людям (непобедимый), так и к пространствам (недоступный): здесь — о непреступности самого океана. Синоним durbheda («трудно раскалываемый») и durgama («трудно достижимый»), но с ударением на «нельзя нарушить силой» (от √dhṛṣ «быть смелым/нагло наступать»).",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. anādhṛṣya; Apte s.v. ādhṛṣ",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Etymology a+ādhṛṣya < ādhṛṣ and MW gloss are sound; adds synonym differentiation (durbheda/durgama) absent from crib/tier1; register clean; lemma stands exactly in verse.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.1",
+      "verse_iast": "sa sāgaram anādhṛṣyam atikramya mahābalaḥ । trikūṭasya taṭe laṅkāṃ sthitaḥ svastho dadarśa ha ॥1॥",
+      "leonov_ru": "Тот могучий (Хануман), преодолев неодолимый океан, Стоя спокойно на склоне [горы] Трикуты, увидел [город] Ланку.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "base",
+          "lemma_iast": "laṅkā",
+          "note_ru": "Ланка (laṅkā) — остров-крепость Раваны; «Шримад Рамаяна» локализует её на вершине горы Трикута. «Широмани» отождествляет с островом, известным ныне как Шри-Ланка. «Тилака» акцентирует неприступность её стен. Первое вхождение в кн. V. См. примеч. к I.1.73 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.)."
+        },
+        {
+          "subtype": "base",
+          "lemma_iast": "trikūṭa",
+          "note_ru": "Трикута (trikūṭa) — tri-kūṭa «трёхглавая [гора]» — горная гряда, на которой стоит Ланка. «Тилака» объясняет три вершины именами богов. Первое вхождение в кн. V."
+        },
+        {
+          "subtype": "base",
+          "lemma_iast": "bala",
+          "note_ru": "Сила (bala) — bala «физическая сила»; в парах bala-vikrama и bala-parākrama — первый элемент (грубая сила) в отличие от парящей доблести."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.2.3",
+        "lemma_iast": "yojana",
+        "note_ru": "Йоджана (yojana) — MW: yojana — «yoking, harnessing; a measure of distance (= 4 kroṣas or about 9 English miles, but some put it at 5 miles)». Букв. «запряжка» (от √yuj «запрягать») → расстояние одного перегона упряжки. В V.2.3 yojanānāṃ śataṃ śrīmāṃs tīrtvāpy uttamavikramaḥ — «переправившись через сто йоджан». 100 йоджан = ~800-900 км (по MW) или ~500 км (по нек. источникам). Yojana как «расстояние одной запряжки» — единица, связывающая мифологическое и практическое измерение пространства.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. yojana; Apte s.v. yojana",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 1,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "MW gives ~9 (or 5) English miles per yojana, so 100 yojanas ≈ 1290-1450 km (or ~800 km on the 5-mile estimate) — the note's '800-900 км (по MW)' figure misattributes an incorrect conversion to MW and the '~500 км' alt figure also conflates miles/km; a false quantitative claim presented as dictionary fact.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.3",
+      "verse_iast": "yojanānāṃ śataṃ śrīmāṃs tīrtvāpy uttamavikramaḥ । aniḥśvasan kapis tatra na glānim adhigacchati ॥3॥",
+      "leonov_ru": "Величественная и наделенная наивысшей мощью обезьяна, Одолев сотню йоджан, не запыхалась и не утомилась.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "base",
+          "lemma_iast": "vikrama",
+          "note_ru": "Доблесть / шаг (vikrama) — vikrama двузначно: «доблесть», «могущество» и буквально «широкий шаг». В батальных описаниях подстрочник обычно выбирает одно значение."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.2.5",
+        "lemma_iast": "mahodadhi",
+        "note_ru": "Великий океан (mahodadhi) — букв. «великий водоём» (mahā + udadhi от uda «вода» + dhī «держащий» ← √dhā). MW: mahodadhi — «the great ocean». Один из нескольких синонимов океана: samudra (встречающийся), sāgara (произошедший из деяния Сагары), varuṇālaya (обитель Варуны), arṇava (бурный), lavanāmbhasi (солёные воды), mahodadhi (великий водоём). Их дистрибуция в Сундараканде не случайна: mahodadhi акцентирует грандиозный объём воды (тогда как sāgara — мифологическое происхождение, varuṇālaya — теологию).",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. mahodadhi; Apte s.v. udadhi",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "mahā+udadhi(<uda+dhā) etymology and MW gloss correct; adds real distinction among ocean-synonyms (sāgara/varuṇālaya/arṇava/mahodadhi) not present in crib or tier1.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.5",
+      "verse_iast": "sa tu vīryavatāṃ śreṣṭhaḥ plavatām api cottamaḥ । jagāma vegavāṃl laṅkāṃ laṅghayitvā mahodadhim ॥5॥",
+      "leonov_ru": "И он, наилучший из могучих, и наилучший из прыгающих (обезьян), Преодолев океан, направился, стремительный, в Ланку.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.2.6",
+        "lemma_iast": "śādvala",
+        "note_ru": "Зелёный луг / лужайка (śādvala) — MW: śādvala — «covered with fresh or green grass, grassy». Букв. «покрытое śāda (свежей травой)». В V.2.6 śādvalāni ca nīlāni gandhavanti vanāni ca — «зелёные луга, душистые леса». Śādvala — специфически «трава, покрытая росой/молодая зелёная трава», в отличие от tṛṇa (сухая трава) или vana (лес). Акцент на свежести и молодости растительности: lush grass. В описании окрестностей Ланки это важный пейзажный элемент — «идеализированная природа» вокруг демонической крепости.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. śādvala; Apte s.v. śādvala",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "MW gloss for śādvala ('fresh/green grass') correct; adds a real (if modest) distinction from tṛṇa/vana beyond crib's generic 'луга'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.6",
+      "verse_iast": "śādvalāni ca nīlāni gandhavanti vanāni ca । madhumanti ca madhyena jagāma nagavanti ca ॥6॥",
+      "leonov_ru": "Через луга темно-зеленые и ароматные леса Полные меда (прекрасные) и полные деревьев пошел он.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.2.7",
+        "lemma_iast": "plavagaṛṣabha",
+        "note_ru": "Бык среди прыгунов (plavagaṛṣabha) — сложное smaṃ-сложение: plavaga «прыгун/обезьяна» + ṛṣabha «бык» → «бык среди обезьян» = лучший из обезьян. MW: ṛṣabha — «a bull; the best or most excellent of any kind». В V.2.7 hanumān plavagaṛṣabhaḥ — стандартный «бычий» суперлатив-метафора для первенства в группе. Тип-формула: plavagaṛṣabha = kapikuñjara («слон среди обезьян») = kapiśārdūla («тигр среди обезьян»). Три «животных суперлатива» для Ханумана создают градацию: бык (сила) → тигр (хищная ярость) → слон (непоколебимость).",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. ṛṣabha; Apte s.v. plavaga",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck flagged 'absent' but the compound stands verbatim in the verse (hanumān plavagarṣabhaḥ, lemma's ṛ placement is a typo for the sandhi form) — anchoring confirmed by direct inspection. Etymology plavaga+ṛṣabha and the parallel kapikuñjara/kapiśārdūla formula-set are sound and add real content beyond crib's bare 'бык среди обезьян'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.7",
+      "verse_iast": "śailāṃś ca tarusaṃchannān vanarājīś ca puṣpitāḥ । abhicakrāma tejasvī hanumān plavagarṣabhaḥ ॥7॥",
+      "leonov_ru": "Холмы, поросшие деревьями, и цветущие рощи Миновал стремительный Хануман, бык среди обезьян.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "base",
+          "lemma_iast": "plavaga",
+          "note_ru": "Прыгун / обезьяна (plavaga) — букв. «прыгающий по воде» или «прыгун» (pla-vaga); поэтическое обозначение обезьяны, акцентирует прыжковую природу ванаров."
+        },
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "tejasvin",
+          "note_ru": "Хануман в полёте назван tejasvī («сияющий, пламенный»). В Гите tejas — божественная сила-блеск, которой Кришна объявляет себя сутью: БхГ 7.10 «… tejas tejasvinām aham» — «В существах же Я — вечное семя, ясно знай и об этом, сын Притхи, сила разума Я — в разумных, Я — величие великолепных.»; БхГ 10.36 «tejas tejasvinām aham …» — «Игра в кости — среди хитрецов Я, среди славных Я — великолепье, Я — решимость, Я также — победа, а у добрых — сама доброта их.». Помета отмечает, что эпитет tejasvin прилагается к Хануману не как простое «блестящий», а как маркер причастности к сверхчеловеческой энергии (ср. tejaḥ … vīryam в V.1.36, где Хануман «вбирает» tejas перед прыжком). Свидетельство: уровень шлоки (мягкое)."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.2.12",
+        "lemma_iast": "haṃsakāraṇḍava",
+        "note_ru": "Гуси и утки (haṃsakāraṇḍava) — haṃsa «гусь» + kāraṇḍava «вид утки». MW: haṃsa — «a goose, gander; (fig.) the soul or spirit, Brahma». Kāraṇḍava — MW: «a species of duck (Anas Casarca, or Casarcoides)». В V.2.12 haṃsakāraṇḍavākīrṇā — «кишащие гусями и кāраṇḍавами». Двойная ценность haṃsa: 1) птица-гусь (зоологически); 2) «хамса» как метафора «чистой души» / «Брахмана» / «солнечного принципа» в упанишадах. Haṃsa в пруду Ланки — возможна ирония: символ чистоты в цитадели демонов.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. haṃsa; Apte s.v. haṃsa; ChaUp 3.15 (haṃsa как символ)",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "haṃsa/kāraṇḍava MW glosses correct; the Upanishadic haṃsa-as-Brahman resonance (cited ChaUp 3.15) is real added cultural depth absent from crib.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.12",
+      "verse_iast": "haṃsakāraṇḍavākīrṇā vāpīḥ padmotpalāvṛtāḥ । ākrīḍān vividhān ramyān vividhāṃś ca jalāśayān ॥12॥",
+      "leonov_ru": "Пруды с гусями и утками, покрытые лотосами и водяными лилиями, Разнообразные прекрасные сады и разнообразные пруды,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.2.16",
+        "lemma_iast": "prākāra",
+        "note_ru": "Крепостная стена / ограда (prākāra) — MW: prākāra — «a surrounding wall or enclosure, an outer wall or fence». Букв. «то, что сделано вокруг» (pra-ā-kāra от √kṛ «делать»). В V.2.16 kāñcenāvṛtāṃ ramyāṃ prākāreṇa mahāpurīm — «великий город, окружённый золотой крепостной стеной». Prākāra в архитектурных описаниях эпоса = внешняя стена укреплённого города; отличается от bāhya-vāstu (внешняя территория) и antaḥpura (внутренний дворец). Золотой prākāra Ланки — топос «золотого города» (хирановати).",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. prākāra; Apte s.v. prākāra; Arthaśāstra II (укреплённые города)",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "prākāra etymology (pra-ā-√kṛ) and MW gloss correct; architectural distinction from antaḥpura/bāhya-vāstu and the 'golden city' topos add modest value beyond crib's plain 'стена'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.16",
+      "verse_iast": "kāñcanenāvṛtāṃ ramyāṃ prākāreṇa mahāpurīm । gṛhaiś ca girisaṃkaśaiḥ śāradāmbudasaṃnibhaiḥ ॥16॥",
+      "leonov_ru": "К прекрасному великому городу, обнесенному стеной, покрытой золотом, С домами, подобными горам или осенним тучам,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.2.17",
+        "lemma_iast": "aṭṭālaka",
+        "note_ru": "Башня / надвратная башня (aṭṭālaka) — MW: aṭṭālaka — «a kind of fortification; a tower for defence, a raised parapet». В V.2.17 aṭṭālakaśatākīrṇāṃ patākādhvajasālinīm — «усеянную сотнями башен, украшенную знамёнами и флагами». AṭṬālaka — военно-архитектурный термин для «надвратной башни» или «бастиона»; в арт­хашастрических описаниях крепости — неотъемлемый элемент. MW различает aṭṭa и aṭṭāla как части одного укрепления. Сотня башен (aṭṭālakaśata) — гиперболический топос неприступности.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. aṭṭālaka; Arthaśāstra II.4 (nāgara-rakṣā)",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "aṭṭālaka MW gloss correct; Arthaśāstra fortification-term framing and the 'hundred towers' hyperbole-topos add value beyond crib's bare 'башни'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.17",
+      "verse_iast": "pāṇḍurābhiḥ pratolībhir uccābhir abhisaṃvṛtām । aṭṭālakaśatākīrṇāṃ patākādhvajaśālinīm ॥17॥",
+      "leonov_ru": "Покрытому белыми улицами высокими, Наполненному сотнями сторожевых башен, изобилующему флагами и знаменами,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.2.18",
+        "lemma_iast": "toraṇa",
+        "note_ru": "Надвратная арка / ворота (toraṇa) — MW: toraṇa — «an arched doorway, a portal; a decorative gate or archway». В V.2.18 toraṇaiḥ kāñcanair divyair latāpaṅktivicitritaiḥ dadarśa hanumān laṅkāṃ — «через золотые, дивные ворота-арки, украшенные вьющимися растениями, Хануман увидел Ланку». Toraṇa — буддийская/индуистская архитектурная форма «арки-ворот», украшенных скульптурой и растительным орнаментом (ср. Санчи). Latāpaṅktivicitrita = «украшенная рядами лиан» — типичная toraṇa-декорация. Первое упоминание этого архитектурного термина в гл. 2.",
+        "type": "А",
+        "trigger": "realia",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. toraṇa; Apte s.v. toraṇa; иконография toraṇa в Санчи",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "toraṇa MW gloss correct; Sanchi iconographic parallel is accurate and gives real art-historical depth absent from crib/tier1.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.18",
+      "verse_iast": "toraṇaiḥ kāñcanair divyair latāpaṅktivicitritaiḥ । dadarśa hanumāṃl laṅkāṃ devo devapurīm iva ॥18॥",
+      "leonov_ru": "С дивными золотыми арками, украшенными узорами из лиан, Увидел Хануман Ланку, словно бог – город богов.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "purī",
+          "note_ru": "Ланка, которую Хануман видит «словно бог — город богов» (2.18: dadarśa hanumāṃl laṅkāṃ devo devapurīm iva), у Калидасы предстаёт уже как осаждённая крепость: «mahārṇavaparikṣepaṃ laṅkāyāḥ parikhālaghum» (Рагху XII.66) — «великий океан, опоясывающий Ланку, [Раме] показался не более [неодолимым], чем крепостной ров», а обезьяны окружают её «словно второй золотой стеной» (dvitīyaṃ hemaprākāraṃ … XII.71). Кавья переосмысляет hema-prākāra («золотая стена») Ланки — деталь, которую Сундараканда подаёт буквально (золотые арки, toraṇaiḥ kāñcanaiḥ), — как метафору обезьяньего войска. Параллель показывает кавья-обработку городской фортификации Ланки."
+        },
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "devapurī",
+          "note_ru": "Ланка как «город богов» (devapurīm iva, 2.18) с золотыми арками и узорами лиан — версия кавья-топоса идеального города. Образцовое его развёртывание — Алака «Мегхадуты»: «haste līlākamalam … cūḍāpāśe navakuravakaṃ cāru karṇe śirīṣaṃ … yatronmattabhramaramukharāḥ pādapā nityapuṣpā» (Мегха II.2-3) — «в руках [красавиц] лотос для игры … в косах свежий куравака, в ушах сириша … где деревья, вечно цветущие, гудят опьянёнными пчёлами». Параллель показывает, что орнаментальное узорочье ланкийского описания (лианы, золото, ночные наслаждения) принадлежит к той же кавья-идиоме «дивный город», канонизированной Калидасой."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.2.20",
+        "lemma_iast": "viśvakarman",
+        "note_ru": "Вишвакарман (viśvakarman) — MW: viśvakarman — «the omnificent; N. of the architect of the gods (the divine artificer who fashioned the weapons of the gods, the cars of the gods, etc.)». Букв. «всё-делающий» (viśva «всё» + karman «дело»). В V.2.20 nirmitāṃ viśvakarmaṇā — Ланка построена Вишвакарманом. Вишвакарман = небесный архитектор, аналог греческого Гефеста; он построил Двараку (Кришны), Амаравати (Индры) и Ланку. Функционально тождественен майе-данавов (архитектор асуров). То, что Ланку построил Вишвакарман — подчёркивает её трансцендентную красоту (= «сделана богами, но занята демонами»).",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. viśvakarman; Apte s.v. viśvakarman; Mbh Ādi passim",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck flagged 'absent' but 'viśvakarmaṇā' (instr. of viśvakarman) stands verbatim in the verse — confirmed by inspection. MW gloss and the Dvārakā/Amarāvatī/Lankā architect-mythology are standard and correct, adding real depth beyond crib's bare name.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.20",
+      "verse_iast": "pālitāṃ rākṣasendreṇa nirmitāṃ viśvakarmaṇā । plavamānām ivākāśe dadarśa hanumān kapiḥ ॥20॥",
+      "leonov_ru": "Находящийся под властью владыки ракшасов, построенный Вишвакарманом, Словно летящий в небе [город] увидел Хануман-обезьяна,",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.2.21",
+        "lemma_iast": "vaprā",
+        "note_ru": "Крепостной вал / откос (vaprā) — MW: vaprā — «the slope or declivity of a hill; a rampart, wall, earthwork». В V.2.21 vaprāprākārajaghānāṃ — «с крепостным валом (vaprā) и стеной (prākāra) как бёдрами». Vaprā = земляной откос у подножия крепостной стены; «гласис» в западной фортификационной терминологии. В метафоре тела-города (nagara-śarīra): vaprā = бёдра, prākāra = торс, aṭṭālaka = голова. Эта метафора «тело = крепость» — поэтический топос описания Ланки.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. vaprā; Arthaśāstra II.4",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 0,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "The claimed body-metaphor mapping is wrong: the verse's actual bahuvrīhi structure pairs vapra+prākāra JOINTLY as jaghanā ('hips', not vaprā=hips/prākāra=torso separately), and aṭṭālaka is the avataṃsaka ('ear-ornament/crest', matching Leonov's own 'гирлянда башен'), not 'голова' ('head') as the note invents. A fabricated anatomical correspondence not supported by the cited verse.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.21",
+      "verse_iast": "vapraprākārajaghanāṃ vipulāmbuvanāmbarām । śataghnīśūlakēśāntām aṭṭālakāvataṃsakām ॥21॥",
+      "leonov_ru": "С валами и стенами – бедрами, с океаном и лесами – одеждой, С шатагхни (катапультами) и копьями – волосами, с гирляндой смотровых башен,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.2.24",
+        "lemma_iast": "bhogavatī",
+        "note_ru": "Бхогавати (bhogavatī) — MW: bhogavatī — «N. of the capital of the serpent-world (under the earth); having pleasures or enjoyments». Букв. «та, где наслаждения/кольца» (bhoga «наслаждение» или «кольцо змеи» + vatī «имеющая»). В V.2.24 nāgair bhogavatīm iva — Ланка уподоблена Бхогавати, подземной столице нагов. Bhoga двузначно: «наслаждение (pleasure)» и «кольцо/извив змеи (coil)». Bhogavatī — «город, полный наслаждений» и «город, полный нагов/колец»; оба смысла активны в сравнении Ланки-с-Бхогавати (наги охраняют Ланку + Ланка полна наслаждений Раваны). См. примеч. к II.99.21 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.).",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. bhogavatī; Apte s.v. bhoga; Mbh Ādi 28 (описание Бхогавати)",
+        "review_required": true,
+        "cross_ref": "Рам. II.99.21 (Гринцер)",
+        "cross_ref_method": "corpus_first_appearance",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "bhogavatī MW gloss and the bhoga (pleasure/serpent-coil) double meaning are correct and add real interpretive depth (naga-capital + city-of-pleasures pun) beyond crib's bare name.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.24",
+      "verse_iast": "saṃpūrṇāṃ rākṣasair ghorair nāgair bhogavatīm iva । acintyāṃ sukṛtāṃ spaṣṭāṃ kuberādhyuṣitāṃ purā ॥24॥",
+      "leonov_ru": "Наполненную грозными ракшасами, словно Бхогавати – нагами, Невообразимую, прекрасно построенную, ясно различимую (сияющую), в которой некогда жил Кубера,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.2.29",
+        "lemma_iast": "sāman / dāna / bheda / daṇḍa",
+        "note_ru": "Четыре политических средства (sāman / dāna / bheda / daṇḍa) — в V.2.29 na avakāśo na sāmnas tu rākṣaseṣv abhigamyate / na dānasya na bhedasya naiva yuddhasya dṛśyate — «нет места ни умиротворению (sāma), ни дару (dāna), ни расколу (bheda), ни войне (yuddha — = daṇḍa)». Четыре «упāи» (средства политики) по Артхашастре: sāma «умиротворение», dāna «подкуп», bheda «разжигание раздора», daṇḍa «насилие». Классическая политическая таксономия Каутильи (Arthaśāstra VII). Хануман цитирует политическую доктрину напрямую, оценивая стратегию относительно Ланки. Подстрочник перечисляет все четыре — но не отмечает артхашастрический контекст.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. sāman, dāna, bheda; Arthaśāstra VII.1-2 (четыре упāи)",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Correctly identifies the verse's four terms as Kauṭilya's canonical caturupāya (sāma/dāna/bheda/daṇḍa) framework — real technical-political content the crib and tier1 do not supply.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.29",
+      "verse_iast": "avakāśo na sāmnastu rākṣaseṣv abhigamyate । na dānasya na bhedasya naiva yuddhasya dṛśyate ॥29॥",
+      "leonov_ru": "Не видно возможности победить ракшасов ни примирением, Ни дарами, ни посеяв рознь [между ними], ни в сражении.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.2.57",
+        "lemma_iast": "jyotsnā",
+        "note_ru": "Лунный свет (jyotsnā) — MW: jyotsnā — «moonlight; N. of a woman». Букв. «сияние/свет» (от jyotis «свет, звезда»). В V.2.57 jyotsnāvitānena vitatya lokān uttisthaṭe 'nekasahasraraśmiḥ — «(луна), распростёрши лунный свет (jyotsnā) по мирам, восходит с тысячами лучей». Jyotsnā — специфически «лунный свет» (в отличие от jyoti «свет» вообще и prabhā «блеск»). В санскритской поэтике jyotsnā = одушевлённый «разливающийся свет», иногда олицетворяемый как богиня. В V.2.57 лунная картина задаёт ночной хронотоп для тайного вхождения Ханумана в Ланку.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. jyotsnā; Apte s.v. jyotsnā",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "jyotsnā MW gloss correct, distinguished from jyoti/prabhā; adds modest value over crib's already-explicit 'обилием света', mostly a definitional gloss rather than deep cultural content.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "2.57",
+      "verse_iast": "candro 'pi sācivyam ivāsya kurvaṃs । tārāgaṇair madhyagato virājan । jyotsnāvitānena vitatya lokān । uttiṣṭhate 'nekasahasraraśmiḥ ॥57॥",
+      "leonov_ru": "И луна, словно оказывая ему помощь, Войдя в середину сонма звезд, сияя, Залив миры обилием света, Взошла с множеством тысяч лучей.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.1",
+        "lemma_iast": "lambā (lambāśikhara)",
+        "note_ru": "Вершина Ламба (lambāśikhara) — MW: lamba — «N. of a mountain; hanging, pendent». В V.3.1 sa lambāśikhare lambe lambatoyadasaṃnibhe — тройная игра на корне lamba: «(на) нависающей вершине Ламбы, нависающей, подобной нависающей туче». Анафорическое повторение lamba три раза — редкий пример «усиленной этимологической фигуры» (pun/yamaka?) в Рамаяне. Smṛti «гора Ламба» + прилагательное «нависающая» + метафора «нависающая туча» = три уровня одного образа. Гора именована своим качеством (lamba = нависание), что создаёт нарративную согласованность «имя = характеристика = атмосфера».",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. lamba; Apte s.v. lamba; поэтика yamaka в Alaṃkāraśāstra",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "lamba MW gloss correct; the triple lamba-repetition (lambaśikhare lambe lambatoyadasaṃnibhe) is a genuine, verifiable poetic figure the crib's plain translation does not flag — real added value.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.1",
+      "verse_iast": "sa lambaśikhare lambe lambatoyadasaṃnibhe । sattvam āsthāya medhāvī hanumān mārutātmajaḥ ॥1॥",
+      "leonov_ru": "На высокой горе Ламбе (Трикуте), подобной высокому облаку, Опираясь на собственную мощь, мудрый Хануман, сын ветра,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.3",
+        "lemma_iast": "śārадāmbuda",
+        "note_ru": "Осеннее облако (śāradāmbuda) — MW: śārada — «autumnal; relating to autumn». Ambuda — «несущее воду, туча». В V.3.3 śāradāmbudhaprakyair bhavanair upaśobhitām — «украшенную дворцами, подобными осенним облакам». Śārada «осенний» — ключевое сезонное прилагательное: осенние облака в индийской поэзии — белые, высокие, рассеянные, чистые (в отличие от monsoon-clouds, чёрных и низких). Сравнение дворцов Ланки именно с «осенними» облаками подчёркивает их белизну, высоту и царственную чистоту. Подстрочник «осенних облаков» — верен; нюанс поэтической семантики śārada не разъяснён.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. śārada; Apte s.v. śārada; кавья-топос «осенних облаков»",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck flagged 'absent' but śāradāmbudhara- stands in the verse (lemma spelling ambuda vs verse's ambudhara, same root/sense) — confirmed by inspection. The śārada 'autumn cloud' kāvya-topos (white/high/pure vs dark monsoon clouds) is a well-established convention and adds real depth beyond crib's plain 'осенние облака'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.3",
+      "verse_iast": "śāradāmbudharaprakhyair bhavanair upaśobhitām । sāgaropamanirghoṣāṃ sāgarānilasevitām ॥3॥",
+      "leonov_ru": "Украшенный домами, подобными осенним облакам, Оглашаемый шумом океана, овеваемый морскими ветрами,",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.5",
+        "lemma_iast": "bhujagācārita",
+        "note_ru": "Охраняемая змеями (bhujagācārita) — MW: bhujaga — «moving crookedly; a serpent, snake» (от bhuja «изгиб» + ga «идущий»). В V.3.5 bhujagācāritāṃ guptāṃ śubhāṃ bhogavatīm iva — «охраняемую движущимися (как) змеи, подобную Бхогавати». Bhujagācārita: либо «те, кто ходит как змеи» = ракшасы-охранники, либо «исхоженная змеями». Сравнение с Бхогаватī (уже глоссированной в V.2.24) продолжает мотив: Ланка = «надземная Бхогавати». Bhujaga = буквально «движущийся изгибами» — семантически близко к namaski «змееподобный»; образ охраны-через-извивание создаёт картину лабиринтной недоступности.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. bhujaga; Apte s.v. bhujaga",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck flagged 'absent' but 'bhujagācaritāṃ' stands verbatim in the verse — confirmed. bhuja+ga etymology and the hedged dual reading (guard-serpents vs serpent-traversed) are sound, and the note usefully links back to the V.2.24 bhogavatī note — real added value.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.5",
+      "verse_iast": "bhujagācaritāṃ guptāṃ śubhāṃ bhogavatīm iva । tāṃ savidyudghanākīrṇāṃ jyotirmārganiṣevitām ॥5॥",
+      "leonov_ru": "Защищенный и прекрасный, словно Бхогавати, населенный змеями. Того покрытого тучами с молниями, расположенного на дороге светил,",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.6",
+        "lemma_iast": "śātakumbha",
+        "note_ru": "Золото Шатакумбха (śātakumbha) — MW: śātakumbha — «a kind of gold; N. of a mountain». Букв. «то, что получено из ста (śata) горшков (kumbha)» — процесс очистки золота путём многократного переплавления в горшках. В V.3.6 śātakumbhena mahatā prākāreṇābhisaṃvṛtām — «окружённую огромной стеной из шатакумбха-золота». Śātakumbha = «высококачественное рафинированное золото» — в отличие от kāñcana (общий термин) и suvarṇa (поэт. «хорошего цвета»). Архитектурное применение: стена из самого высокопробного золота — маркер исключительности Ланки.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. śātakumbha; Apte s.v. śātakumbha",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 0,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "The 'hundred pots of refining' etymology presented as literal fact is not supported by MW, which derives śātakumbha from Mt. Śatakumbha (a toponym, 'hundred-peaked mountain') rather than a refining process — an invented folk-etymology stated as established fact.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.6",
+      "verse_iast": "caṇḍamārutanirhrādāṃ yathā cāpyāmarāvatīm । śātakumbhena mahatā prākāreṇābhisaṃvṛtām ॥6॥",
+      "leonov_ru": "Звучащего суровыми ветрами, словно Амаравати, [город Индры], Обнесенного высокой золотой стеной,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.7",
+        "lemma_iast": "kiṅkiṇī",
+        "note_ru": "Колокольчик-подвеска (kiṅkiṇī) — MW: kiṅkiṇī — «a small bell, a tinkling ornament». Звукоподражательное: kiṅkiṇī = «колокольчик» (ономатопоэия от звука «кинь-кинь»). В V.3.7 kiṅkiṇījālaghoṣābhiḥ patākābhir alaṃkṛtām — «украшенную знамёнами с рядами звенящих колокольчиков». Kiṅkiṇī = подвески на флагах, звенящие на ветру — описание живого звукового пространства Ланки (тогда как V.2.17 описывал башни визуально). Звуковой образ: город звенит = признак богатства и военной мощи.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. kiṅkiṇī; Apte s.v. kiṅkiṇī",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 0,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "park",
+          "reason": "kiṅkiṇī MW gloss is correct but the crib's own 'звоном колокольчиков' already conveys the full sense; the note's only real addition is a weak onomatopoeic aside and a cross-reference to V.2.17 — content is essentially transparent, short of the bar for lexical_value.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.7",
+      "verse_iast": "kiṅkiṇījālaghoṣābhiḥ patākābhir alaṃkṛtām । āsādya sahasā hṛṣṭaḥ prākāram abhipedivān ॥7॥",
+      "leonov_ru": "Оглашаемого звоном колокольчиков, украшенного знаменами, [Города] быстро достигнув, подошел к стене взволнованный [Хануман].",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.12",
+        "lemma_iast": "vasvokaṣārā",
+        "note_ru": "Васвокасара (vasvokaṣārā) — MW: vasvokaṣārā — «N. of a river (said to be the Ganges in heaven / the celestial Gaṅgā)». Букв. «берег/приют богов (vasu)». В V.3.12 vasvokaṣārāpratimāṃ samīkṣya nagarīṃ tataḥ — «осмотрев город, подобный Васвокасаре». Vasvokaṣārā = небесная Ганга как идеальный топос. Сравнение Ланки с небесной рекой богов — очередное «небесное» сравнение (ср. Амаравати), продолжающее парадокс «демонический город = воплощение небес». MW: «the Gaṅgā in heaven».",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. vasvokaṣārā; Apte s.v. vasu",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck flagged 'absent' but 'vasvokasārāpratimāṃ' stands in the verse (minor spelling variant ṣ/s) — confirmed. MW's celestial-Ganga identification is correct and adds real content beyond crib's untranslated proper name.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.12",
+      "verse_iast": "vasvokasārāpratimāṃ samīkṣya nagarīṃ tataḥ । kham ivotpatitāṃ laṅkāṃ jaharṣa hanumān kapiḥ ॥12॥",
+      "leonov_ru": "Подобный городу Васвокасаре город Ланку, Слово бы возносящуюся в небо [видя], взволновался Хануман-обезьяна.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.16",
+        "lemma_iast": "vivasvant",
+        "note_ru": "Вивасвант (vivasvant) — MW: vivasvant — «shining forth; N. of the sun; father of Manu Vaivasvata and of the Aśvins». Солнечный бог, отец человечества (через Ману) и отец ямы/Ямы (бога смерти). В V.3.16 vivasvatas tanūjasya hareś ca kuśaparvanaḥ — «сын Вивасванта и обезьяна Кушапарван». Вивасвант = солнце-прародитель; его сын tanūja (букв. «рождённый из тела») = либо Яма, либо Суrya-son. Kūśaparvan — имя обезьяны-воина; kuśa «трава куша» + parvan «узел/колено». Упоминание Вивасванта маркирует «солнечный» класс происхождения.",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. vivasvant; Apte s.v. vivasvat; Rām. Kiṣk. passim",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 1,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "MW content on Vivasvant (sun-god, father of Manu/Aśvins) is sound, but the note fails to engage with the obvious referent Leonov's own crib already supplies (Sugrīva, 'сын солнца') and instead offers a garbled, unresolved alternative ('либо Яма, либо Суrya-son' — note the stray Latin fragment in Cyrillic text), which muddies rather than clarifies the verse's actual reference.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.16",
+      "verse_iast": "vivasvatas tanūjasya hareś ca kuśaparvaṇaḥ । ṛkṣasya kapimukhyasya mama caiva gatir bhavet ॥16॥",
+      "leonov_ru": "И только сын солнца (Сугрива) и обезьяна Кушапарван, Вождь обезьян Рикша (Джамбаван) и я войти в него могут».",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.18",
+        "lemma_iast": "yantrāgāra",
+        "note_ru": "Арсенал / хранилище машин (yantrāgāra) — MW: yantra — «any instrument for holding or restraining; a machine, engine, apparatus». Āgāra «дом». Yantrāgāra = «дом механизмов/машин» = арсенал боевых устройств или хранилище осадных орудий. В V.3.18 yantrāgārastanīṃ ṛddhāṃ pramadām iva bhūṣitām — «полную янтрагараХ, богатую, украшенную, как нарядная женщина». Yantrāgāra — военно-технический термин из артхашастры (Arthaśāstra II.18: «арсенал»). Ланка как yantrāgāra + богатство = военная сила, оснащённая технологиями. Подстрочник «арсенал» или «хранилище машин».",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. yantra; Arthaśāstra II.18 (yantrāgāra)",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "yantra+āgāra etymology and MW gloss correct; the Arthaśāstra II.18 military-technical framing (arsenal/siege-engine store) adds real content beyond crib's loose 'гирлянда катапульт'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.18",
+      "verse_iast": "tāṃ ratnavasanopetāṃ goṣṭhāgārāvataṃsakām । yantrāgārastanīm ṛddhāṃ pramadām iva bhūṣitām ॥18॥",
+      "leonov_ru": "На тот в одежде из драгоценных камней, в гирлянде коровников, С гирляндою катапульт, украшенный словно богатая красавица,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.46",
+        "lemma_iast": "svayaṃbhū",
+        "note_ru": "Самовозникший / Брахма (svayaṃbhū) — MW: svayaṃbhū — «self-existing; N. of Brahma; N. of Viṣṇu; N. of Śiva». Букв. «сам-ставший» (svayam «сам» + √bhū «быть»). В V.3.46 svayaṃ svayaṃbhuvā dattaṃ varadānaṃ yathā mama — «дар (varадāna), данный мне самим Брахмой (свайямбху)». Свайямбху = первичный Брахма как «Самосущий», а не порождённый кем-либо — в отличие от aja «нерождённый» (эпитет разных богов). Varадāна от Брахмы — высший тип дара в эпосе, не подлежащий отмене. Подстрочник «Брахмой» — имя даётся, но этимология «Самосущего» не объясняется.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. svayaṃbhū; Apte s.v. svayaṃbhū",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "svayaṃbhū MW gloss and the contrast with aja ('unborn') are sound; adds theological nuance beyond crib's bare 'Брахма'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.46",
+      "verse_iast": "idaṃ ca tathyaṃ śṛṇu vai bruvantyā me harīśvara । svayaṃ svayaṃbhuvā dattaṃ varadānaṃ yathā mama ॥46॥",
+      "leonov_ru": "Выслушай эту правду, которую я тебе скажу, о владыка обезьян, Как сам Брахма дал мне дар.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.3.49",
+        "lemma_iast": "durātman",
+        "note_ru": "С тёмной / низкой душой (durātman) — MW: durātman — «one whose soul is depraved, evil-minded; having a bad self». Букв. «плохой (dur-) ātman». Ātman = «душа/сущность/я». Durātman = «тот, чья самость (ātman) нечиста/порочна» — более глубокое осуждение, чем просто «злой» (pāpa) или «жестокий» (krūra): указывает на онтологический дефект личности. В V.3.49 rāvaṇasya durātmanaḥ — «Раваны с тёмным ātman». Применение к Раване подчёркивает: его зло — не ситуативное (как у асур), а укоренённое в самой природе его «я».",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. durātman; Apte s.v. ātman",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "dur+ātman etymology and MW gloss correct; the ontological-vs-situational-evil distinction is a modest but real addition beyond crib's already-close 'злобного духом'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "3.49",
+      "verse_iast": "sītānimittaṃ rājñas tu rāvaṇasya durātmanaḥ । rakṣasāṃ caiva sarveṣāṃ vināśaḥ samupāgataḥ ॥49॥",
+      "leonov_ru": "Из-за Ситы приблизилась гибель Злобного духом царя Раваны и всех ракшасов.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.4.3",
+        "lemma_iast": "savya",
+        "note_ru": "Савья (savya, adj.) — «левый». MW: savya 'left, not right'. Хануман ставит именно ЛЕВУЮ ногу на головы врагов — жест, нагруженный ритуальным смыслом: левая сторона в индийской традиции «нечистая», иноспичная, поэтому топтание левой ногой — сознательное ритуальное унижение противника. Правая нога при приветствии и благословении; левая — при попрании, изгнании, уничтожении. В батальных сценах «Рамаяны» и «Махабхараты» этот жест устойчив: победитель ставит savya-pāda на голову побеждённого.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:savya",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/4.3.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "savya MW gloss ('left') is correct; crib already states 'левую ногу' but the ritual-insult significance of the left foot (vs. right for blessing) is real cultural content the crib does not supply.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "4.3",
+      "verse_iast": "praviśya nagarīṃ laṅkāṃ kapirājahitaṃkaraḥ । cakre ’tha pādaṃ savyaṃ ca śatrūṇāṃ sa tu mūrdhani ॥3॥",
+      "leonov_ru": "Войдя в город Ланку, он, радеющий о благе царя обезьян, Поставил левую ногу на голову врагов.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.4.10",
+        "lemma_iast": "tristhānasvarabhūṣita",
+        "note_ru": "Тристхана-свара-бхушита (tri-sthāna-svara-bhūṣita) — технический музыкальный термин: пение, «украшенное звуком из трёх мест». Три sthāna («стоянки», резонирующие полости) — uras «грудь», kaṇṭha «горло» и śiras «голова» — это классификация звука из «Натьяшастры» (Bharatamuni, II-III вв. н.э.): NS 29.69–70. MW: sthāna 'place; position in music'. Подстрочник Леонова передаёт просто «три органа (грудь, горло и голова)»; за этим стоит вся система классической музыкальной акустики Индии, где разные жанры и раги требуют преобладания конкретного sthāna.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "high",
+        "source": "dic_mw:sthAna; Nāṭyaśāstra 29.69–70",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/4.10.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "The three-sthāna (chest/throat/head) system is genuine Nāṭyaśāstra 29.69-70 content; crib already parenthetically names the three organs, so most of the base fact is not new, but the technical citation and the raga-register system context add real (if partial) value.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "4.10",
+      "verse_iast": "vividhākṛtirūpāṇi bhavanāni tatas tataḥ । śuśrāva ruciraṃ gītaṃ tristhānasvarabhūṣitam ॥10॥",
+      "leonov_ru": "На дома разнообразной формы здесь и там, Слышал прекрасное пение, исходящее из трех органов (грудь, горло и голова)",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.4.11",
+        "lemma_iast": "nūpura",
+        "note_ru": "Нупура (nūpura, n.) — ножной браслет со звоном, специфически женское украшение. MW: nūpura 'an ornament for the feet or toes, an anklet'. В отличие от kāñcī (поясной пояс, тоже упомянутый в этом стихе), nūpura — сугубо ножное украшение, являющееся акустическим маркером присутствия женщины: звон nūpura при походке — стандартная эротическая деталь эпоса и кāвьи. Важно: nūpura присутствует в перечне драгоценностей, которых позднее лишается захваченная Сита, — символ утраченного статуса.",
+        "type": "В",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "med",
+        "source": "dic_mw:nUpura",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/4.11.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "nūpura MW gloss and the kāñcī/nūpura distinction are correct; adds an erotic-marker reading and a reasonable (hedged) forward link to Sītā's later lost jewelry beyond crib's plain 'ножные браслеты'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "4.11",
+      "verse_iast": "strīṇāṃ madanaviddhānāṃ divi cāpsarasām iva । śuśrāva kāñcīninādaṃ nūpurāṇāṃ ca niḥsvanam ॥11॥",
+      "leonov_ru": "Женщин, раненных Маданой (любовью), подобных апсарам на небе, Слышал он звон поясов и бряцание ножных браслетов,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.4.15",
+        "lemma_iast": "dīkṣita",
+        "note_ru": "Дикшита (dīkṣita, p.p.p.) — «посвящённый, принявший дикшу» (dīkṣā «посвящение, обет перед жертвоприношением»). MW: dīkṣita 'initiated, consecrated'. Dīkṣā — специфический ритуальный статус: человек, принявший dīkṣā, подчиняется особым ограничениям (табу на еду, секс, речь) перед совершением крупного жертвоприношения (soma, aśvamedha). Среди шпионов Раваны — dīkṣita, jaṭila (с косами-дредами), muṇḍa (бритые): перечень намеренно имитирует религиозные типы, что объясняет, как ракшасы-шпионы беспрепятственно передвигались в человеческом мире.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "high",
+        "source": "dic_mw:dIkzita",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/4.15.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "dīkṣita MW gloss and the taboo/soma-ritual background are correct; the interpretive point that rākṣasa spies mimic religious ascetic types to move undetected is a real, textually grounded insight beyond crib's generic 'религиозные обряды'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "4.15",
+      "verse_iast": "dadarśa madhyame gulme rākṣasasya carān bahūn । dīkṣitāñ jaṭilān muṇḍān gojināmbaravāsasaḥ ॥15॥",
+      "leonov_ru": "Увидел он в середине города (в цитадели) многочисленных шпионов ракшаса (Раваны). Исполняющих религиозные обряды, [одних] с заплетенными косами, [других] бритых, [третьих] одетых в коровьи шкуры,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.4.15",
+        "lemma_iast": "gulma",
+        "note_ru": "Гулма (gulma, m.) — военно-технический термин: «пикет, стационарный воинский пост или отряд». MW: gulma 'a cluster of trees or shrubs; a detachment of troops, a military post'. В «Артхашастре» (Kauṭilīya AS II.33) gulma — строго определённая тактическая единица охраны: 9 пеших воинов и 3 командира = один gulma. «В середине gulma» (madhye gulme) — конкретная военная диспозиция, не просто «в толпе»: подчёркнута структурированная оборона Ланки.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "med",
+        "source": "dic_mw:gulma; Arthaśāstra II.33",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/4.15.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 0,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "The specific troop composition ('9 пеших воинов и 3 командира = один gulma') attributed to Arthaśāstra II.33 is an unusually precise numeric claim that does not match the standard classical army-unit hierarchies (patti-multiples in Amarakośa/Manu); presented as sourced fact without support, this reads as a fabricated specification rather than an attested one.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "4.15",
+      "verse_iast": "dadarśa madhyame gulme rākṣasasya carān bahūn । dīkṣitāñ jaṭilān muṇḍān gojināmbaravāsasaḥ ॥15॥",
+      "leonov_ru": "Увидел он в середине города (в цитадели) многочисленных шпионов ракшаса (Раваны). Исполняющих религиозные обряды, [одних] с заплетенными косами, [других] бритых, [третьих] одетых в коровьи шкуры,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.4.18",
+        "lemma_iast": "śataghni",
+        "note_ru": "Шатагхни (śataghni, f.) — «убивающая сотню», боевое орудие. MW: śataghni 'a weapon which kills a hundred men at once; a kind of club or mace; a form of missile with 100 points'. Комментаторская традиция расходится в определении: одни толкуют śataghni как тяжёлую дубину с шипами, другие — как катящийся снаряд с остриями, сбрасываемый со стен. В любом случае — специальное осадное оружие массового поражения (в данном контексте — оборонительное, для охраны Ланки). Переводить нейтрально «оружие» значит потерять специальную военную семантику.",
+        "type": "В",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "med",
+        "source": "dic_mw:SataGnI",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/4.18.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "śataghni MW gloss is correctly and appropriately hedged between the two attested readings (spiked mace vs. multi-point missile); crib leaves the term untranslated, so the gloss is real added content.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "4.18",
+      "verse_iast": "dhanvinaḥ khaḍginaś caiva śataghnīmusalāyudhān । parighottamahastāṃś ca vicitrakavacojjvalān ॥18॥",
+      "leonov_ru": "Лучников и меченосцев, вооруженных шатагхни или палицами, С железными балками в руках, сияющими цветастой броней,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.4.27",
+        "lemma_iast": "vimāna",
+        "note_ru": "Вимана (vimāna, n.) — «небесная колесница / летающий дворец», vi- (вперёд, через) + māna (√mā- «мерить, проходить»). MW: vimāna 'a car or chariot of the gods, any mythical self-moving aerial car'. В эпосе vimāna принадлежит богам, гандхарвам и царям богатырей — земное лицо, имеющее vimāna, тем самым приравнивается к небожителям. Ravana владеет вошедшей в пословицу пушпака-viमāna (Puṣpaka vimāna), захваченной у Куберы. Упоминание viमāna среди транспортных средств дворцовой площади — маркер дивного (daiva) уровня благосостояния Ланки.",
+        "type": "В",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:vimAna",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/4.27.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 1,
+            "anchoring": 2
+          },
+          "verdict": "edit",
+          "reason": "vimāna etymology (vi-√mā) and the Puṣpaka/Kubera backstory are correct and add real content beyond crib's untranslated 'виманами' — but the note contains a stray Devanagari म embedded mid-word ('viमāna', repeated), violating the IAST-only register rule; concrete fix: replace both occurrences with plain 'vimāna'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "4.27",
+      "verse_iast": "vājihreṣitasaṃghuṣṭaṃ nāditaṃ bhūṣaṇais tathā । rathair yānair vimānaiś ca tathā hayagajaiḥ śubhaiḥ ॥27॥",
+      "leonov_ru": "Оглашаемый ржанием коней, звучащий [звоном] украшений, С колесницами, повозками и виманами, с конями и слонами прекрасными,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.5.6",
+        "lemma_iast": "śaśāṅka",
+        "note_ru": "Шашанка (śaśāṅka, m.) — «отмеченный зайцем» = луна: śaśa «заяц/кролик» + aṅka «знак, отметина». MW: śaśāṅka 'the moon (rabbit-marked)'. Индийская традиция видит на лунном диске силуэт зайца, а не «человека на луне» западной традиции; отсюда устойчивое имя луны śaśāṅka / śaśin / śaśadhara. В «Рамаяне» луна — постоянный маркер ночных сцен поиска Ситы и её страдания; имя «заяц-на-луне» указывает на конкретный способ смотреть на ночное небо, отличный от европейского.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "med",
+        "source": "dic_mw:SaSANka",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/5.6.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "śaśa+aṅka etymology and MW gloss correct; crib already glosses the compound literally ('отмеченная знаком зайца'), so the rabbit-vs-man-in-the-moon cross-cultural note is a real but modest addition.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "5.6",
+      "verse_iast": "vinaṣṭaśītāmbutuṣārapaṅko । mahāgrahagrāhavinaṣṭapaṅkaḥ । prakāśalakṣmyāśrayanirmalāṅko । rarāja candro bhagavān śaśāṅkaḥ ॥6॥",
+      "leonov_ru": "Сияла благодатная луна, отмеченная знаком зайца, Утратившая грязь холодной воды и снега, Темнота ее исчезла благодаря собранию лучей солнца, Знак ее был чистым благодаря ясному сиянию.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.5.8",
+        "lemma_iast": "pradoṣa",
+        "note_ru": "Прадоша (pradoṣa, m.) — специфическое ритуально-временнóе обозначение: «первая стража ночи, ранний вечер сразу после захода солнца». MW: pradoṣa 'the first part of the night, early evening'. Pradoṣa — не просто «вечер», а ритуально маркированное время суток: именно в pradoṣa совершается sandhyā-vandana (вечерняя молитва), в pradoṣa выходят ночные существа (ракшасы, naktaṃcara), и в pradoṣa луна начинает свой подъём. Открытие сцены через слово pradoṣa задаёт ритуально-ночной регистр всей главы 5.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "high",
+        "source": "dic_mw:pradoza",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/5.8.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "pradoṣa MW gloss ('first watch of night') correct; the sandhyā-vandana/rākṣasa-activity ritual timing is real content beyond crib's generic 'вечер'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "5.8",
+      "verse_iast": "prakāśacandrodayanaṣṭadoṣaḥ । pravṛddharakṣaḥpiśitāśadoṣaḥ । rāmābhirāmeritacittadoṣaḥ । svargaprakāśo bhagavān pradoṣaḥ ॥8॥",
+      "leonov_ru": "Тот, чья тьма была развеяна взошедшей луной, Тот, чья опасность в виде ракшасов-людоедов возросла, Тот, чьи неприятности в виде любовных ссор были изгнаны, [Настал] благословенный вечер, небеса которого были озарены [луной].",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "pradoṣa",
+          "note_ru": "Редкое слово pradoṣa («вечерние сумерки, первая стража ночи») в ярко орнаментальной строфе 5.8 (svargaprakāśo bhagavān pradoṣaḥ, «настал благословенный вечер, чьи небеса озарены [луной]») имеет ближайшего кавья-двойника в описании Алаки: «nityajyotsnāḥ prahitatamovṛttiramyāḥ pradoṣāḥ» (Мегха II.3) — «[там] вечера (pradoṣāḥ) с вечной луной, чарующие изгнанием тьмы». У обоих pradoṣa — лунно-озарённые сумерки идеального города. Параллель — locus classicus кавья-вечера и показывает, что строфа 5.8 написана «городским» мегхадутовским регистром, а не нейтральным эпическим."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.5.9",
+        "lemma_iast": "tantrī",
+        "note_ru": "Тантри (tantrī, f.) — «струна (вины / лютни)». MW: tantrī 'a string (especially of a lute)'. Tantrī обозначает именно струну щипкового инструмента (vīṇā, vipañcī), в отличие от śiras «жильная струна лука». Звук tantrī в ночной сцене — характерная деталь эротической атмосферы: tantrī-svara сопровождает любовные встречи, а не военные действия. Упоминание tantrī наряду с naktaṃcara (ракшасами-ночниками) создаёт жанровый контраст: ночь одновременно эротична и опасна.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "med",
+        "source": "dic_mw:tantrI",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/5.9.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 1,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "tantrī MW gloss ('lute-string') is correct, but the contrasting claim that 'śiras' denotes a bow's gut-string is not an attested Sanskrit lexicographic sense (śiras = 'head') and appears to be an invented distinguishing gloss.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "5.9",
+      "verse_iast": "tantrīsvarāḥ karṇasukhāḥ pravṛttāḥ । svapanti nāryaḥ patibhiḥ suvṛttāḥ । naktaṃcarāś cāpi tathā pravṛttā । vihartum atyadbhutaraudravṛttāḥ ॥9॥",
+      "leonov_ru": "Раздались приятные для уха звуки струн, Спали добродетельные женщины с мужьями, А также вышли бродящие по ночам (ракшасы), Чьи деяния удивительны и ужасны, чтобы развлечься.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.5.9",
+        "lemma_iast": "naktaṃcara",
+        "note_ru": "Нактамчара (naktaṃcara, m.) — «блуждающий ночью»: naktam (adv. «ночью») + cara (√car- «ходить»). MW: naktaṃcara 'going about at night; a night-wanderer, a rākṣasa'. Это не просто описательный эпитет, но один из ключевых таксономических имён ракшасов в эпосе, наряду с rākṣasa, niśācara, niśāṭa. Ночная природа — онтологическая, а не случайная: ракшасы сильнее ночью (śakti naktaṃcarāṇāṃ), тогда как люди и боги — днём. Выход naktaṃcara в pradoṣa прямо следует из природы данного класса существ.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:naktaMcara",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/5.9.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "naktam+cara etymology and MW gloss correct; crib's 'бродящие по ночам' already conveys the base sense, but the taxonomic status (alongside rākṣasa/niśācara/niśāṭa) and the night-power motif add modest real value.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "5.9",
+      "verse_iast": "tantrīsvarāḥ karṇasukhāḥ pravṛttāḥ । svapanti nāryaḥ patibhiḥ suvṛttāḥ । naktaṃcarāś cāpi tathā pravṛttā । vihartum atyadbhutaraudravṛttāḥ ॥9॥",
+      "leonov_ru": "Раздались приятные для уха звуки струн, Спали добродетельные женщины с мужьями, А также вышли бродящие по ночам (ракшасы), Чьи деяния удивительны и ужасны, чтобы развлечься.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.5.18",
+        "lemma_iast": "niśītha",
+        "note_ru": "Нишитха (niśītha, m./n.) — «полночь, глубокая ночь»: специфический термин, означающий именно середину ночи. MW: niśītha 'midnight, the middle of the night'. В отличие от pradoṣa (начало ночи, V.5.8) и niśā (ночь вообще), niśītha — кульминационная точка. В дхармашастрах niśītha — время, когда действие законов приостановлено, а существа лишены защиты ритуала. В kavya niśītha — апогей любовного свидания. Сцена объятий в niśītha в контексте Ланки двусмысленна: Хануман видит не только эротику, но и наиболее уязвимое для разведки время.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "med",
+        "source": "dic_mw:niSITa",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/5.18.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "niśītha MW gloss ('midnight') is correct; the dharmaśāstra liminal-time and kāvya love-scene framing add real interpretive depth beyond crib's undifferentiated night-scene translation, and the ambiguity (erotic idyll vs. reconnaissance opportunity) it flags is a genuine textual observation.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "5.18",
+      "verse_iast": "striyo jvalantīs trapayopagūḍhā । niśīthakāle ramaṇopagūḍhāḥ । dadarśa kāś cit pramadopagūḍhā । yathā vihaṃgā vihagopagūḍāḥ ॥18॥",
+      "leonov_ru": "Женщин, ярко сияющих и украшенных (наделенных) стыдливостью, [И других], которых в ночи обнимали возлюбленные, Увидел и некоторых, охваченных страстью, Подобных самкам птиц, которых обняли самцы.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.5.25",
+        "lemma_iast": "nīlakaṇṭhī",
+        "note_ru": "Нилакантхи (nīlakaṇṭhī, f.) — «синегорлая» = самка павлина. MW: nīlakaṇṭha 'having a blue throat; a peacock; an epithet of Śiva'. Слово несёт двойной резонанс: (1) буквально — самка павлина (павлин = nīlakaṇṭha «синегорлый», ибо горло самца синее); (2) имплицитный отзвук эпитета Шивы Nīlakaṇṭha — «синегорлого», проглотившего яд kālakūṭa при пахтании океана. Сита, бредущая в лесном одиночестве подобно павлице-nīlakaṇṭhī, тем самым незримо уравнивается с тем, кто поглощает мировой яд ради спасения мира.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:nIlakaNWa",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/5.25.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "nīlakaṇṭha MW gloss (peahen/Śiva epithet) correct; the Śiva-halāhala churning-myth resonance is a real, well-grounded literary insight entirely absent from crib's plain 'самке павлина'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "5.25",
+      "verse_iast": "uṣṇārditāṃ sānusṛtāsrakaṇṭhīṃ । purā varārhottamaniṣkakaṇṭhīm । sujātapakṣmām abhiraktakaṇṭhīṃ । vane pravṛttām iva nīlakaṇṭhīm ॥25॥",
+      "leonov_ru": "Измученную страданиями разлуки, ту, чье горло заполнено потоком слез, Прежде носившую на шее драгоценное ожерелье, Имеющую прекрасные ресницы и сладостный голос, Подобную самке павлина, блуждающей по лесу.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.5.26",
+        "lemma_iast": "candralekhā",
+        "note_ru": "Чандралекха (candra-lekhā, f.) — «черта / серп луны»: candra «луна» + lekhā «линия, черта, тонкий рисунок». MW: candralekhā 'a streak of the moon, the crescent'. Candralekhā — не полная луна (pūrṇacandra), а именно тончайший серп, едва видимый — образ чего-то почти стёртого, но ещё существующего. В шлоке V.5.26 Сита сравнивается с avyakta-rekhā candralekhā («неясной чертой лунного серпа») — то есть красота её существует, но предельно истончена страданием. Сравнение работает только через специфическую астрономическую точность термина.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:candralekA",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/5.26.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "candra+lekhā etymology and MW gloss ('crescent, not full moon') correct; crib's 'неясному сиянию серпа луны' already conveys the crescent image, so the note's addition (explicit pūrṇacandra contrast) is modest but real.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "5.26",
+      "verse_iast": "avyaktarekhām iva candralekhāṃ । pāṃsupradigdhām iva hemarekhām । kṣataprarūḍhām iva varṇarekhāṃ । vāyuprabhinnām iva megharekhām ॥26॥",
+      "leonov_ru": "Подобную неясному сиянию серпа луны, Подобную полоске золота, запорошенной пылью, Подобную рожденной раной отметине от стрелы, Подобную гряде облаков, прорванной ветром.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.6.4",
+        "lemma_iast": "kakṣyā",
+        "note_ru": "Какшья (kakṣyā, f.) — «внутренний двор, кольцевая зона дворца». MW: kakṣyā 'the inner apartments of a palace; a girdle'. Термин происходит от kakṣa 'подмышечная впадина, скрытое место': kakṣyā = пространство, скрытое внутри стен. В «Артхашастре» (AS I.20) дворец описывается через серию концентрических kakṣyā — зон доступа, строго иерархизированных: первая открыта для всех, внутренние — только для посвящённых. Описание kakṣyā Ланки (V.6.4) — это архитектурная карта власти Раваны.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "high",
+        "source": "dic_mw:kakzyA; Arthaśāstra I.20",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.4.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "kakṣyā MW gloss and etymology (< kakṣa) correct; the Arthaśāstra I.20 concentric-security-zone framing is real architectural-political content beyond crib's plain 'внутренние дворы'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.4",
+      "verse_iast": "rūpyakopahitaiś citrais toraṇair hemabhūṣitaiḥ । vicitrābhiś ca kakṣyābhir dvāraiś ca rucirair vṛtam ॥4॥",
+      "leonov_ru": "С разноцветными арками ворот, выложенных серебром и украшенных золотом, С чудесными внутренними дворами и великолепными воротами,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.6.27",
+        "lemma_iast": "ṛddhi",
+        "note_ru": "Риддхи (ṛddhi, f.) — «процветание, рост, сверхъестественное могущество». MW: ṛddhi 'increase, growth; success, prosperity; one of the supernatural powers of a yogi or Buddha'. Слово несёт двойную семантику: (1) материальное богатство, роскошь (arkitvam); (2) сиддхи / мистические силы (аniмa, mahimā и т.п.) — ṛddhi как тип «магического успеха». Реестр домов Ланки даётся через понятие ṛddhi: «видел ṛddhi ṛddhi-matov» (6.27) — то есть «видел магическую мощь существ магической мощи» — тавтология, акцентирующая онтологический уровень богатства Ланки, недоступный людям.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "gloss",
+        "priority": "high",
+        "source": "dic_mw:fddhi",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.27.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 1,
+            "non_triviality": 2,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "MW's dual sense of ṛddhi (material prosperity / yogic-Buddhist supernatural power) is correctly cited, but pulling the specifically Buddhist/yogic siddhi sense into this verse — which crib and context make clear is about the material wealth of rākṣasa households, not magical attainment — is an unsupported interpretive stretch dressed up as a deliberate textual 'tautology'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.27",
+      "verse_iast": "teṣu teṣu mahārheṣu bhavaneṣu mahāyaśāḥ । teṣām ṛddhimatām ṛddhiṃ dadarśa sa mahākapiḥ ॥27॥",
+      "leonov_ru": "В тех и этих богатых домах многославный Тех наделенных процветанием [ракшасов] процветание видела та великая обезьяна.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.6.32",
+        "lemma_iast": "airāvata",
+        "note_ru": "Айравата (airāvata, m.) — священный слон Индры, владыки небес; один из восьми dikgaja (слонов сторон света). Этимология: irāvat «несущий воду» → airāvata, «происходящий от irāvat» (irā «вода, молоко»); MW: airāvata 'produced from the ocean; N. of Indra's elephant'. По мифу, Айравата вышел из пахтания Молочного океана (кшира-самудра-матхана). Сравнение боевых слонов Раваны с Айраватой — не просто «огромны»: это заявка на то, что мощь Ланки соперничает с небесными силами. См. примеч. к III.14.24 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.).",
+        "type": "В",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:airAvata",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.32.lex",
+        "cross_ref": "Рам. III.14.24 (Гринцер)",
+        "cross_ref_method": "corpus_first_appearance",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "airāvata etymology (irāvat 'water-bearing') and the ocean-churning myth are correct; crib already brackets '[слону Индры]', so the base identification isn't new, but the etymology and myth-backstory are real added content.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.32",
+      "verse_iast": "kulīnān rūpasampannān gajān paragajārujān । sikṣitān gajaśikṣāyām airāvatasamān yudhi ॥32॥",
+      "leonov_ru": "Породистых прекрасных слонов, уничтожителей вражеских слонов, Специально обученных, в битве подобных [слону Индры] Айравате,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "airāvatasama gaja",
+          "note_ru": "Описание боевых слонов Ланки «в битве подобных Айравате (airāvatasamān yudhi)» (V.6.32) использует слона Индры Айравату как эталон. Ср. каталог даров на rājasūya Юдхиштхиры (Sabhā 2.48.25): «virāṭena tu matsyena… kuñjarāṇāṃ sahasre dve mattānāṃ samupāhṛte» — «Виратой, царём матсьев, были доставлены две тысячи возбуждённых слонов (kuñjara)». Перечни породистых, «опьянённых» боевых слонов — общий эпический топос царской/военной роскоши; сундараканда применяет его к могуществу Раваны. Свидетельство: уровень шлоки (мягкое)."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.6.36",
+        "lemma_iast": "śibikā",
+        "note_ru": "Шибика (śibikā, f.) — «паланкин». MW: śibikā 'a litter, a palanquin, a sedan chair'. Śibikā в отличие от ratha (боевая колесница, статусная для мужчины) — транспортное средство женщин, высокопоставленных лиц в ненаступательном перемещении, и жертвенных процессий. Наличие śibikā в реестре имущества дворца Раваны — маркер полного ансамбля аристократического быта, включающего женское/процессиональное измерение.",
+        "type": "В",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "med",
+        "source": "dic_mw:SibikA",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.36.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "śibikā MW gloss correct; the gendered/status transport distinction from ratha is a modest but real addition beyond crib's plain 'паланкины'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.36",
+      "verse_iast": "śibikā vividhākārāḥ sa kapir mārutātmajaḥ । latāgṛhāṇi citrāṇi citraśālāgṛhāṇi ca ॥36॥",
+      "leonov_ru": "Различные видом паланкины та обезьяна – сын ветра. Увитые лианами беседки и прекрасные картинные залы,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.6.36",
+        "lemma_iast": "latāgṛha",
+        "note_ru": "Латагрха (latā-gṛha, n.) — «беседка из живых лиан»: latā «вьющееся растение» + gṛha «дом». MW: latāgṛha 'a bower of creepers'. Латагрха — специфический топос любовной поэзии (шрингара-раса): это живая беседка, сплетённая из вьющихся растений (jasmine, madhyamā), служащая местом тайных свиданий. В кāвье (Kālidāsa, Raghuvamśa) latāgṛha появляется именно в эротическом контексте. В дворце Раваны latāgṛha наряду с kāmagṛha (следующий стих) образует эротическое крыло дворца — парное описание, которое структурно готовит читателя к описанию гарема.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:latAgfha",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.36.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "latā+gṛha etymology and MW gloss are transparent and correct; crib's 'увитые лианами беседки' already conveys the literal sense, so the note's kāvya-erotic-topos framing (Kālidāsa parallel) and link to the following kāmagṛha are the real (modest) additions.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.36",
+      "verse_iast": "śibikā vividhākārāḥ sa kapir mārutātmajaḥ । latāgṛhāṇi citrāṇi citraśālāgṛhāṇi ca ॥36॥",
+      "leonov_ru": "Различные видом паланкины та обезьяна – сын ветра. Увитые лианами беседки и прекрасные картинные залы,",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.6.37",
+        "lemma_iast": "kāmagṛha",
+        "note_ru": "Камагрха (kāma-gṛha, n.) — «дом Камы / комната для любовных утех»: kāma «любовное желание» + gṛha «дом». MW: kāma 'love, wish, the god of love'. Kāmagṛha — специальный покой для сексуальных встреч, предусмотренный в планировке индийского царского дворца (gr. Kāmasūtra III.1 описывает его убранство). Упоминание отдельного kāmagṛha в реестре строений дворца Раваны подчёркивает, что Равана как «похититель женщин» имеет институционализированную инфраструктуру сексуальных завоеваний, — это усиливает последующий контраст с верностью Ситы.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:kAma; Kāmasūtra III.1",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.37.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "anchor_precheck flagged 'absent' but 'kāmasya gṛhakaṃ' stands in the verse (genitive+diminutive rather than compound, same sense) — confirmed by inspection. kāma etymology is transparent (crib already says 'домик для любовных игр'), but the Kāmasūtra III.1 citation and the Rāvaṇa/Sītā thematic contrast are real modest additions.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.37",
+      "verse_iast": "krīḍāgṛhāṇi cānyāni dāruparvatakāni ca । kāmasya gṛhakaṃ ramyaṃ divāgṛhakam eva ca ॥37॥",
+      "leonov_ru": "Залы для игр и иные, и деревянные горки, И домик для любовных игр, и прекрасный домик для дневных дел,",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.6.38",
+        "lemma_iast": "mayūrasthāna",
+        "note_ru": "Маюрастхана (mayūra-sthāna, n.) — «место для павлинов / павлиний двор»: mayūra «павлин» + sthāna «место стоянки, насест». MW: mayūra 'a peacock'. Павлины в индийском царском быту — не просто декоративные птицы: они считаются символами rajasic (царственной) красоты, благопожелательными (maṅgalya) и считаются вестниками дождя (моровой сезон). В дворцах наличие mayūrasthāna — маркер наивысшего aristoc уровня; Кālidāsa описывает павлинов как живые украшения дворца. В контексте V.6.38 дворец Раваны уподобляется горе Мандара — явный намёк на пахтание океана и космический масштаб Ланки.",
+        "type": "В",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "med",
+        "source": "dic_mw:mayUra",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.38.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "mayūra MW gloss correct; the rajasic/maṅgalya/rain-messenger symbolism and Kālidāsa parallel are real cultural-symbolic depth beyond crib's plain 'места для павлинов'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.38",
+      "verse_iast": "dadarśa rākṣasendrasya rāvaṇasya niveśane । sa mandarasamaprakhyaṃ mayūrasthānasaṃkulam ॥38॥",
+      "leonov_ru": "Увидел [Хануман] во дворце Раваны, владыки ракшасов. Подобный горе Мандаре, полный насестов (мест) для павлинов,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.6.39",
+        "lemma_iast": "bhūtapati",
+        "note_ru": "Бхутапати (bhūta-pati, m.) — «владыка существ / духов» = Шива. MW: bhūtapati 'lord of beings; Śiva'. Сравнение дворца Раваны с домом bhūtapati (= Шивы) — намеренно двусмысленное: (1) лесть — дворец как у самого могущественного бога; (2) ирония — Шива, бог разрушения, живёт на кладбищах (śmaśāna) и повелевает духами мёртвых (bhūta, preta, piśāca). Равана, царь ракшасов и противник dharma, сравнивается с тем, чьё «царство» — мир духов. Двойственность bhūtapati как имени раскрывается только при знании Шива-иконографии.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "high",
+        "source": "dic_mw:BUtapati",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.39.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "bhūtapati MW gloss (Śiva as lord of beings/spirits) correct; the ironic reading — cremation-ground god's epithet applied to the demon-king's palace — is a genuine, well-grounded literary insight beyond crib's looser 'Владыка земли'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.39",
+      "verse_iast": "dhvajayaṣṭibhir ākīrṇaṃ dadarśa bhavanottamam । anantaratnanicayaṃ nidhijālaṃ samantataḥ । dhīraniṣṭhitakarmāṅgaṃ gṛhaṃ bhūtapater iva ॥39॥",
+      "leonov_ru": "С множеством знамен на древках увидел лучший из дворцов, С грудами драгоценных камней и сокровищ повсюду, Которые были обретены [Раваной] стойким подвижничеством, который был подобен дворцу Владыки земли (Шивы).",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "hist_cultural",
+          "lemma_iast": "bhūta",
+          "note_ru": "Бхуты (bhūta, букв. «ставшие существа») — низший класс духов и призраков в свите Шивы (Bhūtapati «господин бхутов» = эпитет Шивы); отличаются от якшей и ракшасов. В «Балаканде» bhūta упоминаются в контексте лесных существ (Рам. I.2.15). В V.6.39 дом Раваны уподоблен «gṛhaṃ bhūtapater iva» («дому Бхутапати», т.е. Шивы): неожиданное сравнение дворца демона с обиталищем Шивы — повелителя духов — подчёркивает его хтонический характер. Гринцер: ст. «Шива» в словаре."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.6.41",
+        "lemma_iast": "jāmbūnada",
+        "note_ru": "Джамбунада (jāmbūnada, n./adj.) — «[золото] реки Джамбу»: jāmbū «дерево Джамбу (Eugenia jambolana / Rose apple)» + nada «река». MW: jāmbūnada 'gold coming from the Jambū river'. По космографии Пуран, река Джамбу образуется из сока плодов мирового дерева Джамбу (jambu-dvīpa), и именно из этого сока образуется лучшее в мире золото — jāmbūnada. Таким образом, jāmbūnada — не просто «золото», а мифологически-сертифицированное «космическое золото», в отличие от hiraṇya (простое золото) или kāñcana (золото вообще). Ложа и кресла из jāmbūnada означают: Равана пользуется золотом, недоступным людям.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "etymology",
+        "priority": "high",
+        "source": "dic_mw:jAmbUnada",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.41.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "jāmbū+nada etymology and the Jambudvīpa cosmography (mythic gold-bearing river from the world-tree's fruit-juice) are correct and add substantial content beyond crib's bare 'золото'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.41",
+      "verse_iast": "jāmbūnadamayāny eva śayanāny āsanāni ca । bhājanāni ca śubhrāṇi dadarśa hariyūthapaḥ ॥41॥",
+      "leonov_ru": "Сделанные из золота ложа и сидения, И великолепные чаши увидел вождь обезьяньих стай.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.6.42",
+        "lemma_iast": "madhvāsava",
+        "note_ru": "Мадхвасава (madhu-āsava, m.) — «медовое вино / хмельной напиток из мёда»: madhu «мёд, медовый напиток» + āsava «дистиллят, перебродивший напиток» (√su- «выжимать, дистиллировать»). MW: āsava 'a spirituous liquor, spirit distilled from flowers, syrup or molasses'. Madhvāsava — конкретный тип напитка, отличный от surā (зерновая водка), varuni (финиковая) и soma (ритуальный). Мёд (madhu) в Ведах — сакральный напиток богов; madhvāsava = его «профанная» производная, сохраняющая медовую компоненту сакральности, — идеальный напиток для правителя, претендующего на статус бога. Дворец «влажен» от madhvāsava — роскошный чувственный образ.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "med",
+        "source": "dic_mw:maDvAsava+dic_mw:Asava",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/6.42.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "madhu+āsava etymology and MW gloss correct; the honey-wine classification (vs. surā/vāruṇī/soma) and Vedic sacred-honey resonance are real content beyond crib's generic 'сладкого вина'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "6.42",
+      "verse_iast": "madhvāsavakṛtakledaṃ maṇibhājanasaṃkulam । manoramam asambādhaṃ kuberabhavanaṃ yathā ॥42॥",
+      "leonov_ru": "Во влажный от сладкого вина, полный чашами, украшенными жемчугом, Пленительный, просторный, словно дворец Куберы,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "base",
+          "lemma_iast": "kubera",
+          "note_ru": "Кубера (kubera) — бог богатства и владыка якшей, брат Раваны по отцу; Равана вытеснил его с Ланки и захватил колесницу пушпака. «Широмани»: kubera = «уродливый». Первое вхождение в кн. V. См. примеч. к II.91.44 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.)."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.7.2",
+        "lemma_iast": "candraśālā",
+        "note_ru": "Чандрашала (candra-śālā, f.) — тат-пуруша: candra «луна, лунный блеск» + śālā «зал, помещение». MW: candraśālā 'a moonlight pavilion, a room on the top of a house'. Это не просто «терраса» (подстрочник): candraśālā — специфический архитектурный тип в индийской традиции, верхний открытый павильон дворца, предназначенный для ночных увеселений под луной. Термин встречается в Артхашастре и Камасутре как стандартное обозначение места для любовных свиданий правителя. В контексте Ланки candraśālā — деталь, указывающая на роскошь быта, недоступную богам: Равана превосходит богов самим устройством своего дворца.",
+        "type": "А",
+        "subtype": "lexical",
+        "trigger": "compound",
+        "priority": "med",
+        "source": "dic_mw:candraSAlA",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/7.2.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "candra+śālā etymology and MW gloss ('moonlight pavilion') correct; the specific architectural type (rooftop pavilion for nocturnal royal use, per Arthaśāstra/Kāmasūtra) is real content beyond crib's plain 'террасы'.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "7.2",
+      "verse_iast": "niveśanānāṃ vividhāś ca śālāḥ । pradhānaśaṅkhāyudhacāpaśālāḥ । manoharāś cāpi punar viśālā । dadarśa veśmādriṣu candraśālāḥ ॥2॥",
+      "leonov_ru": "В зданиях различные комнаты, Большие комнаты для [хранения] раковин, оружия и луков, И еще прекрасные и широкие Увидел на вершине дворца террасы.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.7.4",
+        "lemma_iast": "maya",
+        "note_ru": "Майя (maya, m.) — мастер-архитектор асуров, аналог Вишвакармана на стороне демонов. MW: maya 'the Dānava artificer and architect, i.e. the Vulcan of the Hindu mythology'. В эпосе Майе приписывается строительство дворца пандавов Индрапрастхи (Сабхапарва) и подводного дворца иллюзий. Сравнение с Майей — наивысшая похвала архитектурному совершенству: здания Ланки столь безупречны, что кажутся выстроенными не людьми, а архитектором-асуром с его māyā-мастерством. Подстрочник («словно созданные самим Майей») сохраняет имя, но не объясняет культурный ранг фигуры.",
+        "type": "В",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:maya",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/7.4.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "maya MW gloss (Dānava architect) correct; crib already glosses 'самим Майей (архитектором асуров)' parenthetically, so the identification isn't new, but the Indraprastha/underwater-palace mythological cross-references are real added depth.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "7.4",
+      "verse_iast": "tāni prayatnābhisamāhitāni । mayena sākṣād iva nirmitāni । mahītale sarvaguṇottarāṇi । dadarśa laṅkādhipater gṛhāṇi ॥4॥",
+      "leonov_ru": "Те с тщательностью построенные, Словно бы созданные самим Майей (архитектором асуров), На земле наивысшие по всем качествам Дома владыки Ланки увидел [Хануман].",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.7.14",
+        "lemma_iast": "lakṣmī",
+        "note_ru": "Лакшми (lakṣmī, f.) — богиня счастья и процветания; этимология: √lakṣ- («замечать, распознавать», MW) + суфф. -mī, или родственно lakṣaṇa «знак, примета». MW: lakṣmī 'good luck, fortune, prosperity, beauty; the goddess of fortune and beauty'. Иконографически зафиксирована в V.7.14 в точном каноническом образе: padminī «среди лотосов» + padmahastā «с лотосом в руке» — стандартная Гаджа-Лакшми (abhiṣeka-Lakṣmī), где слоны (gaja) поливают её водой из хоботов. Изображение Лакшми на Пушпаке — знак, что вимана несёт śrī («процветание») по природе, не случайно: Пушпака была подарена Брахмой Кубере, богу богатства.",
+        "type": "В",
+        "subtype": "lexical",
+        "trigger": "realia",
+        "priority": "high",
+        "source": "dic_mw:lakzmI+dic_apte:lakzmI",
+        "review_required": true,
+        "cited_indian_commentators": [],
+        "cited_western_sources": [],
+        "src_candidate_id": "auto/sundara/7.14.lex",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "lakṣmī MW gloss and etymology (√lakṣ) correct; the Gajalakṣmī iconography is already substantially conveyed by crib's detailed description, but the technical term (abhiṣeka-Lakṣmī) and the Puṣpaka/Kubera/Brahmā gift-chain cross-link are real added depth.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "7.14",
+      "verse_iast": "niyujyamānāś ca gajāḥ suhastāḥ । sakesarāś cotpalapatrahastāḥ । babhūva devī ca kṛtā suhastā । lakṣmīs tathā padmini padmahastā ॥14॥",
+      "leonov_ru": "Изображены были и слоны с прекрасными хоботами, Покрытые тычинками цветов, держащие в хоботах голубые лотосы, И была изображена там прекраснорукая богиня Лакшми среди лотосового пруда с лотосами в руках.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    }
+  ]
+}

@@ -10,7 +10,16 @@
       "verses_total": 32,
       "notes_count": 8,
       "density_pct": 25.0,
-      "rejected_count": 11
+      "rejected_count": 11,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "reject": 1,
+          "keep": 3,
+          "park": 1
+        }
+      }
     }
   },
   {
@@ -53,7 +62,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/59_10.lex"
+    "src_candidate_id": "auto/sundara/59_10.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 1,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "reject",
+      "reason": "astra (MW) is correctly glossed and the brahma/raudra/vāyavya/vāruṇa list is accurate, but the note's claim that these four astras form 'a catalogue of all the elements (ether+fire+wind+water)' is an invented systematic correspondence — vāyavya=wind and vāruṇa=water are standard, but brahma-astra is not conventionally identified with 'ether' in any dictionary or standard source; this is the drafter's own unattested pattern-imposition, a faithfulness overreach.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.59.20",
@@ -81,7 +104,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/59_22.lex"
+    "src_candidate_id": "auto/sundara/59_22.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "rekhā (MW: line/streak) accurately glossed; the 'thin streak, not a thick cloud' precision is a genuine gain the crib's flat 'затянутая тучами' erases. Anchored (megharekhāparivṛtā).",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.59.24",
@@ -95,7 +132,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/59_24.lex"
+    "src_candidate_id": "auto/sundara/59_24.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Paulomī = Śacī, daughter of Puloman, accurately glossed; the crib already parenthetically names Śacī, but the note's mythological parallel (demon father slain by Indra, loyalty unbroken — echoing Sītā's situation) is a real, pointed narrative gain. Anchored (paulomīva).",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.59.31",
@@ -109,7 +160,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/59_31.lex"
+    "src_candidate_id": "auto/sundara/59_31.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "pratipat (MW: first lunar day) accurately glossed; the crib already states 'в первый день половины месяца' almost verbatim, so the note largely restates it — its real addition is explaining why pratipat symbolizes thinness (barely-visible waxing crescent), enough to clear the gates but not more. Anchored (pratipatpāṭhaśīlasya).",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.59.32",
@@ -123,6 +188,20 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/59_32.lex"
+    "src_candidate_id": "auto/sundara/59_32.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "park",
+      "reason": "mahābhāga (MW: highly fortunate) is correctly glossed, but the crib already renders 'наделенная великой долей' almost verbatim; the note's only addition is an interpretive 'great fortune implies great trial' gloss, which is transparent/obvious rather than a real etymological or cultural gain (drafter's own priority='low'). lexical_value=0 with non_triviality<2 triggers park.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]

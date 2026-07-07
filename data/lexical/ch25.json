@@ -7,8 +7,16 @@
       "rule": "расширенное (Grintser-уровень): глоссируем нетривиальные термины с этимологической/культурной глубиной, недоступной из подстрочника",
       "generated": "2026-06-27",
       "verses_total": 20,
-      "notes_count": 5,
-      "density_pct": 25.0
+      "notes_count": 6,
+      "density_pct": 25.0,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 2,
+          "reject": 2
+        }
+      }
     }
   },
   {
@@ -23,7 +31,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/25.2.lex"
+    "src_candidate_id": "auto/sundara/25.2.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "bāṣpagadgadayā is verbatim in the verse. bāṣpa (hedged folk-etymology) and gadgada (onomatopoeic stammering, MW: 'indistinct or convulsive utterance as sobbing') are correctly glossed. The point that gadgada specifically marks near-loss-of-speech (not mere unclearness) is a real semantic addition beyond the crib's plain 'словами, неясными из-за слез'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.25.5",
@@ -37,7 +59,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/25.5.lex"
+    "src_candidate_id": "auto/sundara/25.5.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 1,
+        "non_triviality": 2,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "reject",
+      "reason": "kokair is verbatim in the verse, but MW's koka entry (checked in dic_mw.jsonl) glosses it flatly as 'a wolf' (plus unrelated senses: cuckoo, ruddy goose, frog, lizard...) with no support for the note's specific claim that koka is semantically distinguished from vṛka as 'a wolf preying on solitary strays vs. pack aggression' — that fine-grained lexical-semantic distinction appears to be invented and stated as established fact rather than hedged, failing the faithfulness gate.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.25.9",
@@ -65,7 +101,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/25.12.lex"
+    "src_candidate_id": "auto/sundara/25.12.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "akāle is verbatim in the verse. a+kāla etymology is correct, and the kāla=time/kāla=death-Yama double sense is genuine, attested Sanskrit polysemy (not fabricated), used here as a real interpretive wordplay explaining why this is called a paṇḍita-maxim — distinct from the sibling cross_text note, which instead supplies the Mahābhārata Śāntiparva parallel.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.25.18",
@@ -79,6 +129,57 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/25.18.lex"
+    "src_candidate_id": "auto/sundara/25.18.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 1,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "reject",
+      "reason": "dehāntare is verbatim in the verse and deha+antara = 'another body' matches MW exactly (checked in dic_mw.jsonl: 'dehāntara n. another body {MW.}'). However the comparison to a Buddhist technical term 'pudgala-parāvṛtti' is not a recognized/attested Buddhist doctrinal term (standard vocabulary is punarbhava/saṃsāra/pudgala-nairātmya) and reads as an invented-sounding gloss presented as established cross-tradition terminology — fails the faithfulness gate.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
+  },
+  {
+    "shloka": "V.25.8",
+    "lemma_iast": "vivarṇa",
+    "note_ru": "Виварна (vivarṇa, adj.) — «обесцвеченный, поблёкший», vi- (приставка лишения) + varṇa («цвет, масть, сословие», MW). Корень varṇa связан с идеей «покрытия» — varṇa лица считался в классической Индии маркером жизненной силы (ojas): здоровый человек имеет ровный, сияющий varṇa. Vi-varṇa = утрата этого маркера: лицо «потеряло сословие цвета». MW: vivarṇa 'changed in colour, pale, pallid'. В подстрочнике передаётся «поблёкшая»; за этим стоит целая система представлений о связи внешности и внутреннего состояния, не видимая в переводе.",
+    "type": "А",
+    "subtype": "lexical",
+    "trigger": "etymology",
+    "priority": "med",
+    "source": "dic_mw:vivarRa",
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [],
+    "src_candidate_id": "auto/sundara/11.11.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 0,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "park",
+      "reason": "anchor_precheck=absent подтверждён: в V.11.11 (\"tāsāṃ madhye mahābāhuḥ śuśubhe rākṣaseśvaraḥ / goṣṭhe mahati mukhyānāṃ gavāṃ madhye yathā vṛṣaḥ\") нет vivarṇa — напротив, śuśubhe («сиял») говорит о великолепии Раваны среди женщин, сравниваемого с быком среди коров. Заметка о поблёкшем/обесцвеченном лице (предположительно Ситы) описывает содержание, прямо противоречащее смыслу стиха. Вероятно, относится к описанию Ситы в ашока-ване. | H276 WS-3b: переякорено V.11.11→V.25.8; rākṣasīnāṃ bhayatrastā vivarṇavadanābhavat — лемма стоит в стихе, сцена (побледневшая Сита) совпадает с содержанием заметки",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    },
+    "reanchored": {
+      "fixed_by": "scripts/fix_ch11_lexical_anchors.py",
+      "handoff": "H276",
+      "date": "2026-07-07",
+      "confirmed_by": "batch-3 sarga-11 drafter caveat + lexical judge pass (flag_anchor) + corpus/GRETIL lemma search",
+      "from": "V.11.11",
+      "to": "V.25.8",
+      "evidence": "rākṣasīnāṃ bhayatrastā vivarṇavadanābhavat — лемма стоит в стихе, сцена (побледневшая Сита) совпадает с содержанием заметки"
+    }
   }
 ]

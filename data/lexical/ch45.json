@@ -8,7 +8,15 @@
       "generated": "2026-06-27",
       "verses_total": 17,
       "notes_count": 5,
-      "density_pct": 29.4
+      "density_pct": 29.4,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 2,
+          "edit": 1
+        }
+      }
     }
   },
   {
@@ -23,7 +31,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/45.1.lex"
+    "src_candidate_id": "auto/sundara/45.1.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "saptārcivarcas: varcas as body/ritual radiance linked to brahmavarcas is an accurate and non-obvious concept, giving the 'brahminical energy applied to rākṣasa warriors' irony reading real substance. (The offered root √vṛc-/vṛj- for varcas is uncertain, but this aside doesn't carry the note's actual claim.) Lemma exact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.45.3",
@@ -37,7 +59,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/45.3.lex"
+    "src_candidate_id": "auto/sundara/45.3.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "hemajāla: golden-net chariot ornament is accurate epic material culture; reading it as a status marker distinguishing the councillors' sons from common soldiers is a fair, moderate non-trivial gain. Lemma exact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.45.7",
@@ -65,7 +101,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/45.10.lex"
+    "src_candidate_id": "auto/sundara/45.10.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 1
+      },
+      "verdict": "edit",
+      "reason": "The lemma_iast 'māruteśvara' is a synthesized label not actually present as a compound anywhere in the verse or even asserted as such in the note body — the verse only has the two separate words 'mārutaḥ prabhuḥ' ('lord/wind, in the sky'), which the note itself (correctly) analyzes. Content is sound (Vāyu-as-lord-of-wind identity play, cloud/wind reversal structure) but the lemma field should be corrected to 'mārutaḥ prabhu' rather than the invented compound.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.45.12",

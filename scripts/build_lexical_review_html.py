@@ -180,6 +180,7 @@ textarea,.rr{width:100%;font:14px Georgia,serif;padding:8px;border:1px solid var
 .hidden{display:none}
 </style></head><body>
 <header>
+<nav class="breadcrumb" style="font:12px system-ui,sans-serif;margin-bottom:4px"><a href="../../../index.html">Главная</a> › <a href="../../../data/apparatus/">Аппарат Сундараканды</a> › Лексический слой — вердикты судьи</nav>
 <h1>__TITLE__</h1>
 <div class="bar">
 <span id="progress">—</span>

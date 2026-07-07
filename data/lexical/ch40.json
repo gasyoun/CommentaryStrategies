@@ -10,7 +10,15 @@
       "verses_total": 25,
       "notes_count": 8,
       "density_pct": 32.0,
-      "rejected_count": 8
+      "rejected_count": 8,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 7,
+          "reject": 1
+        }
+      }
     }
   },
   {
@@ -25,7 +33,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/40.2.lex"
+    "src_candidate_id": "auto/sundara/40.2.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "ardhasaṃjātasasya: compound parse (ardha+saṃjāta+sasya) matches MW; sam-√jan- cl.IV and Whitney # correct. Adds vasundharā resonance and Apte's 'hope unfulfilled' usage absent from crib. Lemma stem present in verse.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.40.4",
@@ -39,7 +61,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/40.4.lex"
+    "src_candidate_id": "auto/sundara/40.4.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "abhijñāna: abhi-√jñā cl.IX + -ana correct per MW ('token of recognition'). Non-trivial legal-narrative reading (identity token when face-to-face meeting impossible) plus apt Abhijñānaśākuntala cross-reference; lemma exact in verse.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.40.4",
@@ -53,7 +89,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/40.4.lex"
+    "src_candidate_id": "auto/sundara/40.4.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "īṣikā: MW gloss ('rush/reed; dart') accurate, Jayanta-crow episode identification is traditional lore, content matches verse (kṣiptām īṣikāṃ kākasya). Adds real detail beyond note on abhijñāna (etymology of the missile itself), though partially overlaps that neighboring note. Source-field citation 'Balakanda' for this crow episode looks off (the episode is Sita's own recollection here in Sundarakāṇḍa / elsewhere in Yuddha/Uttara-kāṇḍa, not Bāla-kāṇḍa) — flagging for a source-tag fix, but the note_ru text itself makes no false claim, so not gating faithfulness.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.40.5",
@@ -67,7 +117,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/40.5.lex"
+    "src_candidate_id": "auto/sundara/40.5.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "manaḥśilā: MW/Apte 'red arsenic/realgar' correct, cosmetic-tilaka use is real material culture not recoverable from crib's flat 'red mineral'. Lemma exact in verse.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.40.7",
@@ -81,7 +145,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/40.7.lex"
+    "src_candidate_id": "auto/sundara/40.7.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "cūḍāmaṇi: tat-puruṣa parse and MW gloss ('jewel on the crown, diadem') correct. Adds dowry/royal-symbol framing and tilaka+cūḍāmaṇi pairing not in crib, though the word's basic sense is already legible from context — capping lexical_value at 1. Lemma exact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.40.10",
@@ -95,7 +173,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/40.10.lex"
+    "src_candidate_id": "auto/sundara/40.10.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 1,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "reject",
+      "reason": "māsa/avadhi: the specific dharmashastra claim that māsa is a canonical legal 'waiting period' a separated wife must observe before ending her life, anchored to 'Мч 5.76', is not a verifiable/standard Manusmṛti doctrine — Manu 5 in that range concerns menstrual/mourning purity (āśauca), not a widow's decision deadline. This reads as an invented legal-doctrine gloss rather than a documented one; faithfulness gate fails.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.40.22",
@@ -109,7 +201,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/40.22.lex"
+    "src_candidate_id": "auto/sundara/40.22.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "anāmaya: an-+āmaya, MW/Apte gloss ('free from disease'; salutation formula) correct and the substantivized-greeting usage is a genuine, non-obvious grammatical fact. Crib already conveys 'health/well-being' though, so lexical_value capped at 1. Lemma exact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.40.24",
@@ -123,6 +229,20 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/40.24.lex"
+    "src_candidate_id": "auto/sundara/40.24.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "śokavega: vega as a Nyāya-Vaiśeṣika guṇa (kinetic-force term) is accurate technical philosophy, giving real depth to what the crib renders as plain 'force of grief'. Compound etymology (śoka √śuc-, vega) correct. Lemma exact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]
