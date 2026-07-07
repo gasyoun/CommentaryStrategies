@@ -117,7 +117,8 @@ def main():
              f"Сундараканда · примечания Фазы-2, партия {PREFIX} (песни {srange}) — интерактивная сверка")
     html = (PAGE.replace("/*DATA*/null", json.dumps(data, ensure_ascii=False))
                 .replace("__TITLE__", title)
-                .replace("__KEY__", f"sundara_{PREFIX}_decisions_v1"))
+                .replace("__KEY__", f"sundara_{PREFIX}_decisions_v1")
+                .replace("__DLNAME__", f"commentarystrategies-sundarakanda-commentaries_{PREFIX}_decisions.json"))
     with open(OUT, "w", encoding="utf-8") as fh:
         fh.write(html)
     print(f"wrote {OUT} ({len(review)} notes)")
@@ -278,7 +279,7 @@ function prog(){
 function payload(){return JSON.stringify({generated:D.generated,reviewer_decisions:dec,
   reviewed_at:new Date().toISOString()},null,2);}
 function dl(){const b=new Blob([payload()],{type:"application/json"});const u=URL.createObjectURL(b);
-  const a=document.createElement("a");a.href=u;a.download="decisions.json";a.click();URL.revokeObjectURL(u);}
+  const a=document.createElement("a");a.href=u;a.download="__DLNAME__";a.click();URL.revokeObjectURL(u);}
 function cp(){navigator.clipboard.writeText(payload()).then(()=>alert("JSON скопирован в буфер обмена"));}
 function reset(){if(confirm("Сбросить все решения?")){localStorage.removeItem(KEY);for(const k in dec)delete dec[k];render();}}
 render();
