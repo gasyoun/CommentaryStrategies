@@ -9,7 +9,9 @@
     "verses_considered": 8,
     "notes_drafted": 3,
     "notes_rejected": 5,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 3, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -28,7 +30,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "вскрывает нарративную функцию слова «татха» — отсылку к собственным прежним словам Ситы о двенадцати благополучных годах, обессмысленным нынешним горем; подстрочник передаёт только описательное «в таком состоянии»"
+      "why_proposed": "вскрывает нарративную функцию слова «татха» — отсылку к собственным прежним словам Ситы о двенадцати благополучных годах, обессмысленным нынешним горем; подстрочник передаёт только описательное «в таком состоянии»",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhushana's chunk confirms the claim verbatim, including the exact 12-years quote (samā dvādaśa tatrāhaṃ rāghavasya niveśane bhuñjānā mānuṣān bhogān sarvakāmasamṛddhinī ... itaḥ param eva vyasanāni bhaviṣyantīti manyamānām); no baseline note covers this narrative-callback point; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.29.5",
@@ -47,7 +57,15 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "вводит доктринальную рамку саамудрики (примета зубов = долголетие мужа), отсутствующую и в подстрочнике, и в собственном примечании Леонова/Костиной, которое ограничивается переводом композита и мотивом приближения возлюбленного",
-      "complements_leonov": "к переводу композита (по Тилаке) и мотиву «знака приближения возлюбленного» добавляет отдельную примету саамудрики о зубах-семенах граната как знаке долголетия мужа"
+      "complements_leonov": "к переводу композита (по Тилаке) и мотиву «знака приближения возлюбленного» добавляет отдельную примету саамудрики о зубах-семенах граната как знаке долголетия мужа",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhushana's chunk quotes the samudrika verses verbatim (śikharadantatve sāmudrikam ... yāsāṃ śikhariṇo dantā dīrghaṃ jīvanti tāḥ striyaḥ — physiognomy verses tying such teeth to long life for the husband's household); genuinely distinct from Kostina's own note (Tilaka compound-translation + approaching-lover sign only); pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.29.7",
@@ -66,7 +84,15 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "восполняет содержательно опущенный Костиной композит bhrukeśāntam конкретным значением («растрёпанные у висков пряди»), а не просто фиксирует факт пропуска",
-      "complements_leonov": "даёт содержательный перевод самого опущенного слова, тогда как примечание Костиной лишь констатирует факт пропуска без толкования"
+      "complements_leonov": "даёт содержательный перевод самого опущенного слова, тогда как примечание Костиной лишь констатирует факт пропуска без толкования",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhushana's chunk confirms the gloss verbatim (keśāḥ ante yasya tat keśāntam; upari-bhāga-prakīrṇa-alakam ity arthaḥ = locks scattered in the upper region); genuinely fills the gap Kostina's own note leaves open (flags the omission without content); pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

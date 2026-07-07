@@ -9,7 +9,9 @@
     "verses_considered": 62,
     "notes_drafted": 3,
     "notes_rejected": 59,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 3, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -28,7 +30,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник читается как нейтральное описание природы; Бхушана даёт этому описанию причинное обоснование — свечение облаков как эффект собственного блеска Ханумана, устраняющее видимую случайность образа"
+      "why_proposed": "подстрочник читается как нейтральное описание природы; Бхушана даёт этому описанию причинное обоснование — свечение облаков как эффект собственного блеска Ханумана, устраняющее видимую случайность образа",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "The reasoning ('hanumatas tejasvīty anena meghānāṃ nānāvarṇatvāpattiḥ sūryendusamparkavat'; otherwise the cloud description would be an irrelevant insertion, 'anyathā... asaṅgatatvāpātaḥ') is verified verbatim, though the fuller passage is physically anchored in v.9's bundle (marker-tagged internally to vv.7,8) rather than v.7's own chunk; v.7's own bhusana pratīka shows a strong automated content_anchor (containment 0.833) despite not being a literal string match, corroborating the placement.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.57.41",
@@ -46,7 +54,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник передаёт четыре санскритских глагола общими русскими синонимами («бормотали», «кричали», «ревели»); Бхушана даёт для каждого отдельную звуковую референцию (львиный рык, бычий рёв и т.д.), утраченную при переводе"
+      "why_proposed": "подстрочник передаёт четыре санскритских глагола общими русскими синонимами («бормотали», «кричали», «ревели»); Бхушана даёт для каждого отдельную звуковую референцию (львиный рык, бычий рёв и т.д.), утраченную при переводе",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's four distinct sound-glosses ('kṣveḍanti = siṃhanādaṃ kurvanti; nadanti = avyaktaśabdaṃ kurvanti; garjanti = vṛṣabhanādaṃ kurvanti; kilikilāṃ = svajātyucita-kilikilāśabdam') are verified verbatim and recover the specific sound-references lost in the подстрочник's generic Russian synonyms; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.57.53",
@@ -65,7 +79,13 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "собственное примечание Леонова/Костиной сообщает лишь распределение эпитетов между Хануманом и Ангадой; Бхушана добавляет содержательное основание этого распределения — два разных источника славы (мудрость/доблесть), не только адресацию",
-      "complements_leonov": "примечание Костиной ограничивается тем, какой эпитет к кому относится; Бхушана добавляет объяснение, почему это не тавтология — два разных типа славы"
+      "complements_leonov": "примечание Костиной ограничивается тем, какой эпитет к кому относится; Бхушана добавляет объяснение, почему это не тавтология — два разных типа славы",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's dual rationale ('bhṛtyakīrtyā svāminaḥ kīrtiḥ, anyathā paunaruktyāt; yadvā buddhimattvajanyā kīrtiḥ, śauryajanyaṃ yaśaḥ') is verified verbatim and supplies the non-tautology reasoning absent from Kostina's own note (which gives only the attribution split); pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

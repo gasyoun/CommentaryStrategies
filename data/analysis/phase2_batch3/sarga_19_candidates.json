@@ -13,7 +13,9 @@
     "caveats": [
       "5.19.23 is the colophon/end-of-sarga marker (sarga has 22 verses) with a residual gloss of v.22's samīkṣamāṇām; 5.19.68 is an orphan verse-number outside the sarga's range whose content duplicates the v.6 discussion already drafted. Neither anchors an independent verse.",
       "2 ambiguous_marker=true merged-range bundles (5.19.1011, 5.19.1920) carry no independent verse_id and were rejected per the no-independent-gloss rule; their content was cross-checked and does not change any accept/reject decision above."
-    ]
+    ],
+    "judged": true,
+    "judge_verdict_counts": {"keep": 6, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -30,7 +32,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Даёт конкретное содержание обета (гибель Раваны), превращая эпитет из общей формулы аскетической стойкости в целенаправленный акт против похитителя — иная грань, чем формульно-эпитетная параллель с риши Кашьяпой в примечании Фазы-1 к этому же стиху."
+      "why_proposed": "Даёт конкретное содержание обета (гибель Раваны), превращая эпитет из общей формулы аскетической стойкости в целенаправленный акт против похитителя — иная грань, чем формульно-эпитетная параллель с риши Кашьяпой в примечании Фазы-1 к этому же стиху.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk states verbatim rāvaṇavadhāya tīkṣṇaṃ vratam — matches the note's claim exactly; single-commentator gloss adds a concrete referent absent from the подстрочник and orthogonal to Phase-1's Kāśyapa formula parallel; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.19.6",
@@ -46,7 +56,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Разрешает видимый парадокс стиха («достойна украшений — но без них») доктринальным ходом (грязь=украшение подвижницы) и добавляет вариант чтения (citrāṅgī «пёстрая» по Тиртхе) — ни то ни другое не даёт подстрочник, ограничивающийся образом лотоса в иле, уже разобранным в примечании Фазы-1."
+      "why_proposed": "Разрешает видимый парадокс стиха («достойна украшений — но без них») доктринальным ходом (грязь=украшение подвижницы) и добавляет вариант чтения (citrāṅgī «пёстрая» по Тиртхе) — ни то ни другое не даёт подстрочник, ограничивающийся образом лотоса в иле, уже разобранным в примечании Фазы-1.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bundle Tilaka chunk matches both claims (saṃnyāsitva-based dirt-as-ornament resolution; Tīrtha's citrāṅgī variant cited within the same chunk); orthogonal to Phase-1's Kālidāsa mṛṇālī parallel; anchoring verified via content_anchor (containment 0.375) despite pratīka mismatch.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.19.10",
@@ -63,7 +81,15 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "Смещает референт «дурной семьи» с общей социальной метафоры (брак как второе рождение) на конкретное вынужденное пребывание Ситы среди ракшасов — иное прочтение сравнения, чем уже приведённое в собственном примечании Леонова/Костиной.",
-      "complements_leonov": "собственное примечание Леонова/Костиной трактует punaḥ saṃskāram/duṣkule через общую параллель с упанаяной (замужество как второе рождение, со ссылкой на Голдменов); помета Широмани даёт иной, более узкий референт — пленение среди ракшасов как вынужденное новое рождение."
+      "complements_leonov": "собственное примечание Леонова/Костиной трактует punaḥ saṃskāram/duṣkule через общую параллель с упанаяной (замужество как второе рождение, со ссылкой на Голдменов); помета Широмани даёт иной, более узкий референт — пленение среди ракшасов как вынужденное новое рождение.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Siromani's chunk (rākṣasakule jātām iva rākṣasapurasthitātvena tatra jātātvena pratīyamānām) matches the note's narrower referent claim; genuinely contrasts with tier-1's upanayana-marriage reading (Leonov/Kostina + Goldman) rather than restating it; content_anchor verified (containment 0.455) despite pratīka mismatch.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.19.14",
@@ -79,7 +105,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Оба комментатора сходятся на конкретном сценарии осквернения (прикосновение чандалы), не данном ни подстрочником, ни примечанием Фазы-1, которое ограничивается общей рамкой ритуальной чистоты и её юридических последствий."
+      "why_proposed": "Оба комментатора сходятся на конкретном сценарии осквернения (прикосновение чандалы), не данном ни подстрочником, ни примечанием Фазы-1, которое ограничивается общей рамкой ритуальной чистоты и её юридических последствий.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Both cited chunks confirmed: Tilaka 'parāmṛṣṭāṃ vedavedirahitapatitair ākrāntām' (touched by the fallen/degraded) and Siromani 'parāmṛṣṭāṃ cāṇḍālena spṛṣṭāṃ devīṃ tatpratimām iva' (touched by a caṇḍāla, like a deity's image) — genuine two-commentator convergence on a specific defiler absent from Phase-1's general ritual-purity note; both pratīkas verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.19.20",
@@ -95,7 +129,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Даёт двойное конкретное объяснение скудной пищи (ритуальная нечистота от немытости + дар пайасы от Индры), отсылающее к сюжету, известному по другим частям поэмы, — подстрочник и лексическая помета Фазы-1 (tapodhanā как общий образ аскетического богатства) этого обоснования не дают."
+      "why_proposed": "Даёт двойное конкретное объяснение скудной пищи (ритуальная нечистота от немытости + дар пайасы от Индры), отсылающее к сюжету, известному по другим частям поэмы, — подстрочник и лексическая помета Фазы-1 (tapodhanā как общий образ аскетического богатства) этого обоснования не дают.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka chunk gives exactly the dual explanation claimed (unwashed → cannot eat grain-food; already received pāyasa from Indra); orthogonal to Phase-1's tapodhanā note (general ascetic-wealth framing only); pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.19.21",
@@ -111,7 +153,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Устанавливает причинно-следственную связь между двумя стихами (тапас как источник действенности мольбы) и уточняет адресата молитвы (родовое божество, а не божество вообще) — подстрочник даёт оба факта рядом, без этой связи."
+      "why_proposed": "Устанавливает причинно-следственную связь между двумя стихами (тапас как источник действенности мольбы) и уточняет адресата молитвы (родовое божество, а не божество вообще) — подстрочник даёт оба факта рядом, без этой связи.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka chunk supports both claims verbatim (tapodhanatvād eva ... prārthayantīm; svakuladevatām eva uddiśya) — a causal link and addressee-specification absent from both подстрочник and Phase-1 (no note on this verse); pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

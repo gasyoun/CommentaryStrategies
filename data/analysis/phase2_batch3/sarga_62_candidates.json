@@ -9,7 +9,9 @@
     "verses_considered": 43,
     "notes_drafted": 1,
     "notes_rejected": 42,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 1, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -28,7 +30,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Бхушана маркирует gatāyuṣaḥ как риторическую брань (adhikṣepa-vacana), а не буквальное предсказание — регистр, которого подстрочник не передаёт и который не отмечен ни у Леонова/Костиной, ни в Phase-1."
+      "why_proposed": "Бхушана маркирует gatāyuṣaḥ как риторическую брань (adhikṣepa-vacana), а не буквальное предсказание — регистр, которого подстрочник не передаёт и который не отмечен ни у Леонова/Костиной, ни в Phase-1.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's terse gloss 'gatāyuṣa ity adhikṣepavacanam' is verified verbatim and marks the register (abuse, not prophecy) absent from the подстрочник's literal 'whose death is near'; pratīka matches the verse directly; no Leonov own note exists for this verse.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

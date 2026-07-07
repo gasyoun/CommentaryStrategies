@@ -9,7 +9,9 @@
     "verses_considered": 199,
     "notes_drafted": 8,
     "notes_rejected": 191,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 7, "edit": 0, "park": 1, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -29,7 +31,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник переводит pitṛvya буквально как «брат отца», не раскрывая, что оба комментатора сходятся на переносном, а не кровном обосновании этого обращения"
+      "why_proposed": "подстрочник переводит pitṛvya буквально как «брат отца», не раскрывая, что оба комментатора сходятся на переносном, а не кровном обосновании этого обращения",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa and Siromani give the identical gloss verbatim ('pitṛsakhatvāt pitṛvyatvavyapadeśa ity arthaḥ') showing agreement that the kinship term is figurative (friendship-based), not literal — absent from the подстрочник's plain 'brother of the father'; both pratīkas match the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.58.29",
@@ -47,7 +55,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник передаёт цифры без комментария; Бхушана вскрывает внутритекстовое несоответствие масштабов и прямо называет конкурирующий пассаж интерполяцией — редкий случай эксплицитной текстологической критики у комментатора"
+      "why_proposed": "подстрочник передаёт цифры без комментария; Бхушана вскрывает внутритекстовое несоответствие масштабов и прямо называет конкурирующий пассаж интерполяцией — редкий случай эксплицитной текстологической критики у комментатора",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's remark ('prathamasargokta-śatayojana-vistāras tu viruddhaḥ. tad granthaḥ kalpitaś cety uktam') is verified verbatim, naming the competing Bāla-kāṇḍa hundred-yojana passage as a fabricated interpolation — genuine textological criticism absent from the подстрочник; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.58.89",
@@ -65,7 +79,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник передаёт сон Триджаты как рассказ, не сообщая о доктринальном вопросе истинности сна, который поднимает комментатор; сегментатор закрепил это рассуждение за стихом 95, но по содержанию (svapna) оно относится к рассказу о сне в 87-89 — анкоридж проверен по содержанию, а не только по маркеру"
+      "why_proposed": "подстрочник передаёт сон Триджаты как рассказ, не сообщая о доктринальном вопросе истинности сна, который поднимает комментатор; сегментатор закрепил это рассуждение за стихом 95, но по содержанию (svapna) оно относится к рассказу о сне в 87-89 — анкоридж проверен по содержанию, а не только по маркеру",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Siromani's doctrinal remark ('svapnasya mithyātve 'pi taddarśanajanitaphalasya satyatvaṃ dhvanitam; matāntare svapnasyāpi satyatvam ity anyad etat') is verified verbatim, but is physically located in v.95's own bundle (matches_verse: true there), not v.89's — the drafter transparently discloses relocating it to where the dream episode (87-89) is narrated. No suggest_verse contradicts the move; content confirmed at the source location.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.58.104",
@@ -83,7 +103,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник сообщает лишь, что Сита «сказала мне слова послания», не раскрывая их содержания; Тилака называет конкретные приметы-опознавательные знаки (эпизод с вороном, нанесение тилаки), восполняя смысловой эллипсис"
+      "why_proposed": "подстрочник сообщает лишь, что Сита «сказала мне слова послания», не раскрывая их содержания; Тилака называет конкретные приметы-опознавательные знаки (эпизод с вороном, нанесение тилаки), восполняя смысловой эллипсис",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's gloss ('sandideśa kākavṛttāntaṃ tilakakaraṇaṃ ca rāmamātraikavedyaṃ kathayām āsa ity arthaḥ') is verified verbatim, naming the concrete identifying tokens (crow episode, tilaka application) absent from the подстрочник's bare 'she conveyed a message'; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.58.108",
@@ -102,7 +128,13 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "подстрочник и примечание Леонова/Костиной к этому стиху поясняют лишь буквальный смысл фразы «умру без защитника», но не количество месяцев; Бхушана даёт со ссылкой на шрути отдельное прочтение срока, сокращающее его вдвое",
-      "complements_leonov": "примечание Костиной к этому стиху — лишь помета о синтаксисе фразы «умру без защитника»; вопрос о буквальном сроке (два месяца или два пакши) остаётся не затронут"
+      "complements_leonov": "примечание Костиной к этому стиху — лишь помета о синтаксисе фразы «умру без защитника»; вопрос о буквальном сроке (два месяца или два пакши) остаётся не затронут",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's gloss ('māsaśabdo 'tra pakṣaparaḥ, \"pakṣā vai māsāḥ\" iti śruteḥ') is verified verbatim; Leonov's own note on this verse addresses a different point (Sita's killers per Tilaka), leaving the māsa/pakṣa duration question untouched — genuinely non-overlapping; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.58.142",
@@ -121,7 +153,13 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "прямо отвечает на вопрос, оставленный собственным примечанием Костиной к этому стиху («нужно как-то отразить, что закон здесь — это дхарма... иначе непонятно, почему в конце говорится про адхарму»): Тилака называет отсутствие посольства причиной адхармы войны",
-      "complements_leonov": "примечание Костиной формулирует вопрос, но не даёт ответа; Тилака даёт содержательное решение именно этого вопроса"
+      "complements_leonov": "примечание Костиной формулирует вопрос, но не даёт ответа; Тилака даёт содержательное решение именно этого вопроса",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 0, "contrastive_value": 0, "register": 2, "anchoring": 2},
+        "verdict": "park",
+        "reason": "Tilaka's gloss ('dūtapreṣaṇaṃ vinā prathamam eva yuddhasyādharmatvād iti bhāvaḥ') is verified verbatim and faithfully cited, but Leonov's own note on this verse ALREADY states this exact Tilaka reasoning almost word-for-word ('в комментарии «Тилака» отмечается, что начало войны без предварительных переговоров является неправедным (адхармой)'). Kostina's bracketed follow-up asks only for a terminological refinement of 'dharma' (law vs. code), not for the Tilaka citation itself, which tier-1 already supplies — so the note restates the crib rather than adding a fact absent from it.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.58.144",
@@ -139,7 +177,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник передаёт только один вариант чтения (vānarāṇām); Тилака фиксирует альтернативное чтение rāghavāṇām, меняющее адресата довода Ханумана с обезьян на людей"
+      "why_proposed": "подстрочник передаёт только один вариант чтения (vānarāṇām); Тилака фиксирует альтернативное чтение rāghavāṇām, меняющее адресата довода Ханумана с обезьян на людей",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's variant-reading gloss ('rāghavāṇām iti pāṭhe manuṣyo 'samartha iti na mantavyam iti bhāvaḥ') is verified verbatim; Leonov's own note on this verse addresses a different Bhūṣaṇa/Tattvadīpikā point (gods inviting monkeys), leaving this textual variant untouched — genuinely non-overlapping; pratīka matches the verse directly. Note the verse itself is flagged ambiguous_marker in the bundle, though the cited pratīka anchors cleanly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.58.164",
@@ -157,7 +201,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник объединяет «причины, обладающие великими достоинствами» в одно общее выражение; Бхушана вскрывает трёхчастную реалию гадательной классификации примет, стоящую за этой фразой"
+      "why_proposed": "подстрочник объединяет «причины, обладающие великими достоинствами» в одно общее выражение; Бхушана вскрывает трёхчастную реалию гадательной классификации примет, стоящую за этой фразой",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's three-way gloss ('nimittaiḥ śakunaiḥ; kāraṇaiḥ netrasphuraṇādibhiḥ; ṛṣivākyaiḥ siddhārthaiḥ') is verified verbatim and unpacks the подстрочник's single collapsed phrase into a genuine three-part divinatory taxonomy; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

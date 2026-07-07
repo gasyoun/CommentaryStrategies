@@ -9,7 +9,9 @@
     "verses_considered": 42,
     "notes_drafted": 5,
     "notes_rejected": 37,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 5, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -23,7 +25,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "напрямую отвечает на вопрос, поставленный самой Костиной («непонятно, что за собрание») — Широмани уточняет: это яджна-шала, а не придворное собрание",
-      "complements_leonov": "собственное примечание Костиной к этому стиху фиксирует открытый вопрос («нужен будет комм»); Широмани даёт недостающий ответ — ритуальный, а не светский зал"
+      "complements_leonov": "собственное примечание Костиной к этому стиху фиксирует открытый вопрос («нужен будет комм»); Широмани даёт недостающий ответ — ритуальный, а не светский зал",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Siromani's gloss 'sadasi yāgaśālāyāṃ' is verified verbatim and directly answers Kostina's own flagged open question; siromani's chunk anchors only via content_containment (0.273), not a direct pratīka match.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.47.5",
@@ -36,7 +44,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "вскрывает подлинную текстологическую тёмность редкого слова, которую подстрочник («с прикреплёнными восемью мечами») сглаживает до одного, отнюдь не единственного традиционного толкования",
-      "complements_leonov": ""
+      "complements_leonov": "",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's three unranked glosses (base/phalakasaṅghāta/ghaṇṭā) for bandhura are verified verbatim and expose a textual darkness smoothed over by the подстрочник's single reading; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.47.17",
@@ -49,7 +63,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "вносит временную координату (полдень) и называет риторический приём (гипербола) там, где подстрочник передаёт только зрительный образ без этих слоёв",
-      "complements_leonov": ""
+      "complements_leonov": "",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka ('madhyandinasthatvaṃ lakṣyate') and Bhūṣaṇa ('madhyāhne vartata ity augryoktiḥ') are both verified verbatim and converge on the noon/hyperbole reading absent from the подстрочник's plain visual image — a genuine two-commentator agreement adding new content; both pratīkas match their verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.47.26",
@@ -62,7 +82,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "фиксирует конкретный вариант чтения (mārutiḥ вместо me matiḥ) с реальным следствием для того, как понимать субъект фразы — самоименование Ханумана в третьем лице",
-      "complements_leonov": ""
+      "complements_leonov": "",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Tilaka's variant-reading note ('pramāpaṇe mārutir atra jāyate' paṭhe, 'ayaṃ janaḥ' itivat) and its third-person-self-reference gloss are verified verbatim; the chunk anchors only via content_containment (0.333), not a direct pratīka match.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.47.38",
@@ -75,7 +101,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "прямо отвечает на запрос самой Костиной («нужна ссылка на 46.41 или комм») и показывает, что Тилака придаёт повторяющейся формуле иной смысловой оттенок здесь, чем в 5.46.41",
-      "complements_leonov": "собственное примечание Костиной к этому стиху явно просит связать его с 5.46.41; данная заметка даёт эту связь через расхождение в толковании Тилаки"
+      "complements_leonov": "собственное примечание Костиной к этому стиху явно просит связать его с 5.46.41; данная заметка даёт эту связь через расхождение в толковании Тилаки",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's gloss 'kṛtakṣaṇaḥ punaryuddhe kṛtotsāhaḥ' is verified verbatim and directly fulfils Kostina's own flagged request for a cross-reference/comment to 5.46.41, showing the tradition shades the same formula differently on repetition (cross-checked against sarga 46's Tilaka/Bhūṣaṇa 'labdhāvasaraḥ/dattāvasaraḥ' reading); pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

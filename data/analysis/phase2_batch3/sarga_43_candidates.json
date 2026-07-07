@@ -9,7 +9,9 @@
     "verses_considered": 33,
     "notes_drafted": 2,
     "notes_rejected": 31,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 2, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -29,7 +31,15 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "даёт формальное определение архитектурной формы caityaprāsāda, которое Костина прямо запросила в своей пометке к этому стиху, но не получила.",
-      "complements_leonov": "Костина (В.43.1) помечает, что нужен комментарий о «форме» дворца; Бхушана даёт именно это определение (здание в форме святилища божества), которого её собственная пометка не приводит."
+      "complements_leonov": "Костина (В.43.1) помечает, что нужен комментарий о «форме» дворца; Бхушана даёт именно это определение (здание в форме святилища божества), которого её собственная пометка не приводит.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Bhushana's text (in the orphan-numbered '5.43.34' bundle, verse-token out of range for this 33-verse sarga) confirms the claim verbatim (caityaṃ devāyatanam, tadrūpaḥ prāsādaḥ caityaprāsādaḥ tam) and directly answers Kostina's own explicit request ('Комм о форме дворца, поскольку ниже будет в комм про это говориться'). Anchoring capped at 1: no pratika_check exists for this bundle at all, but the chunk opens by directly glossing 'caitya' (verse 1's own word) and continues into verse 3/4's exact wording, making the attribution unambiguous despite the mechanical gap.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.43.4",
@@ -47,7 +57,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "восстанавливает временную привязку эпизода (рассвет), не отражённую ни в подстрочнике, ни в существующем лексическом примечании (которое разбирает только оптику паргелия)."
+      "why_proposed": "восстанавливает временную привязку эпизода (рассвет), не отражённую ни в подстрочнике, ни в существующем лексическом примечании (которое разбирает только оптику паргелия).",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Bhushana's text (same orphan-numbered '5.43.34' bundle) confirms the claim verbatim (pratisūryaḥ dvitīyasūrya ity arthaḥ; anena sūryodayaḥ sūcitaḥ); genuinely distinct from the Phase-1 note (optical parhelion phenomenon only, no timing claim). Anchoring capped at 1 for the same reason as the sibling note: no pratika_check exists for this bundle, but the chunk directly glosses 'pratisūryaḥ', verse 4's own word.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

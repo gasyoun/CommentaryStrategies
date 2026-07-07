@@ -9,7 +9,9 @@
     "verses_considered": 46,
     "notes_drafted": 2,
     "notes_rejected": 44,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 2, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -23,7 +25,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "подстрочник даёт только сам приказ провести Ханумана по городу, не называя цели; оба комментатора предлагают разные, не пересекающиеся мотивировки этого сюжетного хода (месть/утешение vs демонстрация силы), которых нет ни в подстрочнике, ни в примечаниях Костиной к этому стиху.",
-      "complements_leonov": "у Костиной по V.53.5 — только буквальный перевод композита sacatvaram, без обсуждения цели шествия."
+      "complements_leonov": "у Костиной по V.53.5 — только буквальный перевод композита sacatvaram, без обсуждения цели шествия.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Siromani's gloss ('etenaitādṛśadarśanena hatabāndhavānāṃ rākṣasīnāṃ duḥkhaśāntir bhaviṣyatīti sūcitam') is verified verbatim in v.5's own bundle; Tilaka's contrasting motive ('sva-pura-durga-mahābala-mahaiśvaryāṇi parebhyaḥ prakāśayituṃ...') is verified verbatim but physically resides in v.19's bundle, not v.5's — the note transparently discloses this marker-shift. Two genuinely non-overlapping motivations absent from Kostina's literal-only note.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.53.33",
@@ -36,7 +44,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "это самостоятельное текстологическое суждение (внутренняя оценка традиции об интерполяции) не отражено ни в подстрочнике, ни в примечании Костиной к V.53.33 (которое касается только опущенной полустроки); привязка к стиху сохраняется на V.53.33, где содержательно возобновляется материал этого стиха после смещённого фрагмента.",
-      "complements_leonov": "Костина отмечает только опущение полустроки «dahyamāne ca lāṅgūle»; вопрос о рукописно неустойчивых промежуточных строфах между vv.32–33 остаётся неотражённым."
+      "complements_leonov": "Костина отмечает только опущение полустроки «dahyamāne ca lāṅgūle»; вопрос о рукописно неустойчивых промежуточных строфах между vv.32–33 остаётся неотражённым.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "The cited remark ('anayoḥ ślokayor madhye kecana ślokāḥ katipayakośeṣu dṛśyante, bahukośeṣu adarśanād arthādhikyābhāvāc ca te anādaraṇīyāḥ') is verified verbatim word-for-word including 'anādaraṇīyāḥ' — a genuine textological judgment absent from Kostina's own note (which flags only an omitted half-line). The chunk is physically embedded in v.13's Bhūṣaṇa commentary block, not v.33's own bundle (marker-offset, no suggest_verse contradicting it), so anchoring is unverified-in-place though the content is manually confirmed.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

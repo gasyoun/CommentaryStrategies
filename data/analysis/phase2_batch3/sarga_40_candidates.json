@@ -9,7 +9,9 @@
     "verses_considered": 30,
     "notes_drafted": 3,
     "notes_rejected": 27,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 3, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -23,7 +25,15 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "разночтение локализации тилака (щека vs лоб) между комментаторами не отражено в подстрочнике и не покрыто существующей заметкой Леонова/Костиной, которая обсуждает только чтение Бхушаны/Голдменов",
-      "complements_leonov": "заметка Леонова к этому стиху приводит только чтение Бхушаны/Голдменов («на лбу»); широманиевское буквальное «на щеке», которому фактически следует сам перевод Леонова, в ней не названо"
+      "complements_leonov": "заметка Леонова к этому стиху приводит только чтение Бхушаны/Голдменов («на лбу»); широманиевское буквальное «на щеке», которому фактически следует сам перевод Леонова, в ней не названо",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Siromani's chunk confirms the literal reading verbatim (gaṇḍapārśve gaṇḍaikadeśe); Kostina's own tier-1 note independently quotes the exact same Bhushana gloss (gaṇḍasthale gaṇḍaśailapārśve vā, Goldman follows it) but omits the Siromani contrast the translation actually follows — a genuine two-way divergence the note correctly adds; pratīkas verified (Siromani at v.5 directly; Bhushana's gloss corroborated by the independent tier-1 citation).",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.40.7",
@@ -35,7 +45,15 @@
       "subtype": "commentator",
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
-      "why_proposed": "три комментатора дают разные функции украшения (апотропей vs памятная вещь vs отцовский дар) — деталь, отсутствующая и в подстрочнике, и в существующей лексической заметке о cūḍāmaṇi, которая касается только этимологии слова"
+      "why_proposed": "три комментатора дают разные функции украшения (апотропей vs памятная вещь vs отцовский дар) — деталь, отсутствующая и в подстрочнике, и в существующей лексической заметке о cūḍāmaṇi, которая касается только этимологии слова",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "All three functions confirmed verbatim: Tilaka (etatsannidhāne rakṣobhibhavāsaṃbhavād iti bhāvaḥ), Bhushana (tvatsmārakatvād iti bhāvaḥ), Siromani (eṣaḥ pitrā dattaḥ cūḍāmaṇiḥ) — a genuine three-way divergence absent from the Phase-1 etymology-only note; all pratīkas verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.40.23",
@@ -47,7 +65,15 @@
       "subtype": "commentator",
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
-      "why_proposed": "поясняет неочевидный из подстрочника смысл просьбы (не личное спасение, а ускорение уже почти завершенного дела) и фиксирует вариант чтения, отсутствующие в тексте перевода и в существующих заметках"
+      "why_proposed": "поясняет неочевидный из подстрочника смысл просьбы (не личное спасение, а ускорение уже почти завершенного дела) и фиксирует вариант чтения, отсутствующие в тексте перевода и в существующих заметках",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms both claims verbatim (yathā mām śīghraṃ tārayasi tathā saṃvidhānaṃ kuru — main task already accomplished, remaining task secondary; and the 'athāpi sa mahābāhuḥ' variant reading); no baseline covers this verse; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

@@ -9,7 +9,9 @@
     "verses_considered": 64,
     "notes_drafted": 4,
     "notes_rejected": 60,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 4, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -28,7 +30,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "вскрывает нарративно-пророческую функцию образа сна (место будущей встречи Рамы и Ситы), не выраженную в подстрочнике и не отмеченную в существующих примечаниях"
+      "why_proposed": "вскрывает нарративно-пророческую функцию образа сна (место будущей встречи Рамы и Ситы), не выраженную в подстрочнике и не отмеченную в существующих примечаниях",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms the claim verbatim (saṅgatā tatraiva parvata iti śeṣaḥ; etena laṅkāyām eva rāmasya sītādarśanaṃ sūcitam); no baseline note covers this verse; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.27.19",
@@ -46,7 +56,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "текстологическое указание на интерполяцию по конкретной рукописной традиции (шривайшнавской), не переданное подстрочником и отличное от интерполяционной пометы, отмеченной отдельно при 5.27.30"
+      "why_proposed": "текстологическое указание на интерполяцию по конкретной рукописной традиции (шривайшнавской), не переданное подстрочником и отличное от интерполяционной пометы, отмеченной отдельно при 5.27.30",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms the claim verbatim (atra madhye 'sāṇḍaṃ bhuvanam' ityādayo bahavaḥ ślokā rāmānujasampradāyapustakeṣu dṛśyante te prakṣiptā iti katakādayo 'nye ca); no baseline covers this verse, and the note correctly distinguishes it from the separate v.30-31 interpolation note; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.27.30",
@@ -64,7 +82,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "текстологическая помета об интерполяции (передающая мнение комментатора Катаки), отсутствующая в подстрочнике; привязка стиха взята из собственной внутренней ссылки Тилаки (।। 5.27.30,31 ।।), а не только из маркера сегментации — комментарий сам называет адрес"
+      "why_proposed": "текстологическая помета об интерполяции (передающая мнение комментатора Катаки), отсутствующая в подстрочнике; привязка стиха взята из собственной внутренней ссылки Тилаки (।। 5.27.30,31 ।।), а не только из маркера сегментации — комментарий сам называет адрес",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Content confirmed verbatim (etad agre ślokadvayaṃ prakṣiptam iti katakaḥ ... pibatāṃ tailādi pibatāṃ rakṣasāṃ vāsabhūtā laṅkā sāgare patitety anvayaḥ ।। 5.27.30,31 ।।) — but this chunk sits mechanically in the segmenter's 5.27.3 bundle (pratīka verified there, not at 5.27.30) and is reassigned to 5.27.30 solely on the source's own internal cross-reference, not automated verification; plausible and well-argued but not machine-anchored at its claimed verse, so anchoring capped at 1 rather than 2 (does not meet the 0/contradicted threshold for flag_anchor).",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.27.53",
@@ -84,7 +110,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "контраст между буквальным (примета) и развёрнутым аллегорическим (духовный путь) прочтениями одного образа — редкий случай доктринальной рамки, полностью отсутствующей в подстрочнике и в существующих примечаниях, которые касаются только вида птицы"
+      "why_proposed": "контраст между буквальным (примета) и развёрнутым аллегорическим (духовный путь) прочтениями одного образа — редкий случай доктринальной рамки, полностью отсутствующей в подстрочнике и в существующих примечаниях, которые касаются только вида птицы",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "All three readings confirmed: Tilaka/Siromani give the literal auspicious-bird gloss (śākhānilayaṃ ... uttamasāntvavādī = crow/similar bird foretelling good news), Bhushana carries the full Śrīvaiṣṇava allegorical reading (Laṅkā=body, indriyāṇi=rakṣasas, Rāvaṇa/Kumbhakarṇa=ahaṅkāra/mamakāra, pakṣī=guru with the two wings jñāna/karma) — a genuine literal-vs-allegorical divergence absent from tier-1 (which only covers the bird's species identification); all pratīkas verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

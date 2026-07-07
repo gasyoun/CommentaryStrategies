@@ -9,7 +9,9 @@
     "verses_considered": 37,
     "notes_drafted": 5,
     "notes_rejected": 32,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 4, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 1}
   },
   "notes": [
     {
@@ -29,7 +31,15 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "объясняет ритуальную логику жеста с соломинкой (защита от осквернения прямым обращением к чужому мужчине) и добавляет прочтение «Тилаки»: соломинка приравнивает Равану к ничтожеству.",
-      "complements_leonov": "собственное примечание Костиной ограничивается ссылкой на параллель в «Араньяканде» (56 песнь) и запросом «нужен также комментарий о самой соломинке»; комментарий Тилаки как раз дает недостающее объяснение ритуального смысла жеста."
+      "complements_leonov": "собственное примечание Костиной ограничивается ссылкой на параллель в «Араньяканде» (56 песнь) и запросом «нужен также комментарий о самой соломинке»; комментарий Тилаки как раз дает недостающее объяснение ритуального смысла жеста.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms both claims (parapuruṣasya sākṣāt-sambhāṣaṇānarhatvāt ritual-barrier logic; tṛṇīkṛtaprāṇatayā tṛṇatulyatayā rāvaṇasya grahaṇāt = treating Rāvaṇa as mere straw) and fills exactly the gap Kostina's own note flags ('нужен также комм. о самой соломинке'); pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.21.9",
@@ -49,7 +59,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "показывает, что Бхушана дает содержательно иной, не нейтрально-вопросительный, а обвинительный ответ на риторический вопрос, называя Вибхишану доказательством существования праведных в Ланке — деталь, предвосхищающая его будущую роль."
+      "why_proposed": "показывает, что Бхушана дает содержательно иной, не нейтрально-вопросительный, а обвинительный ответ на риторический вопрос, называя Вибхишану доказательством существования праведных в Ланке — деталь, предвосхищающая его будущую роль.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhushana's chunk confirms the accusatory answer verbatim (santaḥ ... na santi vā na santi kim? santy eva, śrī-vibhīṣaṇa-prabhṛtīnāṃ sambhavāt); Tilaka/Siromani remain open-question in phrasing — a genuine three-way contrast absent from any baseline; all pratīkas verified (Siromani via content_anchor).",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.21.17",
@@ -67,7 +85,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "фиксирует доктринальный вариант чтения, расширяющий круг тех, кому доступна брахмавидья, за пределы одних брахманов — деталь, отсутствующая в подстрочнике."
+      "why_proposed": "фиксирует доктринальный вариант чтения, расширяющий круг тех, кому доступна брахмавидья, за пределы одних брахманов — деталь, отсутствующая в подстрочнике.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms both the dhīrasya variant and the trai-varṇika broadening verbatim (anye tu viprapadaṃ traivarṇikaparam ... ata eva dhīrasya iti kvacit pāṭha ityāhuḥ); no baseline note covers this verse; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.21.19",
@@ -85,7 +111,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "дает характерологическое прочтение сцены (вынужденная просительность Ситы как знак усилившейся жестокости Раваны), не выводимое из одного подстрочника."
+      "why_proposed": "дает характерологическое прочтение сцены (вынужденная просительность Ситы как знак усилившейся жестокости Раваны), не выводимое из одного подстрочника.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 0},
+        "verdict": "flag_anchor",
+        "reason": "Content is faithful to the cited Bhushana text (pathicoraṃ pānīyayācakavad rāvaṇam arthayate sādhu iti), but the lemma 'sādhu rāvaṇa' is v.18's opening words (5.21.18: sādhu rāvaṇa rāmeṇa māṃ samānaya), not v.19's (mitram aupayikaṃ kartuṃ...); the segmenter's own 5.21.19 bhusana chunk carries a mid-text marker '।। 4.21.18 ।।' before switching to v.19's actual content, and pratika_check flags this Bhushana sub-chunk as content_anchor-only (matches_verse: false) — the chunk is misplaced from v.18 into the v.19 bundle. Kostina's own tier-1 note on v.19 independently flags this exact boundary risk ('в 18 стихе речь про слона, потом появляется бык... читатель может запутаться'). Needs re-anchoring to 5.21.18 before print.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.21.32",
@@ -103,7 +137,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "восполняет предысторию мифологического сравнения (почему Вритра однорукий), отсутствующую в подстрочнике, со ссылкой на источник."
+      "why_proposed": "восполняет предысторию мифологического сравнения (почему Вритра однорукий), отсутствующую в подстрочнике, со ссылкой на источник.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms the backstory and source verbatim (vajracchinnaikabāhur vṛtro bahukālam indreṇa sahaikabāhunā yuddhaṃ kṛtavān parājitaś ceti bhāgavate prasiddham); no baseline note covers this verse; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

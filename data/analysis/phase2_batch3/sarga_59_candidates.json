@@ -9,7 +9,9 @@
     "verses_considered": 41,
     "notes_drafted": 3,
     "notes_rejected": 38,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 3, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -28,7 +30,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник передаёт лишь сравнение силы гнева Ситы с огнём; Бхушана поясняет логическую связь с более ранним эпизодом (пощада Раваны Хануманом была намеренной, а не вынужденной), усиливающую контраст с безудержным гневом Ситы"
+      "why_proposed": "подстрочник передаёт лишь сравнение силы гнева Ситы с огнём; Бхушана поясняет логическую связь с более ранним эпизодом (пощада Раваны Хануманом была намеренной, а не вынужденной), усиливающую контраст с безудержным гневом Ситы",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's cross-reference quotes verbatim Hanuman's earlier speech ('asandeśāt tu rāmasya tapasaś cānupālanāt, na tvāṃ kurmi daśagrīva bhasma bhasmārha tejasā') and the reasoning that his restraint was deliberate, not weakness — absent from the подстрочник's plain simile; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.59.24",
@@ -46,7 +54,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Phase-1 заметка к этому стиху разбирает патроним Пауломи (дочь Пуломана) и общий параллелизм с Шачи-Индрой, но не касается мифа о домогательстве Нахуши; Тилака называет именно этот эпизод как основание сравнения — верность под давлением, а не в покое"
+      "why_proposed": "Phase-1 заметка к этому стиху разбирает патроним Пауломи (дочь Пуломана) и общий параллелизм с Шачи-Индрой, но не касается мифа о домогательстве Нахуши; Тилака называет именно этот эпизод как основание сравнения — верность под давлением, а не в покое",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's gloss 'paulomīva nahuṣaruddhā paulomīva' is verified verbatim and names the Nahuṣa-molestation myth behind the simile, absent from the purely patronymic Phase-1 note; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.59.29",
@@ -64,7 +78,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "подстрочник сообщает лишь о верности и радости Ситы; Широмани строит из этого доктринальный вывод о предрешённости гибели Раваны и о роли Рамы как формальной, а не главной причины — сюжетная функция, не считываемая из перевода"
+      "why_proposed": "подстрочник сообщает лишь о верности и радости Ситы; Широмани строит из этого доктринальный вывод о предрешённости гибели Раваны и о роли Рамы как формальной, а не главной причины — сюжетная функция, не считываемая из перевода",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Siromani's inference ('ato eva rāmaḥ tasya rāvaṇasya vadhe nimittamātraṃ bhaviṣyati') is verified verbatim, drawing a doctrinal conclusion about Rāvaṇa's foreordained death and Rāma's merely instrumental role — absent from the подстрочник's plain report of Sītā's fidelity; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

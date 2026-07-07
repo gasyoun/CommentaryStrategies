@@ -9,7 +9,9 @@
     "verses_considered": 32,
     "notes_drafted": 4,
     "notes_rejected": 28,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 4, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -28,7 +30,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Широмани вскрывает психологический подтекст вопроса Рамы — скрытую тревогу о возможной обиде Ситы — который не передаёт ни подстрочник, ни собственное примечание Леонова/Костиной (то отмечает лишь грамматический смысл фразы)."
+      "why_proposed": "Широмани вскрывает психологический подтекст вопроса Рамы — скрытую тревогу о возможной обиде Ситы — который не передаёт ни подстрочник, ни собственное примечание Леонова/Костиной (то отмечает лишь грамматический смысл фразы).",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Siromani's full remark ('ity uktyā drutasvakartṛka-rāvaṇavadhābhāva-janita-sītāmarṣa-viṣayaka-saṃbhāvanā sūcitā') is verified verbatim; Leonov's own note quotes only the first clause of the same passage ('kena bhāvena' — 'with what feeling'), stopping short of the amarṣa/resentment inference the candidate note supplies — a genuine, non-overlapping addition from within the same commentary block.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.65.20",
@@ -46,7 +54,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Широмани называет ворона по имени (Джаянта), закрывая именно тот пробел, на который указала Костина в собственном примечании Леонова/Костиной («нужна ссылка на соответствующий стих»)."
+      "why_proposed": "Широмани называет ворона по имени (Джаянта), закрывая именно тот пробел, на который указала Костина в собственном примечании Леонова/Костиной («нужна ссылка на соответствующий стих»).",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Siromani's gloss 'citrakūṭe vāyasaṃ jayantaṃ prati tavāntike yad vṛttaṃ vṛttāntaṃ' is verified verbatim, naming the crow (Jayanta) exactly where Kostina's own note flags a missing cross-reference; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.65.25",
@@ -64,7 +78,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Бхушана уточняет функцию сравнения с ланью как знака ужаса, а не красоты — смысловой сдвиг, отсутствующий в подстрочнике и не отмеченный ни у Леонова/Костиной, ни в Phase-1."
+      "why_proposed": "Бхушана уточняет функцию сравнения с ланью как знака ужаса, а не красоты — смысловой сдвиг, отсутствующий в подстрочнике и не отмеченный ни у Леонова/Костиной, ни в Phase-1.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's gloss 'mṛgīvotphullalocanā, trāsātiśayād iti bhāvaḥ' is verified verbatim (physically present in v.25's own bundle, describing v.26's phrase) and reframes the simile as fear rather than beauty, absent from the подстрочник; the segmenter's pratīka_check for this verse only lists siromani, not this bhūṣaṇa chunk, so the anchor is manually confirmed rather than automatically verified.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.65.28",
@@ -82,7 +102,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "Бхушана поясняет нарративную экономию эпоса: сокращённый рассказ Ханумана перед отрядом и полный — перед Рамой суть сознательный выбор сказителя, а не случайность; наблюдение отсутствует в подстрочнике."
+      "why_proposed": "Бхушана поясняет нарративную экономию эпоса: сокращённый рассказ Ханумана перед отрядом и полный — перед Рамой суть сознательный выбор сказителя, а не случайность; наблюдение отсутствует в подстрочнике.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's remark ('aṅgadasannidhau prapañcanaṃ gopyaviśeṣagopanārtham. atra tv aprapañcanam akathanīyākathanārthaṃ ceti jñeyam') is verified verbatim, explaining the deliberate difference in fullness between the Aṅgada-facing and Rāma-facing retellings — absent from the подстрочник; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

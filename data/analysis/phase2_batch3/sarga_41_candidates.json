@@ -9,7 +9,9 @@
     "verses_considered": 25,
     "notes_drafted": 4,
     "notes_rejected": 21,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 4, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -22,7 +24,15 @@
       "subtype": "commentator",
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
-      "why_proposed": "уточняет, что именно осталось невыполненным (не встреча с Ситой, а разведка сил и настроя Раваны) — деталь, отсутствующая в подстрочнике и в существующей заметке Phase-1, которая касается только доктрины четырёх упая"
+      "why_proposed": "уточняет, что именно осталось невыполненным (не встреча с Ситой, а разведка сил и настроя Раваны) — деталь, отсутствующая в подстрочнике и в существующей заметке Phase-1, которая касается только доктрины четырёх упая",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhushana's chunk confirms the claim verbatim (idaṃ kāryaṃ rāvaṇanilayaparijñānarūpam ... rākṣasabalābalarāvaṇahṛdayādyaparijñānāt kāryasyālpaśeṣatvoktiḥ); genuinely distinct from tier-1's daṇḍa-identity note and Phase-1's general upāya-doctrine note; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.41.34",
@@ -34,7 +44,15 @@
       "subtype": "commentator",
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
-      "why_proposed": "приводит доктринальную максиму (война — крайняя мера из-за непредсказуемости исхода) и объясняет, почему она не удерживает Ханумана — довод, отсутствующий в подстрочнике; бандл сегментирован под меткой «5.41.34», но его текст открывается прямой цитатой пратики стиха 3 («на самети»), поэтому содержательно относится к V.41.3, где сама «Бхушана» лишь повторяет текст стиха без пояснения — печатается как примечание к V.41.3"
+      "why_proposed": "приводит доктринальную максиму (война — крайняя мера из-за непредсказуемости исхода) и объясняет, почему она не удерживает Ханумана — довод, отсутствующий в подстрочнике; бандл сегментирован под меткой «5.41.34», но его текст открывается прямой цитатой пратики стиха 3 («на самети»), поэтому содержательно относится к V.41.3, где сама «Бхушана» лишь повторяет текст стиха без пояснения — печатается как примечание к V.41.3",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhushana's chunk (filed under the anomalously-labeled '5.41.34' bundle) confirms the maxim verbatim (anityo vijayo yasmād dṛśyate yudhyamānayoḥ ... tasmād yuddhaṃ visarjayet; sarvam balavataḥ pathyam) and opens directly on v.3's own text ('na sāmeti'), a self-declared textual anchor to V.41.3 rather than a contradiction; no baseline covers this maxim.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.41.9",
@@ -46,7 +64,15 @@
       "subtype": "commentator",
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
-      "why_proposed": "документирует явный текстологический спор о чтении — Тилака прямо называет альтернативный вариант поздней выдумкой, притом что этот самый вариант фигурирует в тексте Бхушаны в данном своде; ни подстрочник, ни существующие заметки этого разночтения не касаются"
+      "why_proposed": "документирует явный текстологический спор о чтении — Тилака прямо называет альтернативный вариант поздней выдумкой, притом что этот самый вариант фигурирует в тексте Бхушаны в данном своде; ни подстрочник, ни существующие заметки этого разночтения не касаются",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Confirmed verbatim: Tilaka states 'sabalaṃ sayāyinam' iti pāṭhaḥ; 'sabalaṃ prayāyinam' ity ādhunikakalpitaḥ pāṭhaḥ, while Bhushana's own text in this very bundle reads 'sabalapreyayinam' (the rejected variant) — a genuine textological tension between the two voices, absent from any baseline; all pratīkas verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.41.20",
@@ -58,7 +84,15 @@
       "subtype": "commentator",
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
-      "why_proposed": "вскрывает словесную игру на противоположности aśoka/śoka, которую подстрочник передаёт нейтрально («лианами печали»/«ашоки») и которую иначе русский читатель не заметит; отличается от уже отмеченной в Phase-1 игры слов на pramadāvana"
+      "why_proposed": "вскрывает словесную игру на противоположности aśoka/śoka, которую подстрочник передаёт нейтрально («лианами печали»/«ашоки») и которую иначе русский читатель не заметит; отличается от уже отмеченной в Phase-1 игры слов на pramadāvana",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms the pun verbatim (kaper balāc chocyata iti śokā śocyalatāpratānā jātā); genuinely distinct from tier-1's separately-noted pramadāvana wordplay on this same verse; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

@@ -9,7 +9,9 @@
     "verses_considered": 58,
     "notes_drafted": 4,
     "notes_rejected": 54,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 4, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -23,7 +25,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "подстрочник передаёт только сам образ гиперболы, не пословицу-мотивировку; Широмани прочитывает её мифологически (Бхуми как мать Ситы, разделяющая её муку) — прочтение, которого нет ни в подстрочнике, ни в Phase-1.",
-      "complements_leonov": "у Костиной по этому стиху отдельного примечания нет."
+      "complements_leonov": "у Костиной по этому стиху отдельного примечания нет.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Tilaka's literal reading ('laṅkābhūmir na paryāptā') is verified verbatim and pratīka-matched; Siromani's mythological reading ('tena pativiyogajanita-svasutā-duḥkha-hetuka-duḥkhākrāntatvaṃ tasyāḥ sūcitam' — the earth as Sītā's grieving mother) is verified verbatim but only content-anchored (containment 0.7, no direct pratīka match) — two genuinely non-overlapping readings absent from подстрочник and unaddressed by Kostina.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.54.37",
@@ -36,7 +44,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "прямо отвечает на вопрос, поднятый самой Костиной в примечании к этому стиху («māyā не = волшебству», нужен комментарий) — Бхушана даёт именно то уточнение значения, которого требовала Костина.",
-      "complements_leonov": "заполняет отмеченный самой Костиной пробел («нужен комм., māyā не = волшебству»), а не просто повторяет его."
+      "complements_leonov": "заполняет отмеченный самой Костиной пробел («нужен комм., māyā не = волшебству»), а не просто повторяет его.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's gloss 'svamāyayā svāsādhāraṇayā āścaryaśaktyā' is verified verbatim and directly answers Kostina's own flagged need for a comment distinguishing māyā from ordinary 'volshebstvo'; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.54.42",
@@ -49,7 +63,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "Костина в своём примечании к этому стиху отмечает, что средневековые комментаторы расходятся (Брахма/Вишну/Шива) и не называет решения; Широмани даёт собственное явное разрешение (Шива), не отражённое у Костиной.",
-      "complements_leonov": "Костина фиксирует сам разброс мнений, но не итоговое решение конкретного комментатора; Широмани восполняет именно это."
+      "complements_leonov": "Костина фиксирует сам разброс мнений, но не итоговое решение конкретного комментатора; Широмани восполняет именно это.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Siromani's gloss 'atra svayambhu-śabdaḥ śambhuparaḥ iti na saṃhāraprakaraṇavirodhaḥ' is verified verbatim, giving the concrete resolution (Śiva) that Kostina's own note only frames as an open disagreement (Brahma/Vishnu/Śiva); the chunk is content-anchored (containment 0.333) rather than pratīka-matched.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.54.46",
@@ -62,7 +82,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "самостоятельное текстологическое суждение традиции об интерполяции и о расхождении в членении сарг — не отражено ни в подстрочнике, ни в примечаниях Костиной/Леонова к этой главе.",
-      "complements_leonov": "у Костиной по V.54.46 и соседним стихам замечаний о составе текста нет."
+      "complements_leonov": "у Костиной по V.54.46 и соседним стихам замечаний о составе текста нет.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's closing remark ('tato mahātmeti ślokaḥ sa rākṣasān iti ślokoktārthakatayā bahukośeṣv adarśanāc ca prakṣiptaḥ. bahukośeṣv etat sargasamāptiviparyayaḥ uttarasargārambhaviparyayaś ca dṛśyate') is verified verbatim, naming both interpolated verse-openings and the sarga-boundary variance — genuinely new textological content absent from подстрочник/tier-1; pratīka matches the verse directly, no marker shift needed.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

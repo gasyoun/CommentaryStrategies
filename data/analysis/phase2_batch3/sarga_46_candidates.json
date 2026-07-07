@@ -9,7 +9,9 @@
     "verses_considered": 51,
     "notes_drafted": 7,
     "notes_rejected": 44,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 7, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -23,7 +25,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "уточняет содержание «превосходного решения» Раваны как конкретно решение возобновить войну — нарративная функция, готовящая сбор пяти полководцев",
-      "complements_leonov": "собственное примечание Леонова к этому стиху обсуждает saṃvṛtākāraḥ и общую семантику uttamāṃ matim через Тилаку/Таттвадипику («решительный образ действий»), но не называет конкретно «возобновление войны», как это делает Широмани"
+      "complements_leonov": "собственное примечание Леонова к этому стиху обсуждает saṃvṛtākāraḥ и общую семантику uttamāṃ matim через Тилаку/Таттвадипику («решительный образ действий»), но не называет конкретно «возобновление войны», как это делает Широмани",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Siromani gloss punaryuddhaniścaya is verified verbatim in the cited text and is genuinely absent from Leonov's own note, which only carries the Tilaka/Tattvadipika 'решительный образ действий' reading.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.46.5",
@@ -36,7 +44,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "Тилака и Бхушана расходятся в самой полярности глагольного действия (совершить vs. воздержаться) — подстрочник передаёт только чтение Тилаки, расхождение в нём не видно",
-      "complements_leonov": ""
+      "complements_leonov": "",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Verified opposite glosses (Tilaka kāryam vs Bhūṣaṇa parihartavyam) — a genuine two-commentator contrast absent from подстрочник/tier-1; Tilaka's chunk anchors only via content_containment (0.25), not a direct pratīka match, so anchoring is unverified-but-plausible rather than fully confirmed.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.46.11",
@@ -49,7 +63,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "объясняет риторическую функцию дословного повтора приказа из стиха 4 — деталь, невидимая в подстрочнике и не покрытая существующим примечанием о dhīra",
-      "complements_leonov": ""
+      "complements_leonov": "",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Tilaka's gloss 'sthairyārtham' is verified verbatim and gives a rhetorical function absent from подстрочник and the Phase-1 dhīra note; the segmenter's pratīka match failed (containment 0.0, no content_anchor) because the chunk quotes the verse's opening compound anaphorically ('savājirathetyādi'), but the quoted words are unambiguously verse 11's own — unverified by the automated check but plausible on inspection, not contradicted.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.46.14",
@@ -62,7 +82,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "предлагает альтернативное техническое прочтение sattva как «сознание/ум», меняющее акцент открытия (не «великое тело», а «великий разум») — подстрочник «великое существо» следует иному, более широкому чтению",
-      "complements_leonov": ""
+      "complements_leonov": "",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's gloss 'sattvaṃ cittam' is verified verbatim and supplies a technical reading (mind/consciousness vs. generic 'being') absent from the подстрочник; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.46.19",
@@ -75,7 +101,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "вскрывает риторический сдвиг от сравнения к метафоре внутри одного и того же образа (солнце/сияние Ханумана), неразличимый в едином переводе «подобно»",
-      "complements_leonov": ""
+      "complements_leonov": "",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Bhūṣaṇa's rhetorical-figure distinction (upamā vs. rūpaka) is verified verbatim in the cited text and is a real exegetical gain invisible in a единый перевод «подобно»; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.46.21",
@@ -88,7 +120,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "вносит психологический подтекст (страх, нерешительность) в описание, которое подстрочник передаёт как нейтральную тактическую расстановку",
-      "complements_leonov": ""
+      "complements_leonov": "",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's gloss 'cakitāḥ' (afraid, hesitant to approach) is verified verbatim and adds a psychological subtext absent from the подстрочник's neutral tactical description; pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.46.41",
@@ -101,7 +139,13 @@
       "review_required": true,
       "provenance": {"model": "claude-sonnet-5", "tier": "Sonnet", "step": "phase2_batch3_draft"},
       "why_proposed": "разрешает переводческую развилку, которую сама Костина отметила как открытую (Гита-Пресс расходится): традиция ṭīkā единогласно подтверждает чтение «дождавшийся часа», а не «готовая истреблять»",
-      "complements_leonov": "собственное примечание Леонова/Костиной ставит вопрос о расхождении с Гита-Пресс, но не приводит мнения индийских комментаторов; Тилака и Бхушана здесь дают недостающий довод в пользу принятого перевода"
+      "complements_leonov": "собственное примечание Леонова/Костиной ставит вопрос о расхождении с Гита-Пресс, но не приводит мнения индийских комментаторов; Тилака и Бхушана здесь дают недостающий довод в пользу принятого перевода",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka (labdhāvasaraḥ) and Bhūṣaṇa (dattāvasaraḥ) are both verified verbatim and converge to resolve exactly the Gita-Press vs. accepted-translation fork Kostina's own note flags as open — a genuine translation-choice resolution; both pratīkas match their verses directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

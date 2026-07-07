@@ -9,7 +9,9 @@
     "verses_considered": 90,
     "notes_drafted": 4,
     "notes_rejected": 86,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 3, "edit": 1, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -28,7 +30,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "поясняет подтекст двойного поклона вороны (Раме и Дашаратхе) мифологической деталью, отсутствующей у Леонова/Костиной."
+      "why_proposed": "поясняет подтекст двойного поклона вороны (Раме и Дашаратхе) мифологической деталью, отсутствующей у Леонова/Костиной.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Siromani's chunk confirms the claim verbatim (daśarathāya namaskatvety anena palāyanasamaye daśarathopadeśād eva rāmaśaraṇam āgata iti dhvanitam); no baseline note covers this verse; anchoring verified via content_anchor.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.38.37",
@@ -46,7 +56,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "объясняет нарративную логику молчаливого вопроса Ситы через мотив горя Рамы, не отражённую ни в подстрочнике, ни у Леонова/Костиной (их В.38.37 касается только термина «брахмастра»)."
+      "why_proposed": "объясняет нарративную логику молчаливого вопроса Ситы через мотив горя Рамы, не отражённую ни в подстрочнике, ни у Леонова/Костиной (их В.38.37 касается только термина «брахмастра»).",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms the claim verbatim (kasmād rākṣasakṣayaṃ na karotīty asyottaram — tvacchoketi; tvadviyogajaśokena sarvakāryavimukha ity arthaḥ); genuinely distinct from the Phase-1 note (brahmastra term only); pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.38.65",
@@ -66,7 +84,15 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "показывает разошедшуюся идентификацию Каушики у двух комментаторов, обе версии отличны от мифологической атрибуции в существующем лексическом примечании.",
-      "complements_leonov": "существующее примечание (тир-2, V.38.65) отождествляет Каушики с сюжетом о Вишвамitre по MW; ни Широмани, ни Бхушана этого отождествления не подтверждают — оба дают иные, взаимно расходящиеся мифы."
+      "complements_leonov": "существующее примечание (тир-2, V.38.65) отождествляет Каушики с сюжетом о Вишвамitre по MW; ни Широмани, ни Бхушана этого отождествления не подтверждают — оба дают иные, взаимно расходящиеся мифы.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 1, "anchoring": 2},
+        "verdict": "edit",
+        "reason": "Both myths confirmed verbatim: Siromani (kauśika-gotra-pṛthvīm iva yathā varāhaḥ pṛthivīṃ rarakṣa) and Bhushana (kauśikaḥ indraḥ tatsambandhinī śrīḥ kauśikī, full Brahma-Purāṇa Vṛtra/Nārāyaṇa narrative plus an alternate Mahābhārata Utathya story) — a genuine two-way divergence, correctly distinguished from the Phase-1 lexical note's Viśvāmitra/Kuśika identification; both pratīkas verified. Register issue: stray Latin-script fragments in Cyrillic prose ('Вишвамitre' in complements_leonov, 'не выбирая version' in note_ru) — fix both to full Cyrillic before print.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.38.68",
@@ -85,7 +111,15 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "даёт причину, почему камень был скрыт (чтобы ракшаси не заметили) — прямой ответ на открытый вопрос Костиной к этому эпизоду, который в её собственной пометке остаётся без ответа.",
-      "complements_leonov": "Костина (В.38.66) оставляет открытым вопрос о характере cūḍāmaṇi и vastragata; Тилака поясняет мотив сокрытия камня, которого её пометка не даёт."
+      "complements_leonov": "Костина (В.38.66) оставляет открытым вопрос о характере cūḍāmaṇi и vastragata; Тилака поясняет мотив сокрытия камня, которого её пометка не даёт.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's chunk confirms the claim verbatim (prabhāvāt sāmarthyaviśeṣāt; rākṣasībhir yathā na jñāyate tathā dhṛtam); directly answers Kostina's own open question on this episode; pratīka verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [
