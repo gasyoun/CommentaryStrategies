@@ -9,7 +9,9 @@
     "verses_considered": 21,
     "notes_drafted": 1,
     "notes_rejected": 20,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 1, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -30,7 +32,15 @@
         "step": "phase2_batch3_draft"
       },
       "why_proposed": "показывает расхождение комментаторов в адресате соперничества (друг с другом vs каждый против Ханумана) и называет чтение, которому фактически следует перевод.",
-      "complements_leonov": "собственное примечание Леонова/Костиной (В.45.2) даёт только буквальный перевод («желающие победить друг друга») без указания на разночтение у Бхушаны."
+      "complements_leonov": "собственное примечание Леонова/Костиной (В.45.2) даёт только буквальный перевод («желающие победить друг друга») без указания на разночтение у Бхушаны.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Both readings confirmed verbatim: Tilaka (ahamahamikayā svasvotkarṣāpekṣiṇaḥ = mutual rivalry among themselves) and Bhushana (pratyekaṃ hanumajjayaiṣiṇa ity arthaḥ = each individually desiring to defeat Hanumān); Leonov's own translation ('желающие превзойти друг друга') matches Tilaka's reading, correctly identified — a genuine translation-choice resolution absent from the literal-only tier-1 note; both pratīkas verified.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

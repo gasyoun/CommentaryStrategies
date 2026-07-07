@@ -9,7 +9,9 @@
     "verses_considered": 25,
     "notes_drafted": 2,
     "notes_rejected": 23,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 2, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -29,7 +31,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "уточняет архитектурную реалию (конкретная перекладина ворот, а не арка вообще), не отражённую ни в подстрочнике, ни в существующих примечаниях."
+      "why_proposed": "уточняет архитектурную реалию (конкретная перекладина ворот, а не арка вообще), не отражённую ни в подстрочнике, ни в существующих примечаниях.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka/Bhushana/Siromani all confirm the realia verbatim (toraṇaviṭaṅkas toraṇastambhayor upari tiryak pratiṣṭhāpita-kapotapālikā-dāru = the pigeon-perch beam placed crosswise atop the two gate-pillars; Bhushana cites the Amarakośa 'kapotapālikāyāṃ tu viṭaṅkam'); no baseline covers this verse; pratīka verified for Bhushana/Siromani.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.44.17",
@@ -47,7 +57,15 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "снимает видимое противоречие подстрочника (кони вместо ослов) внутритекстовой ссылкой на стих 5, не отражённой ни в подстрочнике, ни в существующих примечаниях; пратика этого фрагмента сегментатором не подтверждена (merged-range 17-20), но содержание точно соответствует лексике стиха 17 (nāśvāḥ) и явно продолжает пратику «tasya caiva» этого же стиха."
+      "why_proposed": "снимает видимое противоречие подстрочника (кони вместо ослов) внутритекстовой ссылкой на стих 5, не отражённой ни в подстрочнике, ни в существующих примечаниях; пратика этого фрагмента сегментатором не подтверждена (merged-range 17-20), но содержание точно соответствует лексике стиха 17 (nāśvāḥ) и явно продолжает пратику «tasya caiva» этого же стиха.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Both Tilaka and Bhushana confirm the claim verbatim in the ambiguous_marker=true '5.44.1720' bundle (nāśvā iti aśvaśabdenātra kharā ucyante; rathena kharayuktena iti pūrvam uktatvāt); no baseline covers this verse. Anchoring capped at 1: the bundle is explicitly flagged ambiguous_marker=true with no pratika_check, though the chunk directly glosses 'nāśvāḥ' (v.17's own word) and explicitly back-references v.5's donkey detail.",
+        "judged_by": "claude-sonnet-5",
+        "step": "phase2_batch3_judge",
+        "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [

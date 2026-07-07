@@ -9,7 +9,9 @@
     "verses_considered": 34,
     "notes_drafted": 2,
     "notes_rejected": 32,
-    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)"
+    "rights": "commentary from Gita Supersite, used by permission (CC BY 4.0)",
+    "judged": true,
+    "judge_verdict_counts": {"keep": 2, "edit": 0, "park": 0, "reject": 0, "flag_anchor": 0}
   },
   "notes": [
     {
@@ -26,7 +28,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "снимает кажущуюся избыточность между «Хануман один справится» (68.11) и «пусть Рама придёт с войском» (68.12) — Тилака поясняет это как дипломатический ход Ситы (уступительная конструкция, а не противоречие), ориентированный на славу Рамы; ни подстрочник, ни Леонов/Костина, ни Phase-1 эту связку не разбирают."
+      "why_proposed": "снимает кажущуюся избыточность между «Хануман один справится» (68.11) и «пусть Рама придёт с войском» (68.12) — Тилака поясняет это как дипломатический ход Ситы (уступительная конструкция, а не противоречие), ориентированный на славу Рамы; ни подстрочник, ни Леонов/Костина, ни Phase-1 эту связку не разбирают.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 1, "register": 2, "anchoring": 2},
+        "verdict": "keep",
+        "reason": "Tilaka's remark spanning vv.11-12 ('yadyapi tvam eva paryāptaḥ...tathāpīdṛśo balodayas tavaiva yaśasyaḥ'; 'yadi tu rāmo rāvaṇaṃ hatvā māṃ nayet, tadā tannayanaṃ tasya yaśaskaraṃ syāt. atas tenaivāgatya mocanaṃ yuktam iti bhāvaḥ') is verified verbatim, resolving the apparent redundancy as a concessive move rather than a contradiction; Leonov's own notes on both verses address only formulaic-repetition parallels (cf. V.39), leaving this reasoning untouched. Pratīka matches the verse directly.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     },
     {
       "verse_id": "5.68.23",
@@ -42,7 +50,13 @@
         "tier": "Sonnet",
         "step": "phase2_batch3_draft"
       },
-      "why_proposed": "разрешает многозначность слова manyu (уныние / решимость / гнев) ссылкой на именованный лексикографический авторитет (Амаракоша) и объясняет, почему в подстрочнике «горе» — точный, а не приблизительный перевод; ни подстрочник сам по себе, ни Леонов/Костина, ни Phase-1 эту многозначность не оговаривают."
+      "why_proposed": "разрешает многозначность слова manyu (уныние / решимость / гнев) ссылкой на именованный лексикографический авторитет (Амаракоша) и объясняет, почему в подстрочнике «горе» — точный, а не приблизительный перевод; ни подстрочник сам по себе, ни Леонов/Костина, ни Phase-1 эту многозначность не оговаривают.",
+      "judge": {
+        "scores": {"faithfulness": 2, "non_triviality": 2, "contrastive_value": 2, "register": 2, "anchoring": 1},
+        "verdict": "keep",
+        "reason": "Both Tilaka ('manyur dainyam') and Bhūṣaṇa ('manyuḥ dainyam. \"manyur dainye kratau krudhi\" ity amaraḥ') are verified verbatim, converging on the same lexicographic disambiguation via the named Amarakośa citation — a genuine two-commentator agreement absent from подстрочник/tier-1. The chunk sits in a merged-range marker bundle (ambiguous_marker: true, no pratika_check) rather than v.23's own clean bundle, so anchoring is unverified by the automated check though the content is manually confirmed and unambiguous.",
+        "judged_by": "claude-sonnet-5", "step": "phase2_batch3_judge", "date": "2026-07-07"
+      }
     }
   ],
   "rejected": [
