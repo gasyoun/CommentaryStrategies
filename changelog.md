@@ -10,6 +10,42 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.8.0] - 2026-07-07
+
+### Added
+
+**H276 (session 1) — lexical-layer judge pass, batch-3 quality residues, batch-aware gate apply** (Fable 5 `claude-fable-5` orchestration, Sonnet 5 `claude-sonnet-5` ×15 judge/draft agents ≤3-wide)
+- **Lexical judge pass over the full print-bound layer** (611 notes, 67 chapters): §3.4 rubric with
+  `contrastive_value` → `lexical_value` (etymology/term/hapax = 2, transparent gloss = 0) and a
+  deterministic lemma-in-verse `anchor_precheck` (315 exact / 185 stem / 111 absent) —
+  [scripts/lexical_judge_prep.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/lexical_judge_prep.py),
+  [JUDGE_BRIEF.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/lexical_judge/JUDGE_BRIEF.md),
+  [scripts/lexical_judge_merge.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/lexical_judge_merge.py).
+  Verdicts: **keep 492 / flag_anchor 45 / reject 32 / edit 23 / park 19**; ranked interactive gate
+  sheet [commentarystrategies-sundarakanda-lexical_all68_review.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/lexical_judge/commentarystrategies-sundarakanda-lexical_all68_review.html)
+  ([scripts/build_lexical_review_html.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_lexical_review_html.py));
+  the judge ranks, the human gates — every note keeps `review_required`.
+- **Sarga-11 phantom anchors resolved** ([scripts/fix_ch11_lexical_anchors.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/fix_ch11_lexical_anchors.py)):
+  9 hand-curated lexical notes described Sītā-in-the-grove scenes under sarga-11 (feast-hall)
+  verse ids; lemma search across the vulgate corpus + GRETIL critical text found 2 honest
+  re-anchors (**kṣāma → V.17.30, vivarṇa → V.25.8**, corpus-evidenced) and 7 with no valid target,
+  parked to [data/lexical/ch11.qa_removed.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/lexical/ch11.qa_removed.json)
+  with reasons (incl. rājīvanetri, contradicted by the text: Sītā is utpalapatrākṣī 13.16). Book
+  aggregate now 896 notes; merged density ceiling 46.0%.
+- **Sarga-12 re-drafted under the quote-or-drop protocol**
+  ([SARGA12_REDRAFT_BRIEF.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/SARGA12_REDRAFT_BRIEF.md)):
+  the original 3 notes fabricated attributions (cited commentators absent from the verse bundle,
+  0/3 judge faithfulness); the re-draft requires a verbatim Devanagari `source_quote` per cited
+  commentator and cited ⊆ present. Re-judged **keep 1 / edit 2 / reject 0**; batch-3 aggregate
+  re-merged (227 candidates: keep 210 / edit 8 / reject 7 / park 1 / flag_anchor 1) and the gate
+  sheet rebuilt.
+- **Gate apply extended batch-aware** ([scripts/apply_phase2_decisions.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/apply_phase2_decisions.py)):
+  `--batch pilot|batch2|batch3|auto` (auto-detects by candidate-set containment), judge fields
+  survive the graft, judge-flagged notes (`reject`/`park`/`flag_anchor`) get an explicit
+  resolution table, accepting an unfixed `flag_anchor` note (5.21.19) is a hard error without
+  `--allow-flagged-anchor`, `--dry-run` supported. Applies stay queued until M.G.'s decisions.json
+  files arrive (batch-2 38 · batch-3 227 · footnotes 51 · lexical 611).
+
 ## [1.7.0] - 2026-07-07
 
 ### Added
