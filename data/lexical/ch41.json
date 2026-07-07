@@ -10,7 +10,15 @@
       "verses_total": 21,
       "notes_count": 5,
       "density_pct": 23.8,
-      "rejected_count": 7
+      "rejected_count": 7,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 4,
+          "flag_anchor": 1
+        }
+      }
     }
   },
   {
@@ -25,7 +33,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/41.2.lex"
+    "src_candidate_id": "auto/sundara/41.2.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "catvāra upāyāḥ: sāma/dāna/bheda/daṇḍa is the standard Arthaśāstra political tetrachotomy, correctly matched to the verse's 'trīn upāyān atikramya caturtha.' Real non-trivial framing of Hanuman's decision as rational statecraft rather than impulse. Lemma (stem) present.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.41.9",
@@ -39,7 +61,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/41.9.lex"
+    "src_candidate_id": "auto/sundara/41.9.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "mantrivarga: mantrin/mantriparishad and the Arthaśāstra 1.15 'council of ministers' reference are accurate; reading Hanuman's reconnaissance as cāra-classification scouting of Rāvaṇa's state apparatus is a solid non-trivial layer. Lemma exact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.41.11",
@@ -53,7 +89,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/41.11.lex"
+    "src_candidate_id": "auto/sundara/41.11.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "dāvānala: etymology (dāva+anala) is linguistically sound in the abstract, but the compound 'dāvānala' itself is NOT in this verse — V.41.11 reads only 'śuṣkaṃ vanam ivānalaḥ' (simple analaḥ, no dāva-). anchor_precheck='absent' is confirmed by direct inspection: the note analyzes a word that isn't textually present here. Likely belongs to a passage that actually uses the compound dāvānala (it recurs later in the Lankā-burning episode), or should be rewritten around the verse's actual 'analaḥ.'",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.41.14",
@@ -67,7 +117,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/41.14.lex"
+    "src_candidate_id": "auto/sundara/41.14.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "māruta: MW confirms māruta can denote both 'wind' generically and Vāyu as wind-god (the note's later note on 45.10 uses the same identification consistently), so treating māruta≈Vāyu for Hanuman's patronymic is standard epic usage, not a real conflation error. Non-trivial: activates the Maruts' Ṛgvedic destructive-storm valence behind 'mārutavat kruddho.' Lemma exact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.41.15",
@@ -81,6 +145,20 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/41.15.lex"
+    "src_candidate_id": "auto/sundara/41.15.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "pramadāvana: MW glosses pramadāvana specifically as 'Rāvaṇa's pleasure-garden'; antaḥpura-transgression reading is accurate and gives real political stakes absent from crib's flat 'царский парк.' Lemma exact.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]

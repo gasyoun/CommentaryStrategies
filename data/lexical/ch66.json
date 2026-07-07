@@ -8,7 +8,14 @@
       "generated": "2026-06-27",
       "verses_total": 15,
       "notes_count": 4,
-      "density_pct": 26.7
+      "density_pct": 26.7,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "flag_anchor": 4
+        }
+      }
     }
   },
   {
@@ -23,7 +30,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/66.3.lex"
+    "src_candidate_id": "auto/sundara/66.3.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "The śloka text (66.3: 'yathaiva dhenuḥ sravati snehād vatsasya vatsalā tathā mamāpi hṛdayaṃ maṇiśreṣṭhasya darśanāt') contains no sakhya substring and is a cow-and-calf simile about seeing the jewel (maṇi), unrelated to the Rāma-Sugrīva alliance the note discusses. The sakhya-as-completed-dharmic-pact reading is sound in itself but belongs to a different verse (likely the alliance context near the opening of this speech).",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.66.8",
@@ -37,7 +58,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/66.8.lex"
+    "src_candidate_id": "auto/sundara/66.8.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "The śloka text (66.8: 'kim āha sītā vaidehī brūhi saumya punaḥ punaḥ parāsum iva toyena siñcantī vākyavāriṇā') contains no āśā substring anywhere, with no sandhi context that would hide it. The scene (Rāma begging for Sītā's words, likened to reviving one near death) is thematically adjacent to hope but the specific lemma is not textually present in this verse.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.66.13",
@@ -51,7 +86,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/66.13.lex"
+    "src_candidate_id": "auto/sundara/66.13.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "The śloka text (66.13: 'śāradas timironmukto nūnaṃ candra ivāmbudaiḥ āvṛto vadanaṃ tasyā na virājati sāmpratam') contains no sukhocitā/sukha-ucita substring — this verse is the autumn-moon-behind-clouds simile for Sītā's dimmed face, a different image from the one the note discusses. Note content is plausible but anchored to the wrong verse.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.66.15",
@@ -65,6 +114,20 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/66.15.lex"
+    "src_candidate_id": "auto/sundara/66.15.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "The śloka text (66.15: 'madhurā madhurālāpā... duḥkhād duḥkhataraṃ prāpya kathaṃ jīvati jānakī') contains no martavya substring — Rāma is asking how Jānakī endures ever-greater sorrow, not stating she has resolved to die. The word martavya, and its ethical 'death as a dharmic choice' reading, is already anchored and covered at V.65.15 ('martavyakṛtaniścayā') in this same chunk; this entry both misanchors the lemma and substantially duplicates the earlier note.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]

@@ -357,5 +357,22 @@ verse word. Reassignment is heuristic; all downstream notes stay `review_require
   0.964/0.945, strict pratīka metric kept unchanged at 0.888). Batch-3 = the remaining 58 sargas,
   drafted per-sarga off `data/analysis/phase2_batch3/segmented/`. Orchestration Fable 5
   (`claude-fable-5`), drafting/judging Sonnet 5 (`claude-sonnet-5`).
+- 2026-07-07 — **H276: the §3.4 rubric extended to the LEXICAL layer** (611 print-bound notes,
+  drafted 2026-06-27): one axis swapped, `contrastive_value` → `lexical_value` (real etymology /
+  technical term / hapax = 2, transparent gloss = 0), plus a deterministic lemma-in-verse
+  `anchor_precheck` feeding the anchoring axis (brief:
+  [`data/analysis/lexical_judge/JUDGE_BRIEF.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/lexical_judge/JUDGE_BRIEF.md)).
+  Result: **keep 492 / flag_anchor 45 / reject 32 / edit 23 / park 19**; ranked sheet
+  [`commentarystrategies-sundarakanda-lexical_all68_review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/lexical_judge/commentarystrategies-sundarakanda-lexical_all68_review.html)
+  (judge ranks, human gates; nothing lost `review_required`). **Sarga-11 phantom anchors resolved**
+  (batch-3 drafter caveat → judge confirmation → [`scripts/fix_ch11_lexical_anchors.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/fix_ch11_lexical_anchors.py)):
+  9 hand-curated KB notes described Sītā-in-the-grove scenes under feast-hall verse ids — 2
+  re-anchored on corpus evidence (kṣāma → V.17.30, vivarṇa → V.25.8), 7 parked to
+  `ch11.qa_removed.json`. **Sarga 12 re-drafted under the quote-or-drop protocol** (0/3 judge
+  faithfulness fails were fabricated attributions; the re-draft requires a verbatim `source_quote`
+  per cited commentator — [`SARGA12_REDRAFT_BRIEF.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/SARGA12_REDRAFT_BRIEF.md)).
+  Gate apply extended batch-aware (judge fields survive; `flag_anchor`/`park`/`reject` demand
+  explicit resolution; accepting an unfixed `flag_anchor` is a hard error). Judging Sonnet 5
+  (`claude-sonnet-5`) ×13 agents ≤3-wide, orchestration Fable 5 (`claude-fable-5`).
 
 _Dr. Mārcis Gasūns_

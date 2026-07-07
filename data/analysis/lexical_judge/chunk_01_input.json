@@ -1,0 +1,1907 @@
+{
+  "_meta": {
+    "chunk": 1,
+    "chapters": [
+      1
+    ],
+    "notes_count": 55,
+    "generated_by": "scripts/lexical_judge_prep.py",
+    "date": "2026-07-07",
+    "task": "H276 WS-2 lexical judge pass (rubric: PHASE2_METHOD §3.4, contrastive_value -> lexical_value)",
+    "judged": true,
+    "verdict_counts": {
+      "keep": 48,
+      "edit": 1,
+      "park": 1,
+      "reject": 1,
+      "flag_anchor": 4
+    }
+  },
+  "items": [
+    {
+      "note": {
+        "shloka": "V.1.1",
+        "lemma_iast": "śatrukārśana",
+        "note_ru": "Иссушитель врагов (śatrukārśana) — букв. «тот, кто иссушает/истощает врагов» (śatru-kārśana, от корня √kṛś «быть тощим», каузатив). Активный эпитет-ваддхи в роли имени деятеля: kārśana ← kṛśayati «делает тощим, изнуряет». MW: kārśana — «emaciation, making lean». Эпитет подчёркивает Раму как истощителя/уничтожителя противников — в отличие от простого «победителя» (vijayī) или «убийцы» (hantṛ). В подстрочнике передано как «губитель врагов» — этимология корня √kṛś утеряна.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. kārśana; Apte s.v. kṛś",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Этимология śatru-karśana (√kṛś, каузатив) верна и подтверждается MW (karśana — «rendering lean, causing emaciation»); в lemma_iast опечатка долготы (kārśana вместо karśana — kārśana в MW означает «жемчужный», другое слово), но само содержание заметки этой ошибки не наследует. Слово śatrukarśanaḥ буквально стоит в стихе (anchor_precheck пропустил его из-за долготы гласного) — найдено, anchoring=2. Крib «губитель врагов» не раскрывает этимологию каузатива.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.1",
+      "verse_iast": "tato rāvaṇanītāyāḥ sītāyāḥ śatrukarśanaḥ । iyeṣa padam anveṣṭuṃ cāraṇācarite pathi ॥1॥",
+      "leonov_ru": "И вот губитель врагов (Хануман) возжелал Искать Ситу, похищенную Раваной, на пути, по которому ходят чараны.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "base",
+          "lemma_iast": "cāraṇa",
+          "note_ru": "Чараны (cāraṇa) — класс полубожественных небесных певцов-странников (cāraṇa). Комм. «Бхушана» глоссирует как dēvagāyakāḥ «божественные певцы», «Таттвадипика» — «дорога богов» (suravartmani). Голдмены: «celestial bards». Подстрочник «по которому ходят чараны» сохраняет слово без пояснения его мифологического статуса."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.1.2",
+        "lemma_iast": "niṣpratidvandva",
+        "note_ru": "Не имеющий соперника (niṣpratidvandva) — букв. «без (nis-) соперника-двойника» (prati-dvandva, от dvandva «пара, двойник, соперник»). Dvandva — термин грамматики для «парного сложения», но в боевом контексте — «тот, кто выступает тебе навстречу». Составное niṣpratidvandva = «тот, кому нет равного соперника» — более сильное выражение, чем anuttama или apratimaḥ. MW: pratidvandva — «a match, rival». В подстрочнике «несравненное» — двойная грамматическая глубина (сложение) утеряна.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. pratidvandva; Apte s.v. dvandva",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Pratidvandva/dvandva разобраны верно (MW: pratidvandva «a match, rival»); указание на грамматический термин dvandva добавляет нетривиальный пласт. Точное вхождение в стих, подстрочник «несравненное» не передаёт сложную семантику.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.2",
+      "verse_iast": "duṣkaraṃ niṣpratidvandvaṃ cikīrṣan karma vānaraḥ । samudagraśirogrīvo gavāṃ patir ivābabhau ॥2॥",
+      "leonov_ru": "Трудное, ни для кого иного непосильное дело желая сделать, обезьяна, Вытянувшая шею и задравшая голову, стала похожа на владыку коров (быка).",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "base",
+          "lemma_iast": "vānara",
+          "note_ru": "Ванара (vānara) — букв. «лесной житель», обезьяна; общий термин для народа Сугривы. В «Тилаке» отмечается божественное происхождение ванаров. Подстрочник передаёт нарицательным «обезьяна», что снимает этнонимический оттенок термина."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.1.4",
+        "lemma_iast": "dvija",
+        "note_ru": "Дважды-рождённый (dvija) — букв. «дважды рождённый» (dvi-ja, от √jan «рождаться»). Термин охватывает три категории: 1) брахманы/кшатрии/вайшьи (второе рождение = инициация упанаяны); 2) птицы (второе рождение = вылупление из яйца); 3) зубы (второе «рождение» = смена молочных зубов). В V.1.4 dvijān = «птицы» (контекст: Хануман пугает их перед прыжком), но слово несёт кодовую многозначность трёх рождений. MW: dvija — «twice-born (brahman, bird, tooth)». Подстрочник «птиц» выбирает одно значение.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. dvija; Apte s.v. dvija",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Тройная полисемия dvija (варна/птица/зуб) — стандартная и хорошо документированная (MW). Контекстное отождествление dvijān='птицы' в этом стихе верно. Крib даёт только «птиц», без игры значений — нетривиально.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.4",
+      "verse_iast": "dvijān vitrāsayan dhīmān urasā pādapān haran । mṛgāṃś ca subahūn nighnan pravṛddha iva kesarī ॥4॥",
+      "leonov_ru": "Распугивая птиц, мудрый, грудью валя деревья, Убивая зверей во множестве, могучий, словно лев.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.4",
+        "lemma_iast": "kesarin",
+        "note_ru": "Гривастый / лев (kesarin) — букв. «имеющий гриву» (kesar-in, от kesara «грива»). Kesara/kesara — специфически «грива льва» или «тычинки цветка» (оба значения у MW). Kesarin как эпитет = «лев» (через метонимию гривы). В V.1.4 сравнение Ханумана с pravṛddha ivā kesarī — «как матёрый лев»: акцент именно на силе и зрелости зверя (pravṛddha «выросший»). В подстрочнике «лев» — теряется этимологический образ через гриву.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. kesarin; Apte s.v. kesara",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Kesarī буквально присутствует в стихе (pravṛddha iva kesarī) — anchor_precheck ошибочно пометил absent, лемма найдена, anchoring=2. Этимология kesarin←kesara «грива» верна (MW), но связь «грива→лев» довольно прозрачна и не поднимается до уровня термина/hapax — lexical_value=1.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.4",
+      "verse_iast": "dvijān vitrāsayan dhīmān urasā pādapān haran । mṛgāṃś ca subahūn nighnan pravṛddha iva kesarī ॥4॥",
+      "leonov_ru": "Распугивая птиц, мудрый, грудью валя деревья, Убивая зверей во множестве, могучий, словно лев.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.5",
+        "lemma_iast": "dhātu",
+        "note_ru": "Рудные жилы / горные минералы (dhātu) — букв. «то, что несёт, поддерживает» (от √dhā «нести»); в контексте горного описания — «слои горной породы, рудные жилы». MW: dhātu — «primary element of the earth (metal, mineral, ore), constituent element of the body, grammatical root». В V.1.5 svabhāvasiddhair vimalair dhātubhiḥ — «чистыми, природой созданными рудными жилами». Лексически многозначно: dhātu = 1) минерал/руда горы, 2) элемент тела, 3) грамматический корень. Геологический смысл нетривиален; подстрочник «жилами руды» адекватен, но этимология через √dhā «поддерживать» — т.е. «опоры горы» — остаётся в тени.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. dhātu; Apte s.v. dhātu",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Тройная полисемия dhātu (минерал/элемент тела/грамматический корень) подтверждается MW; геологический разбор svabhāvasiddhaiḥ...dhātubhiḥ нетривиален и не дан в подстрочнике («минералами» без разбора этимологии от √dhā).",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.5",
+      "verse_iast": "nīlalohitamāñjiṣṭhapadmavarṇaiḥ sitāsitaiḥ । svabhāvasiddhair vimalair dhātubhiḥ samalaṃkṛtam ॥5॥",
+      "leonov_ru": "Он увидел гору, украшенную минералами темно-синего, красного, лотосового цветов, Белыми и черными, совершенными по своей природе, чистыми,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "dhātu",
+          "note_ru": "Гора (Махендра), «украшенная минералами (dhātu) тёмно-синего, красного, лотосового, белого и чёрного цветов» (1.5), описана приёмом, чей locus classicus в кавье — открытие «Кумарасамбхавы», где Гималаи несут «balāhakacchedavibhaktarāgām akālasaṃdhyām iva dhātumattām» (Кумара I.4) — «[вершину] с расцветкой, разделённой как разрывы туч, словно преждевременный закат, изобилующую рудами (dhātu)». У обоих поэтов dhātu — минеральные жилы, окрашивающие склон; Калидаса доводит образ до «несвоевременного заката». Параллель раскрывает технический смысл dhātu (горная руда-краситель), который подстрочник передаёт нейтральным «минералы»."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.1.9",
+        "lemma_iast": "māhendra",
+        "note_ru": "Гора Махендра (māhendra) — «принадлежащая Великому Индре» (māhendra — прилагательное от mahendra «Великий Индра»); название горы на юге Индии (Mahendra-parvata), с которой, по Рамаяне, Хануман совершил прыжок. Māhendra — не просто «большая», а «священная гора Индры» — предполагает мифологическую принадлежность Индре как царю богов. В V.1.9 употреблено как топоним. Подстрочник «Махендра» сохраняет имя без пояснения его генитивной семантики.",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. māhendra; Apte s.v. mahendra",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "Лемма māhendra полностью отсутствует в процитированном стихе V.1.9 (\"añjaliṃ prāṅmukhaṃ kurvan pavanāyātmayonaye / tato hi vavṛdhe gantuṃ dakṣiṇo dakṣiṇāṃ diśam\" — про анджали ветру и рост перед прыжком, без упоминания горы Махендра). Содержание заметки, вероятно, относится к более раннему стиху главы, где гора Махендра действительно называется (напр. в районе V.1.1–1.5, где Хануман стоит на горе Махендра) — заметка нуждается в перепривязке к правильной шлоке.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.9",
+      "verse_iast": "añjaliṃ prāṅmukhaṃ kurvan pavanāyātmayonaye । tato hi vavṛdhe gantuṃ dakṣiṇo dakṣiṇāṃ diśam ॥9॥",
+      "leonov_ru": "Делая анджали на восток своему отцу, богу ветра, Тогда увеличился он в размерах искусный, чтобы лететь в южную сторону.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.9",
+        "lemma_iast": "plavaṃgama",
+        "note_ru": "Прыгун / обезьяна (plavaṃgama) — букв. «движущийся прыжком» (plavam-gama, от √plu «прыгать, плыть» + gama «идущий»). Этимология: plava «прыжок, плот» + gama «идущий». MW: plavaṃgama — «going by leaps, a monkey». Противопоставлен plavaga (V.1.2) — «прыгун» вообще; plavaṃgama акцентирует именно способ передвижения через прыжок. Термин описывает биологический модус движения обезьяны, а не её внешность. Подстрочник «обезьяна» — этимология «прыгающий-ходок» утеряна.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. plavaṃgama; Apte s.v. plavaga",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "Слово plavaṃgama отсутствует в процитированном стихе V.1.9 (тот же текст про анджали ветру и разбег на юг — обезьяньей лексики там нет). Термин, вероятно, относится к другой шлоке главы, где действительно встречаются plavaga/plavaṃga-формы (напр. в районе V.1.2 или V.1.83) — требуется перепривязка.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.9",
+      "verse_iast": "añjaliṃ prāṅmukhaṃ kurvan pavanāyātmayonaye । tato hi vavṛdhe gantuṃ dakṣiṇo dakṣiṇāṃ diśam ॥9॥",
+      "leonov_ru": "Делая анджали на восток своему отцу, богу ветра, Тогда увеличился он в размерах искусный, чтобы лететь в южную сторону.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.12",
+        "lemma_iast": "acala",
+        "note_ru": "Гора / неподвижная (acala) — букв. «не движущаяся» (a-cala, от √cal «двигаться»). Стандартный термин для горы в санскрите — противительный через отрицание: гора как «вечно-неподвижное». Парадокс V.1.12: sa cacālācalaś cāśu — «тогда та неподвижная (гора) задвигалась». Игра слов: acala «неподвижная» + cacāla «задвигалась» (√cal). Это намеренная языковая фигура — игра с именем и природой горы. Подстрочник «та гора задвигалась» не передаёт оксюморон cacālācalaḥ.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. acala; Apte s.v. cala",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Отличная находка: acala буквально скрыто в сандхи cacālācalaḥ = cacāla + acalaḥ (\"неподвижная [гора] задвигалась\") — anchor_precheck не распознал сандхи, но лемма присутствует, anchoring=2. Оксюморон подмечен верно и не считывается из простого подстрочника «та гора задвигалась».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.12",
+      "verse_iast": "sa cacālācalaś cāśu muhūrtaṃ kapipīḍitaḥ । tarūṇāṃ puṣpitāgrāṇāṃ sarvaṃ puṣpam aśātayat ॥12॥",
+      "leonov_ru": "Та гора задвигалась тут же некоторое время стиснутая обезьяной, И отрясла все цветы с цветущих верхушек деревьев.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.14",
+        "lemma_iast": "mada",
+        "note_ru": "Течка-мад / опьянение слона (mada) — букв. «опьянение, экстаз» (от √mad «быть пьяным, буйствовать»). Специальный термин для «течки слона» — mada = сок, выделяемый из желёз за ушами самца слона в период спаривания. MW: mada — «hilarity, rapture; the fluid secreted from the elephant's temples». В V.1.14 сравнение горы с madamatta iva dvipaḥ — «как слон в течке (мада)»: гора источает воду точно как слон mada. Подстрочник «в течке» сохраняет смысл, но mada как технический термин зоологии заслуживает отдельной сноски.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. mada; Apte s.v. mada",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Mada как техн. зоологический термин (секрет слоновьих желёз в период гона) подтверждается MW; сравнение с madamatta iva dvipaḥ в стихе точное. Подстрочник передаёт mada лексически, но не поясняет термин как таковой.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.14",
+      "verse_iast": "tena cottamavīryeṇa pīḍyamānaḥ sa parvataḥ । salilaṃ samprasusrāva madamatta iva dvipaḥ ॥14॥",
+      "leonov_ru": "Та гора, сжимаемая лучшим из героев, Излила воду, словно слон в течке [изливает маду].",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.15",
+        "lemma_iast": "rīti",
+        "note_ru": "Поток металлической руды / латунь (rīti) — MW: rīti — «going, flowing; a particular metal (brass or bronze); the current of a river». В V.1.15 rītiṃ nirvartayām āsa kāñcanāñjanarājatīḥ — гора извергала «поток» (rīti) из золота, сурьмы и серебра. Rīti здесь = «поток расплавленного металла / рудный сток», не просто «поток воды». Апте дополняет: rīti = «a stream of water; also a kind of metal». Лексически важно: rīti — одновременно «течение» и «металлический сплав», оба смысла актуальны в описании горы.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. rīti; Apte s.v. rīti",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Полисемия rīti (поток/металл-сплав) подтверждается MW; контекст «поток из золота, сурьмы и серебра» подкрепляет металлургическое прочтение, не считываемое из простого подстрочника «поток».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.15",
+      "verse_iast": "pīḍyamānas tu balinā mahendras tena parvataḥ । rītir nirvartayām āsa kāñcanāñjanarājatīḥ ॥15॥",
+      "leonov_ru": "Сжимаемая могучим [Хануманом], гора Махендра Исторгла поток из золота, сурьмы и серебра.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.15",
+        "lemma_iast": "añjana",
+        "note_ru": "Сурьма / коллирий (añjana) — букв. «то, чем натирают/мажут» (от √añj «мазать, натирать»). MW: añjana — «anointing; a collyrium or black pigment used to paint the eyelashes; antimony». В V.1.15 kāñcanāñjanarājatīḥ — тройное сложение: kāñcana «золото» + añjana «сурьма/свинцовый блеск» + rājata «серебро». Añjana — чёрный минеральный пигмент (антимонит, Sb₂S₃), традиционный в Индии коллирий. Контраст трёх цветов: золотой / чёрный / серебряный. Подстрочник «сурьма» верен, но этимологическая связь añjana ↔ глаз-пигмент-руда объясняет, почему именно это слово выбрано.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. añjana; Apte s.v. añjana",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Añjana буквально в стихе внутри сложения kāñcanāñjanarājatīḥ (kāñcana+añjana+rājata) — anchor_precheck не распознал компаунд, найдено, anchoring=2. Этимология от √añj и техн. значение «сурьма/коллирий» верны (MW), подстрочник «сурьма» не поясняет происхождение слова.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.15",
+      "verse_iast": "pīḍyamānas tu balinā mahendras tena parvataḥ । rītir nirvartayām āsa kāñcanāñjanarājatīḥ ॥15॥",
+      "leonov_ru": "Сжимаемая могучим [Хануманом], гора Махендра Исторгла поток из золота, сурьмы и серебра.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.19",
+        "lemma_iast": "svastika",
+        "note_ru": "Свастика / благой знак (svastika) — букв. «то, что несёт свасти» (sva-asti «благополучие»). В V.1.19 vyaktasvastikalakṣaṇaiḥ — у нагов «с явными знаками свастики на головах»: свастика как апотропейный символ у змей-нагов. MW: svastika — «a kind of mystical cross or mark made on persons and things as a sign of good luck». Это первое упоминание символа в Сундараканде; свастика здесь — реальная маркировка капюшона кобры (ромбовидный узор), а не абстрактный знак.",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. svastika; Apte s.v. svastika",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Svastika как апотропейный знак на капюшонах нагов — реалия, нетривиальная для подстрочника («темно-синие линии» вместо термина). Первое вхождение символа в тексте отмечено уместно.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.19",
+      "verse_iast": "śirobhiḥ pṛthubhir nāgā vyaktasvastikalakṣaṇaiḥ । vamantaḥ pāvakaṃ ghoraṃ dadaṃśur daśanaiḥ śilāḥ ॥19॥",
+      "leonov_ru": "Наги с широкими головами (с раздувшимися капюшонами), на которых стали ясно видны темно-синие линии, Извергая ужасное пламя, кусали зубами камни.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.25",
+        "lemma_iast": "kṣība",
+        "note_ru": "Пьяный (kṣība) — MW: kṣība — «intoxicated, drunk». Редкое слово: базовый эпитет для состояния опьянения в эпосе, синоним mattaḥ (V.1.14), но более архаичный. Апте: kṣība = «drunk, intoxicated». В V.1.25 kṣībā raktamālyānulepanāḥ — видьядхары пьяны и украшены красными гирляндами. Кṣība употребляется реже, чем matta или pramatta; его присутствие здесь подчёркивает сцену праздника/торжества на горе перед прыжком Ханумана.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. kṣība; Apte s.v. kṣība",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Kṣība — сравнительно редкий синоним matta/pramatta, MW подтверждает значение «пьяный, опьянённый». Указание на архаичность слова и контраст с mattaḥ добавляет нетривиальный пласт, не считываемый из подстрочника.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.25",
+      "verse_iast": "kṛtakaṇṭhaguṇāḥ kṣībā raktamālyānulepanāḥ । raktākṣāḥ puṣkarākṣāś ca gaganaṃ pratipedire ॥25॥",
+      "leonov_ru": "В ожерельях, пьяные, в красных гирляндах и притираниях, Красноглазые, лотосоглазые, взлетели [они] в небо.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.27",
+        "lemma_iast": "mahāvidyā",
+        "note_ru": "Великое знание / великая магия (mahāvidyā) — букв. «великое знание» (mahā + vidyā). В мантрическом контексте vidyā = заклинание-формула. MW: vidyā — «knowledge, science, learning; a spell, charm». Mahāvidyā в тантрических текстах — десять великих богинь (Daśamahāvidyā). В V.1.27 darśayanto mahāvidyāṃ vidyādharamaharzayaḥ — «выказывая великое знание», риши-видьядхары демонстрируют магические способности (сиддхи). Здесь mahāvidyā = «магическое искусство» как таковое, не десять богинь. Контекст нетривиален: речь о демонстрации сиддх перед прыжком Ханумана.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. vidyā; Apte s.v. mahāvidyā",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Mahāvidyā корректно разведена как «магическое искусство/сиддхи» в этом контексте, а не тантрические Дашамахавидьи — важное терминологическое уточнение, отсутствующее в подстрочнике («магическую силу» без пояснения）.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.27",
+      "verse_iast": "darśayanto mahāvidyāṃ vidyādharamaharṣayaḥ । sahitās tasthur ākāśe vīkṣāṃ cakruś ca parvatam ॥27॥",
+      "leonov_ru": "Выказывая великое знание (магическую силу), великие риши-видьядхары Вместе пребывали в небе и оглядывали гору.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.33",
+        "lemma_iast": "lāṅgūla",
+        "note_ru": "Хвост (lāṅgūla) — MW: lāṅgūla — «a tail (especially of a monkey)». Не общее слово для «хвоста» (puccha), а специфически «хвост обезьяны» — этот термин употребляется в Сундараканде исключительно применительно к хвосту Ханумана. Apte: lāṅgūla = «the tail of an animal, especially a monkey». В V.1.33–1.34 хвост (lāṅgūla) описан отдельными сравнениями: скрученный «как змея у Гаруды», потом торчащий «как знамя Индры» (V.1.61). Lāṅgūla — не нейтральный зоологический термин, а специфически «обезьяний-эпический хвост».",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. lāṅgūla; Apte s.v. lāṅgūla",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Lāṅgūla как специфически «обезьяний» термин для хвоста (в отличие от общего puccha) — нетривиальное лексическое наблюдение, не считываемое из подстрочника «хвост».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.33",
+      "verse_iast": "ānupūrvyā ca vṛttaṃ tal lāṅgūlaṃ romabhiś citam । utpatiṣyan vicikṣepa pakṣirāja ivoragam ॥33॥",
+      "leonov_ru": "В три кольца хвост, покрытый шерстью, Скрутил он, собирающийся взлететь, словно владыка птиц (Гаруда) – огромную змею.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.35",
+        "lemma_iast": "parigha",
+        "note_ru": "Засов / железная балка (parigha) — MW: parigha — «an iron bar or beam used for locking or shutting a gate; an obstacle, impediment; a kind of weapon (a large stick tipped with iron)». В V.1.35 bāhū saṃstambhayām āsa mahāparighasaṃnibhau — руки Ханумана уподоблены mahāpariṃgha «огромным засовам-балкам». Parigha как боевое оружие — тяжёлый жезл с железным наконечником; как строительный элемент — железный брус ворот. Здесь именно строительный образ: руки-балки, подпирающие тело перед прыжком. В подстрочнике «железным балкам» — теряется значение оружия (паригха как клаб-оружие героев).",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. parigha; Apte s.v. parigha",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Parigha разобран как двойной образ — оружие (боевая палица) и архитектурный элемент (дверной засов); в стихе выбран строительный образ (опорные руки), что заметка верно определяет; подстрочник «железным балкам» не раскрывает оружейную коннотацию слова.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.35",
+      "verse_iast": "bāhū saṃstambhayām āsa mahāparighasaṃnibhau । asasāda kapiḥ kaṭyāṃ caraṇau saṃcukoсa ca ॥35॥",
+      "leonov_ru": "Твердо установив [на горе] руки, подобные огромным железным балкам, Встала обезьяна на четвереньки.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.36",
+        "lemma_iast": "sattva",
+        "note_ru": "Существо / мощь / благость (sattva) — MW: sattva — «being, existence, entity; the quality of purity and goodness (in Sāṃkhya one of the three guṇas); strength of character, firmness, energy, courage». В V.1.36 tejaḥ sattvaṃ tathā vīryam āviveśa — «вошли в него тejs-/sattva/vīrya». Три понятия составляют классическую «троицу героя»: tejs «лучезарность», sattva «стойкость/благость», vīrya «мужество/сила». Sattva здесь — не «существо» (смысл 1), а гуна саттва как категория «чистой силы/ясности ума»; отсылка к санкхья-классификации трёх гун прозрачна. Подстрочник «мощь» упрощает.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. sattva; Apte s.v. sattva",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Sattva корректно прочитана как гуна санкхьи в триаде tejaḥ/sattva/vīrya, а не «существо» (первое значение). Наблюдение согласуется, но не дублирует cross_text-заметку о параллели с Гитой (та говорит о теофании, эта — о санкхьевской семантике самого слова); подстрочник «мощь» огрубляет термин.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.36",
+      "verse_iast": "saṃhṛtya ca bhujau śrīmāṃs tathaiva ca śirodharām । tejaḥ sattvaṃ tathā vīryam āviveśa sa vīryavān ॥36॥",
+      "leonov_ru": "Мудрый [Хануман] напряг руки и шею, Собрал могучий силу, мощь и отвагу.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "tejas / sattva / vīrya",
+          "note_ru": "Перед прыжком Хануман «вбирает в себя силу, мощь и отвагу» (tejaḥ sattvaṃ tathā vīryam āviveśa). Эта триада — tejas (пыл-блеск), sattva (существо/стойкость), vīrya (геройская мощь) — точно те качества, которые Гита возводит к Божеству: БхГ 10.36 «tejas tejasvinām … sattvaṃ sattvavatām aham»; ср. anantavīrya о вселенском облике (БхГ 11.40). Сцена читается как ритуальное «стяжение» божественных энергий героем-дутом; параллель показывает, что лексика подвига Ханумана совпадает со списком теофанических атрибутов Кришны. Свидетельство: уровень шлоки (мягкое)."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.1.46",
+        "lemma_iast": "koyaṣṭi",
+        "note_ru": "Птица-кулик / чибис (koyaṣṭi) — MW: koyaṣṭi — «a kind of bird, a lapwing». Редкая птица в эпосе; Апте: koyaṣṭi = «the Indian lapwing (Vanellus malabaricus)». В V.1.46 mattakoyaṣṭibhakān pādapān puṣpaśālinaḥ — «деревья с влюблёнными чибисами, покрытые цветами». Mattakoyaṣṭi = чибис в состоянии опьянения/возбуждения (matta «пьяный/влюблённый»). Птица-детектор настроения: её «опьянённость» указывает на весенний/брачный сезон. Подстрочник «чибисами» не объясняет matta в составном.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. koyaṣṭi; Apte s.v. koyaṣṭibhaka",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Koyaṣṭi — редкая птица (индийский чибis), Apte/MW подтверждают; разбор сложения mattakoyaṣṭibhaka (опьянённость как маркер весеннего сезона) добавляет нетривиальный культурный слой, отсутствующий в подстрочнике.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.46",
+      "verse_iast": "sa mattakoyaṣṭibhakān pādapān puṣpaśālinaḥ । udvahann ūruvegena jagāma vimale 'mbare ॥46॥",
+      "leonov_ru": "Он, цветущие деревья с влюбленными чибисами, Неся силой бедер, полетел в чистом небе.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.53",
+        "lemma_iast": "khādyota",
+        "note_ru": "Светляк (khādyota) — букв. «светящийся в небе» (kha «небо, пространство» + dyota «светящийся», от √dyut «сиять»). MW: khādyota — «a glow-worm, fire-fly». В V.1.51 kapir … meGhasaṃkāśaḥ khādyotair iva parvataḥ — гора Хануман, покрытая цветами, уподоблена горе, покрытой светляками ночью. Эти два образа — туча/гора + светляки = ночное видение. Khādyota — поэтически значимый образ, разрабатываемый в кавья (у Калидасы).",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. khādyota; Apte s.v. khādyota",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "Khādyota отсутствует в процитированном стихе V.1.53 (\"laghutvenopapannaṃ tad vicitraṃ sāgare 'patat...tārācitam ivākāśaṃ prababhau sa mahārṇavaḥ\" — про цветы и океан-небо, без упоминания светляков); сама заметка внутренне цитирует другой стих — «В V.1.51 kapir...khādyotair iva parvataḥ». Заметка ошибочно прикреплена к V.1.53 вместо V.1.51 — требуется перепривязка.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.53",
+      "verse_iast": "laghutvenopapannaṃ tad vicitraṃ sāgare 'patat । drumāṇāṃ vividhaṃ puṣpaṃ kapivāyusamīritam । tārācitam ivākāśaṃ prababhau sa mahārṇavaḥ ॥53॥",
+      "leonov_ru": "Обладающие легкостью, разноцветные разнообразные цветы с деревьев, влекомые ветром, [поднятым] обезьяной, падали в океан. Стал великий океан подобен небу, усеянному звездами.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.58",
+        "lemma_iast": "vidyut",
+        "note_ru": "Молния (vidyut) — букв. «сверкающая» (от √dyut «блистать», с приставкой vi-). MW: vidyut — «lightning; the lightning-flash personified as a goddess». В V.1.58 tasya vidyutprabhākāre — «у того, чей облик сияет как молния». Vidyut — женского рода (молния как богиня в ведийской традиции, супруга Индры). В кавья vidyutprabhā — устойчивое сравнение для блеска глаз/оружия. Выбор именно vidyut, а не vajra или taḍit подчёркивает природную небесную (а не оружейную) природу блеска глаз Ханумана.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. vidyut; Apte s.v. vidyut",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Vidyut как женское божество молнии (супруга Индры) и устойчивый образ vidyutprabhā в кавье — нетривиальный культурный слой, отсутствующий в подстрочнике «молнии». Точное вхождение в стих.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.58",
+      "verse_iast": "tasya vidyutprabhākāre vāyumārgānusāriṇaḥ । nayane viprakāśete parvatasthāv ivānalau ॥58॥",
+      "leonov_ru": "Его, следующего путем ветра, глаза, сияющие словно молнии, Были подобны двум огням на горе.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.59",
+        "lemma_iast": "piṅga",
+        "note_ru": "Желтовато-коричневый / рыжий (piṅga) — MW: piṅga — «reddish-brown, tawny, yellowish». В V.1.59 piṅge piṅgākṣamukhyasya — глаза «вождя желтоглазых» сами жёлто-рыжие (piṅge). Пара piṅga + piṅgākṣa подчёркивает, что Хануман — буквально «эталон» рыжеглазости среди обезьян. Piṅga отличается от pīta («жёлтый»), raktа («красный») и nīla («синий»): это именно смешанный рыжевато-жёлтый оттенок. В подстрочнике «желтых» — потеря специфики тона.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. piṅga; Apte s.v. piṅgākṣa",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Piṅga как специфический рыже-жёлтый оттенок (в отличие от pīta/rakta/nīla) — нетривиальное цветовое различение, не считываемое из подстрочника «желтых». Точная опора на пару piṅga/piṅgākṣa в стихе.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.59",
+      "verse_iast": "piṅge piṅgākṣamukhyasya bṛhatī parimaṇḍale । cakṣuṣī samprakāśete candrasūryāv iva sthitau ॥59॥",
+      "leonov_ru": "Оба желтых, огромных, круглых глаза того вождя желтоглазых (обезьян) Сияли словно взошедшие луна и солнце.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.62",
+        "lemma_iast": "parivesa",
+        "note_ru": "Ореол / гало (pariṣeṣa / parivesa) — в V.1.62 parivesīva bhāskaraḥ — Хануман «подобен солнцу в ореоле». Pariṣeṣa (или parivesa в нек. изданиях) — «halo, nimbus, corona of sun or moon». MW: pariṣeṣa — «remainder; the circle or halo round sun or moon». Солнечный ореол (corona) — атмосферное явление, ассоциированное с особым блеском. Здесь образ: белозубый Хануман с кольцом-хвостом = солнце в короне. Подстрочник «ореол» — астрономический образ передан, но его поэтическая точность не разъяснена.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. pariṣeṣa; Apte s.v. parivesa",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 1,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "reject",
+          "reason": "Проверено по dic_mw.jsonl: MW различает pariśeṣa «remainder, remnant» (e99114–99118, от pari+śiṣ) и pariveṣa/pariveśa «halo round the sun or moon» (e98974–98977, от pari+viṣ) — это два разных заголовочных слова с разными согласными (ś vs ṣ) и разной этимологией. Заметка ошибочно сливает их в одну статью «MW: pariṣeṣa — remainder; the circle or halo round sun or moon», приписывая значение «гало» несуществующей комбинированной статье под неверным заголовком. Правильное слово для стиха (pariveṣīva) — pariveṣa, не pariṣeṣa/pariśeṣa. Само толкование «гало» верно по существу, но лексикографическая атрибуция сфабрикована — faithfulness=1, гейт не пройден.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.62",
+      "verse_iast": "lāṅgūlacakro hanūmāñ śukladaṃṣṭro 'nilātmajaḥ । vyarocata mahāprājñaḥ pariveṣīva bhāskaraḥ ॥62॥",
+      "leonov_ru": "Хануман с изогнутым в кольцо хвостом, белозубый сын ветра, Сиял, многомудрый, сиял, словно солнце в ореоле лучей.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.64",
+        "lemma_iast": "kakṣā",
+        "note_ru": "Подмышка / боковая часть тела (kakṣā) — MW: kakṣā — «the armpit; a girdle, a girth; a court or yard». В V.1.64 kakṣāntaragato vāyuḥ — «ветер, прошедший через подмышки». Какша — специфически «пространство подмышки» (kakṣāntara), а не просто «бок». Лексически точно для описания аэродинамики полёта: ветер «в подмышечном пространстве» создаёт рёв. Подстрочник «подмышки» — верен, но термин многозначен (также «гирт, двор»); контекст полёта однозначен.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. kakṣā; Apte s.v. kakṣā",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Kakṣā в значении «подмышечное пространство» (не «гирта» и не «двор») точно подобрана для описания аэродинамики полёта; подстрочник «подмышки» не поясняет многозначность термина и выбор именно kakṣāntara.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.64",
+      "verse_iast": "tasya vānarasiṃhasya plavamānasya sāgaram । kakṣāntaragato vāyur jīmūta iva garjati ॥64॥",
+      "leonov_ru": "У того льва среди обезьян, летящего над океаном, Ветер, летящий через подмышки, ревел, словно туча.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.65",
+        "lemma_iast": "ulkā",
+        "note_ru": "Метеор / головня (ulkā) — MW: ulkā — «a fire-brand, torch; a meteor, falling star». В V.1.65 yaṃ nibhyati yaṃ ulkā uttarāntād viniḥsṛtā — Хануман уподоблен метеору, летящему «из северных пределов» (uttarānta). Ulkā в ведийской традиции — «небесный огонь», предвестник событий; метеоры интерпретировались как знамения. Здесь образ эстетический (сравнение полёта), а не астрологический. Различие ulkā (метеор) vs. dhumaketu (комета) vs. nakṣatra (звезда) лексически важно; подстрочник «комета» неточен — ulkā = метеор/шарик огня, а не комета.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. ulkā; Apte s.v. ulkā",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Ценное лексическое уточнение: ulkā — «метеор», а не «комета» (dhūmaketu), как в подстрочнике («метеор (комета)»). Различение ulkā/dhūmaketu/nakṣatra подтверждается MW и напрямую корректирует неточность подстрочника.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.65",
+      "verse_iast": "khe yathā nipataty ulkā uttarāntād viniḥsṛtā । dṛśyate sānubandhā ca tathā sa kapikuñjaraḥ ॥65॥",
+      "leonov_ru": "Словно метеор (комета), летящий по небу из его дальних пределов, Выглядел тот слон среди обезьян со своим хвостом.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.67",
+        "lemma_iast": "nau",
+        "note_ru": "Корабль / лодка (nau) — MW: nau (f.) — «a ship, boat, vessel». Санскритское nau (navis) — когнат латинского navis и греческого naus. В V.1.67 nāvr ivāsīt tadā — Хануман уподоблен кораблю (nau), гонимому ветром. Nau — древнейшее индоевропейское слово для «судна». Этимологическая связь с русским «нав(игация)» через праиндоевропейское *neh₂us интересна для комментария переводчику.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. nau; EWAia s.v. nāvā",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Индоевропейская этимология nau (лат. navis, греч. naus, *neh₂us) корректна и нетривиальна; отсылка к русск. «навигация» дана как культурно-переводческое примечание (через лат. заимствование), не как прямое родство, — формулировка корректна. Точное вхождение (naur ivāsīt).",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.67",
+      "verse_iast": "upariṣṭāc charīreṇa chāyayā cāvagāḍhayā । sāgare mārutāviṣṭā naur ivāsīt tadā kapiḥ ॥67॥",
+      "leonov_ru": "С телом в вышине и с тенью внизу Была тогда обезьяна подобна кораблю, гонимому ветром по океану.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.72",
+        "lemma_iast": "meru",
+        "note_ru": "Меру (meru) — Мировая гора в центре вселенной (meru); золотая, нетленная ось космоса. MW: meru — «N. of a fabulous mountain (considered as the Olympus of Hindu mythology and the north pole of the earth)». В V.1.72 merumandara-saṃkāśān — волны уподоблены Меру и Мандаре. Меру — мифологический, Мандара — та гора, которой боги пахтали океан (Самудра-мантхан). Совместное упоминание Меру и Мандары: оба «космогонические» горы из мифологии пахтания; они маркируют волны как «горы, способные потрясти мироздание». См. примеч. к II.40.24 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.).",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. meru; Apte s.v. meru; ср. Bhāgavatapurāṇa VIII",
+        "review_required": true,
+        "cross_ref": "Рам. II.40.24 (Гринцер)",
+        "cross_ref_method": "corpus_first_appearance",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Meru буквально в стихе внутри сандхи mērumandarasaṃkāśān (meru+mandara) — anchor_precheck не распознал сандхи, найдено, anchoring=2. Мифологический статус горы Меру как космической оси — реалия, нетривиальная для подстрочника «Меру».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.72",
+      "verse_iast": "mērumandarasaṃkāśānudgatān sumahārṇave । atyakrāman mahāvegas taraṅgān gaṇayann iva ॥72॥",
+      "leonov_ru": "Стремительный, он преодолевал, словно пересчитывая, волны, Которые вздымались в океане подобно Меру и Мандаре.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.72",
+        "lemma_iast": "mandara",
+        "note_ru": "Мандара (mandara) — гора, использованная богами и асурами как мутовка при пахтании океана (самудра-мантхан); обвита змеем Васуки как верёвкой. MW: mandara — «N. of a mountain; one of the divine trees of Svarga». В V.1.72 совместное упоминание merumandara — единый образ: обе горы символизируют «максимальную вертикаль», которой уподоблены гребни волн при полёте Ханумана. Подстрочник «Мандара» — сохраняет имя, но мифологический контекст пахтания не отмечен. См. примеч. к I.45.18 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.).",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. mandara; Bhāgavatapur. VIII.6-7 (самудра-мантхан)",
+        "review_required": true,
+        "cross_ref": "Рам. I.45.18 (Гринцер)",
+        "cross_ref_method": "corpus_first_appearance",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Mandara как гора пахтания океана (самудра-мантхан) — существенная мифологическая реалия, парная к Меру в этом же стихе; подстрочник сохраняет имя без мифологического фона.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.72",
+      "verse_iast": "mērumandarasaṃkāśānudgatān sumahārṇave । atyakrāman mahāvegas taraṅgān gaṇayann iva ॥72॥",
+      "leonov_ru": "Стремительный, он преодолевал, словно пересчитывая, волны, Которые вздымались в океане подобно Меру и Мандаре.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.74",
+        "lemma_iast": "timi",
+        "note_ru": "Тими / кит (timi) — MW: timi — «a large fish or sea-animal, a whale». Редкое слово для «кита» или «большой морской рыбы» (MW: «prob. whale»). В V.1.74 timinakrajhaṣāḥ kūrmāḥ — «тими, крокодилы, рыбы и черепахи». Timi отличается от makara (морское чудовище) и timiṅgila (животное, пожирающее тими): timi — базовый уровень крупной морской фауны. Эпос создал трёхуровневую таксономию: timi → timiṅgila (пожиратель timi) → timiṅgilāśin (пожиратель timiṅgila). Это зооним, отражающий концепцию «больших жрущих малых».",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. timi; Apte s.v. timiṅgila",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Таксономия timi→timiṅgila→timiṅgilāśin (иерархия «крупное поедает мелкое») — нетривиальное зоонимическое наблюдение, подтверждаемое MW/Apte, отсутствующее в подстрочнике «киты».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.74",
+      "verse_iast": "timinakrajhaṣāḥ kūrmā dṛśyante vivṛtās tadā । vastrāpakarṣaṇeneva śarīrāṇi śarīriṇām ॥74॥",
+      "leonov_ru": "Киты, крокодилы, рыбы и черепахи были видны тогда обнажившимися (из-под поверхности вод), Словно людские тела, [обнажившиеся] посредством стягивания одежды.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.78",
+        "lemma_iast": "pakṣavant",
+        "note_ru": "Крылатая гора (pakṣavant) — букв. «имеющая крылья» (pakṣa «крыло, сторона, половина» + vant «имеющий»). В V.1.78 pakṣavān iva parvataḥ — Хануман «как крылатая гора». Аллюзия на миф о крылатых горах: в ведийско-эпической традиции горы некогда имели крылья и летали; Индра отрубил им крылья vajra. Поэтому «крылатая гора» — образ первозданного времени, когда горы были мобильны. Хануман в прыжке реактуализирует этот архетип. Подстрочник «крылатой горе» — сохраняет образ, но его мифологический бэкграунд (миф о крыльях гор, V.1.122-126) не отмечен.",
+        "type": "А",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. pakṣavant; Rām. Bāla passim (миф о крылатых горах)",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Pakṣavān буквально в стихе (pakṣavāniva parvataḥ) — anchor_precheck не распознал форму, найдено, anchoring=2. Миф о крылатых горах (обрубленных ваджрой Индры, см. также заметку к V.1.124) — существенная мифологическая реалия, не считываемая из подстрочника «крылатой горе».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.78",
+      "verse_iast": "śuśubhe sa mahātejā mahākāyo mahākapiḥ । vāyumārge nirālambe pakṣavāniva parvataḥ ॥78॥",
+      "leonov_ru": "Блистательная, огромная телом великая обезьяна была подобна Крылатой горе на пути ветра, не имеющем опоры.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.83",
+        "lemma_iast": "dānava",
+        "note_ru": "Данавы (dānava) — MW: dānava — «N. of a class of demons or giants (sons of Danu and Kaśyapa, enemies of the gods)». Данавы (сыновья Дану) — отличаются от дайтьев (сыновей Дити) и от ракшасов. В V.1.83 devagandharvadānavāḥ — три группы существ (боги + гандхарвы + данавы) осыпают Ханумана цветами. Примечательно, что данавы — обычные «враги богов» — здесь тоже участвуют в чествовании; это подчёркивает исключительность подвига Ханумана, перед которым все существа равны.",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. dānava; Apte s.v. dānava",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Данавы корректно разведены с дайтьями и ракшасами (сыновья Дану vs Дити vs иные); участие данавов в чествовании Ханумана наравне с богами — нетривиальное наблюдение, не считываемое из подстрочника «данавы» без пояснения.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.83",
+      "verse_iast": "plavamānaṃ tu taṃ dṛṣṭvā plavagaṃ tvaritaṃ tadā । vavṛṣus tatra puṣpāṇi devagandharvadānavāḥ ॥83॥",
+      "leonov_ru": "Видя стремительно летящую обезьяну тогда, Боги, гандхарвы и данавы пролили [дождь] цветов.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.86",
+        "lemma_iast": "yakṣa",
+        "note_ru": "Якша (yakṣa) — MW: yakṣa — «a kind of supernatural being (attendant on Kubera, the god of wealth; they are described as the sons of Pulastya or Kaśyapa, and are generally considered as harmless beings, but sometimes they appear as malevolent). Apte: yakṣa — «spirit, ghost, fairy». В V.1.86 nāgāś ca tuṣṭuvur yakṣā — наги и якши восхваляют Ханумана. Якши — «придворные» Куберы, хранители сокровищ и природных объектов; их отношение к Кубере сближает их с образом «природных духов». В отличие от нагов (подземные, водные) якши — «наземно-древесные» духи. Подстрочник «якши» — сохраняет имя без объяснения функции.",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. yakṣa; Apte s.v. yakṣa",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Якши как свита Куберы, хранители сокровищ/природных объектов (в отличие от нагов) — верно по MW/Apte; наблюдение полезно, хотя якша — достаточно известный термин, не редкий/технический — lexical_value=1.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.86",
+      "verse_iast": "nāgāś ca tuṣṭuvur yakṣā rakṣāṃsi vividhāni ca । prekṣya sarve kapivaraṃ sahasā vigataklamam ॥86॥",
+      "leonov_ru": "И наги, якши и разнообразные ракшасы радовались все, Увидев внезапно лучшего из обезьян, не знающего устали.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.87",
+        "lemma_iast": "ikṣvāku",
+        "note_ru": "Икшваку (ikṣvāku) — MW: ikṣvāku — «N. of a king, son of Manu Vaivasvata, first of the solar dynasty». Родоначальник солнечной династии (sūryavaṃśa). В V.1.87-89 ikṣvākukulamānārthi — «радеющий о чести рода Икшваку» (о Хануманое); ikṣvākusacivo cāyaṃ — «этот [Хануман] — советник Икшваку (т.е. Рамы)». Имя Икшваку указывает на солнечную родословную Рамы — контраст с «лунной» (сома/чандра) родословной Бхарата. MW: ikṣu = «sugar-cane» — этимология от «сахарного тростника» нетривиальна; родоначальник вышел из «тростниковой» традиции. См. примеч. к II.42.1 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.).",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. ikṣvāku; Apte s.v. ikṣvāku",
+        "review_required": true,
+        "cross_ref": "Рам. II.42.1 (Гринцер)",
+        "cross_ref_method": "corpus_first_appearance",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Ikṣvāku как родоначальник солнечной династии (в противовес лунной) и этимологическая связь с ikṣu «сахарный тростник» — нетривиальный культурно-этимологический слой, отсутствующий в подстрочнике (только транслитерация имени).",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.87",
+      "verse_iast": "tasmin plavagaśārdūle plavamāne hanūmati । ikṣvākukulamānārthī cintayām āsa sāgaraḥ ॥87॥",
+      "leonov_ru": "Когда тот тигр среди обезьян, Хануман, летел, Подумал Океан, радеющий о чести дома Икшваку:",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.89",
+        "lemma_iast": "sagara",
+        "note_ru": "Сагара (sagara) — MW: sagara — «N. of a celebrated king of the solar race (he is said to have caused the bed of the ocean to be dug, and it is named after him)». В V.1.89 sagareṇa vivardhi­taḥ — «тем [океаном, который] был расширен Сагарой». Этимология sagara «океан»: букв. «[тот, что создан] вместе с Сагарой / саморождённый». Миф: сыновья Сагары выкопали ложе океана, ища жертвенного коня; их золу оросил Бхагиратха водами Ганги. Этот эпизод объясняет, почему samudra (океан) именуется sāgara — «произошедший из деяния Сагары». Самодра сам объясняет свою связь с домом Икшваку. См. примеч. к I.70.31 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.).",
+        "type": "В",
+        "trigger": "etymology",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. sagara; Rām. Bāla 1.38-44 (миф Сагары)",
+        "review_required": true,
+        "cross_ref": "Рам. I.70.31 (Гринцер)",
+        "cross_ref_method": "corpus_first_appearance",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Миф о царе Сагаре и происхождении имени sāgara «океан» — стандартный пуранический сюжет (сыновья Сагары выкопали ложе океана), верно изложен; подстрочник передаёт лишь имя без мифологической этимологии.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.89",
+      "verse_iast": "aham ikṣvākunāthena sagareṇa vivardhitaḥ । ikṣvākusacivaś cāyaṃ tan nārhaty avasīditum ॥89॥",
+      "leonov_ru": "Я, увеличенный Сагарой, главой рода Икшваку, А он – советник рода Икшваку, то не должен он погибнуть.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.100",
+        "lemma_iast": "kākutstha",
+        "note_ru": "Потомок Какутстхи (kākutstha) — MW: kākutstha — «descendant of Kakutstha» (имя царя из рода Икшваку). Kākutstha — патроним Рамы наравне с rāghava и dāśarathi: указывает на конкретного предка — Какутстху. Этимология: kaku «горб» + stha «стоящий» — Какутстха — «стоящий на горбу быка» (согласно мифу, он встал на горб Индры, принявшего облик быка). В V.1.100 kākutsthasya — «ради благополучия потомка Какутстхи». Подстрочник часто переводит просто «Рамы» — эпонимический предок Какутстха остаётся в тени.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. kākutstha; Rām. Bāla passim",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Патроним kākutstha и этимология «стоящий на горбе (быка)» — засвидетельствованная пураническая этимология; подстрочник обычно переводит просто «Рамы», теряя эпонимического предка.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.100",
+      "verse_iast": "kākutsthasyānṛśaṃsyaṃ ca maithilyāś ca vivāsanam । śramaṃ ca plavagendrasya samīkṣyotthātum arhasi ॥100॥",
+      "leonov_ru": "Мягкосердечие Какутстхи, его разлуку с Майтхили, И усталость владыки обезьян (Ханумана) видя, ты должна подняться [из вод]».",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.101",
+        "lemma_iast": "hiraṇyanābha",
+        "note_ru": "Золотопупый (hiraṇyanābha) — букв. «имеющий золотой пуп» (hiraṇya «золото» + nābha «пуп, центр»). Эпитет горы Майнаки. MW: hiraṇya — «gold; any gold-coloured object». Nābha = пуп; метафорически — «центральная точка». Hiraṇyanābha — «с золотым центром (основанием)» — образ горы с золотыми недрами. В V.1.101 hiraṇyagarbho maināko — «золотоутробный Майнака». HiraṇyanAbha и hiraṇyagarbha («золотой зародыш»; эпитет Брахмы/Прародителя) — созвучные образы: гора как космогонический «золотой центр».",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. hiraṇyanābha; Apte s.v. hiraṇyagarbha",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 0
+          },
+          "verdict": "flag_anchor",
+          "reason": "Заметка озаглавлена леммой hiraṇyanābha («золотопупый»), но в процитированном стихе стоит другое сложение — hiraṇyagarbha («золотоутробный»): \"hiraṇyagarbho maināko niśamya lavaṇāmbhasaḥ\". Сама заметка это цитирует («В V.1.101 hiraṇyagarbho maināko — «золотоутробный Майнака»»), то есть противоречит собственному заголовку — nābha «пупок» и garbha «зародыш/утроба» разные корни. Лемму нужно поменять на hiraṇyagarbha либо найти реальное вхождение hiraṇyanābha в другом месте.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.101",
+      "verse_iast": "hiraṇyagarbho maināko niśamya lavaṇāmbhasaḥ । utpapāta jalāt tūrṇaṃ mahādrumalatāvṛtaḥ ॥101॥",
+      "leonov_ru": "Майнака с золотой серединой, услышав [речь] Океана, Тут же поднялась из вод, покрытая высокими деревьями и лианами.",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.104",
+        "lemma_iast": "kiṃnara",
+        "note_ru": "Кимнара (kiṃnara) — букв. «что за человек?» (kim «что?» + nara «человек»). MW: kiṃnara — «a kind of supernatural being (described as having a human figure with the head of a horse, or the head of a man with the body of a horse)». Кимнары — «полулюди», музыканты на службе у Куберы; отличаются от гандхарвов (певцы богов), видьядхаров (маги) и якшей (хранители богатств). Этимологическая игра: их название — буквально риторический вопрос «это человек?». В V.1.104 sakiṃnaramahoragaiḥ — «с кимнарами и великими нагами» на вершинах Майнаки.",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. kiṃnara; Apte s.v. kiṃnara",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Kiṃnara — этимологическая игра «что за человек?» и функциональное отличие от гандхарвов/видьядхаров/якшей засвидетельствованы MW/Apte; нетривиально для подстрочника, дающего только транслитерацию.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.104",
+      "verse_iast": "śātakumbhamayaiḥ śṛṅgaiḥ sakiṃnaramahoragaiḥ । ādityodayasaṃkāśair ālikhadbhir ivāmbaram ॥104॥",
+      "leonov_ru": "Благодаря тем золотым пикам, населенным киннарами и великими змеями, Подобным восходу солнца, словно бы трущимся о небо,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.113",
+        "lemma_iast": "sanātana",
+        "note_ru": "Вечный / изначальный закон (sanātana) — MW: sanātana — «eternal, everlasting; ancient, perpetual». В V.1.113 eṣa dharmaḥ sanātanaḥ — «таков вечный закон» (о долге воздавать за благодеяния). Sanātana dharma — «извечный порядок» как противоположность ситуативным нормам. В позднеиндуистской мысли sanātana dharma = «индуизм как вечная религия». Здесь в эпическом контексте — «незыблемый принцип взаимности»: тот, кому помогли, обязан помочь в ответ. Подстрочник «вечный» верен, но не маркирует терминологическую нагруженность sanātana в Hindu-dharma.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. sanātana; Apte s.v. sanātanadharma",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Sanātana (dharma) как терминологически нагруженное понятие «извечного порядка» — нетривиальный культурно-религиозный пласт, не считываемый из подстрочника «вечный».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.113",
+      "verse_iast": "sa tvāṃ rāmahite yuktaṃ pratyarcayati sāgaraḥ । kṛte ca pratikartavyam eṣa dharmaḥ sanātanaḥ ॥113॥",
+      "leonov_ru": "Океан почитает тебя, радеющего о благе Рамы. На сделанное отвечать тем же – вот вечный закон.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.119",
+        "lemma_iast": "prākṛta",
+        "note_ru": "Простой / обычный (prākṛta) — MW: prākṛta — «natural, original, unrefined; vernacular (said of a language or dialect derived from Sanskrit)». В V.1.119 atithiḥ kila pūjārhaḥ prākṛto 'pi vijānatā — «гость, даже простой (prākṛta), достоин почтения от того, кто знает». Prākṛta = «природный, несовершенный, необработанный» — здесь в социальном смысле «не высокорождённый, обычный». Прāкṛta — также название пракрита (разговорный язык, противопоставленный санскриту-saṃskṛta). Здесь: «даже самый простой гость» — подчёркивает универсальность долга гостеприимства.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. prākṛta; Apte s.v. prākṛta",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Prākṛta корректно разведена в социальном смысле («простолюдин») и как термин для пракрита (в противоположность саṃskṛta) — терминологически значимое двойное значение, отсутствующее в подстрочнике «заурядный».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.119",
+      "verse_iast": "atithiḥ kila pūjārhaḥ prākṛto 'pi vijānatā । dharmaṃ jijñāsamānena kiṃ punar yādṛśo bhavān ॥119॥",
+      "leonov_ru": "Воистину, гость заслуживает почета, даже заурядный, это известно, Тем, кто стремиться познать дхарму, тем более – [гость], подобный тебе. (Воистину, тому, кто стремиться познать дхарму, должно уважать даже заурядного гостя, это очевидно, тем более – уважать такого гостя, как ты).",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "atithi",
+          "note_ru": "Майнака предлагает Хануману гостеприимство гномической максимой: atithiḥ kila pūjārhaḥ prākṛto 'pi vijānatā dharmaṃ jijñāsamānena «Воистину, гость заслуживает почёта, даже заурядный, — тем, кто стремится познать дхарму». Прямая параллель к atithi-dharma Ману, где приём гостя — строгая обязанность домохозяина. Ср. Manu 3.99 sqq.: гостя (atithi), пришедшего к закату, домохозяин ни в коем случае не оставляет без приёма; пренебрежение гостем уносит заслуги хозяина. Эпическая сентенция и шастрическая норма выражают единый идеал ātithya; локус классикус для термина."
+        },
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "atithiḥ pūjārhaḥ",
+          "note_ru": "Гнома Майнаки «гость заслуживает почёта, даже заурядный» (atithiḥ kila pūjārhaḥ prākṛto 'pi, V.1.119) — формульное выражение дхармы гостеприимства (atithi-pūjā). Ср. Ādi 1.157.4, где Вьяса, придя к скрывающимся Пандавам, спрашивает: «api vipreṣu vaḥ pūjā pūjārheṣu na hīyate» — «не лишаются ли почестей те, кто заслуживает их (pūjārha)?». Один и тот же корень pūjā-arha закрепляет общеэпический кодекс приёма достойного гостя; Майнака прилагает его к Хануману, чтобы оправдать своё желание дать ему отдых. Свидетельство: уровень шлоки (мягкое)."
+        },
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "atithi",
+          "note_ru": "К той же строке о госте (V.1.119): термин atithi в эпосе несёт сакральную неприкосновенность. Ср. Āraṇyaka 3.154.33, где ракшаса оправдывает, почему не убил переодетого брахманом Бхиму: «atithiṃ brahmarūpaṃ ca kathaṃ hanyāmanāgasam / …yo hanyānnarakaṃ vrajet» — «Как мог я погубить невиновного, (бывшего нашим) гостем (atithi) в облике брахмана?.. Тот, кто убьёт такого, попадёт в Нараку». Параллель проясняет: почёт гостю у Майнаки — не вежливость, а религиозная норма, нарушение которой ведёт в ад. Свидетельство: уровень шлоки (мягкое)."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.1.124",
+        "lemma_iast": "vajra",
+        "note_ru": "Ваджра / перун Индры (vajra) — MW: vajra — «a thunderbolt (esp. the one used as a weapon by Indra); a diamond; hard, mighty». Ваджра — двойной символ: 1) метеоритное оружие Индры (громовой молот, ср. Norse Mjölnir); 2) алмаз (прочнейший из минералов). Этимология: vajra ← вероятно, от √vaj «быть твёрдым/сильным». В V.1.124 pakṣāṃś ciccheda vajreṇa — «[Индра] отсёк им крылья vajra». Ваджра-удар = лишение горы её первичной мобильности. Vajra как космологическое оружие устанавливает новый мировой порядок — неподвижность гор.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. vajra; Apte s.v. vajra; RV passim",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Vajra как двойной символ (оружие Индры / алмаз) с этимологией от √vaj «быть твёрдым» — нетривиальный культурно-мифологический слой; связь с обрубанием крыльев гор корректно согласуется с заметкой к pakṣavant (V.1.78).",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.124",
+      "verse_iast": "tataḥ kruddhaḥ sahasrākṣaḥ parvatānāṃ śatakratuḥ । pakṣāṃś ciccheda vajreṇa tataḥ śatasahasraśaḥ ॥124॥",
+      "leonov_ru": "И вот разгневанный горами тысячеокий Индра Отрубил [им] крылья ваджрой сотнями тысяч.",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.131",
+        "lemma_iast": "pratijñā",
+        "note_ru": "Клятва / обет (pratijñā) — MW: pratijñā — «admission, acknowledgment; promise, vow, assurance». Букв. «знание-перед» (prati «перед, навстречу» + jñā «знать»). В V.1.131 pratijñā ca mayā dattā — «клятва дана мной» (Хануман отказывается от отдыха, ссылаясь на своё обещание). В юридическо-этической системе эпоса pratijñā = юридически обязательный обет; её нарушение — грех. Отличие от śapatha (клятва-заклинание) и vrata (обет-воздержание): pratijñā — словесное публичное обязательство.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. pratijñā; Apte s.v. pratijñā",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Pratijñā корректно разведена как юридически обязательный публичный обет (в отличие от śapatha/vrata) — терминологическое уточнение, отсутствующее в подстрочнике «обещание».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.131",
+      "verse_iast": "tvarate kāryakālo me ahaś cāpy ativartate । pratijñā ca mayā dattā na sthātavyam ihāntarā ॥131॥",
+      "leonov_ru": "Но не терпит мое дело отлагательств, и день уже проходит. Дано мной обещание, не должно мне останавливаться здесь, на середине [пути]».",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.144",
+        "lemma_iast": "nāgamātā",
+        "note_ru": "Мать нагов (nāgamātā) — букв. «мать (mātā) нагов (nāga)». В V.1.144 sūryasaṃkāśāṃ surasāṃ nāgamātaram — «Суrasу, сияющую как солнце, мать нагов». Суraса — не просто «мать» биологическая, а мифологический архетип «матери-прародительницы нагов»; её рождение связывается с Кашьяпой и Кадру (матерью нагов) или непосредственно с Брахмой. Nāgamātā как эпитет маркирует её контроль над всем племенем водных змей. В подстрочнике «мать нагов» — точно; следует отметить её отличие от Кадру.",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. surasā; Apte s.v. nāgamātar; Bhāgavatapurāṇa VI",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "edit",
+          "reason": "Этимологический разбор компаунда nāgamātā (mātā+nāga) обоснован и нетривиален сам по себе, но содержательно (родословная Сурасы, отличие от Кадру) во многом дублирует уже присутствующую cross_text-заметку в other_layer_notes («Сураса родила нагов, Кадру — змей», со ссылкой на Rām. III.14.28). Рекомендация: сократить заметку до разбора самого слова nāgamātā, убрав повтор генеалогии Кадру/Сурасы, уже покрытый соседним слоем.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.144",
+      "verse_iast": "tato devāḥ sagandharvāḥ siddhāś ca paramarṣayaḥ । abruvan sūryasaṃkāśāṃ surasāṃ nāgamātaram ॥144॥",
+      "leonov_ru": "Тогда боги с гандхарвами, сиддхи и высшие риши Сказали солнцеподобной Сурасе, матери нагов:",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "surasā",
+          "note_ru": "Сураса, «мать нагов» (nāgamātar). Прежде чем боги испытывают Ханумана, выслав ему навстречу Сурасу (V.1.144 «surasāṃ nāgamātaram»), кн. III даёт её родословную в каталоге дочерей Дакши: «surasā ajanayan nāgān rāma kadrūś ca pannagān» (Rām. III.14.28) — «Сураса родила нагов, а Кадру родила змей». Параллель освещает, почему именно Сураса — «мать нагов» — выступает морской преградой: она мифологически связана с глубинами и змеиным потомством. Locus classicus её генеалогии — кн. III; подстрочник V.1.144 передаёт эпитет без этого фона."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.1.156",
+        "lemma_iast": "kāmarūpiṇī",
+        "note_ru": "Принимающая любой облик (kāmarūpiṇī) — букв. «имеющая форму по желанию» (kāma «желание» + rūpin «имеющий форму», ж.р. -iṇī). MW: kāmarūpin — «one who can assume any form at will». В V.1.156 surasā kāmarūpiṇī — Сураса может принимать любой облик: именно это свойство позволяет ей бесконечно растягивать пасть. KāmarūpiṆī — технический термин для класса существ с этой способностью (ракшасы, апсары, некоторые наги). Противопоставлен svabhāvarūpin «имеющий природный облик» — то, чем является Хануман, пока не сжался.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. kāmarūpin; Apte s.v. kāmarūpin",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Kāmarūpiṇī как технический термин для класса существ, меняющих облик по желанию (в противовес svabhāvarūpin) — терминологически значимо и связано с самим сюжетом (растяжение пасти Сурасы); нетривиально для подстрочника «меняющая облик».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.156",
+      "verse_iast": "evam uktā hanumatā surasā kāmarūpiṇī । abravīn nātivarten māṃ kaś cid eṣa varo mama ॥156॥",
+      "leonov_ru": "Сураса, которой так было сказано Хануманом, меняющая облик по собственной воле, Сказала: «Никто не может меня миновать, такой у меня дар».",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.166",
+        "lemma_iast": "dīrghajihva",
+        "note_ru": "Длинноязыкий (dīrghajihva) — MW: dīrghajihva — «having a long tongue (N. of a demon, Rākṣasa)». В V.1.166 dīrghajihvaṃ surasayā subhīmaṃ narakopamam — раскрытая пасть Сурасы «длинноязыкая, страшная, подобная аду (naraka)». Nāraka — «адское место» (naraka); пасть уподоблена аду. DīrghajihvА — реальный эпитет ракшасов, у которых длинный язык ассоциируется с хищничеством и нечистотой. Также dīrghajihvā = имя конкретного демона (MW). Здесь — дескриптив внешности пасти Сурасы.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. dīrghajihva; Apte s.v. jihva",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Dīrghajihva как устойчивый дескриптивный эпитет ракшасов (и одновременно имя конкретного демона по MW) — верно, хотя лексическая глубина умеренная (описательный композит, не редкое слово).",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.166",
+      "verse_iast": "tad dṛṣṭvā vyāditaṃ tv āsyaṃ vāyuputraḥ sa buddhimān । dīrghajihvaṃ surasayā subhīmaṃ narakopamam ॥166॥",
+      "leonov_ru": "Мудрый сын ветра, увидев распахнутую пасть Сурасы, С длинным языком, весьма страшную, подобную Нараке,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.169",
+        "lemma_iast": "dākṣāyaṇī",
+        "note_ru": "Дочь Дакши (dākṣāyaṇī) — букв. «происходящая от Дакши» (dākṣa «принадлежащий Дакше» + -āyaṇī патронимический суффикс). MW: dākṣāyaṇī — «a daughter of Dakṣa (N. of Aditi, Diti, Danu, etc.)». Сураса как дākṣāyaṇī = «дочь Дакши», что делает её сестрой великих богинь-матерей (Адити, Дити, Дану). В V.1.169 dākṣāyaṇi namo 'stu te — «поклонение тебе, дочь Дакши»: Хануман, войдя в пасть и выйдя, почтительно обращается к ней. Этот патроним придаёт Сурасе статус не просто «чудовища», а членa первого поколения космических существ.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. dākṣāyaṇī; Apte s.v. dakṣa",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Dākṣāyaṇī как патроним Сурасы (дочь Дакши, сестра Адити/Дити/Дану) поднимает статус персонажа до первого поколения космических существ — нетривиальный культурный слой, не считываемый из подстрочника «Дакшаяни (дочь Дакши)» без указания на сестринство с богинями-матерями.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.169",
+      "verse_iast": "praviṣṭo 'smi hi te vaktraṃ dākṣāyaṇi namo 'stu te । gamiṣye yatra vaidehī satyaś cāsīd varas tava ॥169॥",
+      "leonov_ru": "«Влетел я в твою пасть, хвала тебе, Дакшаяни (дочь Дакши). Полечу я туда, где находится Вайдехи. Истинен был твой дар».",
+      "anchor_precheck": "stem",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "base",
+          "lemma_iast": "vaidehī",
+          "note_ru": "Вайдехи (vaidehī) — эпитет Ситы (царевна из Видехи). см. примеч. к I.1.28 (Гринцер)."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.1.172",
+        "lemma_iast": "tṛtīya",
+        "note_ru": "Третий (tṛtīya) — в V.1.172 tat tṛtīyaṃ hanumato dṛṣṭvā karma suduṣkaram — «увидев это третье трудное дело Ханумана». Подсчёт подвигов: 1-й = прыжок через океан, 2-й = преодоление Майнаки/отказ от отдыха, 3-й = победа над Сурасой хитростью. Перечисление — эпическая техника суммирования в нарративе (katthā). Tṛtīya как нумеральный маркер структурирует эпическую «серию испытаний»; подстрочник «третье» — верен, но не маркирует нарративную функцию числа.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. tṛtīya; нарративная аналитика эпоса",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 1,
+            "lexical_value": 0,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "park",
+          "reason": "Разбор tṛtīya сводится к простому счёту («третье дело» = прыжок/Майнака/Сураса) — сама лексема прозрачна и уже передана подстрочником («третье»); перечисление трёх подвигов добавляет минимальный нарративный контекст, но не поднимается до лексической/этимологической глубины (lexical_value=0), а non_triviality не достигает 2, необходимых для сохранения заметки при нулевом lexical_value.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.172",
+      "verse_iast": "tat tṛtīyaṃ hanumato dṛṣṭvā karma suduṣkaram । sādhu sādhv iti bhūtāni praśaśaṃsus tadā harim ॥172॥",
+      "leonov_ru": "Видя, что Хануман совершил третье весьма трудное дело, «Хорошо! Хорошо!» - восхвалили [все] существа тогда обезьяну.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.174",
+        "lemma_iast": "erāvata",
+        "note_ru": "Айравата (erāvata) — MW: erāvata — «produced from the ocean; N. of the elephant of Indra (produced at the churning of the ocean)». В V.1.174 erāvataniṣevite — небо «посещаемое Айраватой». Айравата — белый четырёхклыкий слон Индры, «небесный слон», вышедший из пахтания океана. Его присутствие в небе = маркер «небесного пространства Индры». Путь Ханумана проходит через «территорию Айраваты» — эпическое указание на то, что это буквально «воздух богов».",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. erāvata; Apte s.v. airāvata; Bhāgavatapurāṇa VIII (самудра-мантхан)",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Форма в стихе — airāvataniṣevite (айравата), тогда как лемма заметки — erāvata; MW фиксирует только заголовок airāvata (fr. irā-vat), отдельной статьи erāvata в словаре нет. Это вариант огласовки/чтения того же слова (та же мифологема — слон Индры из пахтания океана), не иное слово, поэтому anchoring=2, но лексикографическая атрибуция «MW s.v. erāvata» неточна — стоило дать airāvata.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.174",
+      "verse_iast": "sevite vāridhāribhiḥ patagaiś ca niṣevite । carite kaiśikācāryair airāvataniṣevite ॥174॥",
+      "leonov_ru": "Где плавали облака, где летали птицы, Где ходили мастера кайшики (видьядхары), где бывал [слон Индры] Айравата,",
+      "anchor_precheck": "absent",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.178",
+        "lemma_iast": "viśvāvasu",
+        "note_ru": "Вишвавасу (viśvāvasu) — MW: viśvāvasu — «N. of a Gandharva (considered as the chief of the Gandharvas)». В V.1.178 viśvāvasunisevite — небо «почитаемое Вишвавасу». Вишвавасу — «властитель всего» (viśva «всё» + vasu «блага»), главный гандхарв; его присутствие маркирует небо как «музыкальный домен гандхарвов». Гандхарвы — небесные музыканты, стерегущие сому; Вишвавасу = их предводитель. Небесный путь Ханумана проходит через три «домена»: богов (erāvata), гандхарвов (viśvāvasu), нагов/якшей (V.1.178).",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. viśvāvasu; Apte s.v. viśvāvasu",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Viśvāvasu как предводитель гандхарвов, маркирующий «музыкальный домен» на небесном пути Ханумана, — нетривиальная реалия, не считываемая из подстрочника «Вишвавасу [царем гандхарвов]» (хотя подстрочник уже частично поясняет статус, заметка добавляет этимологию имени и системную роль).",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.178",
+      "verse_iast": "maharṣigaṇagandharvanāgayakṣasamākule । vivikte vimale viśve viśvāvasuniṣevite ॥178॥",
+      "leonov_ru": "Который был полон сонмами великих риши, гандхарвами, нагами и якшами, Который был чистым, незапятнанным, беспредельным, посещаемым Вишвавасу [царем гандхарвов].",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.196",
+        "lemma_iast": "rāhu",
+        "note_ru": "Раху (rāhu) — MW: rāhu — «N. of a demon (who is supposed to swallow the sun and moon, thus causing eclipses)». Безголовый демон; его «голова» — северный лунный узел в астрологии. В V.1.196 grasyamānaṃ yathā candraṃ pūrṇaṃ parvaṇi rāhuṇā — «как луну в полнолуние во время parvan поглощает Раху». Parvan — «сочленение», день солнцестояния/равноденствия или полнолуния — время лунных затмений по индийской астрологии. Раху как «поглотитель» в V.1.196 — точный аналог Синхики; Хануман выходит, как луна «выходит» из Раху после затмения. См. примеч. к II.114.3 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.).",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. rāhu; Apte s.v. rāhu; Sūryasiddhānta",
+        "review_required": true,
+        "cross_ref": "Рам. II.114.3 (Гринцер)",
+        "cross_ref_method": "corpus_first_appearance",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Rāhu и связанное понятие parvan (астрологический день затмения) — нетривиальный технический астрономическо-мифологический слой, не считываемый из подстрочника «поглощаемого».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.196",
+      "verse_iast": "grasyamānaṃ yathā candraṃ pūrṇaṃ parvaṇi rāhuṇā । tatas tasya nakhais tīkṣṇair marmāṇy utkṛtya vānaraḥ ॥196॥",
+      "leonov_ru": "Поглощаемого, словно полная луна в в ночь полнолуния. И вот своими острыми когтями обезьяна, разорвав ее жизненно важные органы,",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.201",
+        "lemma_iast": "dhṛti",
+        "note_ru": "Стойкость / выдержка (dhṛti) — MW: dhṛti — «holding, seizing; firmness of mind, constancy, resolution, will». Первая из четырёх воинских добродетелей, перечисленных в V.1.201: dhṛtiḥ dṛṣṭiḥ matiḥ dākṣyaṃ — «стойкость, проницательность, разум и ловкость». В дхармашастре «четыре качества победителя» (vijigīṣu) варьируются; здесь dhṛti стоит первой. MW: dhṛti особо — «contentment; one of the daughters of Dakṣa». Dhṛti как первое качество превосходит физическую силу — Хануман победил Синхику именно dhṛti + mati, а не телесной мощью.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. dhṛti; Apte s.v. dhṛti; Arthaśāstra VI",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Dhṛti как первая из четырёх воинских добродетелей (dhṛti/dṛṣṭi/mati/dākṣya) — терминологически значимо, связано с артхашастрической традицией; подстрочник «стойкость» не раскрывает системный характер перечисления.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.201",
+      "verse_iast": "yasya tv etāni catvāri vānarendra yathā tava । dhṛtir dṛṣṭir matir dākṣyaṃ sa karmasu na sīdati ॥201॥",
+      "leonov_ru": "У которого есть эти четыре, о владыка обезьян, как у тебя – Стойкость, предвидение (острый взгляд), ум и искусство (ловкость), тот не потерпит поражения.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.201",
+        "lemma_iast": "dākṣya",
+        "note_ru": "Ловкость / искусность (dākṣya) — MW: dākṣya — «cleverness, dexterity, ability». От dakṣa «способный, умелый». В V.1.201 dhṛtir dṛṣṭir matir dākṣyaṃ — четвёртая добродетель: dākṣya = «практическая ловкость». В артхашастрической традиции dākṣya — исполнительская способность реализовать решение (mati). Вместе: dhṛti (устойчивость воли) + dṛṣṭi (видение реальности) + mati (разум) + dākṣya (исполнение) = полный цикл героического действия. Четыре добродетели перекликаются с четырьмя упāями (sāma/dāna/bheda/daṇḍa), но на индивидуальном психологическом уровне.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. dākṣya; Apte s.v. dakṣa; Arthaśāstra I",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Dākṣya как «исполнительская» добродетель, завершающая тетраду с dhṛti/dṛṣṭi/mati, — нетривиальное терминологическое дополнение к соседней заметке о dhṛti, фокусирующееся на другом слове того же стиха (не дублирует, а достраивает разбор).",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.201",
+      "verse_iast": "yasya tv etāni catvāri vānarendra yathā tava । dhṛtir dṛṣṭir matir dākṣyaṃ sa karmasu na sīdati ॥201॥",
+      "leonov_ru": "У которого есть эти четыре, о владыка обезьян, как у тебя – Стойкость, предвидение (острый взгляд), ум и искусство (ловкость), тот не потерпит поражения.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.204",
+        "lemma_iast": "dvīpa",
+        "note_ru": "Остров (dvīpa) — MW: dvīpa — «an island (lit. \"what has water on two sides\" or \"what is surrounded by water\")». Этимология: dva «два» + ap/āp «вода» → «то, что с двух сторон водой». В V.1.204 dadarśa ca patann eva vivIDadrumabhūṣitaṃ dvīpam — Хануман видит «остров, украшенный разными деревьями». Dvīpa как «что с двух сторон вода» — точная этимология; Ланка = остров-двīpa. Лексическое противопоставление mahāsamudra / dvīpa / parvata (ocean / island / mountain) структурирует топографию финала главы.",
+        "type": "А",
+        "trigger": "etymology",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. dvīpa; Apte s.v. dvīpa",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Этимология dvīpa «то, что с двух сторон вода» (dva+ap) — прозрачная, но верная и уместная в контексте топографической структуры финала главы (mahāsamudra/dvīpa/parvata); нетривиально для подстрочника «остров».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.204",
+      "verse_iast": "dadarśa ca patann eva vividhadrumabhūṣitam । dvīpaṃ śākhāmṛgaśreṣṭho malayopavanāni ca ॥204॥",
+      "leonov_ru": "Летя, увидел он украшенный разнообразными деревьями Остров, лучший из обезьян, и рощи горы Малайя.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.208",
+        "lemma_iast": "saṃkṣip",
+        "note_ru": "Сжать / свернуть тело (saṃkṣip) — MW: saṃkṣip — «to throw or press together, compress; to be brief». В V.1.208 śarīraṃ saṃkṣipya — «сжав тело» (Хануман уменьшает себя перед прыжком на берег). Saṃkṣip (sam+kṣip, «бросить вместе») — технический термин для йогического сжатия тела: способность kāyavyūha «формировать тело по желанию». Противоположный глагол: vivardh/vṛdh «расти» (V.1.191). Пара saṃkṣip ↔ vivardh = «сжатие/расширение тела» — йогические сиддхи aṇimā (умалиться) и mahimā (увеличиться).",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. saṃkṣip; Yogasūtra III (siddhi-список)",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Saṃkṣip как техн. обозначение йогического сжатия тела (в паре с vivardh/vṛdh) и связь с сиддхами aṇimā/mahimā — нетривиальный культурно-технический слой, не считываемый из подстрочника «уменьшив тело».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.208",
+      "verse_iast": "tataḥ śarīraṃ saṃkṣipya tan mahīdharasaṃnibham । punaḥ prakṛtim āpede vītamoha ivātmavān ॥208॥",
+      "leonov_ru": "Тогда, уменьшив тело, подобное горе, Снова принял он свой природный облик, словно владеющий собой, который освободился от иллюзий (помрачения).",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": [
+        {
+          "subtype": "cross_text",
+          "lemma_iast": "moha",
+          "note_ru": "Вернув природный облик, Хануман сравнён с «избавившимся от ослепления владеющим собой» (vītamoha ivātmavān). Moha — ключевой термин Гиты для помрачения, ослепляющего различение (viveka). Особенно близка финальная реплика Арджуны, у которого moha рассеяна и он вновь готов действовать: БхГ 18.73 «naṣṭo mohaḥ smṛtir labdhā … kariṣye vacanaṃ tava» — «С ослепленьем покончено, Вечный! Твоей милостью разум вернулся! Все сомненья исчезли. Тверд я. Я готов свершить Твое слово.». Как Арджуна с устранённой mohа возвращается к долгу, так Хануман vītamoha + ātmavān собирается и приступает к делу. Сравнение ставит героя в оппозицию к Раване (одержимому mohа страсти, ср. V.20.16 «moham etaṃ visarjaya»). Помета: vītamoha встроено в гитическую оппозицию ослепление/самообладание. Свидетельство: уровень шлоки (мягкое)."
+        }
+      ]
+    },
+    {
+      "note": {
+        "shloka": "V.1.209",
+        "lemma_iast": "balivīrya",
+        "note_ru": "Доблесть Бали (balivīrya) — в V.1.209 balivīryaharo hariḥ — «обезьяна, похититель силы Бали». Bali — царь обезьян, убитый Рамой; его сила (vīrya) перешла к Сугриве, а через него — к войску. Balivīrya как «сила Бали» = унаследованный потенциал, который сейчас воплощает Хануман. Hara «похититель» — здесь в смысле «пользователь силы»: Хануман «несёт» силу убитого Бали как её наследник. Образ парадоксален: сила тирана служит праведному делу.",
+        "type": "А",
+        "trigger": "gloss",
+        "priority": "med",
+        "subtype": "lexical",
+        "source": "MW s.v. bali; Rām. Kiṣkindha-k. passim",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Balivīrya корректно связывает эпитет со стихом же данной аллюзией на три шага Вишну-Ваманы (trīn kramāniva vikramya, balivīryaharo hariḥ) — содержательная мифологическая параллель, не считываемая из подстрочника «сокрушив мощь Бали».",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.209",
+      "verse_iast": "tadrūpamatisaṃkṣipya hanumān prakṛtau sthitaḥ । trīn kramāniva vikramya balivīryaharo hariḥ ॥209॥",
+      "leonov_ru": "Уменьшив свое тело, Хануман, принявший природный облик, Словно сделав три шага – Хари (Вишну), сокрушив мощь Бали.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.211",
+        "lemma_iast": "lamba",
+        "note_ru": "Нависающая (гора Ламба) (lamba) — MW: lamba — «hanging down, pendent, long». В V.1.211 sa lambasyā gireḥ samṛddhe vicitrakūṭe nipapāta kūṭe — «опустился на великолепной вершине горы Ламба». Lamba как топоним = «нависающая гора», одна из гор цепи, ведущей к Ланке. Эпитеты: saketakodDālakа и nālikera (кокосы) — детали пейзажа Цейлона. MW включает lamba как «N. of a mountain»; Апте подтверждает. Подстрочник «нависающей горы» — корректен, но топоним Lamba (имя горы) не отмечен.",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "low",
+        "subtype": "lexical",
+        "source": "MW s.v. lamba; Apte s.v. lamba",
+        "review_required": true,
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 1,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Топоним Lamba («нависающая гора») — реалия географии маршрута Ханумана; лексическая глубина умеренная (сам автор отметил priority=low), но верно подмечено, что имя горы не выделено в подстрочнике.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.211",
+      "verse_iast": "tataḥ sa lambasya gireḥ samṛddhe । vicitrakūṭe nipapāta kūṭe । saketakoddālakanālikele । mahābhrakūṭapratimo mahatmā ॥211॥",
+      "leonov_ru": "Затем он на горы Ламбы цветущую, Имеющую разноцветные пики вершину спустился, Где росли кетаки, уддалаки и орехи какао, Подобный великому скопищу туч, великий духом.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    },
+    {
+      "note": {
+        "shloka": "V.1.213",
+        "lemma_iast": "amarāvatī",
+        "note_ru": "Амаравати (amarāvatī) — MW: amarāvatī — «the abode of immortals; N. of Indra's capital». Букв. «город бессмертных» (amara «бессмертный» + vatī «имеющий»). Небесный город Индры, образцовый «идеальный город» в эпосе. В V.1.213 dadarśa laṅkām amarāvatīm iva — Хануман видит Ланку, «подобную Амаравати». Сравнение Ланки с Амаравати = высшая степень похвалы городу (= «подобна небесной столице»). Парадокс: Ланка-демонов = Амаравати-богов по красоте. Это устойчивое эпическое сравнение (ср. II.94 и далее). См. примеч. к III.48.10 (Гринцер; первое вхождение в кн. I–III, уточнить по примеч.).",
+        "type": "В",
+        "trigger": "realia",
+        "priority": "high",
+        "subtype": "lexical",
+        "source": "MW s.v. amarāvatī; Apte s.v. amarāvatī",
+        "review_required": true,
+        "cross_ref": "Рам. III.48.10 (Гринцер)",
+        "cross_ref_method": "corpus_first_appearance",
+        "judge": {
+          "scores": {
+            "faithfulness": 2,
+            "non_triviality": 2,
+            "lexical_value": 2,
+            "register": 2,
+            "anchoring": 2
+          },
+          "verdict": "keep",
+          "reason": "Amarāvatī как небесная столица Индры и устойчивое сравнение с ней Ланки — значимая культурная реалия / литературный топос, не считываемая из подстрочника, который сохраняет имя без пояснения.",
+          "judged_by": "claude-sonnet-5",
+          "step": "lexical_judge_h276",
+          "date": "2026-07-07"
+        }
+      },
+      "verse_id": "1.213",
+      "verse_iast": "sa sāgaraṃ dānavapannagāyutaṃ । balena vikramya mahormimālinam । nipatya tīre ca mahodadhes tadā । dadarśa laṅkām amarāvatīm iva ॥213॥",
+      "leonov_ru": "Он, океан, населенный данавами и змеями, В гирлянде высоких волн, силой одолев, Опустившись на берег великого океана тогда, Увидел Ланку, подобную Амаравати.",
+      "anchor_precheck": "exact",
+      "tier1_notes": [],
+      "other_layer_notes": []
+    }
+  ]
+}

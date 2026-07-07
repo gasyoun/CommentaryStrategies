@@ -8,7 +8,16 @@
       "generated": "2026-06-27",
       "verses_total": 45,
       "notes_count": 8,
-      "density_pct": 17.8
+      "density_pct": 17.8,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 2,
+          "edit": 1,
+          "flag_anchor": 5
+        }
+      }
     }
   },
   {
@@ -23,7 +32,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/51.1.lex"
+    "src_candidate_id": "auto/sundara/51.1.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "anchor_precheck=absent, но arthavad реально присутствует (сандхи: vākyam arthavad avyagraḥ); риторический термин из alaṃkāraśāstra верно привязан к описанию речи Ханумана.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.51.2",
@@ -37,7 +60,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/51.2.lex"
+    "src_candidate_id": "auto/sundara/51.2.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Юридико-дипломатическая семантика мандата содержательна; anchor stem (sugrīvasaṃdeśād).",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.51.5",
@@ -51,7 +88,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/51.5.lex"
+    "src_candidate_id": "auto/sundara/51.5.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 1
+      },
+      "verdict": "edit",
+      "reason": "Лемма nīti отсутствует в стихе V.51.5 (нарратив об изгнании Рамы в Дандаку по повелению отца, без упоминания нити-жанра); заметка — общее рассуждение о жанре речи Ханумана в гл. 51, правдоподобное для главы в целом, но не верифицируемое именно на этом стихе. Fix: либо обобщить формулировку как относящуюся к структуре речи гл. 51 в целом (не к V.51.5 конкретно), либо перенести к стиху, где лексема nīti/нити-пример действительно представлен.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.51.14",
@@ -65,7 +116,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/51.14.lex"
+    "src_candidate_id": "auto/sundara/51.14.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "Лемма sāma отсутствует в стихе V.51.14 (описание скорости и мощи обезьяньего войска — vainateyasamāḥ, anilopamāḥ), содержание о sāma как первой из caturupāya не относится к этому перечислению воинов. Флаг: неверная привязка.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.51.20",
@@ -79,7 +144,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/51.20.lex"
+    "src_candidate_id": "auto/sundara/51.20.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "Лемма bhujaga отсутствует в стихе V.51.20 (о том, что никто в трёх мирах, обидев Рагхаву, не обретёт счастья — без змеиного сравнения); содержание о сравнении Рамы с Гарудой для змей не подтверждается этим стихом. Флаг: неверная привязка (возможно, к V.51.23, где присутствует pannagīm).",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.51.23",
@@ -93,7 +172,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/51.23.lex"
+    "src_candidate_id": "auto/sundara/51.23.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "Лемма kīrti отсутствует в стихе V.51.23 (Хануман описывает виденную им скорбящую Ситу, сравнённую со змеёй pannagīm — не о славе); содержание об угрозе потери kīrti описывает другую сцену увещевания. Флаг: неверная привязка, вероятно к завершающей части речи Ханумана далее в гл. 51.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.51.40",
@@ -107,7 +200,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/51.40.lex"
+    "src_candidate_id": "auto/sundara/51.40.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "Лемма pratāpa отсутствует в стихе V.51.40 (перечисление классов существ — синтаксическое продолжение предыдущего стиха); содержание о политическом термине pratāpa не подтверждается этим перечислением. Флаг: неверная привязка.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.51.44",
@@ -121,6 +228,20 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/51.44.lex"
+    "src_candidate_id": "auto/sundara/51.44.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "Лемма vaideha/Сита полностью отсутствует в стихе V.51.44 (о неспособности Брахмы, Рудры, Индры устоять в битве с Рагхавой — о Сите ни слова); содержание заметки целиком о Сите и Видехе описывает другую сцену. Флаг: явная ошибка привязки.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]

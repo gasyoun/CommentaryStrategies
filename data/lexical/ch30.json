@@ -8,7 +8,15 @@
       "generated": "2026-06-27",
       "verses_total": 44,
       "notes_count": 10,
-      "density_pct": 22.7
+      "density_pct": 22.7,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 7,
+          "flag_anchor": 1
+        }
+      }
     }
   },
   {
@@ -23,7 +31,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/30.1.lex"
+    "src_candidate_id": "auto/sundara/30.1.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "tattvataḥ's ablative-of-tattva formation and its Sāṃkhya-adjacent epistemic charge (vs a flat 'верно') are standard and add an interpretive layer to Hanumān's listening scene not present in leonov_ru.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.30.4",
@@ -39,7 +61,21 @@
     "cited_western_sources": [
       "Kauṭilya, Arthaśāstra I.11–12 (spy categories)"
     ],
-    "src_candidate_id": "auto/sundara/30.4.lex"
+    "src_candidate_id": "auto/sundara/30.4.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "cāra as Arthaśāstra-technical spy category (vs sūtra/aṃśa) is accurate and well-attested; reframes Hanumān's self-description in an Arthaśāstra register absent from the crib's plain 'лазутчик'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.30.4",
@@ -53,7 +89,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/30.4b.lex"
+    "src_candidate_id": "auto/sundara/30.4b.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "√guh- derivation and the guha/Guhya word-family (Skanda epithet, Gītā 18.63) are accurate; the gūḍha-cara/Arthaśāstra I.12 tactical-term link adds real depth beyond the crib's 'тайно'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.30.17",
@@ -67,7 +117,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/30.17.lex"
+    "src_candidate_id": "auto/sundara/30.17.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "saṃskṛta < sam-√kṛ etymology is transparent, but the sociolinguistic point (saṃskṛtā vāk vs prākṛta, the dvijāti register-marker in the next śloka) is a genuine, non-obvious addition explaining Hanumān's tactical speech choice, absent from the crib.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.30.37",
@@ -97,7 +161,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/30.38.lex"
+    "src_candidate_id": "auto/sundara/30.38.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "paṇḍita-mānin compound analysis and the -mānin (self-flattering-title) formation type are accurate; distinct in scope from the co-located cross_text note on buddhi, so no duplication.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.30.2",
@@ -125,7 +203,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/30.38b.lex"
+    "src_candidate_id": "auto/sundara/30.38b.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "The note's own citation 'viklavaṃ dūtam āsādya (30.37)' shows the lemma vaiklavya/viklava belongs to V.30.37, not V.30.38 (whose text — arthānarthāntare buddhir... — contains no form of viklava). anchor_precheck correctly flagged absent; this note should be reattached to V.30.37.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.30.41",
@@ -139,7 +231,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/30.41.lex"
+    "src_candidate_id": "auto/sundara/30.41.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "anchor_precheck said absent, but akliṣṭakarmāṇaṃ is present in the verse (rāmam akliṣṭakarmāṇaṃ...). Bahuvrīhi analysis and the karma-theoretic akliṣṭa/kliṣṭa opposition are accurate and go well beyond the crib's 'неутомимом в делах'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.30.44",
@@ -155,6 +261,20 @@
     "cited_western_sources": [
       "Bharata, Nāṭyaśāstra 7 (anubhāva as consequent)"
     ],
-    "src_candidate_id": "auto/sundara/30.44.lex"
+    "src_candidate_id": "auto/sundara/30.44.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "anubhāva's dual sense (practical 'power/dignity' vs Nāṭyaśāstra technical 'consequent') is accurate; framing Hanumān's final speech as anubhāva of his resolve is a reasonable interpretive addition.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]

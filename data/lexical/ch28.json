@@ -8,7 +8,16 @@
       "generated": "2026-06-27",
       "verses_total": 20,
       "notes_count": 6,
-      "density_pct": 30.0
+      "density_pct": 30.0,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 4,
+          "flag_anchor": 1,
+          "edit": 1
+        }
+      }
     }
   },
   {
@@ -25,7 +34,21 @@
     "cited_western_sources": [
       "Manusmṛti 5.16"
     ],
-    "src_candidate_id": "auto/sundara/28.3.lex"
+    "src_candidate_id": "auto/sundara/28.3.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Anchor_precheck said absent, but the lemma is present via sandhi: nākālamṛtyur = na+akālamṛtyu+r. Etymology (akāla+mṛtyu) and the dharmic 'no untimely death for the righteous' motif are standard; the Manusmṛti pinpoint is a plausible but unverified overreach, tolerated as minor. Adds legal-dharmic background and the irony reading absent from leonov_ru/tier1/other.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.28.5",
@@ -39,7 +62,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/28.5.lex"
+    "src_candidate_id": "auto/sundara/28.5.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Gerundive analysis of vadhyā (from vadh/han) is standard MW usage; the legal-ritual register (vadhya-strī vs pativratā) is a real semantic gain over the crib's flat 'должна быть убита'. No overlap with the single other-layer mantra note.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.28.6",
@@ -53,7 +90,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/28.6.lex"
+    "src_candidate_id": "auto/sundara/28.6.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "lokanātha etymology honestly flags the disputed loka- root rather than inventing one; the multivalent epithet (Viṣṇu/Brahmā/Buddhist deity) applied to the absent Rāma is accurate and adds a cosmic-abandonment reading not in the crib.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.28.17",
@@ -69,7 +120,21 @@
     "cited_western_sources": [
       "Bharata, Nāṭyaśāstra 7.9 (vyabhicāri-bhāva list)"
     ],
-    "src_candidate_id": "auto/sundara/28.17.lex"
+    "src_candidate_id": "auto/sundara/28.17.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "The verse text of V.28.17 (about Sītā seizing her braid to hang herself) contains no form of nirveda; the note's own textual anchor 'nirvedam avāpa sā tu' is a DIFFERENT line describing Sītā lapsing into despondency, which does not occur in this śloka. This is a wrong-verse mismatch — the note likely belongs to a nearby śloka in sarga 28 (plausibly near its opening, where Sītā's grief-cycle is first narrated, or its closing before ch. 29), not V.28.17.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.28.17",
@@ -83,7 +148,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/28.17b.lex"
+    "src_candidate_id": "auto/sundara/28.17b.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 1,
+        "anchoring": 2
+      },
+      "verdict": "edit",
+      "reason": "Etymology (veṇī+grathana) and the eka-veṇī mourning-hairstyle symbolism are accurate and add real cultural depth absent from the crib's flat 'взяв косу'. Register defect: the note contains a garbled/corrupted token 'экувেṇI' (mixed Bengali vowel sign + IAST) that should read eka-veṇī — concrete fix: replace with 'eka-veṇī (одна коса, знак разлучённой жены)'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.28.20",
@@ -97,6 +176,20 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/28.20.lex"
+    "src_candidate_id": "auto/sundara/28.20.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "dhairya vs kātarya opposition and the dhairyārjitāni predicate are accurate; the virtue-hierarchy claim (dhairya over tapas/dharma here) is a reasonable interpretive addition beyond the crib's neutral 'придающие стойкость'.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]

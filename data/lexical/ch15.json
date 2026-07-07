@@ -9,7 +9,17 @@
       "generated": "2026-06-27",
       "verses_total": 54,
       "notes_count": 13,
-      "density_pct": 24.1
+      "density_pct": 24.1,
+      "lexical_judge": {
+        "date": "2026-07-07",
+        "judged_by": "claude-sonnet-5",
+        "verdicts": {
+          "keep": 9,
+          "reject": 1,
+          "park": 1,
+          "edit": 1
+        }
+      }
     }
   },
   {
@@ -24,7 +34,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.3.lex"
+    "src_candidate_id": "auto/sundara/15.3.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Nandana как небесный сад Индры не раскрыт в крибе (просто «роще Нандана»); заметка вскрывает мифологический статус и структурное напряжение 'рай vs адхарма-владелец', подтверждённое для Сундараканды в целом.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.7",
@@ -52,7 +76,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.8.lex"
+    "src_candidate_id": "auto/sundara/15.8.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 0,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "reject",
+      "reason": "Заметка утверждает: «MW отмечает, что karṇikāra использовалась в погребальных украшениях» — это ложная атрибуция: реальная статья MW даёт только 'a tree with beautiful yellow blossoms', никакой похоронной коннотации там нет. Придуманный факт, приписанный источнику, который его не содержит — гейт faithfulness проваливается.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.12",
@@ -66,7 +104,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.12.lex"
+    "src_candidate_id": "auto/sundara/15.12.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 0,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "park",
+      "reason": "anchor_precheck='absent' ложный отрицательный: 'puṣpajyotirgaṇāyutam' в verse_iast содержит компаунд puṣpajyotis. Но крибе уже полностью даёт образ («небо с цветами вместо звёзд»); заметка лишь переоблачает тот же образ в термин 'космологизация' без нового факта — компаунд прозрачен, содержание очевидно из перевода.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.16",
@@ -80,7 +132,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.16.lex"
+    "src_candidate_id": "auto/sundara/15.16.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 1,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Крибе уже переводит caitya как «ступа», но не объясняет буддийскую архитектурную коннотацию caitya-hall и этимологию от cita — умеренный, но реальный технический прирост.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.19",
@@ -94,7 +160,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.19.lex"
+    "src_candidate_id": "auto/sundara/15.19.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Этимология upa+√vas (сидение у алтаря) — стандартная; переосмысление вынужденного голодания Ситы как ритуальной практики — не выводимо из крибе («исхудавшую от поста»).",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.22",
@@ -108,7 +188,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.22.lex"
+    "src_candidate_id": "auto/sundara/15.22.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Астрологический контекст (Рохини как 4-я накшатра, вредоносность Марса для неё) — известный индийский астрологический мотив, не изобретён; крибе даёт только образ затмения без объяснения его логики.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.25",
@@ -122,7 +216,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.25.lex"
+    "src_candidate_id": "auto/sundara/15.25.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Единая коса как знак траура/обета — засвидетельствованный эпический код (ср. Драупади); крибе даёт факт («единственная коса»), но не ритуальный смысл. Якорь (stem) подтверждён — veṇyā в verse_iast.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.33",
@@ -136,7 +244,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.33.lex"
+    "src_candidate_id": "auto/sundara/15.33.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Двойное значение smṛti (память / правовой корпус à la Ману) — стандартный технический факт, отсутствующий в крибе («смрити, чей смысл смутен»). Якорь (stem) подтверждён.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.38",
@@ -150,7 +272,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.38.lex"
+    "src_candidate_id": "auto/sundara/15.38.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Мнемотехника устной ведийской передачи (āmnāya, ослабление знания без повторения) — реальный технический факт, углубляющий крибе, который лишь переводит образ буквально. Якорь (stem) подтверждён.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.41",
@@ -164,7 +300,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.41.lex"
+    "src_candidate_id": "auto/sundara/15.41.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 1,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "edit",
+      "reason": "Идентификация Ситы по украшениям, описанным Рамой, — реальная деталь сверх крибе. Но фраза «функционирует как pramāṇa в судебном смысле» — терминологическая натяжка без текстовой опоры (слово pramāṇa в стихе не встречается); рекомендуется убрать юридическую рамку, оставить культурный факт об украшениях как родовых реликвиях-идентификаторах.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.49",
@@ -178,7 +328,21 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.49.lex"
+    "src_candidate_id": "auto/sundara/15.49.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Раса-тетрада (kāruṇya/ānṛśaṃsya/śoka/madana) как структурная категория театральной эстетики — реальный технический факт сверх простого перечисления в крибе.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   },
   {
     "shloka": "V.15.52",
@@ -192,6 +356,20 @@
     "review_required": true,
     "cited_indian_commentators": [],
     "cited_western_sources": [],
-    "src_candidate_id": "auto/sundara/15.52.lex"
+    "src_candidate_id": "auto/sundara/15.52.lex",
+    "judge": {
+      "scores": {
+        "faithfulness": 2,
+        "non_triviality": 2,
+        "lexical_value": 2,
+        "register": 2,
+        "anchoring": 2
+      },
+      "verdict": "keep",
+      "reason": "Различение manas (орган воли/внимания) от bhāva (эмоция) и архитектурная метафора pratiṣṭhita — небанальный психологический факт, не выводимый из простого перевода крибе.",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-07-07"
+    }
   }
 ]
