@@ -1,10 +1,10 @@
 ---
 title: "Индигенная и академическая комментаторские традиции: Бхарата-бхавадипа Нилакантхи и русские переводчики Махабхараты"
-author: "M. Gasūns"
-author-ru: "М. Ю. Гасунс"
+author: "М. Ю. Гасунс"
+author-latin: "M. Gasūns"
 orcid: "0000-0003-4513-884X"
-target: "Scrinium / Indologica Taurinensia"
-status: "4/5 — revising (pre-submission; venue + Paribok gates)"
+target: "Восток. Афро-Азиатские общества: история и современность (Oriens), ИВ РАН — ISSN 0869-1908"
+status: "4/5 — revising (pre-submission; Paribok gate — venue resolved 10-07-2026)"
 date: 2026-05-16
 lang: ru
 keywords:

@@ -1,28 +1,29 @@
 ---
 paper_id: A21
-to: "Editors, Scrinium (Brill)"
-re: "Manuscript submission"
-author: "M. Gasūns (sole author)"
+to: "Редакция журнала «Восток. Афро-Азиатские общества: история и современность» (Oriens), ИВ РАН"
+re: "Представление рукописи к публикации"
+author: "М. Ю. Гасунс (единственный автор)"
 orcid: "0000-0003-4513-884X"
-date: 2026-06-26
-lang: en
-note: "Scrinium/Brill editorial correspondence is in English. If Indologica Taurinensia is chosen as the venue, a Russian-language variant of this letter is trivial to produce."
+date: 2026-07-10
+lang: ru
+note: "Венуе-решение 10-07-2026: оба ранее указанных журнала непригодны (Scrinium/Brill — христианская патрология, вне тематики; Indologica Taurinensia — прекратил выход, посл. вып. 45, 2019). «Восток» (ИВ РАН, Отделение историко-филологических наук, ISSN 0869-1908) — живой рецензируемый востоковедный журнал, корреспонденция на русском."
 ---
 
-Dear Editors,
+В редакцию журнала
+«Восток. Афро-Азиатские общества: история и современность»
 
-I am pleased to submit for your consideration the manuscript **"Indigenous and Academic Commentary Traditions: Nīlakaṇṭha's *Bharatabhāvadīpa* and the Russian Translators of the *Mahābhārata*"** for publication in *Scrinium*.
+Уважаемые члены редакции,
 
-The article compares two commentary apparatuses on the Nalopākhyāna and Rāmopākhyāna of the *Mahābhārata*: Nīlakaṇṭha Caturdhara's seventeenth-century Sanskrit ṭīkā *Bharatabhāvadīpa* and the Russian translator's notes of Ya. V. Vassilkov and S. L. Neveleva (1987–present). On the basis of thirty parallel loci (adhyāyas III.52–57 and 273–276) and the sixteen actual Vassilkov/Neveleva notes in the same chapters, it establishes a double result: the two apparatuses reproduce a strikingly similar distribution of commentary-move types (P/K/D in Paribok's taxonomy) despite their complete mutual independence, yet they share *zero* loci. Each tradition comments precisely on what is opaque to its own reader — Nīlakaṇṭha on morphological and lexical difficulty, the Russian translators on mythological and ritual realia. I formulate this as a *functional inversion* operating at two levels (selection and execution), and argue that Paribok's typology describes universal types of the commentarial act, while the *zone of selection* serves as a diagnostic of the implied reader — the *adhikārin* of Sanskrit commentary theory.
+направляю Вам для рассмотрения и публикации рукопись статьи **«Индигенная и академическая комментаторские традиции: „Бхарата-бхавадипа“ Нилакантхи и русские переводчики „Махабхараты“»** (на русском языке).
 
-The paper fits *Scrinium*'s remit at the intersection of textual scholarship, the history of commentary, and the reception of authoritative texts: it treats the commentary tradition itself as the object of study and brings an indigenous Sanskrit ṭīkā into direct, evidence-based dialogue with a modern academic translation apparatus.
+Статья сопоставляет два комментаторских аппарата к Налопакхьяне и Рамопакхьяне «Махабхараты»: санскритскую тику *Бхарата-бхавадипа* Нилакантхи Чатурдхары (XVII в.) и переводческие примечания Я. В. Василькова и С. Л. Невелевой (1987 — наст. вр.). На материале тридцати параллельных локусов (адхьяи III.52–57 и 273–276) и шестнадцати реальных примечаний Василькова/Невелевой в тех же главах устанавливается двойной результат: при полной взаимной независимости оба аппарата воспроизводят поразительно близкое распределение типов комментаторского хода (П/К/Д по восходящей к А. В. Парибку операциональной шкале), но при этом не разделяют *ни одного* локуса. Каждая традиция комментирует именно то, что непрозрачно её собственному читателю: Нилакантха — морфологическую и лексическую трудность, русские переводчики — мифологические и ритуальные реалии. Это описывается как *функциональная инверсия*, действующая на двух уровнях (отбор и исполнение); зона отбора предлагается как диагностический признак подразумеваемого читателя — *адхикарина* санскритской комментаторской теории.
 
-I confirm that this manuscript is original, has not been published previously, and is not under consideration by any other journal. It is the work of a single author. Should the editors prefer it, the study would also sit naturally within *Indologica Taurinensia*, named here as an alternate venue.
+Тема статьи отвечает профилю «Востока» на пересечении истории и культуры Южной Азии, санскритской филологии и рецепции авторитетного текста: сама комментаторская традиция берётся как предмет изучения, а индигенная санскритская тика вводится в прямой, опирающийся на источники диалог с современным академическим переводческим аппаратом.
 
-I would be glad to provide any additional materials the review process requires, and I look forward to your response.
+Подтверждаю, что рукопись оригинальна, ранее не публиковалась и не находится на рассмотрении в других изданиях. Работа выполнена единолично. Готов предоставить любые дополнительные материалы, необходимые для рецензирования.
 
-Sincerely,
+С уважением,
 
-M. Gasūns (sole author)
+М. Ю. Гасунс
 ORCID: 0000-0003-4513-884X (https://orcid.org/0000-0003-4513-884X)
-Email: gasyoun@ya.ru
+Эл. почта: gasyoun@ya.ru
