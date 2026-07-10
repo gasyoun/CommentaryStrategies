@@ -1,5 +1,7 @@
 # Phase 2 — Sundarakāṇḍa Sanskrit-commentator dialogue layer · build handoff
 
+_Created: 01-07-2026 · Last updated: 10-07-2026_
+
 > **Status: SCOPED, ready to build. Rights cleared 2026-07-01.** This is the density-lift layer that
 > takes the Sundara apparatus from Phase-1 **24.2 %** toward Leonov/Kostina's own **~36 %**, by putting
 > the Russian translation into dialogue with the traditional Sanskrit commentaries — now that those
@@ -8,6 +10,15 @@
 > Cold-start reading order: [`docs/GEMINI.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GEMINI.md) →
 > [`.ai_state.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.ai_state.md) →
 > this file → [`SUNDARA_COMMENTARY_RATIONALE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/SUNDARA_COMMENTARY_RATIONALE.md).
+>
+> Since 10-07-2026 the human-facing layer lives elsewhere: operator reference
+> [`docs/MANUAL.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md), method canon
+> [`docs/PHASE2_METHOD.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/PHASE2_METHOD.md), and the three
+> role guides — [`docs/LEONOV_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) ·
+> [`docs/KOSTINA_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) ·
+> [`docs/GASUNS_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md).
+> This handoff stays as the build-time scope/decision record; where they disagree, MANUAL and
+> PHASE2_METHOD win.
 
 ## 1. What Phase 2 is (and is not)
 
