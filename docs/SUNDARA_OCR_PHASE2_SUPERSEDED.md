@@ -1,6 +1,8 @@
 # Sundara commentary OCR (Phase 2) — superseded by the scraped corpus
 
-_Created: 08-07-2026 · Last updated: 08-07-2026_
+_Created: 08-07-2026 · Last updated: 10-07-2026_
+> Ролевой слой (10-07-2026): операторский справочник тома — [`docs/MANUAL.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md); персональные руководства участников — [`docs/LEONOV_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) · [`docs/KOSTINA_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) · [`docs/GASUNS_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md).
+
 
 **Disposition of handoff [H370](https://github.com/gasyoun/Uprava/blob/main/handoffs/H370-Opus_CommentaryStrategies_sundara_revival_ocr_phase2_08.07.26.md)** — "Sundara revival: Gemini-OCR phase 2 of the 5 commentaries."
 Executor Opus 4.8 (`claude-opus-4-8`), 08-07-2026.
