@@ -10,6 +10,14 @@ _Created: 07-07-2026 · Last updated: 10-07-2026_
 [docs/ARCHITECTURE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ARCHITECTURE.md);
 здесь — только производственный конвейер книги.
 
+У каждого из трёх участников есть персональное ролевое руководство (10-07-2026);
+этот MANUAL — общий справочник «как всё устроено», руководства — «что делать
+именно тебе и в каком порядке»:
+
+- переводчик — [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) (нетехнический регистр);
+- первый комментатор / литредактор — [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) (нетехнический регистр);
+- оркестратор — [docs/GASUNS_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md) (операторский ранбук: критический путь, календарь, делегирование).
+
 ## 1. Что мы делаем
 
 Готовится camera-ready том **«Рамаяна. Книга V. Сундараканда»** для серии
@@ -127,6 +135,10 @@ python scripts/apply_phase2_decisions.py <файл> --dry-run            # ре�
 4. Мелочь: недостающие стихи песней 2 (55/58) и 28 (19/20); якорь 5.21.19.
 
 Персональные списки задач — в трёх issue: по одному для Гасунса, Костиной и Леонова
-(см. [issues](https://github.com/gasyoun/CommentaryStrategies/issues)).
+(см. [issues](https://github.com/gasyoun/CommentaryStrategies/issues)); пошаговые
+ролевые руководства к ним — тройка `*_SUNDARAKANDA_GUIDE.md` из §1:
+[Леонов](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) ·
+[Костина](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) ·
+[Гасунс](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md).
 
 _Dr. Mārcis Gasūns_
