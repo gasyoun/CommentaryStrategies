@@ -10,6 +10,27 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.8.4] - 2026-07-11
+
+### Added
+
+- [docs/MANUAL.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.meta.md) —
+  метадок операторского справочника: провенанс ([PR #55](https://github.com/gasyoun/CommentaryStrategies/pull/55)),
+  таблица ревизий, бэклог живых разделов §5/§8 ([PR #69](https://github.com/gasyoun/CommentaryStrategies/pull/69)).
+
+### Changed
+
+- **Сквозная разводка тройки ролевых руководств** (Fable 5 `claude-fable-5`, PRs
+  [#66](https://github.com/gasyoun/CommentaryStrategies/pull/66)–[#74](https://github.com/gasyoun/CommentaryStrategies/pull/74)):
+  ссылки + правила синхронизации добавлены во все точки входа — MANUAL §1/§8, README,
+  CLAUDE.md (sync-правило для агентов), GEMINI.md (Quick orientation),
+  COMMENTARY_ROADMAP (у статуса «на ратификацию»), PHASE2_METHOD, PHASE2_SUNDARA_HANDOFF
+  (с precedence-note) и четыре остальных книжных дока единым блоком-указателем;
+  попутно двум докам добавлены отсутствовавшие датированные заголовки.
+  Вне репозитория (для истории): FEATURES_INDEX J14 освежён
+  ([SanskritLexicography PR #325](https://github.com/gasyoun/SanskritLexicography/pull/325)),
+  аппарат зарегистрирован в kosha-манифесте ([kosha PR #43](https://github.com/gasyoun/kosha/pull/43)).
+
 ## [1.8.3] - 2026-07-10
 
 ### Added
