@@ -10,6 +10,22 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.8.3] - 2026-07-10
+
+### Added
+
+**H533 — operator runbook guide for M. Gasuns** (Fable 5 `claude-fable-5`)
+- [docs/GASUNS_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md) —
+  третье ролевое руководство, завершающее тройку (Леонов H497, Костина H517), в
+  операторском регистре: критический путь до сдачи ~07-08-2026 (блокеры → шаги),
+  порядок голосования четырёх листов «от короткого к длинному», параллельный запуск
+  рулингов §8 с действующими дефолтами, правило эскалации молчунам, календарная
+  прикидка, карта делегирования «только МГ / агентная сессия». Не дублирует
+  [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md)
+  (справочник) и [issue №56](https://github.com/gasyoun/CommentaryStrategies/issues/56)
+  (чек-лист) — только последовательность и логика решений. Метадок:
+  [docs/GASUNS_SUNDARAKANDA_GUIDE.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.meta.md).
+
 ## [1.8.2] - 2026-07-10
 
 ### Added
