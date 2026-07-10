@@ -86,6 +86,8 @@ python scripts/build_sutra_tm.py --corpus ys --report   # только Йога�
 | [data/lexical/](data/lexical/), [data/hist_cultural/](data/hist_cultural/) | Пер-главные слои (+ `*.rejected.json` с причиной отклонения) |
 | [SUNDARA_COMMENTARY_RATIONALE.md](SUNDARA_COMMENTARY_RATIONALE.md) | Решебник: почему ЭТИ примечания и почему не другие |
 | [data/sundara_decision_ledger.json](data/sundara_decision_ledger.json) | Машиночитаемый журнал приёма/отклонения |
+| [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md) | Операторский справочник тома: два яруса, конвейер, листы гейтов, apply |
+| [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) · [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) · [docs/GASUNS_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md) | Три ролевых руководства «что делать именно тебе»: переводчик и литредактор — нетехнический регистр, оркестратор — ранбук критического пути |
 
 ## Воспроизводимость
 
