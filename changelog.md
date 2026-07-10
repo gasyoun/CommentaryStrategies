@@ -10,6 +10,28 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.8.1] - 2026-07-10
+
+### Added
+
+**H497 — non-technical onboarding guide for M. Leonov** (Fable 5 `claude-fable-5`)
+- [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) —
+  большое русское руководство «что, почему и как» для переводчика без технической
+  подготовки: два яруса аппарата и двойной гейт по-человечески, его четыре задачи из
+  [issue №58](https://github.com/gasyoun/CommentaryStrategies/issues/58) пошагово,
+  механика скачивания и локального открытия интерактивных страниц/листов голосования
+  (включая `decisions.json` = «переслать письмом, не открывать»), GitHub с нуля,
+  словарик, раздел «что в репозитории Вам НЕ нужно» (научный этаж отфильтрован).
+  Метадок: [docs/LEONOV_SUNDARAKANDA_GUIDE.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.meta.md).
+
+### Fixed
+
+- Имя переводчика: Максим (М.) Леонов — исправлены «А. Леонов» в
+  [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md)
+  и «Михаил» в
+  [ramayana-leonov/C0_COVER_LETTER.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/C0_COVER_LETTER.md);
+  тексты issues №57/58 поправлены на GitHub.
+
 ## [1.8.0] - 2026-07-07
 
 ### Added
