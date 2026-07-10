@@ -1,6 +1,6 @@
 # Phase-2 method manual — Sundarakāṇḍa commentator-dialogue layer
 
-_Created: 01-07-2026 · Last updated: 07-07-2026_
+_Created: 01-07-2026 · Last updated: 10-07-2026_
 
 > **What this is:** the complete, reproducible procedure for generating the Type-Б/В
 > "commentator-dialogue" note layer for the Russian Sundarakāṇḍa — every step, *when* it runs, *how* to
@@ -10,6 +10,15 @@ _Created: 01-07-2026 · Last updated: 07-07-2026_
 > Companion docs: [`docs/PHASE2_SUNDARA_HANDOFF.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/PHASE2_SUNDARA_HANDOFF.md)
 > (scope + decisions) · [`SUNDARA_COMMENTARY_RATIONALE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/SUNDARA_COMMENTARY_RATIONALE.md)
 > (Phase-1 ledger) · [`data/valmiki_PERMISSION.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/valmiki_PERMISSION.md) (rights).
+>
+> Human-facing layer (10-07-2026): the operator reference is
+> [`docs/MANUAL.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md); the humans this
+> method serves read their role guides instead of this file —
+> [`docs/LEONOV_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) ·
+> [`docs/KOSTINA_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) ·
+> [`docs/GASUNS_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md).
+> If a method change alters what a human sees or does (sheet UI, verdict buckets, apply gates),
+> update MANUAL and the affected guides in the same PR.
 
 ## 0. Why this layer exists
 
