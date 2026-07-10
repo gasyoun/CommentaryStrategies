@@ -3,7 +3,7 @@ paper_id: A21
 title: "Submission-readiness report — A21 Nīlakaṇṭha commentary traditions (RU)"
 manuscript: "article3_nilakantha.md"
 cover_letter: "cover_letter_A21.md"
-venue: "Scrinium (Brill) — primary; Indologica Taurinensia — alternate"
+venue: "Восток. Афро-Азиатские общества: история и современность (Oriens), ИВ РАН — ISSN 0869-1908 (resolved 10-07-2026; the earlier Scrinium/Indologica pair both failed — see Blocker 1)"
 byline: "M. Gasūns (sole author)"
 orcid: 0000-0003-4513-884X
 readiness_now: 5/5
@@ -54,7 +54,7 @@ Concrete, with manuscript line refs. Items P1–P2 are real defects; P3–P6 are
 Bracketed `[@DO]` items that block 5/5 → submitted and that an agent cannot do:
 
 - ~~**[@DO] Confirm ORCID for the sole byline (M. Gasūns).**~~ ✅ **RESOLVED 2026-06-28** — ORCID **0000-0003-4513-884X** (canonical source `Uprava/AUTHOR.md`) pasted into the cover letter (ORCID line + frontmatter); correspondence email unified to `gasyoun@ya.ru` (was `ai.chatgpt.ocr@gmail.com`). No longer a gate.
-- **[@DO] Confirm the final byline form** — Cyrillic "Гасунс М. Ю." vs. Latin "M. Gasūns" — per the chosen venue's convention (see P3). For *Scrinium* the Latin form is expected.
+- ~~**[@DO] Confirm the final byline form** — Cyrillic "Гасунс М. Ю." vs. Latin "M. Gasūns"~~ ✅ **RESOLVED 10-07-2026 by the venue ruling.** «Восток» is a Russian-language journal → the **Cyrillic** form is primary. Frontmatter now reads `author: "М. Ю. Гасунс"` with `author-latin: "M. Gasūns"` preserved for the EN track (A22). P3 is therefore closed, not open.
 - **[@DO] Scholarly call on the three optional references** (lines 348–352): keep, promote, or drop (see Proposed edits → Optional references). This is an editorial-judgment call reserved for the author.
 - **[@DO] Final author sign-off + submission** to *Scrinium* (or *Indologica Taurinensia*): manuscript format, cover note, venue-specific style sheet, and (if Brill) the article-type / open-access selections.
 
@@ -100,15 +100,20 @@ this report are confirmed applied, and two report items are now stale: the Latin
 Литература AND cited in-text at §1, §6, §7.2) are already in the manuscript. What blocks
 sending is none of that:
 
-**Blocker 1 — both named venues fail.** *Indologica Taurinensia* ceased publication — the
-journal's own page states the last and final issue is n. 45 (2019)
-([asiainstitutetorino.it](https://www.asiainstitutetorino.it/indologica.html)). *Scrinium*
-(Brill) is a journal of patrology, critical hagiography and ecclesiastical history —
-ancient/medieval **Christian** Church ([brill.com](https://brill.com/view/journals/scri/scri-overview.xml));
-a Sanskrit ṭīkā paper is categorically out of scope and the cover letter's fit paragraph
-cannot survive desk review. **[@DECIDE] new venue required.** Constraint to weigh: the
-manuscript is Russian; the EN translation (A22, `article3_nilakantha_en.md`) is 4/5 and
-needs author review before any English-language venue.
+**Blocker 1 — RESOLVED 10-07-2026 (M.G. ruling).** The two named venues both failed: *Indologica
+Taurinensia* ceased publication (last and final issue n. 45, 2019,
+[asiainstitutetorino.it](https://www.asiainstitutetorino.it/indologica.html)); *Scrinium* (Brill)
+is a journal of patrology / critical hagiography / ecclesiastical history —
+ancient/medieval **Christian** Church ([brill.com](https://brill.com/view/journals/scri/scri-overview.xml)) —
+categorically out of scope for a Sanskrit ṭīkā paper. **New venue chosen: «Восток.
+Афро-Азиатские общества: история и современность» (Oriens), ИВ РАН, ISSN 0869-1908** —
+a live, peer-reviewed Russian-language orientalist journal under the RAS Division of History
+and Philology, six issues/year ([vostokoriens.ru](https://vostokoriens.ru/),
+[new.ras.ru](https://new.ras.ru/work/publishing/journals/vostok-afro-aziatskie-obshchestva-istoriya-i-sovremennost/)).
+The Russian manuscript needs no translation; the frontmatter `target` and the cover letter have been
+switched to «Восток» (cover letter re-authored in Russian). The EN translation (A22,
+`article3_nilakantha_en.md`) stays a separate 4/5 track for an English venue. Remaining gates:
+Blockers 2 and 3 below.
 
 **Blocker 2 — Paribok attribution (axis-4 K/D ruling).** §3 presents the operational
 K/D glosses («кодификатор/системное позиционирование», «дискурсивное») as «Таксономия
