@@ -10,6 +10,16 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.8.5] - 2026-07-11
+
+### Fixed
+
+- README: счёт книжного аппарата обновлён 788 → **897 нот яруса-2** (+ 1058 яруса-1) с as-of-датой
+  11-07-2026 и ссылкой на kosha-манифест — число 788 стояло без даты с эпохи Фазы-1 и вводило в
+  заблуждение. Найдено прогоном /artifact-propagate по аппарату; эпистемический осадок аппарата
+  зарегистрирован тем же прогоном ([SanskritLexicography PR #328](https://github.com/gasyoun/SanskritLexicography/pull/328):
+  GAPS §12 стихи 2/28 · ASSUMPTIONS §7 финальность редакции · DEAD_ENDS §8 OCR-маршрут H370).
+
 ## [1.8.4] - 2026-07-11
 
 ### Added
