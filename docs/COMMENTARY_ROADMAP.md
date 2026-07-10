@@ -1,6 +1,6 @@
 # Сундараканда (Леонов/Костина) — манифест стратегии и план работы
 
-_Created: 01-07-2026 · Last updated: 07-07-2026_
+_Created: 01-07-2026 · Last updated: 10-07-2026_
 
 > **Что это.** Roadmap комментаторского аппарата Сундараканды: сверху — манифест стратегии и
 > редакционная политика (что и как комментируем), снизу — план, сроки и открытые решения. Вырос из
@@ -9,8 +9,13 @@ _Created: 01-07-2026 · Last updated: 07-07-2026_
 >
 > **Статус:** черновик. Редакционные позиции §3 помечены **[на ратификацию]** — их утверждают Леонов и
 > Костина. Целевой срок чернового полного аппарата — **сентябрь 2026**.
+> Как именно ратифицировать (пошагово, без технических предпосылок) — их персональные ролевые
+> руководства (10-07-2026): [Костина](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md)
+> (задача 1 = ратификация §3) · [Леонов](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md);
+> ранбук оркестратора — [Гасунс](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md).
 >
-> Связано: [`PHASE2_METHOD.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/PHASE2_METHOD.md)
+> Связано: [`docs/MANUAL.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md)
+> (операторский справочник тома) · [`PHASE2_METHOD.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/PHASE2_METHOD.md)
 > (как строим tier-2) · [`PHASE2_SUNDARA_HANDOFF.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/PHASE2_SUNDARA_HANDOFF.md)
 > · [`ramayana-leonov/GRINTSER_PROFILE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/GRINTSER_PROFILE.md).
 
