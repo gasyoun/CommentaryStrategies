@@ -10,6 +10,26 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.8.2] - 2026-07-10
+
+### Added
+
+**H517 — non-technical onboarding guide for E. Kostina** (Fable 5 `claude-fable-5`)
+- [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) —
+  руководство-близнец леоновского под роль первого комментатора / литредактора:
+  её четыре задачи из [issue №57](https://github.com/gasyoun/CommentaryStrategies/issues/57)
+  пошагово (ратификация редполитики §3 · судьба ~427 помет `***[Е. Костина]***`,
+  блокирующих вёрстку · статус «Анатолий» · сборочный гейт с Леоновым), общие
+  механические разделы параллельны леоновским. Метадок:
+  [docs/KOSTINA_SUNDARAKANDA_GUIDE.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.meta.md).
+
+### Changed
+
+- [docs/LEONOV_SUNDARAKANDA_GUIDE.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.meta.md):
+  бэклог №3 (вычитка Костиной) отменён решением МГ 10-07-2026 в пользу
+  собственного руководства Костиной; введено парное правило — общие разделы двух
+  руководств редактируются одним коммитом.
+
 ## [1.8.1] - 2026-07-10
 
 ### Added

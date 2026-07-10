@@ -1,6 +1,6 @@
 # Метадок: LEONOV_SUNDARAKANDA_GUIDE.md
 
-_Created: 10-07-2026 · Last updated: 10-07-2026_
+_Created: 10-07-2026 · Last updated: 10-07-2026 (второе обновление за день: бэклог №3 отменён, добавлен близнец Костиной)_
 
 Метадок для [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md).
 
@@ -36,8 +36,14 @@ _Created: 10-07-2026 · Last updated: 10-07-2026_
    выберет формат (экран vs распечатка), раздел 4.3 переписать из
    «договоритесь» в конкретную инструкцию выбранного формата. Статус:
    заблокировано ответом Леонова.
-3. **Проверка читателем** — попросить Костину прочитать руководство до
-   отправки Леонову: она знает его реальный уровень. Статус: открыто.
+3. ~~**Проверка читателем** — попросить Костину прочитать руководство до
+   отправки Леонову.~~ Отменено МГ 10-07-2026: вместо вычитки решено
+   написать Костиной собственное руководство-близнец —
+   [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md)
+   (H517); руководство Леонову уже отправлено (комментарий в
+   [issue №58](https://github.com/gasyoun/CommentaryStrategies/issues/58)).
+   Общие разделы двух руководств (1, 5, 6, 7, 8) с этого момента
+   редактируются парно, одним коммитом.
 4. **Синхронизация чисел** — количества примечаний яруса-2 (~800–900)
    зафиксированы до голосования МГ по четырём листам; после применения
    `decisions.json` обновить. Статус: заблокировано голосованием.
@@ -54,6 +60,7 @@ _Created: 10-07-2026 · Last updated: 10-07-2026_
 
 ## Связанные документы
 
+- [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) — руководство-близнец для Е. Костиной (общие разделы правятся парно)
 - [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md) — регламент книги для всех участников
 - [docs/COMMENTARY_ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/COMMENTARY_ROADMAP.md) — редполитика §3 (на ратификацию Леоновым/Костиной)
 - [ramayana-leonov/C0_COVER_LETTER.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/C0_COVER_LETTER.md) — образец письма Леонову (эксперимент C0)
