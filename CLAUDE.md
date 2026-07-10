@@ -85,6 +85,17 @@ Design target for new lexical notes: **~25% density (Grintser level)** with a st
 gate (reject transparent p.p.p., standard epithets, compounds whose meaning = sum of parts, and
 in-chapter root duplicates). See [data/lexical/PILOT_REPORT.md](data/lexical/PILOT_REPORT.md).
 
+**Human-facing docs for the book (keep in sync when changing book mechanics):**
+[docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md) is the
+operator reference (tiers, pipeline, gate sheets, apply); the three role guides are
+[docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) ·
+[docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md)
+(both non-technical register — translator/editor read them instead of this file) ·
+[docs/GASUNS_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md)
+(MG's critical-path runbook). If you change sheet/apply/page mechanics, update MANUAL **and** the
+affected guides in the same PR; the Leonov/Kostina guides' shared sections (1, 5–8) are edited as
+a pair (rule in their `.meta.md` companions). Their per-person task lists are issues #58/#57/#56.
+
 ## The 4-axis annotation framework
 
 Every gold-sample note carries coordinates on 4 axes (canonical enum: [data/commentary_schema.json](data/commentary_schema.json)):
