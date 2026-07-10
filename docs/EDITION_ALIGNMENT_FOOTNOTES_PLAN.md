@@ -1,5 +1,8 @@
 # План внедрения: точность выравнивания · HTML-отчет · сноски о расхождениях изданий
 
+_Created: 01-07-2026 · Last updated: 10-07-2026_
+
+> Ролевой слой (10-07-2026): операторский справочник тома — [`docs/MANUAL.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md); персональные руководства участников — [`docs/LEONOV_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) · [`docs/KOSTINA_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) · [`docs/GASUNS_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md).
 > План для трех задач, вытекающих из сравнения изданий (критическое GRETIL/Барода ↔ южная вульгата
 > Леонова). Пункт 2 (Гитапресс) — ждем текст от М.Г. (не переспрашивать); проектируем п.1/3/4 так, чтобы
 > Гитапресс добавлялся drop-in как 3-е издание. Контекст:

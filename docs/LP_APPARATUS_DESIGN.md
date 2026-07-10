@@ -1,6 +1,8 @@
 # Аппарат ЛП-издания Сундараканды — решения калибровки
 
-_Created: 07-07-2026 · Last updated: 07-07-2026_
+_Created: 07-07-2026 · Last updated: 10-07-2026_
+> Ролевой слой (10-07-2026): операторский справочник тома — [`docs/MANUAL.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md); персональные руководства участников — [`docs/LEONOV_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) · [`docs/KOSTINA_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) · [`docs/GASUNS_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md).
+
 
 > **Что это.** Зафиксированные М.Г. 07-07-2026 решения по калибровке комментаторского
 > аппарата для **камера-реди издания Сундараканды** (Рамаяна, кн. V, перевод Леонова/Костиной)

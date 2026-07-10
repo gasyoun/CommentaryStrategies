@@ -1,5 +1,8 @@
 # Логика комментирования Сундараканды — Решебник (Decision Ledger)
 
+_Created: 27-06-2026 · Last updated: 10-07-2026_
+
+> Ролевой слой (10-07-2026): операторский справочник тома — [`docs/MANUAL.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md); персональные руководства участников — [`docs/LEONOV_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) · [`docs/KOSTINA_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) · [`docs/GASUNS_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md).
 > Сформировано: 2026-06-27. Последняя сверка: 2026-07-02 (reconciliation crosstext-expansion
 > PR #42 с параллельной прямой правкой main). Книжный аппарат — **887 примечаний**
 > (типы Казанского: А 645 / В 150 / Б 81 / Г 11; по слоям: базовый 95 + лексический 611 + межтекстовый 170
