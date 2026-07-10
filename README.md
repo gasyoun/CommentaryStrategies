@@ -69,9 +69,10 @@ python scripts/build_sutra_tm.py --corpus ys --report   # только Йога�
 ## Аппарат Сундараканды (генерируемый комментарий к переводу М. В. Леонова)
 
 Отдельный активный поток: корпусно-генерируемые русские примечания к Рамаяне V
-(Леонов/Костина), добавляемые в параллельный Sa–Ru ридер. **788 примечаний**,
-покрывающих все четыре типа комментария Казанского, плотность ≈24 % (грин­церовский
-уровень). Все примечания — `review_required` (корпусное свидетельство — уровень шлоки).
+(Леонов/Костина), добавляемые в параллельный Sa–Ru ридер. **897 примечаний яруса-2**
+(на 11-07-2026, до гейтов М.Г.; + 1058 собственных примечаний яруса-1), покрывающих
+все четыре типа комментария Казанского, плотность ≈24 % (грин­церовский
+уровень). Все примечания яруса-2 — `review_required` (корпусное свидетельство — уровень шлоки).
 
 | Тип Казанского | Слой | Кол-во |
 |---|---|---|
@@ -82,7 +83,7 @@ python scripts/build_sutra_tm.py --corpus ys --report   # только Йога�
 
 | Файл / директория | Содержание |
 |---|---|
-| [data/sundara_commentary_to_add.json](data/sundara_commentary_to_add.json) | Итоговый книжный аппарат (788 примечаний, гл. 1–68) |
+| [data/sundara_commentary_to_add.json](data/sundara_commentary_to_add.json) | Итоговый книжный аппарат яруса-2 (897 примечаний на 11-07-2026, гл. 1–68; зарегистрирован в [kosha-манифесте](https://github.com/gasyoun/kosha/blob/main/data/manifest/datasets.json) как `sundarakanda-two-tier-apparatus`, restricted) |
 | [data/lexical/](data/lexical/), [data/hist_cultural/](data/hist_cultural/) | Пер-главные слои (+ `*.rejected.json` с причиной отклонения) |
 | [SUNDARA_COMMENTARY_RATIONALE.md](SUNDARA_COMMENTARY_RATIONALE.md) | Решебник: почему ЭТИ примечания и почему не другие |
 | [data/sundara_decision_ledger.json](data/sundara_decision_ledger.json) | Машиночитаемый журнал приема/отклонения |
