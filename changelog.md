@@ -18,7 +18,7 @@ Work not yet on `main` stays under **[Unreleased]**.
 - [docs/GASUNS_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md) —
   третье ролевое руководство, завершающее тройку (Леонов H497, Костина H517), в
   операторском регистре: критический путь до сдачи ~07-08-2026 (блокеры → шаги),
-  порядок голосования четырёх листов «от короткого к длинному», параллельный запуск
+  порядок голосования четырех листов «от короткого к длинному», параллельный запуск
   рулингов §8 с действующими дефолтами, правило эскалации молчунам, календарная
   прикидка, карта делегирования «только МГ / агентная сессия». Не дублирует
   [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md)
@@ -33,16 +33,16 @@ Work not yet on `main` stays under **[Unreleased]**.
 **H517 — non-technical onboarding guide for E. Kostina** (Fable 5 `claude-fable-5`)
 - [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) —
   руководство-близнец леоновского под роль первого комментатора / литредактора:
-  её четыре задачи из [issue №57](https://github.com/gasyoun/CommentaryStrategies/issues/57)
+  ее четыре задачи из [issue №57](https://github.com/gasyoun/CommentaryStrategies/issues/57)
   пошагово (ратификация редполитики §3 · судьба ~427 помет `***[Е. Костина]***`,
-  блокирующих вёрстку · статус «Анатолий» · сборочный гейт с Леоновым), общие
+  блокирующих верстку · статус «Анатолий» · сборочный гейт с Леоновым), общие
   механические разделы параллельны леоновским. Метадок:
   [docs/KOSTINA_SUNDARAKANDA_GUIDE.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.meta.md).
 
 ### Changed
 
 - [docs/LEONOV_SUNDARAKANDA_GUIDE.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.meta.md):
-  бэклог №3 (вычитка Костиной) отменён решением МГ 10-07-2026 в пользу
+  бэклог №3 (вычитка Костиной) отменен решением МГ 10-07-2026 в пользу
   собственного руководства Костиной; введено парное правило — общие разделы двух
   руководств редактируются одним коммитом.
 

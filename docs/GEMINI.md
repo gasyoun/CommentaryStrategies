@@ -25,6 +25,8 @@ A comparative study of **commentary strategies** used by Russian translators of 
 | `.ai_state.md` | Session state journal | Every session start |
 | `README.md` | Universal prompt template for LLM analysis | Understanding the analytical method |
 | `index.html` | Main comparative report (6 translators) | Understanding existing output |
+| [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md) | Operator reference for the **Sundarakāṇḍa LP book** (tiers, pipeline, gate sheets, apply) | Working on the book workstream |
+| [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) · [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) · [docs/GASUNS_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md) | Per-person role guides (translator/editor: non-technical RU; MG: critical-path runbook) — keep in sync with MANUAL when changing book mechanics | Anything touching what the three humans do |
 
 ---
 
