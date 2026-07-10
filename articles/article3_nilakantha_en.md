@@ -1,8 +1,9 @@
 ---
 title: "Indigenous and Academic Commentary Traditions: Nīlakaṇṭha's Bharatabhāvadīpa and Russian Translators of the Mahābhārata"
-author: "Mārcis Gasūns"
+author: "M. Gasūns"
+author-ru: "М. Ю. Гасунс"
 orcid: "0000-0003-4513-884X"
-target: "Indologica Taurinensia"
+target: "@DECIDE — was Indologica Taurinensia (ceased with issue 45, 2019); shares A21's venue decision"
 status: "4/5 — draft (needs author review)"
 date: 2026-05-18
 lang: en
@@ -20,9 +21,12 @@ keywords-en:
   - adhikārin
 ---
 
-<!-- STATUS: 4/5 — draft (needs author review) [translation v1 from article3_nilakantha.md, Russian draft v3, 2026-05-16].
-     Tables preserved; Sanskrit devanāgarī unchanged.
-     Requires author review before submission. -->
+<!-- STATUS: 4/5 — draft (needs author review) [translation v2, synced 10-07-2026 to article3_nilakantha.md RU draft v3].
+     Tables preserved; Sanskrit devanāgarī unchanged. Table 1/2 data cells mechanically verified identical to RU (10-07-2026).
+     Synced from RU v3: Vassilkov 1995–1996 / Pollock 2006 / Bronkhorst 1996 promoted to References + cited in-text (§1, §6, §7.2);
+     Minkowski §7.4 parenthetical matched to the cited Mantrakāśīkhaṇḍa article; footnote [^1] anchored in §1.
+     Requires author review before submission. Venue @DECIDE (Indologica Taurinensia ceased 2019; Scrinium out of scope — see SUBMISSION_READINESS_A21.md hostile check 02-07-2026).
+     GATE: once the A21 Paribok-attribution rewording is ruled (AXIS4_KD_DECISION §5), mirror it here in §1/§3/§4.1/§7.2 + abstract. -->
 
 ---
 
@@ -40,13 +44,13 @@ This article compares two commentary apparatuses on the Nalopākhyāna and Rāmo
 
 Between 1657 and 1674, the paṇḍita Nīlakaṇṭha Caturdhara of Nagpur composed a complete commentary on the Mahābhārata — the *Bharatabhāvadīpa* ('The Lamp of the Meaning of the Bhārata'). The commentary covers the entire epic: for each difficult passage Nīlakaṇṭha supplies a Sanskrit gloss — a synonym, a definition, a grammatical clarification, or an extended exegesis drawing on other sacred texts. The *Bharatabhāvadīpa* is written in Sanskrit, for a reader capable of reading Sanskrit, and presupposes in such a reader thorough paṇḍitic training: command of Pāṇini's grammar, familiarity with *nirukta*, and knowledge of *śruti* and *dharmaśāstra*.
 
-Three centuries later, Soviet and Russian Sanskritists undertook the translation of the Mahābhārata into Russian. V. I. Kalyanov translated six books of the epic from the 1950s to the 1990s; Ya. V. Vassilkov and S. L. Neveleva have been translating the remaining books from 1987 to the present, including the third book — the Forest Book (Vanaparvan) — which contains the two episodes that provide the material for the present study: the Nalopākhyāna and the Rāmopākhyāna. Both Kalyanov and Vassilkov/Neveleva accompany their translations with translator's notes — a commentary apparatus addressed to a Russian-language reader with no knowledge of Sanskrit.
+Three centuries later, Soviet and Russian Sanskritists undertook the translation of the Mahābhārata into Russian. V. I. Kalyanov translated six books of the epic from the 1950s to the 1990s; Ya. V. Vassilkov and S. L. Neveleva have been translating the remaining books from 1987 to the present, including the third book — the Forest Book (Vanaparvan) — which contains the two episodes that provide the material for the present study: the Nalopākhyāna and the Rāmopākhyāna. Both Kalyanov and Vassilkov/Neveleva accompany their translations with translator's notes — a commentary apparatus addressed to a Russian-language reader with no knowledge of Sanskrit (on the Mahābhārata as a typological object of academic study cf. Vassilkov 1995–1996).
 
 The two commentary apparatuses — Nīlakaṇṭha's and those of the Russian translators — arose in different languages, in different epochs, and for fundamentally different readers. And yet, as will be shown in this article, they exhibit a structural homology: the type of commentary move applied in a given situation is reproduced in both apparatuses independently. A simple synonym, an extended definition, a cultural-historical contextualisation, an appeal to parallel texts — all of these tools are found in Nīlakaṇṭha and in the Russian translators alike. Why this is so, and what exactly it means, is the central question of the present work.
 
 The thesis we defend is as follows: *the indigenous Sanskrit commentary tradition and the Russian academic translation tradition reproduce one and the same hermeneutic grammar* — a set of structural moves dictated by the very nature of textual difficulty, not by the cultural or linguistic affiliation of the interpreter. At the same time, formally identical moves perform *opposite pragmatic functions*: Nīlakaṇṭha *resolves* a difficulty for a reader who already has access to the text; Vassilkov/Neveleva *create* access to the text for a reader who initially lacks it. This functional inversion under structural parallelism is the central empirical result of the article.
 
-A further theoretical result: the comparison of the two apparatuses allows us to validate A. V. Paribok's taxonomy (P/K/D per Paribok 2011), which has been used in the *CommentaryStrategies* project for corpus annotation of Russian translator's notes. If the same taxonomy is independently reproduced in Nīlakaṇṭha's Sanskrit glosses, this indicates that Paribok describes universal types of the commentarial act rather than artefacts of a particular Russian academic translation tradition.
+A further theoretical result: the comparison of the two apparatuses allows us to validate A. V. Paribok's taxonomy (P/K/D per Paribok 2011), which has been used in the *CommentaryStrategies* project for corpus annotation of Russian translator's notes.[^1] If the same taxonomy is independently reproduced in Nīlakaṇṭha's Sanskrit glosses, this indicates that Paribok describes universal types of the commentarial act rather than artefacts of a particular Russian academic translation tradition.
 
 Finally, in §6 the results are related to the concept of *adhikārin* ('the qualified reader'), introduced by Nīlakaṇṭha and other authors of the Sanskrit commentary tradition as an explicit theory of the addressee. In the paper 'Conceptual Untranslatability as a Translation Strategy' (Gasūns 2026 [= Article 1]) it was argued that the reader contract implicitly embodied in Russian translators' apparatuses is structurally parallel to the *adhikārin* typology in Śaṅkara and Nīlakaṇṭha. The present article provides an empirical test of this argument: if Russian translators reproduce Nīlakaṇṭha's strategies without knowledge of the *Bharatabhāvadīpa*, this indicates that both apparatuses independently answered the same hermeneutic requirements of the same text.
 
@@ -254,7 +258,7 @@ This is not an accidental coincidence of structural forms. Both apparatuses resp
 
 In Gasūns 2026 (= Article 1) the concept of 'reader contract' was proposed — the implicit theory of the addressee embodied in the architecture of the translation apparatus. Three contracts of epic translators (*philological*, *humanistic*, *philosophical*) were compared with three types of *adhikārin* ('the qualified reader') posited by the Sanskrit commentary tradition.
 
-The present article provides an empirical test of this comparison. Nīlakaṇṭha is not merely an example of an indigenous commentator — he is an *explicit theorist* of *adhikārin* typology: in his commentaries on the Bhagavadgītā and other philosophical texts he distinguishes types of qualified readers and the corresponding types of explanation. The *Bharatabhāvadīpa*, addressed to a broader audience, reproduces the same logic implicitly: the structure of moves presupposes a reader of a specific profile.
+The present article provides an empirical test of this comparison. Nīlakaṇṭha is not merely an example of an indigenous commentator — he is an *explicit theorist* of *adhikārin* typology: in his commentaries on the Bhagavadgītā and other philosophical texts he distinguishes types of qualified readers and the corresponding types of explanation (on Sanskrit as the language of authoritative knowledge with an implicit theory of the addressee cf. Pollock 2006). The *Bharatabhāvadīpa*, addressed to a broader audience, reproduces the same logic implicitly: the structure of moves presupposes a reader of a specific profile.
 
 If the comparison shows that Nīlakaṇṭha and Vassilkov/Neveleva apply identical strategies to identical types of difficulty, this means:
 
@@ -278,7 +282,7 @@ The theoretical conclusion: these two facts — convergence in the distribution 
 
 ### 7.2. Typological Convergence and Its Interpretation
 
-The fact of distributional convergence may be interpreted in two ways. According to the first, Paribok, in developing his taxonomy (2011), drew on intuitions rooted in the classical Sanskrit tradition — and therefore his P/K/D unconsciously reproduces categories that Sanskrit ṭīkā-writing elaborated centuries earlier. According to the second, neither Paribok nor Nīlakaṇṭha 'invented' this typology — both describe universal types of the commentarial act, dictated by the very nature of the hermeneutic task. The distinction between 'brief indication', 'systemic positioning', and 'discursive reasoning' necessarily arises in any tradition dealing with texts requiring interpretation.
+The fact of distributional convergence may be interpreted in two ways. According to the first, Paribok, in developing his taxonomy (2011), drew on intuitions rooted in the classical Sanskrit tradition — and therefore his P/K/D unconsciously reproduces categories that Sanskrit ṭīkā-writing elaborated centuries earlier. According to the second, neither Paribok nor Nīlakaṇṭha 'invented' this typology — both describe universal types of the commentarial act, dictated by the very nature of the hermeneutic task. The distinction between 'brief indication', 'systemic positioning', and 'discursive reasoning' necessarily arises in any tradition dealing with texts requiring interpretation (cf. Bronkhorst 1996 on the nature of authoritative utterance in the Sanskrit tradition).
 
 This article argues in favour of the second interpretation. The key evidence: the two apparatuses could not have known of each other — Nīlakaṇṭha did not read Vassilkov; Vassilkov set himself no task of reproducing the Nīlakaṇṭhian typology. Convergence is neither borrowing nor influence; it is an independent derivation from a common source — the nature of textual difficulty.
 
@@ -302,7 +306,7 @@ Several limitations of the present study require qualification.
 
 **Unidirectionality.** The present article compares Nīlakaṇṭha and V/N. Kalyanov, who translated other books of the MBh, falls outside the immediate comparison with Nīlakaṇṭha (except at overlapping parallel ślokas). A three-way analysis Nīlakaṇṭha / Kalyanov / V/N would require separate material.
 
-**One ṭīkā.** Nīlakaṇṭha is the most complete and accessible commentator on the MBh, but not the only one. Comparison with the commentary of Devabodha, or with the ṭīkā on the Bhagavadgītā (which Nīlakaṇṭha writes in a different, more philosophical manner; cf. Minkowski 2002 on Nīlakaṇṭha as a commentator across multiple traditions) would help to clarify whether the observed profile is a property of a particular commentator or of the genre of the narrative-text ṭīkā.
+**One ṭīkā.** Nīlakaṇṭha is the most complete and accessible commentator on the MBh, but not the only one. Comparison with the commentary of Devabodha, or with the ṭīkā on the Bhagavadgītā (which Nīlakaṇṭha writes in a different, more philosophical manner; cf. Minkowski 2002 on Nīlakaṇṭha's Vedic and Tantric interests) would help to clarify whether the observed profile is a property of a particular commentator or of the genre of the narrative-text ṭīkā.
 
 Despite these limitations, the main result remains robust: structural homology under functional inversion is not a random artefact of the sample, but a principle determined by the nature of the hermeneutic task itself. Verification of this principle on expanded material is the immediate next task of the *CommentaryStrategies* programme.
 
@@ -330,12 +334,12 @@ Despite these limitations, the main result remains robust: structural homology u
 
 ### Secondary Literature
 
+**Bronkhorst 1996** — Bronkhorst J. Sanskrit and Reality // Ideology and Status of Sanskrit: Contributions to the History of the Sanskrit Language / ed. J. E. M. Houben. Leiden: Brill, 1996.
+
 **Minkowski 2002** — Minkowski C. Z. Nīlakaṇṭha Caturdhara's Mantrakāśīkhaṇḍa // Journal of the American Oriental Society. 2002. Vol. 122. No. 2. P. 329–344.
 
 **Paribok 2011** — Paribok A. V. Cognitive Typology of Sanskrit Textual Units // Śabdaprakāśa 2 / ed. A. V. Paribok and D. N. Lelyukhin. St. Petersburg, 2011. P. 77–98.
 
-<!-- If needed, add:
-     - Pollock S. The Language of the Gods in the World of Men. Berkeley: UCP, 2006.
-     - Bronkhorst J. Sanskrit and Reality // Ideology and Status of Sanskrit / ed. Houben. Leiden: Brill, 1996.
-     - Vassilkov Ya. V. The Mahābhārata's Typological Definition Reconsidered // Indologica Taurinensia. 1995–1996.
--->
+**Pollock 2006** — Pollock S. The Language of the Gods in the World of Men: Sanskrit, Culture, and Power in Premodern India. Berkeley: University of California Press, 2006.
+
+**Vassilkov 1995–1996** — Vassilkov Ya. V. The Mahābhārata's Typological Definition Reconsidered // Indologica Taurinensia. 1995–1996.
