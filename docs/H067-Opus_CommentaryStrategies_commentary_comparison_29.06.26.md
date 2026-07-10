@@ -81,7 +81,7 @@ Edit **`index.html`** (it is hand-authored, NOT generated — safe to edit direc
 ## 6. Caveats to surface in the writeup (don't bury)
 
 - **Apples vs oranges, stated openly:** the 788 are **machine-generated, `review_required` candidates** for a parallel-reader; the five others are **published human commentaries**. The comparison is legitimate *only* if this is foregrounded — it measures whether the corpus method approximates human output, not a like-for-like scholarly contest.
-- **Leonov-real numbers are `≈`** (from `leonov_kostina_commentary_analysis.html`, "требуют финального машинного подсчёта"). If you can get Leonov's real note file (`ramayana-leonov/` HTML / `sources/leonov_notes.json`), compute exact figures; otherwise keep the `≈` and say so.
+- **Leonov-real numbers are `≈`** (from `leonov_kostina_commentary_analysis.html`, "требуют финального машинного подсчета"). If you can get Leonov's real note file (`ramayana-leonov/` HTML / `sources/leonov_notes.json`), compute exact figures; otherwise keep the `≈` and say so.
 - **Gold samples are 50-note samples**, not full corpora — the human per-translator type profiles in `*_markup_50.json` are samples; `index.html`'s totals (7424 etc.) are full-corpus counts. Don't mix the two scales silently.
 - **Kazansky axis mapping** A/B/V/G (gold) vs А/Б/В/Г (Sundara) — reconcile before cross-tabulating (see §2 / CLAUDE.md).
 

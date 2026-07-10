@@ -122,7 +122,7 @@ that identity. Per [docs/AXIS4_KD_DECISION.md](https://github.com/gasyoun/Commen
 the scale is the project's own, derived from Paribok but classifying *notes*, not *terms*.
 Likely referees are Russian indologists of Paribok's circle (Vasilkov — a subject of the
 paper — co-edited the very Шабдапракаша volume). Required rewording is bounded (§3 intro +
-definitions provenance, §1/§7.2 claim softening to «трёхчастное различение, восходящее к
+definitions provenance, §1/§7.2 claim softening to «трехчастное различение, восходящее к
 Парибку»; the I–IV↔P/K/D mapping, tables and percentages stand unchanged). Gated on the
 [@DO] source check in AXIS4_KD_DECISION §5.
 

@@ -566,7 +566,7 @@ Organized in five conceptual groups. Each entry contains:
 
 **Strategies:**
 - **T:** «шуньята» + note on Madhyamaka reading vs. nihilist misreading. Toporov (Dhammapada — planned corpus); Erchenkov.
-- **C:** «незначительность», «пустотность», «лишённость самобытия». Occasional in philosophical translations.
+- **C:** «незначительность», «пустотность», «лишенность самобытия». Occasional in philosophical translations.
 - **D:** «пустота», «небытие». Popular usage, Petrov 1788 (N/A for Gita context).
 
 **Corpus frequency:** LOW in current corpus (Erchenkov only); will rise when Toporov annotated  

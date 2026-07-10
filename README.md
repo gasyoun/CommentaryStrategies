@@ -23,7 +23,7 @@
 ## Корпус и данные
 
 Размеченная **золотая выборка**: 300 примечаний (по 50 от шести переводчиков),
-размеченных по четырёхосной сетке.
+размеченных по четырехосной сетке.
 
 | Файл / директория | Содержание |
 |---|---|
@@ -77,7 +77,7 @@ python scripts/build_sutra_tm.py --corpus ys --report   # только Йога�
 |---|---|---|
 | **А** филологический | лексико-этимологический (`data/lexical/`) + базовый | 617 |
 | **В** реалийный | реалии/мифология/география | 122 |
-| **Б** текстологический | расхождения/опущения (полный слой диалога 5 комментаторов — Фаза 2, ждёт Gemini-OCR) | 38 |
+| **Б** текстологический | расхождения/опущения (полный слой диалога 5 комментаторов — Фаза 2, ждет Gemini-OCR) | 38 |
 | **Г** историко-культурологический | вводные статьи (`data/hist_cultural/`) | 11 |
 
 | Файл / директория | Содержание |
@@ -85,7 +85,7 @@ python scripts/build_sutra_tm.py --corpus ys --report   # только Йога�
 | [data/sundara_commentary_to_add.json](data/sundara_commentary_to_add.json) | Итоговый книжный аппарат (788 примечаний, гл. 1–68) |
 | [data/lexical/](data/lexical/), [data/hist_cultural/](data/hist_cultural/) | Пер-главные слои (+ `*.rejected.json` с причиной отклонения) |
 | [SUNDARA_COMMENTARY_RATIONALE.md](SUNDARA_COMMENTARY_RATIONALE.md) | Решебник: почему ЭТИ примечания и почему не другие |
-| [data/sundara_decision_ledger.json](data/sundara_decision_ledger.json) | Машиночитаемый журнал приёма/отклонения |
+| [data/sundara_decision_ledger.json](data/sundara_decision_ledger.json) | Машиночитаемый журнал приема/отклонения |
 | [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md) | Операторский справочник тома: два яруса, конвейер, листы гейтов, apply |
 | [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) · [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) · [docs/GASUNS_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md) | Три ролевых руководства «что делать именно тебе»: переводчик и литредактор — нетехнический регистр, оркестратор — ранбук критического пути |
 
@@ -132,7 +132,7 @@ python scripts/build_sutra_tm.py           # Брахмасутры + Йогас
 - `leonov_kostina_commentary_analysis.html` — Леонов + Костина, Сундараканда
 - `toporov_commentary_analysis.html` — В. Н. Топоров, «Текст и комментарий»
 - `elizarenkova_commentary_analysis.html` — Т. Я. Елизаренкова, Ригведа
-- `mahabharata_comparative_analysis.html` — сравнение трёх переводчиков Махабхараты
+- `mahabharata_comparative_analysis.html` — сравнение трех переводчиков Махабхараты
 - `visualizations.html` — радар (6-way profile), пузырьки, тепловая карта
 
 ## Статья

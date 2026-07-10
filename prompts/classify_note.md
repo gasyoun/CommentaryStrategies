@@ -35,7 +35,7 @@ This codebook follows the gold-coder mapping (the classical Russian textology se
   *Cues:* caste/varṇa gloss → V ("kṣatriya — представитель воинской касты"); deity/role identification → V ("indra — царь богов"); sacred river / place / mountain → V ("gaṅgā — священная река индийцев"); ethnonym, vyūha troop-formation, or a plot beat ("Смерть Дашаратхи") → V.
 
 - `G` Культурологический / интерпретационный (conceptual + interpretive): triggered EITHER by (1) an ABSTRACT-IDEA subject — a philosophical/doctrinal/ethical/poetological concept (dharma, mokṣa, yoga, the puruṣārthas, the yugas, karma, kāvya genesis) even under a flat verb — OR (2) an INTERPRETIVE MOVE on a concrete referent: cross-tradition comparison, symbolic/allegorical reading, or tracing a notion's development.
-  *Cues:* concept placed in a doctrinal system → G ("dharma — … одно из четырёх стремлений человека (puruṣārtha)"); cross-cultural comparison → G (death of Кришна ↔ миф об Ахилле); "двойной смысл: место битвы и место духовного подвига" / symbolic reading → G. Diagnostic verbs: анализирует, интерпретирует, сопоставляет/сравнивает, видит в этом, прослеживает развитие.
+  *Cues:* concept placed in a doctrinal system → G ("dharma — … одно из четырех стремлений человека (puruṣārtha)"); cross-cultural comparison → G (death of Кришна ↔ миф об Ахилле); "двойной смысл: место битвы и место духовного подвига" / symbolic reading → G. Diagnostic verbs: анализирует, интерпретирует, сопоставляет/сравнивает, видит в этом, прослеживает развитие.
   *Override (system-concept beats realia):* a single-term gloss that NAMES an element of the ritual, cosmological, or doctrinal SYSTEM is `G` even when the gloss is one brief line — sacrifices/rites (yajña, aśvamedha, rājasūya, tapas, soma), cosmic time-units (kalpa, yuga, krita-yuga), and abstract doctrinal terms (avatāra, ahaṃkāra, guṇa, varṇa as a system). These are system-concepts, not in-world objects, so they go `G`, not `V` — UNLESS the note merely describes the rite as a staged event/scene with no system framing (then `V`).
 
 **Decision rule (prevents the realia→B error):** Ask "is this note about the TEXT or about the WORLD?" A concrete thing IN the story — caste, river, deity, people, weapon, ritual object — is a real-world referent → **V** (or **G** if the note interprets/compares rather than identifies it). It is **NEVER `B`**. Reserve `B` strictly for metatext: an omission, a variant reading, a source attribution, or an interpolation/authenticity judgment about the Sanskrit or its translation. Word-vs-thing splits A from V (A unpacks the WORD/epithet; V names WHO/WHAT it denotes); interpretive-lift splits V from G (V identifies, G abstracts or compares). **A-vs-B litmus:** if removing the note would change how you understand the SANSKRIT word or form, it is `A`; if the note instead documents an editorial or transmission decision about the text — an omission, a variant reading, a source attribution, or an interpolation/authenticity verdict — it is `B`.
@@ -82,11 +82,11 @@ For purely realia / geography / historical notes, omit (set to `"P"` as default)
 
 - `K` Кодификатор: the note treats the Sanskrit term as a KEY TECHNICAL CONCEPT
   within a philosophical, cosmological, or ritual system. It explains the term's
-  PLACE WITHIN THE SYSTEM (e.g., «одно из четырёх стремлений человека», «первый
+  PLACE WITHIN THE SYSTEM (e.g., «одно из четырех стремлений человека», «первый
   из пяти элементов», «третья стадия жизни»). Typically 1–2 sentences with
   explicit system-placement language.
   *Example: "Тапас (tapas) — аскетическое подвижничество, порождающее магическую
-  силу. Один из трёх главных инструментов духовного роста."*
+  силу. Один из трех главных инструментов духовного роста."*
 
 - `D` Дискурсивное: discursive elaboration. The note develops the term through
   COMPARISON, HISTORICAL EVOLUTION, PARALLEL TRADITIONS, or multi-sentence

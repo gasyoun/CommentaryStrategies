@@ -137,7 +137,7 @@ confirmed in frontmatter (D resolved). Deltas found:
 2. **Item G under-calls the axis-4 issue.** The K/D semantics conflict *does* touch the
    manuscript: §2.2 uses «кодификатор направления деятельности» in Paribok's own sense
    (term-class, «Парибок 2011: 86») while §2.3 defines «К (K) Кодификатор» as a
-   note-depth value «введённой А. В. Парибком (2011)» — two colliding senses of the same
+   note-depth value «введенной А. В. Парибком (2011)» — two colliding senses of the same
    word, referee-visible at ВЯ. Per [docs/AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md)
    the fix is bounded rewording (§2.3 intro, §7.4, abstract's «П/К/Д по Парибку 2011» →
    provenance-honest phrasing); §2.2's usage is correct and stays. **This becomes a third
