@@ -1,7 +1,17 @@
 import os
 import re
+import sys
+import json
+import time
+import argparse
+import html as _html
+import urllib.request
+import urllib.error
 from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate
+
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
 
 # ==========================================
 # 1. ТРАНСЛИТЕРАТОР (Devanagari -> IAST)
@@ -235,24 +245,181 @@ def generate_lms_markdown(corpus, text_name, base_dir="Sanskrit_Vault"):
     print(f"[{text_name}] База знаний сгенерирована: {len(corpus)} шлок, {len(chapters_data)} лонгридов.")
 
 # ==========================================
-# 6. ГЛАВНЫЙ ЦИКЛ ЗАПУСКА
+# 6. СКРЕЙПЕР ПОЛНОГО КОРПУСА НИЛАКАНТХИ (sanatana.in)
 # ==========================================
-if __name__ == "__main__":
+# Источник: https://sanatana.in/mahabharata/ (проект Sanatana Sampatti /
+# srirangadigital.com). Весь текст-мула вульгаты (Nīlakaṇṭha-recension) вместе с
+# ṭīkā «Bhāratabhāvadīpa» отдаётся постранично AJAX-эндпоинтом
+#   GET /mahabharata/listing/getParvaByPage/{parva}?page={N}
+# Каждая шлока — <div class="shloka" id="P{pp}_U{uu}_A{aaa}_S{sss}"> с одним
+# <p class="shloka_text"> (мула) и 0+ <p class="bhavadeepa"> (глоссы Нилакантхи).
+# Адресация P/U/A/S берётся прямо из id — машиночитаемая нумерация вульгаты.
+
+BASE = "https://sanatana.in/mahabharata"
+PAGE_URL = BASE + "/listing/getParvaByPage/{parva}?page={page}"
+
+# 18 парванов Махабхараты (+ harivamsha — отдельный придаток, по умолчанию НЕ входит).
+PARVAS = [
+    "adiparva", "sabhaparva", "vanaparva", "virataparva", "udyogaparva",
+    "bhishmaparva", "dronaparva", "karnaparva", "shalyaparva", "sauptikaparva",
+    "striparva", "shantiparva", "anushasanaparva", "ashwamedhikaparva",
+    "ashramavasikaparva", "mausalaparva", "mahaprasthanikaparva", "swargarohanaparva",
+]
+HARIVAMSHA = "harivamsha"
+
+_SHLOKA_START = re.compile(
+    r'<div class="shloka[^"]*"\s+id="(P\d+_U\d+_A\d+_S\d+)"\s*>')
+_SHLOKA_TEXT = re.compile(
+    r'<p class="shloka_text[^"]*"[^>]*>(.*?)</p>', re.S)
+_BHAVADEEPA = re.compile(
+    r'<p class="bhavadeepa"[^>]*>(.*?)</p>', re.S)
+_TAG = re.compile(r'<[^>]+>')
+_WS = re.compile(r'[ \t ]+')
+
+
+def _clean_html(fragment):
+    """HTML-фрагмент -> чистый Devanagari-текст (снять теги, <br>->\\n, unescape)."""
+    if not fragment:
+        return ""
+    t = re.sub(r'<br\s*/?>', '\n', fragment, flags=re.I)
+    t = _TAG.sub('', t)          # убрать <span class="uvacha"> и прочие теги, сохранив текст
+    t = _html.unescape(t)
+    t = _WS.sub(' ', t)
+    t = re.sub(r'\s*\n\s*', '\n', t)
+    return t.strip()
+
+
+def fetch_parva_page(parva, page, cache_dir, delay=1.0, timeout=60):
+    """Скачать одну страницу парвана (с дисковым кэшем; пустая страница -> '')."""
+    os.makedirs(cache_dir, exist_ok=True)
+    cache_fp = os.path.join(cache_dir, f"{parva}_p{page:03d}.html")
+    if os.path.exists(cache_fp):
+        with open(cache_fp, encoding="utf-8") as f:
+            return f.read()
+    url = PAGE_URL.format(parva=parva, page=page)
+    req = urllib.request.Request(url, headers={"User-Agent": "csl-research/1.0"})
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                body = r.read().decode("utf-8", "replace")
+            with open(cache_fp, "w", encoding="utf-8") as f:
+                f.write(body)
+            time.sleep(delay)     # вежливость к серверу
+            return body
+        except (urllib.error.URLError, TimeoutError) as e:
+            if attempt == 2:
+                raise
+            time.sleep(2 * (attempt + 1))
+    return ""
+
+
+def parse_page(html_body):
+    """Одна страница -> список шлок [{parva_no,upaparva,adhyaya,shloka,mula,tikas}]."""
+    out = []
+    starts = [(m.start(), m.group(1)) for m in _SHLOKA_START.finditer(html_body)]
+    for i, (pos, sid) in enumerate(starts):
+        end = starts[i + 1][0] if i + 1 < len(starts) else len(html_body)
+        chunk = html_body[pos:end]
+        mt = _SHLOKA_TEXT.search(chunk)
+        mula = _clean_html(mt.group(1)) if mt else ""
+        tikas = [_clean_html(x) for x in _BHAVADEEPA.findall(chunk)]
+        tikas = [t for t in tikas if t]
+        pp, uu, aaa, sss = re.match(
+            r'P(\d+)_U(\d+)_A(\d+)_S(\d+)', sid).groups()
+        out.append({
+            "id": sid,
+            "parva_no": int(pp), "upaparva": int(uu),
+            "adhyaya": int(aaa), "shloka": int(sss),
+            "mula": mula, "tikas": tikas,
+        })
+    return out
+
+
+def scrape_parva(parva, cache_dir, delay=1.0, max_pages=1000):
+    """Итерировать страницы парвана до пустой; вернуть дедуплицированные шлоки."""
+    seen = {}
+    page = 1
+    while page <= max_pages:
+        body = fetch_parva_page(parva, page, cache_dir, delay=delay)
+        rows = parse_page(body) if body and len(body) > 8 else []
+        if not rows:
+            break
+        for r in rows:
+            seen[r["id"]] = r            # дедуп по уникальному P/U/A/S id
+        print(f"  {parva} page {page:3d}: +{len(rows):4d} shlokas (total {len(seen)})")
+        page += 1
+    return list(seen.values())
+
+
+def scrape_all(parvas, out_jsonl, cache_dir, delay=1.0, with_iast=True):
+    """Полный скрейп + разбор -> JSONL (мула + ṭīkā, Devanagari [+ IAST])."""
+    total = tika_total = 0
+    with open(out_jsonl, "w", encoding="utf-8") as out:
+        for parva in parvas:
+            print(f"[{parva}] scraping ...")
+            rows = scrape_parva(parva, cache_dir, delay=delay)
+            rows.sort(key=lambda r: (r["upaparva"], r["adhyaya"], r["shloka"]))
+            nt = sum(1 for r in rows if r["tikas"])
+            total += len(rows); tika_total += nt
+            for r in rows:
+                rec = {
+                    "parva": parva,
+                    "parva_no": r["parva_no"], "upaparva": r["upaparva"],
+                    "adhyaya": r["adhyaya"], "shloka": r["shloka"],
+                    "id": r["id"],
+                    "mula_dev": r["mula"],
+                    "tika_dev": r["tikas"],
+                }
+                if with_iast:
+                    rec["mula_iast"] = devanagari_to_iast(r["mula"])
+                    rec["tika_iast"] = [devanagari_to_iast(t) for t in r["tikas"]]
+                out.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            print(f"[{parva}] {len(rows)} shlokas, {nt} with ṭīkā "
+                  f"({100*nt/len(rows):.1f}%)" if rows else f"[{parva}] EMPTY")
+    print(f"\nTOTAL {total} shlokas, {tika_total} with ṭīkā "
+          f"({100*tika_total/total:.1f}%) -> {out_jsonl}")
+
+
+# ==========================================
+# 7. ГЛАВНЫЙ ЦИКЛ ЗАПУСКА
+# ==========================================
+def _run_lms():
+    """Старый режим: локальные .md эпизоды -> Sanskrit_Vault (LMS/Zettelkasten)."""
     target_file = 'MBh-Nalopakhyanam-Nilakantha.md'
     text_name = "Nalopakhyanam"
-    
     if os.path.exists(target_file):
         print(f"Начат процесс обработки файла: {target_file}...")
-        
-        # 1. Парсинг
         corpus = parse_nilakantha_commentary(target_file)
-        
-        # 2. Извлечение Самас
         extract_and_build_samasas(corpus, text_name=text_name)
-        
-        # 3. Генерация Базы Знаний
         generate_lms_markdown(corpus, text_name=text_name)
-        
         print("\n✅ Выполнение успешно завершено. Проверьте папку 'Sanskrit_Vault'.")
     else:
         print(f"❌ Ошибка: Файл {target_file} не найден в текущей директории.")
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser(
+        description="Nīlakaṇṭha-vulgate Mahābhārata: полный скрейп с sanatana.in "
+                    "или старая LMS-генерация из локальных .md.")
+    sub = ap.add_subparsers(dest="cmd")
+
+    sp = sub.add_parser("scrape", help="Скачать ВЕСЬ корпус Нилакантхи -> JSONL")
+    sp.add_argument("--out", default="nilakantha_vulgate_full.jsonl")
+    sp.add_argument("--cache-dir", default="_cache")
+    sp.add_argument("--delay", type=float, default=1.0, help="пауза между запросами, сек")
+    sp.add_argument("--parvas", nargs="*", default=None,
+                    help="подмножество слугов парванов (по умолчанию все 18)")
+    sp.add_argument("--harivamsha", action="store_true", help="включить харивамшу")
+    sp.add_argument("--no-iast", action="store_true", help="не считать IAST")
+
+    sub.add_parser("lms", help="Старый режим: локальные .md -> Sanskrit_Vault")
+
+    args = ap.parse_args()
+    if args.cmd == "scrape":
+        parvas = args.parvas if args.parvas else list(PARVAS)
+        if args.harivamsha:
+            parvas.append(HARIVAMSHA)
+        scrape_all(parvas, args.out, args.cache_dir,
+                   delay=args.delay, with_iast=not args.no_iast)
+    else:
+        _run_lms()
