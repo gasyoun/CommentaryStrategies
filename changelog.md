@@ -10,6 +10,16 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- `mahabharata-nilakantha/nilakantha_parser.py`: новая подкоманда **`scrape`** — полный
+  скрейпер корпуса Нилакантха-вульгаты (Bhāratabhāvadīpa) с [sanatana.in/mahabharata](https://sanatana.in/mahabharata/)
+  по всем 18 парванам (эндпоинт `getParvaByPage`, адресация P/U/A/S из `id` div.shloka,
+  мула + ṭīkā в Devanagari+IAST → JSONL, дисковый кэш, вежливый rate-limit). Старые функции
+  `parse_nilakantha_commentary`/`devanagari_to_iast` и LMS-режим (подкоманда `lms`) сохранены.
+  Кэш и полный JSONL gitignored (права на сторонний текст — публикация гейтится
+  `/publish-safety-check`). Разблокирует MBH fitted-index адъюдикатор для проверки цитат PWG/MW.
+
 ## [1.8.5] - 2026-07-11
 
 ### Fixed
