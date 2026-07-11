@@ -45,6 +45,7 @@ BOOK = os.path.join(DATA, "sundara_commentary_to_add.json")
 PILOT = os.path.join(DATA, "analysis", "phase2_pilot", "pilot_candidates.json")
 FOOTNOTES = os.path.join(DATA, "edition_footnotes", "candidates.json")
 ARCHIVE_V = os.path.join(DATA, "crosstext", "archive_parallels_vulgate.json")
+GATE_LEDGER = os.path.join(DATA, "apparatus", "gate_ledger.json")
 
 LAYER_LABEL = {
     "tier1": "ярус 1 · Леонов/Костина",
@@ -265,7 +266,50 @@ def coverage_map(verses):
     return cov
 
 
-def build_sarga(sarga, seg, seg_idx, leonov, lexical, pilot, edition, crosstext):
+def load_gate_ledger():
+    """Human final-assembly gate overlay (scripts/apply_apparatus_decisions.py).
+
+    id {layer}:{verse_id}:{idx} -> {action, reviewer, gated_date, edited_note?,
+    reject_reason?}. Empty when no sarga has been gated yet.
+    """
+    if not os.path.exists(GATE_LEDGER):
+        return {}
+    with open(GATE_LEDGER, encoding="utf-8") as fh:
+        return json.load(fh).get("entries", {})
+
+
+def apply_gate(note, ledger):
+    """Overlay a reviewer's gate verdict onto a freshly built apparatus note.
+
+    accept -> «принято <reviewer>»; edit -> reviewer text + «правлено»;
+    reject -> «отклонено <reviewer>» + gate_rejected flag (kept, not dropped, so
+    stats stay stable and the book build can exclude). Gated notes lose their
+    vote control (votable=False). No-op for un-gated ids.
+    """
+    g = ledger.get(note["id"])
+    if not g:
+        return note
+    action = g.get("action")
+    who = g.get("reviewer", "")
+    when = g.get("gated_date", "")
+    note["gate"] = {k: g[k] for k in ("action", "reviewer", "gated_date",
+                                      "reject_reason") if g.get(k)}
+    if action == "accept":
+        note["status"] = f"принято: {who} ({when})"
+    elif action == "edit":
+        if g.get("edited_note"):
+            note["note_ru"] = g["edited_note"]
+            note["gate"]["edited_note"] = g["edited_note"]
+        note["status"] = f"правлено: {who} ({when})"
+    elif action == "reject":
+        note["status"] = f"отклонено: {who} ({when})"
+        note["gate_rejected"] = True
+    note["votable"] = False
+    return note
+
+
+def build_sarga(sarga, seg, seg_idx, leonov, lexical, pilot, edition, crosstext,
+                gate=None):
     verses = sorted((v for v in seg["verses"] if v["sarga"] == sarga),
                     key=lambda v: int(v["verse"]) if str(v["verse"]).isdigit() else 0)
     cov = coverage_map(verses)
@@ -312,6 +356,8 @@ def build_sarga(sarga, seg, seg_idx, leonov, lexical, pilot, edition, crosstext)
                 note = mk_note(layer, vid, i, src)
                 if anchor != vid:
                     note["anchor_verse_id"] = anchor
+                if gate:
+                    apply_gate(note, gate)
                 notes.append(note)
                 stats[layer] += 1
         if not notes:
@@ -353,9 +399,10 @@ def main():
     args = [int(a) for a in sys.argv[1:]] or [35, 36, 37]
     os.makedirs(OUTDIR, exist_ok=True)
     seg, seg_idx, leonov, lexical, pilot, edition, crosstext = load_sources()
+    gate = load_gate_ledger()
     for sarga in args:
         data = build_sarga(sarga, seg, seg_idx, leonov, lexical, pilot,
-                           edition, crosstext)
+                           edition, crosstext, gate=gate)
         jpath = os.path.join(OUTDIR, f"sarga_{sarga:02d}.json")
         with open(jpath, "w", encoding="utf-8") as fh:
             json.dump(data, fh, ensure_ascii=False, indent=2)

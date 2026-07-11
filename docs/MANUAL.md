@@ -1,6 +1,6 @@
 # Руководство: как сейчас устроен CommentaryStrategies (том «Сундараканда» для ЛП)
 
-_Created: 07-07-2026 · Last updated: 10-07-2026_
+_Created: 07-07-2026 · Last updated: 11-07-2026_
 
 Это операторское руководство для трех участников тома — переводчика (М. Леонов),
 первого комментатора и литературного редактора (Е. Костина), второго комментатора и
@@ -67,7 +67,8 @@ _Created: 07-07-2026 · Last updated: 10-07-2026_
   → apply_phase2_decisions.py (графт в data/sundara_ch{N}_commentary_to_add.json + книгу)
   → пересборка: аппарат (build_sarga_apparatus.py) · печатный мастер
     (build_book_apparatus.py, MD+DOCX) · плотность (book_density_stats.py)
-  → сборочный гейт Леонова/Костиной → печать
+  → сборочный гейт Леонова/Костиной (аппарат sarga_NN.html → decisions_sarga_N.json
+    → apply_apparatus_decisions.py → data/apparatus/gate_ledger.json) → печать
 ```
 
 Канонический метод-мануал конвейера:
@@ -100,6 +101,23 @@ python scripts/apply_phase2_decisions.py <файл> --dry-run            # ре�
 требуют явного решения (таблица в выводе); принять непочиненный `flag_anchor`
 (сейчас один: 5.21.19 → вероятно, стих 18) скрипт откажется без `--allow-flagged-anchor`.
 После применения — пересборка тремя командами из §4.
+
+**Сборочный гейт (Леонов/Костина, ярус per-sarga аппарата).** Голосование на
+`sarga_NN.html` (все слои, кроме яруса-1) экспортируется отдельным форматом
+(`decisions_sarga_N.json`, ключи `{слой}:{стих}:{idx}`) и применяется своим
+скриптом — не `apply_phase2_decisions.py`:
+
+```sh
+python scripts/apply_apparatus_decisions.py votes/decisions_sarga_N.json --reviewer Леонов
+python scripts/apply_apparatus_decisions.py <файл> --reviewer Костина --dry-run   # репетиция
+```
+
+Скрипт пишет **оверлей-реестр** [data/apparatus/gate_ledger.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/apparatus/gate_ledger.json)
+(ключ = id ноты аппарата), а не правит общие исходники (`data/lexical/`,
+`data/edition_footnotes/`, `data/crosstext/`). `build_sarga_apparatus.py` читает реестр
+и проставляет статус: `accept` → «принято: Леонов», `edit` → текст рецензента + «правлено»,
+`reject` → «отклонено» + флаг `gate_rejected` (нота остаётся, но помечена). После
+применения — `python scripts/build_sarga_apparatus.py N`.
 
 ## 7. Типовые сценарии (use cases)
 
