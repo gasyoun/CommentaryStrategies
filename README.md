@@ -54,6 +54,7 @@ _Created: 24-04-2026 · Last updated: 11-07-2026_
 | [data/gita_tm_slp1.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/gita_tm_slp1.json) | Кроссвок Гита-TM → SLP1-ключи MW (2 173/2 926 терминов, 74 %) |
 | [data/bs_term_map_slp1.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/bs_term_map_slp1.json) | Философские термины Брахмасутр с глоссами MW (826 терминов) |
 | [data/ys_term_map_slp1.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/ys_term_map_slp1.json) | Философские термины Йогасутр с глоссами MW (582 термина) |
+| [data/typed_link_commentary_citation.tsv](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/typed_link_commentary_citation.tsv) | Type-D-конкорданс `commentary-citation` (Q4.1 пилот, H541): корень → локус Гита-TM, где он цитируется (32 строки, 15 корней) |
 
 Скрипты построения TM:
 
@@ -63,6 +64,28 @@ python scripts/crosswalk_gita_tm.py        # шаг 2: gita_tm_slp1.json
 python scripts/build_sutra_tm.py           # шаги 3–4: bs/ys_term_map_slp1.json
 python scripts/build_sutra_tm.py --corpus ys --report   # только Йогасутры
 ```
+
+**Type-D `commentary-citation` конкорданс (Q4.1 пилот, H541, 11-07-2026):**
+[`data/typed_link_commentary_citation.tsv`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/typed_link_commentary_citation.tsv) —
+первый датасет подтипа `commentary-citation` по
+[`TYPED_LINK_ID_GRAMMAR.md`](https://github.com/gasyoun/Uprava/blob/main/TYPED_LINK_ID_GRAMMAR.md)
+§4c: санскритские корни (`root:<SLP1>`), процитированные в аппарате Гита-TM
+(`commentary:gita-tm:<глава.стих>`). Построен
+[`scripts/build_root_gita_concordance.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_root_gita_concordance.py)
+(регенерируемый, не ручной): корневой якорный инвентарь — 704 SLP1-ключа из
+[`WhitneyRoots/crosswalk/mw_roots.json`](https://github.com/gasyoun/WhitneyRoots/blob/main/crosswalk/mw_roots.json)
+(sibling-репо, 750 MW-корней); сопоставление — общий `TieredMatcher` из
+[`kosha/scripts/concordance_core.py`](https://github.com/gasyoun/kosha/blob/main/scripts/concordance_core.py)
+против `data/gita_tm_slp1.json` (никакого повторного матчера, spec §6.3); локусы стихов
+извлечены из встроенных меток `(BG <гл>.<стих> <код>)` в глоссах `gita_tm.json`. Пилот
+даёт 32 строки / 15 корней, все на тире `exact` (0.7 % от 2 087 SLP1-ключей кроссвока —
+честно и ожидаемо: голые формы корней редко совпадают с номинальными леммами кроссвока
+дословно; `floor`/`relaxed`/`fuzzy` дали 0 совпадений в этом прогоне).
+Провалидировано 0-ошибок против
+[`kosha/scripts/typed_link_lint.py`](https://github.com/gasyoun/kosha/blob/main/scripts/typed_link_lint.py).
+Зарегистрировано по-репозиторно (D2b) — **не** добавлено в
+[`kosha/data/manifest/datasets.json`](https://github.com/gasyoun/kosha/blob/main/data/manifest/datasets.json)
+до релиза Q2.1.
 
 Все четыре TM-файла совместимы с `mw_en_tm.json` (187 506 записей) по ключам SLP1 и готовы
 к подключению в `gen_opt_harness2 --lang en` как слой шастрического обогащения для
