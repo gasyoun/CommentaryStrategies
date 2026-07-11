@@ -1,6 +1,6 @@
 # Метадок: MANUAL.md
 
-_Created: 10-07-2026 · Last updated: 10-07-2026_
+_Created: 10-07-2026 · Last updated: 11-07-2026_
 
 Метадок для [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md).
 Заведен 10-07-2026 — позже субъекта (создан 07-07-2026): в сессии тройки
@@ -68,5 +68,6 @@ _Created: 10-07-2026 · Last updated: 10-07-2026_
 | 07-07-2026 | Первая версия: роли, ярусы, конвейер, листы, apply, use cases, блокеры | H268-контур, [PR #55](https://github.com/gasyoun/CommentaryStrategies/pull/55) |
 | 10-07-2026 | Имя переводчика: «А. Леонов» → «М. Леонов» (×2) | Fable 5 (`claude-fable-5`), H497, [PR #61](https://github.com/gasyoun/CommentaryStrategies/pull/61) |
 | 10-07-2026 | Блок о тройке ролевых руководств в §1 + строка в §8 у персональных issues | Fable 5 (`claude-fable-5`), [PR #66](https://github.com/gasyoun/CommentaryStrategies/pull/66) |
+| 11-07-2026 | §6: сборочный гейт Леонова/Костиной — новый `apply_apparatus_decisions.py` + оверлей `gate_ledger.json`; строка в схеме §4 | Opus 4.8 (`claude-opus-4-8`), H732 |
 
 _Dr. Mārcis Gasūns_
