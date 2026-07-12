@@ -160,7 +160,7 @@ _Created: 01-07-2026 · Last updated: 10-07-2026_
 > **ОБНОВЛЕНО 07-07-2026 (М.Г.): цель ускорена и издательство решено.** Издательство = **ЛП/Наука**;
 > deliverable = **полная камера-реди книга**; горизонт = **≈1 месяц (~07-08-2026)**. Калибровочные решения —
 > [`LP_APPARATUS_DESIGN.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LP_APPARATUS_DESIGN.md);
-> исполнение — [`H268`](https://github.com/gasyoun/Uprava/blob/main/handoffs/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md).
+> исполнение — [`H268`](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md).
 > Целевой черновик 09-2026 ниже — прежняя веха, теперь подчинена камера-реди сроку.
 
 - **Июнь–декабрь 2026 — МГИМО**, рабочий период.
@@ -222,7 +222,7 @@ _Created: 01-07-2026 · Last updated: 10-07-2026_
   книга; (2) плотность = собственные ~37% Леонова (не Гринцер ~25%); (3) максимизировать контрастивный слой
   тик «в „Тилаке“ X / в „Широмани“ Y»; (4) ACL/DH-линза = качество/фильтрация нот + точность выравнивания.
   Канон решений — [`LP_APPARATUS_DESIGN.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LP_APPARATUS_DESIGN.md);
-  исполнение — [`H268`](https://github.com/gasyoun/Uprava/blob/main/handoffs/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md).
+  исполнение — [`H268`](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md).
   Открытые предпосылки (человек): сборочный гейт, шаблон ЛП, полнота перевода 68 песней, судьба помет Костиной.
 - 2026-07-07 (позже) — **H268 машинная фаза ВЫПОЛНЕНА** (Fable 5 `claude-fable-5` оркестрация,
   Sonnet 5 `claude-sonnet-5` ×20 драфтинг + ×3 судьи, ≤3 параллельно): партия 3 на все 58 сарг

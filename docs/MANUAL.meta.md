@@ -26,7 +26,7 @@ _Created: 10-07-2026 · Last updated: 11-07-2026_
 коммит `1e97f19`) в H268-контуре подготовки camera-ready как единый
 операторский документ по итогам машинной фазы. Правки 10-07-2026 — сессия
 тройки руководств, Fable 5 (`claude-fable-5`), handoffs
-[H497](https://github.com/gasyoun/Uprava/blob/main/handoffs/H497-Fable_CommentaryStrategies_leonov_sundarakanda_guide_10.07.26.md)/[H533](https://github.com/gasyoun/Uprava/blob/main/handoffs/H533-Fable_CommentaryStrategies_gasuns_sundarakanda_guide_10.07.26.md).
+[H497](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H497-Fable_CommentaryStrategies_leonov_sundarakanda_guide_10.07.26.md)/[H533](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H533-Fable_CommentaryStrategies_gasuns_sundarakanda_guide_10.07.26.md).
 
 ## Бэклог улучшений (ранжирован)
 

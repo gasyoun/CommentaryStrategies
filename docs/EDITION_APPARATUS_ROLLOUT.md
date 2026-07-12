@@ -33,7 +33,7 @@ and the **Mahābhārata (Nīlakaṇṭha vulgate ↔ BORI critical)**.
 
 The southern jsonls live in [`SamudraManthanam/web/corpus_builder/jsonl/`](https://github.com/gasyoun/SamudraManthanam) (books 1/2/3/5 present; 4/6/7 to be scraped). The GRETIL Baroda critical files (`ram_0N_u.htm`) are **absent for every kāṇḍa** — even Sundara's was lost; only its pre-computed comparison JSON survived. All must be (re)obtained from GRETIL.
 
-## Mahābhārata — Nīlakaṇṭha vulgate ↔ BORI critical ([H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md))
+## Mahābhārata — Nīlakaṇṭha vulgate ↔ BORI critical ([H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md))
 
 | witness | status |
 |---|---|

@@ -2,7 +2,7 @@ _Created: 12-07-2026 · Last updated: 12-07-2026_
 
 # BORI critical Mahābhārata — e-text provenance (the `bori-critical/` witness)
 
-The **Poona / BORI critical edition** electronic text, obtained 12-07-2026 as the missing witness for the MBh Nīlakaṇṭha ↔ critical variant apparatus ([H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md)). The **text itself is gitignored** (`bori-critical/`); this doc is the committed record — same pattern as [`NILAKANTHA_VULGATE_CENSUS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/mahabharata-nilakantha/NILAKANTHA_VULGATE_CENSUS.md) for the vulgate.
+The **Poona / BORI critical edition** electronic text, obtained 12-07-2026 as the missing witness for the MBh Nīlakaṇṭha ↔ critical variant apparatus ([H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md)). The **text itself is gitignored** (`bori-critical/`); this doc is the committed record — same pattern as [`NILAKANTHA_VULGATE_CENSUS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/mahabharata-nilakantha/NILAKANTHA_VULGATE_CENSUS.md) for the vulgate.
 
 ## ⚠️ Rights — local-only, DO NOT redistribute
 
@@ -48,6 +48,6 @@ done
 
 ## Consumer
 
-[H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md) — the MBh comparator (`compare_editions_mbh`) aligns this against `nilakantha_vulgate_full.jsonl` → the MBh variant apparatus via the shared helayo aligner. **Data gate now cleared:** both witnesses are local; only the comparator engineering remains.
+[H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md) — the MBh comparator (`compare_editions_mbh`) aligns this against `nilakantha_vulgate_full.jsonl` → the MBh variant apparatus via the shared helayo aligner. **Data gate now cleared:** both witnesses are local; only the comparator engineering remains.
 
 _Dr. Mārcis Gasūns_

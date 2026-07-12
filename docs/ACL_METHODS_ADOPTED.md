@@ -3,7 +3,7 @@
 _Created: 07-07-2026 · Last updated: 07-07-2026_
 
 > **What this is.** The bounded "focused scan → concrete adoption" record required by
-> [H268](https://github.com/gasyoun/Uprava/blob/main/handoffs/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md)
+> [H268](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md)
 > decision 4: which method families from the ACL Anthology / DH literature were **taken** into the
 > camera-ready pipeline, which were **considered and skipped**, and where each adoption landed in
 > code. This is an engineering adoption memo, not a survey; the eventual method paper (see §4)

@@ -9,7 +9,7 @@ _Created: 11-07-2026 · Last updated: 11-07-2026_
 | Поле | Значение |
 |---|---|
 | Дата прогона | 11-07-2026 |
-| Модель | Fable 5 (`claude-fable-5`), handoff [H673](https://github.com/gasyoun/Uprava/blob/main/handoffs/H673-Fable_CommentaryStrategies_a23-elizarenkova-corpus-annotation_11.07.26.md) |
+| Модель | Fable 5 (`claude-fable-5`), handoff [H673](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H673-Fable_CommentaryStrategies_a23-elizarenkova-corpus-annotation_11.07.26.md) |
 | Санскритская сторона | DCS-срез `dcs_full.sqlite` (репо [VisualDCS](https://github.com/gasyoun/VisualDCS), локальный путь `VisualDCS/src/DCS-data-2026/dcs_full.sqlite`, 5 688 416 токенов, 270 текстов; источник gasyoun/dcs-conllu, коммит `04e0778`, импорт 06-06-2026) |
 | Русская сторона | Sa↔Ru корпус `corpus.db` (репо [SamudraManthanam](https://github.com/gasyoun/SamudraManthanam), локальный путь `SamudraManthanam/web/corpus.db`, 580 552 строки, 152 источника, включая Ригведу и Атхарваведу Елизаренковой помандально) |
 | Сырые счетчики | [article5_false_friends_corpus_annotation.tsv](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article5_false_friends_corpus_annotation.tsv) |

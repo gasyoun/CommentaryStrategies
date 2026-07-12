@@ -8,7 +8,7 @@ _Created: 07-07-2026 · Last updated: 10-07-2026_
 > аппарата для **камера-реди издания Сундараканды** (Рамаяна, кн. V, перевод Леонова/Костиной)
 > в серии **«Литературные памятники» (Наука)**. Это документ-решение (decision record);
 > производственный план и редполитика — в [`COMMENTARY_ROADMAP.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/COMMENTARY_ROADMAP.md),
-> исполнение — в handoff [`H268`](https://github.com/gasyoun/Uprava/blob/main/handoffs/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md) (Fable 5, `claude-fable-5`).
+> исполнение — в handoff [`H268`](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md) (Fable 5, `claude-fable-5`).
 > Все измеренные цифры переводчиков — из [`index.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/index.html)
 > и [`leonov_kostina_commentary_analysis.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/leonov_kostina_commentary_analysis.html)
 > (17 863 размеченных примечаний; цифры Леонова/Костиной помечены «≈», ждут финального машинного подсчета).
@@ -98,13 +98,13 @@ _Created: 07-07-2026 · Last updated: 10-07-2026_
 - **Выравнивание/анкоринг.** Текущая точность pratīka-анкоринга ≈0,889–0,896 ([`sa_align.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/sa_align.py)).
   Взять из ACL выравнивание предложений/слов и citation/quotation-detection → поднять >0,90 (нота на неверном стихе
   в ЛП-томе — жесткий дефект).
-- **Прежде чем строить свое** — прочесть родственный handoff [`H265`](https://github.com/gasyoun/Uprava/blob/main/handoffs/H265-Fable_SanskritLexicography_acl-anthology-dh-standards-reverse-dict_07.07.26.md)
+- **Прежде чем строить свое** — прочесть родственный handoff [`H265`](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H265-Fable_SanskritLexicography_acl-anthology-dh-standards-reverse-dict_07.07.26.md)
   (ACL-совместимость + DH-стандарты публикации данных для обратного словаря) и канонический стек `sanskrit-util` /
   [`SHARED_CODE.md`](https://github.com/gasyoun/github-spine/blob/main/SHARED_CODE.md) — не изобретать выравниватель заново.
 
 ## 7. Исполнение
 
-Полное производственное исполнение — [`H268`](https://github.com/gasyoun/Uprava/blob/main/handoffs/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md)
+Полное производственное исполнение — [`H268`](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H268-Fable_CommentaryStrategies_sundara_LP_camera_ready_07.07.26.md)
 (Fable 5 оркестрация · Sonnet 5 драфтинг). Открытые предпосылки, требующие М.Г./Леонова/Костиной (не агент):
 сборочный гейт `review_required`-нот · типографский шаблон ЛП + формат вывода · полнота перевода всех 68 песней ·
 судьба помет Костиной в печати · скан Гитапресс (вне критического пути) — все в §8 хэндоффа.

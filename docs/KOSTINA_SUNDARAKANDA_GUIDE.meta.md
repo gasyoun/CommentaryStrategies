@@ -19,7 +19,7 @@ _Created: 10-07-2026 · Last updated: 10-07-2026_
 ## Происхождение
 
 Написано 10-07-2026, Fable 5 (`claude-fable-5`), handoff
-[H517](https://github.com/gasyoun/Uprava/blob/main/handoffs/H517-Fable_CommentaryStrategies_kostina_sundarakanda_guide_10.07.26.md),
+[H517](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H517-Fable_CommentaryStrategies_kostina_sundarakanda_guide_10.07.26.md),
 по решению МГ: вычитку леоновского руководства Костиной отменить, вместо
 нее — отдельное руководство под ее роль. Фактура — из
 [issue №57](https://github.com/gasyoun/CommentaryStrategies/issues/57),

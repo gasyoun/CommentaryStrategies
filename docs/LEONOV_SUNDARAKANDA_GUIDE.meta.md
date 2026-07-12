@@ -20,7 +20,7 @@ _Created: 10-07-2026 · Last updated: 10-07-2026 (второе обновлен�
 ## Происхождение
 
 Написано 10-07-2026, Fable 5 (`claude-fable-5`), handoff
-[H497](https://github.com/gasyoun/Uprava/blob/main/handoffs/H497-Fable_CommentaryStrategies_leonov_sundarakanda_guide_10.07.26.md),
+[H497](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H497-Fable_CommentaryStrategies_leonov_sundarakanda_guide_10.07.26.md),
 по запросу МГ («Леонов не понимает, что пошагово делать»). Фактура — из
 [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md),
 [docs/COMMENTARY_ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/COMMENTARY_ROADMAP.md),

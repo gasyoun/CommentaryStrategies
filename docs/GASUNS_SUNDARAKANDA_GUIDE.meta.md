@@ -21,7 +21,7 @@ _Created: 10-07-2026 · Last updated: 10-07-2026_
 ## Происхождение
 
 Написано 10-07-2026, Fable 5 (`claude-fable-5`), handoff
-[H533](https://github.com/gasyoun/Uprava/blob/main/handoffs/H533-Fable_CommentaryStrategies_gasuns_sundarakanda_guide_10.07.26.md),
+[H533](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H533-Fable_CommentaryStrategies_gasuns_sundarakanda_guide_10.07.26.md),
 по запросу МГ («А Гасунсу самому руководство по книге есть? Напиши и мне»)
 — завершение тройки ролевых руководств (H497 Леонов, H517 Костина).
 Фактура — [issue №56](https://github.com/gasyoun/CommentaryStrategies/issues/56),

@@ -2,7 +2,7 @@
 
 _Created: 12-07-2026 · Last updated: 12-07-2026_
 
-> Пилот [H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md),
+> Пилот [H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md),
 > зеркалирует пайплайн Сундараканды ([`data/edition_comparison/`](../../edition_comparison/README.md),
 > [`docs/EDITION_APPARATUS_ROLLOUT.md`](../../../docs/EDITION_APPARATUS_ROLLOUT.md)) на Махабхарату.
 > Построено [`scripts/compare_editions_mbh.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/compare_editions_mbh.py)
