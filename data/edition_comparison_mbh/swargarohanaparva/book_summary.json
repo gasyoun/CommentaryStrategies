@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "generated_by": "scripts/compare_editions_mbh.py",
+    "critical": "BORI/Poona critical edition (MBh18.txt, John Smith/Tokunaga e-text)",
+    "vulgate": "Nilakantha vulgate (sanatana.in scrape, mula only)",
+    "parva": "swargarohanaparva",
+    "parva_no": 18,
+    "method": "content alignment of canonicalized IAST verses (difflib), book-level",
+    "canon_backend": "sanskrit_util",
+    "canon": "sanskrit_util.nfold (diacritics/length stripped, nasals folded->n)"
+  },
+  "book_totals": {
+    "critical_verses": 194,
+    "vulgate_verses": 316,
+    "delta_vulgate_minus_critical": 122,
+    "critical_adhyayas": 5,
+    "vulgate_adhyayas": 7,
+    "identical_verses": 6,
+    "variant_verses": 173,
+    "fuzzy_paired_verses": 2,
+    "vulgate_only_verses": 137,
+    "vulgate_structural_absence": 125,
+    "vulgate_reworded": 12,
+    "critical_only_verses": 15,
+    "transposed_vulgate_verses": 0,
+    "transposed_critical_verses": 0,
+    "vulgate_only_runs": 20,
+    "vulgate_extra_adhyayas": [
+      6,
+      7
+    ]
+  },
+  "per_adhyaya_aligned": [
+    {
+      "critical_adhyaya": 1,
+      "critical_verses": 26,
+      "vulgate_adhyaya": 1,
+      "vulgate_verses": 26,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 2,
+      "critical_verses": 54,
+      "vulgate_adhyaya": 2,
+      "vulgate_verses": 54,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 3,
+      "critical_verses": 41,
+      "vulgate_adhyaya": 3,
+      "vulgate_verses": 44,
+      "delta_vulgate_minus_critical": 3
+    },
+    {
+      "critical_adhyaya": 4,
+      "critical_verses": 19,
+      "vulgate_adhyaya": 4,
+      "vulgate_verses": 23,
+      "delta_vulgate_minus_critical": 4
+    },
+    {
+      "critical_adhyaya": 5,
+      "critical_verses": 54,
+      "vulgate_adhyaya": 5,
+      "vulgate_verses": 68,
+      "delta_vulgate_minus_critical": 14
+    }
+  ],
+  "vulgate_extra_adhyayas": [
+    6,
+    7
+  ],
+  "per_adhyaya_by_number_RAW": [
+    {
+      "adhyaya": 1,
+      "critical_verses": 26,
+      "vulgate_verses": 26,
+      "delta_vulgate_minus_critical": 0,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 2,
+      "critical_verses": 54,
+      "vulgate_verses": 54,
+      "delta_vulgate_minus_critical": 0,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 3,
+      "critical_verses": 41,
+      "vulgate_verses": 44,
+      "delta_vulgate_minus_critical": 3,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 4,
+      "critical_verses": 19,
+      "vulgate_verses": 23,
+      "delta_vulgate_minus_critical": 4,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 5,
+      "critical_verses": 54,
+      "vulgate_verses": 68,
+      "delta_vulgate_minus_critical": 14,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 6,
+      "critical_verses": 0,
+      "vulgate_verses": 90,
+      "delta_vulgate_minus_critical": 90,
+      "only_in_one_edition": true
+    },
+    {
+      "adhyaya": 7,
+      "critical_verses": 0,
+      "vulgate_verses": 11,
+      "delta_vulgate_minus_critical": 11,
+      "only_in_one_edition": true
+    }
+  ],
+  "_caveat": "Use per_adhyaya_aligned (adhyayas matched by verse content). per_adhyaya_by_number_RAW compares by adhyaya NUMBER and is misleading once numbering diverges. identical/variant/only counts are content-based; near-identical verses with minor orthographic/sandhi differences inflate 'variant' and 'only' buckets — the reliable absence signal is the large contiguous vulgate_only runs."
+}

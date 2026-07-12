@@ -1,0 +1,162 @@
+{
+  "_meta": {
+    "generated_by": "scripts/compare_editions_mbh.py",
+    "critical": "BORI/Poona critical edition (MBh16.txt, John Smith/Tokunaga e-text)",
+    "vulgate": "Nilakantha vulgate (sanatana.in scrape, mula only)",
+    "parva": "mausalaparva",
+    "parva_no": 16,
+    "method": "content alignment of canonicalized IAST verses (difflib), book-level",
+    "canon_backend": "sanskrit_util",
+    "canon": "sanskrit_util.nfold (diacritics/length stripped, nasals folded->n)"
+  },
+  "book_totals": {
+    "critical_verses": 273,
+    "vulgate_verses": 287,
+    "delta_vulgate_minus_critical": 14,
+    "critical_adhyayas": 9,
+    "vulgate_adhyayas": 8,
+    "identical_verses": 3,
+    "variant_verses": 200,
+    "fuzzy_paired_verses": 1,
+    "vulgate_only_verses": 84,
+    "vulgate_structural_absence": 44,
+    "vulgate_reworded": 40,
+    "critical_only_verses": 70,
+    "transposed_vulgate_verses": 0,
+    "transposed_critical_verses": 0,
+    "vulgate_only_runs": 15,
+    "vulgate_extra_adhyayas": []
+  },
+  "per_adhyaya_aligned": [
+    {
+      "critical_adhyaya": 1,
+      "critical_verses": 11,
+      "vulgate_adhyaya": 1,
+      "vulgate_verses": 31,
+      "delta_vulgate_minus_critical": 20
+    },
+    {
+      "critical_adhyaya": 2,
+      "critical_verses": 20,
+      "vulgate_adhyaya": 1,
+      "vulgate_verses": 31,
+      "delta_vulgate_minus_critical": 11
+    },
+    {
+      "critical_adhyaya": 3,
+      "critical_verses": 22,
+      "vulgate_adhyaya": 2,
+      "vulgate_verses": 24,
+      "delta_vulgate_minus_critical": 2
+    },
+    {
+      "critical_adhyaya": 4,
+      "critical_verses": 46,
+      "vulgate_adhyaya": 3,
+      "vulgate_verses": 47,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 5,
+      "critical_verses": 25,
+      "vulgate_adhyaya": 4,
+      "vulgate_verses": 28,
+      "delta_vulgate_minus_critical": 3
+    },
+    {
+      "critical_adhyaya": 6,
+      "critical_verses": 15,
+      "vulgate_adhyaya": 5,
+      "vulgate_verses": 15,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 7,
+      "critical_verses": 22,
+      "vulgate_adhyaya": 6,
+      "vulgate_verses": 28,
+      "delta_vulgate_minus_critical": 6
+    },
+    {
+      "critical_adhyaya": 8,
+      "critical_verses": 74,
+      "vulgate_adhyaya": 7,
+      "vulgate_verses": 76,
+      "delta_vulgate_minus_critical": 2
+    },
+    {
+      "critical_adhyaya": 9,
+      "critical_verses": 38,
+      "vulgate_adhyaya": 8,
+      "vulgate_verses": 38,
+      "delta_vulgate_minus_critical": 0
+    }
+  ],
+  "vulgate_extra_adhyayas": [],
+  "per_adhyaya_by_number_RAW": [
+    {
+      "adhyaya": 1,
+      "critical_verses": 11,
+      "vulgate_verses": 31,
+      "delta_vulgate_minus_critical": 20,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 2,
+      "critical_verses": 20,
+      "vulgate_verses": 24,
+      "delta_vulgate_minus_critical": 4,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 3,
+      "critical_verses": 22,
+      "vulgate_verses": 47,
+      "delta_vulgate_minus_critical": 25,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 4,
+      "critical_verses": 46,
+      "vulgate_verses": 28,
+      "delta_vulgate_minus_critical": -18,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 5,
+      "critical_verses": 25,
+      "vulgate_verses": 15,
+      "delta_vulgate_minus_critical": -10,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 6,
+      "critical_verses": 15,
+      "vulgate_verses": 28,
+      "delta_vulgate_minus_critical": 13,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 7,
+      "critical_verses": 22,
+      "vulgate_verses": 76,
+      "delta_vulgate_minus_critical": 54,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 8,
+      "critical_verses": 74,
+      "vulgate_verses": 38,
+      "delta_vulgate_minus_critical": -36,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 9,
+      "critical_verses": 38,
+      "vulgate_verses": 0,
+      "delta_vulgate_minus_critical": -38,
+      "only_in_one_edition": true
+    }
+  ],
+  "_caveat": "Use per_adhyaya_aligned (adhyayas matched by verse content). per_adhyaya_by_number_RAW compares by adhyaya NUMBER and is misleading once numbering diverges. identical/variant/only counts are content-based; near-identical verses with minor orthographic/sandhi differences inflate 'variant' and 'only' buckets — the reliable absence signal is the large contiguous vulgate_only runs."
+}

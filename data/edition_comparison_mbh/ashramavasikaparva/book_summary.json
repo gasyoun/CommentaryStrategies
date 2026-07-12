@@ -1,0 +1,694 @@
+{
+  "_meta": {
+    "generated_by": "scripts/compare_editions_mbh.py",
+    "critical": "BORI/Poona critical edition (MBh15.txt, John Smith/Tokunaga e-text)",
+    "vulgate": "Nilakantha vulgate (sanatana.in scrape, mula only)",
+    "parva": "ashramavasikaparva",
+    "parva_no": 15,
+    "method": "content alignment of canonicalized IAST verses (difflib), book-level",
+    "canon_backend": "sanskrit_util",
+    "canon": "sanskrit_util.nfold (diacritics/length stripped, nasals folded->n)"
+  },
+  "book_totals": {
+    "critical_verses": 1062,
+    "vulgate_verses": 1088,
+    "delta_vulgate_minus_critical": 26,
+    "critical_adhyayas": 47,
+    "vulgate_adhyayas": 39,
+    "identical_verses": 19,
+    "variant_verses": 820,
+    "fuzzy_paired_verses": 1,
+    "vulgate_only_verses": 249,
+    "vulgate_structural_absence": 124,
+    "vulgate_reworded": 125,
+    "critical_only_verses": 223,
+    "transposed_vulgate_verses": 0,
+    "transposed_critical_verses": 0,
+    "vulgate_only_runs": 37,
+    "vulgate_extra_adhyayas": []
+  },
+  "per_adhyaya_aligned": [
+    {
+      "critical_adhyaya": 1,
+      "critical_verses": 25,
+      "vulgate_adhyaya": 1,
+      "vulgate_verses": 27,
+      "delta_vulgate_minus_critical": 2
+    },
+    {
+      "critical_adhyaya": 2,
+      "critical_verses": 13,
+      "vulgate_adhyaya": 2,
+      "vulgate_verses": 30,
+      "delta_vulgate_minus_critical": 17
+    },
+    {
+      "critical_adhyaya": 3,
+      "critical_verses": 17,
+      "vulgate_adhyaya": 2,
+      "vulgate_verses": 30,
+      "delta_vulgate_minus_critical": 13
+    },
+    {
+      "critical_adhyaya": 4,
+      "critical_verses": 15,
+      "vulgate_adhyaya": 3,
+      "vulgate_verses": 87,
+      "delta_vulgate_minus_critical": 72
+    },
+    {
+      "critical_adhyaya": 5,
+      "critical_verses": 23,
+      "vulgate_adhyaya": 3,
+      "vulgate_verses": 87,
+      "delta_vulgate_minus_critical": 64
+    },
+    {
+      "critical_adhyaya": 6,
+      "critical_verses": 28,
+      "vulgate_adhyaya": 3,
+      "vulgate_verses": 87,
+      "delta_vulgate_minus_critical": 59
+    },
+    {
+      "critical_adhyaya": 7,
+      "critical_verses": 19,
+      "vulgate_adhyaya": 3,
+      "vulgate_verses": 87,
+      "delta_vulgate_minus_critical": 68
+    },
+    {
+      "critical_adhyaya": 8,
+      "critical_verses": 22,
+      "vulgate_adhyaya": 4,
+      "vulgate_verses": 22,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 9,
+      "critical_verses": 26,
+      "vulgate_adhyaya": 5,
+      "vulgate_verses": 43,
+      "delta_vulgate_minus_critical": 17
+    },
+    {
+      "critical_adhyaya": 10,
+      "critical_verses": 16,
+      "vulgate_adhyaya": 5,
+      "vulgate_verses": 43,
+      "delta_vulgate_minus_critical": 27
+    },
+    {
+      "critical_adhyaya": 11,
+      "critical_verses": 19,
+      "vulgate_adhyaya": 6,
+      "vulgate_verses": 20,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 12,
+      "critical_verses": 23,
+      "vulgate_adhyaya": 7,
+      "vulgate_verses": 23,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 13,
+      "critical_verses": 22,
+      "vulgate_adhyaya": 8,
+      "vulgate_verses": 24,
+      "delta_vulgate_minus_critical": 2
+    },
+    {
+      "critical_adhyaya": 14,
+      "critical_verses": 17,
+      "vulgate_adhyaya": 9,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 15,
+      "critical_verses": 26,
+      "vulgate_adhyaya": 10,
+      "vulgate_verses": 53,
+      "delta_vulgate_minus_critical": 27
+    },
+    {
+      "critical_adhyaya": 16,
+      "critical_verses": 27,
+      "vulgate_adhyaya": 10,
+      "vulgate_verses": 53,
+      "delta_vulgate_minus_critical": 26
+    },
+    {
+      "critical_adhyaya": 17,
+      "critical_verses": 23,
+      "vulgate_adhyaya": 11,
+      "vulgate_verses": 25,
+      "delta_vulgate_minus_critical": 2
+    },
+    {
+      "critical_adhyaya": 18,
+      "critical_verses": 12,
+      "vulgate_adhyaya": 12,
+      "vulgate_verses": 13,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 19,
+      "critical_verses": 15,
+      "vulgate_adhyaya": 13,
+      "vulgate_verses": 15,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 20,
+      "critical_verses": 17,
+      "vulgate_adhyaya": 14,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 21,
+      "critical_verses": 13,
+      "vulgate_adhyaya": 15,
+      "vulgate_verses": 13,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 22,
+      "critical_verses": 32,
+      "vulgate_adhyaya": 16,
+      "vulgate_verses": 32,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 23,
+      "critical_verses": 21,
+      "vulgate_adhyaya": 17,
+      "vulgate_verses": 21,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 24,
+      "critical_verses": 24,
+      "vulgate_adhyaya": 18,
+      "vulgate_verses": 25,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 25,
+      "critical_verses": 18,
+      "vulgate_adhyaya": 19,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 26,
+      "critical_verses": 22,
+      "vulgate_adhyaya": 20,
+      "vulgate_verses": 38,
+      "delta_vulgate_minus_critical": 16
+    },
+    {
+      "critical_adhyaya": 27,
+      "critical_verses": 16,
+      "vulgate_adhyaya": 20,
+      "vulgate_verses": 38,
+      "delta_vulgate_minus_critical": 22
+    },
+    {
+      "critical_adhyaya": 28,
+      "critical_verses": 16,
+      "vulgate_adhyaya": 21,
+      "vulgate_verses": 16,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 29,
+      "critical_verses": 26,
+      "vulgate_adhyaya": 22,
+      "vulgate_verses": 26,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 30,
+      "critical_verses": 18,
+      "vulgate_adhyaya": 23,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 31,
+      "critical_verses": 20,
+      "vulgate_adhyaya": 24,
+      "vulgate_verses": 20,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 32,
+      "critical_verses": 18,
+      "vulgate_adhyaya": 25,
+      "vulgate_verses": 19,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 33,
+      "critical_verses": 37,
+      "vulgate_adhyaya": 26,
+      "vulgate_verses": 38,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 34,
+      "critical_verses": 26,
+      "vulgate_adhyaya": 27,
+      "vulgate_verses": 26,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 35,
+      "critical_verses": 25,
+      "vulgate_adhyaya": 28,
+      "vulgate_verses": 25,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 36,
+      "critical_verses": 33,
+      "vulgate_adhyaya": 29,
+      "vulgate_verses": 52,
+      "delta_vulgate_minus_critical": 19
+    },
+    {
+      "critical_adhyaya": 37,
+      "critical_verses": 18,
+      "vulgate_adhyaya": 29,
+      "vulgate_verses": 52,
+      "delta_vulgate_minus_critical": 34
+    },
+    {
+      "critical_adhyaya": 38,
+      "critical_verses": 23,
+      "vulgate_adhyaya": 30,
+      "vulgate_verses": 24,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 39,
+      "critical_verses": 24,
+      "vulgate_adhyaya": 31,
+      "vulgate_verses": 25,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 40,
+      "critical_verses": 21,
+      "vulgate_adhyaya": 32,
+      "vulgate_verses": 21,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 41,
+      "critical_verses": 28,
+      "vulgate_adhyaya": 33,
+      "vulgate_verses": 31,
+      "delta_vulgate_minus_critical": 3
+    },
+    {
+      "critical_adhyaya": 42,
+      "critical_verses": 17,
+      "vulgate_adhyaya": 34,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 43,
+      "critical_verses": 18,
+      "vulgate_adhyaya": 35,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": 0
+    },
+    {
+      "critical_adhyaya": 44,
+      "critical_verses": 52,
+      "vulgate_adhyaya": 36,
+      "vulgate_verses": 53,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 45,
+      "critical_verses": 44,
+      "vulgate_adhyaya": 37,
+      "vulgate_verses": 45,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 46,
+      "critical_verses": 20,
+      "vulgate_adhyaya": 38,
+      "vulgate_verses": 21,
+      "delta_vulgate_minus_critical": 1
+    },
+    {
+      "critical_adhyaya": 47,
+      "critical_verses": 27,
+      "vulgate_adhyaya": 39,
+      "vulgate_verses": 27,
+      "delta_vulgate_minus_critical": 0
+    }
+  ],
+  "vulgate_extra_adhyayas": [],
+  "per_adhyaya_by_number_RAW": [
+    {
+      "adhyaya": 1,
+      "critical_verses": 25,
+      "vulgate_verses": 27,
+      "delta_vulgate_minus_critical": 2,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 2,
+      "critical_verses": 13,
+      "vulgate_verses": 30,
+      "delta_vulgate_minus_critical": 17,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 3,
+      "critical_verses": 17,
+      "vulgate_verses": 87,
+      "delta_vulgate_minus_critical": 70,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 4,
+      "critical_verses": 15,
+      "vulgate_verses": 22,
+      "delta_vulgate_minus_critical": 7,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 5,
+      "critical_verses": 23,
+      "vulgate_verses": 43,
+      "delta_vulgate_minus_critical": 20,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 6,
+      "critical_verses": 28,
+      "vulgate_verses": 20,
+      "delta_vulgate_minus_critical": -8,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 7,
+      "critical_verses": 19,
+      "vulgate_verses": 23,
+      "delta_vulgate_minus_critical": 4,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 8,
+      "critical_verses": 22,
+      "vulgate_verses": 24,
+      "delta_vulgate_minus_critical": 2,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 9,
+      "critical_verses": 26,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": -8,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 10,
+      "critical_verses": 16,
+      "vulgate_verses": 53,
+      "delta_vulgate_minus_critical": 37,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 11,
+      "critical_verses": 19,
+      "vulgate_verses": 25,
+      "delta_vulgate_minus_critical": 6,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 12,
+      "critical_verses": 23,
+      "vulgate_verses": 13,
+      "delta_vulgate_minus_critical": -10,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 13,
+      "critical_verses": 22,
+      "vulgate_verses": 15,
+      "delta_vulgate_minus_critical": -7,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 14,
+      "critical_verses": 17,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": 1,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 15,
+      "critical_verses": 26,
+      "vulgate_verses": 13,
+      "delta_vulgate_minus_critical": -13,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 16,
+      "critical_verses": 27,
+      "vulgate_verses": 32,
+      "delta_vulgate_minus_critical": 5,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 17,
+      "critical_verses": 23,
+      "vulgate_verses": 21,
+      "delta_vulgate_minus_critical": -2,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 18,
+      "critical_verses": 12,
+      "vulgate_verses": 25,
+      "delta_vulgate_minus_critical": 13,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 19,
+      "critical_verses": 15,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": 3,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 20,
+      "critical_verses": 17,
+      "vulgate_verses": 38,
+      "delta_vulgate_minus_critical": 21,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 21,
+      "critical_verses": 13,
+      "vulgate_verses": 16,
+      "delta_vulgate_minus_critical": 3,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 22,
+      "critical_verses": 32,
+      "vulgate_verses": 26,
+      "delta_vulgate_minus_critical": -6,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 23,
+      "critical_verses": 21,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": -3,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 24,
+      "critical_verses": 24,
+      "vulgate_verses": 20,
+      "delta_vulgate_minus_critical": -4,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 25,
+      "critical_verses": 18,
+      "vulgate_verses": 19,
+      "delta_vulgate_minus_critical": 1,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 26,
+      "critical_verses": 22,
+      "vulgate_verses": 38,
+      "delta_vulgate_minus_critical": 16,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 27,
+      "critical_verses": 16,
+      "vulgate_verses": 26,
+      "delta_vulgate_minus_critical": 10,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 28,
+      "critical_verses": 16,
+      "vulgate_verses": 25,
+      "delta_vulgate_minus_critical": 9,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 29,
+      "critical_verses": 26,
+      "vulgate_verses": 52,
+      "delta_vulgate_minus_critical": 26,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 30,
+      "critical_verses": 18,
+      "vulgate_verses": 24,
+      "delta_vulgate_minus_critical": 6,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 31,
+      "critical_verses": 20,
+      "vulgate_verses": 25,
+      "delta_vulgate_minus_critical": 5,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 32,
+      "critical_verses": 18,
+      "vulgate_verses": 21,
+      "delta_vulgate_minus_critical": 3,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 33,
+      "critical_verses": 37,
+      "vulgate_verses": 31,
+      "delta_vulgate_minus_critical": -6,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 34,
+      "critical_verses": 26,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": -8,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 35,
+      "critical_verses": 25,
+      "vulgate_verses": 18,
+      "delta_vulgate_minus_critical": -7,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 36,
+      "critical_verses": 33,
+      "vulgate_verses": 53,
+      "delta_vulgate_minus_critical": 20,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 37,
+      "critical_verses": 18,
+      "vulgate_verses": 45,
+      "delta_vulgate_minus_critical": 27,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 38,
+      "critical_verses": 23,
+      "vulgate_verses": 21,
+      "delta_vulgate_minus_critical": -2,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 39,
+      "critical_verses": 24,
+      "vulgate_verses": 27,
+      "delta_vulgate_minus_critical": 3,
+      "only_in_one_edition": false
+    },
+    {
+      "adhyaya": 40,
+      "critical_verses": 21,
+      "vulgate_verses": 0,
+      "delta_vulgate_minus_critical": -21,
+      "only_in_one_edition": true
+    },
+    {
+      "adhyaya": 41,
+      "critical_verses": 28,
+      "vulgate_verses": 0,
+      "delta_vulgate_minus_critical": -28,
+      "only_in_one_edition": true
+    },
+    {
+      "adhyaya": 42,
+      "critical_verses": 17,
+      "vulgate_verses": 0,
+      "delta_vulgate_minus_critical": -17,
+      "only_in_one_edition": true
+    },
+    {
+      "adhyaya": 43,
+      "critical_verses": 18,
+      "vulgate_verses": 0,
+      "delta_vulgate_minus_critical": -18,
+      "only_in_one_edition": true
+    },
+    {
+      "adhyaya": 44,
+      "critical_verses": 52,
+      "vulgate_verses": 0,
+      "delta_vulgate_minus_critical": -52,
+      "only_in_one_edition": true
+    },
+    {
+      "adhyaya": 45,
+      "critical_verses": 44,
+      "vulgate_verses": 0,
+      "delta_vulgate_minus_critical": -44,
+      "only_in_one_edition": true
+    },
+    {
+      "adhyaya": 46,
+      "critical_verses": 20,
+      "vulgate_verses": 0,
+      "delta_vulgate_minus_critical": -20,
+      "only_in_one_edition": true
+    },
+    {
+      "adhyaya": 47,
+      "critical_verses": 27,
+      "vulgate_verses": 0,
+      "delta_vulgate_minus_critical": -27,
+      "only_in_one_edition": true
+    }
+  ],
+  "_caveat": "Use per_adhyaya_aligned (adhyayas matched by verse content). per_adhyaya_by_number_RAW compares by adhyaya NUMBER and is misleading once numbering diverges. identical/variant/only counts are content-based; near-identical verses with minor orthographic/sandhi differences inflate 'variant' and 'only' buckets — the reliable absence signal is the large contiguous vulgate_only runs."
+}
