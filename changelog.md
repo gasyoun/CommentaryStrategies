@@ -10,6 +10,17 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **MBh edition-apparatus rollout — Virataparva (parva 4, H802, [PR #88](https://github.com/gasyoun/CommentaryStrategies/pull/88)).**
+  Continuation of H784: same `compare_editions_mbh.py` + `build_edition_apparatus.py`
+  pipeline, no script changes. 1824 critical vs 2270 vulgate verses (vulgate count matches
+  the independent census exactly). 48 identical / 1652 variant / 124 critical-only. 570
+  vulgate-only (464 true structural absence / 106 reworded). Variant apparatus: 1285 clean
+  pairs → 4032 loci across 67 adhyayas. Data: `data/edition_comparison_mbh/virataparva/`.
+  Rights posture (bulk verbatim text gitignored/local-only, only aggregates + short loci
+  committed) confirmed standing for the rest of the 18-parva rollout.
+
 ## [1.9.0] - 2026-07-12
 
 ### Added
