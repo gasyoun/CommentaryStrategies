@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.9.0] - 2026-07-12
+
 ### Added
 
 - `mahabharata-nilakantha/nilakantha_parser.py`: новая подкоманда **`scrape`** — полный
