@@ -10,6 +10,21 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **MBh edition-apparatus rollout complete — all 18 parvas (H804, [PR #92](https://github.com/gasyoun/CommentaryStrategies/pull/92)).**
+  Completes the rollout begun at H784 (Vanaparva pilot) and continued at H802 (Virataparva):
+  ran the same `compare_editions_mbh.py` + `build_edition_apparatus.py` pipeline for the
+  remaining 16 parvas via a new batch driver, `scripts/run_all_mbh_parvas.py`. All 16 ran with
+  zero errors; every parva's vulgate verse count matched
+  [NILAKANTHA_VULGATE_CENSUS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/mahabharata-nilakantha/NILAKANTHA_VULGATE_CENSUS.md)
+  exactly except anushasanaparva and shantiparva, both fully explained by the census's own
+  documented "231 empty-mula records" filter (230+1=231, exact accounting). 119,552 new
+  apparatus loci; **142,283 total apparatus loci across the complete 18-parva Mahābhārata
+  rollout**. Data: `data/edition_comparison_mbh/<parva>/`. Rights posture (bulk verbatim text
+  gitignored/local-only per parva; only aggregates + short excerpted apparatus loci
+  committed) held for all 16.
+
 ## [1.9.1] - 2026-07-12
 
 ### Added
