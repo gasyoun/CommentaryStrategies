@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.9.1] - 2026-07-12
+
 ### Added
 
 - **MBh edition-apparatus rollout — Virataparva (parva 4, H802, [PR #88](https://github.com/gasyoun/CommentaryStrategies/pull/88)).**
