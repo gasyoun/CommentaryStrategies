@@ -38,7 +38,15 @@ sys.stderr.reconfigure(encoding="utf-8")
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO_DEFAULT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from spike_helayo_align import clean, gotoh, collapse_loci  # noqa: E402
+from spike_helayo_align import clean, align_aksara  # noqa: E402
+# H776: akṣara-level aligner (align_aksara) replaces the char-level
+# gotoh+collapse_loci pair used through H784/H802/H804 -- same substitution
+# matrix underneath (nested inside align_aksara's per-syllable scoring), but
+# loci can no longer split mid-syllable. Verified on the Sundara spike sargas
+# (docs/SPIKE_HELAYO_VS_DIFFLIB_SUNDARA.md problem cases 5.3.11/5.3.19): fixes
+# the spurious-adjacency-locus artifacts, ~30-35% fewer (more coherent) loci
+# on cases that were already fragmented, byte-identical loci on cases that
+# were already clean at char level.
 
 
 def verse_key(vid):
@@ -112,8 +120,7 @@ def main():
             reworded.append({"critical": v["critical"], ok: v[ok],
                              "difflib_similarity": sim})
             continue
-        _, aa, bb = gotoh(ct, st)
-        loci = collapse_loci(aa, bb, ct, st)
+        _, _, loci = align_aksara(ct, st)
         app = [{"crit": c or "∅", ok: s or "∅"}
                for c, s in loci if substantive(c, s)]
         if not app:
@@ -135,8 +142,9 @@ def main():
             "title": args.title,
             "generated_by": "build_edition_apparatus.py (helayo-style Gotoh aligner)",
             "layer": "variant readings on aligned verses (NOT whole-passage absences)",
-            "aligner": "char-level Gotoh affine-gap + consonant/vowel/modifier "
-                       "substitution matrix; loci word-expanded",
+            "aligner": "akṣara-level Gotoh affine-gap (H776) + consonant/vowel/modifier "
+                       "substitution matrix nested per-syllable; loci word-expanded "
+                       "for display",
             "witnesses": 2,
             "other_key": ok,
             "note": "2-witness collation; Center-Star MSA advantage latent until a "
@@ -180,8 +188,8 @@ def main():
               "only; whole-passage absences are in `build_edition_footnotes.py` "
               "(Rāmāyaṇa) / `significant_absences.json` (this comparator). 2 "
               "witnesses — Center-Star MSA latent until a 3rd is digitised. Aligner is "
-              "spike-grade (char-level + word-expansion); an akṣara-level rebuild (H776) "
-              "would refine loci further.\n")
+              "**akṣara-level** (H776): syllable-segmented Gotoh, loci can no longer "
+              "split mid-syllable.\n")
     if contaminated:
         md.append(f"⚠️ **Data bug surfaced by the aligner:** {len(contaminated)} {ok} "
                   "verses carry Cyrillic characters mis-encoded as Sanskrit (e.g. "

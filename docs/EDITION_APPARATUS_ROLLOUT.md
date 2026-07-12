@@ -49,7 +49,17 @@ The southern jsonls live in [`SamudraManthanam/web/corpus_builder/jsonl/`](https
 - **Obtaining the critical texts** (GRETIL Baroda for Rāmāyaṇa; BORI/John Smith for MBh) is a file **download** — requires a go-ahead per the data-download policy; a human places the text or approves the fetch.
 - **Rights:** the vulgate/critical source texts are third-party (vulgate jsonl + `nilakantha_vulgate_full.jsonl` are gitignored). The **derived variant apparatus** (readings only) is scholarly output, but any publication is gated by [`/publish-safety-check`](https://github.com/gasyoun/claude-config/blob/main/commands/publish-safety-check.md).
 - **Multi-witness (Center-Star MSA)** stays latent until a 3rd witness per work is digitised (Gita Press for both epics); at 2 witnesses the deliverable is the pairwise positional apparatus.
-- **Production quality (akṣara-level aligner + wiring into `build_edition_footnotes.py`)** is the separate [H776](https://github.com/gasyoun/Uprava/blob/main/handoffs/H776-Sonnet_CommentaryStrategies_helayo_aksara_apparatus_aligner_12.07.26.md) upgrade; the rollout can proceed at spike grade in the meantime.
+- **Production quality (akṣara-level aligner + wiring into `build_edition_footnotes.py`)** —
+  ✅ **DONE 12-07-2026** via [H776](https://github.com/gasyoun/Uprava/blob/main/handoffs/H776-Sonnet_CommentaryStrategies_helayo_aksara_apparatus_aligner_12.07.26.md):
+  `build_edition_apparatus.py` now runs akṣara-level (2106→1664 apparatus loci for
+  Sundara, cleaner not just fewer — see `docs/SPIKE_HELAYO_VS_DIFFLIB_SUNDARA.md`
+  "ADOPTED" addendum), `build_edition_footnotes.py` emits 839 `variant_reading`
+  candidates with real competing readings. Scoped to the Rāmāyaṇa Sundarakāṇḍa
+  footnote pipeline per H776's own stop condition; the MBh apparatus (H784/H802/H804,
+  142,283 loci across 18 parvas) was built with the char-level aligner and has **not**
+  been regenerated with the akṣara-level one — `build_edition_apparatus.py` is shared
+  code, so a rerun would benefit it too, but that is a separate follow-on, not implied
+  by H776's scope.
 
 ## Provenance
 
