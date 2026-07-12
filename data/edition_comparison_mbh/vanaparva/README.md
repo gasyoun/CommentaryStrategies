@@ -85,4 +85,8 @@ H784 («только comparator engineering»); JSON+MD были признан�
 - Human-review гейт перед публикацией любых производных, содержащих чтения BORI (см.
   `BORI_CRITICAL_SOURCE.md` — do-not-redistribute).
 
+## Проверка против печатного аппарата (App. I)
+
+[H810](https://github.com/gasyoun/Uprava/blob/main/handoffs/H810-Sonnet_CommentaryStrategies_mbh-apparatus-print-verification_12.07.26.md) — `structural_absence` сверен против реального критического аппарата BORI (App. I star-passages, bombay.indology.info/mahabharata/apps/), не реконструкции. **403/2074 флагов подтверждено** (sim >= 0.3, 4-gram char Jaccard; rate 0.194) — независимо засвидетельствовано в манускриптах, собранных редакторами BORI. Полная методика + интерпретация (почему НЕ все остальные — это ожидаемо, App. I не исчерпывает каждое вульгатное издание) — [`../PRINT_VERIFICATION_REPORT.md`](../PRINT_VERIFICATION_REPORT.md). Данные: `print_verification.json` (id/score/matched-supp-id — без текста).
+
 _Dr. Mārcis Gasūns_

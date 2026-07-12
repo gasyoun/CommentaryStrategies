@@ -35,4 +35,8 @@ loci** по всем 72 адхьяям.
 `significant_absences.json` (gitignored), `critical_only_and_variants.json` (gitignored),
 плюс апарат `apparatus_mbh-sabhaparva_variants.json`/`.md` (committed — короткие loci).
 
+## Проверка против печатного аппарата (App. I)
+
+[H810](https://github.com/gasyoun/Uprava/blob/main/handoffs/H810-Sonnet_CommentaryStrategies_mbh-apparatus-print-verification_12.07.26.md) — `structural_absence` сверен против реального критического аппарата BORI (App. I star-passages, bombay.indology.info/mahabharata/apps/), не реконструкции. **162/458 флагов подтверждено** (sim >= 0.3, 4-gram char Jaccard; rate 0.354) — независимо засвидетельствовано в манускриптах, собранных редакторами BORI. Полная методика + интерпретация (почему НЕ все остальные — это ожидаемо, App. I не исчерпывает каждое вульгатное издание) — [`../PRINT_VERIFICATION_REPORT.md`](../PRINT_VERIFICATION_REPORT.md). Данные: `print_verification.json` (id/score/matched-supp-id — без текста).
+
 _Dr. Mārcis Gasūns_
