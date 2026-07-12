@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.10.0] - 2026-07-12
+
 ### Added
 
 - **MBh edition-apparatus rollout complete — all 18 parvas (H804, [PR #92](https://github.com/gasyoun/CommentaryStrategies/pull/92)).**
