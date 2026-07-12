@@ -24,7 +24,8 @@ OUT = os.path.join(DIR, "commentarystrategies-edition-footnotes_v1_review.html")
 
 def main():
     d = json.load(open(os.path.join(DIR, "candidates.json"), encoding="utf-8"))
-    items = d.get("candidates", []) + d.get("single_verse_absences", [])
+    items = (d.get("candidates", []) + d.get("single_verse_absences", [])
+             + d.get("variant_reading_candidates", []))  # H776
     payload = {"meta": d.get("_meta", {}), "items": items}
     html = PAGE.replace("/*DATA*/null", json.dumps(payload, ensure_ascii=False))
     os.makedirs(DIR, exist_ok=True)
@@ -58,6 +59,11 @@ main.container{max-width:920px;margin:0 auto;padding:16px}
 .absent .lbl{font:11px system-ui,sans-serif;color:var(--mut)}
 .absent .v{font-style:italic;color:#3a3020;margin:2px 0}
 .absent .vn{font-style:normal;color:var(--mut);font:11px system-ui,sans-serif;margin-right:6px}
+.readings{background:#eef2f7;border-radius:6px;padding:6px 10px;margin:6px 0}
+.readings .lbl{font:11px system-ui,sans-serif;color:var(--mut)}
+.readings .row{font-style:italic;color:#233a4a;margin:3px 0}
+.readings .lemma{font-weight:600}
+.readings .sep{font-style:normal;color:var(--mut);margin:0 6px}
 .controls{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;font:13px system-ui,sans-serif}
 .controls label{display:inline-flex;gap:4px;align-items:center;padding:5px 10px;border:1px solid var(--line);border-radius:20px;cursor:pointer}
 textarea{width:100%;font:14px Georgia,serif;padding:8px;border:1px solid var(--line);border-radius:5px;margin-top:8px}
@@ -86,12 +92,18 @@ function render(){
     :(c.leonov_note_here?`<div class="vid">у Леонова есть примечание на этих стихах: ${c.leonov_note_here.join(", ")}</div>`:"");
   const card=document.createElement("div");
   card.className="card"+(d.action?" d-"+d.action:"");card.id="c"+i;
-  card.innerHTML=`<div class="vid">${c.range}<span class="badge">${c.kind}</span><span class="badge">${c.count} шлок</span></div>
+  const isVariant=c.kind==="variant_reading";
+  const absentBlock=isVariant?"":`<div class="absent"><span class="lbl">Отсутствующий текст (IAST):</span>${
+     (c.verses_iast||[]).map(v=>`<div class="v"><span class="vn">${v.verse_id}</span>${esc(v.iast)||'<span class="vn">—</span>'}</div>`).join("")
+   }</div>`;
+  const readingsBlock=isVariant?`<div class="readings"><span class="lbl">Разночтения (крит. ] южн.) — H776 akṣara-level:</span>${
+     (c.readings||[]).map(r=>`<div class="row"><span class="lemma">${esc(r.crit)}</span><span class="sep">]</span>${esc(r[Object.keys(r).find(k=>k!=="crit")])}</div>`).join("")
+   }</div>`:"";
+  card.innerHTML=`<div class="vid">${c.range}<span class="badge">${c.kind}</span><span class="badge">${c.count} ${isVariant?"loci":"шлок"}</span></div>
    ${dup}
    <div class="note">${esc(c.note_ru)}</div>
-   <div class="absent"><span class="lbl">Отсутствующий текст (IAST):</span>${
-     (c.verses_iast||[]).map(v=>`<div class="v"><span class="vn">${v.verse_id}</span>${esc(v.iast)||'<span class="vn">—</span>'}</div>`).join("")
-   }</div>
+   ${absentBlock}
+   ${readingsBlock}
    <div class="controls">
      <label><input type="radio" name="a${i}" value="accept"> ✅ принять</label>
      <label><input type="radio" name="a${i}" value="edit"> ✏️ править</label>

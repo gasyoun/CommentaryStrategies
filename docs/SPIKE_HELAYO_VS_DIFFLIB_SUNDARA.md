@@ -91,4 +91,34 @@ Follow-on decision is tracked as [H776](https://github.com/gasyoun/Uprava/blob/m
 4. Residual spike rough edges to fix in a production pass: a few spurious adjacency loci from
    insertion/deletion next to a substitution (5.3.11, 5.3.19).
 
+## ✅ ADOPTED and implemented (12-07-2026, Sonnet 5 `claude-sonnet-5`)
+
+Item 1 (akṣara reimplementation, option (b) — no external binary) and item 2 (footnote
+wiring) are done; item 3 stays latent (Gita Press still not digitised); item 4's two named
+cases are fixed (verified below).
+
+- `scripts/spike_helayo_align.py`: added `syllabify()` (maximal-onset IAST akṣara
+  segmentation — onset consonant cluster + vowel nucleus incl. ai/au + trailing
+  anusvāra/visarga/candrabindu), `gotoh_aksara()` (Gotoh over akṣara tokens, gap costs
+  length-scaled to stay comparable with the char-level constants), `collapse_loci_aksara()`
+  + `align_aksara()`. The char-level `gotoh`/`sub_score`/`_NEARMAP` are reused unchanged as
+  the nested substitution-cost engine between two akṣara strings — the near-equivalence
+  matrix (ā~a, ṃ~m, ś~ṣ, n~ṇ, ...) applies inside a syllable too, not just discarded.
+- **5.3.11 fixed:** char-level gave 3 fragmented loci incl. a spurious duplicate
+  (`pratināditām`/`''`, `pratināditām`/`parināditām`); akṣara-level gives 2 clean loci.
+- **5.3.19 fixed:** char-level gave 4 garbled loci (`rākṣasendrasya`/``, `sa`/``,
+  `dadarśa`/``, `sa`/`` — an uninterpretable duplicate-`sa` mess); akṣara-level gives 1
+  clean locus (`sa`/``).
+- Cases that were already clean at char level (5.3.4, 5.3.10, 5.3.16, 5.3.18) are
+  byte-identical at akṣara level — no regression.
+- Book-wide (`build_edition_apparatus.py`, all 66 sargas): 865→839 clean-variant verses,
+  **2106→1664 apparatus loci** (21% fewer/cleaner; some previously-"clean" verses now
+  correctly yield zero substantive loci once mid-syllable fragments consolidate).
+- `scripts/build_edition_footnotes.py`: new `variant_reading` candidate kind (839
+  candidates, one per clean-variant verse, carrying its actual competing readings) —
+  previously this layer was computed but never reached the footnote review gate at all.
+  `scripts/build_footnotes_review_html.py` renders the new kind with its own readings
+  block. `scripts/compare_editions.py`'s book-level bucketing is untouched
+  (`git diff` on `data/edition_comparison/book_summary.json` empty — regression-verified).
+
 _Dr. Mārcis Gasūns_
