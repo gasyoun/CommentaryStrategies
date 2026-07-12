@@ -10,6 +10,25 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.12.0] - 2026-07-12
+
+### Added
+
+- **Akṣara-level Gotoh aligner + footnote wiring (H776, [PR #98](https://github.com/gasyoun/CommentaryStrategies/pull/98)).**
+  ADOPT ruling given directly by MG. `scripts/spike_helayo_align.py` gained `syllabify()`
+  (maximal-onset IAST akṣara segmentation), `gotoh_aksara()`, `collapse_loci_aksara()`,
+  `align_aksara()` — reuses the existing char-level `sub_score`/`_NEARMAP` as a nested
+  per-syllable scoring engine, so the near-equivalence matrix applies inside a syllable too.
+  Verified fix for the spike's two named problem cases (5.3.11, 5.3.19 — spurious/garbled
+  adjacency loci from insertion/deletion next to a substitution); byte-identical on cases
+  already clean at char level. Book-wide: 865→839 clean-variant verses, 2106→**1664**
+  apparatus loci (21% fewer/cleaner). `scripts/build_edition_footnotes.py` gained a new
+  `variant_reading` candidate kind (839 candidates with real competing readings — this layer
+  existed but never reached the footnote review gate before); review HTML updated to render
+  it. `compare_editions.py`'s book-level bucketing regression-verified untouched (git diff
+  empty). Scoped to the Rāmāyaṇa Sundarakāṇḍa footnote pipeline; the MBh apparatus (18
+  parvas, char-level) was not regenerated with the new aligner — follow-on, not this pass.
+
 ## [1.11.0] - 2026-07-12
 
 ### Added
