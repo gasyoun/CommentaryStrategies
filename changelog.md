@@ -10,6 +10,21 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.11.0] - 2026-07-12
+
+### Added
+
+- **MBh edition-apparatus review-gate verified against BORI App. I (H810, [PR #96](https://github.com/gasyoun/CommentaryStrategies/pull/96)).**
+  Independent verification of the H784/H802/H804 `structural_absence`/`vulgate_extra_adhyayas`
+  flags against the BORI critical edition's own apparatus criticus (App. I star-passages,
+  bombay.indology.info/mahabharata/apps/) — the actual print apparatus in electronic form, not
+  a reconstruction. New `scripts/verify_mbh_apparatus_against_print.py`: 4-gram character
+  Jaccard on despaced canon strings + inverted index (word-token Jaccard and plain
+  `SequenceMatcher.ratio` both tried first and rejected — see script docstring). Results:
+  2969/14581 (20.4%) structural_absence flags confirmed (9.8% ≥0.5, 4.7% ≥0.7, 3.2% ≥0.9);
+  233/5552 (4.2%) extra-adhyaya verses confirmed. ~20% is the expected, meaningful outcome —
+  see `data/edition_comparison_mbh/PRINT_VERIFICATION_REPORT.md` for full interpretation.
+
 ## [1.10.0] - 2026-07-12
 
 ### Added
