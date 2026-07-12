@@ -42,4 +42,8 @@ loci, не полные шлоки).
 Оставшиеся 16 парв — тот же `compare_editions_mbh.py PARVA_NO` + `build_edition_apparatus.py`
 прогон, движок не меняется.
 
+## Проверка против печатного аппарата (App. I)
+
+[H810](https://github.com/gasyoun/Uprava/blob/main/handoffs/H810-Sonnet_CommentaryStrategies_mbh-apparatus-print-verification_12.07.26.md) — `structural_absence` сверен против реального критического аппарата BORI (App. I star-passages, bombay.indology.info/mahabharata/apps/), не реконструкции. **154/464 флагов подтверждено** (sim >= 0.3, 4-gram char Jaccard; rate 0.332) — независимо засвидетельствовано в манускриптах, собранных редакторами BORI. Полная методика + интерпретация (почему НЕ все остальные — это ожидаемо, App. I не исчерпывает каждое вульгатное издание) — [`../PRINT_VERIFICATION_REPORT.md`](../PRINT_VERIFICATION_REPORT.md). Данные: `print_verification.json` (id/score/matched-supp-id — без текста).
+
 _Dr. Mārcis Gasūns_

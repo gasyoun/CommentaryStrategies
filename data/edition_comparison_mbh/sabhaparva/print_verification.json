@@ -1,0 +1,2353 @@
+{
+  "_meta": {
+    "note": "Independent verification of structural_absence flags against the BORI critical edition's own App. I star-passage apparatus (bombay.indology.info Supp##.txt). 4-gram character Jaccard on fully despaced canon strings (robust to compound word-boundary differences between the vulgate source and App. I's transcription; calibrated by manual spot-check, not guessed -- see script docstring). best_sim >= 0.3 counts as 'confirmed by App. I'; tier breakdown at 0.3/0.5/0.7/0.9 reported for transparency instead of one binary cutoff. A miss does NOT mean the flag is wrong -- App. I reflects the manuscripts BORI collated, not exhaustively every vulgate print edition.",
+    "sim_confirm_threshold": 0.3,
+    "tiers": [
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "method": "4-gram character Jaccard, despaced canon, inverted-index candidate lookup",
+    "supp_source": "https://bombay.indology.info/mahabharata/apps/UR/"
+  },
+  "structural_absence_total": 458,
+  "structural_absence_confirmed": 162,
+  "structural_absence_confirm_rate": 0.354,
+  "tier_counts": {
+    "0.3": 162,
+    "0.5": 76,
+    "0.7": 33,
+    "0.9": 23
+  },
+  "extra_adhyayas": {
+    "12": {
+      "verses": 34,
+      "confirmed": 3
+    },
+    "18": {
+      "verses": 12,
+      "confirmed": 1
+    },
+    "25": {
+      "verses": 11,
+      "confirmed": 1
+    },
+    "46": {
+      "verses": 33,
+      "confirmed": 0
+    },
+    "54": {
+      "verses": 11,
+      "confirmed": 2
+    },
+    "57": {
+      "verses": 5,
+      "confirmed": 0
+    },
+    "60": {
+      "verses": 9,
+      "confirmed": 1
+    },
+    "70": {
+      "verses": 18,
+      "confirmed": 1
+    },
+    "75": {
+      "verses": 12,
+      "confirmed": 2
+    }
+  },
+  "per_verse": [
+    {
+      "vulgate": "2.1.1",
+      "best_sim": 1.0,
+      "matched_supp": "0001"
+    },
+    {
+      "vulgate": "2.1.10",
+      "best_sim": 0.42,
+      "matched_supp": "0014"
+    },
+    {
+      "vulgate": "2.2.10",
+      "best_sim": 1.0,
+      "matched_supp": "0021"
+    },
+    {
+      "vulgate": "2.2.17",
+      "best_sim": 0.11,
+      "matched_supp": "0025"
+    },
+    {
+      "vulgate": "2.2.18",
+      "best_sim": 0.1,
+      "matched_supp": "0019"
+    },
+    {
+      "vulgate": "2.2.20",
+      "best_sim": 0.09,
+      "matched_supp": "0575"
+    },
+    {
+      "vulgate": "2.2.22",
+      "best_sim": 0.36,
+      "matched_supp": "0027"
+    },
+    {
+      "vulgate": "2.2.23",
+      "best_sim": 0.36,
+      "matched_supp": "0027"
+    },
+    {
+      "vulgate": "2.2.24",
+      "best_sim": 0.4,
+      "matched_supp": "0028"
+    },
+    {
+      "vulgate": "2.2.25",
+      "best_sim": 0.12,
+      "matched_supp": "0160"
+    },
+    {
+      "vulgate": "2.2.26",
+      "best_sim": 0.08,
+      "matched_supp": "0265"
+    },
+    {
+      "vulgate": "2.2.27",
+      "best_sim": 0.08,
+      "matched_supp": "0549"
+    },
+    {
+      "vulgate": "2.2.28",
+      "best_sim": 0.12,
+      "matched_supp": "0576"
+    },
+    {
+      "vulgate": "2.2.30",
+      "best_sim": 0.05,
+      "matched_supp": "0415"
+    },
+    {
+      "vulgate": "2.2.31",
+      "best_sim": 0.11,
+      "matched_supp": "0496"
+    },
+    {
+      "vulgate": "2.2.32",
+      "best_sim": 0.09,
+      "matched_supp": "0432"
+    },
+    {
+      "vulgate": "2.2.33",
+      "best_sim": 0.11,
+      "matched_supp": "0418"
+    },
+    {
+      "vulgate": "2.2.35",
+      "best_sim": 0.09,
+      "matched_supp": "0159"
+    },
+    {
+      "vulgate": "2.2.36",
+      "best_sim": 0.09,
+      "matched_supp": "0101"
+    },
+    {
+      "vulgate": "2.3.4",
+      "best_sim": 0.1,
+      "matched_supp": "0029"
+    },
+    {
+      "vulgate": "2.3.5",
+      "best_sim": 0.08,
+      "matched_supp": "0037"
+    },
+    {
+      "vulgate": "2.3.9",
+      "best_sim": 0.07,
+      "matched_supp": "0135"
+    },
+    {
+      "vulgate": "2.3.11",
+      "best_sim": 0.1,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.3.19",
+      "best_sim": 0.49,
+      "matched_supp": "0033"
+    },
+    {
+      "vulgate": "2.3.23",
+      "best_sim": 0.07,
+      "matched_supp": "0623"
+    },
+    {
+      "vulgate": "2.3.24",
+      "best_sim": 0.12,
+      "matched_supp": "0096"
+    },
+    {
+      "vulgate": "2.3.32",
+      "best_sim": 0.47,
+      "matched_supp": "0036"
+    },
+    {
+      "vulgate": "2.4.2",
+      "best_sim": 0.4,
+      "matched_supp": "0040"
+    },
+    {
+      "vulgate": "2.4.3",
+      "best_sim": 0.66,
+      "matched_supp": "0041"
+    },
+    {
+      "vulgate": "2.4.4",
+      "best_sim": 0.49,
+      "matched_supp": "0042"
+    },
+    {
+      "vulgate": "2.4.21",
+      "best_sim": 0.09,
+      "matched_supp": "0162"
+    },
+    {
+      "vulgate": "2.4.25",
+      "best_sim": 0.51,
+      "matched_supp": "0048"
+    },
+    {
+      "vulgate": "2.4.26",
+      "best_sim": 0.07,
+      "matched_supp": "0330"
+    },
+    {
+      "vulgate": "2.4.27",
+      "best_sim": 0.16,
+      "matched_supp": "0048"
+    },
+    {
+      "vulgate": "2.4.28",
+      "best_sim": 0.23,
+      "matched_supp": "0053"
+    },
+    {
+      "vulgate": "2.4.37",
+      "best_sim": 0.44,
+      "matched_supp": "0055"
+    },
+    {
+      "vulgate": "2.4.38",
+      "best_sim": 0.15,
+      "matched_supp": "0058"
+    },
+    {
+      "vulgate": "2.4.39",
+      "best_sim": 0.09,
+      "matched_supp": "0234"
+    },
+    {
+      "vulgate": "2.5.2",
+      "best_sim": 0.07,
+      "matched_supp": "0356"
+    },
+    {
+      "vulgate": "2.5.3",
+      "best_sim": 0.11,
+      "matched_supp": "0321"
+    },
+    {
+      "vulgate": "2.5.4",
+      "best_sim": 0.08,
+      "matched_supp": "0037"
+    },
+    {
+      "vulgate": "2.5.5",
+      "best_sim": 0.06,
+      "matched_supp": "0605"
+    },
+    {
+      "vulgate": "2.5.6",
+      "best_sim": 0.09,
+      "matched_supp": "0034"
+    },
+    {
+      "vulgate": "2.5.7",
+      "best_sim": 0.09,
+      "matched_supp": "0608"
+    },
+    {
+      "vulgate": "2.5.8",
+      "best_sim": 0.15,
+      "matched_supp": "0075"
+    },
+    {
+      "vulgate": "2.5.9",
+      "best_sim": 0.09,
+      "matched_supp": "0041"
+    },
+    {
+      "vulgate": "2.5.12",
+      "best_sim": 0.42,
+      "matched_supp": "0060"
+    },
+    {
+      "vulgate": "2.5.14",
+      "best_sim": 0.1,
+      "matched_supp": "0178"
+    },
+    {
+      "vulgate": "2.5.25",
+      "best_sim": 0.5,
+      "matched_supp": "0063"
+    },
+    {
+      "vulgate": "2.5.26",
+      "best_sim": 0.09,
+      "matched_supp": "0252"
+    },
+    {
+      "vulgate": "2.5.28",
+      "best_sim": 0.47,
+      "matched_supp": "0064"
+    },
+    {
+      "vulgate": "2.5.33",
+      "best_sim": 0.55,
+      "matched_supp": "0066"
+    },
+    {
+      "vulgate": "2.5.101",
+      "best_sim": 1.0,
+      "matched_supp": "0073"
+    },
+    {
+      "vulgate": "2.5.108",
+      "best_sim": 0.11,
+      "matched_supp": "0243"
+    },
+    {
+      "vulgate": "2.5.109",
+      "best_sim": 0.47,
+      "matched_supp": "0074"
+    },
+    {
+      "vulgate": "2.5.125",
+      "best_sim": 1.0,
+      "matched_supp": "0077"
+    },
+    {
+      "vulgate": "2.6.13",
+      "best_sim": 0.5,
+      "matched_supp": "0079"
+    },
+    {
+      "vulgate": "2.7.7",
+      "best_sim": 0.43,
+      "matched_supp": "0080"
+    },
+    {
+      "vulgate": "2.7.10",
+      "best_sim": 0.1,
+      "matched_supp": "0092"
+    },
+    {
+      "vulgate": "2.7.11",
+      "best_sim": 0.18,
+      "matched_supp": "0082"
+    },
+    {
+      "vulgate": "2.7.19",
+      "best_sim": 0.08,
+      "matched_supp": "0125"
+    },
+    {
+      "vulgate": "2.7.20",
+      "best_sim": 0.13,
+      "matched_supp": "0471"
+    },
+    {
+      "vulgate": "2.7.21",
+      "best_sim": 0.1,
+      "matched_supp": "0055"
+    },
+    {
+      "vulgate": "2.7.22",
+      "best_sim": 0.48,
+      "matched_supp": "0086"
+    },
+    {
+      "vulgate": "2.7.26",
+      "best_sim": 0.12,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.7.28",
+      "best_sim": 0.13,
+      "matched_supp": "0127"
+    },
+    {
+      "vulgate": "2.8.6",
+      "best_sim": 0.45,
+      "matched_supp": "0088"
+    },
+    {
+      "vulgate": "2.8.7",
+      "best_sim": 0.08,
+      "matched_supp": "0528"
+    },
+    {
+      "vulgate": "2.8.9",
+      "best_sim": 0.06,
+      "matched_supp": "0163"
+    },
+    {
+      "vulgate": "2.8.10",
+      "best_sim": 0.06,
+      "matched_supp": "0092"
+    },
+    {
+      "vulgate": "2.8.11",
+      "best_sim": 0.25,
+      "matched_supp": "0090"
+    },
+    {
+      "vulgate": "2.8.12",
+      "best_sim": 0.12,
+      "matched_supp": "0049"
+    },
+    {
+      "vulgate": "2.8.14",
+      "best_sim": 0.1,
+      "matched_supp": "0389"
+    },
+    {
+      "vulgate": "2.8.15",
+      "best_sim": 0.08,
+      "matched_supp": "0090"
+    },
+    {
+      "vulgate": "2.8.16",
+      "best_sim": 0.5,
+      "matched_supp": "0092"
+    },
+    {
+      "vulgate": "2.8.19",
+      "best_sim": 0.14,
+      "matched_supp": "0593"
+    },
+    {
+      "vulgate": "2.8.20",
+      "best_sim": 0.07,
+      "matched_supp": "0134"
+    },
+    {
+      "vulgate": "2.8.21",
+      "best_sim": 0.07,
+      "matched_supp": "0159"
+    },
+    {
+      "vulgate": "2.8.23",
+      "best_sim": 0.11,
+      "matched_supp": "0409"
+    },
+    {
+      "vulgate": "2.8.24",
+      "best_sim": 0.72,
+      "matched_supp": "0095"
+    },
+    {
+      "vulgate": "2.8.25",
+      "best_sim": 0.24,
+      "matched_supp": "0095"
+    },
+    {
+      "vulgate": "2.9.10",
+      "best_sim": 0.49,
+      "matched_supp": "0100"
+    },
+    {
+      "vulgate": "2.9.21",
+      "best_sim": 0.48,
+      "matched_supp": "0103"
+    },
+    {
+      "vulgate": "2.9.22",
+      "best_sim": 0.34,
+      "matched_supp": "0104"
+    },
+    {
+      "vulgate": "2.9.23",
+      "best_sim": 0.26,
+      "matched_supp": "0106"
+    },
+    {
+      "vulgate": "2.9.26",
+      "best_sim": 0.21,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.9.28",
+      "best_sim": 0.65,
+      "matched_supp": "0108"
+    },
+    {
+      "vulgate": "2.10.15",
+      "best_sim": 0.11,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.10.16",
+      "best_sim": 0.06,
+      "matched_supp": "0475"
+    },
+    {
+      "vulgate": "2.10.20",
+      "best_sim": 0.36,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.10.21",
+      "best_sim": 0.31,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.10.23",
+      "best_sim": 0.09,
+      "matched_supp": "0051"
+    },
+    {
+      "vulgate": "2.10.25",
+      "best_sim": 0.08,
+      "matched_supp": "0059"
+    },
+    {
+      "vulgate": "2.10.26",
+      "best_sim": 0.12,
+      "matched_supp": "0086"
+    },
+    {
+      "vulgate": "2.10.27",
+      "best_sim": 0.13,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.10.28",
+      "best_sim": 0.11,
+      "matched_supp": "0461"
+    },
+    {
+      "vulgate": "2.10.29",
+      "best_sim": 0.08,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.10.30",
+      "best_sim": 0.11,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.10.31",
+      "best_sim": 0.1,
+      "matched_supp": "0605"
+    },
+    {
+      "vulgate": "2.10.32",
+      "best_sim": 0.14,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.10.34",
+      "best_sim": 0.12,
+      "matched_supp": "0085"
+    },
+    {
+      "vulgate": "2.10.35",
+      "best_sim": 0.09,
+      "matched_supp": "0495"
+    },
+    {
+      "vulgate": "2.10.36",
+      "best_sim": 0.12,
+      "matched_supp": "0116"
+    },
+    {
+      "vulgate": "2.10.37",
+      "best_sim": 0.1,
+      "matched_supp": "0162"
+    },
+    {
+      "vulgate": "2.10.38",
+      "best_sim": 0.1,
+      "matched_supp": "0437"
+    },
+    {
+      "vulgate": "2.10.39",
+      "best_sim": 0.09,
+      "matched_supp": "0442"
+    },
+    {
+      "vulgate": "2.11.1",
+      "best_sim": 0.86,
+      "matched_supp": "0117"
+    },
+    {
+      "vulgate": "2.11.8",
+      "best_sim": 0.47,
+      "matched_supp": "0118"
+    },
+    {
+      "vulgate": "2.11.9",
+      "best_sim": 0.53,
+      "matched_supp": "0118"
+    },
+    {
+      "vulgate": "2.11.15",
+      "best_sim": 1.0,
+      "matched_supp": "0119"
+    },
+    {
+      "vulgate": "2.11.20",
+      "best_sim": 0.49,
+      "matched_supp": "0122"
+    },
+    {
+      "vulgate": "2.11.22",
+      "best_sim": 0.32,
+      "matched_supp": "0125"
+    },
+    {
+      "vulgate": "2.11.23",
+      "best_sim": 0.3,
+      "matched_supp": "0125"
+    },
+    {
+      "vulgate": "2.11.24",
+      "best_sim": 0.32,
+      "matched_supp": "0125"
+    },
+    {
+      "vulgate": "2.11.25",
+      "best_sim": 0.16,
+      "matched_supp": "0125"
+    },
+    {
+      "vulgate": "2.11.36",
+      "best_sim": 1.0,
+      "matched_supp": "0130"
+    },
+    {
+      "vulgate": "2.11.39",
+      "best_sim": 0.54,
+      "matched_supp": "0131"
+    },
+    {
+      "vulgate": "2.11.41",
+      "best_sim": 0.36,
+      "matched_supp": "0132"
+    },
+    {
+      "vulgate": "2.11.42",
+      "best_sim": 0.33,
+      "matched_supp": "0132"
+    },
+    {
+      "vulgate": "2.11.43",
+      "best_sim": 0.36,
+      "matched_supp": "0132"
+    },
+    {
+      "vulgate": "2.11.45",
+      "best_sim": 0.19,
+      "matched_supp": "0133"
+    },
+    {
+      "vulgate": "2.11.46",
+      "best_sim": 0.22,
+      "matched_supp": "0133"
+    },
+    {
+      "vulgate": "2.11.47",
+      "best_sim": 0.22,
+      "matched_supp": "0133"
+    },
+    {
+      "vulgate": "2.11.48",
+      "best_sim": 0.24,
+      "matched_supp": "0133"
+    },
+    {
+      "vulgate": "2.11.49",
+      "best_sim": 0.12,
+      "matched_supp": "0046"
+    },
+    {
+      "vulgate": "2.11.50",
+      "best_sim": 0.25,
+      "matched_supp": "0134"
+    },
+    {
+      "vulgate": "2.11.51",
+      "best_sim": 0.53,
+      "matched_supp": "0134"
+    },
+    {
+      "vulgate": "2.11.52",
+      "best_sim": 0.25,
+      "matched_supp": "0134"
+    },
+    {
+      "vulgate": "2.12.24",
+      "best_sim": 1.0,
+      "matched_supp": "0141"
+    },
+    {
+      "vulgate": "2.12.26",
+      "best_sim": 0.5,
+      "matched_supp": "0142"
+    },
+    {
+      "vulgate": "2.12.27",
+      "best_sim": 0.5,
+      "matched_supp": "0142"
+    },
+    {
+      "vulgate": "2.13.8",
+      "best_sim": 1.0,
+      "matched_supp": "0145"
+    },
+    {
+      "vulgate": "2.13.10",
+      "best_sim": 0.1,
+      "matched_supp": "0194"
+    },
+    {
+      "vulgate": "2.13.11",
+      "best_sim": 0.1,
+      "matched_supp": "0359"
+    },
+    {
+      "vulgate": "2.13.12",
+      "best_sim": 0.09,
+      "matched_supp": "0483"
+    },
+    {
+      "vulgate": "2.13.13",
+      "best_sim": 0.13,
+      "matched_supp": "0364"
+    },
+    {
+      "vulgate": "2.13.14",
+      "best_sim": 0.11,
+      "matched_supp": "0131"
+    },
+    {
+      "vulgate": "2.13.15",
+      "best_sim": 0.09,
+      "matched_supp": "0280"
+    },
+    {
+      "vulgate": "2.13.16",
+      "best_sim": 0.11,
+      "matched_supp": "0131"
+    },
+    {
+      "vulgate": "2.13.17",
+      "best_sim": 0.09,
+      "matched_supp": "0419"
+    },
+    {
+      "vulgate": "2.13.18",
+      "best_sim": 0.08,
+      "matched_supp": "0489"
+    },
+    {
+      "vulgate": "2.13.32",
+      "best_sim": 0.11,
+      "matched_supp": "0146"
+    },
+    {
+      "vulgate": "2.13.36",
+      "best_sim": 0.1,
+      "matched_supp": "0364"
+    },
+    {
+      "vulgate": "2.13.37",
+      "best_sim": 0.11,
+      "matched_supp": "0229"
+    },
+    {
+      "vulgate": "2.13.38",
+      "best_sim": 0.1,
+      "matched_supp": "0160"
+    },
+    {
+      "vulgate": "2.13.42",
+      "best_sim": 0.08,
+      "matched_supp": "0291"
+    },
+    {
+      "vulgate": "2.14.8",
+      "best_sim": 0.68,
+      "matched_supp": "0154"
+    },
+    {
+      "vulgate": "2.14.9",
+      "best_sim": 0.07,
+      "matched_supp": "0017"
+    },
+    {
+      "vulgate": "2.14.11",
+      "best_sim": 0.11,
+      "matched_supp": "0212"
+    },
+    {
+      "vulgate": "2.14.50",
+      "best_sim": 0.12,
+      "matched_supp": "0160"
+    },
+    {
+      "vulgate": "2.14.51",
+      "best_sim": 0.1,
+      "matched_supp": "0515"
+    },
+    {
+      "vulgate": "2.14.52",
+      "best_sim": 0.11,
+      "matched_supp": "0318"
+    },
+    {
+      "vulgate": "2.14.53",
+      "best_sim": 0.09,
+      "matched_supp": "0248"
+    },
+    {
+      "vulgate": "2.14.54",
+      "best_sim": 0.1,
+      "matched_supp": "0280"
+    },
+    {
+      "vulgate": "2.14.65",
+      "best_sim": 0.26,
+      "matched_supp": "0164"
+    },
+    {
+      "vulgate": "2.15.7",
+      "best_sim": 0.19,
+      "matched_supp": "0167"
+    },
+    {
+      "vulgate": "2.15.8",
+      "best_sim": 0.24,
+      "matched_supp": "0167"
+    },
+    {
+      "vulgate": "2.15.9",
+      "best_sim": 0.34,
+      "matched_supp": "0167"
+    },
+    {
+      "vulgate": "2.15.10",
+      "best_sim": 0.24,
+      "matched_supp": "0167"
+    },
+    {
+      "vulgate": "2.15.16",
+      "best_sim": 0.51,
+      "matched_supp": "0170"
+    },
+    {
+      "vulgate": "2.15.18",
+      "best_sim": 0.13,
+      "matched_supp": "0166"
+    },
+    {
+      "vulgate": "2.15.19",
+      "best_sim": 0.1,
+      "matched_supp": "0153"
+    },
+    {
+      "vulgate": "2.16.10",
+      "best_sim": 0.08,
+      "matched_supp": "0598"
+    },
+    {
+      "vulgate": "2.17.19",
+      "best_sim": 0.07,
+      "matched_supp": "0090"
+    },
+    {
+      "vulgate": "2.17.20",
+      "best_sim": 0.08,
+      "matched_supp": "0224"
+    },
+    {
+      "vulgate": "2.17.31",
+      "best_sim": 1.0,
+      "matched_supp": "0181"
+    },
+    {
+      "vulgate": "2.17.48",
+      "best_sim": 0.08,
+      "matched_supp": "0270"
+    },
+    {
+      "vulgate": "2.18.2",
+      "best_sim": 0.23,
+      "matched_supp": "0185"
+    },
+    {
+      "vulgate": "2.18.3",
+      "best_sim": 0.26,
+      "matched_supp": "0185"
+    },
+    {
+      "vulgate": "2.18.4",
+      "best_sim": 0.24,
+      "matched_supp": "0185"
+    },
+    {
+      "vulgate": "2.18.5",
+      "best_sim": 0.29,
+      "matched_supp": "0185"
+    },
+    {
+      "vulgate": "2.18.8",
+      "best_sim": 1.0,
+      "matched_supp": "0186"
+    },
+    {
+      "vulgate": "2.19.6",
+      "best_sim": 0.66,
+      "matched_supp": "0192"
+    },
+    {
+      "vulgate": "2.19.8",
+      "best_sim": 0.5,
+      "matched_supp": "0193"
+    },
+    {
+      "vulgate": "2.19.21",
+      "best_sim": 1.0,
+      "matched_supp": "0196"
+    },
+    {
+      "vulgate": "2.19.22",
+      "best_sim": 0.27,
+      "matched_supp": "0197"
+    },
+    {
+      "vulgate": "2.19.23",
+      "best_sim": 0.28,
+      "matched_supp": "0197"
+    },
+    {
+      "vulgate": "2.19.24",
+      "best_sim": 0.28,
+      "matched_supp": "0197"
+    },
+    {
+      "vulgate": "2.19.25",
+      "best_sim": 0.42,
+      "matched_supp": "0198"
+    },
+    {
+      "vulgate": "2.21.11",
+      "best_sim": 0.49,
+      "matched_supp": "0205"
+    },
+    {
+      "vulgate": "2.21.13",
+      "best_sim": 0.14,
+      "matched_supp": "0201"
+    },
+    {
+      "vulgate": "2.21.14",
+      "best_sim": 0.09,
+      "matched_supp": "0177"
+    },
+    {
+      "vulgate": "2.21.18",
+      "best_sim": 1.0,
+      "matched_supp": "0208"
+    },
+    {
+      "vulgate": "2.21.22",
+      "best_sim": 0.41,
+      "matched_supp": "0210"
+    },
+    {
+      "vulgate": "2.21.23",
+      "best_sim": 0.32,
+      "matched_supp": "0212"
+    },
+    {
+      "vulgate": "2.21.33",
+      "best_sim": 0.34,
+      "matched_supp": "0221"
+    },
+    {
+      "vulgate": "2.21.34",
+      "best_sim": 0.33,
+      "matched_supp": "0221"
+    },
+    {
+      "vulgate": "2.21.35",
+      "best_sim": 0.17,
+      "matched_supp": "0221"
+    },
+    {
+      "vulgate": "2.21.43",
+      "best_sim": 0.27,
+      "matched_supp": "0234"
+    },
+    {
+      "vulgate": "2.21.49",
+      "best_sim": 0.55,
+      "matched_supp": "0232"
+    },
+    {
+      "vulgate": "2.21.50",
+      "best_sim": 0.1,
+      "matched_supp": "0394"
+    },
+    {
+      "vulgate": "2.22.5",
+      "best_sim": 0.32,
+      "matched_supp": "0235"
+    },
+    {
+      "vulgate": "2.22.13",
+      "best_sim": 1.0,
+      "matched_supp": "0237"
+    },
+    {
+      "vulgate": "2.23.11",
+      "best_sim": 0.1,
+      "matched_supp": "0288"
+    },
+    {
+      "vulgate": "2.23.12",
+      "best_sim": 0.08,
+      "matched_supp": "0408"
+    },
+    {
+      "vulgate": "2.23.13",
+      "best_sim": 0.08,
+      "matched_supp": "0524"
+    },
+    {
+      "vulgate": "2.23.14",
+      "best_sim": 0.06,
+      "matched_supp": "0474"
+    },
+    {
+      "vulgate": "2.23.15",
+      "best_sim": 0.07,
+      "matched_supp": "0046"
+    },
+    {
+      "vulgate": "2.23.16",
+      "best_sim": 0.08,
+      "matched_supp": "0231"
+    },
+    {
+      "vulgate": "2.23.17",
+      "best_sim": 0.07,
+      "matched_supp": "0056"
+    },
+    {
+      "vulgate": "2.23.18",
+      "best_sim": 0.04,
+      "matched_supp": "0064"
+    },
+    {
+      "vulgate": "2.23.19",
+      "best_sim": 0.1,
+      "matched_supp": "0138"
+    },
+    {
+      "vulgate": "2.23.20",
+      "best_sim": 0.09,
+      "matched_supp": "0287"
+    },
+    {
+      "vulgate": "2.23.21",
+      "best_sim": 0.11,
+      "matched_supp": "0461"
+    },
+    {
+      "vulgate": "2.23.22",
+      "best_sim": 0.09,
+      "matched_supp": "0053"
+    },
+    {
+      "vulgate": "2.24.7",
+      "best_sim": 1.0,
+      "matched_supp": "0256"
+    },
+    {
+      "vulgate": "2.24.44",
+      "best_sim": 0.48,
+      "matched_supp": "0263"
+    },
+    {
+      "vulgate": "2.25.9",
+      "best_sim": 0.14,
+      "matched_supp": "0271"
+    },
+    {
+      "vulgate": "2.25.10",
+      "best_sim": 0.09,
+      "matched_supp": "0615"
+    },
+    {
+      "vulgate": "2.25.11",
+      "best_sim": 0.45,
+      "matched_supp": "0268"
+    },
+    {
+      "vulgate": "2.27.1",
+      "best_sim": 0.84,
+      "matched_supp": "0275"
+    },
+    {
+      "vulgate": "2.27.28",
+      "best_sim": 0.55,
+      "matched_supp": "0280"
+    },
+    {
+      "vulgate": "2.28.21",
+      "best_sim": 0.64,
+      "matched_supp": "0285"
+    },
+    {
+      "vulgate": "2.29.4",
+      "best_sim": 0.12,
+      "matched_supp": "0166"
+    },
+    {
+      "vulgate": "2.30.7",
+      "best_sim": 0.12,
+      "matched_supp": "0222"
+    },
+    {
+      "vulgate": "2.30.8",
+      "best_sim": 0.1,
+      "matched_supp": "0051"
+    },
+    {
+      "vulgate": "2.30.9",
+      "best_sim": 0.1,
+      "matched_supp": "0051"
+    },
+    {
+      "vulgate": "2.30.14",
+      "best_sim": 0.49,
+      "matched_supp": "0289"
+    },
+    {
+      "vulgate": "2.31.11",
+      "best_sim": 0.09,
+      "matched_supp": "0496"
+    },
+    {
+      "vulgate": "2.31.12",
+      "best_sim": 0.1,
+      "matched_supp": "0319"
+    },
+    {
+      "vulgate": "2.31.13",
+      "best_sim": 0.08,
+      "matched_supp": "0593"
+    },
+    {
+      "vulgate": "2.31.14",
+      "best_sim": 0.14,
+      "matched_supp": "0051"
+    },
+    {
+      "vulgate": "2.31.16",
+      "best_sim": 0.07,
+      "matched_supp": "0356"
+    },
+    {
+      "vulgate": "2.31.17",
+      "best_sim": 0.1,
+      "matched_supp": "0549"
+    },
+    {
+      "vulgate": "2.31.18",
+      "best_sim": 0.07,
+      "matched_supp": "0455"
+    },
+    {
+      "vulgate": "2.31.19",
+      "best_sim": 0.11,
+      "matched_supp": "0162"
+    },
+    {
+      "vulgate": "2.31.20",
+      "best_sim": 0.12,
+      "matched_supp": "0004"
+    },
+    {
+      "vulgate": "2.31.28",
+      "best_sim": 0.39,
+      "matched_supp": "0299"
+    },
+    {
+      "vulgate": "2.31.29",
+      "best_sim": 0.4,
+      "matched_supp": "0299"
+    },
+    {
+      "vulgate": "2.31.30",
+      "best_sim": 0.24,
+      "matched_supp": "0299"
+    },
+    {
+      "vulgate": "2.31.31",
+      "best_sim": 0.32,
+      "matched_supp": "0300"
+    },
+    {
+      "vulgate": "2.31.33",
+      "best_sim": 0.66,
+      "matched_supp": "0301"
+    },
+    {
+      "vulgate": "2.31.41",
+      "best_sim": 0.09,
+      "matched_supp": "0262"
+    },
+    {
+      "vulgate": "2.31.42",
+      "best_sim": 0.08,
+      "matched_supp": "0576"
+    },
+    {
+      "vulgate": "2.31.43",
+      "best_sim": 0.34,
+      "matched_supp": "0302"
+    },
+    {
+      "vulgate": "2.31.44",
+      "best_sim": 0.32,
+      "matched_supp": "0302"
+    },
+    {
+      "vulgate": "2.31.45",
+      "best_sim": 0.07,
+      "matched_supp": "0100"
+    },
+    {
+      "vulgate": "2.31.46",
+      "best_sim": 0.08,
+      "matched_supp": "0259"
+    },
+    {
+      "vulgate": "2.31.47",
+      "best_sim": 0.06,
+      "matched_supp": "0024"
+    },
+    {
+      "vulgate": "2.31.48",
+      "best_sim": 0.07,
+      "matched_supp": "0238"
+    },
+    {
+      "vulgate": "2.31.49",
+      "best_sim": 0.08,
+      "matched_supp": "0005"
+    },
+    {
+      "vulgate": "2.31.50",
+      "best_sim": 0.08,
+      "matched_supp": "0095"
+    },
+    {
+      "vulgate": "2.31.51",
+      "best_sim": 0.09,
+      "matched_supp": "0606"
+    },
+    {
+      "vulgate": "2.31.52",
+      "best_sim": 0.11,
+      "matched_supp": "0513"
+    },
+    {
+      "vulgate": "2.31.53",
+      "best_sim": 0.1,
+      "matched_supp": "0550"
+    },
+    {
+      "vulgate": "2.31.69",
+      "best_sim": 0.09,
+      "matched_supp": "0410"
+    },
+    {
+      "vulgate": "2.32.13",
+      "best_sim": 0.27,
+      "matched_supp": "0322"
+    },
+    {
+      "vulgate": "2.32.14",
+      "best_sim": 0.09,
+      "matched_supp": "0457"
+    },
+    {
+      "vulgate": "2.33.42",
+      "best_sim": 0.27,
+      "matched_supp": "0335"
+    },
+    {
+      "vulgate": "2.33.46",
+      "best_sim": 0.09,
+      "matched_supp": "0553"
+    },
+    {
+      "vulgate": "2.34.15",
+      "best_sim": 0.13,
+      "matched_supp": "0053"
+    },
+    {
+      "vulgate": "2.34.16",
+      "best_sim": 0.09,
+      "matched_supp": "0090"
+    },
+    {
+      "vulgate": "2.34.20",
+      "best_sim": 0.06,
+      "matched_supp": "0417"
+    },
+    {
+      "vulgate": "2.34.22",
+      "best_sim": 0.09,
+      "matched_supp": "0016"
+    },
+    {
+      "vulgate": "2.34.23",
+      "best_sim": 0.08,
+      "matched_supp": "0280"
+    },
+    {
+      "vulgate": "2.34.24",
+      "best_sim": 0.07,
+      "matched_supp": "0078"
+    },
+    {
+      "vulgate": "2.35.2",
+      "best_sim": 0.1,
+      "matched_supp": "0610"
+    },
+    {
+      "vulgate": "2.35.10",
+      "best_sim": 0.49,
+      "matched_supp": "0347"
+    },
+    {
+      "vulgate": "2.35.13",
+      "best_sim": 0.09,
+      "matched_supp": "0479"
+    },
+    {
+      "vulgate": "2.35.14",
+      "best_sim": 0.11,
+      "matched_supp": "0041"
+    },
+    {
+      "vulgate": "2.37.10",
+      "best_sim": 0.22,
+      "matched_supp": "0353"
+    },
+    {
+      "vulgate": "2.37.11",
+      "best_sim": 0.14,
+      "matched_supp": "0353"
+    },
+    {
+      "vulgate": "2.37.12",
+      "best_sim": 0.13,
+      "matched_supp": "0353"
+    },
+    {
+      "vulgate": "2.37.13",
+      "best_sim": 0.08,
+      "matched_supp": "0449"
+    },
+    {
+      "vulgate": "2.37.14",
+      "best_sim": 0.15,
+      "matched_supp": "0353"
+    },
+    {
+      "vulgate": "2.37.15",
+      "best_sim": 0.09,
+      "matched_supp": "0513"
+    },
+    {
+      "vulgate": "2.37.16",
+      "best_sim": 0.17,
+      "matched_supp": "0353"
+    },
+    {
+      "vulgate": "2.37.23",
+      "best_sim": 0.5,
+      "matched_supp": "0354"
+    },
+    {
+      "vulgate": "2.38.13",
+      "best_sim": 0.1,
+      "matched_supp": "0042"
+    },
+    {
+      "vulgate": "2.38.14",
+      "best_sim": 0.1,
+      "matched_supp": "0492"
+    },
+    {
+      "vulgate": "2.38.27",
+      "best_sim": 0.33,
+      "matched_supp": "0358"
+    },
+    {
+      "vulgate": "2.38.28",
+      "best_sim": 0.33,
+      "matched_supp": "0358"
+    },
+    {
+      "vulgate": "2.38.29",
+      "best_sim": 0.38,
+      "matched_supp": "0358"
+    },
+    {
+      "vulgate": "2.39.4",
+      "best_sim": 0.49,
+      "matched_supp": "0362"
+    },
+    {
+      "vulgate": "2.39.5",
+      "best_sim": 0.08,
+      "matched_supp": "0095"
+    },
+    {
+      "vulgate": "2.39.7",
+      "best_sim": 0.07,
+      "matched_supp": "0028"
+    },
+    {
+      "vulgate": "2.39.9",
+      "best_sim": 0.67,
+      "matched_supp": "0363"
+    },
+    {
+      "vulgate": "2.41.16",
+      "best_sim": 0.47,
+      "matched_supp": "0370"
+    },
+    {
+      "vulgate": "2.43.8",
+      "best_sim": 0.45,
+      "matched_supp": "0380"
+    },
+    {
+      "vulgate": "2.43.9",
+      "best_sim": 0.07,
+      "matched_supp": "0386"
+    },
+    {
+      "vulgate": "2.43.10",
+      "best_sim": 0.08,
+      "matched_supp": "0596"
+    },
+    {
+      "vulgate": "2.43.12",
+      "best_sim": 0.11,
+      "matched_supp": "0462"
+    },
+    {
+      "vulgate": "2.43.14",
+      "best_sim": 0.49,
+      "matched_supp": "0382"
+    },
+    {
+      "vulgate": "2.43.23",
+      "best_sim": 0.49,
+      "matched_supp": "0388"
+    },
+    {
+      "vulgate": "2.44.10",
+      "best_sim": 0.49,
+      "matched_supp": "0392"
+    },
+    {
+      "vulgate": "2.44.11",
+      "best_sim": 0.51,
+      "matched_supp": "0392"
+    },
+    {
+      "vulgate": "2.44.15",
+      "best_sim": 0.12,
+      "matched_supp": "0610"
+    },
+    {
+      "vulgate": "2.44.16",
+      "best_sim": 0.11,
+      "matched_supp": "0046"
+    },
+    {
+      "vulgate": "2.44.17",
+      "best_sim": 0.11,
+      "matched_supp": "0592"
+    },
+    {
+      "vulgate": "2.44.18",
+      "best_sim": 0.12,
+      "matched_supp": "0518"
+    },
+    {
+      "vulgate": "2.44.19",
+      "best_sim": 0.14,
+      "matched_supp": "0592"
+    },
+    {
+      "vulgate": "2.44.20",
+      "best_sim": 0.11,
+      "matched_supp": "0409"
+    },
+    {
+      "vulgate": "2.44.21",
+      "best_sim": 0.15,
+      "matched_supp": "0593"
+    },
+    {
+      "vulgate": "2.45.21",
+      "best_sim": 0.14,
+      "matched_supp": "0401"
+    },
+    {
+      "vulgate": "2.45.22",
+      "best_sim": 0.25,
+      "matched_supp": "0401"
+    },
+    {
+      "vulgate": "2.45.23",
+      "best_sim": 0.25,
+      "matched_supp": "0401"
+    },
+    {
+      "vulgate": "2.45.24",
+      "best_sim": 0.21,
+      "matched_supp": "0401"
+    },
+    {
+      "vulgate": "2.45.25",
+      "best_sim": 0.13,
+      "matched_supp": "0401"
+    },
+    {
+      "vulgate": "2.45.26",
+      "best_sim": 0.08,
+      "matched_supp": "0379"
+    },
+    {
+      "vulgate": "2.45.34",
+      "best_sim": 0.43,
+      "matched_supp": "0404"
+    },
+    {
+      "vulgate": "2.45.44",
+      "best_sim": 0.09,
+      "matched_supp": "0479"
+    },
+    {
+      "vulgate": "2.45.55",
+      "best_sim": 0.5,
+      "matched_supp": "0412"
+    },
+    {
+      "vulgate": "2.45.56",
+      "best_sim": 0.12,
+      "matched_supp": "0504"
+    },
+    {
+      "vulgate": "2.45.57",
+      "best_sim": 0.08,
+      "matched_supp": "0192"
+    },
+    {
+      "vulgate": "2.45.58",
+      "best_sim": 0.09,
+      "matched_supp": "0101"
+    },
+    {
+      "vulgate": "2.45.59",
+      "best_sim": 0.09,
+      "matched_supp": "0484"
+    },
+    {
+      "vulgate": "2.45.62",
+      "best_sim": 0.14,
+      "matched_supp": "0389"
+    },
+    {
+      "vulgate": "2.45.67",
+      "best_sim": 0.08,
+      "matched_supp": "0205"
+    },
+    {
+      "vulgate": "2.46.1",
+      "best_sim": 0.08,
+      "matched_supp": "0333"
+    },
+    {
+      "vulgate": "2.46.2",
+      "best_sim": 0.12,
+      "matched_supp": "0056"
+    },
+    {
+      "vulgate": "2.46.3",
+      "best_sim": 0.15,
+      "matched_supp": "0494"
+    },
+    {
+      "vulgate": "2.46.4",
+      "best_sim": 0.12,
+      "matched_supp": "0056"
+    },
+    {
+      "vulgate": "2.46.5",
+      "best_sim": 0.06,
+      "matched_supp": "0170"
+    },
+    {
+      "vulgate": "2.46.6",
+      "best_sim": 0.2,
+      "matched_supp": "0148"
+    },
+    {
+      "vulgate": "2.46.7",
+      "best_sim": 0.11,
+      "matched_supp": "0529"
+    },
+    {
+      "vulgate": "2.46.8",
+      "best_sim": 0.07,
+      "matched_supp": "0548"
+    },
+    {
+      "vulgate": "2.46.9",
+      "best_sim": 0.15,
+      "matched_supp": "0057"
+    },
+    {
+      "vulgate": "2.46.11",
+      "best_sim": 0.14,
+      "matched_supp": "0530"
+    },
+    {
+      "vulgate": "2.46.12",
+      "best_sim": 0.12,
+      "matched_supp": "0166"
+    },
+    {
+      "vulgate": "2.46.13",
+      "best_sim": 0.08,
+      "matched_supp": "0482"
+    },
+    {
+      "vulgate": "2.46.14",
+      "best_sim": 0.16,
+      "matched_supp": "0162"
+    },
+    {
+      "vulgate": "2.46.15",
+      "best_sim": 0.1,
+      "matched_supp": "0095"
+    },
+    {
+      "vulgate": "2.46.16",
+      "best_sim": 0.09,
+      "matched_supp": "0606"
+    },
+    {
+      "vulgate": "2.46.17",
+      "best_sim": 0.07,
+      "matched_supp": "0310"
+    },
+    {
+      "vulgate": "2.46.18",
+      "best_sim": 0.19,
+      "matched_supp": "0126"
+    },
+    {
+      "vulgate": "2.46.19",
+      "best_sim": 0.12,
+      "matched_supp": "0549"
+    },
+    {
+      "vulgate": "2.46.20",
+      "best_sim": 0.07,
+      "matched_supp": "0621"
+    },
+    {
+      "vulgate": "2.46.21",
+      "best_sim": 0.1,
+      "matched_supp": "0170"
+    },
+    {
+      "vulgate": "2.46.22",
+      "best_sim": 0.11,
+      "matched_supp": "0433"
+    },
+    {
+      "vulgate": "2.46.23",
+      "best_sim": 0.1,
+      "matched_supp": "0030"
+    },
+    {
+      "vulgate": "2.46.24",
+      "best_sim": 0.12,
+      "matched_supp": "0205"
+    },
+    {
+      "vulgate": "2.46.25",
+      "best_sim": 0.12,
+      "matched_supp": "0141"
+    },
+    {
+      "vulgate": "2.46.26",
+      "best_sim": 0.09,
+      "matched_supp": "0586"
+    },
+    {
+      "vulgate": "2.46.27",
+      "best_sim": 0.1,
+      "matched_supp": "0057"
+    },
+    {
+      "vulgate": "2.46.28",
+      "best_sim": 0.08,
+      "matched_supp": "0412"
+    },
+    {
+      "vulgate": "2.46.29",
+      "best_sim": 0.07,
+      "matched_supp": "0591"
+    },
+    {
+      "vulgate": "2.46.30",
+      "best_sim": 0.11,
+      "matched_supp": "0004"
+    },
+    {
+      "vulgate": "2.46.31",
+      "best_sim": 0.1,
+      "matched_supp": "0499"
+    },
+    {
+      "vulgate": "2.46.33",
+      "best_sim": 0.21,
+      "matched_supp": "0418"
+    },
+    {
+      "vulgate": "2.47.7",
+      "best_sim": 0.47,
+      "matched_supp": "0422"
+    },
+    {
+      "vulgate": "2.47.9",
+      "best_sim": 0.09,
+      "matched_supp": "0158"
+    },
+    {
+      "vulgate": "2.47.10",
+      "best_sim": 0.1,
+      "matched_supp": "0546"
+    },
+    {
+      "vulgate": "2.47.11",
+      "best_sim": 0.45,
+      "matched_supp": "0424"
+    },
+    {
+      "vulgate": "2.47.12",
+      "best_sim": 0.42,
+      "matched_supp": "0424"
+    },
+    {
+      "vulgate": "2.47.30",
+      "best_sim": 1.0,
+      "matched_supp": "0427"
+    },
+    {
+      "vulgate": "2.48.2",
+      "best_sim": 0.43,
+      "matched_supp": "0428"
+    },
+    {
+      "vulgate": "2.49.17",
+      "best_sim": 0.06,
+      "matched_supp": "0037"
+    },
+    {
+      "vulgate": "2.49.20",
+      "best_sim": 0.36,
+      "matched_supp": "0440"
+    },
+    {
+      "vulgate": "2.49.27",
+      "best_sim": 0.47,
+      "matched_supp": "0442"
+    },
+    {
+      "vulgate": "2.49.30",
+      "best_sim": 0.49,
+      "matched_supp": "0444"
+    },
+    {
+      "vulgate": "2.49.40",
+      "best_sim": 0.58,
+      "matched_supp": "0448"
+    },
+    {
+      "vulgate": "2.50.13",
+      "best_sim": 0.09,
+      "matched_supp": "0549"
+    },
+    {
+      "vulgate": "2.50.35",
+      "best_sim": 1.0,
+      "matched_supp": "0458"
+    },
+    {
+      "vulgate": "2.51.7",
+      "best_sim": 0.1,
+      "matched_supp": "0032"
+    },
+    {
+      "vulgate": "2.51.21",
+      "best_sim": 0.45,
+      "matched_supp": "0464"
+    },
+    {
+      "vulgate": "2.51.22",
+      "best_sim": 0.11,
+      "matched_supp": "0257"
+    },
+    {
+      "vulgate": "2.51.23",
+      "best_sim": 0.09,
+      "matched_supp": "0513"
+    },
+    {
+      "vulgate": "2.51.24",
+      "best_sim": 0.27,
+      "matched_supp": "0465"
+    },
+    {
+      "vulgate": "2.51.25",
+      "best_sim": 0.41,
+      "matched_supp": "0463"
+    },
+    {
+      "vulgate": "2.51.33",
+      "best_sim": 0.33,
+      "matched_supp": "0468"
+    },
+    {
+      "vulgate": "2.51.34",
+      "best_sim": 0.13,
+      "matched_supp": "0466"
+    },
+    {
+      "vulgate": "2.52.9",
+      "best_sim": 0.55,
+      "matched_supp": "0469"
+    },
+    {
+      "vulgate": "2.52.31",
+      "best_sim": 0.16,
+      "matched_supp": "0477"
+    },
+    {
+      "vulgate": "2.52.32",
+      "best_sim": 0.23,
+      "matched_supp": "0477"
+    },
+    {
+      "vulgate": "2.52.33",
+      "best_sim": 0.31,
+      "matched_supp": "0474"
+    },
+    {
+      "vulgate": "2.52.34",
+      "best_sim": 0.18,
+      "matched_supp": "0477"
+    },
+    {
+      "vulgate": "2.52.35",
+      "best_sim": 0.13,
+      "matched_supp": "0470"
+    },
+    {
+      "vulgate": "2.52.36",
+      "best_sim": 0.09,
+      "matched_supp": "0089"
+    },
+    {
+      "vulgate": "2.52.37",
+      "best_sim": 0.12,
+      "matched_supp": "0467"
+    },
+    {
+      "vulgate": "2.52.40",
+      "best_sim": 0.18,
+      "matched_supp": "0464"
+    },
+    {
+      "vulgate": "2.52.41",
+      "best_sim": 0.13,
+      "matched_supp": "0425"
+    },
+    {
+      "vulgate": "2.52.43",
+      "best_sim": 0.12,
+      "matched_supp": "0471"
+    },
+    {
+      "vulgate": "2.53.14",
+      "best_sim": 0.43,
+      "matched_supp": "0481"
+    },
+    {
+      "vulgate": "2.53.15",
+      "best_sim": 0.08,
+      "matched_supp": "0030"
+    },
+    {
+      "vulgate": "2.53.18",
+      "best_sim": 0.08,
+      "matched_supp": "0325"
+    },
+    {
+      "vulgate": "2.53.19",
+      "best_sim": 0.13,
+      "matched_supp": "0607"
+    },
+    {
+      "vulgate": "2.53.20",
+      "best_sim": 0.11,
+      "matched_supp": "0457"
+    },
+    {
+      "vulgate": "2.53.21",
+      "best_sim": 0.09,
+      "matched_supp": "0513"
+    },
+    {
+      "vulgate": "2.53.22",
+      "best_sim": 0.49,
+      "matched_supp": "0484"
+    },
+    {
+      "vulgate": "2.54.9",
+      "best_sim": 1.0,
+      "matched_supp": "0488"
+    },
+    {
+      "vulgate": "2.54.10",
+      "best_sim": 0.93,
+      "matched_supp": "0489"
+    },
+    {
+      "vulgate": "2.55.1",
+      "best_sim": 0.83,
+      "matched_supp": "0492"
+    },
+    {
+      "vulgate": "2.55.10",
+      "best_sim": 1.0,
+      "matched_supp": "0493"
+    },
+    {
+      "vulgate": "2.56.2",
+      "best_sim": 0.5,
+      "matched_supp": "0494"
+    },
+    {
+      "vulgate": "2.56.3",
+      "best_sim": 0.08,
+      "matched_supp": "0199"
+    },
+    {
+      "vulgate": "2.58.26",
+      "best_sim": 0.12,
+      "matched_supp": "0499"
+    },
+    {
+      "vulgate": "2.58.36",
+      "best_sim": 0.3,
+      "matched_supp": "0500"
+    },
+    {
+      "vulgate": "2.59.1",
+      "best_sim": 0.38,
+      "matched_supp": "0501"
+    },
+    {
+      "vulgate": "2.59.2",
+      "best_sim": 0.34,
+      "matched_supp": "0501"
+    },
+    {
+      "vulgate": "2.59.3",
+      "best_sim": 0.32,
+      "matched_supp": "0501"
+    },
+    {
+      "vulgate": "2.59.15",
+      "best_sim": 0.56,
+      "matched_supp": "0502"
+    },
+    {
+      "vulgate": "2.59.16",
+      "best_sim": 0.32,
+      "matched_supp": "0504"
+    },
+    {
+      "vulgate": "2.60.7",
+      "best_sim": 0.11,
+      "matched_supp": "0096"
+    },
+    {
+      "vulgate": "2.61.9",
+      "best_sim": 0.09,
+      "matched_supp": "0468"
+    },
+    {
+      "vulgate": "2.61.23",
+      "best_sim": 0.49,
+      "matched_supp": "0511"
+    },
+    {
+      "vulgate": "2.61.30",
+      "best_sim": 0.46,
+      "matched_supp": "0513"
+    },
+    {
+      "vulgate": "2.62.1",
+      "best_sim": 0.83,
+      "matched_supp": "0514"
+    },
+    {
+      "vulgate": "2.62.7",
+      "best_sim": 0.52,
+      "matched_supp": "0516"
+    },
+    {
+      "vulgate": "2.62.15",
+      "best_sim": 0.08,
+      "matched_supp": "0340"
+    },
+    {
+      "vulgate": "2.65.36",
+      "best_sim": 1.0,
+      "matched_supp": "0526"
+    },
+    {
+      "vulgate": "2.67.8",
+      "best_sim": 0.51,
+      "matched_supp": "0528"
+    },
+    {
+      "vulgate": "2.67.9",
+      "best_sim": 0.43,
+      "matched_supp": "0529"
+    },
+    {
+      "vulgate": "2.67.16",
+      "best_sim": 0.52,
+      "matched_supp": "0531"
+    },
+    {
+      "vulgate": "2.67.17",
+      "best_sim": 0.53,
+      "matched_supp": "0531"
+    },
+    {
+      "vulgate": "2.67.20",
+      "best_sim": 0.76,
+      "matched_supp": "0532"
+    },
+    {
+      "vulgate": "2.67.21",
+      "best_sim": 1.0,
+      "matched_supp": "0533"
+    },
+    {
+      "vulgate": "2.67.22",
+      "best_sim": 0.88,
+      "matched_supp": "0534"
+    },
+    {
+      "vulgate": "2.68.41",
+      "best_sim": 0.2,
+      "matched_supp": "0543"
+    },
+    {
+      "vulgate": "2.68.42",
+      "best_sim": 0.27,
+      "matched_supp": "0543"
+    },
+    {
+      "vulgate": "2.68.43",
+      "best_sim": 0.19,
+      "matched_supp": "0543"
+    },
+    {
+      "vulgate": "2.68.44",
+      "best_sim": 0.22,
+      "matched_supp": "0543"
+    },
+    {
+      "vulgate": "2.68.45",
+      "best_sim": 0.22,
+      "matched_supp": "0543"
+    },
+    {
+      "vulgate": "2.68.46",
+      "best_sim": 0.69,
+      "matched_supp": "0544"
+    },
+    {
+      "vulgate": "2.68.48",
+      "best_sim": 1.0,
+      "matched_supp": "0553"
+    },
+    {
+      "vulgate": "2.68.75",
+      "best_sim": 0.51,
+      "matched_supp": "0556"
+    },
+    {
+      "vulgate": "2.68.83",
+      "best_sim": 0.19,
+      "matched_supp": "0559"
+    },
+    {
+      "vulgate": "2.68.85",
+      "best_sim": 0.09,
+      "matched_supp": "0374"
+    },
+    {
+      "vulgate": "2.70.8",
+      "best_sim": 0.46,
+      "matched_supp": "0564"
+    },
+    {
+      "vulgate": "2.73.7",
+      "best_sim": 0.55,
+      "matched_supp": "0575"
+    },
+    {
+      "vulgate": "2.73.11",
+      "best_sim": 0.53,
+      "matched_supp": "0576"
+    },
+    {
+      "vulgate": "2.75.4",
+      "best_sim": 0.51,
+      "matched_supp": "0580"
+    },
+    {
+      "vulgate": "2.75.6",
+      "best_sim": 0.13,
+      "matched_supp": "0616"
+    },
+    {
+      "vulgate": "2.75.9",
+      "best_sim": 0.63,
+      "matched_supp": "0581"
+    },
+    {
+      "vulgate": "2.76.5",
+      "best_sim": 0.79,
+      "matched_supp": "0583"
+    },
+    {
+      "vulgate": "2.76.16",
+      "best_sim": 1.0,
+      "matched_supp": "0585"
+    },
+    {
+      "vulgate": "2.76.23",
+      "best_sim": 0.51,
+      "matched_supp": "0586"
+    },
+    {
+      "vulgate": "2.78.7",
+      "best_sim": 0.46,
+      "matched_supp": "0594"
+    },
+    {
+      "vulgate": "2.78.8",
+      "best_sim": 0.53,
+      "matched_supp": "0594"
+    },
+    {
+      "vulgate": "2.78.16",
+      "best_sim": 0.51,
+      "matched_supp": "0596"
+    },
+    {
+      "vulgate": "2.78.17",
+      "best_sim": 0.08,
+      "matched_supp": "0518"
+    },
+    {
+      "vulgate": "2.78.23",
+      "best_sim": 0.44,
+      "matched_supp": "0597"
+    },
+    {
+      "vulgate": "2.79.21",
+      "best_sim": 0.08,
+      "matched_supp": "0550"
+    },
+    {
+      "vulgate": "2.79.22",
+      "best_sim": 0.1,
+      "matched_supp": "0368"
+    },
+    {
+      "vulgate": "2.79.23",
+      "best_sim": 0.18,
+      "matched_supp": "0550"
+    },
+    {
+      "vulgate": "2.79.24",
+      "best_sim": 0.08,
+      "matched_supp": "0567"
+    },
+    {
+      "vulgate": "2.79.25",
+      "best_sim": 0.09,
+      "matched_supp": "0035"
+    },
+    {
+      "vulgate": "2.79.26",
+      "best_sim": 0.06,
+      "matched_supp": "0587"
+    },
+    {
+      "vulgate": "2.79.27",
+      "best_sim": 0.09,
+      "matched_supp": "0489"
+    },
+    {
+      "vulgate": "2.79.28",
+      "best_sim": 0.09,
+      "matched_supp": "0262"
+    },
+    {
+      "vulgate": "2.79.29",
+      "best_sim": 0.1,
+      "matched_supp": "0533"
+    },
+    {
+      "vulgate": "2.79.32",
+      "best_sim": 0.44,
+      "matched_supp": "0600"
+    },
+    {
+      "vulgate": "2.79.33",
+      "best_sim": 0.45,
+      "matched_supp": "0600"
+    },
+    {
+      "vulgate": "2.79.34",
+      "best_sim": 0.33,
+      "matched_supp": "0601"
+    },
+    {
+      "vulgate": "2.80.1",
+      "best_sim": 0.66,
+      "matched_supp": "0602"
+    },
+    {
+      "vulgate": "2.80.15",
+      "best_sim": 0.11,
+      "matched_supp": "0494"
+    },
+    {
+      "vulgate": "2.80.25",
+      "best_sim": 0.51,
+      "matched_supp": "0604"
+    },
+    {
+      "vulgate": "2.80.26",
+      "best_sim": 0.19,
+      "matched_supp": "0604"
+    },
+    {
+      "vulgate": "2.80.32",
+      "best_sim": 0.84,
+      "matched_supp": "0605"
+    },
+    {
+      "vulgate": "2.80.44",
+      "best_sim": 0.72,
+      "matched_supp": "0607"
+    },
+    {
+      "vulgate": "2.80.47",
+      "best_sim": 0.35,
+      "matched_supp": "0609"
+    },
+    {
+      "vulgate": "2.80.48",
+      "best_sim": 0.33,
+      "matched_supp": "0609"
+    },
+    {
+      "vulgate": "2.80.49",
+      "best_sim": 0.1,
+      "matched_supp": "0613"
+    },
+    {
+      "vulgate": "2.80.50",
+      "best_sim": 0.07,
+      "matched_supp": "0592"
+    },
+    {
+      "vulgate": "2.80.51",
+      "best_sim": 0.13,
+      "matched_supp": "0437"
+    },
+    {
+      "vulgate": "2.81.18",
+      "best_sim": 0.39,
+      "matched_supp": "0615"
+    },
+    {
+      "vulgate": "2.81.20",
+      "best_sim": 0.31,
+      "matched_supp": "0617"
+    },
+    {
+      "vulgate": "2.81.22",
+      "best_sim": 0.09,
+      "matched_supp": "0461"
+    },
+    {
+      "vulgate": "2.81.39",
+      "best_sim": 0.09,
+      "matched_supp": "0516"
+    }
+  ]
+}
