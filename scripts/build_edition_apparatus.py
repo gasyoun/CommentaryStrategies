@@ -1,33 +1,42 @@
 #!/usr/bin/env python3
-"""Book-wide Critical↔Southern VARIANT APPARATUS for the Sundarakāṇḍa.
+"""Book-wide Critical↔vulgate VARIANT APPARATUS — generalized (H784) from the
+Sundarakāṇḍa reference build to any 2-witness edition-comparison output.
 
 Runs the helayo-style aligner (spike_helayo_align: Gotoh affine-gap +
-consonant/vowel substitution matrix) over ALL committed variant pairs in
-data/edition_comparison/critical_only_and_variants.json — every aligned verse
-where the Baroda critical edition and the southern vulgate differ in wording —
-and emits a positional apparatus: per verse, the competing readings (lemma ]
-variant), in standard apparatus notation.
+consonant/vowel substitution matrix) over ALL committed variant pairs in a
+compare_editions*.py `critical_only_and_variants.json` — every aligned verse
+where the critical edition and the vulgate differ in wording — and emits a
+positional apparatus: per verse, the competing readings (lemma ] variant), in
+standard apparatus notation.
 
-This is the concrete "collation engine + apparatus backbone" applied to the whole
-book, not just the spike sargas. It covers the VARIANT-READING layer (1043 aligned
-pairs); whole-passage differences (structural absences / critical-only) are a
+This is the concrete "collation engine + apparatus backbone" applied to the
+whole book, not just spike sargas. It covers the VARIANT-READING layer;
+whole-passage differences (structural absences / critical-only) are a
 separate footnote layer already produced by build_edition_footnotes.py.
 
-Outputs (under data/analysis/helayo_spike/):
-  apparatus_sundara_variants.json  — full machine-readable apparatus, all loci
-  APPARATUS_SUNDARA_VARIANTS.md    — human-readable digest: per-sarga counts +
-                                     the substantive (multi-akṣara) loci sample
+Verse ids on both witnesses are "work.chapter.verse" (3 dot-separated ints,
+e.g. Rāmāyaṇa "5.35.12" or Mahābhārata "3.7.42") — verse_key() below parses
+that shape regardless of which text it names; no per-work change needed.
 
-Stdlib-only. Read-only inputs. Usage: python build_edition_apparatus.py
+CLI (all optional; defaults reproduce the original Sundarakāṇḍa run exactly):
+  --input PATH     critical_only_and_variants.json (default: Sundara's)
+  --outdir DIR     output directory (default: data/analysis/helayo_spike)
+  --title STR      report title (default: Sundarakāṇḍa's)
+  --other-key STR  the non-"critical" witness key in the input JSON/output
+                   ("southern" for Rāmāyaṇa, "vulgate" for Mahābhārata)
+
+Stdlib-only. Read-only inputs. Usage: python build_edition_apparatus.py [opts]
 """
 import sys
 import os
 import json
+import argparse
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+REPO_DEFAULT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from spike_helayo_align import clean, gotoh, collapse_loci  # noqa: E402
 
@@ -56,14 +65,33 @@ def has_cyrillic(text):
     return any(ch in _CYRILLIC for ch in (text or ""))
 
 
+def parse_args():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--input", default=None,
+                   help="critical_only_and_variants.json (default: Sundarakanda's)")
+    p.add_argument("--outdir", default=None,
+                   help="output directory (default: data/analysis/helayo_spike)")
+    p.add_argument("--title", default="Sundarakāṇḍa — Critical (Baroda) ↔ Southern vulgate variant apparatus",
+                   help="report title")
+    p.add_argument("--work-label", default="Sundara",
+                   help="short work label used in output filenames, e.g. 'Sundara' or 'MBh-Vanaparva'")
+    p.add_argument("--other-key", default="southern",
+                   help="the non-'critical' witness key in the input/output JSON "
+                        "('southern' for Ramayana, 'vulgate' for Mahabharata)")
+    p.add_argument("--chapter-label", default="sarga",
+                   help="chapter unit name for reporting, e.g. 'sarga' or 'adhyaya'")
+    return p.parse_args()
+
+
 def main():
-    repo = os.environ.get("CS_REPO",
-                          r"C:/Users/user/Documents/GitHub/CommentaryStrategies")
-    cvp = os.path.join(repo, "data", "edition_comparison",
-                       "critical_only_and_variants.json")
+    args = parse_args()
+    repo = os.environ.get("CS_REPO", REPO_DEFAULT)
+    ok = args.other_key
+    cvp = args.input or os.path.join(repo, "data", "edition_comparison",
+                                     "critical_only_and_variants.json")
     cv = json.load(open(cvp, encoding="utf-8"))
     pairs = [v for v in cv["variants"]
-             if "critical_text" in v and "southern_text" in v]
+             if "critical_text" in v and f"{ok}_text" in v]
     pairs.sort(key=lambda v: verse_key(v["critical"]))
 
     entries = []
@@ -74,19 +102,19 @@ def main():
     loci_hist = Counter()
     total_loci = 0
     for v in pairs:
-        ct, st = clean(v["critical_text"]), clean(v["southern_text"])
+        ct, st = clean(v["critical_text"]), clean(v[f"{ok}_text"])
         if has_cyrillic(ct) or has_cyrillic(st):
-            contaminated.append({"critical": v["critical"], "southern": v["southern"],
-                                 "critical_text": ct, "southern_text": st})
+            contaminated.append({"critical": v["critical"], ok: v[ok],
+                                 "critical_text": ct, f"{ok}_text": st})
             continue
         sim = v.get("similarity") or 0.0
         if sim < CLEAN_SIM:
-            reworded.append({"critical": v["critical"], "southern": v["southern"],
+            reworded.append({"critical": v["critical"], ok: v[ok],
                              "difflib_similarity": sim})
             continue
         _, aa, bb = gotoh(ct, st)
         loci = collapse_loci(aa, bb, ct, st)
-        app = [{"crit": c or "∅", "south": s or "∅"}
+        app = [{"crit": c or "∅", ok: s or "∅"}
                for c, s in loci if substantive(c, s)]
         if not app:
             continue                       # difflib flagged variant; matrix says none
@@ -96,7 +124,7 @@ def main():
         loci_hist[len(app)] += 1
         total_loci += len(app)
         entries.append({
-            "critical": v["critical"], "southern": v["southern"],
+            "critical": v["critical"], ok: v[ok],
             "difflib_similarity": v.get("similarity"),
             "kind": v.get("kind", "lcs-variant"),
             "n_loci": len(app), "apparatus": app,
@@ -104,82 +132,83 @@ def main():
 
     out = {
         "_meta": {
-            "title": "Sundarakāṇḍa — Critical (Baroda) ↔ Southern vulgate variant apparatus",
+            "title": args.title,
             "generated_by": "build_edition_apparatus.py (helayo-style Gotoh aligner)",
             "layer": "variant readings on aligned verses (NOT whole-passage absences)",
             "aligner": "char-level Gotoh affine-gap + consonant/vowel/modifier "
                        "substitution matrix; loci word-expanded",
             "witnesses": 2,
+            "other_key": ok,
             "note": "2-witness collation; Center-Star MSA advantage latent until a "
-                    "3rd witness (Gita Press) is digitised. Reworded southern-only "
-                    "verses (435) not included — their critical counterpart text is "
-                    "absent from the committed data.",
+                    "3rd witness is digitised. Reworded/absent-counterpart pairs are "
+                    "NOT included here — their critical counterpart text is absent "
+                    "from the committed data (see the significant_absences layer).",
         },
         "totals": {
             "clean_variant_verses": len(entries),
             "apparatus_loci": total_loci,
-            "sargas": len(per_sarga),
+            "chapters": len(per_sarga),
             "loci_per_verse_hist": dict(sorted(loci_hist.items())),
             "reworded_verses_routed_to_footnote_layer": len(reworded),
             "cyrillic_contaminated_verses": len(contaminated),
             "input_variant_pairs": len(pairs),
             "clean_sim_gate": CLEAN_SIM,
         },
-        "per_sarga": {str(k): per_sarga[k] for k in sorted(per_sarga)},
+        "per_chapter": {str(k): per_sarga[k] for k in sorted(per_sarga)},
         "entries": entries,
         "reworded": reworded,
         "cyrillic_contaminated": contaminated,
     }
-    outdir = os.path.join(repo, "data", "analysis", "helayo_spike")
+    outdir = args.outdir or os.path.join(repo, "data", "analysis", "helayo_spike")
     os.makedirs(outdir, exist_ok=True)
-    jpath = os.path.join(outdir, "apparatus_sundara_variants.json")
+    jpath = os.path.join(outdir, f"apparatus_{args.work_label.lower()}_variants.json")
     json.dump(out, open(jpath, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
     # ---- human-readable markdown digest ----
     md = []
     md.append("_Created: 12-07-2026 · Last updated: 12-07-2026_\n")
-    md.append("# Sundarakāṇḍa — Critical↔Southern variant apparatus (helayo-method)\n")
-    md.append(f"Book-wide collation of the **{len(entries)} clean-variant verse pairs** "
-              f"between the Baroda critical edition and the southern vulgate (the text "
-              f"M. Leonov translates), across **{len(per_sarga)} sargas** — **{total_loci} "
+    md.append(f"# {args.title} (helayo-method)\n")
+    md.append(f"Book-wide collation of the **{len(entries)} clean-variant verse pairs**, "
+              f"across **{len(per_sarga)} {args.chapter_label}s** — **{total_loci} "
               f"apparatus loci**. Gated from {len(pairs)} difflib-'variant' pairs: "
               f"{len(reworded)} heavily-reworded (sim < {CLEAN_SIM}) routed to the "
               f"footnote/absence layer, {len(contaminated)} quarantined for Cyrillic "
               "source contamination (see below). Generated by the helayo-style Gotoh "
-              "aligner (`scripts/build_edition_apparatus.py`), full data in "
-              "`apparatus_sundara_variants.json`.\n")
-    md.append("Notation: `verse  lemma (critical) ] variant (southern)`. VARIANT layer "
-              "only; whole-passage absences are in `build_edition_footnotes.py`. 2 "
-              "witnesses — Center-Star MSA latent until Gita Press is the 3rd. Aligner is "
+              f"aligner (`scripts/build_edition_apparatus.py`), full data in "
+              f"`{os.path.basename(jpath)}`.\n")
+    md.append(f"Notation: `verse  lemma (critical) ] variant ({ok})`. VARIANT layer "
+              "only; whole-passage absences are in `build_edition_footnotes.py` "
+              "(Rāmāyaṇa) / `significant_absences.json` (this comparator). 2 "
+              "witnesses — Center-Star MSA latent until a 3rd is digitised. Aligner is "
               "spike-grade (char-level + word-expansion); an akṣara-level rebuild (H776) "
               "would refine loci further.\n")
     if contaminated:
-        md.append(f"⚠️ **Data bug surfaced by the aligner:** {len(contaminated)} southern "
+        md.append(f"⚠️ **Data bug surfaced by the aligner:** {len(contaminated)} {ok} "
                   "verses carry Cyrillic characters mis-encoded as Sanskrit (e.g. "
-                  "`saṃcukoсa` with a Cyrillic `с`) — a corpus-source defect worth fixing "
-                  "upstream in `SamudraManthanam`. Listed in the JSON `cyrillic_contaminated`.\n")
-    md.append("## Per-sarga variant-locus counts\n")
-    md.append("| sarga | clean-variant verses | apparatus loci |")
+                  "`saṃcukoсa` with a Cyrillic `с`) — a corpus-source defect. "
+                  "Listed in the JSON `cyrillic_contaminated`.\n")
+    md.append(f"## Per-{args.chapter_label} variant-locus counts\n")
+    md.append(f"| {args.chapter_label} | clean-variant verses | apparatus loci |")
     md.append("|---:|---:|---:|")
     for k in sorted(per_sarga):
         r = per_sarga[k]
         md.append(f"| {k} | {r['verses']} | {r['loci']} |")
     md.append(f"| **book** | **{len(entries)}** | **{total_loci}** |\n")
     md.append("## Apparatus — sample (first 45 loci)\n")
-    md.append("| verse | critical | ] | southern |")
+    md.append(f"| verse | critical | ] | {ok} |")
     md.append("|---|---|:-:|---|")
     shown = 0
     for e in entries:
         for a in e["apparatus"]:
             if shown < 45:
-                md.append(f"| {e['critical']} | {a['crit']} | ] | {a['south']} |")
+                md.append(f"| {e['critical']} | {a['crit']} | ] | {a[ok]} |")
                 shown += 1
     md.append("\n_Dr. Mārcis Gasūns_")
-    mpath = os.path.join(outdir, "APPARATUS_SUNDARA_VARIANTS.md")
+    mpath = os.path.join(outdir, f"APPARATUS_{args.work_label.upper()}_VARIANTS.md")
     open(mpath, "w", encoding="utf-8").write("\n".join(md) + "\n")
 
     print(f"clean-variant verses: {len(entries)} | apparatus loci: {total_loci} | "
-          f"sargas: {len(per_sarga)} | reworded routed: {len(reworded)} | "
+          f"{args.chapter_label}s: {len(per_sarga)} | reworded routed: {len(reworded)} | "
           f"cyrillic-quarantined: {len(contaminated)} (of {len(pairs)} input pairs)")
     print("loci/verse hist:", dict(sorted(loci_hist.items())))
     print("wrote", os.path.relpath(jpath, repo))
