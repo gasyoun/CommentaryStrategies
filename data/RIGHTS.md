@@ -48,16 +48,24 @@ in good faith. Details in [`valmiki_PERMISSION.md`](valmiki_PERMISSION.md).
 
 ---
 
-## GRETIL critical edition + valmikiramayan.net Southern text — ⚠️ NO PERMISSION ON FILE, published on explicit risk-acceptance (2026-07-12)
+## GRETIL critical edition + valmikiramayan.net Southern text — ⛔ SUPERSEDED (2026-07-12), removed from current tree
 
-Covers [`edition_comparison/other_kandas/`](edition_comparison/other_kandas/) (Bāla/Ayodhyā/Araṇya/
-Kiṣkindhā critical↔southern content-alignment: full verbatim verse text in both directions, thousands
-of verses).
+Formerly covered `edition_comparison/other_kandas/` (Bāla/Ayodhyā/Araṇya/Kiṣkindhā critical↔southern
+content-alignment against valmikiramayan.net, no permission on file, published on M.G.'s explicit
+risk-acceptance). **Replaced same-day** once a properly-licensed alternative source was found already
+sitting in this repo (`data/valmiki_shlokas/` — Gita Supersite, CC BY 4.0, see the section above) that
+covers the same 4 kāṇḍas. The valmikiramayan.net-sourced files were deleted from the current tree in
+this commit (still recoverable from git history if ever needed) — see
+[`edition_comparison/gitasupersite_kandas/`](edition_comparison/gitasupersite_kandas/) for the current,
+rights-clean version. GRETIL critical text itself (CC BY-NC-SA 4.0, Tokunaga/Smith/Neill) is unaffected
+and still in use as the critical-edition side of the comparison — attribution still owed, not yet added
+to README.
 
-| Field | Value |
-|---|---|
-| GRETIL critical text (`ram_0N_u.htm`, Tokunaga/Smith/Neill) | Licensed **CC BY-NC-SA 4.0** per source file header ("copyright and terms of usage as for source file") — non-commercial, share-alike, attribution required |
-| valmikiramayan.net (K.M.K. Murthy / Desiraju Hanumanta Rao) | **No permission sought or granted.** Distinct from the Gita Supersite grant above — does NOT cover this site. |
-| Decision | M. Gasūns instructed "commit, publish" after being told explicitly that this reproduces valmikiramayan.net's copyrighted Devanāgarī text at scale with no clearance on file (2026-07-12, Claude Code session) — published on his explicit informed risk-acceptance, not on a rights clearance. |
-| Attribution owed | GRETIL: "Based on the text entered by Muneo Tokunaga et al., revisions by John Smith (Cambridge) and Tyler Neill" — not yet added to README/site. valmikiramayan.net: not yet attributed anywhere in this repo. |
-| Open follow-up | Seek permission from valmikiramayan.net's maintainer (same pattern as the Gita Supersite grant above) to regularize this; add GRETIL CC BY-NC-SA attribution to README. Neither done as of this commit. |
+## GRETIL critical edition + Gita Supersite Southern text — ✅ both sides rights-clean (2026-07-12)
+
+Covers [`edition_comparison/gitasupersite_kandas/`](edition_comparison/gitasupersite_kandas/) (Bāla/
+Ayodhyā/Araṇya/Kiṣkindhā critical↔southern content-alignment, plus Yuddhakāṇḍa Leonov-source↔Gita
+Supersite in the RussianRamayana repo). Critical side = GRETIL (CC BY-NC-SA 4.0, attribution owed,
+not yet added to README). Southern side = Gita Supersite `data/valmiki_shlokas/` (CC BY 4.0, permission
+already on file per the section above — `valmiki_PERMISSION.md`). No open rights question remains for
+this material.
