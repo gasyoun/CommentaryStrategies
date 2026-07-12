@@ -1,4 +1,7 @@
 # Postdoc Research Roadmap — CommentaryStrategies
+
+_Created: 15-05-2026 · Last updated: 15-05-2026_
+
 **М. Гасунс / M. Gasūns · ИЛИ РАН · 2026–2029**
 
 ---
