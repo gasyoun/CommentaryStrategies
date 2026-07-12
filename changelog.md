@@ -20,6 +20,20 @@ Work not yet on `main` stays under **[Unreleased]**.
   Кэш и полный JSONL gitignored (права на сторонний текст — публикация гейтится
   `/publish-safety-check`). Разблокирует MBH fitted-index адъюдикатор для проверки цитат PWG/MW.
 
+- **MBh edition-apparatus comparator + Ванапарва-пилот (H784, [PR #84](https://github.com/gasyoun/CommentaryStrategies/pull/84)).**
+  Новый `scripts/compare_editions_mbh.py` — обобщение `compare_editions.py` (Рамаяна
+  Сундараканда) на Махабхарату: BORI-critical loader (ISO-15919 `MBh{NN}.txt`) + Нилакантха-
+  вульгата loader, id-схема `parva.adhyāya.śloka` (та же форма, что у Рамаяны — `verse_key()`
+  в `build_edition_apparatus.py` не потребовал изменений). `build_edition_apparatus.py`
+  обобщён CLI-флагами (`--input/--outdir/--title/--work-label/--other-key/--chapter-label`);
+  дефолты воспроизводят исходный Сундара-прогон байт-в-байт (865/2106/66, перепроверено).
+  Пилот Ванапарва (parva 3): 10316 крит. vs 11859 вульг. (вульгата сверена с census — совпадает);
+  296 идентичных · 8520 вариантных · 1500 только-крит.; вариантный аппарат — 6442 чистых пары →
+  **18699 loci** по 299 адхьяям. Данные: `data/edition_comparison_mbh/vanaparva/`. Bulk
+  verbatim-текст (`critical_only_and_variants.json`, `significant_absences.json`) остаётся
+  gitignored/local-only (права BORI); коммитятся только агрегаты + короткие loci аппарата.
+  Остаток 17 парв — тот же скрипт, инженерия готова.
+
 ## [1.8.5] - 2026-07-11
 
 ### Fixed
