@@ -1,6 +1,6 @@
 # Метадок: LEONOV_SUNDARAKANDA_GUIDE.md
 
-_Created: 10-07-2026 · Last updated: 10-07-2026 (второе обновление за день: бэклог №3 отменен, добавлен близнец Костиной)_
+_Created: 10-07-2026 · Last updated: 12-07-2026 (в интро добавлен указатель на отдельную линию — среду автосносок книг 5–7)_
 
 Метадок для [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md).
 
@@ -65,11 +65,13 @@ _Created: 10-07-2026 · Last updated: 10-07-2026 (второе обновлен�
 - [docs/COMMENTARY_ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/COMMENTARY_ROADMAP.md) — редполитика §3 (на ратификацию Леоновым/Костиной)
 - [ramayana-leonov/C0_COVER_LETTER.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/C0_COVER_LETTER.md) — образец письма Леонову (эксперимент C0)
 - [issue №58](https://github.com/gasyoun/CommentaryStrategies/issues/58) — личный чек-лист Леонова
+- [RussianRamayana: роадмап среды переводчика](https://github.com/gasyoun/RussianRamayana/blob/main/docs/ROADMAP_LEONOV_TRANSLATOR_ENV_RAMAYANA_5_7_2026.md) — отдельная линия (автосноски к книгам V–VII), на которую с 12-07-2026 ссылается интро гайда; её памятка — [HOWTO_LEONOV.md](https://github.com/gasyoun/RussianRamayana/blob/main/translator-env/HOWTO_LEONOV.md)
 
 ## История ревизий субъекта
 
 | Дата | Что изменилось | Кто |
 |---|---|---|
 | 10-07-2026 | Первая версия: 9 разделов, словарик, памятка | Fable 5 (`claude-fable-5`), H497 |
+| 12-07-2026 | В интро добавлен указатель на отдельную линию — среду автосносок к книгам V–VII (RussianRamayana); линии не смешиваются | Opus 4.8 (`claude-opus-4-8`) |
 
 _Dr. Mārcis Gasūns_
