@@ -3,25 +3,23 @@
     "title": "Сваргарохаṇапарва — BORI critical <-> Nilakantha vulgate variant apparatus",
     "generated_by": "build_edition_apparatus.py (helayo-style Gotoh aligner)",
     "layer": "variant readings on aligned verses (NOT whole-passage absences)",
-    "aligner": "char-level Gotoh affine-gap + consonant/vowel/modifier substitution matrix; loci word-expanded",
+    "aligner": "akṣara-level Gotoh affine-gap (H776) + consonant/vowel/modifier substitution matrix nested per-syllable; loci word-expanded for display",
     "witnesses": 2,
     "other_key": "vulgate",
     "note": "2-witness collation; Center-Star MSA advantage latent until a 3rd witness is digitised. Reworded/absent-counterpart pairs are NOT included here — their critical counterpart text is absent from the committed data (see the significant_absences layer)."
   },
   "totals": {
-    "clean_variant_verses": 129,
-    "apparatus_loci": 344,
+    "clean_variant_verses": 156,
+    "apparatus_loci": 458,
     "chapters": 5,
     "loci_per_verse_hist": {
-      "1": 32,
-      "2": 37,
-      "3": 31,
-      "4": 15,
+      "1": 14,
+      "2": 45,
+      "3": 49,
+      "4": 37,
       "5": 8,
-      "6": 3,
-      "8": 1,
-      "9": 1,
-      "10": 1
+      "6": 2,
+      "7": 1
     },
     "reworded_verses_routed_to_footnote_layer": 16,
     "cyrillic_contaminated_verses": 0,
@@ -30,33 +28,63 @@
   },
   "per_chapter": {
     "1": {
-      "verses": 20,
-      "loci": 46
+      "verses": 25,
+      "loci": 68
     },
     "2": {
-      "verses": 44,
-      "loci": 112
+      "verses": 54,
+      "loci": 158
     },
     "3": {
-      "verses": 28,
-      "loci": 82
+      "verses": 32,
+      "loci": 92
     },
     "4": {
-      "verses": 10,
-      "loci": 28
+      "verses": 15,
+      "loci": 38
     },
     "5": {
-      "verses": 27,
-      "loci": 76
+      "verses": 30,
+      "loci": 102
     }
   },
   "entries": [
+    {
+      "critical": "18.1.1",
+      "vulgate": "18.1.1",
+      "difflib_similarity": 1.0,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "dhārtarāṣṭrāś ca",
+          "vulgate": "dhārtarāṣṭrāśca"
+        }
+      ]
+    },
+    {
+      "critical": "18.1.2",
+      "vulgate": "18.1.2",
+      "difflib_similarity": 0.98,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "etad icchāmy ahaṃ",
+          "vulgate": "etadicchāmyahaṃ"
+        },
+        {
+          "crit": "sarvavic cāsi",
+          "vulgate": "sarvaviccāsi"
+        }
+      ]
+    },
     {
       "critical": "18.1.3",
       "vulgate": "18.1.3",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
           "crit": "vaiśaṃpāyana",
@@ -67,8 +95,25 @@
           "vulgate": "yudhiṣṭhiraprabhṛtayo"
         },
         {
-          "crit": "chr̥ṇu",
+          "crit": "yad akurvata",
+          "vulgate": "yadakurvata"
+        },
+        {
+          "crit": "tac chr̥ṇu",
           "vulgate": "tacchṛṇu"
+        }
+      ]
+    },
+    {
+      "critical": "18.1.4",
+      "vulgate": "18.1.4",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "dadarśāsīnam āsane",
+          "vulgate": "dadarśāsīnamāsane"
         }
       ]
     },
@@ -77,11 +122,19 @@
       "vulgate": "18.1.5",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
+        {
+          "crit": "bhrājamānam ivādityaṃ",
+          "vulgate": "bhrājamānamivādityaṃ"
+        },
         {
           "crit": "vīralakṣmyābhisaṃvr̥tam",
           "vulgate": "vīralakṣmyābhisaṃvṛtam"
+        },
+        {
+          "crit": "devair",
+          "vulgate": "∅"
         }
       ]
     },
@@ -90,23 +143,19 @@
       "vulgate": "18.1.6",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
-      "n_loci": 5,
+      "n_loci": 4,
       "apparatus": [
-        {
-          "crit": "dr̥ṣṭvā",
-          "vulgate": "∅"
-        },
         {
           "crit": "dr̥ṣṭvā",
           "vulgate": "rājā"
         },
         {
-          "crit": "saṃnivr̥tto",
-          "vulgate": "sannivṛttobhūcchriyaṃ"
+          "crit": "duryodhanam amarṣitaḥ",
+          "vulgate": "duryodhanamamarṣitaḥ"
         },
         {
-          "crit": "’bhūc",
-          "vulgate": "∅"
+          "crit": "saṃnivr̥tto ’bhūc",
+          "vulgate": "sannivṛttobhūcchriyaṃ"
         },
         {
           "crit": "dr̥ṣṭvā",
@@ -122,11 +171,11 @@
       "n_loci": 2,
       "apparatus": [
         {
-          "crit": "lokām̐l",
-          "vulgate": "lokāṃllabdhenādīrghadarśinā"
+          "crit": "bruvann uccair vacas tān vai",
+          "vulgate": "bruvannuccairvacastānvai"
         },
         {
-          "crit": "lubdhenādīrghadarśinā",
+          "crit": "lokām̐l lubdhenādīrghadarśinā",
           "vulgate": "lokāṃllabdhenādīrghadarśinā"
         }
       ]
@@ -136,27 +185,23 @@
       "vulgate": "18.1.8",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 5,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "yatkr̥te",
-          "vulgate": "yatkṛte"
-        },
-        {
-          "crit": "pr̥thivī",
-          "vulgate": "pṛthivī"
+          "crit": "yatkr̥te pr̥thivī",
+          "vulgate": "yatkṛte pṛthivī"
         },
         {
           "crit": "suhr̥do",
           "vulgate": "suhṛdo"
         },
         {
-          "crit": "∅",
-          "vulgate": "kilṣṭaiḥ"
+          "crit": "bāndhavās tathā",
+          "vulgate": "bāndhavāstathā"
         },
         {
           "crit": "kliṣṭaiḥ",
-          "vulgate": "∅"
+          "vulgate": "kilṣṭaiḥ"
         }
       ]
     },
@@ -182,11 +227,19 @@
       "vulgate": "18.1.10",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "svasti",
-          "vulgate": "∅"
+          "vulgate": "asti"
+        },
+        {
+          "crit": "suyodhanam udīkṣitum",
+          "vulgate": "suyodhanamudīkṣitum"
+        },
+        {
+          "crit": "gantum icchāmi",
+          "vulgate": "gantumicchāmi"
         }
       ]
     },
@@ -195,8 +248,16 @@
       "vulgate": "18.1.11",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
+        {
+          "crit": "maivam ity abravīt taṃ",
+          "vulgate": "naivamityabravīttaṃ"
+        },
+        {
+          "crit": "prahasann iva",
+          "vulgate": "prahasanniva"
+        },
         {
           "crit": "nivāso",
           "vulgate": "nivāse"
@@ -208,19 +269,15 @@
       "vulgate": "18.1.12",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 2,
       "apparatus": [
         {
-          "crit": "kathaṃ",
-          "vulgate": "∅"
+          "crit": "kathaṃ cana",
+          "vulgate": "kathañcana"
         },
         {
-          "crit": "nr̥paṃ",
-          "vulgate": "nṛpaṃ"
-        },
-        {
-          "crit": "śr̥ṇu",
-          "vulgate": "śṛṇu"
+          "crit": "nr̥paṃ śr̥ṇu",
+          "vulgate": "nṛpaṃ śṛṇu"
         }
       ]
     },
@@ -232,11 +289,11 @@
       "n_loci": 2,
       "apparatus": [
         {
-          "crit": "rājapravarair",
-          "vulgate": "∅"
+          "crit": "sadbhiś ca",
+          "vulgate": "sadbhiśca"
         },
         {
-          "crit": "ya",
+          "crit": "rājapravarair ya",
           "vulgate": "rājapravaraite"
         }
       ]
@@ -246,19 +303,15 @@
       "vulgate": "18.1.14",
       "difflib_similarity": 0.93,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 2,
       "apparatus": [
         {
-          "crit": "prāpto",
-          "vulgate": "prāptā"
-        },
-        {
-          "crit": "∅",
-          "vulgate": "yuddhena"
+          "crit": "hutvātmanas tanum",
+          "vulgate": "hutvātmanastanum"
         },
         {
           "crit": "samāsitāḥ",
-          "vulgate": "bādhitāḥ"
+          "vulgate": "yuddhena bādhitāḥ"
         }
       ]
     },
@@ -267,11 +320,15 @@
       "vulgate": "18.1.15",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
+          "crit": "sthānam etad avāptavān",
+          "vulgate": "sthānametadavāptavān"
+        },
+        {
           "crit": "’bhīto",
-          "vulgate": "∅"
+          "vulgate": "yobhīto"
         },
         {
           "crit": "pr̥thivīpatiḥ",
@@ -280,19 +337,52 @@
       ]
     },
     {
+      "critical": "18.1.16",
+      "vulgate": "18.1.16",
+      "difflib_similarity": 0.98,
+      "kind": "lcs-variant",
+      "n_loci": 4,
+      "apparatus": [
+        {
+          "crit": "tan manasi",
+          "vulgate": "tanmanasi"
+        },
+        {
+          "crit": "yad dyūtakāritam",
+          "vulgate": "yaddyūtakāritam"
+        },
+        {
+          "crit": "draupadyāś ca",
+          "vulgate": "draupadyāśca"
+        },
+        {
+          "crit": "cintayitum arhasi",
+          "vulgate": "cintayitumarhasi"
+        }
+      ]
+    },
+    {
       "critical": "18.1.17",
       "vulgate": "18.1.17",
       "difflib_similarity": 0.93,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 4,
       "apparatus": [
         {
           "crit": "’pi",
-          "vulgate": "∅"
+          "vulgate": "cānyepi"
         },
         {
           "crit": "dyūtakāritāḥ",
           "vulgate": "jñātikāritāḥ"
+        },
+        {
+          "crit": "saṃgrāmeṣv atha",
+          "vulgate": "saṃgrāmeṣvathavānyatra"
+        },
+        {
+          "crit": "tān saṃsmartum arhasi",
+          "vulgate": "tānsaṃsmartumarhasi"
         }
       ]
     },
@@ -305,7 +395,7 @@
       "apparatus": [
         {
           "crit": "’yaṃ",
-          "vulgate": "∅"
+          "vulgate": "svargoyaṃ"
         },
         {
           "crit": "bhavanti",
@@ -318,11 +408,19 @@
       "vulgate": "18.1.19",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "bhrātr̥̄n",
+          "crit": "nāradenaivam uktas tu",
+          "vulgate": "nāradenaivamuktastu"
+        },
+        {
+          "crit": "bhrātr̥̄n papraccha",
           "vulgate": "bhrātṝnpapraccha"
+        },
+        {
+          "crit": "vākyam etad uvāca",
+          "vulgate": "vākyametaduvāca"
         }
       ]
     },
@@ -331,15 +429,11 @@
       "vulgate": "18.1.21",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "yatkr̥te",
-          "vulgate": "yatkṛte"
-        },
-        {
-          "crit": "pr̥thivī",
-          "vulgate": "pṛthivī"
+          "crit": "yatkr̥te pr̥thivī",
+          "vulgate": "yatkṛte pṛthivī"
         },
         {
           "crit": "sahayā",
@@ -369,8 +463,20 @@
       "vulgate": "18.1.23",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 4,
       "apparatus": [
+        {
+          "crit": "teṣām idānīṃ",
+          "vulgate": "teṣāmidānīṃ"
+        },
+        {
+          "crit": "draṣṭum icchāmi",
+          "vulgate": "draṣṭumicchāmi"
+        },
+        {
+          "crit": "tān aham",
+          "vulgate": "tānaham"
+        },
         {
           "crit": "satyasaṃgaram",
           "vulgate": "satyasaṅgaram"
@@ -382,7 +488,7 @@
       "vulgate": "18.1.24",
       "difflib_similarity": 1.0,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "dhr̥ṣṭadyumnaṃ",
@@ -391,6 +497,10 @@
         {
           "crit": "dhr̥ṣṭadyumnasya",
           "vulgate": "dhṛṣṭadyumnasya"
+        },
+        {
+          "crit": "śastrair vadhaṃ",
+          "vulgate": "śastrairvadhaṃ"
         }
       ]
     },
@@ -399,19 +509,70 @@
       "vulgate": "18.1.25",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
           "crit": "kva",
-          "vulgate": "∅"
+          "vulgate": "ka"
         },
         {
           "crit": "te",
           "vulgate": "ta"
         },
         {
-          "crit": "dhr̥ṣṭaketumukhāṃś",
+          "crit": "brahman naitān paśyāmi",
+          "vulgate": "pārthivānbrahmannaitānpaśyāmi"
+        },
+        {
+          "crit": "dhr̥ṣṭaketumukhāṃś ca",
           "vulgate": "dhṛṣṭaketumukhāṃśca"
+        }
+      ]
+    },
+    {
+      "critical": "18.1.26",
+      "vulgate": "18.1.26",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "draupadeyāṃś ca",
+          "vulgate": "draupadeyāṃśca"
+        },
+        {
+          "crit": "draṣṭum icchāmi",
+          "vulgate": "draṣṭumicchāmi"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.1",
+      "vulgate": "18.2.1",
+      "difflib_similarity": 1.0,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "rādheyam amitaujasam",
+          "vulgate": "rādheyamamitaujasam"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.2",
+      "vulgate": "18.2.2",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "juhuvur ye",
+          "vulgate": "juhuvurye"
+        },
+        {
+          "crit": "rājaputrāś ca",
+          "vulgate": "rājaputrāśca"
         }
       ]
     },
@@ -420,11 +581,36 @@
       "vulgate": "18.2.3",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "kva",
-          "vulgate": "∅"
+          "vulgate": "ka"
+        },
+        {
+          "crit": "tair apy ayaṃ",
+          "vulgate": "tairapyayaṃ"
+        },
+        {
+          "crit": "kaccit puruṣasattamaiḥ",
+          "vulgate": "kaccitpuruṣasattamaiḥ"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.4",
+      "vulgate": "18.2.4",
+      "difflib_similarity": 0.98,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "lokān imān prāptās te",
+          "vulgate": "lokānimānprāptāste"
+        },
+        {
+          "crit": "tair mahātmabhiḥ",
+          "vulgate": "tairmahātmabhiḥ"
         }
       ]
     },
@@ -433,27 +619,48 @@
       "vulgate": "18.2.5",
       "difflib_similarity": 0.87,
       "kind": "lcs-variant",
-      "n_loci": 5,
+      "n_loci": 6,
       "apparatus": [
         {
-          "crit": "’yaṃ",
-          "vulgate": "∅"
+          "crit": "kaccin na",
+          "vulgate": "kaccinna"
         },
         {
-          "crit": "nr̥pair",
-          "vulgate": "nṛpairlokokṣayaḥ"
+          "crit": "tair avāpto",
+          "vulgate": "tairavāptoyaṃ"
+        },
+        {
+          "crit": "’yaṃ nr̥pair loko",
+          "vulgate": "tairavāptoyaṃ nṛpairlokokṣayaḥ"
         },
         {
           "crit": "’kṣayaḥ",
-          "vulgate": "∅"
+          "vulgate": "nṛpairlokokṣayaḥ"
         },
         {
-          "crit": "jñātibhir",
-          "vulgate": "bhrātṛbhirjñātibhistathā"
+          "crit": "tair ahaṃ",
+          "vulgate": "tairahaṃ"
         },
         {
-          "crit": "bhrātr̥bhis",
+          "crit": "jñātibhir bhrātr̥bhis tathā",
           "vulgate": "bhrātṛbhirjñātibhistathā"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.6",
+      "vulgate": "18.2.6",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "mātur hi",
+          "vulgate": "māturhi"
+        },
+        {
+          "crit": "toyam iti",
+          "vulgate": "toyamiti"
         }
       ]
     },
@@ -462,14 +669,22 @@
       "vulgate": "18.2.7",
       "difflib_similarity": 0.94,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 4,
       "apparatus": [
+        {
+          "crit": "punar ahaṃ",
+          "vulgate": "punaḥpunarahaṃ"
+        },
+        {
+          "crit": "yan mātuḥ",
+          "vulgate": "yanmātuḥ"
+        },
         {
           "crit": "sadr̥śau",
           "vulgate": "sadṛśau"
         },
         {
-          "crit": "amitaujasaḥ",
+          "crit": "tasyāham amitaujasaḥ",
           "vulgate": "tasyāhamamitātmanaḥ"
         }
       ]
@@ -479,15 +694,19 @@
       "vulgate": "18.2.8",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "dr̥ṣṭvaiva",
           "vulgate": "dṛṣṭvaiva"
         },
         {
+          "crit": "hy asmān karṇasahitāñ jayec chakro",
+          "vulgate": "hyasmānkarṇasahitāñjayecchakropi"
+        },
+        {
           "crit": "’pi",
-          "vulgate": "∅"
+          "vulgate": "hyasmānkarṇasahitāñjayecchakropi"
         }
       ]
     },
@@ -496,11 +715,19 @@
       "vulgate": "18.2.9",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
         {
+          "crit": "tam ahaṃ",
+          "vulgate": "tamahaṃ"
+        },
+        {
+          "crit": "draṣṭum icchāmi",
+          "vulgate": "draṣṭumicchāmi"
+        },
+        {
           "crit": "’sau",
-          "vulgate": "∅"
+          "vulgate": "yosau"
         }
       ]
     },
@@ -509,18 +736,14 @@
       "vulgate": "18.2.10",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 2,
       "apparatus": [
         {
           "crit": "’pi",
-          "vulgate": "∅"
+          "vulgate": "prāṇebhyopi"
         },
         {
-          "crit": "tau",
-          "vulgate": "caiva"
-        },
-        {
-          "crit": "ca",
+          "crit": "tau ca",
           "vulgate": "caiva"
         }
       ]
@@ -530,10 +753,18 @@
       "vulgate": "18.2.11",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "etad",
+          "crit": "draṣṭum icchāmi",
+          "vulgate": "draṣṭumicchāmi"
+        },
+        {
+          "crit": "sthātum icchāmi",
+          "vulgate": "sthātumicchāmi"
+        },
+        {
+          "crit": "satyam etad",
           "vulgate": "satyamevaṃ"
         }
       ]
@@ -543,7 +774,7 @@
       "vulgate": "18.2.12",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "bhrātr̥vihīnasya",
@@ -551,14 +782,10 @@
         },
         {
           "crit": "sa",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "∅",
           "vulgate": "mama"
         },
         {
-          "crit": "∅",
+          "crit": "mama",
           "vulgate": "sa"
         }
       ]
@@ -581,19 +808,40 @@
       "vulgate": "18.2.14",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 5,
       "apparatus": [
         {
           "crit": "vaiśaṃpāyana",
           "vulgate": "vaiśampāyana"
         },
         {
+          "crit": "ity uktvā",
+          "vulgate": "ityuktvā"
+        },
+        {
+          "crit": "devadūtam upādiśan",
+          "vulgate": "devadūtamupādiśan"
+        },
+        {
           "crit": "suhr̥do",
           "vulgate": "suhṛdo"
         },
         {
-          "crit": "∅",
+          "crit": "darśayeti",
           "vulgate": "darśayetadi"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.15",
+      "vulgate": "18.2.15",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "devadūtaś ca",
+          "vulgate": "devadūtaśca"
         }
       ]
     },
@@ -602,15 +850,19 @@
       "vulgate": "18.2.16",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "tu",
+          "crit": "devadūtas tu",
           "vulgate": "devadūtaśca"
         },
         {
           "crit": "pr̥ṣṭhataḥ",
           "vulgate": "pṛṣṭhataḥ"
+        },
+        {
+          "crit": "panthānam aśubhaṃ",
+          "vulgate": "panthānamaśubhaṃ"
         }
       ]
     },
@@ -630,8 +882,8 @@
           "vulgate": "pāpakṛtāṃ"
         },
         {
-          "crit": "māṃsaśoṇitakardamam",
-          "vulgate": "∅"
+          "crit": "gandhair māṃsaśoṇitakardamam",
+          "vulgate": "gandhairmāsaśoṇitakardamam"
         }
       ]
     },
@@ -640,31 +892,23 @@
       "vulgate": "18.2.18",
       "difflib_similarity": 0.82,
       "kind": "lcs-variant",
-      "n_loci": 6,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "daṃśotthānaṃ",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "daṃśotthānaṃ",
+          "crit": "daṃśotthānaṃ sajhillīkaṃ",
           "vulgate": "daśotpātakabhallūkamakṣikāmaśakāvṛtam"
-        },
-        {
-          "crit": "daṃśotthānaṃ",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "sajhillīkaṃ",
-          "vulgate": "daśotpātakabhallūkamakṣikāmaśakāvṛtam"
-        },
-        {
-          "crit": "sajhillīkaṃ",
-          "vulgate": "∅"
         },
         {
           "crit": "makṣikāmaśakāvr̥tam",
           "vulgate": "daśotpātakabhallūkamakṣikāmaśakāvṛtam"
+        },
+        {
+          "crit": "itaś cetaś ca",
+          "vulgate": "itaścetaśca"
+        },
+        {
+          "crit": "samantāt parivāritam",
+          "vulgate": "samantātparivāritam"
         }
       ]
     },
@@ -673,11 +917,15 @@
       "vulgate": "18.2.19",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
         {
           "crit": "kr̥mikīṭasamākulam",
           "vulgate": "kṛmikīṭasamākulam"
+        },
+        {
+          "crit": "samantāt pariveṣṭitam",
+          "vulgate": "samantātpariveṣṭitam"
         }
       ]
     },
@@ -686,18 +934,22 @@
       "vulgate": "18.2.20",
       "difflib_similarity": 0.94,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "kākolair",
+          "crit": "ayomukhaiś ca",
+          "vulgate": "ayomukhaiśca"
+        },
+        {
+          "crit": "kākolair gr̥dhraiś ca",
           "vulgate": "kākādyairgṛdhraiśca"
         },
         {
-          "crit": "gr̥dhraiś",
-          "vulgate": "kākādyairgṛdhraiśca"
+          "crit": "sūcīmukhais tathā",
+          "vulgate": "sūcīmukhaistathā"
         },
         {
-          "crit": "vr̥tam",
+          "crit": "pretair vindhyaśailopamair vr̥tam",
           "vulgate": "pretairvindhyaśailopamairvṛtam"
         }
       ]
@@ -710,11 +962,11 @@
       "n_loci": 3,
       "apparatus": [
         {
-          "crit": "∅",
-          "vulgate": "cchinnabāhūrupāṇibhiḥ"
+          "crit": "medorudhirayuktaiś ca chinnabāhūrupāṇibhiḥ",
+          "vulgate": "medorudhirayuktaiśca cchinnabāhūrupāṇibhiḥ"
         },
         {
-          "crit": "nikr̥ttodarapādaiś",
+          "crit": "nikr̥ttodarapādaiś ca",
           "vulgate": "nikṛttodarapadaiśca"
         },
         {
@@ -728,8 +980,12 @@
       "vulgate": "18.2.22",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
+        {
+          "crit": "tat kuṇapadurgandham aśivaṃ",
+          "vulgate": "tatkuṇapadurgandhamaśivaṃ"
+        },
         {
           "crit": "dharmātmā",
           "vulgate": "dharmānmā"
@@ -744,7 +1000,7 @@
       "n_loci": 2,
       "apparatus": [
         {
-          "crit": "∅",
+          "crit": "niśitakṣurasaṃvr̥tam",
           "vulgate": "niśitaṃ"
         },
         {
@@ -758,10 +1014,14 @@
       "vulgate": "18.2.24",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "ca",
+          "crit": "karambhavālukās taptā",
+          "vulgate": "karambhavālukāstaptā"
+        },
+        {
+          "crit": "āyasīś ca",
           "vulgate": "āyasīści"
         },
         {
@@ -769,7 +1029,7 @@
           "vulgate": "pṛthak"
         },
         {
-          "crit": "lohakumbhīś",
+          "crit": "lohakumbhīś ca",
           "vulgate": "lohakuṃbhīśca"
         }
       ]
@@ -779,23 +1039,19 @@
       "vulgate": "18.2.25",
       "difflib_similarity": 0.94,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "cāpi",
           "vulgate": "tāpi"
         },
         {
-          "crit": "∅",
+          "crit": "dusparśaṃ",
           "vulgate": "duḥsparśaṃ"
         },
         {
-          "crit": "∅",
-          "vulgate": "dadarśānyāśca"
-        },
-        {
           "crit": "cāpi",
-          "vulgate": "∅"
+          "vulgate": "dadarśānyāśca"
         }
       ]
     },
@@ -804,14 +1060,18 @@
       "vulgate": "18.2.26",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "idam",
-          "vulgate": "kiyadadhvānamasmābhirgantavyamimamīdṛśam"
+          "crit": "durgandham ālakṣya",
+          "vulgate": "durgandhamālakṣya"
         },
         {
-          "crit": "īdr̥śam",
+          "crit": "devadūtam uvāca",
+          "vulgate": "devadūtamuvāca"
+        },
+        {
+          "crit": "kiyad adhvānam asmābhir gantavyam idam īdr̥śam",
           "vulgate": "kiyadadhvānamasmābhirgantavyamimamīdṛśam"
         }
       ]
@@ -821,11 +1081,23 @@
       "vulgate": "18.2.27",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 4,
       "apparatus": [
         {
+          "crit": "tan mamākhyātum arhasi",
+          "vulgate": "tanmamākhyātumarhasi"
+        },
+        {
           "crit": "’yaṃ",
-          "vulgate": "∅"
+          "vulgate": "deśoyaṃ"
+        },
+        {
+          "crit": "kaś ca",
+          "vulgate": "kaśca"
+        },
+        {
+          "crit": "devānām etad icchāmi",
+          "vulgate": "devānāmetadicchāmi"
         }
       ]
     },
@@ -834,7 +1106,7 @@
       "vulgate": "18.2.28",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "saṃnivavr̥te",
@@ -842,7 +1114,11 @@
         },
         {
           "crit": "’bravīc",
-          "vulgate": "∅"
+          "vulgate": "devadūtobravīcainametāvadgamanaṃ"
+        },
+        {
+          "crit": "cainam etāvad gamanaṃ",
+          "vulgate": "devadūtobravīcainametāvadgamanaṃ"
         }
       ]
     },
@@ -858,16 +1134,16 @@
           "vulgate": "nivartitavyo"
         },
         {
-          "crit": "tathāsmy",
-          "vulgate": "∅"
+          "crit": "tathāsmy ukto",
+          "vulgate": "tatāsmyukto"
         },
         {
           "crit": "’si",
-          "vulgate": "∅"
+          "vulgate": "śrāntosi"
         },
         {
-          "crit": "rājendra",
-          "vulgate": "rājendri"
+          "crit": "tvam athāgantum arhasi",
+          "vulgate": "tvamathāgantumarhasi"
         }
       ]
     },
@@ -876,10 +1152,14 @@
       "vulgate": "18.2.30",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "tena",
+          "crit": "yudhiṣṭhiras tu",
+          "vulgate": "yudhiṣṭhirastu"
+        },
+        {
+          "crit": "nirviṇṇas tena",
           "vulgate": "nirviṇṇasteni"
         },
         {
@@ -893,12 +1173,8 @@
       "vulgate": "18.2.31",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 2,
       "apparatus": [
-        {
-          "crit": "saṃnivr̥tto",
-          "vulgate": "∅"
-        },
         {
           "crit": "saṃnivr̥tto",
           "vulgate": "sanivṛtto"
@@ -914,11 +1190,36 @@
       "vulgate": "18.2.32",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "pāṇḍava",
           "vulgate": "pāṇvana"
+        },
+        {
+          "crit": "anugrahārtham asmākaṃ",
+          "vulgate": "anugrahārthamasmākaṃ"
+        },
+        {
+          "crit": "tāvan muhūrtakam",
+          "vulgate": "tāvanmuhūrtakam"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.33",
+      "vulgate": "18.2.33",
+      "difflib_similarity": 0.98,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "gandhānugas tāta",
+          "vulgate": "gandhānugastāta"
+        },
+        {
+          "crit": "yenāsmān sukham āgamat",
+          "vulgate": "yenāsmānsukhamāgamat"
         }
       ]
     },
@@ -927,8 +1228,12 @@
       "vulgate": "18.2.34",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
+        {
+          "crit": "sukham āsādayiṣyāmas",
+          "vulgate": "sukhamāsādayiṣyāmastvāṃ"
+        },
         {
           "crit": "dr̥ṣṭvā",
           "vulgate": "dṛṣṭvā"
@@ -943,12 +1248,12 @@
       "n_loci": 2,
       "apparatus": [
         {
-          "crit": "api",
-          "vulgate": "∅"
+          "crit": "muhūrtam api",
+          "vulgate": "muhūrtamiha"
         },
         {
-          "crit": "∅",
-          "vulgate": "muhūrtamiha"
+          "crit": "yātanāsmān na",
+          "vulgate": "yātanāsmānna"
         }
       ]
     },
@@ -957,11 +1262,19 @@
       "vulgate": "18.2.36",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 4,
       "apparatus": [
         {
           "crit": "kr̥paṇā",
           "vulgate": "kṛpaṇā"
+        },
+        {
+          "crit": "tasmin deśe",
+          "vulgate": "tasmindeśe"
+        },
+        {
+          "crit": "samantād vadatāṃ",
+          "vulgate": "samantādvadatāṃ"
         },
         {
           "crit": "nr̥pa",
@@ -974,15 +1287,49 @@
       "vulgate": "18.2.37",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "tad",
           "vulgate": "tu"
         },
         {
-          "crit": "kr̥cchram",
+          "crit": "dayāvān dīnabhāṣiṇām",
+          "vulgate": "dayāvāndīnabhāṣiṇām"
+        },
+        {
+          "crit": "kr̥cchram iti",
           "vulgate": "kṛcchramiti"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.38",
+      "vulgate": "18.2.38",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "purastād vai",
+          "vulgate": "purastādvai"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.39",
+      "vulgate": "18.2.39",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "abudhyamānas tā",
+          "vulgate": "abudhyamānastā"
+        },
+        {
+          "crit": "kimartham iha",
+          "vulgate": "kimarthamiha"
         }
       ]
     },
@@ -991,15 +1338,27 @@
       "vulgate": "18.2.40",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 5,
       "apparatus": [
         {
-          "crit": "’haṃ",
-          "vulgate": "∅"
+          "crit": "ity uktās te",
+          "vulgate": "ityuktāste"
         },
         {
-          "crit": "’ham",
-          "vulgate": "∅"
+          "crit": "samantād avabhāṣire",
+          "vulgate": "samantādavabhāṣire"
+        },
+        {
+          "crit": "’haṃ",
+          "vulgate": "karṇohaṃ"
+        },
+        {
+          "crit": "’ham arjuno",
+          "vulgate": "bhīmasenohamarjunohamiti"
+        },
+        {
+          "crit": "’ham iti",
+          "vulgate": "bhīmasenohamarjunohamiti"
         }
       ]
     },
@@ -1011,24 +1370,24 @@
       "n_loci": 5,
       "apparatus": [
         {
-          "crit": "’haṃ",
-          "vulgate": "∅"
+          "crit": "’haṃ dhr̥ṣṭadyumno",
+          "vulgate": "sahadevohaṃ dhṛṣṭadyumnohamityuta"
         },
         {
-          "crit": "dhr̥ṣṭadyumno",
+          "crit": "’ham ity uta",
           "vulgate": "dhṛṣṭadyumnohamityuta"
         },
         {
-          "crit": "’ham",
-          "vulgate": "∅"
-        },
-        {
           "crit": "draupadī",
-          "vulgate": "∅"
+          "vulgate": "draupdī"
         },
         {
-          "crit": "ca",
+          "crit": "draupadeyāś ca",
           "vulgate": "draupadeyāści"
+        },
+        {
+          "crit": "ity evaṃ",
+          "vulgate": "ityevaṃ"
         }
       ]
     },
@@ -1037,14 +1396,10 @@
       "vulgate": "18.2.42",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "taddeśasadr̥śīr",
-          "vulgate": "taddeśasadṛśīrnṛpa"
-        },
-        {
-          "crit": "nr̥pa",
+          "crit": "taddeśasadr̥śīr nr̥pa",
           "vulgate": "taddeśasadṛśīrnṛpa"
         },
         {
@@ -1052,7 +1407,7 @@
           "vulgate": "vimamṛśe"
         },
         {
-          "crit": "nv",
+          "crit": "nv idaṃ",
           "vulgate": "kiṃtvidaṃ"
         }
       ]
@@ -1062,19 +1417,23 @@
       "vulgate": "18.2.43",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "kiṃ",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "∅",
+          "crit": "kiṃ nu",
           "vulgate": "kintu"
         },
         {
-          "crit": "kr̥tam",
+          "crit": "tat kaluṣaṃ",
+          "vulgate": "tatkaluṣaṃ"
+        },
+        {
+          "crit": "kr̥tam ebhir mahātmabhiḥ",
           "vulgate": "kṛtamebhirmahātmabhiḥ"
+        },
+        {
+          "crit": "draupadeyair vā",
+          "vulgate": "draupadeyairvā"
         }
       ]
     },
@@ -1086,8 +1445,8 @@
       "n_loci": 3,
       "apparatus": [
         {
-          "crit": "’smin",
-          "vulgate": "∅"
+          "crit": "’smin deśe",
+          "vulgate": "pāpagandhesmindeśe"
         },
         {
           "crit": "hi",
@@ -1104,18 +1463,14 @@
       "vulgate": "18.2.45",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "kr̥tvā",
-          "vulgate": "kṛtvā"
+          "crit": "kr̥tvā dhr̥tarāṣṭrasya",
+          "vulgate": "kṛtvā dhṛtarāṣṭrasya"
         },
         {
-          "crit": "dhr̥tarāṣṭrasya",
-          "vulgate": "dhṛtarāṣṭrasya"
-        },
-        {
-          "crit": "∅",
+          "crit": "pāpaḥ",
           "vulgate": "pāpaiḥ"
         },
         {
@@ -1132,12 +1487,12 @@
       "n_loci": 3,
       "apparatus": [
         {
-          "crit": "mahendra",
-          "vulgate": "mahendri"
+          "crit": "lakṣmīvān āste",
+          "vulgate": "lakṣmīvānāste"
         },
         {
           "crit": "’yaṃ",
-          "vulgate": "∅"
+          "vulgate": "vikāroyaṃ"
         },
         {
           "crit": "yad",
@@ -1150,19 +1505,11 @@
       "vulgate": "18.2.47",
       "difflib_similarity": 0.92,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 1,
       "apparatus": [
         {
-          "crit": "sarvadharmavidaḥ",
-          "vulgate": "sarve"
-        },
-        {
-          "crit": "kṣātradharmaparāḥ",
-          "vulgate": "kṣatradharmaratāḥ"
-        },
-        {
-          "crit": "prājñā",
-          "vulgate": "santo"
+          "crit": "kṣātradharmaparāḥ prājñā",
+          "vulgate": "kṣatradharmaratāḥ santo"
         }
       ]
     },
@@ -1171,11 +1518,11 @@
       "vulgate": "18.2.48",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
           "crit": "’smi",
-          "vulgate": "∅"
+          "vulgate": "suptosmi"
         },
         {
           "crit": "cetayāno",
@@ -1183,7 +1530,24 @@
         },
         {
           "crit": "’yaṃ",
-          "vulgate": "∅"
+          "vulgate": "cittavikāroyaṃ"
+        },
+        {
+          "crit": "syād vā",
+          "vulgate": "syādvā"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.49",
+      "vulgate": "18.2.49",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "duḥkhaśokasamāviṣṭaś cintāvyākulitendriyaḥ",
+          "vulgate": "duḥkhaśokasamāviṣṭaścintāvyākulitendriyaḥ"
         }
       ]
     },
@@ -1192,11 +1556,23 @@
       "vulgate": "18.2.50",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 4,
       "apparatus": [
+        {
+          "crit": "krodham āhārayac caiva",
+          "vulgate": "krodhamāhārayaccaiva"
+        },
         {
           "crit": "nr̥paḥ",
           "vulgate": "nṛpaḥ"
+        },
+        {
+          "crit": "devāṃś ca",
+          "vulgate": "devāṃśca"
+        },
+        {
+          "crit": "garhayām āsa",
+          "vulgate": "garhayāmāsa"
         }
       ]
     },
@@ -1205,19 +1581,23 @@
       "vulgate": "18.2.51",
       "difflib_similarity": 0.91,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
           "crit": "tīvragandhasaṃtapto",
           "vulgate": "tīvraśokasaṃtapto"
         },
         {
-          "crit": "bhadra",
-          "vulgate": "∅"
+          "crit": "devadūtam uvāca",
+          "vulgate": "devadūtamuvāca"
         },
         {
           "crit": "bhadra",
           "vulgate": "tatra"
+        },
+        {
+          "crit": "dūtas teṣām upāntikam",
+          "vulgate": "dūtasteṣāmupāntikam"
         }
       ]
     },
@@ -1226,18 +1606,22 @@
       "vulgate": "18.2.52",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
+          "crit": "hy ahaṃ",
+          "vulgate": "hyahaṃ"
+        },
+        {
           "crit": "’smīti",
-          "vulgate": "∅"
+          "vulgate": "sthitosmīti"
+        },
+        {
+          "crit": "matsaṃśrayād ime",
+          "vulgate": "matsaṃśrayādime"
         },
         {
           "crit": "dūta",
-          "vulgate": "dūnāḥ"
-        },
-        {
-          "crit": "∅",
           "vulgate": "dūnāḥ"
         }
       ]
@@ -1250,12 +1634,33 @@
       "n_loci": 2,
       "apparatus": [
         {
-          "crit": "jagāma",
-          "vulgate": "jagāmi"
+          "crit": "ity uktaḥ",
+          "vulgate": "ityuktaḥ"
         },
         {
-          "crit": "∅",
-          "vulgate": "śatakratuḥṭha"
+          "crit": "jagāma",
+          "vulgate": "jagāmi"
+        }
+      ]
+    },
+    {
+      "critical": "18.2.54",
+      "vulgate": "18.2.54",
+      "difflib_similarity": 0.98,
+      "kind": "lcs-variant",
+      "n_loci": 3,
+      "apparatus": [
+        {
+          "crit": "nivedayām āsa",
+          "vulgate": "nivedayāmāsa"
+        },
+        {
+          "crit": "tad dharmarājacikīrṣitam",
+          "vulgate": "taddharmarājacikīrṣitam"
+        },
+        {
+          "crit": "sarvam eva",
+          "vulgate": "sarvameva"
         }
       ]
     },
@@ -1271,11 +1676,11 @@
           "vulgate": "vaiśampāyana"
         },
         {
-          "crit": "∅",
-          "vulgate": "yudhiṣṭhiṣṭhire"
+          "crit": "ājagmus tatra",
+          "vulgate": "ājagmustatra"
         },
         {
-          "crit": "∅",
+          "crit": "kauravya",
           "vulgate": "kauravyaṃ"
         }
       ]
@@ -1285,39 +1690,19 @@
       "vulgate": "18.3.2",
       "difflib_similarity": 0.9,
       "kind": "lcs-variant",
-      "n_loci": 8,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "svayaṃ",
-          "vulgate": "∅"
+          "vulgate": "sa ca"
         },
         {
-          "crit": "svayaṃ",
-          "vulgate": "ca"
-        },
-        {
-          "crit": "svayaṃ",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "∅",
-          "vulgate": "saṃparīkṣya"
+          "crit": "vigrahavān dharmo",
+          "vulgate": "vigrahavāndharmo"
         },
         {
           "crit": "prasamīkṣitum",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "prasamīkṣitum",
-          "vulgate": "saṃparīkṣya"
-        },
-        {
-          "crit": "∅",
-          "vulgate": "saṃparīkṣya"
-        },
-        {
-          "crit": "prasamīkṣitum",
-          "vulgate": "tam"
+          "vulgate": "saṃparīkṣya tam"
         }
       ]
     },
@@ -1326,11 +1711,15 @@
       "vulgate": "18.3.3",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "bhāsvaradeheṣu",
           "vulgate": "bhāsuradeheṣu"
+        },
+        {
+          "crit": "vyagamat tat tamo",
+          "vulgate": "vyagamattattamo"
         },
         {
           "crit": "nr̥pa",
@@ -1350,8 +1739,8 @@
           "vulgate": "nādṛśyanta"
         },
         {
-          "crit": "pāpakarmiṇām",
-          "vulgate": "pāpakarmaṇām"
+          "crit": "tās tatra",
+          "vulgate": "tāstatra"
         }
       ]
     },
@@ -1368,7 +1757,24 @@
         },
         {
           "crit": "’tīva",
-          "vulgate": "∅"
+          "vulgate": "śītalotīva"
+        }
+      ]
+    },
+    {
+      "critical": "18.3.9",
+      "vulgate": "18.3.9",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "yudhiṣṭhiram uvācedaṃ",
+          "vulgate": "yudhiṣṭhiramuvācedaṃ"
+        },
+        {
+          "crit": "sāntvapūrvam idaṃ",
+          "vulgate": "sāntvapūrvamidaṃ"
         }
       ]
     },
@@ -1377,11 +1783,36 @@
       "vulgate": "18.3.12",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
+        {
+          "crit": "manyus tvayā",
+          "vulgate": "manyustvayā"
+        },
         {
           "crit": "śr̥ṇu",
           "vulgate": "śṛṇu"
+        },
+        {
+          "crit": "narakas tāta",
+          "vulgate": "narakastāta"
+        }
+      ]
+    },
+    {
+      "critical": "18.3.14",
+      "vulgate": "18.3.16",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "rājan darśito",
+          "vulgate": "rājandarśito"
+        },
+        {
+          "crit": "narakas tava",
+          "vulgate": "narakastava"
         }
       ]
     },
@@ -1390,31 +1821,15 @@
       "vulgate": "18.3.17",
       "difflib_similarity": 0.81,
       "kind": "lcs-variant",
-      "n_loci": 6,
+      "n_loci": 2,
       "apparatus": [
+        {
+          "crit": "bhīmas tathā",
+          "vulgate": "bhīmastathā"
+        },
         {
           "crit": "kr̥ṣṇā",
           "vulgate": "kṛṣṇā"
-        },
-        {
-          "crit": "∅",
-          "vulgate": "āgaccha"
-        },
-        {
-          "crit": "∅",
-          "vulgate": "naraśārdūla"
-        },
-        {
-          "crit": "∅",
-          "vulgate": "muktāste"
-        },
-        {
-          "crit": "∅",
-          "vulgate": "caiva"
-        },
-        {
-          "crit": "∅",
-          "vulgate": "kalmaṣāt"
         }
       ]
     },
@@ -1423,11 +1838,28 @@
       "vulgate": "18.3.19",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
+        {
+          "crit": "karṇaś caiva",
+          "vulgate": "karṇaścaiva"
+        },
         {
           "crit": "sarvaśastrabhr̥tāṃ",
           "vulgate": "sarvaśastrabhṛtāṃvaraḥ"
+        }
+      ]
+    },
+    {
+      "critical": "18.3.18",
+      "vulgate": "18.3.20",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "puruṣavyāghram ādityatanayaṃ",
+          "vulgate": "puruṣavyāghramādityatanayaṃ"
         }
       ]
     },
@@ -1439,16 +1871,16 @@
       "n_loci": 3,
       "apparatus": [
         {
-          "crit": "bhrātr̥̄ṃś",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "cānyāṃs",
+          "crit": "bhrātr̥̄ṃś cānyāṃs tathā",
           "vulgate": "bhrātṝnputrāṃstathā"
         },
         {
-          "crit": "∅",
+          "crit": "svapakṣāṃś caiva",
           "vulgate": "svapakṣyāṃścaiva"
+        },
+        {
+          "crit": "sthānam anuprāptān vyetu",
+          "vulgate": "sthānamanuprāptānvyetu"
         }
       ]
     },
@@ -1457,22 +1889,18 @@
       "vulgate": "18.3.23",
       "difflib_similarity": 0.92,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "jitānāṃ",
           "vulgate": "jñānānāṃ"
         },
         {
-          "crit": "∅",
+          "crit": "tapasā",
           "vulgate": "tapasāṃ"
         },
         {
           "crit": "pāṇḍava",
-          "vulgate": "pārthivaḥ"
-        },
-        {
-          "crit": "∅",
           "vulgate": "pārthivaḥ"
         }
       ]
@@ -1482,11 +1910,15 @@
       "vulgate": "18.3.24",
       "difflib_similarity": 0.93,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "devagandharvā",
-          "vulgate": "∅"
+          "vulgate": "devagandarvā"
+        },
+        {
+          "crit": "divyāś cāpsaraso",
+          "vulgate": "divyāścāpsaraso"
         },
         {
           "crit": "virajombaravāsasaḥ",
@@ -1499,27 +1931,23 @@
       "vulgate": "18.3.25",
       "difflib_similarity": 0.88,
       "kind": "lcs-variant",
-      "n_loci": 5,
+      "n_loci": 4,
       "apparatus": [
         {
           "crit": "rājasūyajitām̐l",
           "vulgate": "rājasūyajitāṃ"
         },
         {
-          "crit": "aśvamedhābhivardhitān",
+          "crit": "lokān aśvamedhābhivardhitān",
           "vulgate": "lokānaśvamedhabhinirmitān"
         },
         {
-          "crit": "∅",
+          "crit": "tapasaś ca",
+          "vulgate": "tapasaśca mahāphalam"
+        },
+        {
+          "crit": "phalaṃ mahat",
           "vulgate": "mahāphalam"
-        },
-        {
-          "crit": "phalaṃ",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "mahat",
-          "vulgate": "∅"
         }
       ]
     },
@@ -1528,15 +1956,19 @@
       "vulgate": "18.3.26",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "∅",
+          "crit": "upary upari",
+          "vulgate": "uparyupari"
+        },
+        {
+          "crit": "lokā",
           "vulgate": "lokāḥ"
         },
         {
           "crit": "yudhiṣṭhira",
-          "vulgate": "∅"
+          "vulgate": "yudhiṣṭira"
         },
         {
           "crit": "hariścandrasamāḥ",
@@ -1549,28 +1981,19 @@
       "vulgate": "18.3.27",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "dauḥṣantir",
-          "vulgate": "∅"
+          "crit": "rājarṣir yatra",
+          "vulgate": "rājarṣiryatra"
         },
         {
-          "crit": "∅",
+          "crit": "dauḥṣantir yatra",
           "vulgate": "dauṣyantiryatra"
-        }
-      ]
-    },
-    {
-      "critical": "18.3.26",
-      "vulgate": "18.3.28",
-      "difflib_similarity": 0.99,
-      "kind": "lcs-variant",
-      "n_loci": 1,
-      "apparatus": [
+        },
         {
-          "crit": "rājendra",
-          "vulgate": "rājenrra"
+          "crit": "bharatas tatra",
+          "vulgate": "bharatastatra"
         }
       ]
     },
@@ -1592,15 +2015,36 @@
       ]
     },
     {
-      "critical": "18.3.29",
-      "vulgate": "18.3.31",
-      "difflib_similarity": 0.95,
+      "critical": "18.3.28",
+      "vulgate": "18.3.30",
+      "difflib_similarity": 0.98,
       "kind": "lcs-variant",
       "n_loci": 2,
       "apparatus": [
         {
+          "crit": "vigrahavān sākṣād uvāca",
+          "vulgate": "vigrahavānsākṣāduvāca"
+        },
+        {
+          "crit": "sutam ātmanaḥ",
+          "vulgate": "sutamātmanaḥ"
+        }
+      ]
+    },
+    {
+      "critical": "18.3.29",
+      "vulgate": "18.3.31",
+      "difflib_similarity": 0.95,
+      "kind": "lcs-variant",
+      "n_loci": 3,
+      "apparatus": [
+        {
+          "crit": "rājan mahāprājña",
+          "vulgate": "rājanmahāprājña"
+        },
+        {
           "crit": "’smi",
-          "vulgate": "∅"
+          "vulgate": "prītosmi"
         },
         {
           "crit": "satyavākyena",
@@ -1620,12 +2064,12 @@
           "vulgate": "tṛtīyā"
         },
         {
-          "crit": "kr̥tā",
+          "crit": "rājan kr̥tā",
           "vulgate": "rājankṛtā"
         },
         {
-          "crit": "hetubhiḥ",
-          "vulgate": "∅"
+          "crit": "svabhāvāt pārtha",
+          "vulgate": "svabhāvātpārtha"
         },
         {
           "crit": "hetubhiḥ",
@@ -1638,27 +2082,23 @@
       "vulgate": "18.3.33",
       "difflib_similarity": 0.89,
       "kind": "lcs-variant",
-      "n_loci": 5,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "tvam",
-          "vulgate": "tvaṃ"
+          "crit": "tvam āsīr",
+          "vulgate": "tvaṃ praśnāddvaitavane"
         },
         {
-          "crit": "∅",
-          "vulgate": "praśnāddvaitavane"
+          "crit": "dvaitavanaṃ prati",
+          "vulgate": "praśnāddvaitavane mayā"
         },
         {
-          "crit": "āsīr",
-          "vulgate": "praśnāddvaitavane"
+          "crit": "tac ca",
+          "vulgate": "tacca"
         },
         {
-          "crit": "dvaitavanaṃ",
-          "vulgate": "praśnāddvaitavane"
-        },
-        {
-          "crit": "prati",
-          "vulgate": "mayā"
+          "crit": "nistīrṇavān asi",
+          "vulgate": "nistīrṇavānasi"
         }
       ]
     },
@@ -1667,15 +2107,19 @@
       "vulgate": "18.3.34",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "draupadyāṃ",
-          "vulgate": "∅"
+          "vulgate": "draupadyā"
         },
         {
           "crit": "putra",
           "vulgate": "tatra"
+        },
+        {
+          "crit": "punas",
+          "vulgate": "∅"
         }
       ]
     },
@@ -1684,19 +2128,27 @@
       "vulgate": "18.3.35",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 5,
       "apparatus": [
         {
           "crit": "tr̥tīyaṃ",
           "vulgate": "tṛtīyaṃ"
         },
         {
-          "crit": "bhrātr̥̄ṇām",
+          "crit": "bhrātr̥̄ṇām arthe",
           "vulgate": "bhrātṝṇāmarthe"
         },
         {
+          "crit": "yat",
+          "vulgate": "yatasthātumicchasi"
+        },
+        {
+          "crit": "sthātum icchasi",
+          "vulgate": "yatasthātumicchasi"
+        },
+        {
           "crit": "’si",
-          "vulgate": "∅"
+          "vulgate": "viśuddhosi"
         }
       ]
     },
@@ -1722,12 +2174,41 @@
       ]
     },
     {
+      "critical": "18.3.35",
+      "vulgate": "18.3.37",
+      "difflib_similarity": 0.98,
+      "kind": "lcs-variant",
+      "n_loci": 4,
+      "apparatus": [
+        {
+          "crit": "narakas tāta",
+          "vulgate": "narakāstāta"
+        },
+        {
+          "crit": "tatas tvayā",
+          "vulgate": "tatastvayā"
+        },
+        {
+          "crit": "prāptam idaṃ",
+          "vulgate": "prāptamidaṃ"
+        },
+        {
+          "crit": "duḥkham uttamam",
+          "vulgate": "duḥkhamuttamam"
+        }
+      ]
+    },
+    {
       "critical": "18.3.36",
       "vulgate": "18.3.38",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
+        {
+          "crit": "narakārhāś ciraṃ",
+          "vulgate": "narakārhāściraṃ"
+        },
         {
           "crit": "nr̥pa",
           "vulgate": "nṛpa"
@@ -1750,12 +2231,12 @@
           "vulgate": "kathañcana"
         },
         {
-          "crit": "gaṇgāṃ",
-          "vulgate": "cemāṃstrilokagān"
+          "crit": "ehy ehi",
+          "vulgate": "ehyehi"
         },
         {
-          "crit": "gaṇgāṃ",
-          "vulgate": "∅"
+          "crit": "gaṇgāṃ trilokagām",
+          "vulgate": "cemāṃstrilokagān"
         }
       ]
     },
@@ -1767,20 +2248,20 @@
       "n_loci": 5,
       "apparatus": [
         {
-          "crit": "∅",
-          "vulgate": "vaiśampāyana"
+          "crit": "evam uktaḥ",
+          "vulgate": "evamuktaḥ"
         },
         {
-          "crit": "∅",
-          "vulgate": "uvāca"
+          "crit": "rājarṣis tava",
+          "vulgate": "rājarṣistava"
         },
         {
           "crit": "dharmeṇa",
           "vulgate": "dharmeṇi"
         },
         {
-          "crit": "sarvaiś",
-          "vulgate": "∅"
+          "crit": "sarvaiś ca",
+          "vulgate": "savaiśca"
         },
         {
           "crit": "tridaśālayaiḥ",
@@ -1793,18 +2274,14 @@
       "vulgate": "18.3.41",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 2,
       "apparatus": [
         {
-          "crit": "r̥ṣisaṃstutām",
+          "crit": "pāvanīm r̥ṣisaṃstutām",
           "vulgate": "pāvanīmṛṣisaṃstutām"
         },
         {
-          "crit": "tu",
-          "vulgate": "tato"
-        },
-        {
-          "crit": "tāṃ",
+          "crit": "tu tāṃ",
           "vulgate": "tato"
         }
       ]
@@ -1814,11 +2291,15 @@
       "vulgate": "18.3.42",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
         {
-          "crit": "divyavapur",
+          "crit": "divyavapur bhūtvā",
           "vulgate": "vivyavapurbhūtvā"
+        },
+        {
+          "crit": "tasmin samāplutaḥ",
+          "vulgate": "tasminsamāplutaḥ"
         }
       ]
     },
@@ -1835,7 +2316,7 @@
         },
         {
           "crit": "dhīmān",
-          "vulgate": "∅"
+          "vulgate": "dhīmāṃstūyamāno"
         }
       ]
     },
@@ -1844,7 +2325,7 @@
       "vulgate": "18.4.1",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "vaiśaṃpāyana",
@@ -1853,10 +2334,6 @@
         {
           "crit": "pūjyamāno",
           "vulgate": "stūyamāno"
-        },
-        {
-          "crit": "pūjyamāno",
-          "vulgate": "∅"
         },
         {
           "crit": "kurupuṃgavāḥ",
@@ -1886,26 +2363,18 @@
       "vulgate": "18.4.3",
       "difflib_similarity": 0.81,
       "kind": "lcs-variant",
-      "n_loci": 5,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "cakraprabhr̥tibhir",
+          "crit": "divyair astrair upasthitam",
+          "vulgate": "divyairastrairupasthitam"
+        },
+        {
+          "crit": "cakraprabhr̥tibhir ghorair divyaiḥ",
           "vulgate": "cakraprabhṛtibhirghorairdivyaiḥ"
         },
         {
-          "crit": "upāsyamānaṃ",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "vīreṇa",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "phalgunena",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "suvarcasā",
+          "crit": "upāsyamānaṃ vīreṇa phalgunena suvarcasā",
           "vulgate": "∅"
         }
       ]
@@ -1915,8 +2384,12 @@
       "vulgate": "18.4.6",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
+        {
+          "crit": "aparasminn athoddeśe",
+          "vulgate": "aparasminnathoddeśe"
+        },
         {
           "crit": "śastrabhr̥tāṃ",
           "vulgate": "śastrabhṛtāṃ"
@@ -1928,15 +2401,49 @@
       "vulgate": "18.4.7",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
+      "n_loci": 3,
+      "apparatus": [
+        {
+          "crit": "athāparasminn uddeśe",
+          "vulgate": "athāparasminnuddeśe"
+        },
+        {
+          "crit": "marudgaṇavr̥taṃ prabhum",
+          "vulgate": "marudgaṇavṛtaṃ vibhum"
+        },
+        {
+          "crit": "bhīmasenam athāpaśyat tenaiva",
+          "vulgate": "bhīmasenamathāpaśyattenaiva"
+        }
+      ]
+    },
+    {
+      "critical": "18.4.6",
+      "vulgate": "18.4.9",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "aśvinos tu",
+          "vulgate": "aśvinostu"
+        }
+      ]
+    },
+    {
+      "critical": "18.4.7",
+      "vulgate": "18.4.10",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
       "n_loci": 2,
       "apparatus": [
         {
-          "crit": "marudgaṇavr̥taṃ",
-          "vulgate": "marudgaṇavṛtaṃ"
+          "crit": "svargam ākramya",
+          "vulgate": "svargamākramya"
         },
         {
-          "crit": "prabhum",
-          "vulgate": "vibhum"
+          "crit": "tiṣṭhantīm arkavarcasam",
+          "vulgate": "tiṣṭhantīmarkavarcasam"
         }
       ]
     },
@@ -1945,23 +2452,70 @@
       "vulgate": "18.4.11",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 5,
       "apparatus": [
-        {
-          "crit": "∅",
-          "vulgate": "tatraināṃ"
-        },
         {
           "crit": "athaināṃ",
           "vulgate": "tatraināṃ"
         },
         {
-          "crit": "∅",
+          "crit": "praṣṭum aicchad yudhiṣṭhiraḥ",
           "vulgate": "spraṣṭumaicchadyudhiṣṭhiraḥ"
         },
         {
           "crit": "’sya",
-          "vulgate": "∅"
+          "vulgate": "tatosya"
+        },
+        {
+          "crit": "bhagavān indraḥ",
+          "vulgate": "bhagavānindraḥ"
+        },
+        {
+          "crit": "kathayām āsa",
+          "vulgate": "kathayāmāsa"
+        }
+      ]
+    },
+    {
+      "critical": "18.4.9",
+      "vulgate": "18.4.12",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "śrīr eṣā",
+          "vulgate": "śrīreṣā"
+        }
+      ]
+    },
+    {
+      "critical": "18.4.11",
+      "vulgate": "18.4.14",
+      "difflib_similarity": 0.98,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "draupadyās tanayā",
+          "vulgate": "draupadyāstanayā"
+        },
+        {
+          "crit": "rājan yuṣmākam amitaujasaḥ",
+          "vulgate": "rājanyuṣmākamamitaujasaḥ"
+        }
+      ]
+    },
+    {
+      "critical": "18.4.15",
+      "vulgate": "18.4.19",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "saubhadram aparājitam",
+          "vulgate": "saubhadramaparājitam"
         }
       ]
     },
@@ -1970,8 +2524,12 @@
       "vulgate": "18.4.20",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
+        {
+          "crit": "pāṇḍur maheṣvāsaḥ",
+          "vulgate": "pāṇḍurmaheṣvāsaḥ"
+        },
         {
           "crit": "saṃgataḥ",
           "vulgate": "saṅgataḥ"
@@ -1983,7 +2541,7 @@
       "vulgate": "18.4.21",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
           "crit": "śāṃtanavaṃ",
@@ -1996,6 +2554,10 @@
         {
           "crit": "br̥haspateḥ",
           "vulgate": "bṛhaspateḥ"
+        },
+        {
+          "crit": "gurum enaṃ",
+          "vulgate": "gurumenaṃ"
         }
       ]
     },
@@ -2004,15 +2566,23 @@
       "vulgate": "18.4.22",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 4,
       "apparatus": [
         {
+          "crit": "yodhās tava",
+          "vulgate": "yodhāstava"
+        },
+        {
           "crit": "gandharvaiḥ",
-          "vulgate": "∅"
+          "vulgate": "gandharvasahitā"
         },
         {
           "crit": "yakṣaiḥ",
-          "vulgate": "∅"
+          "vulgate": "yakṣapuṇyajanaistathā"
+        },
+        {
+          "crit": "puṇyajanais tathā",
+          "vulgate": "yakṣapuṇyajanaistathā"
         }
       ]
     },
@@ -2021,22 +2591,18 @@
       "vulgate": "18.4.23",
       "difflib_similarity": 0.93,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "∅",
-          "vulgate": "narādhipāḥ"
-        },
-        {
-          "crit": "nr̥sattamāḥ",
-          "vulgate": "∅"
+          "crit": "cit prāptā",
+          "vulgate": "kecitprāptā"
         },
         {
           "crit": "nr̥sattamāḥ",
           "vulgate": "narādhipāḥ"
         },
         {
-          "crit": "∅",
+          "crit": "jitasvargāḥ",
           "vulgate": "jitaḥ"
         }
       ]
@@ -2046,11 +2612,15 @@
       "vulgate": "18.5.1",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
         {
-          "crit": "dhr̥tarāṣṭraś",
+          "crit": "dhr̥tarāṣṭraś ca",
           "vulgate": "dhṛtarāṣṭraśca"
+        },
+        {
+          "crit": "śaṇkhaś caivottaras tathā",
+          "vulgate": "śaṅkhaścaivottarastathā"
         }
       ]
     },
@@ -2059,11 +2629,19 @@
       "vulgate": "18.5.2",
       "difflib_similarity": 0.97,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "dhr̥ṣṭaketur",
+          "crit": "dhr̥ṣṭaketur jayatseno",
           "vulgate": "dhṛṣṭakejurjayatseno"
+        },
+        {
+          "crit": "duryodhanasutāś caiva",
+          "vulgate": "duryodhanasutāścaiva"
+        },
+        {
+          "crit": "śakuniś caiva",
+          "vulgate": "śakuniścaiva"
         }
       ]
     },
@@ -2072,10 +2650,14 @@
       "vulgate": "18.5.3",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
         {
-          "crit": "ghaṭotkacādayaś",
+          "crit": "karṇaputrāś ca",
+          "vulgate": "karṇaputrāśca"
+        },
+        {
+          "crit": "ghaṭotkacādayaś caiva",
           "vulgate": "ghaṭotkavādayaścaiva"
         }
       ]
@@ -2088,12 +2670,12 @@
       "n_loci": 2,
       "apparatus": [
         {
-          "crit": "kīrtitās",
-          "vulgate": "∅"
+          "crit": "kīrtitās tatra",
+          "vulgate": "vīrā"
         },
         {
-          "crit": "tatra",
-          "vulgate": "vīrā"
+          "crit": "tasthus tad api",
+          "vulgate": "tasthustadapi"
         }
       ]
     },
@@ -2105,19 +2687,19 @@
       "n_loci": 4,
       "apparatus": [
         {
-          "crit": "∅",
+          "crit": "sūta uvāca",
           "vulgate": "sautiruvāca"
         },
         {
-          "crit": "sūta",
-          "vulgate": "sautiruvāca"
+          "crit": "ity uktaḥ",
+          "vulgate": "ityuktaḥ"
         },
         {
-          "crit": "nr̥pater",
-          "vulgate": "nṛpaterākhyātumupacatrame"
+          "crit": "viprarṣir anujñāto",
+          "vulgate": "viprarṣiranujñāto"
         },
         {
-          "crit": "upacakrame",
+          "crit": "nr̥pater ākhyātum upacakrame",
           "vulgate": "nṛpaterākhyātumupacatrame"
         }
       ]
@@ -2127,11 +2709,19 @@
       "vulgate": "18.5.23",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "dhi",
+          "crit": "bhagavān devaḥ",
+          "vulgate": "bhagavāndevaḥ"
+        },
+        {
+          "crit": "pitāmahaniyogād dhi",
           "vulgate": "pitāmahaniyogādvai"
+        },
+        {
+          "crit": "yogād gām adhārayat",
+          "vulgate": "yogādgāmadhārayat"
         }
       ]
     },
@@ -2140,19 +2730,23 @@
       "vulgate": "18.5.27",
       "difflib_similarity": 0.93,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "ghaṭotkacādayaḥ",
-          "vulgate": "∅"
+          "crit": "hatās tasmin mahāyuddhe",
+          "vulgate": "hatāstasminmahāyuddhe"
         },
         {
-          "crit": "∅",
+          "crit": "vīrās tu",
+          "vulgate": "vīrāstu"
+        },
+        {
+          "crit": "ghaṭotkacādayaḥ sarve",
           "vulgate": "ghaṭotkacādayaścaiva"
         },
         {
-          "crit": "sarve",
-          "vulgate": "ghaṭotkacādayaścaiva"
+          "crit": "devān yakṣāṃś ca",
+          "vulgate": "devānyakṣāṃśca"
         }
       ]
     },
@@ -2161,15 +2755,36 @@
       "vulgate": "18.5.28",
       "difflib_similarity": 0.92,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "rākṣasāḥ",
-          "vulgate": "∅"
+          "crit": "duryodhanasahāyāś ca",
+          "vulgate": "duryodhanasahāyāśca"
         },
         {
-          "crit": "parikīrtitāḥ",
-          "vulgate": "yenukīrtitāḥ"
+          "crit": "rākṣasāḥ parikīrtitāḥ",
+          "vulgate": "rākṣasā yenukīrtitāḥ"
+        },
+        {
+          "crit": "prāptās te",
+          "vulgate": "prāptāste"
+        },
+        {
+          "crit": "rājan sarvalokān anuttamān",
+          "vulgate": "rājansarvalokānanuttamān"
+        }
+      ]
+    },
+    {
+      "critical": "18.5.24",
+      "vulgate": "18.5.29",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 1,
+      "apparatus": [
+        {
+          "crit": "lokān viviśuḥ",
+          "vulgate": "lokānviviśuḥ"
         }
       ]
     },
@@ -2178,8 +2793,16 @@
       "vulgate": "18.5.30",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
+        {
+          "crit": "etat te",
+          "vulgate": "etatte"
+        },
+        {
+          "crit": "sarvam ākhyātaṃ",
+          "vulgate": "sarvamākhyātaṃ"
+        },
         {
           "crit": "kr̥tsnaṃ",
           "vulgate": "kṛtsnaṃ"
@@ -2191,19 +2814,27 @@
       "vulgate": "18.5.31",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 5,
       "apparatus": [
         {
-          "crit": "∅",
+          "crit": "sūta uvāca",
           "vulgate": "sautiruvāca"
         },
         {
-          "crit": "sūta",
-          "vulgate": "sautiruvāca"
-        },
-        {
-          "crit": "’bhavad",
+          "crit": "etac",
           "vulgate": "∅"
+        },
+        {
+          "crit": "dvijaśreṣṭhāt sa",
+          "vulgate": "dvijaśreṣṭhātsa"
+        },
+        {
+          "crit": "’bhavad atyarthaṃ",
+          "vulgate": "vismitobhavadatyarthaṃ"
+        },
+        {
+          "crit": "yajñakarmāntareṣv atha",
+          "vulgate": "yajñakarmāntareṣvatha"
         }
       ]
     },
@@ -2212,8 +2843,20 @@
       "vulgate": "18.5.32",
       "difflib_similarity": 0.98,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 4,
       "apparatus": [
+        {
+          "crit": "samāpayām āsuḥ",
+          "vulgate": "samāpayāmāsuḥ"
+        },
+        {
+          "crit": "tat tasya",
+          "vulgate": "tattasya"
+        },
+        {
+          "crit": "āstīkaś cābhavat prītaḥ",
+          "vulgate": "āstikaścābhavatprītaḥ"
+        },
         {
           "crit": "bhujaṃgamān",
           "vulgate": "bhujaṅgamān"
@@ -2225,11 +2868,19 @@
       "vulgate": "18.5.33",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "sarvāṃs",
-          "vulgate": "∅"
+          "crit": "dvijātīn sarvāṃs tān dakṣiṇābhir atoṣayat",
+          "vulgate": "dvijātīnsarvāstāndakṣiṇābhiratoṣayat"
+        },
+        {
+          "crit": "pūjitāś cāpi",
+          "vulgate": "pūjitāścāpi"
+        },
+        {
+          "crit": "jagmur yathāgatam",
+          "vulgate": "jagmuryathāgatam"
         }
       ]
     },
@@ -2238,14 +2889,18 @@
       "vulgate": "18.5.34",
       "difflib_similarity": 0.93,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "tatas",
+          "crit": "viprāṃs tān rājāpi",
+          "vulgate": "viprāṃstānrājāpi"
+        },
+        {
+          "crit": "tatas takṣaśilāyāḥ",
           "vulgate": "hṛṣṭastakṣaśilāyāḥ"
         },
         {
-          "crit": "gajāhvayam",
+          "crit": "punar āyād gajāhvayam",
           "vulgate": "punarāyādgacāhvayam"
         }
       ]
@@ -2255,8 +2910,16 @@
       "vulgate": "18.5.35",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 6,
       "apparatus": [
+        {
+          "crit": "etat te",
+          "vulgate": "etatte"
+        },
+        {
+          "crit": "sarvam ākhyātaṃ",
+          "vulgate": "sarvamākhyātaṃ"
+        },
         {
           "crit": "vaiśaṃpāyanakīrtitam",
           "vulgate": "vaiśampāyanakīrtitam"
@@ -2280,11 +2943,15 @@
       "vulgate": "18.5.36",
       "difflib_similarity": 0.95,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "’yam",
-          "vulgate": "∅"
+          "crit": "’yam itihāsākhyaḥ",
+          "vulgate": "puṇyoyamitihāsākhyaḥ"
+        },
+        {
+          "crit": "cedam uttamam",
+          "vulgate": "cedamuttamam"
         },
         {
           "crit": "kr̥ṣṇena",
@@ -2321,12 +2988,12 @@
       "n_loci": 3,
       "apparatus": [
         {
-          "crit": "∅",
+          "crit": "idaṃ",
           "vulgate": "yaścedaṃ"
         },
         {
-          "crit": "idaṃ",
-          "vulgate": "yaścedaṃ"
+          "crit": "śrāvayed vidvān sadā",
+          "vulgate": "śrāvayedvidvānsadā"
         },
         {
           "crit": "gacchati",
@@ -2339,15 +3006,52 @@
       "vulgate": "18.5.42",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 5,
       "apparatus": [
         {
-          "crit": "pitr̥̄ṃs",
-          "vulgate": "pitṝṃstasyopatadiṣṭhate"
+          "crit": "yaś cedaṃ",
+          "vulgate": "yaścedaṃ"
         },
         {
-          "crit": "∅",
+          "crit": "śrāvayec",
+          "vulgate": "∅"
+        },
+        {
+          "crit": "brāhmaṇān pādam antataḥ",
+          "vulgate": "brāhmaṇānpādamantataḥ"
+        },
+        {
+          "crit": "akṣayyam annapānaṃ",
+          "vulgate": "akṣayyamannapānaṃ"
+        },
+        {
+          "crit": "pitr̥̄ṃs tasyopatiṣṭhate",
           "vulgate": "pitṝṃstasyopatadiṣṭhate"
+        }
+      ]
+    },
+    {
+      "critical": "18.5.37",
+      "vulgate": "18.5.43",
+      "difflib_similarity": 0.98,
+      "kind": "lcs-variant",
+      "n_loci": 4,
+      "apparatus": [
+        {
+          "crit": "yad enaḥ",
+          "vulgate": "yadenaḥ"
+        },
+        {
+          "crit": "indriyair manasāpi",
+          "vulgate": "indriyairmanasāpi"
+        },
+        {
+          "crit": "mahābhāratam ākhyāya",
+          "vulgate": "mahābhāratamākhyāya"
+        },
+        {
+          "crit": "paścāt saṃdhyāṃ",
+          "vulgate": "paścātsaṃdhyāṃ"
         }
       ]
     },
@@ -2356,15 +3060,23 @@
       "vulgate": "18.5.50",
       "difflib_similarity": 0.93,
       "kind": "lcs-variant",
-      "n_loci": 2,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "tat",
-          "vulgate": "kutricit"
+          "crit": "yad ihāsti",
+          "vulgate": "yadihāsti"
         },
         {
-          "crit": "kva",
-          "vulgate": "∅"
+          "crit": "tad anyatra",
+          "vulgate": "tadanyatra"
+        },
+        {
+          "crit": "yan nehāsti",
+          "vulgate": "yannehāsti"
+        },
+        {
+          "crit": "tat kva",
+          "vulgate": "kutricit"
         }
       ]
     },
@@ -2373,47 +3085,40 @@
       "vulgate": "18.5.51",
       "difflib_similarity": 0.8,
       "kind": "lcs-variant",
-      "n_loci": 10,
+      "n_loci": 4,
       "apparatus": [
         {
           "crit": "’yaṃ",
-          "vulgate": "∅"
+          "vulgate": "nāmetihāsoyaṃ"
         },
         {
-          "crit": "bhūtim",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "∅",
+          "crit": "bhūtim icchatā",
           "vulgate": "mokṣamicchatā"
         },
         {
-          "crit": "∅",
-          "vulgate": "brāhmaṇena"
-        },
-        {
           "crit": "rājñā",
-          "vulgate": "brāhmaṇena"
+          "vulgate": "brāhmaṇena ca"
         },
         {
-          "crit": "∅",
-          "vulgate": "brāhmaṇena"
-        },
-        {
-          "crit": "∅",
-          "vulgate": "ca"
-        },
-        {
-          "crit": "rājasutaiś",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "cāpi",
+          "crit": "rājasutaiś cāpi",
           "vulgate": "rājñā"
+        }
+      ]
+    },
+    {
+      "critical": "18.5.40",
+      "vulgate": "18.5.52",
+      "difflib_similarity": 0.99,
+      "kind": "lcs-variant",
+      "n_loci": 2,
+      "apparatus": [
+        {
+          "crit": "labhet svargaṃ",
+          "vulgate": "labhetsvargaṃ"
         },
         {
-          "crit": "cāpi",
-          "vulgate": "∅"
+          "crit": "labhej jayam",
+          "vulgate": "labhejjayam"
         }
       ]
     },
@@ -2422,30 +3127,14 @@
       "vulgate": "18.5.53",
       "difflib_similarity": 0.87,
       "kind": "lcs-variant",
-      "n_loci": 6,
+      "n_loci": 2,
       "apparatus": [
         {
-          "crit": "∅",
-          "vulgate": "anāgataśca"
+          "crit": "anāgataṃ tribhir varṣaiḥ kr̥ṣṇadvaipāyanaḥ",
+          "vulgate": "anāgataśca mokṣaśca kṛṣṇadvaipāyanaḥ"
         },
         {
-          "crit": "anāgataṃ",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "tribhir",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "varṣaiḥ",
-          "vulgate": "mokṣaśca"
-        },
-        {
-          "crit": "kr̥ṣṇadvaipāyanaḥ",
-          "vulgate": "kṛṣṇadvaipāyanaḥ"
-        },
-        {
-          "crit": "kr̥tavān",
+          "crit": "kr̥tavān dharmakāmyayā",
           "vulgate": "kṛtavāndharmakāmyayā"
         }
       ]
@@ -2455,18 +3144,22 @@
       "vulgate": "18.5.56",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "’śrāvayad",
-          "vulgate": "∅"
+          "crit": "’śrāvayad devān asito",
+          "vulgate": "nāradośrāvayaddevānasito"
         },
         {
           "crit": "pitr̥̄n",
           "vulgate": "pitṝn"
         },
         {
-          "crit": "vaiśaṃpāyana",
+          "crit": "yakṣāñ śuko",
+          "vulgate": "rakṣoyakṣāñśuko"
+        },
+        {
+          "crit": "martyān vaiśaṃpāyana",
           "vulgate": "martyānvaiśampāyana"
         }
       ]
@@ -2476,43 +3169,19 @@
       "vulgate": "18.5.57",
       "difflib_similarity": 0.82,
       "kind": "lcs-variant",
-      "n_loci": 9,
+      "n_loci": 3,
       "apparatus": [
         {
-          "crit": "∅",
-          "vulgate": "vyāsoktaṃ"
+          "crit": "itihāsam imaṃ",
+          "vulgate": "itihāsamimaṃ"
         },
         {
-          "crit": "śrāvayed",
-          "vulgate": "śrūyate"
+          "crit": "śrāvayed yas tu varṇāṃs trīn kr̥tvā",
+          "vulgate": "śrūyate yena kṛtvā"
         },
         {
-          "crit": "śrāvayed",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "yas",
-          "vulgate": "yena"
-        },
-        {
-          "crit": "tu",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "varṇāṃs",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "trīn",
-          "vulgate": "∅"
-        },
-        {
-          "crit": "kr̥tvā",
-          "vulgate": "kṛtvā"
-        },
-        {
-          "crit": "brāhmaṇam",
-          "vulgate": "∅"
+          "crit": "brāhmaṇam agrataḥ",
+          "vulgate": "brāhmṇamagrataḥ"
         }
       ]
     },
@@ -2521,23 +3190,19 @@
       "vulgate": "18.5.58",
       "difflib_similarity": 0.89,
       "kind": "lcs-variant",
-      "n_loci": 4,
+      "n_loci": 3,
       "apparatus": [
         {
           "crit": "pāpanirmuktaḥ",
           "vulgate": "sarvakāmāṃśca"
         },
         {
-          "crit": "pāpanirmuktaḥ",
-          "vulgate": "∅"
+          "crit": "gacchet paramikāṃ",
+          "vulgate": "gacchetparamikāṃ"
         },
         {
-          "crit": "pāpanirmuktaḥ",
-          "vulgate": "sarvakāmāṃśca"
-        },
-        {
-          "crit": "pāpanirmuktaḥ",
-          "vulgate": "∅"
+          "crit": "siddhim atra",
+          "vulgate": "siddhimatra"
         }
       ]
     },
@@ -2546,11 +3211,15 @@
       "vulgate": "18.5.60",
       "difflib_similarity": 0.99,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 2,
       "apparatus": [
         {
           "crit": "mātāpitr̥sahasrāṇi",
           "vulgate": "mātāpitṛsahasrāṇi"
+        },
+        {
+          "crit": "saṃsāreṣv anubhūtāni",
+          "vulgate": "saṃsāreṣvanubhūtāni"
         }
       ]
     },
@@ -2559,11 +3228,23 @@
       "vulgate": "18.6.89",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 1,
+      "n_loci": 4,
       "apparatus": [
         {
-          "crit": "chr̥ṇoti",
+          "crit": "ūrdhvabāhur viraumy eṣa",
+          "vulgate": "ūrdhvabāhurviraumyeṣa"
+        },
+        {
+          "crit": "kaś cic chr̥ṇoti",
           "vulgate": "kaścicchṛṇoti"
+        },
+        {
+          "crit": "dharmād arthaś ca",
+          "vulgate": "dharmādarthaśca"
+        },
+        {
+          "crit": "kāmaś ca",
+          "vulgate": "kāmaśca"
         }
       ]
     },
@@ -2572,19 +3253,35 @@
       "vulgate": "18.6.90",
       "difflib_similarity": 0.96,
       "kind": "lcs-variant",
-      "n_loci": 3,
+      "n_loci": 7,
       "apparatus": [
+        {
+          "crit": "bhayān na",
+          "vulgate": "bhayānna"
+        },
         {
           "crit": "lobhād;",
           "vulgate": "lobhāt"
         },
         {
-          "crit": "anitye;",
-          "vulgate": "∅"
+          "crit": "tyajej jīvitasyāpi",
+          "vulgate": "tyajejjīvitasyāpi"
+        },
+        {
+          "crit": "tv anitye;",
+          "vulgate": "tvanitye"
         },
         {
           "crit": "nityo",
           "vulgate": "nityaḥ"
+        },
+        {
+          "crit": "hetur asya",
+          "vulgate": "heturasya"
+        },
+        {
+          "crit": "tv anityaḥ",
+          "vulgate": "tvanityaḥ"
         }
       ]
     }

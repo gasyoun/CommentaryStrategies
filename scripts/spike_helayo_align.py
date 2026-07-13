@@ -217,13 +217,26 @@ def collapse_loci(aa, bb, ta, tb):
 
 def syllabify(text):
     """Segment a cleaned (space-preserving) IAST string into akṣara tokens:
-    (token_text, start, end) triples with `end` exclusive, covering `text`
-    contiguously. An akṣara = onset consonant cluster + vowel nucleus (simple
-    or ai/au diphthong) + any immediately-following anusvāra/visarga/
-    candrabindu. A run of trailing consonants with no following vowel (common
-    word-finally, e.g. "tat") closes as its own vowel-less token at a space or
-    at end of string. A space is its own single-char token (passthrough, same
-    role spaces play in the char-level `collapse_loci`)."""
+    (token_text, start, end) triples, NOT contiguous across spaces -- spaces
+    are dropped, not tokenized (see rationale below). An akṣara = onset
+    consonant cluster + vowel nucleus (simple or ai/au diphthong) + any
+    immediately-following anusvāra/visarga/candrabindu. A run of trailing
+    consonants with no following vowel (common word-finally, e.g. "tat")
+    closes as its own vowel-less token at a space or at end of string.
+
+    Spaces are deliberately NOT emitted as tokens (unlike the char-level
+    `collapse_loci`'s space passthrough). Reason: Sanskrit sources routinely
+    differ in whether a run of words is space-separated or sandhi-fused (no
+    internal spaces) -- e.g. BORI's "maivam ity abravīc" vs the vulgate's
+    fused "maivamityabravīc". A space token IN the alignment sequence gets
+    scored by `aksara_sub_score` as merely a mild mismatch against a real
+    akṣara (not a proper gap), so Gotoh can align a space opposite real
+    content and the locus detector's "a space is always a match" rule then
+    fragments one real divergence into several spurious ones. Dropping space
+    tokens avoids this entirely; word-boundary information for the final
+    readable locus is NOT lost -- `_word_span` re-derives it from the
+    ORIGINAL text via each token's (start, end) char offsets, independent of
+    what's in the alignment sequence."""
     n = len(text)
     out = []
     i = 0
@@ -233,7 +246,6 @@ def syllabify(text):
         if ch == " ":
             if i > start:
                 out.append((text[start:i], start, i))
-            out.append((" ", i, i + 1))
             i += 1
             start = i
             continue
@@ -390,6 +402,35 @@ def collapse_loci_aksara(aa_tok, bb_tok, ta_tokens, tb_tokens, ta_text, tb_text)
         if y:
             ib += 1
     flush()
+
+    # Merge adjacent spans that are NOT separated by a real space in either
+    # original text. Sanskrit sources routinely differ in whether a run of
+    # words is space-separated (properly segmented) or sandhi-fused (no
+    # internal spaces) -- akṣara-granularity alignment can then find a tiny
+    # common syllable (ca/ta/sa...) INSIDE that fused stretch and mistake it
+    # for a genuine "resumption point", fragmenting one real divergence into
+    # several spurious ones (observed on MBh data: loci roughly doubled vs
+    # char-level on some parvas, tracing to exactly this). A gap containing
+    # no space on EITHER side cannot be a genuine word boundary, so merge.
+    merged_spans = []
+    for span in loci_spans:
+        a_lo, a_hi, b_lo, b_hi = span
+        if merged_spans:
+            pa_lo, pa_hi, pb_lo, pb_hi = merged_spans[-1]
+            gap_a = ta_text[pa_hi:a_lo] if pa_hi is not None and a_lo is not None else None
+            gap_b = tb_text[pb_hi:b_lo] if pb_hi is not None and b_lo is not None else None
+            no_space_a = gap_a is None or " " not in gap_a
+            no_space_b = gap_b is None or " " not in gap_b
+            if no_space_a and no_space_b:
+                merged_spans[-1] = (
+                    pa_lo if pa_lo is not None else a_lo,
+                    a_hi if a_hi is not None else pa_hi,
+                    pb_lo if pb_lo is not None else b_lo,
+                    b_hi if b_hi is not None else pb_hi,
+                )
+                continue
+        merged_spans.append(span)
+    loci_spans = merged_spans
 
     out = []
     for a_lo, a_hi, b_lo, b_hi in loci_spans:
