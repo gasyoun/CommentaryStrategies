@@ -1,6 +1,6 @@
 # Метадок: KOSTINA_SUNDARAKANDA_GUIDE.md
 
-_Created: 10-07-2026 · Last updated: 10-07-2026_
+_Created: 10-07-2026 · Last updated: 11-07-2026_
 
 Метадок для [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md).
 
@@ -45,6 +45,39 @@ _Created: 10-07-2026 · Last updated: 10-07-2026_
   для редактора это может быть избыточно подробно, но не вредно.
 - Числа даны округленно на дату создания.
 
+## Intended use / known misuse
+
+Документ для одного читателя — Е. Костиной, некалиброванного технически
+(браузер и почта), с ее личной четверкой задач из
+[issue №57](https://github.com/gasyoun/CommentaryStrategies/issues/57).
+Использовать по назначению: отправлять ей как самостоятельное руководство
+«что делать именно тебе», не требуя параллельного чтения
+[docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md).
+Известное неправильное использование: (а) редактировать общие с леоновским
+близнецом разделы (1, 5, 6, 7, 8) в одном руководстве, не зеркаля правку в
+[docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md)
+тем же коммитом — это прямое нарушение бэклог-правила №1, расхождение
+близнецов проверить сложно, а обнаруживается поздно; (б) выдавать
+Костиной эту версию раздела 4 после того, как она выберет вариант «А»/«Б»
+по ~427 пометам `***[Е. Костина]***`, не переписав раздел из вопроса в
+констатацию (бэклог №3) — устаревший вопрос читается как открытый, хотя
+решение уже принято.
+
+## Maintenance & sunset plan
+
+Владелец — МГ / агентная сессия по его указанию; общие разделы правятся
+ПАРНО с [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md)
+одним коммитом — стоячее правило (бэклог №1), нарушение которого — главный
+риск устаревания документа. Раздел 4 (личные задачи Костиной) обновляется
+по факту ее ответов (бэклог №3–4). После сдачи тома (~07-08-2026) и
+закрытия ее четырех задач руководство теряет операционную функцию и
+становится историческим — отдельного плана архивации пока не заведено,
+по аналогии с планом MANUAL §8 (см. метадок MANUAL.md, бэклог №4).
+
+## Deprecation status
+
+`active`
+
 ## Связанные документы
 
 - [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) — руководство-близнец переводчика
@@ -57,5 +90,6 @@ _Created: 10-07-2026 · Last updated: 10-07-2026_
 | Дата | Что изменилось | Кто |
 |---|---|---|
 | 10-07-2026 | Первая версия: 9 разделов, ее четыре задачи, словарик | Fable 5 (`claude-fable-5`), H517 |
+| 11-07-2026 | template v2 backfill (H663) | Sonnet 5 (claude-sonnet-5) |
 
 _Dr. Mārcis Gasūns_
