@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.12.1] - 2026-07-14
+
 ### Fixed
 
 - **Aligner bugs found while regenerating the MBh apparatus with the akṣara-level
