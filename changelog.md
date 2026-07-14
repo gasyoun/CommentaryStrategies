@@ -10,6 +10,32 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Fixed
+
+- **Aligner bugs found while regenerating the MBh apparatus with the akṣara-level
+  aligner (H830, [PR #101](https://github.com/gasyoun/CommentaryStrategies/pull/101)).**
+  Two real bugs in the H776-shared aligner/loader code, both regression-verified
+  against the already-published Sundarakāṇḍa apparatus with zero regressions:
+  - `collapse_loci_aksara` (`scripts/spike_helayo_align.py`) fragmented one locus
+    into two duplicate-pointing loci whenever the critical and vulgate witnesses
+    disagreed on word-boundary placement for sandhi-joined compounds. Fixed by
+    merging consecutive loci that share an identical non-empty string on one side.
+  - `iso15919_to_iast` (`scripts/compare_editions_mbh.py`) never implemented the
+    vocalic-r/l normalization its own docstring already promised — ISO-15919's
+    combining-ring-below spelling has no Unicode canonical-equivalence to IAST's
+    precomposed dot-below forms, so every `r̥`/`l̥` in the BORI critical text
+    silently mismatched the vulgate's `ṛ`/`ḷ` (~1000+ occurrences/parva).
+
+### Changed
+
+- **MBh apparatus (all 18 parvas) regenerated with the H776 akṣara-level aligner
+  (H830, [PR #101](https://github.com/gasyoun/CommentaryStrategies/pull/101)),
+  superseding the char-level version built at H784/H802/H804.** Book-level totals
+  unchanged (regression-verified exact match). Total apparatus loci 142,283 →
+  298,930 — a real ~2.1x increase not fully explained by the two fixes above;
+  flagged as an open question for a human ruling in the H830 handoff, not shipped
+  as fully understood.
+
 ## [1.12.0] - 2026-07-12
 
 ### Added
