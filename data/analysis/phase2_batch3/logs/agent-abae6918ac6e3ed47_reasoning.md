@@ -225,5 +225,5 @@ Both sarga files are complete, valid JSON, no BOM, and count-reconciled. Final s
 sarga 15: 61 considered / 2 drafted / 59 rejected / 2 contrastive
 sarga 16: 41 considered / 1 drafted / 40 rejected / 0 contrastive
 
-Key finds: 5.15.41/47 — a genuine variant reading (gātraśobhīni vs. Bhūṣaṇa's śākhāśobhīni) plus Tilaka's named editorial dispute (Kataka vs. Tīrtha) resolving it; 5.16.5 — Bhūṣaṇa's Viṣṇu-smṛti citation grounding the husband-age-parity norm, recovered from a segmenter spillover bundle (5.16.56) and reattached to its true verse. Output files: [data/analysis/phase2_batch3/sarga_15_candidates.json](data/analysis/phase2_batch3/sarga_15_candidates.json) and [data/analysis/phase2_batch3/sarga_16_candidates.json](data/analysis/phase2_batch3/sarga_16_candidates.json).
+Key finds: 5.15.41/47 — a genuine variant reading (gātraśobhīni vs. Bhūṣaṇa's śākhāśobhīni) plus Tilaka's named editorial dispute (Kataka vs. Tīrtha) resolving it; 5.16.5 — Bhūṣaṇa's Viṣṇu-smṛti citation grounding the husband-age-parity norm, recovered from a segmenter spillover bundle (5.16.56) and reattached to its true verse. Output files: [data/analysis/phase2_batch3/sarga_15_candidates.json](../sarga_15_candidates.json) and [data/analysis/phase2_batch3/sarga_16_candidates.json](../sarga_16_candidates.json).
 

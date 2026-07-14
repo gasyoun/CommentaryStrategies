@@ -122,7 +122,7 @@ _Created: 01-07-2026 · Last updated: 10-07-2026_
    финальный гейт Леонова/Костиной на сборке. Движок масштаба =
    **Sonnet-агенты Claude Code** (рулинг R2; уточнение D-P2-4 — DeepSeek больше не план по умолчанию).
 4. **Слой изданий** — сравнение критическое (Барода) ↔ южное готово; **51 сноска-кандидат** ждет гейта
-   ([`data/edition_footnotes/`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_footnotes/)).
+   ([`data/edition_footnotes/`](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/edition_footnotes)).
    Гитапресс — drop-in слот, **вне критического пути** (рулинг R4: текста пока нет, держим @WAITING).
 5. **Cross-text** — рукокурируемые кластеры + машинный слой Bridge 2 (VisualDCS `archive.sqlite`,
    31 параллель, PR #44); ✅ remap на вульгату выполнен (H141, 03-07-2026):
@@ -181,7 +181,7 @@ _Created: 01-07-2026 · Last updated: 10-07-2026_
 - **Ратификация всех позиций §3** на ближайшей встрече Леонов/Костина — сводный аппарат (H141)
   готовится как демонстрационный артефакт этой встречи.
 - **[@DO М.Г.] Гейты в браузере**: ~~(1) пилот Фазы-2~~ — ✅ пройден 03-07-2026, применен (H142);
-  (2) сноски изданий — [`data/edition_footnotes/`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_footnotes/)
+  (2) сноски изданий — [`data/edition_footnotes/`](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/edition_footnotes)
   review-страница — **всё еще ждет** decisions.json;
   (3) **новый**: партия 2 Фазы-2 (38 кандидатов, 7 песней) —
   [`data/analysis/phase2_batch2/review.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/review.html).

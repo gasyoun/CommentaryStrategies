@@ -494,10 +494,10 @@ sarga 48: 74 considered / 5 drafted / 69 rejected / 0 contrastive
 sarga 49: 27 considered / 3 drafted / 24 rejected / 0 contrastive
 
 Output files (all in [data/analysis/phase2_batch3/](data/analysis/phase2_batch3/)):
-- [sarga_46_candidates.json](data/analysis/phase2_batch3/sarga_46_candidates.json)
-- [sarga_47_candidates.json](data/analysis/phase2_batch3/sarga_47_candidates.json)
-- [sarga_48_candidates.json](data/analysis/phase2_batch3/sarga_48_candidates.json)
-- [sarga_49_candidates.json](data/analysis/phase2_batch3/sarga_49_candidates.json)
+- [sarga_46_candidates.json](../sarga_46_candidates.json)
+- [sarga_47_candidates.json](../sarga_47_candidates.json)
+- [sarga_48_candidates.json](../sarga_48_candidates.json)
+- [sarga_49_candidates.json](../sarga_49_candidates.json)
 
 No git commands were run. Every bundle across all four sargas was considered in verse order, dedup-checked against both `data/leonov_own_notes.json` and `data/sundara_commentary_to_add.json`, with per-verse reject entries (no ranges) so counts reconcile exactly against `verses_considered` in each file's `_meta`.
 

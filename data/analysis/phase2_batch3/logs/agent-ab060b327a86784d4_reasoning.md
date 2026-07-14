@@ -377,5 +377,5 @@ sarga 31: 27 considered / 2 drafted / 25 rejected / 0 contrastive
 sarga 32: 15 considered / 4 drafted / 11 rejected / 1 contrastive
 sarga 33: 40 considered / 6 drafted / 34 rejected / 1 contrastive
 
-Outputs written to [sarga_29_candidates.json](data/analysis/phase2_batch3/sarga_29_candidates.json), [sarga_31_candidates.json](data/analysis/phase2_batch3/sarga_31_candidates.json), [sarga_32_candidates.json](data/analysis/phase2_batch3/sarga_32_candidates.json), [sarga_33_candidates.json](data/analysis/phase2_batch3/sarga_33_candidates.json).
+Outputs written to [sarga_29_candidates.json](../sarga_29_candidates.json), [sarga_31_candidates.json](../sarga_31_candidates.json), [sarga_32_candidates.json](../sarga_32_candidates.json), [sarga_33_candidates.json](../sarga_33_candidates.json).
 

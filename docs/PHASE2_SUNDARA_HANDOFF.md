@@ -40,7 +40,7 @@ compatible with Leonov/Kostina's own notes sitting verbatim alongside.
 ## 2. Inputs (all present locally, rights CLEARED)
 
 - **Commentaries** (Devanagari Sanskrit, one file per commentary × sarga):
-  [`data/valmiki_commentaries/kanda_5_sundarakanda/`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/valmiki_commentaries/kanda_5_sundarakanda)
+  [`data/valmiki_commentaries/kanda_5_sundarakanda/`](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/valmiki_commentaries/kanda_5_sundarakanda)
   — `tilaka_sarga_{NN}.txt`, `bhusana_sarga_{NN}.txt`, `siromani_sarga_{NN}.txt`, `tattvadipika_sarga_{NN}.txt`.
   Each file interleaves commentary prose with verse markers `।। 5.<sarga>.<verse> ।।` → **segmentable by verse deterministically**.
 - **Sundara coverage of the commentaries** (usable cells): **tilaka 66, bhūṣaṇa 68, śiromaṇi 65** of 68 sargas.
