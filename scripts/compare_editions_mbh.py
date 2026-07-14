@@ -62,10 +62,26 @@ BORI_LINE_RE = re.compile(r"^(\d{2})(\d{3})(\d{3})([a-zA-Z]?)\s+(.+)$")
 def iso15919_to_iast(text):
     """Normalize the BORI e-text's ISO-15919 Roman quirks to IAST for display
     (canon() strips diacritics anyway, so this only affects readability):
-    anusvara ṁ -> ṃ; vocalic r/l as NFD base+combining-ring -> precomposed IAST."""
+    anusvara ṁ -> ṃ; vocalic r/l as NFD base+combining-ring -> precomposed IAST.
+
+    The vocalic-r/l step was previously a no-op despite this docstring's own
+    claim: ISO-15919 spells vocalic r/l as base letter + COMBINING RING BELOW
+    (U+0325), which has no Unicode canonical-equivalence to IAST's precomposed
+    dot-below forms (ṛ U+1E5B / ḷ U+1E37), so plain NFC never unifies them.
+    The vulgate side (Devanagari -> IAST via sa_align.deva_to_iast) emits the
+    precomposed forms directly, so every ISO-15919 r̥/l̥ in the critical text
+    silently mismatched the vulgate's ṛ/ḷ at comparison time -- found via H830
+    (MBh apparatus regeneration): ~1000+ occurrences per parva, inflating the
+    akṣara-level apparatus with spurious encoding-only loci. Long forms add a
+    combining macron (U+0304) after the ring; replaced before the short forms
+    so the macron isn't stranded."""
     t = unicodedata.normalize("NFC", text)
     t = t.replace("ṁ", "ṃ")   # ṁ (U+1E41) -> ṃ (U+1E43)
     t = t.replace("ṅ", "ṇ")   # ṅ-with-ring edge case, if any -> ṇ-family untouched
+    t = t.replace("r̥̄", "ṝ")  # r̥̄ (long vocalic r) -> ṝ
+    t = t.replace("l̥̄", "ḹ")  # l̥̄ (long vocalic l) -> ḹ
+    t = t.replace("r̥", "ṛ")        # r̥ (short vocalic r) -> ṛ
+    t = t.replace("l̥", "ḷ")        # l̥ (short vocalic l) -> ḷ
     return t
 
 

@@ -399,8 +399,23 @@ def collapse_loci_aksara(aa_tok, bb_tok, ta_tokens, tb_tokens, ta_text, tb_text)
             out.append((ca, cb))
     merged = []
     for c, s in out:
-        if merged and merged[-1] == (c, s):
-            continue
+        if merged:
+            pc, ps = merged[-1]
+            if (c, s) == (pc, ps):
+                continue
+            # Word-boundary fragmentation: the two witnesses disagree on
+            # where a space falls (e.g. critical "varām̐l labdhvā" vs vulgate
+            # "varāṃllabdhvā" glued) -- the aksara-level split then lands one
+            # locus per critical/vulgate word even though the OTHER side's
+            # word doesn't split there too, so consecutive loci repeat the
+            # same unsplit word verbatim. Merge those into one locus instead
+            # of emitting the same word twice.
+            if c and pc and s and s == ps:
+                merged[-1] = (pc + " " + c, s)
+                continue
+            if s and ps and c and c == pc:
+                merged[-1] = (c, ps + " " + s)
+                continue
         merged.append((c, s))
     return merged
 
