@@ -3,7 +3,7 @@
 _Created: 12-07-2026 · Last updated: 12-07-2026_
 
 > Часть [H804](https://github.com/gasyoun/Uprava/blob/main/handoffs/H804-Sonnet_CommentaryStrategies_mbh-edition-apparatus-remaining-parvas_12.07.26.md)
-> (продолжение [H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md)/[H802](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H802-Sonnet_CommentaryStrategies_mbh-edition-apparatus-virataparva_12.07.26.md)) —
+> (продолжение [H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md)/[H802](https://github.com/gasyoun/Uprava/blob/main/handoffs/H802-Sonnet_CommentaryStrategies_mbh-edition-apparatus-virataparva_12.07.26.md)) —
 > тот же пайплайн, без изменений в скриптах. Источники и метод —
 > [`../vanaparva/README.md`](../vanaparva/README.md).
 
@@ -25,8 +25,8 @@ _Created: 12-07-2026 · Last updated: 12-07-2026_
 
 [`apparatus_mbh-mahaprasthanikaparva_variants.json`](apparatus_mbh-mahaprasthanikaparva_variants.json) /
 [`APPARATUS_MBH-MAHAPRASTHANIKAPARVA_VARIANTS.md`](APPARATUS_MBH-MAHAPRASTHANIKAPARVA_VARIANTS.md) —
-**79 чистых вариантных пары** (из 92 difflib-«variant», 1 слишком
-переформулированы → в слой отсутствий, 0 кириллических загрязнений) → **201 позиционных
+**91 чистых вариантных пары** (из 92 difflib-«variant», 1 слишком
+переформулированы → в слой отсутствий, 0 кириллических загрязнений) → **534 позиционных
 loci** по всем 3 адхьяям.
 
 ## Файлы
@@ -34,9 +34,5 @@ loci** по всем 3 адхьяям.
 Та же четвёрка, что у Ванапарвы: `book_summary.json`, `concordance.json`,
 `significant_absences.json` (gitignored), `critical_only_and_variants.json` (gitignored),
 плюс апарат `apparatus_mbh-mahaprasthanikaparva_variants.json`/`.md` (committed — короткие loci).
-
-## Проверка против печатного аппарата (App. I)
-
-[H810](https://github.com/gasyoun/Uprava/blob/main/handoffs/H810-Sonnet_CommentaryStrategies_mbh-apparatus-print-verification_12.07.26.md) — `structural_absence` сверен против реального критического аппарата BORI (App. I star-passages, bombay.indology.info/mahabharata/apps/), не реконструкции. **3/10 флагов подтверждено** (sim >= 0.3, 4-gram char Jaccard; rate 0.3) — независимо засвидетельствовано в манускриптах, собранных редакторами BORI. Полная методика + интерпретация (почему НЕ все остальные — это ожидаемо, App. I не исчерпывает каждое вульгатное издание) — [`../PRINT_VERIFICATION_REPORT.md`](../PRINT_VERIFICATION_REPORT.md). Данные: `print_verification.json` (id/score/matched-supp-id — без текста).
 
 _Dr. Mārcis Gasūns_
