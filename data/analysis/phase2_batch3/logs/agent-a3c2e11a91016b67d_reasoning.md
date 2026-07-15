@@ -337,9 +337,9 @@ sarga 18: 41 considered / 7 drafted / 34 rejected / 0 contrastive
 sarga 19: 26 considered / 6 drafted / 20 rejected / 0 contrastive
 
 Outputs written to:
-- [data/analysis/phase2_batch3/sarga_17_candidates.json](data/analysis/phase2_batch3/sarga_17_candidates.json)
-- [data/analysis/phase2_batch3/sarga_18_candidates.json](data/analysis/phase2_batch3/sarga_18_candidates.json)
-- [data/analysis/phase2_batch3/sarga_19_candidates.json](data/analysis/phase2_batch3/sarga_19_candidates.json)
+- [data/analysis/phase2_batch3/sarga_17_candidates.json](../sarga_17_candidates.json)
+- [data/analysis/phase2_batch3/sarga_18_candidates.json](../sarga_18_candidates.json)
+- [data/analysis/phase2_batch3/sarga_19_candidates.json](../sarga_19_candidates.json)
 
 Sarga 17 confirmed to have only bhūṣaṇa + śiromaṇi (no Tilaka, no Tattvadīpikā) as noted in the launch brief. Every verse bundle was checked against both the Leonov/Kostina own-notes baseline and the Phase-1 tier-2 notes for dedup; accept rate ran 5–27% across the three sargas, consistent with the depth-not-bulk discipline. No git operations were run.
 

@@ -87,5 +87,5 @@ No BOM (starts with `7b0d0a` = `{`), valid JSON, UTF-8 content intact (the `??` 
 
 Verses considered: 41 / drafted: 4 / rejected: 37
 
-Output written to [data/analysis/phase2_batch2/sarga_34_candidates.json](data/analysis/phase2_batch2/sarga_34_candidates.json). Drafted notes: V.34.11 (aśoka/śiṃśapā apparatus harmonization, Б), V.34.29 (vācaspati = Bṛhaspati identification, В), V.34.30 (sthāna-krodha gloss, Б, complements Kostina's flagged gap), V.34.39 (anādṛtya gloss, Б, directly answers Kostina's explicit request for Śiromaṇi's comment).
+Output written to [data/analysis/phase2_batch2/sarga_34_candidates.json](../sarga_34_candidates.json). Drafted notes: V.34.11 (aśoka/śiṃśapā apparatus harmonization, Б), V.34.29 (vācaspati = Bṛhaspati identification, В), V.34.30 (sthāna-krodha gloss, Б, complements Kostina's flagged gap), V.34.39 (anādṛtya gloss, Б, directly answers Kostina's explicit request for Śiromaṇi's comment).
 

@@ -350,9 +350,9 @@ All three files are valid, BOM-free, and internally consistent. Final verificati
 
 **Summary:**
 
-- [sarga_20_candidates.json](data/analysis/phase2_batch3/sarga_20_candidates.json) — drafted: 5.20.6 (variant reading, dharma-framing), 5.20.16 (bhava-maithilī contrastive), 5.20.26 (Śūrpaṇakhā-motive, complements Leonov), 5.20.28 (Hiraṇyakaśipu/Nārada myth detail), 5.20.30 (Rāvaṇa-compassion characterization).
-- [sarga_21_candidates.json](data/analysis/phase2_batch3/sarga_21_candidates.json) — drafted: 5.21.3 (straw-gesture ritual logic, complements Leonov), 5.21.9 (santo na vā santi contrastive, Vibhīṣaṇa foreshadowing), 5.21.17 (dhīrasya variant/brahmavidyā-eligibility), 5.21.19 (sādhu rāvaṇa characterization), 5.21.32 (Vṛtra one-arm backstory).
-- [sarga_23_candidates.json](data/analysis/phase2_batch3/sarga_23_candidates.json) — 0 drafts; this sarga's genealogical/threat content is thoroughly pre-covered by Phase-1 lexical/myth notes (six Prajāpatis, Viśravas, vīryotsikta, puṣpavṛṣṭi, nairṛtarāja) and tier-1 Kostina notes, leaving nothing that clears the reject-discipline bar.
+- [sarga_20_candidates.json](../sarga_20_candidates.json) — drafted: 5.20.6 (variant reading, dharma-framing), 5.20.16 (bhava-maithilī contrastive), 5.20.26 (Śūrpaṇakhā-motive, complements Leonov), 5.20.28 (Hiraṇyakaśipu/Nārada myth detail), 5.20.30 (Rāvaṇa-compassion characterization).
+- [sarga_21_candidates.json](../sarga_21_candidates.json) — drafted: 5.21.3 (straw-gesture ritual logic, complements Leonov), 5.21.9 (santo na vā santi contrastive, Vibhīṣaṇa foreshadowing), 5.21.17 (dhīrasya variant/brahmavidyā-eligibility), 5.21.19 (sādhu rāvaṇa characterization), 5.21.32 (Vṛtra one-arm backstory).
+- [sarga_23_candidates.json](../sarga_23_candidates.json) — 0 drafts; this sarga's genealogical/threat content is thoroughly pre-covered by Phase-1 lexical/myth notes (six Prajāpatis, Viśravas, vīryotsikta, puṣpavṛṣṭi, nairṛtarāja) and tier-1 Kostina notes, leaving nothing that clears the reject-discipline bar.
 
 One-line summary per the brief:
 
