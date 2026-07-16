@@ -80,11 +80,18 @@ function commBlock(comm, cited){
 function render(){
   const app=document.getElementById("app");
   app.innerHTML="";
-  // per-sarga stat header
-  Object.keys(D.stats).sort((a,b)=>a-b).forEach(s=>{
-    const st=D.stats[s];
-    app.appendChild($(`<div class="stat">Песнь ${s}: стихов ${st.verses} · с санскр. комментарием ${st.with_commentary} · <b>собственных примечаний Леонова/Костиной ${st.leonov_notes||0}</b> · наш аппарат фазы 1 ${st.phase1_notes} · <b>предложено сейчас ${st.proposed}</b></div>`));
-  });
+  // per-sarga stat header — compact collapsible table, totals always visible
+  {
+    const sargas=Object.keys(D.stats).sort((a,b)=>a-b);
+    const tot=sargas.reduce((a,s)=>{const st=D.stats[s];a.v+=st.verses;a.wc+=st.with_commentary;a.leo+=(st.leonov_notes||0);a.p1+=st.phase1_notes;a.pr+=st.proposed;return a;},{v:0,wc:0,leo:0,p1:0,pr:0});
+    const rows=sargas.map(s=>{const st=D.stats[s];
+      return `<tr><td>${s}</td><td>${st.verses}</td><td>${st.with_commentary}</td><td>${st.leonov_notes||0}</td><td>${st.phase1_notes}</td><td><b>${st.proposed}</b></td></tr>`;
+    }).join("");
+    app.appendChild($(`<details class="statbox">
+      <summary class="stat">Всего: песен ${sargas.length} · стихов ${tot.v} · собств. примечаний Леонова/Костиной ${tot.leo} · аппарат фазы 1 ${tot.p1} · <b>предложено сейчас ${tot.pr}</b> — раскрыть по песням ▾</summary>
+      <table class="stattbl"><thead><tr><th>Песнь</th><th>стихов</th><th>с коммент.</th><th>Леонов/Костина</th><th>фаза 1</th><th>предложено</th></tr></thead><tbody>${rows}</tbody></table>
+    </details>`));
+  }
   D.notes.forEach((n,i)=>{
     const d=dec[n.verse_id]||{};
     const card=$(`<div class="card ${d.action?('d-'+d.action):''}" id="c${i}"></div>`);
