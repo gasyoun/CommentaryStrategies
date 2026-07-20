@@ -147,3 +147,12 @@ footnotes use [scripts/build_footnotes_review_html.py](scripts/build_footnotes_r
   `ai-wip:` prefix after logical milestones.
 - Generated web-asset dumps (`महाभारत_files/`, `Рамаяна…_files/`) are committed but noise —
   `validate.py` skips them; don't treat them as source.
+
+## Operational hazard notes
+
+Destructive-risk facts for this repo (do-not-rerun scripts, decoys, traps) are
+registered centrally in an org-private hub
+([Uprava DANGER_FACTS.md](https://github.com/gasyoun/Uprava/blob/main/DANGER_FACTS.md),
+org members only); the public-safe subset is mirrored in the generated block of
+[AGENTS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/AGENTS.md). Check them
+before running anything that writes.
