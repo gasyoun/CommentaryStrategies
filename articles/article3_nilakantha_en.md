@@ -314,7 +314,7 @@ Despite these limitations, the main result remains robust: structural homology u
 
 ## Notes
 
-[^1]: This article forms part of the *CommentaryStrategies* series, devoted to the comparative study of translation strategies in Russian academic translations of Sanskrit texts. The project corpus comprises 17,863 annotated notes from six translators.
+[^1]: This article forms part of the *CommentaryStrategies* series, devoted to the comparative study of translation strategies in Russian academic translations of Sanskrit texts. The project corpus comprises 17,863 annotated notes: five main sub-corpora (Kalyanov, Vassilkov–Neveleva, Erman, Grintser, Syrkin) plus 241 records not yet attributed to any of the five; M. V. Leonov's ongoing Sundarakāṇḍa translation is drawn on separately.
 
 [^2]: No critical edition of the *Bharatabhāvadīpa* exists; Nīlakaṇṭha has traditionally been printed as part of regional editions of the Mahābhārata. The present article takes as its basis the Chitrashala Press edition (Kinjawadekar 1929–1936) as the standard of reference most accepted in current scholarship; electronic versions of the ṭīkā available on samskrtam.ru were used in parallel. The Kumbhakonam edition (T. R. Krishnacharya, 1906–1914) was consulted for variant readings.
 
