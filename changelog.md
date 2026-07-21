@@ -10,6 +10,24 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Fixed
+
+- **One canonical 17 863 corpus-composition statement across the article series
+  (H1377, C7 cross-paper numeric-drift repair).** The «17 863 примечаний» total was
+  attributed to six translators in A19/A21/A22/A23 while A24 §1 correctly states five
+  attributed sub-corpora (17 622) + 241 unattributed records, with Леонов (≈ 1 040)
+  a separate ongoing source outside the total. Adopted A24 §1 as canonical in the new
+  [docs/CORPUS_COMPOSITION_17863.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/CORPUS_COMPOSITION_17863.md)
+  and repaired: A19 (RU abstract, EN Summary, §2.1 lead-in + table now summing to
+  17 622 with Леонов below the total, §7 sample-vs-corpus sentence), A23 (§2.1, §2.3),
+  A24's Приложение III caption (both the inline copy and the stale standalone
+  [tronsky-XXX/Appendix_III.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/tronsky-XXX/Appendix_III.md),
+  the latter also resynced to the post-Kostina-fold table values), the A21/A22 series
+  footnote, M02's skeleton (now cites the canonical doc), and
+  [articles/SUBMISSION_READINESS_A19.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/SUBMISSION_READINESS_A19.md)'s
+  false "internally consistent" certification. The 241-record reconciliation itself
+  stays an open data task; the 300-note sample remains correctly 50 × six translators.
+
 ## [1.12.1] - 2026-07-14
 
 ### Fixed
