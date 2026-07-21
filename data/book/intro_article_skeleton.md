@@ -1,6 +1,6 @@
 # Вступительная статья к тому ЛП — скелет (H268 WS-D3)
 
-_Created: 07-07-2026 · Last updated: 07-07-2026_
+_Created: 07-07-2026 · Last updated: 21-07-2026_
 
 > **Что это.** Структурный скелет вступительной научной статьи («статья» в конвенции
 > «Литературных памятников» — обычно в «Приложениях») к camera-ready тому Сундараканды.
@@ -18,8 +18,8 @@ _Created: 07-07-2026 · Last updated: 07-07-2026_
 2. **Русские переводы санскритского эпоса и их комментаторские стратегии.**
    Материал: ГОТОВ почти целиком —
    [docs/SIX_TRANSLATOR_SYNTHESIS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/SIX_TRANSLATOR_SYNTHESIS.md),
-   профили шести переводчиков ([index.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/index.html),
-   17 863 размеченных примечания), таблица «что берём у каждого» —
+   профили переводчиков ([index.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/index.html);
+   канонический состав корпуса — [docs/CORPUS_COMPOSITION_17863.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/CORPUS_COMPOSITION_17863.md)), таблица «что берём у каждого» —
    [docs/LP_APPARATUS_DESIGN.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LP_APPARATUS_DESIGN.md) §4.
 
 3. **Перевод Леонова: принципы, подстрочник, литературная редакция.**
