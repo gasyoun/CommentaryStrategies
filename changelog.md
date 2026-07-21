@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.12.2] - 2026-07-21
+
 ### Fixed
 
 - **One canonical 17 863 corpus-composition statement across the article series
