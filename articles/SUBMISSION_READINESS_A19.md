@@ -84,7 +84,7 @@ These must not appear in the submitted copy. Produce a clean copy with all three
 > Do not fabricate either result. Both must be supplied by a human and then stamped into the manuscript.
 
 - **[@DO] Archival-verify Петров 1788.** Confirm attribution (is it «А. А. Петров»?), title, printer (Тип. Н. И. Новикова?), place, and year of the first Russian Bhagavadgītā (translated from Wilkins 1785) against the primary source. This releases the bracketed bibliography entry at **line 455** and the diachronic anchor prose in **§6.1 (line 337)** and **§1 (line 56)**. Until then the bracket stays. **PENDING — not done.**
-- **[@DO] axis_4 inter-coder reliability (≥85%).** Recruit a second coder, double-code the 50-note-per-translator gold sample on *axis_4_paribok*, and report inter-coder agreement reaching **≥85%**. Named as an open obligation in **§7.5 (line 413)**. If any P/K/D cell shifts, Таблицы 1–2 (lines 261–268, 286–302) and §5.3 may need an agreement footnote. **PENDING — no number exists yet; do not invent one.**
+- ~~**[@DO] axis_4 inter-coder reliability (≥85%).**~~ ✅ **RESOLVED 24-07-2026 (H1469)** — blind LLM second-annotator IAA (ruling D2) over the full 300-note gold (6×50), Pass B = DeepSeek Chat (`deepseek-chat`), codebook `prompts/classify_note.md`. **Measured (not invented):** axis_2 κ = **0.648** [0.571–0.719], raw agr **77.7 %**; axis_4 κ = **0.521** [0.430–0.608], raw agr **77.0 %**. Roadmap target κ≥0.7 / agr≥85 % **not met** — closed as an honest finding per D2/H453 (disagreements are 96–100 % protocol-ambiguity / policy-not-fact, not random coder noise). Full report: [`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md). Manuscript §7.5 and the §2.3 «≥85 %» validation sentence must be updated to the measured numbers before submission (agent-doable prose patch; not a new human gate).
 - ~~**[@DO] Confirm ORCID for the byline.**~~ ✅ **RESOLVED 2026-06-28** — ORCID **0000-0003-4513-884X** (canonical source `Uprava/AUTHOR.md`) pasted into the manuscript frontmatter (`article1_vya.md`) and the cover letter (`cover_letter_A19.md`, line 43). No longer a gate; was mechanical, not a non-fabricable human action.
 
 ---
@@ -115,7 +115,7 @@ These must not appear in the submitted copy. Produce a clean copy with all three
 
 **Current readiness: 4/5.** The manuscript is substantively complete, internally consistent on its arithmetic (300 = 50×6), bilingual, within the ВЯ length band (~52 000 зн.), and candid about its own limitations. It is staged for submission with a cover letter.
 
-**What flips it to 5/5:** clearing the **two remaining @DO** human gates — (1) Петров 1788 archival verification (releases line 455 + §6.1) and (2) the ≥85% axis_4 inter-coder reliability number from a second coder (backs §5 Таблицы 1–2 and §7.5). _(The former third gate — confirm ORCID — was resolved 2026-06-28: ORCID 0000-0003-4513-884X pasted into the manuscript + cover letter.)_ The house-style and proofread items in §§A–G above are all agent-/author-doable and do not require external input; they should be applied in the clean submission copy alongside the gate resolutions. Both remaining @DO gates are non-fabricable (Петров, IRR).
+**What flips it to 5/5:** clearing the **one remaining @DO** human gate — Петров 1788 archival verification (releases line 455 + §6.1). _(ORCID resolved 2026-06-28; axis_4/axis_2 IAA measured 24-07-2026 via H1469/D2 — κ reported in [`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md); fold the measured numbers into §2.3 / §7.5 before send.)_ The house-style and proofread items in §§A–G above are all agent-/author-doable and do not require external input; they should be applied in the clean submission copy alongside the Петров resolution.
 
 
 ---
@@ -154,6 +154,9 @@ confirmed in frontmatter (D resolved). Deltas found:
 5. **Cover letter typo:** line 42 «Гасунс **Мāрцис** Юрьевич» mixes an IAST ā into a
    Cyrillic name — should be «Марцис».
 
-**Net readiness: stays 4/5.** Human gates now three: Петров 1788 (archival), axis_4
-inter-coder ≥85%, and the Paribok attribution + bibliography fix (AXIS4_KD_DECISION §5).
+**Net readiness: stays 4/5.** Human gates after H1469 (24-07-2026): Петров 1788
+(archival) and the Paribok attribution + bibliography fix (AXIS4_KD_DECISION §5).
+The axis_4/axis_2 inter-coder number is no longer missing — measured κ reported in
+[`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md)
+(axis_2 κ=0.648, axis_4 κ=0.521; target ≥85 % raw not met; closed as honest finding).
 The house-style fix list above remains agent-/author-doable in the clean submission copy.
