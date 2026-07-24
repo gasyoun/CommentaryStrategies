@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.13.1] - 2026-07-24
+
 ### Changed
 
 - **A19 manuscript: fold H1469 κ into §2.3 / §7.5** (agent follow-up). Measured human×LLM
