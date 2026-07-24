@@ -40,15 +40,8 @@ Measured facts (this pass, not from the handoff):
 
 ## Proofread / house-style findings (concrete, with line refs)
 
-### A. Table numbering is out of sequence and incomplete (highest-priority house-style defect)
-ВЯ requires tables numbered in order of first appearance, each with a caption.
-Current state:
-- Line 169: **«Таблица 3»** — but it is the *first* numbered table to appear in the text (in §3.5). Numbered 3 before 1 and 2.
-- Line 259: **«Таблица 1»** (§5.1). Line 284: **«Таблица 2»** (§5.2). These appear *after* "Таблица 3".
-- Line 103 (§2.3, P/K/D definitions) and line 215 (§4.4, strategy↔axis correlation) are **un-numbered tables with no caption**. The handoff refers to the line-215 table as "Таблица 4", but in the manuscript it has no caption at all.
-- The §2.1 corpus table (lines 80–87) is also un-captioned.
-
-Net: five tables, three of them captioned, and the captions run 3 → 1 → 2. A referee will flag this immediately.
+### A. Table numbering — ✅ renumbered 24-07-2026 (agent follow-up)
+Captioned tables now run in document order: **Таблица 1** (§3.5 levels) → **Таблица 2** (§5.1 axis_4 profile) → **Таблица 3** (§5.2 term×code). In-text «представляет» / «в Таблице N» updated. Residual (optional, not a gate): §2.1 corpus table, §2.3 P/K/D defs, and §4.4 strategy↔axis table remain un-captioned — may stay as such or get captions 4–6 if a human prefers the fuller sequence.
 
 ### B. Abstract / keyword house-style
 - RU abstract (1 979 зн.) and EN Summary (1 780 зн.) are within typical journal abstract length but should be checked against ВЯ's current author guidelines, which usually cap the аннотация near **150–200 words / ~1 500 зн.** Both are slightly over a strict 200-word reading; trimming is low-risk (see Proposed edit 4).
@@ -57,7 +50,7 @@ Net: five tables, three of them captioned, and the captions run 3 → 1 → 2. A
 
 ### C. Transliteration consistency
 - The manuscript mixes **IAST** (*dharma*, *ātman*, *brahman*) with **Cyrillic practical transcription** («дхарма», «атман», «Брахман») — this is appropriate and consistent (IAST = object-language citation; Cyrillic = the rendered Russian word under discussion). No change needed, but state the convention once (Proposed edit 6) so a referee does not read it as inconsistency.
-- **Spelling error, line 447:** «Рамаяна. **Арааньяканда**» → should be **«Араньяканда»** (Araṇyakāṇḍa). Typo in a bibliography entry.
+- ~~**Spelling error:** «Арааньяканда»~~ ✅ fixed 24-07-2026 → **«Араньяканда»**.
 
 ### D. Byline form — ✅ unified 2026-06-28
 - Resolved: manuscript frontmatter (line 3) changed from «Гасунс М. Ю.» → **«М. Ю. Гасунс»**, now identical to the cover letter and the canonical RU form in `Uprava/AUTHOR.md` (given name + patronymic initials before surname, the ВЯ norm). All A19 artefacts now agree.
@@ -84,24 +77,24 @@ These must not appear in the submitted copy. Produce a clean copy with all three
 > Do not fabricate either result. Both must be supplied by a human and then stamped into the manuscript.
 
 - **[@DO] Archival-verify Петров 1788.** Confirm attribution (is it «А. А. Петров»?), title, printer (Тип. Н. И. Новикова?), place, and year of the first Russian Bhagavadgītā (translated from Wilkins 1785) against the primary source. This releases the bracketed bibliography entry at **line 455** and the diachronic anchor prose in **§6.1 (line 337)** and **§1 (line 56)**. Until then the bracket stays. **PENDING — not done.**
-- ~~**[@DO] axis_4 inter-coder reliability (≥85%).**~~ ✅ **RESOLVED 24-07-2026 (H1469)** — blind LLM second-annotator IAA (ruling D2) over the full 300-note gold (6×50), Pass B = DeepSeek Chat (`deepseek-chat`), codebook `prompts/classify_note.md`. **Measured (not invented):** axis_2 κ = **0.648** [0.571–0.719], raw agr **77.7 %**; axis_4 κ = **0.521** [0.430–0.608], raw agr **77.0 %**. Roadmap target κ≥0.7 / agr≥85 % **not met** — closed as an honest finding per D2/H453 (disagreements are 96–100 % protocol-ambiguity / policy-not-fact, not random coder noise). Full report: [`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md). Manuscript §7.5 and the §2.3 «≥85 %» validation sentence must be updated to the measured numbers before submission (agent-doable prose patch; not a new human gate).
+- ~~**[@DO] axis_4 inter-coder reliability (≥85%).**~~ ✅ **RESOLVED 24-07-2026 (H1469)** — blind LLM second-annotator IAA (ruling D2) over the full 300-note gold (6×50), Pass B = DeepSeek Chat (`deepseek-chat`), codebook `prompts/classify_note.md`. **Measured (not invented):** axis_2 κ = **0.648** [0.571–0.719], raw agr **77.7 %**; axis_4 κ = **0.521** [0.430–0.608], raw agr **77.0 %**. Roadmap target κ≥0.7 / agr≥85 % **not met** — closed as an honest finding per D2/H453 (disagreements are 96–100 % protocol-ambiguity / policy-not-fact, not random coder noise). Full report: [`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md). ✅ **Measured numbers folded into manuscript §2.3 + §7.5 (24-07-2026 follow-up)** — no longer a pre-send prose debt.
 - ~~**[@DO] Confirm ORCID for the byline.**~~ ✅ **RESOLVED 2026-06-28** — ORCID **0000-0003-4513-884X** (canonical source `Uprava/AUTHOR.md`) pasted into the manuscript frontmatter (`article1_vya.md`) and the cover letter (`cover_letter_A19.md`, line 43). No longer a gate; was mechanical, not a non-fabricable human action.
 
 ---
 
 ## Proposed manuscript edits (exact — for the author to apply; do NOT auto-apply)
 
-1. **Renumber tables in order of appearance.** Make line 169 **«Таблица 1»** (§3.5), line 259 **«Таблица 2»** (§5.1), line 284 **«Таблица 3»** (§5.2). Then update the in-text references: line 257 «Таблица 1 представляет…» → «Таблица 2 представляет…»; line 282 «Таблица 2 представляет…» → «Таблица 3 представляет…»; the §7 / §5 mentions of "Таблице 2" (e.g. line 411) → "Таблице 3". *Alternative* (if the author prefers): caption every table — give §2.1 corpus table, the §2.3 P/K/D table (line 103) and the §4.4 strategy table (line 215) their own numbers — then renumber the whole sequence 1…6 in document order. Either is acceptable to ВЯ; the current 3→1→2 is not.
+1. ✅ **APPLIED 24-07-2026 (minimal sequence).** Captioned tables now 1→2→3 in document order; in-text refs updated. Optional fuller 1…6 captioning of unnumbered tables remains open.
 
 2. **Caption the §4.4 strategy table (line 215).** Add a caption line immediately above it, e.g. `**Таблица N.** Соответствие стратегий Т/К/Д и оси axis_4_paribok` (N per the renumbering chosen in edit 1). The handoff already assumed this table is "Таблица 4".
 
-3. **Fix the bibliography typo, line 447:** «Арааньяканда» → «Араньяканда».
+3. ✅ **APPLIED 24-07-2026.** «Арааньяканда» → «Араньяканда».
 
 4. **Trim the abstract toward ~200 words / ~1 500 зн.** The RU Аннотация (lines 38–40) runs two long paragraphs; the second (line 40) restates the diachronic programme. Consider compressing the last two sentences of line 40 into one. Mirror the cut in the EN Summary (line 48). Confirm against ВЯ's current word cap before cutting.
 
 5. **Reduce keywords to ≤8** (lines 42 and 50). Suggested RU keep-set: концептуальная непереводимость; ложные друзья переводчика; санскрит; переводческая стратегия; параллельный корпус; читательский контракт; *adhikārin*. (Drop the per-term *dharma*/*ātman*/*brahman* trio from keywords — they recur in the title/abstract.)
 
-6. **State the transliteration convention once.** Add a single sentence to §2.2 or a footnote: «Санскритские термины приводятся в IAST курсивом при цитировании языковой формы и в кириллической практической транскрипции при обсуждении русского эквивалента.» Pre-empts a referee reading the IAST/Cyrillic mix as inconsistency.
+6. ✅ **APPLIED 24-07-2026.** Transliteration convention sentence added to §2.2.
 
 7. **Resolve the two non-gated bibliography brackets.** Line 447 «Гринцер 2014»: confirm year/volume status and delete the bracket. Line 453 «Леонов»: insert a concrete `дата обращения`.
 
@@ -115,7 +108,7 @@ These must not appear in the submitted copy. Produce a clean copy with all three
 
 **Current readiness: 4/5.** The manuscript is substantively complete, internally consistent on its arithmetic (300 = 50×6), bilingual, within the ВЯ length band (~52 000 зн.), and candid about its own limitations. It is staged for submission with a cover letter.
 
-**What flips it to 5/5:** clearing the **one remaining @DO** human gate — Петров 1788 archival verification (releases line 455 + §6.1). _(ORCID resolved 2026-06-28; axis_4/axis_2 IAA measured 24-07-2026 via H1469/D2 — κ reported in [`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md); fold the measured numbers into §2.3 / §7.5 before send.)_ The house-style and proofread items in §§A–G above are all agent-/author-doable and do not require external input; they should be applied in the clean submission copy alongside the Петров resolution.
+**What flips it to 5/5:** clearing the **one remaining @DO** human gate — Петров 1788 archival verification (releases the bibliography bracket + §6.1). _(ORCID resolved 2026-06-28; IAA measured + folded into §2.3/§7.5 24-07-2026 — [`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md).)_ Remaining agent-/author house-style items (abstract trim, keywords ≤8, optional table captions, strip dev comments in clean copy) do not block readiness.
 
 
 ---

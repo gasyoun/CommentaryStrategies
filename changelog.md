@@ -10,6 +10,14 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Changed
+
+- **A19 manuscript: fold H1469 κ into §2.3 / §7.5** (agent follow-up). Measured human×LLM
+  agreement (axis_2 κ=0.648, axis_4 κ=0.521, n=300) replaces the aspirational «≥85 %»
+  validation sentence; §7.5 no longer claims IAA is unmeasured. Also: table captions
+  renumbered 1→2→3 in document order; bibliography «Арааньяканда»→«Араньяканда»; cover
+  letter «Мāрцис»→«Марцис»; §2.2 transliteration-convention sentence.
+
 ## [1.13.0] - 2026-07-24
 
 ### Added
