@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.13.0] - 2026-07-24
+
 ### Added
 
 - **H1469 — axis_2 / axis_4 blind second-annotator IAA (Cohen's κ) on the 300-note gold.**
