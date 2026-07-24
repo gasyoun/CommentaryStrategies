@@ -1,0 +1,2455 @@
+{
+  "study": "H1469 axis_2/axis_4 blind LLM second-annotator IAA",
+  "date": "2026-07-24",
+  "pass_a": "human gold data/*_markup_50.json",
+  "pass_b": "DeepSeek Chat (deepseek-chat) via scripts/annotate_batch.py + prompts/classify_note.md",
+  "protocol": "PROTOCOL_BLIND_LLM_SECOND_ANNOTATOR_RELIABILITY_2026.md + ruling D2",
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 20260724
+  },
+  "overall": {
+    "axis_2": {
+      "axis": "axis_2_kazansky",
+      "n": 300,
+      "raw_agreement": 0.7767,
+      "raw_agree_count": 233,
+      "kappa": 0.6476,
+      "kappa_ci95": [
+        0.571,
+        0.7189
+      ],
+      "bootstrap": {
+        "resamples": 2000,
+        "seed": 20260724
+      },
+      "confusion_gold_rows_pred_cols": {
+        "A": {
+          "A": 31,
+          "B": 0,
+          "V": 1,
+          "G": 0
+        },
+        "B": {
+          "A": 0,
+          "B": 7,
+          "V": 2,
+          "G": 0
+        },
+        "V": {
+          "A": 9,
+          "B": 0,
+          "V": 91,
+          "G": 7
+        },
+        "G": {
+          "A": 6,
+          "B": 0,
+          "V": 42,
+          "G": 104
+        }
+      },
+      "gold_dist": {
+        "A": 32,
+        "V": 107,
+        "G": 152,
+        "B": 9
+      },
+      "pred_dist": {
+        "A": 46,
+        "V": 136,
+        "G": 111,
+        "B": 7
+      }
+    },
+    "axis_4": {
+      "axis": "axis_4_paribok",
+      "n": 300,
+      "raw_agreement": 0.77,
+      "raw_agree_count": 231,
+      "kappa": 0.5208,
+      "kappa_ci95": [
+        0.43,
+        0.6078
+      ],
+      "bootstrap": {
+        "resamples": 2000,
+        "seed": 20260724
+      },
+      "confusion_gold_rows_pred_cols": {
+        "P": {
+          "P": 180,
+          "K": 10,
+          "D": 18
+        },
+        "K": {
+          "P": 11,
+          "K": 13,
+          "D": 16
+        },
+        "D": {
+          "P": 11,
+          "K": 3,
+          "D": 38
+        }
+      },
+      "gold_dist": {
+        "P": 208,
+        "K": 40,
+        "D": 52
+      },
+      "pred_dist": {
+        "P": 202,
+        "K": 26,
+        "D": 72
+      }
+    }
+  },
+  "per_translator": {
+    "kalyanov": {
+      "axis_2": {
+        "axis": "axis_2_kazansky",
+        "n": 50,
+        "raw_agreement": 0.96,
+        "raw_agree_count": 48,
+        "kappa": 0.9277,
+        "kappa_ci95": [
+          0.8126,
+          1.0
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "A": {
+            "A": 6,
+            "B": 0,
+            "V": 0,
+            "G": 0
+          },
+          "B": {
+            "A": 0,
+            "B": 0,
+            "V": 0,
+            "G": 0
+          },
+          "V": {
+            "A": 2,
+            "B": 0,
+            "V": 29,
+            "G": 0
+          },
+          "G": {
+            "A": 0,
+            "B": 0,
+            "V": 0,
+            "G": 13
+          }
+        },
+        "gold_dist": {
+          "A": 6,
+          "V": 31,
+          "G": 13
+        },
+        "pred_dist": {
+          "A": 8,
+          "V": 29,
+          "G": 13
+        }
+      },
+      "axis_4": {
+        "axis": "axis_4_paribok",
+        "n": 50,
+        "raw_agreement": 0.9,
+        "raw_agree_count": 45,
+        "kappa": 0.7323,
+        "kappa_ci95": [
+          0.502,
+          0.9351
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "P": {
+            "P": 36,
+            "K": 4,
+            "D": 0
+          },
+          "K": {
+            "P": 0,
+            "K": 9,
+            "D": 0
+          },
+          "D": {
+            "P": 0,
+            "K": 1,
+            "D": 0
+          }
+        },
+        "gold_dist": {
+          "P": 40,
+          "K": 9,
+          "D": 1
+        },
+        "pred_dist": {
+          "P": 36,
+          "K": 14
+        }
+      },
+      "n": 50
+    },
+    "vassilkov": {
+      "axis_2": {
+        "axis": "axis_2_kazansky",
+        "n": 50,
+        "raw_agreement": 0.66,
+        "raw_agree_count": 33,
+        "kappa": 0.3516,
+        "kappa_ci95": [
+          0.1355,
+          0.5798
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "A": {
+            "A": 0,
+            "B": 0,
+            "V": 0,
+            "G": 0
+          },
+          "B": {
+            "A": 0,
+            "B": 1,
+            "V": 0,
+            "G": 0
+          },
+          "V": {
+            "A": 0,
+            "B": 0,
+            "V": 10,
+            "G": 2
+          },
+          "G": {
+            "A": 0,
+            "B": 0,
+            "V": 15,
+            "G": 22
+          }
+        },
+        "gold_dist": {
+          "G": 37,
+          "V": 12,
+          "B": 1
+        },
+        "pred_dist": {
+          "V": 25,
+          "G": 24,
+          "B": 1
+        }
+      },
+      "axis_4": {
+        "axis": "axis_4_paribok",
+        "n": 50,
+        "raw_agreement": 0.64,
+        "raw_agree_count": 32,
+        "kappa": 0.2386,
+        "kappa_ci95": [
+          -0.0026,
+          0.4706
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "P": {
+            "P": 27,
+            "K": 2,
+            "D": 7
+          },
+          "K": {
+            "P": 2,
+            "K": 1,
+            "D": 3
+          },
+          "D": {
+            "P": 4,
+            "K": 0,
+            "D": 4
+          }
+        },
+        "gold_dist": {
+          "P": 36,
+          "K": 6,
+          "D": 8
+        },
+        "pred_dist": {
+          "P": 33,
+          "D": 14,
+          "K": 3
+        }
+      },
+      "n": 50
+    },
+    "erman": {
+      "axis_2": {
+        "axis": "axis_2_kazansky",
+        "n": 50,
+        "raw_agreement": 0.88,
+        "raw_agree_count": 44,
+        "kappa": 0.7751,
+        "kappa_ci95": [
+          0.6014,
+          0.9247
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "A": {
+            "A": 1,
+            "B": 0,
+            "V": 0,
+            "G": 0
+          },
+          "B": {
+            "A": 0,
+            "B": 0,
+            "V": 2,
+            "G": 0
+          },
+          "V": {
+            "A": 0,
+            "B": 0,
+            "V": 18,
+            "G": 1
+          },
+          "G": {
+            "A": 0,
+            "B": 0,
+            "V": 3,
+            "G": 25
+          }
+        },
+        "gold_dist": {
+          "G": 28,
+          "B": 2,
+          "V": 19,
+          "A": 1
+        },
+        "pred_dist": {
+          "V": 23,
+          "G": 26,
+          "A": 1
+        }
+      },
+      "axis_4": {
+        "axis": "axis_4_paribok",
+        "n": 50,
+        "raw_agreement": 0.78,
+        "raw_agree_count": 39,
+        "kappa": 0.6066,
+        "kappa_ci95": [
+          0.4194,
+          0.7877
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "P": {
+            "P": 24,
+            "K": 0,
+            "D": 4
+          },
+          "K": {
+            "P": 0,
+            "K": 1,
+            "D": 5
+          },
+          "D": {
+            "P": 2,
+            "K": 0,
+            "D": 14
+          }
+        },
+        "gold_dist": {
+          "P": 28,
+          "D": 16,
+          "K": 6
+        },
+        "pred_dist": {
+          "P": 26,
+          "D": 23,
+          "K": 1
+        }
+      },
+      "n": 50
+    },
+    "grintser": {
+      "axis_2": {
+        "axis": "axis_2_kazansky",
+        "n": 50,
+        "raw_agreement": 0.58,
+        "raw_agree_count": 29,
+        "kappa": 0.2099,
+        "kappa_ci95": [
+          0.0099,
+          0.4091
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "A": {
+            "A": 2,
+            "B": 0,
+            "V": 0,
+            "G": 0
+          },
+          "B": {
+            "A": 0,
+            "B": 0,
+            "V": 0,
+            "G": 0
+          },
+          "V": {
+            "A": 1,
+            "B": 0,
+            "V": 23,
+            "G": 1
+          },
+          "G": {
+            "A": 0,
+            "B": 0,
+            "V": 19,
+            "G": 4
+          }
+        },
+        "gold_dist": {
+          "A": 2,
+          "V": 25,
+          "G": 23
+        },
+        "pred_dist": {
+          "A": 3,
+          "V": 42,
+          "G": 5
+        }
+      },
+      "axis_4": {
+        "axis": "axis_4_paribok",
+        "n": 50,
+        "raw_agreement": 0.86,
+        "raw_agree_count": 43,
+        "kappa": -0.0479,
+        "kappa_ci95": [
+          -0.087,
+          0.0
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "P": {
+            "P": 43,
+            "K": 2,
+            "D": 1
+          },
+          "K": {
+            "P": 0,
+            "K": 0,
+            "D": 0
+          },
+          "D": {
+            "P": 4,
+            "K": 0,
+            "D": 0
+          }
+        },
+        "gold_dist": {
+          "P": 46,
+          "D": 4
+        },
+        "pred_dist": {
+          "P": 47,
+          "K": 2,
+          "D": 1
+        }
+      },
+      "n": 50
+    },
+    "syrkin": {
+      "axis_2": {
+        "axis": "axis_2_kazansky",
+        "n": 50,
+        "raw_agreement": 0.9,
+        "raw_agree_count": 45,
+        "kappa": 0.616,
+        "kappa_ci95": [
+          0.2424,
+          0.8821
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "A": {
+            "A": 1,
+            "B": 0,
+            "V": 0,
+            "G": 0
+          },
+          "B": {
+            "A": 0,
+            "B": 0,
+            "V": 0,
+            "G": 0
+          },
+          "V": {
+            "A": 0,
+            "B": 0,
+            "V": 4,
+            "G": 3
+          },
+          "G": {
+            "A": 0,
+            "B": 0,
+            "V": 2,
+            "G": 40
+          }
+        },
+        "gold_dist": {
+          "G": 42,
+          "A": 1,
+          "V": 7
+        },
+        "pred_dist": {
+          "G": 43,
+          "A": 1,
+          "V": 6
+        }
+      },
+      "axis_4": {
+        "axis": "axis_4_paribok",
+        "n": 50,
+        "raw_agreement": 0.62,
+        "raw_agree_count": 31,
+        "kappa": 0.3616,
+        "kappa_ci95": [
+          0.1511,
+          0.5668
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "P": {
+            "P": 9,
+            "K": 2,
+            "D": 6
+          },
+          "K": {
+            "P": 0,
+            "K": 2,
+            "D": 8
+          },
+          "D": {
+            "P": 1,
+            "K": 2,
+            "D": 20
+          }
+        },
+        "gold_dist": {
+          "K": 10,
+          "D": 23,
+          "P": 17
+        },
+        "pred_dist": {
+          "D": 34,
+          "P": 10,
+          "K": 6
+        }
+      },
+      "n": 50
+    },
+    "leonov": {
+      "axis_2": {
+        "axis": "axis_2_kazansky",
+        "n": 50,
+        "raw_agreement": 0.68,
+        "raw_agree_count": 34,
+        "kappa": 0.4984,
+        "kappa_ci95": [
+          0.3056,
+          0.6757
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "A": {
+            "A": 21,
+            "B": 0,
+            "V": 1,
+            "G": 0
+          },
+          "B": {
+            "A": 0,
+            "B": 6,
+            "V": 0,
+            "G": 0
+          },
+          "V": {
+            "A": 6,
+            "B": 0,
+            "V": 7,
+            "G": 0
+          },
+          "G": {
+            "A": 6,
+            "B": 0,
+            "V": 3,
+            "G": 0
+          }
+        },
+        "gold_dist": {
+          "A": 22,
+          "B": 6,
+          "G": 9,
+          "V": 13
+        },
+        "pred_dist": {
+          "A": 33,
+          "B": 6,
+          "V": 11
+        }
+      },
+      "axis_4": {
+        "axis": "axis_4_paribok",
+        "n": 50,
+        "raw_agreement": 0.82,
+        "raw_agree_count": 41,
+        "kappa": 0.0,
+        "kappa_ci95": [
+          0.0,
+          0.0
+        ],
+        "bootstrap": {
+          "resamples": 2000,
+          "seed": 20260724
+        },
+        "confusion_gold_rows_pred_cols": {
+          "P": {
+            "P": 41,
+            "K": 0,
+            "D": 0
+          },
+          "K": {
+            "P": 9,
+            "K": 0,
+            "D": 0
+          },
+          "D": {
+            "P": 0,
+            "K": 0,
+            "D": 0
+          }
+        },
+        "gold_dist": {
+          "P": 41,
+          "K": 9
+        },
+        "pred_dist": {
+          "P": 50
+        }
+      },
+      "n": 50
+    }
+  },
+  "disagreements_axis_2": [
+    {
+      "translator": "kalyanov",
+      "idx": 5,
+      "comment_id_gold": "mbh/kalyanov/c5",
+      "comment_id_pred": "kalyanov/comment_0005",
+      "raw_text": "Кшатрий (kṣatriya) — представитель воинской касты, правитель или воин.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "kalyanov",
+      "idx": 31,
+      "comment_id_gold": "mbh/kalyanov/c31",
+      "comment_id_pred": "kalyanov/comment_0031",
+      "raw_text": "Данава (dānava) — потомок Дану; другое именование асуров.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 1,
+      "comment_id_gold": "mbh/vassilkov/c1",
+      "comment_id_pred": "vassilkov/comment_0001",
+      "raw_text": "«…выступили через городские ворота Вардхамана...» Знак Вардхамана («возрастающий», «процветающий») — графический символ, эмблема благополучия.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 2,
+      "comment_id_gold": "mbh/vassilkov/c2",
+      "comment_id_pred": "vassilkov/comment_0002",
+      "raw_text": "«…самому Индре равные пламенностью духа…» Герои уподобляются богам-демоноборцам: богу грозы Индре, его помощнику Вишну. Пламенность духа (tejas) — магическая энергия кшатрия.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 4,
+      "comment_id_gold": "mbh/vassilkov/c4",
+      "comment_id_pred": "vassilkov/comment_0004",
+      "raw_text": "Ночное нападение Ашваттхамана на лагерь Пандавов нарушает все правила кшатрийской дхармы. Это событие знаменует окончательный крах рыцарской этики.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 5,
+      "comment_id_gold": "mbh/vassilkov/c5",
+      "comment_id_pred": "vassilkov/comment_0005",
+      "raw_text": "Плач женщин на поле битвы (вира-лапа) — традиционный фольклорный мотив, имеющий глубокие этнографические корни в погребальных обрядах.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 7,
+      "comment_id_gold": "mbh/vassilkov/c7",
+      "comment_id_pred": "vassilkov/comment_0007",
+      "raw_text": "Жертвоприношение коня (ашвамедха) призвано очистить Юдхиштхиру от греха убийства родичей. Ритуал описан с большой этнографической точностью.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 11,
+      "comment_id_gold": "mbh/vassilkov/c11",
+      "comment_id_pred": "vassilkov/comment_0011",
+      "raw_text": "Восхождение на небеса и видение ада. Финальное испытание героя, где иллюзия (майя) проверяет его верность дхарме.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 21,
+      "comment_id_gold": "mbh/vassilkov/c21",
+      "comment_id_pred": "vassilkov/comment_0021",
+      "raw_text": "Образ Видуры как воплощения бога Дхармы. Васильков анализирует его статус «совести» Пандавов.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 23,
+      "comment_id_gold": "mbh/vassilkov/c23",
+      "comment_id_pred": "vassilkov/comment_0023",
+      "raw_text": "Инвективы Карны и Шальи. Васильков видит здесь отражение межплеменной вражды народов мадья и куру.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 25,
+      "comment_id_gold": "mbh/vassilkov/c25",
+      "comment_id_pred": "vassilkov/comment_0025",
+      "raw_text": "Сцена «Сати» (самосожжения вдов). Васильков обсуждает историческую достоверность этого обычая в эпическую эпоху.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 32,
+      "comment_id_gold": "mbh/vassilkov/c32",
+      "comment_id_pred": "vassilkov/comment_0032",
+      "raw_text": "Описание колесницы Карны. Васильков детально анализирует устройство боевых колесниц согласно «Артхашастре».",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 33,
+      "comment_id_gold": "mbh/vassilkov/c33",
+      "comment_id_pred": "vassilkov/comment_0033",
+      "raw_text": "Образ черной женщины (Каларатри), видимой воинам перед смертью. Васильков прослеживает иконографию богини смерти.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 38,
+      "comment_id_gold": "mbh/vassilkov/c38",
+      "comment_id_pred": "vassilkov/comment_0038",
+      "raw_text": "Уход Арджуны, неспособного защитить женщин от разбойников. Васильков подчеркивает тему утраты героем его магической силы.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 40,
+      "comment_id_gold": "mbh/vassilkov/c40",
+      "comment_id_pred": "vassilkov/comment_0040",
+      "raw_text": "Рай как место примирения врагов. Васильков отмечает парадоксальность эпического финала, где Дурьодхана оказывается на небесах.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 43,
+      "comment_id_gold": "mbh/vassilkov/c43",
+      "comment_id_pred": "vassilkov/comment_0043",
+      "raw_text": "Смерть Карны от стрелы Арджуны («анджалика»). Васильков детально описывает типы наконечников стрел в древней Индии.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 45,
+      "comment_id_gold": "mbh/vassilkov/c45",
+      "comment_id_pred": "vassilkov/comment_0045",
+      "raw_text": "Омовение в Ганге после битвы. Васильков отмечает ритуальный характер очищения от скверны смерти.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 48,
+      "comment_id_gold": "mbh/vassilkov/c48",
+      "comment_id_pred": "vassilkov/comment_0048",
+      "raw_text": "Наставления Нарады Юдхиштхире о тщете земного величия. Васильков видит здесь проявление эпического пессимизма.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 50,
+      "comment_id_gold": "mbh/vassilkov/c50",
+      "comment_id_pred": "vassilkov/comment_0050",
+      "raw_text": "Слияние героев со своими небесными прототипами (Пандавы — с богами, Кауравы — с асурами). Васильков отмечает окончание эпического цикла.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "erman",
+      "idx": 1,
+      "comment_id_gold": "mbh/erman/c1",
+      "comment_id_pred": "erman/comment_0001",
+      "raw_text": "«…искушённые в чтении Вед…» Подразумевается ритуальное чтение священных текстов (adhyāyana), которому приписывается магическое действие.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "erman",
+      "idx": 2,
+      "comment_id_gold": "mbh/erman/c2",
+      "comment_id_pred": "erman/comment_0002",
+      "raw_text": "«Йоджана…» Мера длины, определяемая обычно как равная 13–14 км. См. Бхагавадгита 1999: 231.",
+      "axis_2_gold": "B",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "erman",
+      "idx": 12,
+      "comment_id_gold": "mbh/erman/c12",
+      "comment_id_pred": "erman/comment_0012",
+      "raw_text": "География Джамбудвипы. Эрман обсуждает космологические представления древних индийцев.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 19,
+      "comment_id_gold": "mbh/erman/c19",
+      "comment_id_pred": "erman/comment_0019",
+      "raw_text": "Мера времени «Мухурта». Эрман дает точное определение согласно астрономическим трактатам.",
+      "axis_2_gold": "B",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "erman",
+      "idx": 30,
+      "comment_id_gold": "mbh/erman/c30",
+      "comment_id_pred": "erman/comment_0030",
+      "raw_text": "Речь Юдхиштхиры перед началом боя. Эрман отмечает его приверженность принципу ненасилия даже в войне.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 34,
+      "comment_id_gold": "mbh/erman/c34",
+      "comment_id_pred": "erman/comment_0034",
+      "raw_text": "Гибель Иравана, сына Арджуны. Эрман обсуждает культ Иравана в южной Индии.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 4,
+      "comment_id_gold": "ram/grintser/c4",
+      "comment_id_pred": "grintser/comment_0004",
+      "raw_text": "Подготовка к посвящению Рамы в наследники (yuvarāja). Гринцер обсуждает юридические аспекты престолонаследия в древней Индии.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 6,
+      "comment_id_gold": "ram/grintser/c6",
+      "comment_id_pred": "grintser/comment_0006",
+      "raw_text": "Описание дерева Ашока (Saraca indica). Гринцер дает латинское название и отмечает роль дерева в любовной поэзии.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 7,
+      "comment_id_gold": "ram/grintser/c7",
+      "comment_id_pred": "grintser/comment_0007",
+      "raw_text": "Проклятие Вальмики охотнику, убившему птицу крунча. Гринцер видит в этом рождение поэтического метра — шлоки.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 9,
+      "comment_id_gold": "ram/grintser/c9",
+      "comment_id_pred": "grintser/comment_0009",
+      "raw_text": "Козни Кайкейи. Гринцер анализирует психологическую мотивировку её поступков через призму эпической драмы.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 11,
+      "comment_id_gold": "ram/grintser/c11",
+      "comment_id_pred": "grintser/comment_0011",
+      "raw_text": "«Тадака» (tāḍakā) — ракшаси, убитая Рамой. Гринцер обсуждает проблему убийства женщины героем.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 14,
+      "comment_id_gold": "ram/grintser/c14",
+      "comment_id_pred": "grintser/comment_0014",
+      "raw_text": "Схватка с Шурпанакхой. Гринцер обсуждает комические и гротескные элементы эпизода.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 15,
+      "comment_id_gold": "ram/grintser/c15",
+      "comment_id_pred": "grintser/comment_0015",
+      "raw_text": "Горе Рамы после похищения Ситы. Гринцер отмечает зарождение стиля «кавья» (ученой поэзии) в описании природы.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 16,
+      "comment_id_gold": "ram/grintser/c16",
+      "comment_id_pred": "grintser/comment_0016",
+      "raw_text": "Эпитет «Вишвакарма» (всесоздатель). Гринцер поясняет его мифологический статус.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 18,
+      "comment_id_gold": "ram/grintser/c18",
+      "comment_id_pred": "grintser/comment_0018",
+      "raw_text": "Переправа через Гангу. Гринцер обсуждает священный статус реки и ритуалы, связанные с переправой.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 20,
+      "comment_id_gold": "ram/grintser/c20",
+      "comment_id_pred": "grintser/comment_0020",
+      "raw_text": "Встреча с Шабари. Гринцер отмечает тему преданности (бхакти) со стороны представительницы низких племен.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 25,
+      "comment_id_gold": "ram/grintser/c25",
+      "comment_id_pred": "grintser/comment_0025",
+      "raw_text": "Битва Рамы с армией Кхары. Гринцер отмечает эпическую гиперболизацию силы героя.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 29,
+      "comment_id_gold": "ram/grintser/c29",
+      "comment_id_pred": "grintser/comment_0029",
+      "raw_text": "Обещание Рамы мудрецам защитить их от ракшасов. Гринцер обсуждает долг кшатрия в лесу.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 31,
+      "comment_id_gold": "ram/grintser/c31",
+      "comment_id_pred": "grintser/comment_0031",
+      "raw_text": "Миф о Тришанку. Гринцер обсуждает создание Вишвамитрой новой вселенной.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 32,
+      "comment_id_gold": "ram/grintser/c32",
+      "comment_id_pred": "grintser/comment_0032",
+      "raw_text": "Смерть Дашаратхи. Гринцер отмечает связь между смертью царя и анархией в государстве.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 34,
+      "comment_id_gold": "ram/grintser/c34",
+      "comment_id_pred": "grintser/comment_0034",
+      "raw_text": "Встреча Рамы с Парашурамой. Гринцер обсуждает смену аватаров Вишну.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 38,
+      "comment_id_gold": "ram/grintser/c38",
+      "comment_id_pred": "grintser/comment_0038",
+      "raw_text": "Наставления Рамы Бхарате о правлении. Гринцер видит в этом трактат по политике (нити).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 41,
+      "comment_id_gold": "ram/grintser/c41",
+      "comment_id_pred": "grintser/comment_0041",
+      "raw_text": "Подготовка Ситы к обряду посвящения Рамы. Гринцер отмечает её роль как верной супруги.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 43,
+      "comment_id_gold": "ram/grintser/c43",
+      "comment_id_pred": "grintser/comment_0043",
+      "raw_text": "Свадьба сыновей Дашаратхи. Гринцер описывает свадебные обряды древней Индии.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 44,
+      "comment_id_gold": "ram/grintser/c44",
+      "comment_id_pred": "grintser/comment_0044",
+      "raw_text": "Бхарата правит от имени сандалий Рамы. Гринцер отмечает этот символ как высшую степень преданности.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 45,
+      "comment_id_gold": "ram/grintser/c45",
+      "comment_id_pred": "grintser/comment_0045",
+      "raw_text": "Рама на берегу озера Пампа. Гринцер отмечает поэтическое предчувствие встречи с Хануманом.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "grintser",
+      "idx": 50,
+      "comment_id_gold": "ram/grintser/c50",
+      "comment_id_pred": "grintser/comment_0050",
+      "raw_text": "Освобождение Кабандхи от проклятия. Гринцер отмечает мотив спасения через смерть от руки героя.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "syrkin",
+      "idx": 9,
+      "comment_id_gold": "up/syrkin/c9",
+      "comment_id_pred": "syrkin/comment_0009",
+      "raw_text": "Шесть вопрошателей. Сыркин видит в этом структуру философского симпозиума.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "syrkin",
+      "idx": 25,
+      "comment_id_gold": "up/syrkin/c25",
+      "comment_id_pred": "syrkin/comment_0025",
+      "raw_text": "Царь Брихадратха осознает тщету жизни. Сыркин отмечает пессимистический тон поздних упанишад. См. VN 89.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "syrkin",
+      "idx": 29,
+      "comment_id_gold": "up/syrkin/c29",
+      "comment_id_pred": "syrkin/comment_0029",
+      "raw_text": "Вопрос о пути к Луне. Сыркин обсуждает древние космологические представления о «небесном мире».",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 41,
+      "comment_id_gold": "up/syrkin/c41",
+      "comment_id_pred": "syrkin/comment_0041",
+      "raw_text": "Почитание Самана как благого. Сыркин поясняет музыкально-ритуальные соответствия. Ср. CS 45.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "syrkin",
+      "idx": 44,
+      "comment_id_gold": "up/syrkin/c44",
+      "comment_id_pred": "syrkin/comment_0044",
+      "raw_text": "История Упакошалы. Огонь учит его Брахману. Сыркин отмечает роль агни-хотры в передаче знания.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 15,
+      "comment_id_gold": "ram/leonov/comment_5.1.39",
+      "comment_id_pred": "leonov/comment_0015",
+      "raw_text": "Дочь Джанаки (janakātmajā) — см. примеч. к I.1.25 (Гринцер). Первое появление эпитета Ситы в кн. V.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 16,
+      "comment_id_gold": "ram/leonov/comment_5.1.39b",
+      "comment_id_pred": "leonov/comment_0016",
+      "raw_text": "Потомок Рагху (rāghava) — см. примеч. к I.1.1 (Гринцер). Стандартный эпитет Рамы.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 17,
+      "comment_id_gold": "ram/leonov/comment_5.1.40",
+      "comment_id_pred": "leonov/comment_0017",
+      "raw_text": "Сын Дашаратхи (dāśarathi) — см. примеч. к I.1.8 (Гринцер).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 20,
+      "comment_id_gold": "ram/leonov/comment_5.1.100",
+      "comment_id_pred": "leonov/comment_0020",
+      "raw_text": "Майтхили (maithilī) — см. примеч. к I.1.26 (Гринцер).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 22,
+      "comment_id_gold": "ram/leonov/comment_5.1.152",
+      "comment_id_pred": "leonov/comment_0022",
+      "raw_text": "Вайдехи (vaidehī) — см. примеч. к I.1.28 (Гринцер).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 28,
+      "comment_id_gold": "ram/leonov/comment_5.3.18",
+      "comment_id_pred": "leonov/comment_0028",
+      "raw_text": "Царь ракшасов (rākṣasendra) — в кн. V прилагается к Раване. Позднее (гл. 68) может относиться к Вибхишане.",
+      "axis_2_gold": "A",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 30,
+      "comment_id_gold": "ram/leonov/comment_5.4.18",
+      "comment_id_pred": "leonov/comment_0030",
+      "raw_text": "Исхудавшая (kṛśā) — ситуативный эпитет Ситы в плену. Подчеркивает её аскетизм и страдания.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 33,
+      "comment_id_gold": "ram/leonov/comment_5.9.71",
+      "comment_id_pred": "leonov/comment_0033",
+      "raw_text": "Преданная дхарме (dharmapatnī) — букв. «жена по дхарме». Подчеркивает легитимный статус Ситы как супруги Рамы.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "A",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 35,
+      "comment_id_gold": "ram/leonov/comment_5.10.51",
+      "comment_id_pred": "leonov/comment_0035",
+      "raw_text": "Мандодари (mandodarī) — главная жена Раваны. Букв. «стройнобёдрая». В «Тилаке» отмечается её благородство и печаль.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 36,
+      "comment_id_gold": "ram/leonov/comment_5.11.1",
+      "comment_id_pred": "leonov/comment_0036",
+      "raw_text": "Ашока (aśoka, букв. «беспечальный») — дерево с оранжево-алыми цветами, Saraca indica L. (= Jonesia asoka Roxb.). [Источник: ботанический справочник (файл редактора)]",
+      "axis_2_gold": "V",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 37,
+      "comment_id_gold": "ram/leonov/comment_5.12.4",
+      "comment_id_pred": "leonov/comment_0037",
+      "raw_text": "Сугрива (sugrīva) — царь обезьян, союзник Рамы. См. примеч. к IV.1.1 (Гринцер).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 38,
+      "comment_id_gold": "ram/leonov/comment_5.13.35",
+      "comment_id_pred": "leonov/comment_0038",
+      "raw_text": "Истощённая постом (upavāsa) — ситуативный эпитет Ситы. В «Бхушане» поясняется как признак её верности и аскетической силы.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 40,
+      "comment_id_gold": "ram/leonov/comment_5.16.17",
+      "comment_id_pred": "leonov/comment_0040",
+      "raw_text": "Знаток дхармы (dharmajña) — эпитет Вибхишаны. Подчеркивает его моральное превосходство над другими советниками Раваны.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "A",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 41,
+      "comment_id_gold": "ram/leonov/comment_5.20.8",
+      "comment_id_pred": "leonov/comment_0041",
+      "raw_text": "Косу одну носящая (ekaveṇī) — знак траура по разлуке; Леонов: «волосы, в косу одну заплетенные». Согласно «Широмани», это символ верности мужу.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 44,
+      "comment_id_gold": "ram/leonov/comment_5.31.44",
+      "comment_id_pred": "leonov/comment_0044",
+      "raw_text": "Многомудрый (mahāmati) — эпитет Вибхишаны в сцене его выступления в защиту Хануманы.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "A",
+      "axis_4_gold": "P",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": true
+    },
+    {
+      "translator": "leonov",
+      "idx": 45,
+      "comment_id_gold": "ram/leonov/comment_5.35.6",
+      "comment_id_pred": "leonov/comment_0045",
+      "raw_text": "Вестник Рамы (rāmadūta) — Хануман официально представляется Сите. Важный юридический и дипломатический статус.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    }
+  ],
+  "disagreements_axis_4": [
+    {
+      "translator": "kalyanov",
+      "idx": 7,
+      "comment_id_gold": "mbh/kalyanov/c7",
+      "comment_id_pred": "kalyanov/comment_0007",
+      "raw_text": "Раджасуя (rājasūya) — торжественное жертвоприношение, совершаемое царем при вступлении на престол.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "kalyanov",
+      "idx": 12,
+      "comment_id_gold": "mbh/kalyanov/c12",
+      "comment_id_pred": "kalyanov/comment_0012",
+      "raw_text": "Ашвамедха (aśvamedha) — жертвоприношение коня, подтверждающее верховную власть царя.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "kalyanov",
+      "idx": 15,
+      "comment_id_gold": "mbh/kalyanov/c15",
+      "comment_id_pred": "kalyanov/comment_0015",
+      "raw_text": "Яджна (yajña) — жертвоприношение, основной ритуал ведийской и эпической религии.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "kalyanov",
+      "idx": 21,
+      "comment_id_gold": "mbh/kalyanov/c21",
+      "comment_id_pred": "kalyanov/comment_0021",
+      "raw_text": "Варуна (varuṇa) — бог океана, хранитель мирового порядка (рта).",
+      "axis_2_gold": "V",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "kalyanov",
+      "idx": 50,
+      "comment_id_gold": "mbh/kalyanov/c50",
+      "comment_id_pred": "kalyanov/comment_0050",
+      "raw_text": "Мокша (mokṣa) — освобождение из цикла перерождений; высшая цель человека.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "D",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 2,
+      "comment_id_gold": "mbh/vassilkov/c2",
+      "comment_id_pred": "vassilkov/comment_0002",
+      "raw_text": "«…самому Индре равные пламенностью духа…» Герои уподобляются богам-демоноборцам: богу грозы Индре, его помощнику Вишну. Пламенность духа (tejas) — магическая энергия кшатрия.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 4,
+      "comment_id_gold": "mbh/vassilkov/c4",
+      "comment_id_pred": "vassilkov/comment_0004",
+      "raw_text": "Ночное нападение Ашваттхамана на лагерь Пандавов нарушает все правила кшатрийской дхармы. Это событие знаменует окончательный крах рыцарской этики.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 7,
+      "comment_id_gold": "mbh/vassilkov/c7",
+      "comment_id_pred": "vassilkov/comment_0007",
+      "raw_text": "Жертвоприношение коня (ашвамедха) призвано очистить Юдхиштхиру от греха убийства родичей. Ритуал описан с большой этнографической точностью.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 9,
+      "comment_id_gold": "mbh/vassilkov/c9",
+      "comment_id_pred": "vassilkov/comment_0009",
+      "raw_text": "Гибель рода Ядавов от ударов палицами — эсхатологический сюжет, знаменующий начало Кали-юги. Ср. с гибелью героев в германском эпосе.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 11,
+      "comment_id_gold": "mbh/vassilkov/c11",
+      "comment_id_pred": "vassilkov/comment_0011",
+      "raw_text": "Восхождение на небеса и видение ада. Финальное испытание героя, где иллюзия (майя) проверяет его верность дхарме.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 12,
+      "comment_id_gold": "mbh/vassilkov/c12",
+      "comment_id_pred": "vassilkov/comment_0012",
+      "raw_text": "Обряд «тарпана» (возлияние воды предкам). Васильков отмечает связь с верованиями о «пути отцов» (питрияна).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 14,
+      "comment_id_gold": "mbh/vassilkov/c14",
+      "comment_id_pred": "vassilkov/comment_0014",
+      "raw_text": "Оружие «пашупата», дарованное Шивой Арджуне. Васильков анализирует шаманские корни сюжета обретения магического оружия.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 17,
+      "comment_id_gold": "mbh/vassilkov/c17",
+      "comment_id_pred": "vassilkov/comment_0017",
+      "raw_text": "Учение о трех гунах (саттва, раджас, тамас). Васильков прослеживает развитие этих категорий от ведийских текстов.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 20,
+      "comment_id_gold": "mbh/vassilkov/c20",
+      "comment_id_pred": "vassilkov/comment_0020",
+      "raw_text": "Финальный список заслуг (пхала-шрути). Чтение эпоса как очистительный акт. Васильков подчеркивает сакральный статус текста.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 21,
+      "comment_id_gold": "mbh/vassilkov/c21",
+      "comment_id_pred": "vassilkov/comment_0021",
+      "raw_text": "Образ Видуры как воплощения бога Дхармы. Васильков анализирует его статус «совести» Пандавов.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 24,
+      "comment_id_gold": "mbh/vassilkov/c24",
+      "comment_id_pred": "vassilkov/comment_0024",
+      "raw_text": "Молитва Ашваттхамана Шиве перед бойней. Васильков анализирует экстатический характер его преданности.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 26,
+      "comment_id_gold": "mbh/vassilkov/c26",
+      "comment_id_pred": "vassilkov/comment_0026",
+      "raw_text": "Понятие «пуруша» (дух) в противопоставлении «пракрити» (материи). Васильков отмечает дуализм раннего философского мышления.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 27,
+      "comment_id_gold": "mbh/vassilkov/c27",
+      "comment_id_pred": "vassilkov/comment_0027",
+      "raw_text": "История о мангусте с золотой головой. Васильков интерпретирует этот миф как критику пышных ритуалов в пользу искренней жертвы.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 30,
+      "comment_id_gold": "mbh/vassilkov/c30",
+      "comment_id_pred": "vassilkov/comment_0030",
+      "raw_text": "Гибель Пандавов один за другим. Васильков видит в этом аллегорию кармического воздаяния за мелкие грехи.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 36,
+      "comment_id_gold": "mbh/vassilkov/c36",
+      "comment_id_pred": "vassilkov/comment_0036",
+      "raw_text": "Борьба Юдхиштхиры с собственными сомнениями. Васильков интерпретирует «Анугиту» как психотерапевтический текст.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 39,
+      "comment_id_gold": "mbh/vassilkov/c39",
+      "comment_id_pred": "vassilkov/comment_0039",
+      "raw_text": "Отказ Юдхиштхиры войти в рай без собаки. Васильков видит в этом высшее проявление принципа ахимсы и верности.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 46,
+      "comment_id_gold": "mbh/vassilkov/c46",
+      "comment_id_pred": "vassilkov/comment_0046",
+      "raw_text": "Учение Парашары о долге (дхарме) в разные юги. Васильков обсуждает концепцию «апад-дхармы» (закона для трудных времен).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "vassilkov",
+      "idx": 48,
+      "comment_id_gold": "mbh/vassilkov/c48",
+      "comment_id_pred": "vassilkov/comment_0048",
+      "raw_text": "Наставления Нарады Юдхиштхире о тщете земного величия. Васильков видит здесь проявление эпического пессимизма.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 5,
+      "comment_id_gold": "mbh/erman/c5",
+      "comment_id_pred": "erman/comment_0005",
+      "raw_text": "«Йога» (yoga) — в данном контексте понимается как дисциплина ума и искусство действия. Девабодха поясняет это как «сосредоточенность» (samādhi).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 9,
+      "comment_id_gold": "mbh/erman/c9",
+      "comment_id_pred": "erman/comment_0009",
+      "raw_text": "Кришна являет Вселенскую форму (viśvarūpa). Эрман анализирует иконографические детали описания. См. Вишну 1990: 45.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 12,
+      "comment_id_gold": "mbh/erman/c12",
+      "comment_id_pred": "erman/comment_0012",
+      "raw_text": "География Джамбудвипы. Эрман обсуждает космологические представления древних индийцев.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 14,
+      "comment_id_gold": "mbh/erman/c14",
+      "comment_id_pred": "erman/comment_0014",
+      "raw_text": "Понятие «Кшетра» (поле) и «Кшетраджня» (знаток поля). Эрман поясняет как метафору тела и души.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 28,
+      "comment_id_gold": "mbh/erman/c28",
+      "comment_id_pred": "erman/comment_0028",
+      "raw_text": "Понятие «Пракрити» (природа). Эрман обсуждает ее восемь аспектов согласно тексту.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 30,
+      "comment_id_gold": "mbh/erman/c30",
+      "comment_id_pred": "erman/comment_0030",
+      "raw_text": "Речь Юдхиштхиры перед началом боя. Эрман отмечает его приверженность принципу ненасилия даже в войне.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 31,
+      "comment_id_gold": "mbh/erman/c31",
+      "comment_id_pred": "erman/comment_0031",
+      "raw_text": "Символика лотоса в Гите. Эрман поясняет метафору незагрязненности миром.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 35,
+      "comment_id_gold": "mbh/erman/c35",
+      "comment_id_pred": "erman/comment_0035",
+      "raw_text": "«Кшара» и «Акшара» — преходящее и вечное. Эрман поясняет онтологические категории Гиты.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 42,
+      "comment_id_gold": "mbh/erman/c42",
+      "comment_id_pred": "erman/comment_0042",
+      "raw_text": "Описание гор Меру и Химават. Эрман обсуждает мифическую географию как отражение духовных уровней.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 47,
+      "comment_id_gold": "mbh/erman/c47",
+      "comment_id_pred": "erman/comment_0047",
+      "raw_text": "Понятие «Адхибхута», «Адхидайва», «Адхияджна». Эрман поясняет иерархию уровней реальности.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "erman",
+      "idx": 48,
+      "comment_id_gold": "mbh/erman/c48",
+      "comment_id_pred": "erman/comment_0048",
+      "raw_text": "Образ бога как «нити, на которую нанизаны жемчужины». Эрман отмечает поэтическую точность метафоры.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 7,
+      "comment_id_gold": "ram/grintser/c7",
+      "comment_id_pred": "grintser/comment_0007",
+      "raw_text": "Проклятие Вальмики охотнику, убившему птицу крунча. Гринцер видит в этом рождение поэтического метра — шлоки.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 12,
+      "comment_id_gold": "ram/grintser/c12",
+      "comment_id_pred": "grintser/comment_0012",
+      "raw_text": "Рама ломает лук Шивы. Гринцер сопоставляет это с испытанием жениха в «Одиссее».",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 15,
+      "comment_id_gold": "ram/grintser/c15",
+      "comment_id_pred": "grintser/comment_0015",
+      "raw_text": "Горе Рамы после похищения Ситы. Гринцер отмечает зарождение стиля «кавья» (ученой поэзии) в описании природы.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 20,
+      "comment_id_gold": "ram/grintser/c20",
+      "comment_id_pred": "grintser/comment_0020",
+      "raw_text": "Встреча с Шабари. Гринцер отмечает тему преданности (бхакти) со стороны представительницы низких племен.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 26,
+      "comment_id_gold": "ram/grintser/c26",
+      "comment_id_pred": "grintser/comment_0026",
+      "raw_text": "Жертвоприношение коня (ашвамедха) Дашаратхи. Гринцер поясняет его ритуальную структуру.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 27,
+      "comment_id_gold": "ram/grintser/c27",
+      "comment_id_pred": "grintser/comment_0027",
+      "raw_text": "Миф об Ахалье. Гринцер анализирует тему очищения через проклятие.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "grintser",
+      "idx": 34,
+      "comment_id_gold": "ram/grintser/c34",
+      "comment_id_pred": "grintser/comment_0034",
+      "raw_text": "Встреча Рамы с Парашурамой. Гринцер обсуждает смену аватаров Вишну.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 1,
+      "comment_id_gold": "up/syrkin/c1",
+      "comment_id_pred": "syrkin/comment_0001",
+      "raw_text": "Голова жертвенного коня — это утренняя заря (uṣas). Сыркин отмечает символическое соответствие микрокосма и макрокосма. Ср. PU 149.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 3,
+      "comment_id_gold": "up/syrkin/c3",
+      "comment_id_pred": "syrkin/comment_0003",
+      "raw_text": "Удгитха (udgītha) — часть песнопения Сома-яджны, отождествляемая со слогом Ом. Сыркин анализирует ритуальную этимологию. Ср. CS 12.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 6,
+      "comment_id_gold": "up/syrkin/c6",
+      "comment_id_pred": "syrkin/comment_0006",
+      "raw_text": "«Зная что, можно узнать всё это?» Основной вопрос упанишад об универсальном знании (vidyā). См. VN 45.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "D",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 12,
+      "comment_id_gold": "up/syrkin/c12",
+      "comment_id_pred": "syrkin/comment_0012",
+      "raw_text": "«То ты еси» (tat tvam asi) — великое речение (mahāvākya) о тождестве индивидуального и мирового духа. См. PU 458.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "D",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 15,
+      "comment_id_gold": "up/syrkin/c15",
+      "comment_id_pred": "syrkin/comment_0015",
+      "raw_text": "Учение о пяти оболочках (kośa) человека. Сыркин детально разбирает каждый уровень (anna, prāṇa, manas, vijñāna, ānanda).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 16,
+      "comment_id_gold": "up/syrkin/c16",
+      "comment_id_pred": "syrkin/comment_0016",
+      "raw_text": "Закон кармы: «Каково деяние, таков и результат». Сыркин прослеживает этическую детерминированность упанишад. См. PU 270.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 24,
+      "comment_id_gold": "up/syrkin/c24",
+      "comment_id_pred": "syrkin/comment_0024",
+      "raw_text": "Различение высшего (parā) и низшего (aparā) знания. Сыркин отмечает гносеологический дуализм упанишад. См. PU 670.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 26,
+      "comment_id_gold": "up/syrkin/c26",
+      "comment_id_pred": "syrkin/comment_0026",
+      "raw_text": "Три наставления: «Дамята» (обуздайте себя), «Датта» (давайте), «Даядхвам» (сострадайте). Сыркин отмечает этический минимум упанишад.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 29,
+      "comment_id_gold": "up/syrkin/c29",
+      "comment_id_pred": "syrkin/comment_0029",
+      "raw_text": "Вопрос о пути к Луне. Сыркин обсуждает древние космологические представления о «небесном мире».",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 30,
+      "comment_id_gold": "up/syrkin/c30",
+      "comment_id_pred": "syrkin/comment_0030",
+      "raw_text": "Спор чувств о первенстве. Сыркин отмечает важность праны (дыхания) как жизненного начала.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 34,
+      "comment_id_gold": "up/syrkin/c34",
+      "comment_id_pred": "syrkin/comment_0034",
+      "raw_text": "Учение о пяти огнях (паньчагни-видья). Сыркин поясняет метафизику перерождения.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 35,
+      "comment_id_gold": "up/syrkin/c35",
+      "comment_id_pred": "syrkin/comment_0035",
+      "raw_text": "Наставления по практике йоги. Сыркин отмечает раннее появление технических терминов. См. UM 401.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "K",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 36,
+      "comment_id_gold": "up/syrkin/c36",
+      "comment_id_pred": "syrkin/comment_0036",
+      "raw_text": "Призыв к ученику: «Говори истину, соблюдай дхарму». Сыркин анализирует педагогический идеал. Ср. БУ 145.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 39,
+      "comment_id_gold": "up/syrkin/c39",
+      "comment_id_pred": "syrkin/comment_0039",
+      "raw_text": "Солнце как внешняя форма Атмана. Сыркин отмечает солярный символизм текста. См. VN 112.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 42,
+      "comment_id_gold": "up/syrkin/c42",
+      "comment_id_pred": "syrkin/comment_0042",
+      "raw_text": "Мировое древо корнями вверх. Сыркин сопоставляет с аналогичными образами в Бхагавадгите (XV.1).",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "D",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 43,
+      "comment_id_gold": "up/syrkin/c43",
+      "comment_id_pred": "syrkin/comment_0043",
+      "raw_text": "Семь видов пищи, созданных Отцом. Сыркин анализирует пищевой код в упанишадах.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 44,
+      "comment_id_gold": "up/syrkin/c44",
+      "comment_id_pred": "syrkin/comment_0044",
+      "raw_text": "История Упакошалы. Огонь учит его Брахману. Сыркин отмечает роль агни-хотры в передаче знания.",
+      "axis_2_gold": "V",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 47,
+      "comment_id_gold": "up/syrkin/c47",
+      "comment_id_pred": "syrkin/comment_0047",
+      "raw_text": "Пять брахманов и Вайшванара-Атман. Сыркин обсуждает концепцию «всеобщего человека».",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "K",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "syrkin",
+      "idx": 50,
+      "comment_id_gold": "up/syrkin/c50",
+      "comment_id_pred": "syrkin/comment_0050",
+      "raw_text": "Финальная молитва к Агни. Сыркин отмечает синтез ведийского гимна и упанишадской метафизики.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "G",
+      "axis_4_gold": "P",
+      "axis_4_pred": "D",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 3,
+      "comment_id_gold": "ram/leonov/comment_5.1.1c",
+      "comment_id_pred": "leonov/comment_0003",
+      "raw_text": "На тропу небожителей (cāraṇācarite pathi) — букв. «на тропе, по которой ходят чараны». В комментарии «Таттвадипика» поясняется «на дороге богов» (suravartmani). В комментарии «Бхушана» слово cāraṇāḥ объясняется как «божественные певцы» (dēv",
+      "axis_2_gold": "A",
+      "axis_2_pred": "A",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 6,
+      "comment_id_gold": "ram/leonov/comment_5.1.2c",
+      "comment_id_pred": "leonov/comment_0006",
+      "raw_text": "Стойкий (dhīra) — букв. «твердый», «мудрый». В контексте подготовки к прыжку подчеркивает ментальную концентрацию героя.",
+      "axis_2_gold": "A",
+      "axis_2_pred": "A",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 8,
+      "comment_id_gold": "ram/leonov/comment_5.1.5",
+      "comment_id_pred": "leonov/comment_0008",
+      "raw_text": "Принимающий любой облик (kāmarūpa) — букв. «облик согласно желанию». По «Широмани» поясняется как способность менять размер тела. Голдмены переводят «able to change his form at will».",
+      "axis_2_gold": "A",
+      "axis_2_pred": "A",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 10,
+      "comment_id_gold": "ram/leonov/comment_5.1.7",
+      "comment_id_pred": "leonov/comment_0010",
+      "raw_text": "Был нагу подобен в озере (hrade nāga ivābabhau) — слово nāga может означать как «наг» (полубожественный змей), так и «слон». Из комментаторов только автор «Широмани» глоссирует это слово как gaja (слон). Большинство западных переводчиков ск",
+      "axis_2_gold": "B",
+      "axis_2_pred": "B",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 18,
+      "comment_id_gold": "ram/leonov/comment_5.1.60",
+      "comment_id_pred": "leonov/comment_0018",
+      "raw_text": "Сын Ваю (vāyuputra). Леонов отмечает, что в V.1.9 используется ātmayoni «рожденный Ваю», однако традиционные комментаторы (Тилака) подчеркивают их идентичность.",
+      "axis_2_gold": "A",
+      "axis_2_pred": "A",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 27,
+      "comment_id_gold": "ram/leonov/comment_5.2.34",
+      "comment_id_pred": "leonov/comment_0027",
+      "raw_text": "Злодей (durātman) — букв. «дурная душа». Применяется к Раване в контексте описания похищения Ситы. Костина помечает: следует ли сохранять экспрессивность оригинала?",
+      "axis_2_gold": "A",
+      "axis_2_pred": "A",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": true,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 33,
+      "comment_id_gold": "ram/leonov/comment_5.9.71",
+      "comment_id_pred": "leonov/comment_0033",
+      "raw_text": "Преданная дхарме (dharmapatnī) — букв. «жена по дхарме». Подчеркивает легитимный статус Ситы как супруги Рамы.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "A",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 40,
+      "comment_id_gold": "ram/leonov/comment_5.16.17",
+      "comment_id_pred": "leonov/comment_0040",
+      "raw_text": "Знаток дхармы (dharmajña) — эпитет Вибхишаны. Подчеркивает его моральное превосходство над другими советниками Раваны.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "A",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    },
+    {
+      "translator": "leonov",
+      "idx": 45,
+      "comment_id_gold": "ram/leonov/comment_5.35.6",
+      "comment_id_pred": "leonov/comment_0045",
+      "raw_text": "Вестник Рамы (rāmadūta) — Хануман официально представляется Сите. Важный юридический и дипломатический статус.",
+      "axis_2_gold": "G",
+      "axis_2_pred": "V",
+      "axis_4_gold": "K",
+      "axis_4_pred": "P",
+      "axis_2_agree": false,
+      "axis_4_agree": false
+    }
+  ]
+}

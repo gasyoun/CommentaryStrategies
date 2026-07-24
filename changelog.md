@@ -10,6 +10,18 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **H1469 — axis_2 / axis_4 blind second-annotator IAA (Cohen's κ) on the 300-note gold.**
+  Pre-registered gate (`data/iaa/PRE_REGISTRATION_H1469.md`), Pass B = DeepSeek Chat
+  (`deepseek-chat`) over all six `*_markup_50.json` samples via `annotate_batch.py`,
+  stdlib scorer `scripts/compute_iaa_kappa.py` (bootstrap CI seed 20260724). Headline:
+  axis_2 κ = **0.648** [0.571–0.719] agr 77.7 %; axis_4 κ = **0.521** [0.430–0.608]
+  agr 77.0 %. Roadmap ≥0.7/≥85 % target not met — closed as honest finding (D2/H453);
+  96–100 % of disagreements are protocol-ambiguity (V/G and P/K/D depth), not random
+  coder error. Report: [`data/EVAL_RESULTS.md`](data/EVAL_RESULTS.md); A19 IRR @DO
+  marked resolved in `articles/SUBMISSION_READINESS_A19.md`; B5 roadmap items ticked.
+
 ## [1.12.2] - 2026-07-21
 
 ### Fixed

@@ -50,9 +50,9 @@
 - [ ] CI-job на пересборку pages/ при изменении данных (отдельно)
 
 ### B5. Межкодерская надежность (методологический блокер статей 1–2)
-- [ ] Второй кодировщик на 50 примечаний × 2 оси (axis_2, axis_4); Cohen's κ, цель ≥0.7 / совпадение ≥85%
-- [ ] Протокол расхождений → уточнение [classify_note.md](../prompts/classify_note.md)
-- [ ] Запуск `eval_pipeline.py` на всех 6 золотых выборках; результаты в `data/EVAL_RESULTS.md`
+- [x] Второй кодировщик на полный 300-note gold (6×50) × 2 оси (axis_2, axis_4) — H1469, 24-07-2026: blind LLM Pass B = DeepSeek Chat; Cohen's κ axis_2 = **0.648** [0.571–0.719] agr 77.7 %, axis_4 = **0.521** [0.430–0.608] agr 77.0 %. Цель ≥0.7 / ≥85 % **не достигнута** — закрыто как честный finding по D2/H453 (см. `data/EVAL_RESULTS.md`)
+- [x] Протокол расхождений → 96–100 % protocol-ambiguity (V/G и P/K/D depth); рекомендации по уточнению [classify_note.md](../prompts/classify_note.md) зафиксированы в EVAL_RESULTS (патч codebook = отдельное pre-registered исследование, не silent re-tune)
+- [x] Запуск scoring на всех 6 золотых выборках; результаты в [`data/EVAL_RESULTS.md`](../data/EVAL_RESULTS.md) + `data/iaa/`
 
 ### B6. Цитируемость и гигиена — частично готово (2026-06-13)
 - [x] `CITATION.cff` создан (CFF 1.2.0, Apache-2.0, версия 2.0)
