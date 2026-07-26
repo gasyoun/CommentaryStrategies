@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.13.2] - 2026-07-26
+
 ### Changed
 
 - **A21+A22: P/K/D convergence reframed, Paribok-taxonomy mislabel stripped
