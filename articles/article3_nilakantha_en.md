@@ -4,7 +4,7 @@ author: "M. Gasūns"
 author-ru: "М. Ю. Гасунс"
 orcid: "0000-0003-4513-884X"
 target: "@DECIDE — was Indologica Taurinensia (ceased with issue 45, 2019); shares A21's venue decision"
-status: "4/5 — draft (needs author review)"
+status: "4/5 — draft (needs author review; Paribok attribution reworded 26-07-2026, bibliography book-check gate open)"
 date: 2026-05-18
 lang: en
 original_lang: ru
@@ -21,12 +21,15 @@ keywords-en:
   - adhikārin
 ---
 
-<!-- STATUS: 4/5 — draft (needs author review) [translation v2, synced 10-07-2026 to article3_nilakantha.md RU draft v3].
-     Tables preserved; Sanskrit devanāgarī unchanged. Table 1/2 data cells mechanically verified identical to RU (10-07-2026).
-     Synced from RU v3: Vassilkov 1995–1996 / Pollock 2006 / Bronkhorst 1996 promoted to References + cited in-text (§1, §6, §7.2);
+<!-- STATUS: 4/5 — draft (needs author review) [translation v3, synced 26-07-2026 to article3_nilakantha.md RU draft v4].
+     Tables preserved; Sanskrit devanāgarī unchanged. Table 1/2 data cells mechanically verified identical to RU (26-07-2026).
+     Synced from RU v3 (10-07-2026): Vassilkov 1995–1996 / Pollock 2006 / Bronkhorst 1996 promoted to References + cited in-text (§1, §6, §7.2);
      Minkowski §7.4 parenthetical matched to the cited Mantrakāśīkhaṇḍa article; footnote [^1] anchored in §1.
-     Requires author review before submission. Venue @DECIDE (Indologica Taurinensia ceased 2019; Scrinium out of scope — see SUBMISSION_READINESS_A21.md hostile check 02-07-2026).
-     GATE: once the A21 Paribok-attribution rewording is ruled (AXIS4_KD_DECISION §5), mirror it here in §1/§3/§4.1/§7.2 + abstract. -->
+     Synced from RU v4 (26-07-2026, H1378): Paribok attribution reworded per AXIS4_KD_DECISION §2 in abstract/§1/§2.2/§2.3/§3/§4.1/§7.1/§7.2/§7.4
+     + Table 1/2 captions and column headers — the scale is operational, built on the model of Paribok's distinction, not identical to it;
+     the convergence is presented as structural correspondence, not empirical confirmation. Remaining gates: Paribok 2011 bibliography entry
+     (book check, AXIS4_KD_DECISION §5 — do NOT "fix" from web sources) and author review of the reworded blocks.
+     Venue @DECIDE (Indologica Taurinensia ceased 2019; Scrinium out of scope — see SUBMISSION_READINESS_A21.md hostile check 02-07-2026). -->
 
 ---
 
@@ -34,7 +37,7 @@ keywords-en:
 
 ## Abstract
 
-This article compares two commentary apparatuses on the Nalopākhyāna and Rāmopākhyāna of the Mahābhārata: Nīlakaṇṭha Caturdhara's Sanskrit ṭīkā *Bharatabhāvadīpa* (17th c.) and the Russian translator's notes of Ya. V. Vassilkov and S. L. Neveleva (1987–present). Based on 30 parallel loci (adhyāyas III.52–57, 273–276) and 16 actual V/N notes in the same chapters, the article shows: (1) both apparatuses reproduce a similar distribution of commentary-move types (P/K/D in Paribok's taxonomy), despite complete independence; (2) none of the 30 Nīlakaṇṭha loci receives a direct parallel V/N note — a *selection divergence* is observed: each tradition comments precisely on what is opaque to its reader (Nīlakaṇṭha: morphological and lexical difficulties; V/N: mythological and ritual realia). These two findings are formulated as *functional inversion* at two levels: inversion of selection (what to comment on) and inversion of execution (with what pragmatics to apply a structurally identical move). The conclusion is that Paribok's taxonomy describes universal types of the commentarial act, while the selection zone functions as a diagnostic of the implied reader's profile — the *adhikārin* in Sanskrit commentary theory.
+This article compares two commentary apparatuses on the Nalopākhyāna and Rāmopākhyāna of the Mahābhārata: Nīlakaṇṭha Caturdhara's Sanskrit ṭīkā *Bharatabhāvadīpa* (17th c.) and the Russian translator's notes of Ya. V. Vassilkov and S. L. Neveleva (1987–present). Based on 30 parallel loci (adhyāyas III.52–57, 273–276) and 16 actual V/N notes in the same chapters, the article shows: (1) none of the 30 Nīlakaṇṭha loci receives a direct parallel V/N note — a *selection divergence* is observed: each tradition comments precisely on what is opaque to its reader (Nīlakaṇṭha: morphological and lexical difficulties; V/N: mythological and ritual realia); (2) the four-type typology of Nīlakaṇṭha's moves, constructed independently of the project's annotation apparatus, maps without residue onto the operational three-value note-depth scale P/K/D (built on the model of A. V. Paribok's tripartite distinction, but not identical to it), so that both traditions are described by a single repertoire of moves. These two findings are formulated as *functional inversion* at two levels: inversion of selection (what to comment on) and inversion of execution (with what pragmatics to apply a structurally identical move). The conclusion is that the selection zone functions as a diagnostic of the implied reader's profile — the *adhikārin* in Sanskrit commentary theory — while the applicability of the P/K/D scale beyond the material it was designed for makes it a candidate description of a shared repertoire of the commentarial act, pending validation by independent coding.
 
 **Keywords:** Nīlakaṇṭha, Bharatabhāvadīpa, Mahābhārata, Kalyanov, Vassilkov, commentary strategy, indigenous hermeneutics, translator's note, Paribok, functional inversion, adhikārin.
 
@@ -50,7 +53,7 @@ The two commentary apparatuses — Nīlakaṇṭha's and those of the Russian tr
 
 The thesis we defend is as follows: *the indigenous Sanskrit commentary tradition and the Russian academic translation tradition reproduce one and the same hermeneutic grammar* — a set of structural moves dictated by the very nature of textual difficulty, not by the cultural or linguistic affiliation of the interpreter. At the same time, formally identical moves perform *opposite pragmatic functions*: Nīlakaṇṭha *resolves* a difficulty for a reader who already has access to the text; Vassilkov/Neveleva *create* access to the text for a reader who initially lacks it. This functional inversion under structural parallelism is the central empirical result of the article.
 
-A further theoretical result: the comparison of the two apparatuses allows us to validate A. V. Paribok's taxonomy (P/K/D per Paribok 2011), which has been used in the *CommentaryStrategies* project for corpus annotation of Russian translator's notes.[^1] If the same taxonomy is independently reproduced in Nīlakaṇṭha's Sanskrit glosses, this indicates that Paribok describes universal types of the commentarial act rather than artefacts of a particular Russian academic translation tradition.
+A further theoretical result: the comparison of the two apparatuses allows us to test the expressiveness of the operational P/K/D scale used in the *CommentaryStrategies* project for corpus annotation of Russian translator's notes (the scale is built on the model of A. V. Paribok's 2011 tripartite distinction — a typology of *terms* — but classifies notes and is not identical to it; see §3).[^1] If the independently constructed typology of Nīlakaṇṭha's Sanskrit glosses maps onto this scale without residue, then the scale captures not artefacts of a particular Russian academic translation tradition, but a repertoire of moves reproduced in indigenous commentarial practice as well.
 
 Finally, in §6 the results are related to the concept of *adhikārin* ('the qualified reader'), introduced by Nīlakaṇṭha and other authors of the Sanskrit commentary tradition as an explicit theory of the addressee. In the paper 'Conceptual Untranslatability as a Translation Strategy' (Gasūns 2026 [= Article 1]) it was argued that the reader contract implicitly embodied in Russian translators' apparatuses is structurally parallel to the *adhikārin* typology in Śaṅkara and Nīlakaṇṭha. The present article provides an empirical test of this argument: if Russian translators reproduce Nīlakaṇṭha's strategies without knowledge of the *Bharatabhāvadīpa*, this indicates that both apparatuses independently answered the same hermeneutic requirements of the same text.
 
@@ -66,9 +69,9 @@ The choice of these particular sub-parvans is governed by several considerations
 
 From both sub-parvans, 30 loci have been selected for this article according to Nīlakaṇṭha's criterion: each locus is a passage where Nīlakaṇṭha provides a gloss of typological interest. The selection principle is typological coverage: the selected loci represent all main types of difficulty (lexical, grammatical, cultural-historical, intertextual) and all main types of commentary move (synonym, definition, contextualisation, appeal to parallel texts). The V/N data for the same adhyāyas (III.52–57, 273–276) were collected independently in order to check for the presence of parallels; the result of this check — zero intersection — constitutes the central empirical finding of §4.
 
-**Table 1.** Thirty loci from Nīlakaṇṭha (*Nalopākhyāna*, adhyāyas 52–57; *Rāmopākhyāna*, adhyāyas 273–276) with parallel data from Vassilkov/Neveleva. Difficulty types: Lex. = lexical; Morph. = morphological; Cult. = cultural-historical; Intertextual = intertextual; Narr. = narrative; Phil. = philosophical; Etym. = etymological; Var. = text variant. Nīlakaṇṭha types I–IV as per §2.2. Paribok: expected P/K/D code. V/N: data extracted from samskrtam.ru (Vanaparvan, 1987); 'no note' = V/N have no note for this śloka. **Key result**: none of the 30 Nīlakaṇṭha loci receives a direct parallel V/N note — explanation in §4.
+**Table 1.** Thirty loci from Nīlakaṇṭha (*Nalopākhyāna*, adhyāyas 52–57; *Rāmopākhyāna*, adhyāyas 273–276: the sampled Nīlakaṇṭha glosses fall in adhyāyas 274–275, while V/N also have notes in 273 and 276 — see Table 2) with parallel data from Vassilkov/Neveleva. Difficulty types: Lex. = lexical; Morph. = morphological; Cult. = cultural-historical; Intertextual = intertextual; Narr. = narrative; Phil. = philosophical; Etym. = etymological; Var. = text variant. Nīlakaṇṭha types I–IV as per §2.2. P/K/D code: the operational-scale value corresponding to type I–IV per the §3 mapping. V/N: data extracted from samskrtam.ru (Vanaparvan, 1987); 'no note' = V/N have no note for this śloka. **Key result**: none of the 30 Nīlakaṇṭha loci receives a direct parallel V/N note — explanation in §4.
 
-| № | Locus | Term | Nīlakaṇṭha's Gloss | Type | Difficulty | Paribok | V/N Move |
+| № | Locus | Term | Nīlakaṇṭha's Gloss | Type | Difficulty | P/K/D Code | V/N Move |
 |---|---|---|---|---|---|---|---|
 | 1 | Nal. 52.2 | आवसन् | आवासं कृतवन्तः | I | Lex. | P | no note |
 | 2 | Nal. 52.4 | पुप्लुवे | प्लावितवान् | I | Morph. | P | no note |
@@ -103,7 +106,7 @@ From both sub-parvans, 30 loci have been selected for this article according to 
 
 ### 2.2. Typology of Nīlakaṇṭha's Commentary Moves
 
-Analysis of Nīlakaṇṭha's ṭīkā in the Nalopākhyāna and Rāmopākhyāna allows us to identify several stable types of commentary move. Their typology is formulated here independently of Paribok's taxonomy — in order to carry out their comparison in §4 and assess the degree of convergence.
+Analysis of Nīlakaṇṭha's ṭīkā in the Nalopākhyāna and Rāmopākhyāna allows us to identify several stable types of commentary move. Their typology is formulated here independently of the operational P/K/D scale (and of Paribok's distinction, on the model of which the scale was built — see §3) — so that the comparison of the two descriptive systems in §3–4 is a comparison of independent descriptions, not a projection of one onto the other.
 
 **Type I — synonymic gloss.** Nīlakaṇṭha reproduces one or several words from the passage being commented upon (*pratīka*) and supplies a synonym or paraphrase. Example: `पुरा अग्रे ॥२६॥` (*purā* = *agre* = 'formerly, first'); `कक्षं तृणम्` (*kakṣa* = *tṛṇa* = 'grass, dry brush'); `मा नीनशः मा नाशय` (*mā nīnaśaḥ* = *mā nāśaya* = 'do not destroy', morphological: a desiderative form explained through a causative). Structure: *pratīka* + synonym/paraphrase. Function: removal of lexical or morphological ambiguity.
 
@@ -113,7 +116,7 @@ Analysis of Nīlakaṇṭha's ṭīkā in the Nalopākhyāna and Rāmopākhyāna
 
 **Type IV — narrative motivation.** Nīlakaṇṭha explains *why* the given episode has been introduced into the narrative — a kind of editorial commentary. Example: `अत्रैवार्थे सत्यं सर्वथा न त्याज्यमिति आख्यायिकाद्वारा भीमसेनं बोधयितुं राज्ञा बृहदश्वः प्रवर्त्यते` ('Precisely here, in order to instruct Bhīmasena — through a narrative — that truth is never to be abandoned under any circumstances, the king [Yudhiṣṭhira] sets [the story of] Bṛhadaśva in motion'). Structure: indication of the narrative function of the episode. Function: revelation of the didactic logic of the epic interpolation.
 
-These four types are not mutually exclusive and may combine within a single extended gloss. They are, however, analytically distinguishable by structure and function — and it is precisely this distinction that will be used in §4 for comparison with Paribok and with the Russian translation apparatus.
+These four types are not mutually exclusive and may combine within a single extended gloss. They are, however, analytically distinguishable by structure and function — and it is precisely this distinction that will be used in §4 for comparison with the P/K/D scale and with the Russian translation apparatus.
 
 ### 2.3. Method of Comparison
 
@@ -125,7 +128,7 @@ For each of the 30 parallel loci the following is recorded:
 
 (c) **Nīlakaṇṭha's move**: type (I–IV) and its concrete realisation.
 
-(d) **Vassilkov/Neveleva's move**: type in Paribok's taxonomy (P/K/D) and its concrete realisation.
+(d) **Vassilkov/Neveleva's move**: type on the operational P/K/D scale (the project's corpus annotation) and its concrete realisation.
 
 (e) **Convergence / divergence**: the same structural type under the same / different pragmatic function.
 
@@ -135,24 +138,26 @@ The expected result if the central thesis is confirmed: high typological converg
 
 ---
 
-## §3. Nīlakaṇṭha's Taxonomy and Paribok's Taxonomy: A Comparison
+## §3. Nīlakaṇṭha's Typology and the P/K/D Scale: A Comparison
 
-In §2.2 four types of Nīlakaṇṭha's commentary moves were described. Paribok's taxonomy (2011), used in the *CommentaryStrategies* corpus, distinguishes three types:
+In §2.2 four types of Nīlakaṇṭha's commentary moves were described. The other party to the comparison is the operational three-value note-depth scale by which the Russian translator's notes are annotated in the *CommentaryStrategies* corpus:
 
-- **P** ('concept' / 'conceptual identification'): a brief indication of the referent — a gloss enabling the reader to relate the term to its object.
-- **K** ('codifier' / 'systemic positioning'): placing the term within a conceptual system, explaining its position among related concepts.
-- **D** ('discursive'): extended reasoning — historical, philosophical, polemical — going beyond one or two phrases and presupposing a position on the part of the commentator.
+- **P** (gloss / brief identification): a brief indication of the referent — a gloss enabling the reader to relate the term to its object.
+- **K** (systemic positioning): placing the term within a conceptual system, explaining its position among related concepts.
+- **D** (discursive elaboration): extended reasoning — historical, philosophical, polemical — going beyond one or two phrases and presupposing a position on the part of the commentator.
 
-Comparison with Nīlakaṇṭha's typology:
+The scale is built on the model of A. V. Paribok's tripartite distinction (2011: 'notion' / 'concept' / 'codifier' — a typology of *terms*), but is not identical to it: it classifies *notes*, not terms, and borrows from Paribok the idea of a three-step gradation, not the categories themselves. Paribok's class of 'codifiers of a direction of activity' (his D) is used in the project separately — as the selection criterion for the terminological lexicon (Gasūns 2026 [= Article 1]) — and must not be confused with the meaning of **K** on the scale.
 
-| Nīlakaṇṭha's Type | Structure | Example | Presumed Paribok |
+The correspondence between the two descriptive systems is established here analytically — by the structural definition of the types, not by independent coding: each Nīlakaṇṭha type I–IV is assigned the scale value that matches its structure:
+
+| Nīlakaṇṭha's Type | Structure | Example | P/K/D Code |
 |---|---|---|---|
 | I — synonymic gloss | *pratīka* + synonym | पुरा = अग्रे | P |
 | II — definition | *pratīka* + definitional expansion | बालिशः बालवद् वृथाहठी | K |
 | III — contextual exegesis | problem → citations → conclusion | Comm. on śloka 24 (संवत्सर) | D |
 | IV — narrative motivation | indication of narrative function | अत्रैवार्थे... भीमसेनं बोधयितुम् | D (a particular sub-type) |
 
-The essential coincidence of Paribok's tripartite (P/K/D) structure with Nīlakaṇṭha's four-part one — on the condition that Type IV is treated as a sub-type of D — testifies to one of two things: either Paribok independently reconstructed a typology implicitly present in the Sanskrit tradition; or both describe universal types of the commentarial act, independent of tradition. The present article defends the second interpretation.
+This correspondence is a stipulative bridge, not an empirical discovery: the codes in the right-hand column are derived from the definitions of types I–IV, and the P/K/D distribution on the Nīlakaṇṭha side (§4.1) is therefore a re-expression of the type I–IV distribution, not the result of independent coding. The correspondence nonetheless has empirical content. First, the four-part typology of §2.2 was constructed on Nīlakaṇṭha's material independently of the scale — and yet it maps onto the scale's three values without residue: each type answers to exactly one value (IV as a sub-type of D), and, as §4.1 will show, this coverage extends to all 30 loci with a single mixed case. A scale designed for Russian translator's notes turns out to be expressive enough for a seventeenth-century Sanskrit ṭīkā — a structural result about two descriptive systems, not a confirmation of the universality of any taxonomy. Second, the very fact that an independently constructed description of Nīlakaṇṭha required precisely a three-step gradation of depth (brief identification — positioning — elaboration) is compatible with the hypothesis that such a gradation is universal (§7.2) — but testing that hypothesis requires independent coding and expanded material (§7.4).
 
 An important qualification: Type IV (narrative motivation) has no direct analogue among the Russian epic translators. Nīlakaṇṭha comments on a text whose authorship tradition ascribes to Vyāsa — and explaining authorial intent falls within his task as an interpreter of the tradition. Russian translators do not comment on narrative logic; this distinction is functionally relevant and will be addressed in §5.
 
@@ -164,7 +169,7 @@ The full list of loci with Nīlakaṇṭha's data is given in Table 1 (§2.1). B
 
 **Table 2.** Sixteen V/N notes in adhyāyas 52–57 (Nalopākhyāna) and 273–276 (Rāmopākhyāna); data extracted from samskrtam.ru. Difficulty types: Lit.-poet. = literary-poetic; Ritual = ritual; Mythol. = mythological; Lexical = lexical; Gramm. = grammatical. **None of the 16 notes intersects with the Nīlakaṇṭha loci of Table 1.**
 
-| № | V/N Locus | Subject of Note | Difficulty Type | Paribok |
+| № | V/N Locus | Subject of Note | Difficulty Type | P/K/D Code |
 |---|---|---|---|---|
 | 1 | III.53.8–11 | *śucismitā* — affective contradiction of the epithet | Lit.-poet. | K |
 | 2 | III.54.15–20 | *satya-vāda* — truth-oath (ritual) | Ritual | K |
@@ -185,9 +190,9 @@ The full list of loci with Nīlakaṇṭha's data is given in Table 1 (§2.1). B
 
 ### 4.1. Typological Convergence at the Level of Distribution
 
-Despite the absence of intersections in the choice of particular ślokas, both apparatuses reproduce a similar distribution of move types. For Nīlakaṇṭha (30 loci): Type I (→ P) — 13 (43%); Type II (→ K) — 11 (37%); Types III–IV (→ D) — 5 (17%, of which 2 are mixed II+III); mixed I+II — 1 (3%). For V/N (16 notes): P — 10 (63%); K — 6 (37%); D — 0 (0%). In sum: both apparatuses tend towards Type P (the briefest identifying indication) and make substantial use of K (systemic positioning), while rarely resorting to extended D-moves. This distribution is not accidental: both commentaries respond to *one and the same text* — and the nature of the majority of difficulties in Nīlakaṇṭha's narrative (rather than philosophical) text dictates a brief responsive gloss rather than extended reasoning.
+Despite the absence of intersections in the choice of particular ślokas, the distributions of moves in the two apparatuses are similarly shaped. For Nīlakaṇṭha (30 loci), re-expressing types I–IV on the scale per the §3 mapping: Type I (→ P) — 13 (43%); Type II (→ K) — 11 (37%); Types III–IV (→ D) — 5 (17%, of which 2 are mixed II+III); mixed I+II — 1 (3%). Let us underline the status of these figures: this is the type I–IV distribution expressed in scale codes, not an independent P/K/D annotation of Nīlakaṇṭha's glosses. For V/N (16 notes, corpus annotation): P — 10 (63%); K — 6 (37%); D — 0 (0%). In sum: both apparatuses tend towards Type P (the briefest identifying indication) and make substantial use of K (systemic positioning), while rarely resorting to extended D-moves. This distribution is not accidental: both commentaries respond to *one and the same text* — and the nature of the majority of difficulties in Nīlakaṇṭha's narrative (rather than philosophical) text dictates a brief responsive gloss rather than extended reasoning.
 
-The convergence of distributions confirms the central thesis: Paribok describes universal types of the commentarial act. The same P/K/D proportions arise independently in a seventeenth-century Sanskrit ṭīkā and in a Russian academic translation of the twentieth and twenty-first centuries.
+The main outcome of the comparison, then, lies not in the figures themselves but in the fact that they could be obtained at all: the independently constructed Nīlakaṇṭha typology maps onto the operational scale without residue — 30/30 loci, one mixed case — which means the scale describes a seventeenth-century Sanskrit ṭīkā as completely as it describes the twentieth- and twenty-first-century Russian academic translation it was designed for. The similarity of the proportions (dominance of brief moves, rarity of extended ones) is consistent with the hypothesis of a shared repertoire of commentary moves, but does not by itself prove it: that would require independent coding of the Nīlakaṇṭha side and a sample sufficient for quantitative claims (§7.4).
 
 ### 4.2. Selection Divergence
 
@@ -276,17 +281,17 @@ Implication for the *CommentaryStrategies* research programme: if the hermeneuti
 
 This article has compared two commentary apparatuses separated by three centuries, two languages, and fundamentally different readerships: Nīlakaṇṭha Caturdhara's *Bharatabhāvadīpa* (17th c.) and the translator's notes of Ya. V. Vassilkov and S. L. Neveleva (1987–present). The material consists of 30 parallel loci from the Nalopākhyāna and Rāmopākhyāna (MBh III.52–57, 273–276) and 16 actual V/N notes in the same adhyāyas.
 
-The central empirical result is twofold: *typological convergence at the level of move distribution* and *complete divergence at the level of locus selection*. None of the 16 V/N notes addresses the same Sanskrit words as the 30 Nīlakaṇṭha glosses. At the same time, both apparatuses reproduce a similar P/K/D distribution: Nīlakaṇṭha — ≈ 43% P, 37% K, 17% D; V/N — ≈ 63% P, 37% K, 0% D.
+The central empirical result is twofold: *complete divergence at the level of locus selection* and *structural correspondence of the two descriptive systems*. None of the 16 V/N notes addresses the same Sanskrit words as the 30 Nīlakaṇṭha glosses. At the same time, the independently constructed Nīlakaṇṭha typology maps onto the P/K/D scale without residue, and, re-expressed per the §3 mapping, the distributions look similar: Nīlakaṇṭha — ≈ 43% P, 37% K, 17% D (the type I–IV distribution in scale codes); V/N — ≈ 63% P, 37% K, 0% D (corpus annotation).
 
-The theoretical conclusion: these two facts — convergence in the distribution of types and divergence in the choice of particular difficulties — are not in contradiction but complementary. The nature of textual difficulty dictates the type of commentary move; the reader's cultural position dictates which difficulties are commented upon. Hermeneutic grammar (P/K/D) is universal; *zona commentarii* is tradition-specific.
+The theoretical conclusion: these two facts — the correspondence of descriptive repertoires and the divergence in the choice of particular difficulties — are not in contradiction but complementary. The nature of textual difficulty dictates the type of commentary move; the reader's cultural position dictates which difficulties are commented upon. The repertoire of moves (P/K/D) turns out to be shared by the two traditions; *zona commentarii* is tradition-specific.
 
 ### 7.2. Typological Convergence and Its Interpretation
 
-The fact of distributional convergence may be interpreted in two ways. According to the first, Paribok, in developing his taxonomy (2011), drew on intuitions rooted in the classical Sanskrit tradition — and therefore his P/K/D unconsciously reproduces categories that Sanskrit ṭīkā-writing elaborated centuries earlier. According to the second, neither Paribok nor Nīlakaṇṭha 'invented' this typology — both describe universal types of the commentarial act, dictated by the very nature of the hermeneutic task. The distinction between 'brief indication', 'systemic positioning', and 'discursive reasoning' necessarily arises in any tradition dealing with texts requiring interpretation (cf. Bronkhorst 1996 on the nature of authoritative utterance in the Sanskrit tradition).
+The fact of structural correspondence — the independently constructed Nīlakaṇṭha typology fits into the three-step depth scale without residue — may be interpreted in two ways. According to the first, Paribok's tripartite distinction (2011), on the model of which the project's scale was built, draws on intuitions rooted in the classical Sanskrit tradition — and therefore the scale unconsciously reproduces categories that Sanskrit ṭīkā-writing elaborated centuries earlier. According to the second, a three-step gradation of commentary-move depth — 'brief indication', 'systemic positioning', 'discursive elaboration' — necessarily arises in any tradition dealing with texts requiring interpretation (cf. Bronkhorst 1996 on the nature of authoritative utterance in the Sanskrit tradition), and therefore belongs to none of them.
 
-This article argues in favour of the second interpretation. The key evidence: the two apparatuses could not have known of each other — Nīlakaṇṭha did not read Vassilkov; Vassilkov set himself no task of reproducing the Nīlakaṇṭhian typology. Convergence is neither borrowing nor influence; it is an independent derivation from a common source — the nature of textual difficulty.
+This article considers the second interpretation the more likely, but underlines the status of that judgement: it is a hypothesis compatible with our data, not a conclusion proved by them — the §4.1 distributions were obtained by re-expression, not independent coding, and the sample (§7.4) is insufficient for quantitative claims. What speaks for the hypothesis is the independence of the descriptions: Nīlakaṇṭha did not read Vassilkov, and the type I–IV typology was constructed without reference to the scale — and yet the two descriptive systems converged on a three-step gradation of depth. This is neither borrowing nor influence; the most economical explanation is a common source — the nature of textual difficulty.
 
-Implication for methodology: treating Paribok's taxonomy as universal rather than specifically Russian opens the possibility of cross-traditional comparisons. The P/K/D types are applicable to the description of Sanskrit ṭīkās — which in turn allows Nīlakaṇṭha's corpus to be used as an independent benchmark for validating the automatic annotation of the *CommentaryStrategies* corpus.
+Implication for methodology: the cross-traditional expressiveness of the P/K/D scale opens the possibility of comparisons beyond the Russian material. The scale is applicable to the description of Sanskrit ṭīkās — which in turn allows Nīlakaṇṭha's corpus to be used as an independent benchmark for validating the automatic annotation of the *CommentaryStrategies* corpus: coding Nīlakaṇṭha's glosses by the operational codebook, blind to the type I–IV typology, would provide at once a test of the §3 mapping and the missing independent coding (§7.4).
 
 ### 7.3. Functional Inversion as an Analytical Tool
 
@@ -302,7 +307,7 @@ Several limitations of the present study require qualification.
 
 **Asymmetry of the sample.** The 30 loci were selected according to the criterion 'what Nīlakaṇṭha comments on' — that is, the sample is Nīlakaṇṭha-centred. This decision is justified for testing the thesis about the convergence of move types, but does not permit a full picture of V/N: we know 16 out of approximately 250 V/N notes to the Vanaparvan, and they came within our purview only because they fall in the same adhyāyas. A complete study would require a V/N-centred sample, checking whether Nīlakaṇṭha comments on the same passages that V/N selected.
 
-**Volume of data.** 30 loci + 16 notes constitute a sufficient basis for qualitative analysis, but not for quantitative claims about distributions. Expansion to 150–200 parallel pairs (including Kalyanov and other books of the MBh) would permit statistical verification of the distributions.
+**Volume of data and the status of the distributions.** 30 loci + 16 notes constitute a sufficient basis for qualitative analysis, but not for quantitative claims about distributions; this is precisely why the §4.1 percentages are presented as a descriptive summary of the correspondence, not as free-standing proof (see §3, §7.2). Moreover, the Nīlakaṇṭha side was obtained by re-expressing types I–IV per the §3 mapping, not by independent P/K/D coding. Expansion to 150–200 parallel pairs (including Kalyanov and other books of the MBh), together with independent coding of Nīlakaṇṭha's glosses — blind to the type I–IV typology — would permit statistical verification of the distributions.
 
 **Unidirectionality.** The present article compares Nīlakaṇṭha and V/N. Kalyanov, who translated other books of the MBh, falls outside the immediate comparison with Nīlakaṇṭha (except at overlapping parallel ślokas). A three-way analysis Nīlakaṇṭha / Kalyanov / V/N would require separate material.
 

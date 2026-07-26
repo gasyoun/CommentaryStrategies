@@ -115,7 +115,7 @@ switched to «Восток» (cover letter re-authored in Russian). The EN trans
 `article3_nilakantha_en.md`) stays a separate 4/5 track for an English venue. Remaining gates:
 Blockers 2 and 3 below.
 
-**Blocker 2 — Paribok attribution (axis-4 K/D ruling).** §3 presents the operational
+**Blocker 2 — RESOLVED 26-07-2026 (H1378, Fable 5 `claude-fable-5`) — see the addendum below.** §3 presents the operational
 K/D glosses («кодификатор/системное позиционирование», «дискурсивное») as «Таксономия
 Парибка (2011)», and §1/§4.1/§7.2 + both abstracts build the central universality claim on
 that identity. Per [docs/AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md)
@@ -143,3 +143,53 @@ line after the Парибок 2011 entry.
 
 **Consequence:** readiness 5/5 → **4/5 (revising / pre-submission)** until the three
 blockers clear. Send is the wrong call today; the fix path is short and fully specified.
+
+---
+
+## Paribok-attribution reframe — 26-07-2026 (Fable 5, `claude-fable-5`, [H1378](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1378-Fable_CommentaryStrategies_a21-a22-convergence-reframe-axis4-wording_20.07.26.md))
+
+**Blocker 2 executed** — proceeding without the §5 book check per the H1378 ruling (the
+check's outcome is one-directional: it can only *relax* the new wording, never invalidate
+it). What changed, RU (draft v3 → v4) with every block mirrored into the EN twin
+(translation v2 → v3):
+
+- **§3** now introduces the P/K/D scale as the project's operational note-depth scale and
+  carries the canonical [AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md)
+  §2 provenance formulation (built «по мотивам» Paribok's tripartite distinction of
+  *terms*, not identical to it, classifying *notes*); the I–IV → P/K/D bridge is stated
+  explicitly as a stipulative, definition-derived mapping.
+- **§4.1** states plainly that the Nīlakaṇṭha-side percentages are the type I–IV
+  distribution re-expressed in scale codes, not an independent coding; the claim
+  «конвергенция подтверждает центральный тезис» is replaced by the without-residue
+  mapping result (30/30 loci, one mixed case) plus an explicit "consistent with, but does
+  not prove" statement.
+- **§1, abstract, RU `Summary` block** — «верифицировать таксономию Парибка» → testing
+  the *expressiveness* of the operational scale; the abstract now leads with the
+  selection-divergence result and states the universality reading as a hypothesis pending
+  independent coding. The selection-divergence / functional-inversion contribution is
+  untouched.
+- **§7.1/§7.2** — «Герменевтическая грамматика (P/K/D) — универсальна» → the repertoire
+  is *shared by the two traditions*; §7.2 reframed around the structural correspondence,
+  explicitly labels the universality interpretation a hypothesis compatible with (not
+  proved by) the data, and names the blind-coding benchmark as the missing validation.
+- **§7.4** — the «Объем данных» limitation now agrees with the headline instead of
+  contradicting it, and additionally discloses the re-expression status of the §4.1
+  figures.
+- **Tables** — the «Парибок» column header in Tables 1–2 renamed «Код P/K/D» / "P/K/D
+  Code" (data cells untouched); Table 1 caption fixed per Minor (b) (Rāma loci fall in
+  adhyāyas 274–275). Minor (c) (stray blank line) fixed. Minor (a) (Васильков 1995–1996
+  volume/pages) still open — needs the physical reference.
+- **RU/EN parity** re-verified mechanically after the edits: Table 1 30/30 rows, Table 2
+  16/16 — loci, Devanagari terms+glosses, type codes, P/K/D codes, V/N-presence and all
+  distribution figures identical. The A22 GATE header comment is removed because its
+  instruction was carried out.
+- The optional blind-LLM κ add-on offered by H1378 was **deliberately not taken**: §7.2
+  now names blind coding as the outstanding validation, and a model-pass κ on n = 30
+  would add apparatus while inviting the wide-CI objection §7.4 concedes.
+
+**Still open:** Blocker 3 (Парибок 2011 bibliography entry — book check, do not "fix"
+from web sources) and author review of the reworded blocks. **The readiness score is
+deliberately left at 4/5 — whether the reframed central claim moves it is a human's
+call.**
+
+_Dr. Mārcis Gasūns_
