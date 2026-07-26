@@ -10,6 +10,23 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Changed
+
+- **A21+A22: P/K/D convergence reframed, Paribok-taxonomy mislabel stripped
+  ([H1378](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1378-Fable_CommentaryStrategies_a21-a22-convergence-reframe-axis4-wording_20.07.26.md),
+  Fable 5 `claude-fable-5`).** Both Nīlakaṇṭha manuscripts (RU v4 + EN translation v3, in
+  lockstep) now carry the canonical `AXIS4_KD_DECISION.md` §2 provenance: the P/K/D scale
+  is the project's operational note-depth scale, built on the model of Paribok's tripartite
+  distinction of *terms* but not identical to it. The I–IV → P/K/D bridge is stated as a
+  stipulative, definition-derived mapping; §4.1 discloses the Nīlakaṇṭha-side percentages
+  as a re-expression of the type I–IV distribution (not independent coding); the abstract
+  now leads with the selection-divergence result and demotes «Парибок описывает
+  универсальные типы» to a hypothesis pending blind independent coding. Selection
+  divergence / functional inversion untouched. Table 1/2 «Парибок» column headers renamed
+  «Код P/K/D» / "P/K/D Code"; RU/EN table parity re-verified mechanically (30/30, 16/16).
+  The defective «Парибок 2011» bibliography entry is deliberately NOT touched — it stays
+  behind the §5 book-check gate. Readiness scores left at 4/5 (a human decides any move).
+
 ## [1.13.1] - 2026-07-24
 
 ### Changed

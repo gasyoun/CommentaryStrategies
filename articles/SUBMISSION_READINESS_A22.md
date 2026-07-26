@@ -12,7 +12,7 @@ lang: en
 
 # Submission-readiness report — A22 (EN)
 
-_Created: 10-07-2026 · Last updated: 10-07-2026_
+_Created: 10-07-2026 · Last updated: 26-07-2026_
 
 Manuscript: [`article3_nilakantha_en.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article3_nilakantha_en.md) (~5,850 words after this pass).
 RU original (A21): [`article3_nilakantha.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article3_nilakantha.md) (draft v3, 4/5 HOLD).
@@ -87,7 +87,7 @@ by then, soften to "submitted" or "in preparation" per venue convention.
 - **Cover letter — SKIPPED.** The handoff asked for an *Indologica Taurinensia* cover
   letter, but the 02-07-2026 hostile check established the journal **ceased publication
   with issue 45 (2019)**. Writing it would be waste; it follows the venue @DECIDE.
-- **Paribok-attribution rewording — GATED.** The A21 hostile check requires softening
+- **Paribok-attribution rewording — GATED** *(resolved 26-07-2026 — see the addendum below)*. The A21 hostile check requires softening
   «Таксономия Парибка (2011)» to a "tripartite distinction derived from Paribok" pending
   the [@DO] source check in
   [`docs/AXIS4_KD_DECISION.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md) §5.
@@ -106,14 +106,33 @@ by then, soften to "submitted" or "in preparation" per venue convention.
    choice decides which of the RU/EN pair leads and the cover-letter target.
 2. **[@DO] Author review pass** — sign off that the EN faithfully renders the RU argument
    and reads as native scholarly English (the draft's own in-file gate).
-3. **[@DO] Paribok source check** (AXIS4_KD_DECISION §5) → then mirror the A21 rewording
-   into EN §1/§3/§4.1/§7.2 + abstract, and fix the Парибок 2011 / Paribok 2011 entry in
-   both files.
+3. **[@DO] Paribok source check** (AXIS4_KD_DECISION §5) → ~~then mirror the A21 rewording
+   into EN §1/§3/§4.1/§7.2 + abstract~~ *(mirroring done 26-07-2026, see addendum — the
+   rewording proceeded without the book check per H1378, whose outcome can only relax the
+   wording)* → fix the Парибок 2011 / Paribok 2011 entry in both files once the physical
+   volume is checked.
 4. On sign-off: bump A22 to 5/5 in
    [`ARTICLES.md`](https://github.com/gasyoun/Uprava/blob/main/ARTICLES.md), flip the
    front-matter/STATUS from draft to ready, and draft the cover letter for the ruled venue.
 
 _(The handoff's ORCID gate is stale — resolved 28-06-2026: 0000-0003-4513-884X, already in
 both files' front-matter.)_
+
+---
+
+## Addendum — 26-07-2026 (Fable 5, `claude-fable-5`, [H1378](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1378-Fable_CommentaryStrategies_a21-a22-convergence-reframe-axis4-wording_20.07.26.md))
+
+The Paribok-attribution rewording landed in the RU original (draft v4) and was mirrored
+here in the same pass (translation v2 → v3): abstract, §1, §2.2, §2.3, §3 (canonical
+[AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md)
+§2 provenance + the bridge stated as a stipulative mapping), §4.1 (figures disclosed as a
+re-expression of types I–IV, not independent coding), §7.1/§7.2 (universality demoted to a
+hypothesis pending independent coding), §7.4, and the Table 1/2 captions and column headers
+(«Paribok» → "P/K/D Code"). The GATE line in the STATUS comment is removed because it was
+executed. Table 1/2 parity re-verified mechanically after the edits (30/30 and 16/16 rows —
+loci, Devanagari, type codes, P/K/D codes identical). Full change list: the same-dated
+section of [SUBMISSION_READINESS_A21.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/SUBMISSION_READINESS_A21.md).
+Readiness stays 4/5 — author review of the reworded blocks is still the named gate, and any
+score move is a human's call.
 
 _Dr. Mārcis Gasūns_
