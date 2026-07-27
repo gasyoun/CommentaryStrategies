@@ -10,6 +10,21 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **H1685 шаг 8: ремонт механически исправимого остатка адъюдикации —
+  предложение на 29 карточек из 87** (Opus 5 1M `claude-opus-5[1m]`).
+  [scripts/h1685_repair.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/h1685_repair.py)
+  → [data/analysis/h1685_adjudication/repairs.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/h1685_adjudication/repairs.json).
+  Перепривязка 24 из 48 битых якорей (только внутри той же сарги: 15 целей от
+  поиска ±2, 9 — единственное книжное попадание леммы в своей сарге) +
+  раскле́ивание 5 текстовых порч (`viमāna`, `экувেṇī`, `марша&нīя`, `dolce`,
+  `version`). Отказано 58: 17 якорей уводят в другую саргу (научное
+  утверждение, не ремонт), 7 неоднозначны внутри сарги, 34 `edit` — правка
+  ссылок/атрибуций/регистра, то есть редакторский акт. `--apply` не запускался:
+  ворота §8 закрыты до голосования человека. Раздел §9 отчёта
+  [docs/SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md).
+
 ## [1.14.0] - 2026-07-27
 
 ### Added
