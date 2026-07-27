@@ -1,0 +1,2319 @@
+{
+ "_meta": {
+  "handoff": "H1685",
+  "queue": "lexical",
+  "adjudicator": "Opus 5 1M (claude-opus-5[1m])",
+  "date": "2026-07-27",
+  "judge_being_reviewed": "Sonnet 5 (claude-sonnet-5), step lexical_judge_h276, 2026-07-07",
+  "generated_by": "scripts/h1685_lexical_verdicts.py",
+  "cards": 142,
+  "by_verdict": {
+   "flag_anchor": 41,
+   "edit": 26,
+   "reject": 31,
+   "park": 21,
+   "accept": 23
+  },
+  "by_group": {
+   "flag_anchor": 43,
+   "reject": 32,
+   "park": 21,
+   "edit": 23,
+   "keep_anchor": 20,
+   "keep_dup": 3
+  },
+  "overturned": 3,
+  "note": "Group findings and every exception are documented in this script's docstring and in EXCEPTIONS; the reasons here are the reading, not a post-hoc label."
+ },
+ "verdicts": [
+  {
+   "key": "V.42.28|paṭṭiśa",
+   "verse_id": "5.42.28",
+   "lemma": "paṭṭiśa",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "paṭṭiśa: the weapon paṭṭiśa is not in V.42.28 at all — that verse lists only gadā and parigha ('gadābhir vicitrābhiḥ parighaiḥ'); paṭṭiśa first appears one verse later, in V.42.29 ('mudgaraiḥ paṭṭiśaiḥ śūlaiḥ...'), which already has its own separate lexical note (tomara/prāsa) anchored there. anchor_precheck='absent' confirmed — this note is attached to the wrong verse and belongs at V.42.29.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 0, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'paṭṭiśa' stands in 5.42.29, not in this verse"
+   ]
+  },
+  {
+   "key": "V.39.6|añjali",
+   "verse_id": "5.39.6",
+   "lemma": "añjali",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The word añjali does not occur in V.39.6 at all — the verse reads 'śirasā vandya... upacakrame' (bowing with the head), not 'śirasy añjalim ādhāya'; the note's entire content (añjali-height hierarchy) describes a different, unquoted phrase and likely belongs to a different verse in this same passage that actually contains añjali.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.41.11|dāvānala",
+   "verse_id": "5.41.11",
+   "lemma": "dāvānala",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "dāvānala: etymology (dāva+anala) is linguistically sound in the abstract, but the compound 'dāvānala' itself is NOT in this verse — V.41.11 reads only 'śuṣkaṃ vanam ivānalaḥ' (simple analaḥ, no dāva-). anchor_precheck='absent' is confirmed by direct inspection: the note analyzes a word that isn't textually present here. Likely belongs to a passage that actually uses the compound dāvānala (it recurs later in the Lankā-burning episode), or should be rewritten around the verse's actual 'analaḥ.'",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.49.7|daṇḍa",
+   "verse_id": "5.49.7",
+   "lemma": "daṇḍa",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма daṇḍa отсутствует в стихе V.49.7 (портрет внешности Раваны — nīlāñjana, hāra, pūrṇacandra), содержание заметки (юридический казус наказания посланника) описывает другую сцену — эпизод наказания Ханумана-посланника разворачивается в гл. 52 (ср. dūtadaṇḍa на V.52.9). Заметка ошибочно привязана; вероятное место — гл. 52 (52.9/52.15).",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.49.19|kāla",
+   "verse_id": "5.49.19",
+   "lemma": "kāla",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма kāla отсутствует в стихе (текст о том, что все боятся жестоких деяний Раваны и его способности затопить мир), заметка цитирует не подтверждённую этим стихом речь «Кала пришёл за тобой» — content описывает другую реплику. Флаг: неверная привязка, вероятно к более поздней увещевательной части речи Ханумана.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.49.20|yaśas",
+   "verse_id": "5.49.20",
+   "lemma": "yaśas",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма yaśas отсутствует в стихе (текст — размышление Ханумана о виденной мощи Раваны, а не предупреждение о потере славы), содержание описывает другую реплику. Флаг: вероятно относится к более поздней увещевательной речи Ханумана (тема kīrti/yaśas, гл. 51).",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.50.4|nārada",
+   "verse_id": "5.50.4",
+   "lemma": "nārada",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма nārada отсутствует в стихе V.50.4 (Равана обращается к советнику Прахасте, а не гадает о личности гостя); содержание заметки относится к сцене гадания Раваны (Нандин/Бана), которая уже разворачивается в V.50.2-50.3. Флаг: неверная привязка, вероятно к V.50.1-50.3.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'nārada' stands in 5.50.3, not in this verse"
+   ]
+  },
+  {
+   "key": "V.50.8|teja",
+   "verse_id": "5.50.8",
+   "lemma": "teja",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма tejas отсутствует в стихе V.50.8 (Равана спрашивает, не послан ли гость Индрой); заметка о теджасе, окружающем Ханумана, дублирует и, видимо, ошибочно привязана вместо V.50.2, где tejasā vṛtam уже присутствует и уже покрыто other_layer_notes. Флаг.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.50.19|āgneya",
+   "verse_id": "5.50.19",
+   "lemma": "āgneya",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Показанный текст стиха V.50.19 состоит из единственной пады («да будет услышано моё слово») без упоминания āgneya/astra; содержание заметки (классификация astra vs śastra, огненное оружие) не подтверждается этим фрагментом. Флаг: неверная привязка, вероятно к сцене применения огненного оружия далее в тексте.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.51.14|sāma",
+   "verse_id": "5.51.14",
+   "lemma": "sāma",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма sāma отсутствует в стихе V.51.14 (описание скорости и мощи обезьяньего войска — vainateyasamāḥ, anilopamāḥ), содержание о sāma как первой из caturupāya не относится к этому перечислению воинов. Флаг: неверная привязка.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.51.20|bhujaga",
+   "verse_id": "5.51.20",
+   "lemma": "bhujaga",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма bhujaga отсутствует в стихе V.51.20 (о том, что никто в трёх мирах, обидев Рагхаву, не обретёт счастья — без змеиного сравнения); содержание о сравнении Рамы с Гарудой для змей не подтверждается этим стихом. Флаг: неверная привязка (возможно, к V.51.23, где присутствует pannagīm).",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.51.23|kīrti",
+   "verse_id": "5.51.23",
+   "lemma": "kīrti",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма kīrti отсутствует в стихе V.51.23 (Хануман описывает виденную им скорбящую Ситу, сравнённую со змеёй pannagīm — не о славе); содержание об угрозе потери kīrti описывает другую сцену увещевания. Флаг: неверная привязка, вероятно к завершающей части речи Ханумана далее в гл. 51.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.51.40|pratāpa",
+   "verse_id": "5.51.40",
+   "lemma": "pratāpa",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма pratāpa отсутствует в стихе V.51.40 (перечисление классов существ — синтаксическое продолжение предыдущего стиха); содержание о политическом термине pratāpa не подтверждается этим перечислением. Флаг: неверная привязка.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'pratāpa' stands in 5.51.42, not in this verse"
+   ]
+  },
+  {
+   "key": "V.51.44|vaideha",
+   "verse_id": "5.51.44",
+   "lemma": "vaideha",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма vaideha/Сита полностью отсутствует в стихе V.51.44 (о неспособности Брахмы, Рудры, Индры устоять в битве с Рагхавой — о Сите ни слова); содержание заметки целиком о Сите и Видехе описывает другую сцену. Флаг: явная ошибка привязки.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.66.15|martavya",
+   "verse_id": "5.66.15",
+   "lemma": "martavya",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The śloka text (66.15: 'madhurā madhurālāpā... duḥkhād duḥkhataraṃ prāpya kathaṃ jīvati jānakī') contains no martavya substring — Rāma is asking how Jānakī endures ever-greater sorrow, not stating she has resolved to die. The word martavya, and its ethical 'death as a dharmic choice' reading, is already anchored and covered at V.65.15 ('martavyakṛtaniścayā') in this same chunk; this entry both misanchors the lemma and substantially duplicates the earlier note.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.68.13|upādhi",
+   "verse_id": "5.68.13",
+   "lemma": "upādhi",
+   "verdict": "edit",
+   "judge_verdict": "flag_anchor",
+   "disposition": "OVERTURNED",
+   "group": "flag_anchor",
+   "reason": "Не якорная ошибка, а неверная лемма. В стихе стоит upadhinā (upadhi, краткое a) — «обман, уловка»; заметка этимологизирует upādhi (вриддхи) — «условие, ограничение», позднейший ведантический термин. Это две разные словарные статьи MW. Правка: перевести заметку на upadhi и снять ведантический материал; сама сцена (золотой олень) описана верно.",
+   "judge_reason": "The verse form is 'upadhinā' (instr. of upadhi, short a) — not 'upādhinā' (upādhi, vṛddhi-grade). These are two distinct, separately MW-listed lexemes: upadhi (older, 'deceit, fraud, trick') vs. upādhi (later/Vedāntic, 'condition, qualification; disguise'). The note cites and etymologizes the latter (source tag 'dic_mw:upADi', upa-+ādhi) and layers a dharmaśāstra 'fraudulent possession' legal-technical reading on top of it — but the epic actually uses the plainer upadhi. Core gloss ('уловка, обман') survives either way, but the cited lemma/etymology/legal-specificity should be corrected to upa",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 1, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 1}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.63.13|saumitre",
+   "verse_id": "5.63.13",
+   "lemma": "saumitre",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The verse (63.13) reads 'lakṣmaṇaḥ paravīrahā' — the vocative form 'saumitre' does not occur anywhere in this śloka; the note discusses the general matronymic usage of 'saumitre' elsewhere in the epic, not this verse's actual wording. Content itself (Sumitrā-matronymic explanation) is accurate, but it is anchored to the wrong verse — likely belongs at a verse where Rāma or another speaker actually addresses Lakṣmaṇa as 'saumitre' in the vocative.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.66.8|āśā",
+   "verse_id": "5.66.8",
+   "lemma": "āśā",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The śloka text (66.8: 'kim āha sītā vaidehī brūhi saumya punaḥ punaḥ parāsum iva toyena siñcantī vākyavāriṇā') contains no āśā substring anywhere, with no sandhi context that would hide it. The scene (Rāma begging for Sītā's words, likened to reviving one near death) is thematically adjacent to hope but the specific lemma is not textually present in this verse.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.1.9|māhendra",
+   "verse_id": "5.1.9",
+   "lemma": "māhendra",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Лемма māhendra полностью отсутствует в процитированном стихе V.1.9 (\"añjaliṃ prāṅmukhaṃ kurvan pavanāyātmayonaye / tato hi vavṛdhe gantuṃ dakṣiṇo dakṣiṇāṃ diśam\" — про анджали ветру и рост перед прыжком, без упоминания горы Махендра). Содержание заметки, вероятно, относится к более раннему стиху главы, где гора Махендра действительно называется (напр. в районе V.1.1–1.5, где Хануман стоит на горе Махендра) — заметка нуждается в перепривязке к правильной шлоке.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'māhendra' stands in 5.1.8, not in this verse"
+   ]
+  },
+  {
+   "key": "V.1.9|plavaṃgama",
+   "verse_id": "5.1.9",
+   "lemma": "plavaṃgama",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Слово plavaṃgama отсутствует в процитированном стихе V.1.9 (тот же текст про анджали ветру и разбег на юг — обезьяньей лексики там нет). Термин, вероятно, относится к другой шлоке главы, где действительно встречаются plavaga/plavaṃga-формы (напр. в районе V.1.2 или V.1.83) — требуется перепривязка.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'plavaṃgama' stands in 5.1.10, not in this verse"
+   ]
+  },
+  {
+   "key": "V.1.53|khādyota",
+   "verse_id": "5.1.53",
+   "lemma": "khādyota",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "Khādyota отсутствует в процитированном стихе V.1.53 (\"laghutvenopapannaṃ tad vicitraṃ sāgare 'patat...tārācitam ivākāśaṃ prababhau sa mahārṇavaḥ\" — про цветы и океан-небо, без упоминания светляков); сама заметка внутренне цитирует другой стих — «В V.1.51 kapir...khādyotair iva parvataḥ». Заметка ошибочно прикреплена к V.1.53 вместо V.1.51 — требуется перепривязка.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'khādyota' stands in 5.1.51, not in this verse"
+   ]
+  },
+  {
+   "key": "V.1.101|hiraṇyanābha",
+   "verse_id": "5.1.101",
+   "lemma": "hiraṇyanābha",
+   "verdict": "edit",
+   "judge_verdict": "flag_anchor",
+   "disposition": "OVERTURNED",
+   "group": "flag_anchor",
+   "reason": "Не якорная ошибка, а несогласованный заголовок: в стихе hiraṇyagarbho maināko, и сама заметка это цитирует, противореча собственной лемме hiraṇyanābha. Правка: переименовать лемму в hiraṇyagarbha и заменить «золотопупый» на «золотоутробный».",
+   "judge_reason": "Заметка озаглавлена леммой hiraṇyanābha («золотопупый»), но в процитированном стихе стоит другое сложение — hiraṇyagarbha («золотоутробный»): \"hiraṇyagarbho maināko niśamya lavaṇāmbhasaḥ\". Сама заметка это цитирует («В V.1.101 hiraṇyagarbho maināko — «золотоутробный Майнака»»), то есть противоречит собственному заголовку — nābha «пупок» и garbha «зародыш/утроба» разные корни. Лемму нужно поменять на hiraṇyagarbha либо найти реальное вхождение hiraṇyanābha в другом месте.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.21.1|kāmarūpī",
+   "verse_id": "5.21.1",
+   "lemma": "kāmarūpī",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "kāmarūpī does not occur anywhere in V.21.1 (Sita's reply after hearing Ravana's words); the note's content (shapeshifting explanation of Ravana's approach disguised as a wandering brahmin) belongs to an earlier scene (the abduction/disguise episode, ch.1-3 area), not to this shloka. Etymology and epic-shapeshifter point are otherwise sound and non-trivial, but the anchor is wrong.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.21.2|māyāvī",
+   "verse_id": "5.21.2",
+   "lemma": "māyāvī",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "māyāvī is absent from V.21.2, which describes Sita's grief/trembling, not Ravana. The māyā-etymology and satya/māyā antithesis are accurate and add real depth, but nothing in this verse concerns Ravana's deceit — the note is misattached, likely belongs near a verse actually characterizing Ravana as māyāvī.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'māyāvī' stands in 5.21.4, not in this verse"
+   ]
+  },
+  {
+   "key": "V.21.9|avamāna",
+   "verse_id": "5.21.9",
+   "lemma": "avamāna",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "avamāna is not present anywhere in V.21.9 (checked full text: 'iha santo na vā santi...'); the verse is about Rama/Sita accusing Ravana of a perverted mind, not using this specific term. Etymology (ava+√man) is correct and the dharmic point is real, but the lemma is not textually anchored here.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'avamāna' stands in 5.21.8, not in this verse"
+   ]
+  },
+  {
+   "key": "V.21.11|lobha",
+   "verse_id": "5.21.11",
+   "lemma": "lobha",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "lobha does not occur in V.21.11 ('akṛtātmānam āsādya...'); the word actually present there is anaya (covered separately at 22.31), not lobha. √lubh- etymology and kāma/lobha distinction are sound but unanchored to this shloka.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.21.22|asura",
+   "verse_id": "5.21.22",
+   "lemma": "asura",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "asura is absent from V.21.22, a verse about Sita urging Ravana to hand her back to Rama or face calamity — no asura reference at all. The Rigvedic asura->demon semantic-inversion story is a real and accurate etymological fact, but it is not anchored to this particular shloka.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.21.24|śāpa",
+   "verse_id": "5.21.24",
+   "lemma": "śāpa",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "śāpa is absent from V.21.24, which is about the sound of Rama's bow (no curse vocabulary present). √śap etymology is fine but the note describes a different theme (curse-as-speech-act) not present in this verse.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.21.27|vara",
+   "verse_id": "5.21.27",
+   "lemma": "vara",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "vara is absent from V.21.27, a verse comparing Rama-Garuda to the destroyer of serpent-demons — nothing about a boon. √vṛ etymology and the boon/hubris reading of Ravana's immortality are accurate content but describe a different passage, not this one.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.28.17|nirveda",
+   "verse_id": "5.28.17",
+   "lemma": "nirveda",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The verse text of V.28.17 (about Sītā seizing her braid to hang herself) contains no form of nirveda; the note's own textual anchor 'nirvedam avāpa sā tu' is a DIFFERENT line describing Sītā lapsing into despondency, which does not occur in this śloka. This is a wrong-verse mismatch — the note likely belongs to a nearby śloka in sarga 28 (plausibly near its opening, where Sītā's grief-cycle is first narrated, or its closing before ch. 29), not V.28.17.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.30.38|vaiklavya",
+   "verse_id": "5.30.38",
+   "lemma": "vaiklavya",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The note's own citation 'viklavaṃ dūtam āsādya (30.37)' shows the lemma vaiklavya/viklava belongs to V.30.37, not V.30.38 (whose text — arthānarthāntare buddhir... — contains no form of viklava). anchor_precheck correctly flagged absent; this note should be reattached to V.30.37.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'vaiklavya' stands in 5.30.39, not in this verse"
+   ]
+  },
+  {
+   "key": "V.64.16|prasāda",
+   "verse_id": "5.64.16",
+   "lemma": "prasāda",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The śloka text (64.16: 'sarve yathā māṃ vakṣyanti sametya haripuṃgavāḥ tathāsmi kartā kartavye bhavadbhiḥ paravān aham') contains no prasāda/prasād- substring at all — Aṅgada is simply saying he will defer to what the elders decide; there is no water-clarity/appeasement content here. The note's content (prasāda etymology and the ask-elders-to-calm-Sugrīva framing) is plausible in itself but is anchored to the wrong verse.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.64.29|harṣa",
+   "verse_id": "5.64.29",
+   "lemma": "harṣa",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The śloka text (64.29: 'na matsakāśam āgacchet kṛtye hi vinipātite... aṅgado varaḥ') contains no harṣa/hṛṣ- substring and its actual content is Aṅgada's own fear of not returning if the mission failed — not Rāma hearing news of Sītā. The note describes a different scene entirely (Rāma's joyful reaction) and is misassigned to this verse.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=neighbour",
+    "re-anchor target: 'harṣa' stands in 5.64.28, not in this verse"
+   ]
+  },
+  {
+   "key": "V.64.44|sāhasa",
+   "verse_id": "5.64.44",
+   "lemma": "sāhasa",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The śloka text (64.44: 'niścitārthaṃ tatas tasmin sugrīvaṃ pavanātmaje lakṣmaṇaḥ prītimān prītaṃ bahumānād avaikṣata') contains no sāhasa substring and describes Lakṣmaṇa looking respectfully at Sugrīva — a joyful, not violent, moment. The Madhuvana-as-sāhasa legal-outrage reading is sound in itself but belongs to an earlier verse (the raid, ch. 61-63), not this one.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.66.3|sakhya",
+   "verse_id": "5.66.3",
+   "lemma": "sakhya",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The śloka text (66.3: 'yathaiva dhenuḥ sravati snehād vatsasya vatsalā tathā mamāpi hṛdayaṃ maṇiśreṣṭhasya darśanāt') contains no sakhya substring and is a cow-and-calf simile about seeing the jewel (maṇi), unrelated to the Rāma-Sugrīva alliance the note discusses. The sakhya-as-completed-dharmic-pact reading is sound in itself but belongs to a different verse (likely the alliance context near the opening of this speech).",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.66.13|sukhocitā",
+   "verse_id": "5.66.13",
+   "lemma": "sukhocitā",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "The śloka text (66.13: 'śāradas timironmukto nūnaṃ candra ivāmbudaiḥ āvṛto vadanaṃ tasyā na virājati sāmpratam') contains no sukhocitā/sukha-ucita substring — this verse is the autumn-moon-behind-clouds simile for Sītā's dimmed face, a different image from the one the note discusses. Note content is plausible but anchored to the wrong verse.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.37.47|timina",
+   "verse_id": "5.37.47",
+   "lemma": "timina",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "The verse word is timi-nakra-jhaṣa-ākule ('teeming with whales, crocodiles, fish' — confirmed by leonov's own three-way translation), not a timi→timina→timiṅgila predator hierarchy; the note misparses the compound and invents an intermediate creature 'timina'.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 1}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.16|balibhojana",
+   "verse_id": "5.38.16",
+   "lemma": "balibhojana",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "bali+bhojana parsed correctly, but leonov's translation already says 'пожирательница жертв' (=balibhojana) verbatim, so there is no semantic gain; the added ritual-status hierarchy ('выше обычной птицы, но ниже ṛṣi') is an unsupported invented claim.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.51|viśālākṣī",
+   "verse_id": "5.38.51",
+   "lemma": "viśālākṣī",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "viśāla+akṣi is a transparent epithet that leonov already translates verbatim ('широкоглазая'); the additional claim that viśāla also figuratively means 'wisdom, breadth of perception' is unsupported and presented as an established secondary sense without evidence.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=exact"
+   ]
+  },
+  {
+   "key": "V.2.21|vaprā",
+   "verse_id": "5.2.21",
+   "lemma": "vaprā",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "The claimed body-metaphor mapping is wrong: the verse's actual bahuvrīhi structure pairs vapra+prākāra JOINTLY as jaghanā ('hips', not vaprā=hips/prākāra=torso separately), and aṭṭālaka is the avataṃsaka ('ear-ornament/crest', matching Leonov's own 'гирлянда башен'), not 'голова' ('head') as the note invents. A fabricated anatomical correspondence not supported by the cited verse.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.3.6|śātakumbha",
+   "verse_id": "5.3.6",
+   "lemma": "śātakumbha",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "The 'hundred pots of refining' etymology presented as literal fact is not supported by MW, which derives śātakumbha from Mt. Śatakumbha (a toponym, 'hundred-peaked mountain') rather than a refining process — an invented folk-etymology stated as established fact.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.4.15|gulma",
+   "verse_id": "5.4.15",
+   "lemma": "gulma",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "The specific troop composition ('9 пеших воинов и 3 командира = один gulma') attributed to Arthaśāstra II.33 is an unusually precise numeric claim that does not match the standard classical army-unit hierarchies (patti-multiples in Amarakośa/Manu); presented as sourced fact without support, this reads as a fabricated specification rather than an attested one.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.68.9|trayāṇāṃ bhūtānām",
+   "verse_id": "5.68.9",
+   "lemma": "trayāṇāṃ bhūtānām",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "The numeral+bhūta gloss itself is transparent and not the issue. The note invents technical apparatus that doesn't hold up: (1) it labels the construction 'vyatireka-alaṃkāra' ('нумеративного исключения'), but vyatireka in Sanskrit poetics is the figure showing the upameya SURPASSES the upamāna in a simile — it has nothing to do with 'numerative exclusion' of three beings; this is a misapplied technical term presented as fact. (2) The three-tier cosmology claimed (div / antarikṣa / dvīpa mapped to Garuḍa / Vāyu / Hanumān) substitutes 'dvīpa' (island) for the expected pṛthivī/earth term of the ",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=exact"
+   ]
+  },
+  {
+   "key": "V.3.16|vivasvant",
+   "verse_id": "5.3.16",
+   "lemma": "vivasvant",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "MW content on Vivasvant (sun-god, father of Manu/Aśvins) is sound, but the note fails to engage with the obvious referent Leonov's own crib already supplies (Sugrīva, 'сын солнца') and instead offers a garbled, unresolved alternative ('либо Яма, либо Суrya-son' — note the stray Latin fragment in Cyrillic text), which muddies rather than clarifies the verse's actual reference.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.36.41|vanya bhakta (pañcamam)",
+   "verse_id": "5.36.41",
+   "lemma": "vanya bhakta (pañcamam)",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "Claims pañcama bhakta = eating once every five days, but the co-located commentator note (Bhūṣaṇa) explicitly glosses the same phrase as eating once daily at the fifth watch (evening), not once per five days — the lexical note contradicts the file's own commentarial evidence without acknowledging it.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 1, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.65|pātāla",
+   "verse_id": "5.38.65",
+   "lemma": "pātāla",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "kauśikī is grammatically feminine ('daughter of Kuśika'), but the note glosses it as 'сын Кушики' (son of Kushika) — a clear gender/reference error in the very mythological identification the note is built on.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 1}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.40.10|avadhi / māsa",
+   "verse_id": "5.40.10",
+   "lemma": "avadhi / māsa",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "māsa/avadhi: the specific dharmashastra claim that māsa is a canonical legal 'waiting period' a separated wife must observe before ending her life, anchored to 'Мч 5.76', is not a verifiable/standard Manusmṛti doctrine — Manu 5 in that range concerns menstrual/mourning purity (āśauca), not a widow's decision deadline. This reads as an invented legal-doctrine gloss rather than a documented one; faithfulness gate fails.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.46.5|deśakāla",
+   "verse_id": "5.46.5",
+   "lemma": "deśakāla",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "deśakāla: cites the exact same source, 'Arthaśāstra 1.15,' as the unrelated mantrivarga note (item 10, which is specifically the council-of-ministers chapter) — that section is not the locus for the deśa-kāla doctrine, so this looks like a recycled/misattributed citation rather than a verified one. The underlying dharma-concept (place/time-fitness of action) is real, but the specific citations (Arthaśāstra 1.15, Manu 7.100) are unverifiable/likely wrong here, failing the faithfulness gate.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.6.27|ṛddhi",
+   "verse_id": "5.6.27",
+   "lemma": "ṛddhi",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "MW's dual sense of ṛddhi (material prosperity / yogic-Buddhist supernatural power) is correctly cited, but pulling the specifically Buddhist/yogic siddhi sense into this verse — which crib and context make clear is about the material wealth of rākṣasa households, not magical attainment — is an unsupported interpretive stretch dressed up as a deliberate textual 'tautology'.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.15.8|karṇikāra",
+   "verse_id": "5.15.8",
+   "lemma": "karṇikāra",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "Заметка утверждает: «MW отмечает, что karṇikāra использовалась в погребальных украшениях» — это ложная атрибуция: реальная статья MW даёт только 'a tree with beautiful yellow blossoms', никакой похоронной коннотации там нет. Придуманный факт, приписанный источнику, который его не содержит — гейт faithfulness проваливается.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.25.5|koka",
+   "verse_id": "5.25.5",
+   "lemma": "koka",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "kokair is verbatim in the verse, but MW's koka entry (checked in dic_mw.jsonl) glosses it flatly as 'a wolf' (plus unrelated senses: cuckoo, ruddy goose, frog, lizard...) with no support for the note's specific claim that koka is semantically distinguished from vṛka as 'a wolf preying on solitary strays vs. pack aggression' — that fine-grained lexical-semantic distinction appears to be invented and stated as established fact rather than hedged, failing the faithfulness gate.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.36.28|hemasamānavarṇa ānana",
+   "verse_id": "5.36.28",
+   "lemma": "hemasamānavarṇa ānana",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "'hema (gold) < √hi- «бросать»' is not an attested etymology (dic_mw's hema entries give no such derivation, and comparative Indo-Iranian etymologies do not support it); presented as settled fact, not hedged — fails the faithfulness gate despite otherwise good content.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.15|vāyasa",
+   "verse_id": "5.38.15",
+   "lemma": "vāyasa",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "dic_mw explicitly derives vāyasa 'fr. vayas' (bird/vigor), not from vāyu 'wind' or the god Vāyu; the note's own cited source contradicts its stated etymology — wrong root presented as fact.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.55|aiśvarya",
+   "verse_id": "5.38.55",
+   "lemma": "aiśvarya",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "īśvara+ya etymology is fine, but the claim that aiśvarya is 'one of eight superpowers (siddhis)' misstates the traditional aṣṭa-siddhi list (aṇimā/mahimā/garimā/laghimā/prāpti/prākāmya/īśitva/vaśitva), which does not include an item literally named aiśvarya — an invented/garbled classification.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 1, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem",
+    "mw_headwords_missing=ESwArya"
+   ]
+  },
+  {
+   "key": "V.54.26|stanaṃdhaya",
+   "verse_id": "5.54.26",
+   "lemma": "stanaṃdhaya",
+   "verdict": "edit",
+   "judge_verdict": "reject",
+   "disposition": "OVERTURNED",
+   "group": "reject",
+   "reason": "ПЕРЕСМОТРЕНО против судьи. Судья отклонил заметку за корень: «√dhā значит „класть“, а сосать — √dhē». Но у Уитни dhā(y)/dhī «сосать» стоит отдельным корнем-омонимом, и ссылка заметки (Whitney #681) может относиться именно к нему; MW при этом подтверждает и разбор, и значение («stanaṃdhaya — sucking the breast»). Смешение омонимов — устранимая неточность, а не ложное содержание: правка — явно развести √dhā «класть» и √dhā(y)/√dhē «сосать».",
+   "judge_reason": "Faithfulness gate fails: the note cites the root as '√dhā-, «сосать, пить»', but √dhā means 'to place/put' (dadhāti) — the root for 'to suck' is √dhē (dhayati, class I), which is what stanaṃdhaya actually derives from. This is an internally contradictory wrong-root citation (translation given fits dhē, root cited is dhā), not a cosmetic slip, so the note cannot earn keep despite good imagery/anchoring otherwise.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.54.49|nirvāpayām āsa",
+   "verse_id": "5.54.49",
+   "lemma": "nirvāpayām āsa",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "Faithfulness gate fails: the note derives nirvāpayām āsa from 'ni-√vā- / nir-√vap-', presenting √vap (to sow/strew/shear — an unrelated root) as an alternative to the correct √vā (to blow, causative vāpayati → nirvāpayati 'extinguish'). The nirvāṇa connection itself is sound, but citing vap as a viable alternate root is a genuine wrong-root error, not stylistic.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=exact",
+    "mw_headwords_missing=nirvApayAm"
+   ]
+  },
+  {
+   "key": "V.64.4|vimada",
+   "verse_id": "5.64.4",
+   "lemma": "vimada",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "Verified against dic_mw: vimada is glossed 'free from intoxication, grown sober {R. Pañcat.}... free from rut {Kāv.}... free from pride {MBh.}' — i.e. privative vi- ('without/free of mada'), exactly matching Leonov's own crib translation 'протрезвели' (sobered up). The note inverts this, glossing vimadān uddhatān as 'опьяневших без меры' (excessively intoxicated) — a factually wrong gloss that reverses the word's actual sense (treats privative vi- as intensive). Core lexical claim is unsound.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 0, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.1.62|parivesa",
+   "verse_id": "5.1.62",
+   "lemma": "parivesa",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "Проверено по dic_mw.jsonl: MW различает pariśeṣa «remainder, remnant» (e99114–99118, от pari+śiṣ) и pariveṣa/pariveśa «halo round the sun or moon» (e98974–98977, от pari+viṣ) — это два разных заголовочных слова с разными согласными (ś vs ṣ) и разной этимологией. Заметка ошибочно сливает их в одну статью «MW: pariṣeṣa — remainder; the circle or halo round sun or moon», приписывая значение «гало» несуществующей комбинированной статье под неверным заголовком. Правильное слово для стиха (pariveṣīva) — pariveṣa, не pariṣeṣa/pariśeṣa. Само толкование «гало» верно по существу, но лексикографическая а",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.2.3|yojana",
+   "verse_id": "5.2.3",
+   "lemma": "yojana",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "MW gives ~9 (or 5) English miles per yojana, so 100 yojanas ≈ 1290-1450 km (or ~800 km on the 5-mile estimate) — the note's '800-900 км (по MW)' figure misattributes an incorrect conversion to MW and the '~500 км' alt figure also conflates miles/km; a false quantitative claim presented as dictionary fact.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.5.9|tantrī",
+   "verse_id": "5.5.9",
+   "lemma": "tantrī",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "tantrī MW gloss ('lute-string') is correct, but the contrasting claim that 'śiras' denotes a bow's gut-string is not an attested Sanskrit lexicographic sense (śiras = 'head') and appears to be an invented distinguishing gloss.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.24.40|yakṛt-plīha",
+   "verse_id": "5.24.40",
+   "lemma": "yakṛt-plīha",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "yakṛtplīhaṃ is in the verse and the liver/spleen anatomical pairing matches MW/Suśruta (blood held to flow from liver and spleen) — that much is faithful. But the leap to 'ritual dismemberment (viviccheda)' as opposed to ordinary eating is an unsupported interpretive claim dressed up with an unattested technical term ('viviccheda' is not a recognized ritual-dismemberment term in the sources cited); presented flatly as fact rather than hedged, this is an overreach that fails the faithfulness gate.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.25.18|dehāntara",
+   "verse_id": "5.25.18",
+   "lemma": "dehāntara",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "dehāntare is verbatim in the verse and deha+antara = 'another body' matches MW exactly (checked in dic_mw.jsonl: 'dehāntara n. another body {MW.}'). However the comparison to a Buddhist technical term 'pudgala-parāvṛtti' is not a recognized/attested Buddhist doctrinal term (standard vocabulary is punarbhava/saṃsāra/pudgala-nairātmya) and reads as an invented-sounding gloss presented as established cross-tradition terminology — fails the faithfulness gate.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.34.1|sāntva",
+   "verse_id": "5.34.1",
+   "lemma": "sāntva",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "sāntva is presented as one of the canonical four rāja-upāya alongside dāna/bheda/daṇḍa, but the standard technical term in that fourfold scheme (Manu 7.109, Kāmandakīya-nītisāra, Arthaśāstra) is sāma, not sāntva — the note conflates a near-synonym with the fixed taxonomic term, a faithfulness overreach that fails the gate even though the general point (Hanumān uses a diplomatic register) is sound.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.35.86|ānandaja jala",
+   "verse_id": "5.35.86",
+   "lemma": "ānandaja jala",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "The tripartite tear-taxonomy (vismayaja/harṣaja/śokaja) is asserted as an established kāvya classification without citation and is not a well-attested textbook scheme; this is an unverifiable, likely invented specificity layered onto an otherwise sound ānanda-vs-harṣa (deeper bliss vs excitement) distinction, and fails the faithfulness gate.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.36.38|śape (mandara … meruṇā … dardureṇa)",
+   "verse_id": "5.36.38",
+   "lemma": "śape (mandara … meruṇā … dardureṇa)",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "śap etymology and the general mountain-oath (parvata-śapatha) idea are fine, but 'Мандара — ось мироздания (мантали-мандара)' misattributes the cosmic-axis role (properly Meru's) to Mandara and uses an unattested term 'мантали'; unverified/garbled claim presented as fact.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=exact"
+   ]
+  },
+  {
+   "key": "V.37.7|saṃvatsara",
+   "verse_id": "5.37.7",
+   "lemma": "saṃvatsara",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "dic_mw confirms saṃvatsara = sam+vatsara (a single lexeme), not the note's invented split 'sam- + vat + sara'; the legal/ritual-deadline reading is valuable but rides on a fabricated morpheme analysis.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.55.28|satya-vākya",
+   "verse_id": "5.55.28",
+   "lemma": "satya-vākya",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "MW gloss and the dharma-triad reading (tapas/satyavākya/ananyatva) are sound, but the note mislabels 'sat' as 'p.p.p. от √as-': sat is the present participle of √as (suffix -ant/-at), not a past passive participle (which would take -ta/-na). A concrete grammatical mislabeling, so faithfulness cannot clear the gate despite the otherwise strong content.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.59.10|astraṃ brāhmaṃ",
+   "verse_id": "5.59.10",
+   "lemma": "astraṃ brāhmaṃ",
+   "verdict": "reject",
+   "judge_verdict": "reject",
+   "disposition": "confirmed",
+   "group": "reject",
+   "reason": "Провален шлюз faithfulness §3.4: выдуманная этимология либо приписанное источнику утверждение, которого в нём нет. Пять таких заявлений перепроверены напрямую по dic_mw.jsonl в этом проходе — все подтвердились.",
+   "judge_reason": "astra (MW) is correctly glossed and the brahma/raudra/vāyavya/vāruṇa list is accurate, but the note's claim that these four astras form 'a catalogue of all the elements (ether+fire+wind+water)' is an invented systematic correspondence — vāyavya=wind and vāruṇa=water are standard, but brahma-astra is not conventionally identified with 'ether' in any dictionary or standard source; this is the drafter's own unattested pattern-imposition, a faithfulness overreach.",
+   "evidence_cited": [
+    "judge=reject",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.17.30|kṣāma",
+   "verse_id": "5.17.30",
+   "lemma": "kṣāma",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "anchor_precheck=absent подтверждён: в V.11.9 (\"anyatrāpi varastrīṇāṃ rūpasaṃlāpaśāyinām / sahasraṃ yuvatīnāṃ tu prasuptam sa dadarśa ha\") нет kṣāma и вообще нет речи об истощении — Хануман видит ещё тысячу спящих красавиц. Заметка о физическом истощении Ситы от горя описывает другую сцену; вероятно, относится к её описанию в ашока-ване (сарга ~15-16). | H276 WS-3b: переякорено V.11.9→V.17.30; tāṃ kṣāmāṃ suvibhaktāṅgīṃ … maithilīm — лемма стоит в стихе, сцена (истощённая Сита в ашока-ване) совпадает с содержанием заметки",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.25.8|vivarṇa",
+   "verse_id": "5.25.8",
+   "lemma": "vivarṇa",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "anchor_precheck=absent подтверждён: в V.11.11 (\"tāsāṃ madhye mahābāhuḥ śuśubhe rākṣaseśvaraḥ / goṣṭhe mahati mukhyānāṃ gavāṃ madhye yathā vṛṣaḥ\") нет vivarṇa — напротив, śuśubhe («сиял») говорит о великолепии Раваны среди женщин, сравниваемого с быком среди коров. Заметка о поблёкшем/обесцвеченном лице (предположительно Ситы) описывает содержание, прямо противоречащее смыслу стиха. Вероятно, относится к описанию Ситы в ашока-ване. | H276 WS-3b: переякорено V.11.11→V.25.8; rākṣasīnāṃ bhayatrastā vivarṇavadanābhavat — лемма стоит в стихе, сцена (побледневшая Сита) совпадает с содержанием заметки",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.16.26|bhūṣaṇa (bhartā paraṃ nāryāḥ)",
+   "verse_id": "5.16.26",
+   "lemma": "bhūṣaṇa (bhartā paraṃ nāryāḥ)",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "Крибе уже почти дословно передаёт весь афоризм («муж – украшение превыше прочих... не сияет»); заметка лишь переоблачает тот же тезис в философскую терминологию ('онтологический ornament') без нового факта — bhūṣaṇa не технический термин, требующий глоссы.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.37.22|saṃtaraṇa",
+   "verse_id": "5.37.22",
+   "lemma": "saṃtaraṇa",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "Leonov's 'пересеку я океан' already fully conveys the verb's content; the 'cosmic-obstacle-crossing' framing is unsupported filler; precheck 'absent' is because the lemma is a noun form while only the verbal form (saṃtariṣyāmi) appears in-verse — same root, so anchoring holds, but there is no independent semantic gain.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.37.39|aṭṭa",
+   "verse_id": "5.37.39",
+   "lemma": "aṭṭa",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "Leonov's translation already lists all three fortification elements ('башнями, стенами и арками'); the note only restates the same three Sanskrit terms without new content.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.14|upavana-khaṇḍa",
+   "verse_id": "5.38.14",
+   "lemma": "upavana-khaṇḍa",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "upa-vana+khaṇḍa correctly parsed but content is thin filler ('высокое kāvya-чувство'); leonov's translation already fully conveys the grove/fragrance imagery, no independent gain.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.21|paryāya",
+   "verse_id": "5.38.21",
+   "lemma": "paryāya",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "pari+√i parsed correctly, but leonov's 'в свою очередь' already gives the exact meaning; the āyurveda/'synonym' aside is true but irrelevant to this verse's sense, not a real gain here.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.57|siṃhaskandha",
+   "verse_id": "5.38.57",
+   "lemma": "siṃhaskandha",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "siṃha+skandha parsed correctly, but leonov's translation already gives the exact calque 'Львиноплечий' — fully duplicative, drafter itself flagged priority low.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.59|vṛddhopasevī",
+   "verse_id": "5.38.59",
+   "lemma": "vṛddhopasevī",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "vṛddha+upasevin parsed correctly, but leonov's translation already reads 'Служащий старшим' verbatim — the dharmic-duty framing adds no independent content.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=exact",
+    "mw_headwords_missing=upasevI"
+   ]
+  },
+  {
+   "key": "V.38.67|aṅgulī",
+   "verse_id": "5.38.67",
+   "lemma": "aṅgulī",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "aṅguli/aṅga link is plausible, but leonov's translation already explains the ring-doesn't-fit detail in full ('ибо не налезал он ему на руку'); the 'humorous/tender' framing is subjective filler, not independent content.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.39.26|vainateyā",
+   "verse_id": "5.39.26",
+   "lemma": "vainateyā",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "Vainateya = Garuḍa correctly glossed, but leonov's own translation already supplies '(Гаруды)' in parens — the note adds no content beyond what the crib already states.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.1.172|tṛtīya",
+   "verse_id": "5.1.172",
+   "lemma": "tṛtīya",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "Разбор tṛtīya сводится к простому счёту («третье дело» = прыжок/Майнака/Сураса) — сама лексема прозрачна и уже передана подстрочником («третье»); перечисление трёх подвигов добавляет минимальный нарративный контекст, но не поднимается до лексической/этимологической глубины (lexical_value=0), а non_triviality не достигает 2, необходимых для сохранения заметки при нулевом lexical_value.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.3.7|kiṅkiṇī",
+   "verse_id": "5.3.7",
+   "lemma": "kiṅkiṇī",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "kiṅkiṇī MW gloss is correct but the crib's own 'звоном колокольчиков' already conveys the full sense; the note's only real addition is a weak onomatopoeic aside and a cross-reference to V.2.17 — content is essentially transparent, short of the bar for lexical_value.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.15.12|puṣpajyotis",
+   "verse_id": "5.15.12",
+   "lemma": "puṣpajyotis",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "anchor_precheck='absent' ложный отрицательный: 'puṣpajyotirgaṇāyutam' в verse_iast содержит компаунд puṣpajyotis. Но крибе уже полностью даёт образ («небо с цветами вместо звёзд»); заметка лишь переоблачает тот же образ в термин 'космологизация' без нового факта — компаунд прозрачен, содержание очевидно из перевода.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.19.20|tapodhanā",
+   "verse_id": "5.19.20",
+   "lemma": "tapodhanā",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "Крибе уже практически дословно даёт компаунд ('богатую тапасом'); заметка лишь называет это 'типологией нищего-аскета' без нового факта — компаунд прозрачен, содержание полностью считывается из перевода.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.36.21|sukha-anūcita / duḥkha-anūcita",
+   "verse_id": "5.36.21",
+   "lemma": "sukha-anūcita / duḥkha-anūcita",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "ucita (√uc 'be accustomed') correctly parsed, but leonov's own translation already states 'привыкший к счастью, непривычный к бедам' verbatim — the gloss's content is fully recoverable from the crib, no independent semantic gain.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.38.25|nāganāsa",
+   "verse_id": "5.38.25",
+   "lemma": "nāganāsa",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "nāga+nāsā parsed correctly (standard kāvya beauty-topos), but leonov's own translation already glosses it in parentheses ('та, чьи бедра подобны хоботу слона') — fully duplicative.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.59.32|mahābhāgā",
+   "verse_id": "5.59.32",
+   "lemma": "mahābhāgā",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "mahābhāga (MW: highly fortunate) is correctly glossed, but the crib already renders 'наделенная великой долей' almost verbatim; the note's only addition is an interpretive 'great fortune implies great trial' gloss, which is transparent/obvious rather than a real etymological or cultural gain (drafter's own priority='low'). lexical_value=0 with non_triviality<2 triggers park.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=exact"
+   ]
+  },
+  {
+   "key": "V.67.10|patatāṃ vara",
+   "verse_id": "5.67.10",
+   "lemma": "patatāṃ vara",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "patatāṃ varaḥ ('best of flying things') is a standard epic bird-epithet, and Leonov's own crib already translates it verbatim as 'лучшим из летающих (птиц)' — the base gloss is fully obvious from the crib. The rank/divine-origin-vs-vermin tension used to motivate Rāma's brahmāstra response is a real but modest added observation (non_triviality 1, not 2), so the transparent-epithet exception does not apply.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 0, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.27.23|karavīra",
+   "verse_id": "5.27.23",
+   "lemma": "karavīra",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "karavīrakṛtasrajaḥ is verbatim in the verse, and the oleander identification is correct — but the crib (leonov_ru) already states essentially the same content verbatim, including Goldman's observation that red garlands in dreams are an ill omen and the oleander identification ('Каравира – красно-белые или красные цветы олеандра'). The only genuinely new fact is that karavīra flowers were offered specifically to Yama, which is real but thin; the bulk of the note restates the crib rather than adding independent value.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.36.13|yugāntāgni",
+   "verse_id": "5.36.13",
+   "lemma": "yugāntāgni",
+   "verdict": "park",
+   "judge_verdict": "park",
+   "disposition": "confirmed",
+   "group": "park",
+   "reason": "Провален шлюз non_triviality: содержание уже дано подстрочником (часто дословно). Не отклоняется — заметка не ложна, а избыточна.",
+   "judge_reason": "Substantially duplicates the co-located cross_text note on the same lemma (yugānta/pralaya, Manu 1.68-73 already cited there in more depth); the only added point ('mērило Рамовой силы') is thin and doesn't clear the redundancy.",
+   "evidence_cited": [
+    "judge=park",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.45.10|māruteśvara",
+   "verse_id": "5.45.10",
+   "lemma": "māruteśvara",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "The lemma_iast 'māruteśvara' is a synthesized label not actually present as a compound anywhere in the verse or even asserted as such in the note body — the verse only has the two separate words 'mārutaḥ prabhuḥ' ('lord/wind, in the sky'), which the note itself (correctly) analyzes. Content is sound (Vāyu-as-lord-of-wind identity play, cloud/wind reversal structure) but the lemma field should be corrected to 'mārutaḥ prabhu' rather than the invented compound.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 1}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.51.5|nīti",
+   "verse_id": "5.51.5",
+   "lemma": "nīti",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Лемма nīti отсутствует в стихе V.51.5 (нарратив об изгнании Рамы в Дандаку по повелению отца, без упоминания нити-жанра); заметка — общее рассуждение о жанре речи Ханумана в гл. 51, правдоподобное для главы в целом, но не верифицируемое именно на этом стихе. Fix: либо обобщить формулировку как относящуюся к структуре речи гл. 51 в целом (не к V.51.5 конкретно), либо перенести к стиху, где лексема nīti/нити-пример действительно представлен.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 1}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.1.144|nāgamātā",
+   "verse_id": "5.1.144",
+   "lemma": "nāgamātā",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Этимологический разбор компаунда nāgamātā (mātā+nāga) обоснован и нетривиален сам по себе, но содержательно (родословная Сурасы, отличие от Кадру) во многом дублирует уже присутствующую cross_text-заметку в other_layer_notes («Сураса родила нагов, Кадру — змей», со ссылкой на Rām. III.14.28). Рекомендация: сократить заметку до разбора самого слова nāgamātā, убрав повтор генеалогии Кадру/Сурасы, уже покрытый соседним слоем.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.55.7|svāmighātaka",
+   "verse_id": "5.55.7",
+   "lemma": "svāmighātaka",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "svāmin+ghātaka gloss and the self-accusation-as-traitor-to-Rāma reading are sound and add real depth over the crib's plain 'губителю своего господина'. Register gate fails on a concrete, fixable defect: the note ends with a stray, meaningless foreign word 'dolce' spliced onto 'предателем' — garbled text that breaks the scholarly Russian register. Fix: delete 'dolce', end the sentence at 'предателем.'.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.61.20|dadhivaktra",
+   "verse_id": "5.61.20",
+   "lemma": "dadhivaktra",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "dadhi+vaktra bahuvrīhi and the mukha/vaktra stylistic-variant point are sound and the vaktra='speaking' connotation is a real reading beyond the crib. But 'которого в гл. 9 этой же главы называют Дадхимукха' is a garbled, self-contradictory citation ('chapter 9 of this same chapter') — fix: replace with a correct cross-reference (the guardian is consistently called Dadhimukha from adhyāya 62 on, e.g. 62.17) or remove the pinpoint claim.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.68.6|duḥkhabhāginī",
+   "verse_id": "5.68.6",
+   "lemma": "duḥkhabhāginī",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "bhāgin < bhāga+-in etymology and MW gloss are correct; the ironic mirror to alpabhāgyā (68.4) and the observation of the triple duḥkha-anaphora in 68.6 are genuine, verse-grounded gains over the подстрочник. But the closing clause ('стирающую эту «кандидата на красоту» до формулы скорби') is garbled/unclear Russian — 'кандидата на красоту' does not parse as sense in context. Fix: drop or rewrite that final clause; the etymological/intertextual core is sound. Exact anchor.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.4.27|vimāna",
+   "verse_id": "5.4.27",
+   "lemma": "vimāna",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "vimāna etymology (vi-√mā) and the Puṣpaka/Kubera backstory are correct and add real content beyond crib's untranslated 'виманами' — but the note contains a stray Devanagari म embedded mid-word ('viमāna', repeated), violating the IAST-only register rule; concrete fix: replace both occurrences with plain 'vimāna'.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.15.41|ābharaṇa",
+   "verse_id": "5.15.41",
+   "lemma": "ābharaṇa",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Идентификация Ситы по украшениям, описанным Рамой, — реальная деталь сверх крибе. Но фраза «функционирует как pramāṇa в судебном смысле» — терминологическая натяжка без текстовой опоры (слово pramāṇa в стихе не встречается); рекомендуется убрать юридическую рамку, оставить культурный факт об украшениях как родовых реликвиях-идентификаторах.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.17.20|kṣīṇapuṇya",
+   "verse_id": "5.17.20",
+   "lemma": "kṣīṇapuṇya",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Доктрина 'звезда падает, когда истощена puṇya' — реальный, задокументированный пуранический мотив, добавляющий смысл сверх крибе. Но точные адреса «Рāмāyaṇa 3.46.26, Mahābhārata 12.310» непроверяемы и поданы без оговорки как установленный факт — риск придуманной ссылки; рекомендуется снять точные номера стихов или заменить на общее «ср. эпическую традицию».",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.18.3|maṅgalavāditra",
+   "verse_id": "5.18.3",
+   "lemma": "maṅgalavāditra",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Царский ритуал утреннего пробуждения музыкой (rājadharma) — реальная деталь сверх крибе. Но точная ссылка «Arthaśāstra 2.20» сомнительна: описание распорядка дня царя традиционно относится к другой части трактата (кн. 1, обязанности царя), а не к разделу 2.20; рекомендуется снять точный номер или проверить издание перед публикацией.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.18.4|srastamālya",
+   "verse_id": "5.18.4",
+   "lemma": "srastamālya",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Формула 'соскользнувшие гирлянды/одежда' как эпический код состояния после ночного пира/сна — реальная конвенция, добавляющая тематический слой (Равана как воплощение kāma). Ссылка «MBh 1.212» непроверяема и подана без оговорки; рекомендуется смягчить/снять точный адрес.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.19.2|kadalī",
+   "verse_id": "5.19.2",
+   "lemma": "kadalī",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Троп 'банан на ветру = хрупкость женщины' хорошо задокументирован в санскритской поэтике; ботаническое объяснение (слоистый ствол) — реальный прирост сверх крибе. Ссылка «MBh 1.123.17» непроверяема и подана как точный факт без оговорки; рекомендуется снять точный адрес или заменить общей формулой.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=exact"
+   ]
+  },
+  {
+   "key": "V.19.9|dhūmaketu",
+   "verse_id": "5.19.9",
+   "lemma": "dhūmaketu",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Классификация Dhūmaketu как tāmasagraha (вредоносной планеты-кометы), предвестника войны/гибели царей — известный астрологический мотив, отсутствующий в крибе. Ссылка «MBh 5.140» непроверяема и подана без оговорки; рекомендуется снять точный адрес.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.26.14|virādha",
+   "verse_id": "5.26.14",
+   "lemma": "virādha",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "virādho is verbatim in the verse. Virādha's identity (rakshasa killed by Rama in Daṇḍaka forest, cursed gandharva Tumburu backstory) is accurate epic lore, and the escalation reading (Virādha as the first of Rama's rakshasa kills, building toward the Janasthāna 14,000) is a genuine addition. Register concern: the coined Latin tag 'ingressus ad conclusionem' is not an attested rhetorical term and reads as pseudo-erudite decoration — fix: drop the invented Latin label, keep the etymology and the escalation observation, which stand on their own.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.28.17|veṇīgrathana",
+   "verse_id": "5.28.17",
+   "lemma": "veṇīgrathana",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Etymology (veṇī+grathana) and the eka-veṇī mourning-hairstyle symbolism are accurate and add real cultural depth absent from the crib's flat 'взяв косу'. Register defect: the note contains a garbled/corrupted token 'экувেṇI' (mixed Bengali vowel sign + IAST) that should read eka-veṇī — concrete fix: replace with 'eka-veṇī (одна коса, знак разлучённой жены)'.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.36.17|dvividha trividha upāya",
+   "verse_id": "5.36.17",
+   "lemma": "dvividha trividha upāya",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Core nitishastra terms (sāman/dāna/daṇḍa/bheda) are accurate, but the note largely overlaps the co-located commentator note (Tilaka/Shiromani) which already gives the specific dvividha/trividha breakdown; trim to keep only the novel 'Sita as informed political agent' framing.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.56.50|dharaṇīdhara",
+   "verse_id": "5.56.50",
+   "lemma": "dharaṇīdhara",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "dharaṇī+dhara tautological etymology (both from √dhṛ) and the 'holder' image are sound, and the observation that the mountain-as-holder itself gets levelled is a real gain. But the lemma is mismatched to the actual verse text: the shloka reads 'dharādharaḥ' (dharā+dhara), not 'dharaṇīdharaḥ' — anchor_precheck correctly flagged this as absent. dharā and dharaṇī are near-synonyms from the same root so the etymological point still holds, but the lemma_iast/compound cited should be corrected to dharā-dhara to match the actual text.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 1}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.61.12|nisarga",
+   "verse_id": "5.61.12",
+   "lemma": "nisarga",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "ni+√sṛj etymology and the dual permission/nature-state reading are sound (MW nisarga: 'giving away, granting... natural state or condition'), and the wordplay reading adds real depth beyond the crib. But the parenthetical '(ср. dharmaśāstric «nisarga права»)' is garbled, unsourced pidgin-Russian/English and breaks the required terse ЛП register — fix: delete or replace with a concrete citation.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.62.7|atisarga",
+   "verse_id": "5.62.7",
+   "lemma": "atisarga",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "ati+√sṛj etymology and MW gloss ('special permission') are correct (verified: dic_mw atisarga = 'act of parting with, dismissal... granting permission, leave'). The dharmaśāstra 'temporary suspension' reading is a legitimate addition beyond the crib. But 'аналог распоряжения о «вольном времени» в армии' is an anachronistic modern-army comparison that breaks the no-essayism/no-anachronism register rule — fix: drop the modern-army analogy.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.62.16|devamārga",
+   "verse_id": "5.62.16",
+   "lemma": "devamārga",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "Verified against dic_mw: the real MW entry for devamārga is 'the way of the gods, the air or sky {Gal.}; = anus {R. v, 61, 4 Sch.}' — no entry for a compound 'dev-mārgadarśana' with gloss 'showing someone the sky, i.e. giving a sound beating' exists; that quoted citation looks fabricated. The underlying insult reading is actually better supported by the real MW note (the euphemistic 'anus' sense recorded at a nearby Rāmāyaṇa V.61.4 scholion) than by the invented compound — fix: replace the fabricated MW quote with the real citation, which if anything strengthens the point.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.62.35|sahasrāṃśusuta",
+   "verse_id": "5.62.35",
+   "lemma": "sahasrāṃśusuta",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "sahasrāṃśu-suta = 'son of the sun' (Sugrīva) is correctly analyzed, and the aṃśu root is honestly hedged with a question mark rather than asserted as fact. But 'иерархический контраст: обезьяна-виноград vs. сын Солнца' is garbled/unparseable Russian ('monkey-grape'?) — fix: repair or remove that clause.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.63.17|vyatikrama",
+   "verse_id": "5.63.17",
+   "lemma": "vyatikrama",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "vi+ati+√kram etymology is correct and the dharmaśāstra vyatikrama/kṛtakārya tension (Manu 7.16, Arthaśāstra 2.1.4) is a real, non-trivial addition. But the text contains a literal corruption — 'марша&нīя' — a garbled fragment (presumably anticipating the next note's 'marṣaṇīya') that must be fixed before this can stand as a clean ЛП note.",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 1, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.68.24|mama pṛṣṭhagata",
+   "verse_id": "5.68.24",
+   "lemma": "mama pṛṣṭhagata",
+   "verdict": "edit",
+   "judge_verdict": "edit",
+   "disposition": "confirmed",
+   "group": "edit",
+   "reason": "Содержание годно, дефект устраним: испорченные символы в русском тексте либо непроверяемая точная ссылка, поданная без оговорки.",
+   "judge_reason": "pṛṣṭha+gata (√gam) etymology is correct, and the cross-reference to Sītā's earlier refusal in 67.38 (yat te pṛṣṭhaṃ siṣeve'ham) — inverted here as Rāma/Lakṣmaṇa's acceptance — is a genuine, verse-grounded intertextual gain. But the label 'naiṣkarmya-sevaka' presented as an established Purāṇic epithet for Hanumān ('в пуранической традиции Хануман — «безвозмездный носитель»') reads as an invented/unattested Sanskrit compound dressed up as received tradition. Fix: drop or explicitly hedge the naiṣkarmya-sevaka claim (or cite where it is attested); the vāhana-inversion observation and the 67.38 cr",
+   "evidence_cited": [
+    "judge=edit",
+    "scores={'faithfulness': 1, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.24.47|piśitāśana",
+   "verse_id": "5.24.47",
+   "lemma": "piśitāśana",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "piśitāśana itself is not literally in this pada (which has mānuṣaṃ māṃsam āsvādya, not the compound), but the epithet exactly matches the scene's content (rākṣasīs about to eat human flesh), so it is contextually apt though textually unverifiable — anchoring capped at 1. piśita+āśana etymology is correct; net-new content beyond the crib's already-explicit 'human flesh' is modest (mainly the ritual-purity framing of rākṣasas as impure), keeping non_triviality and lexical_value moderate rather than high.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 1}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.34.33|krodhapramukta iṣu",
+   "verse_id": "5.34.33",
+   "lemma": "krodhapramukta iṣu",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "krodha as kṣatriya-appropriate righteous battle-fury (not mere 'anger') is standard, though the crib's own 'стрелами, выпущенными в гневе' already conveys much of the surface sense — non-triviality/lexical gain here is modest but real (the dharma-śakti framing).",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.37.5|hata-nau",
+   "verse_id": "5.37.5",
+   "lemma": "hata-nau",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "hata (√han) + nau parsed correctly; 'loss of the vessel of salvation' reading is a modest but genuine gloss beyond leonov's literal simile.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.42.9|lokokti: ahir ahiṃ jānāti",
+   "verse_id": "5.42.9",
+   "lemma": "lokokti: ahir ahiṃ jānāti",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "ahir ahiṃ jānāti: proverb text matches the verse exactly ('ahir eva hy aheḥ pādān vijānāti') and the lokokti/subhāṣita genre identification plus Russian-proverb parallel is a genuine non-trivial addition. The offered root for ahi- (√ah-/√i-) is speculative folk-etymology dressed as an Apte citation and should be softened, but it's a minor aside, not the note's load-bearing claim.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=absent",
+    "mw_headwords_missing=ahiH"
+   ]
+  },
+  {
+   "key": "V.65.19|ugra",
+   "verse_id": "5.65.19",
+   "lemma": "ugra",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "ugra is a common adjective and Leonov's own crib already renders 'ugreṇa tapasā' as 'суровое подвижничество', so the base gloss largely restates the crib. The added value is the interpretive framing of Sītā's suffering as a recognized ascetic category that morally elevates and legally protects her — a real but modest gain, not a rare/technical term in its own right.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.1.174|erāvata",
+   "verse_id": "5.1.174",
+   "lemma": "erāvata",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "Форма в стихе — airāvataniṣevite (айравата), тогда как лемма заметки — erāvata; MW фиксирует только заголовок airāvata (fr. irā-vat), отдельной статьи erāvata в словаре нет. Это вариант огласовки/чтения того же слова (та же мифологема — слон Индры из пахтания океана), не иное слово, поэтому anchoring=2, но лексикографическая атрибуция «MW s.v. erāvata» неточна — стоило дать airāvata.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.7.4|maya",
+   "verse_id": "5.7.4",
+   "lemma": "maya",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "maya MW gloss (Dānava architect) correct; crib already glosses 'самим Майей (архитектором асуров)' parenthetically, so the identification isn't new, but the Indraprastha/underwater-palace mythological cross-references are real added depth.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 1, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.33.26|uttarīya",
+   "verse_id": "5.33.26",
+   "lemma": "uttarīya",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "anchor_precheck said absent, but uttarīyāṇi is present (vihāyottarīyāṇi). uttarīya as a status-marker garment whose removal signals voluntary declassing is accurate and adds a symbolic reading absent from the crib's plain 'верхние одежды'.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.35.11|cāturvarṇya",
+   "verse_id": "5.35.11",
+   "lemma": "cāturvarṇya",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_dup",
+   "reason": "Принято: пометка duplicate — это соседняя заметка ДРУГОГО слоя на ту же лемму, а не второй экземпляр этой.",
+   "judge_reason": "cāturvarṇya as the systemic (not merely enumerative) term for the varṇa order, tied to royal duty, is accurate and adds a constitutional-juridical reading beyond the crib's 'четырех варн'. Distinct in focus from the co-located cross_text/commentator notes on the same lemma cluster.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.35.87|uḍurāṭ",
+   "verse_id": "5.35.87",
+   "lemma": "uḍurāṭ",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "anchor_precheck said absent, but uḍurāṭ is present via sandhi (rāhumukta ivoḍurāṭ = iva+uḍurāṭ). The archaic uḍu- vs common tārā-/nakṣatra-pati register choice is an accurate and genuine stylistic observation beyond the crib's plain 'луна'.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.50.3|Bāṇa",
+   "verse_id": "5.50.3",
+   "lemma": "Bāṇa",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "Генеалогия Баны (сын Бали, тысяча рук, Бхагавата X.62-63) — конкретное небанальное знание; anchor stem (bāṇo).",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 1, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.1.5|dhātu",
+   "verse_id": "5.1.5",
+   "lemma": "dhātu",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_dup",
+   "reason": "Принято: пометка duplicate — это соседняя заметка ДРУГОГО слоя на ту же лемму, а не второй экземпляр этой.",
+   "judge_reason": "Тройная полисемия dhātu (минерал/элемент тела/грамматический корень) подтверждается MW; геологический разбор svabhāvasiddhaiḥ...dhātubhiḥ нетривиален и не дан в подстрочнике («минералами» без разбора этимологии от √dhā).",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.1.67|nau",
+   "verse_id": "5.1.67",
+   "lemma": "nau",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "Индоевропейская этимология nau (лат. navis, греч. naus, *neh₂us) корректна и нетривиальна; отсылка к русск. «навигация» дана как культурно-переводческое примечание (через лат. заимствование), не как прямое родство, — формулировка корректна. Точное вхождение (naur ivāsīt).",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.3.3|śārадāmbuda",
+   "verse_id": "5.3.3",
+   "lemma": "śārадāmbuda",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "anchor_precheck flagged 'absent' but śāradāmbudhara- stands in the verse (lemma spelling ambuda vs verse's ambudhara, same root/sense) — confirmed by inspection. The śārada 'autumn cloud' kāvya-topos (white/high/pure vs dark monsoon clouds) is a well-established convention and adds real depth beyond crib's plain 'осенние облака'.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.5.8|pradoṣa",
+   "verse_id": "5.5.8",
+   "lemma": "pradoṣa",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_dup",
+   "reason": "Принято: пометка duplicate — это соседняя заметка ДРУГОГО слоя на ту же лемму, а не второй экземпляр этой.",
+   "judge_reason": "pradoṣa MW gloss ('first watch of night') correct; the sandhyā-vandana/rākṣasa-activity ritual timing is real content beyond crib's generic 'вечер'.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=stem"
+   ]
+  },
+  {
+   "key": "V.15.25|veṇī",
+   "verse_id": "5.15.25",
+   "lemma": "veṇī",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "Единая коса как знак траура/обета — засвидетельствованный эпический код (ср. Драупади); крибе даёт факт («единственная коса»), но не ритуальный смысл. Якорь (stem) подтверждён — veṇyā в verse_iast.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.27.25|dakṣiṇā-diś",
+   "verse_id": "5.27.25",
+   "lemma": "dakṣiṇā-diś",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "dakṣiṇāṃ diśam is verbatim in the verse. dakṣiṇā as the inauspicious/Yama-associated direction is correct Vedic cosmology, and the donkey (gardabha) as a ritually impure/inauspicious animal is an accurate cultural point. The double death-symbolism (south + donkey) is a genuine cosmological addition beyond the crib's flat 'направлялся на юг'.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.30.17|saṃskṛtā vāc",
+   "verse_id": "5.30.17",
+   "lemma": "saṃskṛtā vāc",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "saṃskṛta < sam-√kṛ etymology is transparent, but the sociolinguistic point (saṃskṛtā vāk vs prākṛta, the dvijāti register-marker in the next śloka) is a genuine, non-obvious addition explaining Hanumān's tactical speech choice, absent from the crib.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent",
+    "mw_headwords_missing=saMskfta"
+   ]
+  },
+  {
+   "key": "V.42.34|dāsa",
+   "verse_id": "5.42.34",
+   "lemma": "dāsa",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "dāsa: MW gloss correct; the bhakti-theological reading of Hanuman's self-identification as dāsa (vs. the older Vedic dāsa='enemy/demon' sense), with the Tulsīdās parallel, is a substantive, defensible interpretive layer well beyond the crib's flat 'слуга.' Lemma (stem) present.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.57.39|ekkaveṇī",
+   "verse_id": "5.57.39",
+   "lemma": "ekkaveṇī",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "veṇī (MW: braid/plait) accurately glossed; the eka-veṇī = ritual-mourning hairstyle reading (cf. Draupadī in the MBh) is real, non-obvious cultural depth the crib's flat 'с одной косой' does not carry. anchor_precheck flags 'absent' but 'ekaveṇīdharā' is plainly present — verified anchored. (Source-tag 'dic_mw:ekazeRi' looks like an SLP1 typo — z should be v — but the note's own content correctly tracks veṇī, not śreṇi, so this does not affect faithfulness.)",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent",
+    "mw_headwords_missing=ekazeRi"
+   ]
+  },
+  {
+   "key": "V.60.15|dik (dakṣiṇā diś)",
+   "verse_id": "5.60.15",
+   "lemma": "dik (dakṣiṇā diś)",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "dakṣiṇā diś (MW: south/right) accurately glossed; the Yama-south-death cosmological association is a well-established classical fact, and reframing the search mission as reaching 'the edge of the realm of death' is real, pointed depth beyond the crib's flat 'самого южного края'. Anchored (dakṣiṇāṃ diśām uttamām).",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.63.23|dakṣiṇā āśā",
+   "verse_id": "5.63.23",
+   "lemma": "dakṣiṇā āśā",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "dakṣiṇa < *deḱs- etymology and IE cognates (Latin dexter, Greek dexios) are correct. The dakṣiṇā diś = Yama's/the dead's direction cosmology (Atharvaveda 18.2.48; MBh 12.321) is a real, verifiable addition that reframes the monkeys' southward mission as a 'return from the land of the dead' — genuine depth absent from the crib.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.64.8|mūrkhatā",
+   "verse_id": "5.64.8",
+   "lemma": "mūrkhatā",
+   "verdict": "accept",
+   "judge_verdict": "keep",
+   "disposition": "confirmed",
+   "group": "keep_anchor",
+   "reason": "Принято вопреки МОЕЙ пометке: лемма в стихе есть — за сандхи, в вариантной основе или внутри композита. Это предел полноты якорного теста, а не дефект заметки.",
+   "judge_reason": "The verse's actual form is 'maurkhyāt' (a cognate abstract of mūrkha), not literally 'mūrkhatā', but the note transparently acknowledges this ('используется maukhya, аналогичная форма'), so this is a citation-form/surface-form mismatch, not a wrong word — the concept is squarely present. The mūrkha < √mūrch ('become stupefied') derivation is a recognized traditional etymology, and pairing ajñāna+maurkhya as a double legal excuse is a real addition.",
+   "evidence_cited": [
+    "judge=keep",
+    "scores={'faithfulness': 2, 'non_triviality': 2, 'lexical_value': 2, 'register': 2, 'anchoring': 2}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.11.6|mālyahīna",
+   "verse_id": "5.11.6",
+   "lemma": "mālyahīna",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "anchor_precheck=absent подтверждён: в V.11.6 (\"murajeṣu mṛdaṅgeṣu celikāsu ca saṃsthitāḥ / tathāstaraṇamukhyeṣu saṃviṣṭāś cāparāḥ striyaḥ\") нет ни mālya, ни hīna — стих описывает спящих на барабанах и покрывалах женщин гарема Раваны (продолжение сцены сарг 9-10), Сита вообще не упомянута. Заметка описывает именно Ситу, лишённую гирлянд, — содержание другой сцены. Судя по мотиву (утрата украшений как маркер горя Ситы), заметка, по всей видимости, относится к описанию Ситы в ашока-ване (более поздняя сарга, ~15-16), а не к сарге 11.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.11.7|dhūmajvāla",
+   "verse_id": "5.11.7",
+   "lemma": "dhūmajvāla",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "anchor_precheck=absent подтверждён: в V.11.7 (\"aṅganānāṃ sahasreṇa bhūṣitena vibhūṣaṇaiḥ / rūpasaṃlāpaśīlena yuktagītārthabhāṣiṇā\") нет ни dhūma, ни jvāla — стих описывает тысячу украшенных женщин, обсуждающих красоту и песни. Заметка про подавленный внутренний огонь (tejas) Ситы не имеет отношения к этому стиху. По содержанию (образ скрытого горя) заметка, вероятно, принадлежит описанию Ситы в ашока-ване, а не сарге 11.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 0}",
+    "anchor=absent",
+    "mw_headwords_missing=DUmajvAla"
+   ]
+  },
+  {
+   "key": "V.11.12|rājīvanetri",
+   "verse_id": "5.11.12",
+   "lemma": "rājīvanetri",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "anchor_precheck=absent подтверждён: в V.11.12 (\"sa rākṣasendraḥ śuśubhe tābhiḥ parivṛtaḥ svayam / kareṇubhir yathāraṇye parikīrṇo mahādvipaḥ\") нет rājīva/netra — стих сравнивает Равану, окружённого жёнами, со слоном среди слоних. Заметка про лотосовые глаза Ситы описывает другую сцену; по содержанию, вероятно, принадлежит её портрету в ашока-ване.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.11.16|śokaparipluta",
+   "verse_id": "5.11.16",
+   "lemma": "śokaparipluta",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "anchor_precheck=absent подтверждён: V.11.16 (\"varāhavādhrīṇasakān dadhisauvarcalāyutān / śalyān mṛgamayūrāṃś ca hanūmān anvavaikṣata\") перечисляет мясные блюда (кабан, носорог с сыром и солью, дикобразы, олени, павлины) — кулинарная сцена пиршественного зала, нет ни śoka, ни paripluta. Заметка о «затопленном скорбью» состоянии (предположительно Ситы) не имеет отношения к этому стиху; вероятно, ошибочно привязана вместо сцены с Ситой в ашока-ване.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.11.21|duḥkha",
+   "verse_id": "5.11.21",
+   "lemma": "duḥkha",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "anchor_precheck=absent подтверждён: V.11.21 (\"pānabhūmir vinā vahniṃ pradīptevopalakṣyate / bahuprakārair vividhair varasaṃskārasaṃskṛtaiḥ\") описывает пиршественный зал, сияющий без огня, — нет duḥkha. Заметка про этимологию страдания не связана с содержанием стиха; заметка о духкхе, вероятно, ошибочно привязана вместо реального фрагмента о горе Ситы.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.11.23|nīlotpala",
+   "verse_id": "5.11.23",
+   "lemma": "nīlotpala",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "anchor_precheck=absent подтверждён: V.11.23 (\"śarkarāsavamādhvīkāḥ puṣpāsavaphalāsavāḥ / vāsacūrṇaiś ca vividhair mṛṣṭās tais taiḥ pṛthakpṛthak\") перечисляет вина и ароматные порошки — нет nīlotpala, нет речи о глазах. Заметка про синий лотос глаз (предположительно Ситы) описывает совершенно другую сцену; вероятно, принадлежит портрету Ситы в ашока-ване.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  },
+  {
+   "key": "V.11.35|śokāgni",
+   "verse_id": "5.11.35",
+   "lemma": "śokāgni",
+   "verdict": "flag_anchor",
+   "judge_verdict": "flag_anchor",
+   "disposition": "confirmed",
+   "group": "flag_anchor",
+   "reason": "Лемма не стоит в этом стихе: судья приводит текст шлоки, независимый перепоиск подтверждает. Содержание заметки при этом обычно верно — требуется перепривязка, а не снятие.",
+   "judge_reason": "anchor_precheck=absent подтверждён: V.11.35 (\"kāś cit kāñcanavarṇāṅgyaḥ pramadā rākṣasālaye / tāsāṃ nidrāvaśatvāc ca madanena vimūrchitam\") описывает золотистокожих женщин дворца, обессиленных сном после любовных утех, — нет śokāgni. Заметка про «огонь скорби», сжигающий Ситу, описывает иную сцену; тематически заметка, вероятно, относится к более поздней сарге (ашока-вана), а не к V.11.35.",
+   "evidence_cited": [
+    "judge=flag_anchor",
+    "scores={'faithfulness': 2, 'non_triviality': 0, 'lexical_value': 0, 'register': 2, 'anchoring': 0}",
+    "anchor=absent"
+   ]
+  }
+ ]
+}

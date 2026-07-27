@@ -10,6 +10,49 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **H1685 (ruling В2): агентная адъюдикация всех воротных очередей Сундараканды —
+  1889/1889 вердиктов с процитированными доказательствами**
+  ([H1685](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1685-Opus_CommentaryStrategies_sundarakanda-queues-b2-adjudication_26.07.26.md),
+  Opus 5 1M `claude-opus-5[1m]`). Отчёт:
+  [docs/SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md).
+  Восемь скриптов `scripts/h1685_*.py` + `build_h1685_spotcheck_sheet.py`; данные в
+  [data/analysis/h1685_adjudication/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/analysis/h1685_adjudication).
+  Итог: accept 1733 · edit 39 · reject 43 · park 26 · flag_anchor 48. Из 838 карточек,
+  уже имевших вердикт Sonnet 5, адъюдикатор согласился с 825 и пересмотрел 13.
+  **Порог отсутствий измерен, а не назначен:** восстановление известных пар
+  конкорданса 600/600, разделение полное (306 из 307 заявленных отсутствий ниже p1
+  распределения заведомо присутствующих) — тем самым выполнен шаг «нечёткое
+  глобальное назначение», помеченный в `data/edition_comparison/README.md` как не
+  сделанный. Найдено: 31 выдуманная этимология/атрибуция в лексике (пять
+  перепроверены прямо по `dic_mw.jsonl`: `vimada` — значение перевёрнуто, `vāyasa`,
+  `karṇikāra`, `koka`, `śātakumbha`), 48 битых якорей (для 10 названа конкретная
+  целевая шлока), карточка на несуществующем стихе 5.41.34 и два молчаливых
+  столкновения ключей, которые дали бы «accept» без записи.
+- **Слепой стратифицированный лист проверки адъюдикатора** —
+  `commentarystrategies-h1685-adjudication-spotcheck_review.html`: 133 карточки
+  вместо 1889 (−93 %), 9 страт риска, размер выборки выведен из условия
+  «нижняя граница Уилсона 95 % при чистой страте = n/(n+z²) ≥ 0.80» ⇒ n = 16.
+  Вердикты адъюдикатора и прежнего судьи на карточках скрыты намеренно.
+
+### Changed
+
+- **`apply_phase2_decisions.py` больше не штампует чужие вердикты именем
+  человека-рецензента.** Если файл решений несёт `gated_by`, стамп берётся оттуда
+  (для H1685 — `агент-адъюдикатор Opus 5 1M …, Wilson-gated`); без ключа поведение
+  прежнее. Ложный провенанс в постоянной гейт-записи — это тот самый
+  «reconstructed-as-recovered» мислейбл, который запрещён org-правилами.
+
+### Fixed
+
+- **Реестр листов занижал человеческую очередь по сноскам в двадцать раз:** 51
+  против фактических 1013 карточек (лист склеивает `candidates` 51 +
+  `single_verse_absences` 123 + `variant_reading_candidates` 839). Лексический лист
+  наоборот завышен: «611+7» дважды считает 7 припаркованных WS-3b, в листе 611.
+  Строки [REVIEW_SHEETS_INDEX.md](https://github.com/gasyoun/Uprava/blob/main/REVIEW_SHEETS_INDEX.md)
+  исправлены; занижение заведено отдельным integrity-issue.
+
 ## [1.13.2] - 2026-07-26
 
 ### Changed
