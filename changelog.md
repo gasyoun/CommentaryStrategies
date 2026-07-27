@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.15.0] - 2026-07-28
+
 ### Added
 
 - **H1685 шаг 8: ремонт механически исправимого остатка адъюдикации —
