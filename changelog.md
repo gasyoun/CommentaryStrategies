@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.14.0] - 2026-07-27
+
 ### Added
 
 - **H1685 (ruling В2): агентная адъюдикация всех воротных очередей Сундараканды —
