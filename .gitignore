@@ -16,3 +16,8 @@ scripts/_rebuild_summary.json
 # Claude Code local/session files (keep tracked .claude/launch.json)
 .claude/settings.local.json
 .claude/worktrees/
+
+# H1685: deterministic intermediates — regenerate with scripts/h1685_adjudicate.py;
+# the audit trail lives in ledger_final.json (every rule row keeps its rule_id + reason).
+data/analysis/h1685_adjudication/ledger.json
+data/analysis/h1685_adjudication/packet_*.json

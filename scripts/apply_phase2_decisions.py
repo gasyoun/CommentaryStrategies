@@ -71,6 +71,13 @@ BATCHES = {
 GATED_BY = "М.Г. (review.html → decisions.json)"
 JUDGE_FLAGGED = {"reject", "park", "flag_anchor"}
 
+# H1685 (ruling В2, MG 26-07-2026): a verdict may now also be cast by an AGENT
+# adjudicator, and such a decisions file declares that in its own `gated_by`.
+# Stamping an agent's verdict with the human reviewer's name would put a false
+# provenance in the permanent gate record — the "reconstructed-as-recovered"
+# mislabel the org integrity rules ban — so the stamp follows the file when it
+# supplies one. Absent that key the behaviour is exactly as before.
+
 
 def split_edit(text):
     """First line/paragraph = note text; the rest = reviewer meta-comment."""
@@ -125,6 +132,9 @@ def main():
     decisions_doc = load(args.decisions)
     decisions = decisions_doc["reviewer_decisions"]
     gated_date = (decisions_doc.get("reviewed_at") or "")[:10]
+    gated_by = decisions_doc.get("gated_by") or GATED_BY
+    if gated_by != GATED_BY:
+        print(f"gated_by: {gated_by}")
 
     batch = args.batch if args.batch != "auto" else detect_batch(decisions)
     cfg = BATCHES[batch]
@@ -175,15 +185,15 @@ def main():
                 "note_ru": note.get("note_ru"),
                 "reject_reason": d.get("reject_reason", ""),
                 "judge": note.get("judge"),
-                "gated_by": GATED_BY, "gated_date": gated_date,
+                "gated_by": gated_by, "gated_date": gated_date,
             })
-            note["gate"] = {"action": "reject", "gated_by": GATED_BY,
+            note["gate"] = {"action": "reject", "gated_by": gated_by,
                             "gated_date": gated_date,
                             "reject_reason": d.get("reject_reason", "")}
             continue
         text, mg_comment = split_edit(d.get("edited_note") or note["note_ru"])
         silently_edited = (action == "accept" and text != note["note_ru"])
-        gate = {"action": action, "gated_by": GATED_BY, "gated_date": gated_date}
+        gate = {"action": action, "gated_by": gated_by, "gated_date": gated_date}
         if mg_comment:
             gate["mg_comment"] = mg_comment
         if silently_edited:
@@ -294,10 +304,10 @@ def main():
     if rejected:
         dump(rej_path, {"_meta": {"generated_by": "scripts/apply_phase2_decisions.py",
                                   "batch": batch,
-                                  "gated_by": GATED_BY, "gated_date": gated_date},
+                                  "gated_by": gated_by, "gated_date": gated_date},
                         "rejected": rejected}, dry)
         print(f"rejected: {len(rejected)} -> {os.path.basename(rej_path)}")
-    cand["_meta"]["status"] = (f"GATED {gated_date} by М.Г.: "
+    cand["_meta"]["status"] = (f"GATED {gated_date} by {gated_by}: "
                                f"{len(accepted)} accepted/edited, "
                                f"{len(rejected)} rejected; accepted notes grafted into "
                                f"per-chapter files by apply_phase2_decisions.py")

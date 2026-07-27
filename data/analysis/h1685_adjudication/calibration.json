@@ -1,0 +1,50 @@
+{
+ "_meta": {
+  "handoff": "H1685",
+  "generated_by": "scripts/h1685_calibrate.py",
+  "seed": 1685,
+  "runtime_s": 1.6
+ },
+ "recovery": {
+  "labelled_positives_total": 2086,
+  "tested": 600,
+  "recovered_top3": 600,
+  "recovery_rate": 1.0,
+  "by_status": {
+   "variant_hit": 305,
+   "identical_hit": 295
+  },
+  "misses_sample": [],
+  "interpretation": "if this is low the global searcher cannot re-find counterparts it is known to have, and no absence verdict may rest on it"
+ },
+ "separation": {
+  "known_present_percentiles": {
+   "p1": 0.267,
+   "p5": 0.4,
+   "p10": 0.5,
+   "p25": 0.625,
+   "p50": 0.75,
+   "p75": 0.875,
+   "p90": 0.917
+  },
+  "claimed_absent_percentiles": {
+   "p1": 0.042,
+   "p5": 0.059,
+   "p10": 0.062,
+   "p25": 0.083,
+   "p50": 0.111,
+   "p75": 0.143,
+   "p90": 0.188
+  },
+  "n_known_present": 600,
+  "n_claimed_absent_verses": 307
+ },
+ "operating_point": {
+  "present_bar_jaccard": 0.4,
+  "absent_bar_jaccard": 0.267,
+  "basis": "p5 / p1 of the best-global-Jaccard of shlokas the concordance already maps to a critical counterpart",
+  "claimed_absent_present": 0,
+  "claimed_absent_borderline": 1,
+  "claimed_absent_absent": 306
+ }
+}
