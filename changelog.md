@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.15.1] - 2026-07-28
+
 ### Fixed
 
 - **Errata к v1.15.0 — две доли внутри H1685-шага 8 были посчитаны на глаз, а не
