@@ -27,8 +27,9 @@ a mechanical one, and it stays with the human.
 Writes data/analysis/h1685_adjudication/repairs.json (the proposal). With
 --apply it edits the canonical records: batch{2,3}_candidates.json for the
 commentary batches, and for the lexical layer ALL THREE of data/lexical/ch{N}.json,
-its WS-3b park data/lexical/ch{N}.qa_removed.json (7 cards live only there —
-omitting it made the repair a silent no-op for them) and the book aggregate
+its WS-3b park data/lexical/ch{N}.qa_removed.json (7 cards live only there, of
+which 1 is repairable — omitting it made that repair a silent no-op) and the
+book aggregate
 data/sundara_commentary_to_add.json, which carry the same note and must not
 drift apart. Every proposed repair must reach a real record: any that lands
 nowhere is printed as a defect instead of being counted as done.
@@ -232,7 +233,8 @@ def main():
 
         # lexical: chapter file, its WS-3b park, and the book aggregate, kept in
         # step. A card parked by H276 WS-3b lives ONLY in ch{N}.qa_removed.json —
-        # omitting that file made the repair a silent no-op for those 7 cards.
+        # 7 such cards, 1 of them repairable (V.11.12|rājīvanetri), and omitting
+        # that file made its repair a silent no-op.
         book_p = os.path.join(DATA, "sundara_commentary_to_add.json")
         docs = {book_p: load(book_p)}                       # path -> loaded doc
         for rep in [x for x in repairs if x["queue"] == "lexical"]:
@@ -283,6 +285,19 @@ def main():
           + ("  [APPLIED]" if args.apply else "  [proposal only — rerun with --apply]"))
     print(f"still unresolved: {len(unresolved)} flag_anchor cards\n")
 
+    # the splits, computed — prose about this pass quotes THESE, never a count
+    # made by eye off the listing below (16/8 and 18/6 were first published as
+    # 15/9 and 17/7 that way)
+    by_how = Counter(r["how"] for r in repairs if r["kind"] == "re-anchor")
+    by_why = Counter(r["why_not_repaired"] for r in unresolved)
+    print("splits — re-anchor by provenance:")
+    for k, v in by_how.most_common():
+        print(f"  {v:>3}  {k}")
+    print("splits — refusal by reason:")
+    for k, v in by_why.most_common():
+        print(f"  {v:>3}  {k}")
+    print()
+
     print("re-anchors:")
     for r in [x for x in repairs if x["kind"] == "re-anchor"]:
         print(f"  {r['queue']:<8} {r['key']:<28} {r['from']} -> {r['to']}   ({r['how']})")
@@ -305,6 +320,8 @@ def main():
                      "applied": bool(args.apply),
                      "proposed": len(repairs), "unresolved": len(unresolved),
                      "by_kind": dict(by_kind),
+                     "splits": {"re_anchor_by_provenance": dict(by_how),
+                                "refusal_by_reason": dict(by_why)},
                      "policy": ("re-anchor only within the same sarga; text repairs "
                                 "only for foreign-script/glued corruption; citations, "
                                 "attributions and register left to the human")},

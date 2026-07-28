@@ -10,6 +10,23 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Fixed
+
+- **Errata к v1.15.0 — две доли внутри H1685-шага 8 были посчитаны на глаз, а не
+  из данных** (Opus 5 1M `claude-opus-5[1m]`). Исправлено по
+  [repairs.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/h1685_adjudication/repairs.json):
+  происхождение целей перепривязки **16 / 8**, а не 15 / 9 (±2-поиск / книжный
+  поиск); причина отказа **18 / 6**, а не 17 / 7 (лемма только в других саргах /
+  неоднозначна внутри сарги). Все итоги (29 починено, 58 отказано, 87 всего,
+  24 + 5 по классам) были и остаются верны — разошлись только внутренние доли.
+  Уточнено и утверждение о парковке WS-3b: карточек, живущих только в
+  `ch{N}.qa_removed.json`, семь, но починка была ровно у одной
+  (`V.11.12|rājīvanetri`), она и была бы молчаливым холостым ходом. Правка
+  разнесена по §9 отчёта, changelog, `.ai_state.md`, комментарию в
+  [issue #56](https://github.com/gasyoun/CommentaryStrategies/issues/56),
+  [PR #120](https://github.com/gasyoun/CommentaryStrategies/pull/120), описанию
+  релиза и строке GTD.
+
 ## [1.15.0] - 2026-07-28
 
 ### Added
@@ -18,11 +35,11 @@ Work not yet on `main` stays under **[Unreleased]**.
   предложение на 29 карточек из 87** (Opus 5 1M `claude-opus-5[1m]`).
   [scripts/h1685_repair.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/h1685_repair.py)
   → [data/analysis/h1685_adjudication/repairs.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/h1685_adjudication/repairs.json).
-  Перепривязка 24 из 48 битых якорей (только внутри той же сарги: 15 целей от
-  поиска ±2, 9 — единственное книжное попадание леммы в своей сарге) +
+  Перепривязка 24 из 48 битых якорей (только внутри той же сарги: 16 целей от
+  поиска ±2, 8 — единственное книжное попадание леммы в своей сарге) +
   раскле́ивание 5 текстовых порч (`viमāna`, `экувেṇī`, `марша&нīя`, `dolce`,
-  `version`). Отказано 58: 17 якорей уводят в другую саргу (научное
-  утверждение, не ремонт), 7 неоднозначны внутри сарги, 34 `edit` — правка
+  `version`). Отказано 58: 18 якорей уводят в другую саргу (научное
+  утверждение, не ремонт), 6 неоднозначны внутри сарги, 34 `edit` — правка
   ссылок/атрибуций/регистра, то есть редакторский акт. `--apply` не запускался:
   ворота §8 закрыты до голосования человека. Раздел §9 отчёта
   [docs/SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md).
