@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.16.0] - 2026-07-28
+
 ### Added
 
 - **H1761 (C1): редакционные правила примечаний Сундараканды + читательский
