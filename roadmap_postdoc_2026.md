@@ -209,7 +209,7 @@ From `mahabharata-nilakantha/MBh-Nalopakhyanam-Nilakantha.md` and `MBh-Ramopakhy
 
 2. **Petrov 1788 text access:** The 1788 text may need OCR from a scan (RSL/NLR digital collection). Confirm availability before committing this to Year 1 pipeline.
 
-3. **Blinderman bibliography:** Full name, exact publication data, and text availability TBC.
+3. ~~**Blinderman bibliography:** Full name, exact publication data, and text availability TBC.~~ **RESOLVED (2026-06-29):** Р. Блиндерман (Радха Блиндерман), М.: Золотой Век, 2016, 3 тт. (т. 1: гл. 1–6); источник корпуса = samskrtam.ru / SamudraManthanam corpus (`bhagavadgita-radha.jsonl`) — see `.ai_state.md`.
 
 4. **samskrtam.ru integration:** The parallel corpus at samskrtam.ru already has Gita in multiple translations. Confirm whether the Gita texts there match the editions in our corpus (especially Sementsov — 1985 vs. 1999²).
 

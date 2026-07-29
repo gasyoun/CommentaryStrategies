@@ -47,7 +47,7 @@
 - [x] **Решение об источнике истины:** генератор пишет в отдельную `pages/` (data-derived таблица), **не затрагивая** рукописные `*_commentary_analysis.html` в корне — они содержательно богаче (см. [pages/README.md](../pages/README.md)).
 - [x] `requirements.txt` создан (единственная третья сторона — `anthropic` для пайплайна).
 - [x] **Корректировка:** «дублирования» `nilakantha_parser.py` не было — файлы различались (scripts/ = 2 КБ заглушка-placeholder, mahabharata-nilakantha/ = 11 КБ стабильный v1.0). Заглушка удалена; канонический — в `mahabharata-nilakantha/`.
-- [ ] CI-job на пересборку pages/ при изменении данных (отдельно)
+- [x] CI-job на пересборку pages/ при изменении данных — `.github/workflows/ci.yml` "Corpus integrity" job runs `build_pages.py` + `git diff --exit-code` on `pages/` (and other generated artifacts) on every push
 
 ### B5. Межкодерская надежность (методологический блокер статей 1–2)
 - [x] Второй кодировщик на полный 300-note gold (6×50) × 2 оси (axis_2, axis_4) — H1469, 24-07-2026: blind LLM Pass B = DeepSeek Chat; Cohen's κ axis_2 = **0.648** [0.571–0.719] agr 77.7 %, axis_4 = **0.521** [0.430–0.608] agr 77.0 %. Цель ≥0.7 / ≥85 % **не достигнута** — закрыто как честный finding по D2/H453 (см. `data/EVAL_RESULTS.md`)
