@@ -111,7 +111,7 @@ Year-1 корпусным планом в [roadmap_postdoc_2026.md §IV](https:/
 - [x] Привязка к четырехосной сетке
 
 ### 4.2 Интеграция с CLR
-- [x] Изучить интерфейс CLR (Corpus Latino-Rossicum) — [docs/CLR_INTERFACE_STUDY.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/CLR_INTERFACE_STUDY.md) (A07, PR TBD): поиск (словоформа/лемма, Quodvis/Omnia), команда, типология Казанского уже сверена в [docs/TYPOLOGY_GREEK_SANSKRIT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/TYPOLOGY_GREEK_SANSKRIT.md); модель парной пагинации — SPA, требует контакта с командой CLR (уже отслеживается в `.ai_state.md`)
+- [x] Изучить интерфейс CLR (Corpus Latino-Rossicum) — [docs/CLR_INTERFACE_STUDY.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/CLR_INTERFACE_STUDY.md) (A07, [PR #125](https://github.com/gasyoun/CommentaryStrategies/pull/125)): поиск (словоформа/лемма, Quodvis/Omnia), команда, типология Казанского уже сверена в [docs/TYPOLOGY_GREEK_SANSKRIT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/TYPOLOGY_GREEK_SANSKRIT.md); модель парной пагинации — SPA, требует контакта с командой CLR (уже отслеживается в `.ai_state.md`)
 - [ ] Адаптировать модель парной пагинации для санскрита
 - [ ] Создать прототип поиска по корпусу
 
