@@ -10,6 +10,7 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.16.1] - 2026-08-01
 ### Added
 
 - **A07 / roadmap §4.2: study of Corpus Latino-Rossicum interface**
