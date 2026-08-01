@@ -10,6 +10,17 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **A07 / roadmap §4.2: study of Corpus Latino-Rossicum interface**
+  (Sonnet 5 `claude-sonnet-5` + Grok 4.5) —
+  [docs/CLR_INTERFACE_STUDY.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/CLR_INTERFACE_STUDY.md):
+  search modes (word-form/lemma, Quodvis/Omnia), ILS RAS team, Kazansky typology
+  cross-link, Next.js/TanStack Query stack, no public REST API; pair-pagination
+  and search prototype remain contact-gated. Ticks
+  [docs/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP.md)
+  §4.2 first checkbox.
+
 ## [1.16.0] - 2026-07-28
 
 ### Added
