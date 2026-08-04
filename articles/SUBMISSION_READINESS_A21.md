@@ -146,7 +146,7 @@ blockers clear. Send is the wrong call today; the fix path is short and fully sp
 
 ---
 
-## Paribok-attribution reframe — 26-07-2026 (Fable 5, `claude-fable-5`, [H1378](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1378-Fable_CommentaryStrategies_a21-a22-convergence-reframe-axis4-wording_20.07.26.md))
+## Paribok-attribution reframe — 26-07-2026 (Fable 5, `claude-fable-5`, [H1378](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1378-Fable_CommentaryStrategies_a21-a22-convergence-reframe-axis4-wording_20.07.26.md))
 
 **Blocker 2 executed** — proceeding without the §5 book check per the H1378 ruling (the
 check's outcome is one-directional: it can only *relax* the new wording, never invalidate

@@ -120,7 +120,7 @@ both files' front-matter.)_
 
 ---
 
-## Addendum — 26-07-2026 (Fable 5, `claude-fable-5`, [H1378](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1378-Fable_CommentaryStrategies_a21-a22-convergence-reframe-axis4-wording_20.07.26.md))
+## Addendum — 26-07-2026 (Fable 5, `claude-fable-5`, [H1378](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1378-Fable_CommentaryStrategies_a21-a22-convergence-reframe-axis4-wording_20.07.26.md))
 
 The Paribok-attribution rewording landed in the RU original (draft v4) and was mirrored
 here in the same pass (translation v2 → v3): abstract, §1, §2.2, §2.3, §3 (canonical

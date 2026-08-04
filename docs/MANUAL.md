@@ -132,7 +132,7 @@ python scripts/apply_apparatus_decisions.py <файл> --reviewer Костина
 3. **Гасунс: проголосовать лист.** Открыть лист из §5 → голосовать (можно частями,
    выбор сохраняется) → «⬇ Скачать» → запустить apply из §6 (или отдать файл агентной
    сессии — стартовая строка в
-   [H276](https://github.com/gasyoun/Uprava/blob/main/handoffs/H276-Fable_CommentaryStrategies_sundara_gates_apply_final_assembly_07.07.26.md)).
+   [H276](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H276-Fable_CommentaryStrategies_sundara_gates_apply_final_assembly_07.07.26.md)).
 4. **Посмотреть, как будет выглядеть книга.** Печатный мастер:
    [data/book/sundarakanda_print_master.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md)
    (+ DOCX рядом); сводка сборки —
