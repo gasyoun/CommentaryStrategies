@@ -70,7 +70,7 @@ MANUAL §5 (открыть локально → ✅/✏️/❌ → «⬇ Ска�
 ## 3. Шаг 2 — применить решения и пересобрать (делегируется целиком)
 
 Четыре `decisions.json` из Downloads отдаете агентной сессии — стартовая
-строка в [H276](https://github.com/gasyoun/Uprava/blob/main/handoffs/H276-Fable_CommentaryStrategies_sundara_gates_apply_final_assembly_07.07.26.md) —
+строка в [H276](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H276-Fable_CommentaryStrategies_sundara_gates_apply_final_assembly_07.07.26.md) —
 или руками по MANUAL §6 (`apply_phase2_decisions.py`, сначала `--dry-run`).
 
 Что надо знать, даже делегируя:
@@ -160,7 +160,7 @@ MANUAL §5 (открыть локально → ✅/✏️/❌ → «⬇ Ска�
 
 | Только Вы | Агентная сессия |
 |---|---|
-| голоса по ~920 карточкам | apply всех `decisions.json` + пересборка + validate ([H276](https://github.com/gasyoun/Uprava/blob/main/handoffs/H276-Fable_CommentaryStrategies_sundara_gates_apply_final_assembly_07.07.26.md)) |
+| голоса по ~920 карточкам | apply всех `decisions.json` + пересборка + validate ([H276](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H276-Fable_CommentaryStrategies_sundara_gates_apply_final_assembly_07.07.26.md)) |
 | рулинги §8.2/§8.7, письма в «Науку» | выгрузка распечатки/DOCX для гейта Л/К |
 | коммуникация с Леоновым/Костиной | починка якоря 5.21.19 после вердикта Леонова |
 | прием их `decisions.json`/помет | вливание недостающих стихов 2/28, когда пришлет Леонов |

@@ -8,8 +8,8 @@ tuning toward the roadmap target.
 
 | Field | Value |
 |---|---|
-| Handoff | [H1469](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1469-Opus_CommentaryStrategies_commentarystrategies-axis2-axis4-blind-annotator-kappa_22.07.26.md) |
-| Pre-registration | [data/iaa/PRE_REGISTRATION_H1469.md](https://github.com/gasyoun/CommentaryStrategies/blob/h1469-axis2-axis4-blind-kappa/data/iaa/PRE_REGISTRATION_H1469.md) (committed **before** the five missing Pass-B runs) |
+| Handoff | [H1469](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1469-Opus_CommentaryStrategies_commentarystrategies-axis2-axis4-blind-annotator-kappa_22.07.26.md) |
+| Pre-registration | [data/iaa/PRE_REGISTRATION_H1469.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/iaa/PRE_REGISTRATION_H1469.md) (committed **before** the five missing Pass-B runs) |
 | Codebook | [prompts/classify_note.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/prompts/classify_note.md), human sheet [sources/B5_ANNOTATION_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/sources/B5_ANNOTATION_GUIDE.md) |
 | Pass A | Human gold `data/{translator}_markup_50.json` |
 | Pass B | Blind LLM — **DeepSeek Chat** (`deepseek-chat`) via OpenAI-compatible API; `scripts/annotate_batch.py` reading label-free `sources/{translator}_notes.json` |

@@ -26,7 +26,7 @@ _Created: 10-07-2026 · Last updated: 11-07-2026_
 — завершение тройки ролевых руководств (H497 Леонов, H517 Костина).
 Фактура — [issue №56](https://github.com/gasyoun/CommentaryStrategies/issues/56),
 [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md) §4–§8,
-[H276](https://github.com/gasyoun/Uprava/blob/main/handoffs/H276-Fable_CommentaryStrategies_sundara_gates_apply_final_assembly_07.07.26.md).
+[H276](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H276-Fable_CommentaryStrategies_sundara_gates_apply_final_assembly_07.07.26.md).
 
 ## Бэклог улучшений (ранжирован)
 

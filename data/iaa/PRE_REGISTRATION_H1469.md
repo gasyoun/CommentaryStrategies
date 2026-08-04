@@ -6,7 +6,7 @@ _Created: 24-07-2026 · Last updated: 24-07-2026_
 translators lacking a second pass. Kalyanov already has a committed DeepSeek
 Pass B (`data/kalyanov_full.json`); that artifact is re-used, not re-tuned.
 
-**Handoff:** [H1469](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1469-Opus_CommentaryStrategies_commentarystrategies-axis2-axis4-blind-annotator-kappa_22.07.26.md)
+**Handoff:** [H1469](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1469-Opus_CommentaryStrategies_commentarystrategies-axis2-axis4-blind-annotator-kappa_22.07.26.md)
 **Protocol:** [PROTOCOL_BLIND_LLM_SECOND_ANNOTATOR_RELIABILITY_2026.md](https://github.com/gasyoun/Uprava/blob/main/docs/PROTOCOL_BLIND_LLM_SECOND_ANNOTATOR_RELIABILITY_2026.md)
 (org C3 discipline; ruling D2 — agent-run blind LLM second annotator)
 

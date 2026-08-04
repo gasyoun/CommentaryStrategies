@@ -6,7 +6,7 @@ _Created: 21-07-2026 · Last updated: 21-07-2026_
 серии, ссылающаяся на «17 863 примечания», обязана быть совместима с этим документом; источник
 формулировки — [tronsky-XXX/article_current.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/tronsky-XXX/article_current.md)
 (A24, §1), где сверка была впервые проведена. Пропагация по статьям выполнена в рамках
-[H1377](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1377-Fable_CommentaryStrategies_a19-a23-canonical-corpus-composition-17863_20.07.26.md).
+[H1377](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1377-Fable_CommentaryStrategies_a19-a23-canonical-corpus-composition-17863_20.07.26.md).
 
 ## Каноническая формулировка
 

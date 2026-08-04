@@ -83,7 +83,7 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 - **H1685 (ruling В2): агентная адъюдикация всех воротных очередей Сундараканды —
   1889/1889 вердиктов с процитированными доказательствами**
-  ([H1685](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1685-Opus_CommentaryStrategies_sundarakanda-queues-b2-adjudication_26.07.26.md),
+  ([H1685](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1685-Opus_CommentaryStrategies_sundarakanda-queues-b2-adjudication_26.07.26.md),
   Opus 5 1M `claude-opus-5[1m]`). Отчёт:
   [docs/SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md).
   Восемь скриптов `scripts/h1685_*.py` + `build_h1685_spotcheck_sheet.py`; данные в
@@ -127,7 +127,7 @@ Work not yet on `main` stays under **[Unreleased]**.
 ### Changed
 
 - **A21+A22: P/K/D convergence reframed, Paribok-taxonomy mislabel stripped
-  ([H1378](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1378-Fable_CommentaryStrategies_a21-a22-convergence-reframe-axis4-wording_20.07.26.md),
+  ([H1378](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1378-Fable_CommentaryStrategies_a21-a22-convergence-reframe-axis4-wording_20.07.26.md),
   Fable 5 `claude-fable-5`).** Both Nīlakaṇṭha manuscripts (RU v4 + EN translation v3, in
   lockstep) now carry the canonical `AXIS4_KD_DECISION.md` §2 provenance: the P/K/D scale
   is the project's operational note-depth scale, built on the model of Paribok's tripartite

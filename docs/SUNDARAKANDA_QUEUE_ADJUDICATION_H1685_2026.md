@@ -7,7 +7,7 @@ _Created: 27-07-2026 · Last updated: 28-07-2026_
 слепая выборочная проверка **адъюдикатора**, а не повторное решение карточек.
 
 - **Мандат:** ruling В2 (М.Г., 26-07-2026), [VOTING_SHEET_SCREENING_AUDIT_26-07-2026.md §11](https://github.com/gasyoun/Uprava/blob/main/docs/VOTING_SHEET_SCREENING_AUDIT_26-07-2026.md)
-- **Хэндофф:** [H1685](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1685-Opus_CommentaryStrategies_sundarakanda-queues-b2-adjudication_26.07.26.md)
+- **Хэндофф:** [H1685](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1685-Opus_CommentaryStrategies_sundarakanda-queues-b2-adjudication_26.07.26.md)
 - **Адъюдикатор:** Opus 5 1M (`claude-opus-5[1m]`)
 - **Проверяемый прежний судья:** Sonnet 5 (`claude-sonnet-5`), проходы H268 WS-C1 и H276 WS-2 от 07-07-2026
 

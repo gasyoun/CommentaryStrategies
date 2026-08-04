@@ -20,7 +20,7 @@ _Created: 27-07-2026 · Last updated: 27-07-2026_
 
 ## Провенанс
 
-- **Хэндофф:** [H1685](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1685-Opus_CommentaryStrategies_sundarakanda-queues-b2-adjudication_26.07.26.md), ruling В2 (М.Г., 26-07-2026).
+- **Хэндофф:** [H1685](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1685-Opus_CommentaryStrategies_sundarakanda-queues-b2-adjudication_26.07.26.md), ruling В2 (М.Г., 26-07-2026).
 - **Адъюдикатор и автор отчёта:** Opus 5 1M (`claude-opus-5[1m]`), 27-07-2026.
 - **Проверяемый судья:** Sonnet 5 (`claude-sonnet-5`), проходы H268 WS-C1 / H276 WS-2 (07-07-2026).
 - **Предшественник по форме:** [H1657](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1657-Opus_SanskritLexicography_acc-ncc-p2-agent-adjudication-49k_26.07.26.md) (ACC×NCC, 49 019 строк).
