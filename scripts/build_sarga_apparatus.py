@@ -30,6 +30,9 @@ import os
 import re
 import json
 import glob
+import argparse
+
+import gate_ledger
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
@@ -56,6 +59,10 @@ LAYER_LABEL = {
 }
 LAYER_ORDER = ["tier1", "lexical", "phase2", "edition", "crosstext"]
 COMM_LABEL = {"tilaka": "Тилака", "bhusana": "Бхушана", "siromani": "Широмани"}
+# ASCII slugs for per-reviewer output filenames (Cyrillic names in paths are a
+# portability hazard on Windows/CI, and the download filename must round-trip).
+REVIEWER_SLUG = {"Леонов": "leonov", "Костина": "kostina", "Гасунс": "gasuns",
+                 "М.Г.": "mg"}
 
 
 def shloka_to_vid(shloka):
@@ -269,47 +276,63 @@ def coverage_map(verses):
 def load_gate_ledger():
     """Human final-assembly gate overlay (scripts/apply_apparatus_decisions.py).
 
-    id {layer}:{verse_id}:{idx} -> {action, reviewer, gated_date, edited_note?,
-    reject_reason?}. Empty when no sarga has been gated yet.
+    id {layer}:{verse_id}:{idx} -> {layer, verse_id, lemma_iast,
+    verdicts: {reviewer: {action, gated_date, edited_note?, reject_reason?}}}.
+    Empty when no sarga has been gated yet. v1 ledgers upgrade on read.
     """
-    if not os.path.exists(GATE_LEDGER):
-        return {}
-    with open(GATE_LEDGER, encoding="utf-8") as fh:
-        return json.load(fh).get("entries", {})
+    return gate_ledger.load(GATE_LEDGER).get("entries", {})
 
 
-def apply_gate(note, ledger):
-    """Overlay a reviewer's gate verdict onto a freshly built apparatus note.
+ACTION_LABEL = {"accept": "принято", "edit": "правлено", "reject": "отклонено"}
 
-    accept -> «принято <reviewer>»; edit -> reviewer text + «правлено»;
-    reject -> «отклонено <reviewer>» + gate_rejected flag (kept, not dropped, so
-    stats stay stable and the book build can exclude). Gated notes lose their
-    vote control (votable=False). No-op for un-gated ids.
+
+def apply_gate(note, ledger, for_reviewer=None):
+    """Overlay the recorded gate verdicts onto a freshly built apparatus note.
+
+    Every reviewer's verdict is shown («принято: Леонов (2026-07-11)»), and an
+    `edit` carries that reviewer's text. With `for_reviewer` set the sheet is
+    built FOR that person: their own verdict suppresses the control (they already
+    voted), a colleague's does not — the second gatekeeper must still be able to
+    vote on the same card, now seeing what the first decided. Ruling R1 gives the
+    assembly two gatekeepers; the old code dropped the control on the first
+    verdict of ANY reviewer, which made a second ballot impossible to collect
+    (H2574).
     """
-    g = ledger.get(note["id"])
-    if not g:
+    vs = (ledger.get(note["id"]) or {}).get("verdicts") or {}
+    if not vs:
         return note
-    action = g.get("action")
-    who = g.get("reviewer", "")
-    when = g.get("gated_date", "")
-    note["gate"] = {k: g[k] for k in ("action", "reviewer", "gated_date",
-                                      "reject_reason") if g.get(k)}
-    if action == "accept":
-        note["status"] = f"принято: {who} ({when})"
-    elif action == "edit":
-        if g.get("edited_note"):
-            note["note_ru"] = g["edited_note"]
-            note["gate"]["edited_note"] = g["edited_note"]
-        note["status"] = f"правлено: {who} ({when})"
-    elif action == "reject":
-        note["status"] = f"отклонено: {who} ({when})"
+    note["gate_verdicts"] = {
+        r: {k: v[k] for k in ("action", "gated_date", "edited_note",
+                              "reject_reason") if v.get(k)}
+        for r, v in vs.items()
+    }
+    note["status"] = " · ".join(
+        f"{ACTION_LABEL.get(v.get('action'), v.get('action', ''))}: "
+        f"{r} ({v.get('gated_date', '')})"
+        for r, v in sorted(vs.items()))
+    # An `edit` supplies replacement text. With a reviewer in view, prefer a
+    # COLLEAGUE's edit so the ballot shows the text actually under discussion.
+    edits = [(r, v["edited_note"]) for r, v in sorted(vs.items())
+             if v.get("action") == "edit" and v.get("edited_note")]
+    if edits:
+        pick = next((t for r, t in edits if r != for_reviewer), edits[0][1])
+        note["note_ru"] = pick
+    if all(v.get("action") == "reject" for v in vs.values()):
         note["gate_rejected"] = True
-    note["votable"] = False
+    # Backwards-compatible single-verdict view for any consumer still reading it.
+    first_r, first_v = sorted(vs.items())[0]
+    note["gate"] = {"action": first_v.get("action"), "reviewer": first_r,
+                    "gated_date": first_v.get("gated_date", "")}
+    if for_reviewer is None:
+        note["votable"] = False                  # neutral build: read-only
+    elif for_reviewer in vs:
+        note["votable"] = False                  # this reviewer already voted
+    # else: colleague voted, this reviewer has not -> control stays live
     return note
 
 
 def build_sarga(sarga, seg, seg_idx, leonov, lexical, pilot, edition, crosstext,
-                gate=None):
+                gate=None, for_reviewer=None):
     verses = sorted((v for v in seg["verses"] if v["sarga"] == sarga),
                     key=lambda v: int(v["verse"]) if str(v["verse"]).isdigit() else 0)
     cov = coverage_map(verses)
@@ -357,7 +380,7 @@ def build_sarga(sarga, seg, seg_idx, leonov, lexical, pilot, edition, crosstext,
                 if anchor != vid:
                     note["anchor_verse_id"] = anchor
                 if gate:
-                    apply_gate(note, gate)
+                    apply_gate(note, gate, for_reviewer=for_reviewer)
                 notes.append(note)
                 stats[layer] += 1
         if not notes:
@@ -396,27 +419,58 @@ def build_sarga(sarga, seg, seg_idx, leonov, lexical, pilot, edition, crosstext,
 
 
 def main():
-    args = [int(a) for a in sys.argv[1:]] or [35, 36, 37]
+    ap = argparse.ArgumentParser(
+        description="Build the per-sarga combined apparatus (5 sources). With "
+                    "--reviewer, build a ballot FOR that gatekeeper: their own "
+                    "recorded verdicts are shown read-only, a colleague's are "
+                    "shown but stay votable (ruling R1 = two gatekeepers).")
+    ap.add_argument("sargas", nargs="*", type=int,
+                    help="sarga numbers (default: 35 36 37)")
+    ap.add_argument("--reviewer", default=None,
+                    help="build for this gatekeeper, e.g. Костина / Леонов")
+    ap.add_argument("--suffix", default=None,
+                    help="output filename suffix (default: derived from "
+                         "--reviewer, e.g. sarga_01_kostina.html)")
+    args = ap.parse_args()
+
+    sargas = args.sargas or [35, 36, 37]
+    who = args.reviewer
+    suffix = args.suffix
+    if suffix is None and who:
+        suffix = "_" + REVIEWER_SLUG.get(who, re.sub(r"\W+", "", who.lower()))
+    suffix = suffix or ""
+
     os.makedirs(OUTDIR, exist_ok=True)
     seg, seg_idx, leonov, lexical, pilot, edition, crosstext = load_sources()
     gate = load_gate_ledger()
-    for sarga in args:
+    if who:
+        print(f"building FOR reviewer: {who}"
+              + (f" (suffix {suffix})" if suffix else ""))
+    for sarga in sargas:
         data = build_sarga(sarga, seg, seg_idx, leonov, lexical, pilot,
-                           edition, crosstext, gate=gate)
-        jpath = os.path.join(OUTDIR, f"sarga_{sarga:02d}.json")
+                           edition, crosstext, gate=gate, for_reviewer=who)
+        if who:
+            data["_meta"]["built_for_reviewer"] = who
+        jpath = os.path.join(OUTDIR, f"sarga_{sarga:02d}{suffix}.json")
         with open(jpath, "w", encoding="utf-8") as fh:
             json.dump(data, fh, ensure_ascii=False, indent=2)
         payload = dict(data)
         payload["labels"] = COMM_LABEL
         blob = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
         html = (PAGE.replace("/*DATA*/null", blob)
-                    .replace("{SARGA}", str(sarga)))
-        hpath = os.path.join(OUTDIR, f"sarga_{sarga:02d}.html")
+                    .replace("{SARGA}", str(sarga))
+                    .replace("{REVIEWER}", who or "")
+                    .replace("{VKEY}", (suffix or "_all").lstrip("_"))
+                    .replace("{VSUF}", suffix))
+        hpath = os.path.join(OUTDIR, f"sarga_{sarga:02d}{suffix}.html")
         with open(hpath, "w", encoding="utf-8") as fh:
             fh.write(html)
         m = data["_meta"]
+        votable = sum(1 for v in data["verses"] for n in v["notes"]
+                      if n.get("votable"))
         print(f"sarga {sarga}: {m['verses_with_notes']}/{m['verses_total']} verses "
-              f"with notes, by layer {m['notes_by_layer']} -> {hpath}")
+              f"with notes, by layer {m['notes_by_layer']}, votable {votable} "
+              f"-> {hpath}")
 
 
 PAGE = r"""<!DOCTYPE html>
@@ -475,6 +529,12 @@ background:#eee5d3;color:var(--acc);margin-right:5px;white-space:nowrap}
 .collide{font:12px system-ui,sans-serif;background:#fff0f0;border:1px dashed var(--no);
 color:var(--no);border-radius:5px;padding:3px 8px;margin:6px 0 0;display:inline-block}
 .meta{font:12px system-ui,sans-serif;color:var(--mut);margin-top:4px}
+.colleague{font:12px system-ui,sans-serif;background:#eef4fa;border:1px solid #b9d0e6;
+border-radius:5px;padding:5px 9px;margin:6px 0 0}
+.colleague b{color:#2e5d7d}
+.colleague .was{display:block;color:var(--mut);font-style:italic;margin-top:2px}
+.mine{font:12px system-ui,sans-serif;background:#eef7ee;border:1px solid #b9dbb9;
+border-radius:5px;padding:5px 9px;margin:6px 0 0;color:#2e7d32}
 .par{background:#f2f7f4;border-radius:5px;padding:6px 10px;margin:6px 0 0;font-size:13px}
 .par .sa{font-style:italic}
 details{margin:6px 0 0;font-size:13px}
@@ -499,12 +559,16 @@ border-radius:5px;margin-top:6px}
 <button onclick="dl()">⬇ Скачать decisions.json</button>
 <button onclick="cp()">⧉ Копировать JSON</button>
 <button onclick="reset()">↺ Сброс</button>
+<span id="whoami"></span>
 <span>Нумерация — южная вульгата (перевод М. Леонова). Голосование сохраняется в браузере (localStorage); ярус 1 — только показ, без голосования.</span>
 </div></header>
 <main class="container"><div id="app"></div></main>
 <script>
 const D = /*DATA*/null;
-const KEY = "sundara_apparatus_s{SARGA}_v1";
+const REVIEWER = "{REVIEWER}";
+// Reviewer-scoped so two gatekeepers voting in the same browser never share
+// (or clobber) one ballot — the localStorage twin of the schema-v2 ledger fix.
+const KEY = "sundara_apparatus_s{SARGA}_{VKEY}_v2";
 const dec = JSON.parse(localStorage.getItem(KEY) || "{}");
 const $ = (h)=>{const t=document.createElement("template");t.innerHTML=h.trim();return t.content.firstChild;};
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
@@ -512,6 +576,26 @@ const STATUS_CLS = s => s==="ожидает гейта М.Г." ? "b-gate" : "b-s
 
 function commBlock(comm){
   return Object.keys(comm||{}).map(c=>`<div class="comm"><span class="who">${D.labels[c]||c}</span><span class="dev">${esc(comm[c])}</span></div>`).join("");
+}
+
+const ACT_RU={accept:"✅ принял",edit:"✏️ правил",reject:"❌ отклонил"};
+
+// Verdicts already in the book-wide ledger (scripts/gate_ledger.json, schema v2).
+// A colleague's is advisory context for the live vote; my own means this card is
+// already cast and its controls are gone.
+function verdictHtml(n){
+  const vs=n.gate_verdicts||{};
+  return Object.keys(vs).sort().map(r=>{
+    const v=vs[r]||{};
+    const act=ACT_RU[v.action]||esc(v.action||"");
+    const when=v.gated_date?` · ${esc(v.gated_date)}`:"";
+    const why=v.reject_reason?`<span class="was">причина: ${esc(v.reject_reason)}</span>`:"";
+    const was=v.edited_note?`<span class="was">его редакция: ${esc(v.edited_note)}</span>`:"";
+    if(REVIEWER&&r===REVIEWER)
+      return `<div class="mine">Ваш голос уже учтён: ${act}${when}${why}${was}</div>`;
+    return `<div class="colleague"><b>${esc(r)}</b> ${act}${when}${
+      REVIEWER?" — ваш голос нужен независимо":""}${why}${was}</div>`;
+  }).join("");
 }
 
 function noteHtml(n,vi,ni){
@@ -539,6 +623,10 @@ function noteHtml(n,vi,ni){
   }
   if(n.source) extra+=`<div class="meta">Источник: ${esc(n.source)}</div>`;
   if((n.source_commentary||[]).length) extra+=`<div class="meta">Комментаторы: ${n.source_commentary.map(c=>D.labels[c]||c).join(", ")}</div>`;
+  // Ruling R1 gives the assembly two gatekeepers, so a colleague's recorded
+  // verdict is shown ON the live card: this reviewer votes knowing it, and
+  // never silently overwrites it (the ledger keys verdicts by reviewer).
+  extra+=verdictHtml(n);
   const collide=n.collision_tier1?`<div class="collide">⚠ на этом стихе уже есть примечание яруса 1 (Леонов/Костина) — см. выше, проверьте на дублирование</div>`:"";
   const controls=n.votable?`
     <div class="controls">
@@ -557,7 +645,16 @@ function render(){
   const app=document.getElementById("app");
   app.innerHTML="";
   const m=D._meta, bl=m.notes_by_layer, L=m.sources;
-  app.appendChild($(`<div class="legend"><b>Песнь ${D.sarga}</b>: стихов ${m.verses_total}, с примечаниями ${m.verses_with_notes}. Слои: <span class="badge b-tier1">${L.tier1}</span> ${bl.tier1} (без голосования) · <span class="badge b-lexical">${L.lexical}</span> ${bl.lexical} · <span class="badge b-phase2">${L.phase2}</span> ${bl.phase2} · <span class="badge b-edition">${L.edition}</span> ${bl.edition} · <span class="badge b-crosstext">${L.crosstext}</span> ${bl.crosstext}. Статус <span class="badge b-gate">ожидает гейта М.Г.</span> — решение по пилоту (H142) ещё не применено.</div>`));
+  const others=[...new Set(D.verses.flatMap(v=>v.notes.flatMap(
+    n=>Object.keys(n.gate_verdicts||{}))))].filter(r=>r!==REVIEWER).sort();
+  const seen=others.length
+    ? ` Синие плашки — уже поданные голоса (${others.map(esc).join(", ")}); ваш голос нужен независимо, он их не затирает.`
+    : "";
+  const gate=bl.phase2
+    ? ` Статус <span class="badge b-gate">ожидает гейта М.Г.</span> у слоя «${esc(L.phase2)}» — решение по пилоту (H142) ещё не применено.`
+    : "";
+  app.appendChild($(`<div class="legend"><b>Песнь ${D.sarga}</b>${
+    REVIEWER?` · ballot для <b>${esc(REVIEWER)}</b>`:""}: стихов ${m.verses_total}, с примечаниями ${m.verses_with_notes}. Слои: <span class="badge b-tier1">${L.tier1}</span> ${bl.tier1} (без голосования) · <span class="badge b-lexical">${L.lexical}</span> ${bl.lexical} · <span class="badge b-phase2">${L.phase2}</span> ${bl.phase2} · <span class="badge b-edition">${L.edition}</span> ${bl.edition} · <span class="badge b-crosstext">${L.crosstext}</span> ${bl.crosstext}.${gate}${seen}</div>`));
   D.verses.forEach((v,vi)=>{
     const card=$(`<div class="vcard"></div>`);
     card.innerHTML=`
@@ -612,16 +709,24 @@ function prog(){
   const r=all.filter(n=>(dec[n.id]||{}).action==="reject").length;
   document.getElementById("progress").innerHTML=`<b>${done}/${all.length}</b> решено · ✅ ${a} · ✏️ ${e} · ❌ ${r}`;
 }
+// `reviewer` is stamped into the export so the file self-attests its author:
+// without it, attribution rested entirely on the --reviewer flag typed at apply
+// time, which is exactly how one gatekeeper's ballot gets filed as the other's.
 function payload(){
-  return JSON.stringify({sarga:D.sarga,generated_by:D._meta.generated_by,
+  return JSON.stringify({sarga:D.sarga,reviewer:REVIEWER,
+    generated_by:D._meta.generated_by,
     decisions:dec,reviewed_at:new Date().toISOString()},null,2);
 }
 function dl(){const b=new Blob([payload()],{type:"application/json"});const u=URL.createObjectURL(b);
-  const a=document.createElement("a");a.href=u;a.download="decisions_sarga_"+D.sarga+".json";a.click();URL.revokeObjectURL(u);}
+  const a=document.createElement("a");a.href=u;
+  a.download="decisions_sarga_"+D.sarga+"{VSUF}.json";a.click();URL.revokeObjectURL(u);}
 function cp(){navigator.clipboard.writeText(payload()).then(()=>alert("JSON скопирован в буфер обмена"));}
 function reset(){if(confirm("Сбросить все решения по этой песни?")){localStorage.removeItem(KEY);for(const k in dec)delete dec[k];render();}}
 // verse_id onto each note for the export
 D.verses.forEach(v=>v.notes.forEach(n=>n.verse_id=v.verse_id));
+document.getElementById("whoami").innerHTML = REVIEWER
+  ? `Голосует: <b>${esc(REVIEWER)}</b>`
+  : `<b>Только просмотр</b> — сборка без --reviewer, голоса не собираются`;
 render();
 </script></body></html>"""
 
