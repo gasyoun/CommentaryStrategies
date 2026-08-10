@@ -10,6 +10,60 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.17.0] - 2026-08-11
+
+### Fixed
+
+- **Tier-2 assembly gate could not hold two reviewers** (H2574, Opus 5
+  `claude-opus-5`) — ruling R1 gives the final book assembly TWO gatekeepers
+  (Leonov **and** Kostina), but
+  [data/apparatus/gate_ledger.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/apparatus/gate_ledger.json)
+  kept one record per apparatus note with `reviewer` as a *field*, merged with
+  `entries.update(...)`. Whoever voted second would have silently **erased** the
+  first reviewer's verdict, and Cohen's κ between the two gatekeepers was not
+  computable because only one verdict ever survived on disk. New schema **v2**
+  ([scripts/gate_ledger.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/gate_ledger.py))
+  nests one verdict per reviewer under `verdicts`; v1 upgrades losslessly (all
+  126 Leonov verdicts of 2026-07-11 preserved verbatim, `ts` included).
+  Registered as [#160](https://github.com/gasyoun/CommentaryStrategies/issues/160).
+- **The second gatekeeper's ballot failed validation outright** — a dry-run of
+  Kostina's votes on sarga 1 died with `decisions on non-votable (tier-1) notes`
+  listing **126 ids, none of them tier-1**.
+  [build_sarga_apparatus.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_sarga_apparatus.py)
+  set `votable=False` on any gated note and
+  [apply_apparatus_decisions.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/apply_apparatus_decisions.py)
+  trusted that flag; the apply side now recomputes eligibility intrinsically
+  (`layer != "tier1"`), and the builder suppresses the control only for the
+  reviewer who already voted. On a rebuild of sarga 1 a second reviewer had
+  **1 live card out of 127**; now 127.
+
+### Added
+
+- **Leonov-aware per-reviewer ballots** —
+  `build_sarga_apparatus.py <N> --reviewer "Костина"` writes
+  `sarga_NN_kostina.html/.json`: a colleague's recorded verdict is shown on the
+  card (blue plaque, their `edited_note` as the text under discussion) while the
+  control **stays live**, so the second gate is independent, not a rubber stamp.
+  Reviewer-scoped `localStorage` key, `reviewer` stamped into the exported
+  payload and download filename (attribution no longer rests on a `--reviewer`
+  flag typed hours later). A build without `--reviewer` is explicitly read-only.
+- **[scripts/gate_reviewer_agreement.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/gate_reviewer_agreement.py)**
+  — inter-reviewer agreement on the assembly gate: overlap, raw agreement,
+  Cohen's κ with bootstrap 95% CI, accept/edit/reject confusion, and every
+  disagreeing note id grouped by layer as an editorial worklist. κ machinery is
+  imported from
+  [scripts/compute_iaa_kappa.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/compute_iaa_kappa.py)
+  (H1469 — same estimator, 2 000 resamples, seed 20260724) so the two IAA
+  surfaces cannot drift. With one reviewer on record it reports the gate as
+  **incomplete** rather than inventing a κ.
+- **[scripts/gate_ledger_selftest.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/gate_ledger_selftest.py)**
+  — 30 checks over the v1→v2 upgrade, non-erasure of a colleague's verdict,
+  legitimate own re-voting, conflict detection (`accept` vs `edit` counts as
+  disagreement), colleague-vs-own control suppression, and unanimous-reject vs
+  split-verdict handling. `--require-agreement` makes disagreement a hard error
+  for callers that want the gate to stop; by default both verdicts are kept side
+  by side and **never** auto-resolved — picking a winner is an editorial act.
+
 ## [1.16.1] - 2026-08-01
 ### Added
 
