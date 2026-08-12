@@ -53,7 +53,7 @@ def main() -> int:
 
     os.environ["LLM_API_KEY"] = key
     os.environ["LLM_BASE_URL"] = os.environ.get("LLM_BASE_URL") or "https://api.deepseek.com"
-    os.environ["LLM_MODEL"] = os.environ.get("LLM_MODEL") or "deepseek-chat"
+    os.environ["LLM_MODEL"] = os.environ.get("LLM_MODEL") or "deepseek-v4-flash"
     os.environ["LLM_BACKEND"] = "openai"
 
     targets = [t.strip() for t in args.only.split(",") if t.strip()] or TRANSLATORS
