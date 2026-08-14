@@ -10,6 +10,23 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **W1 Flash IAA on unlabeled Leonov/Kostina notes** (H2677, Grok 4.6
+  `grok-4.6`) — the six IAA sources are already the gold 300 (0 unlabeled).
+  Remainder: 1058 notes from
+  [data/leonov_own_notes.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/leonov_own_notes.json)
+  labelled with first-party `deepseek-v4-flash` (thinking off + `json_object`)
+  into
+  [data/iaa/flash_w1/leonov_own_flash.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/iaa/flash_w1/leonov_own_flash.json)
+  (1058/1058 schema-valid, $0.559, 1/1059 API errors on the first smoke).
+  Gold `*_full.json` / `*_markup_50.json` SHA-256 unchanged.
+  Driver: `python scripts/run_blind_iaa_pass.py --remainder`. JSONL every call.
+  Inventory:
+  [data/iaa/H2677_UNLABELED_INVENTORY.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/iaa/H2677_UNLABELED_INVENTORY.md).
+  Report:
+  [data/iaa/flash_w1/H2677_W1_CS_REPORT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/iaa/flash_w1/H2677_W1_CS_REPORT.md).
+
 ## [1.17.0] - 2026-08-11
 
 ### Fixed
