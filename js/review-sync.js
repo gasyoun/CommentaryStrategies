@@ -4,7 +4,8 @@ class ReviewSync{
   state(name,detail){this.onState(name,detail||"");}
   async request(path,options){
     if(!this.base)throw new Error("Hosted sync is not configured; local export remains available.");
-    const response=await fetch(this.base+path,Object.assign({credentials:"include",headers:{"content-type":"application/json"}},options||{}));
+    const csrf=(document.cookie.match(/(?:^|; )review_csrf=([^;]+)/)||[])[1];
+    const response=await fetch(this.base+path,Object.assign({credentials:"include",headers:{"content-type":"application/json",...(csrf?{"x-review-csrf":decodeURIComponent(csrf)}:{})}},options||{}));
     const body=await response.json().catch(()=>({}));
     if(!response.ok){const error=new Error(body.error||("HTTP "+response.status));error.status=response.status;error.body=body;throw error;}return body;
   }
