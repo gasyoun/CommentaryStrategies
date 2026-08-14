@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "commentarystrategies-review-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-14",
+  "workers_dev": true,
+  "observability": {"enabled": false},
+  "limits": {"cpu_ms": 10},
+  "d1_databases": [{"binding": "DB", "database_name": "commentary-review-drafts", "database_id": "SET_DURING_FREE_D1_PROVISIONING"}],
+  "vars": {"PAGES_ORIGIN": "https://gasyoun.github.io", "GITHUB_OWNER": "gasyoun", "GITHUB_REPO": "CommentaryStrategies"}
+}

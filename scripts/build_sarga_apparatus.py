@@ -31,6 +31,7 @@ import re
 import json
 import glob
 import argparse
+import hashlib
 
 import gate_ledger
 
@@ -451,13 +452,17 @@ def main():
                            edition, crosstext, gate=gate, for_reviewer=who)
         if who:
             data["_meta"]["built_for_reviewer"] = who
+        source_blob = json.dumps(data["verses"], ensure_ascii=False,
+                                 sort_keys=True, separators=(",", ":"))
+        data["_meta"]["source_hash"] = hashlib.sha256(
+            source_blob.encode("utf-8")).hexdigest()
         jpath = os.path.join(OUTDIR, f"sarga_{sarga:02d}{suffix}.json")
         with open(jpath, "w", encoding="utf-8") as fh:
             json.dump(data, fh, ensure_ascii=False, indent=2)
         payload = dict(data)
         payload["labels"] = COMM_LABEL
         blob = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
-        html = (PAGE.replace("/*DATA*/null", blob)
+        html = (shared_page_template(PAGE).replace("/*DATA*/null", blob)
                     .replace("{SARGA}", str(sarga))
                     .replace("{REVIEWER}", who or "")
                     .replace("{VKEY}", (suffix or "_all").lstrip("_"))
@@ -471,6 +476,34 @@ def main():
         print(f"sarga {sarga}: {m['verses_with_notes']}/{m['verses_total']} verses "
               f"with notes, by layer {m['notes_by_layer']}, votable {votable} "
               f"-> {hpath}")
+
+
+SHARED_BODY = r"""<body>
+<header class="review-header">
+  <div class="breadcrumb"><a href="index.html">Портал рецензирования</a> › песнь {SARGA}</div>
+  <h1>Сундараканда · песнь {SARGA} · бюллетень Костиной</h1>
+  <div class="toolbar">
+    <strong id="progress">—</strong>
+    <span id="sync-status" class="status-pill" role="status" aria-live="polite">local</span>
+    <button id="remote-save" type="button">Сохранить удалённо</button>
+    <button id="download" type="button">Скачать JSON</button>
+    <button id="submit" type="button">Отправить окончательно</button>
+    <span id="sync-detail" class="sync-detail" aria-live="polite"></span>
+  </div>
+</header>
+<main class="container"><div class="review-shell"><noscript>Для голосования нужен JavaScript; данные остаются доступны ниже.</noscript><div id="app"></div></div></main>
+<script>window.APPARATUS_DATA=/*DATA*/null;window.REVIEW_CONFIG={reviewer:"{REVIEWER}",manifestRevision:window.APPARATUS_DATA._meta.source_hash,sourceHash:window.APPARATUS_DATA._meta.source_hash,apiBase:""};</script>
+<script src="../../js/review-sync.js" defer></script>
+<script src="../../js/apparatus-review.js" defer></script>
+</body>"""
+
+
+def shared_page_template(page):
+    """Replace legacy inline ballot code in generated output with shared assets."""
+    page = re.sub(r"<style>.*?</style>",
+                  '<link rel="stylesheet" href="../../css/apparatus-review.css">',
+                  page, count=1, flags=re.S)
+    return re.sub(r"<body>.*?</body>", SHARED_BODY, page, count=1, flags=re.S)
 
 
 PAGE = r"""<!DOCTYPE html>

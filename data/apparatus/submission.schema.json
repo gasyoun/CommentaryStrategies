@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gasyoun.github.io/CommentaryStrategies/data/apparatus/submission.schema.json",
+  "title": "Immutable aggregate apparatus submission",
+  "type": "object",
+  "required": ["schema_version", "reviewer", "manifest_hash", "source_hash", "sargas", "content_hash"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "reviewer": {"const": "Костина"},
+    "manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "client_timestamp": {"type": "string", "format": "date-time"},
+    "sargas": {"type": "array", "minItems": 68, "maxItems": 68},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}
