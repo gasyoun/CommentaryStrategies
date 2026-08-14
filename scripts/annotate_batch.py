@@ -39,6 +39,7 @@ Resumable: skips notes already in the output file (matched by comment_id).
 """
 
 import sys, os, json, re, time, argparse, pathlib
+from datetime import datetime, timezone
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
@@ -60,6 +61,13 @@ VALID_TOPICS   = {"sanskrit_term","myth","context","realia","geography","referen
 VALID_KAZANSKY = {"A","B","V","G"}
 VALID_PARIBOK  = {"P","K","D"}
 VALID_LAKSHANA = {"L1","L2","L3","L4","L5"}
+
+# First-party DeepSeek card in force until 2026-08-16 16:00 UTC
+# (PLAN_DEEPSEEK_ORG_H2_2026.md). Thinking tokens bill as output.
+PRICE_PER_M = {
+    "flash": (0.14, 0.28),
+    "pro": (0.435, 0.87),
+}
 
 
 # ── Prompt loading ─────────────────────────────────────────────────────────────
@@ -147,20 +155,41 @@ class OpenAIBackend:
                   "See docs/ANNOTATION_BACKENDS.md.")
             sys.exit(2)
         self.base_url = base_url or "https://api.openai.com/v1"
+        self.last_usage: dict = {}
         self.client = (openai.OpenAI(api_key=api_key, base_url=base_url)
                        if base_url else openai.OpenAI(api_key=api_key))
 
     def complete(self, system_prompt: str, user_content: str, model: str) -> str:
-        resp = self.client.chat.completions.create(
-            model=model,
-            max_tokens=512,
-            temperature=0,
-            messages=[
+        # deepseek-v4-flash default-on thinking burns max_tokens and leaves
+        # message.content empty (H2677 probe: 512/512 reasoning, finish=length).
+        # Classification wants a JSON object; disable thinking and pin json_object.
+        kwargs = {
+            "model": model,
+            "max_tokens": 512,
+            "temperature": 0,
+            "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_content},
             ],
-        )
-        return (resp.choices[0].message.content or "").strip()
+            "response_format": {"type": "json_object"},
+        }
+        if "deepseek" in (model or "").lower() or "deepseek" in (self.base_url or "").lower():
+            kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
+        resp = self.client.chat.completions.create(**kwargs)
+        usage = getattr(resp, "usage", None)
+        details = getattr(usage, "completion_tokens_details", None) if usage else None
+        self.last_usage = {
+            "prompt_tokens": int(getattr(usage, "prompt_tokens", 0) or 0) if usage else 0,
+            "completion_tokens": int(getattr(usage, "completion_tokens", 0) or 0) if usage else 0,
+            "reasoning_tokens": int(getattr(details, "reasoning_tokens", 0) or 0) if details else 0,
+            "total_tokens": int(getattr(usage, "total_tokens", 0) or 0) if usage else 0,
+            "finish_reason": resp.choices[0].finish_reason if resp.choices else None,
+        }
+        msg = resp.choices[0].message
+        text = (msg.content or "").strip()
+        if not text:
+            text = (getattr(msg, "reasoning_content", None) or "").strip()
+        return text
 
     def preflight(self, model: str) -> str | None:
         o = self._sdk
@@ -218,8 +247,28 @@ def classify_note(backend, system_prompt: str, raw_text: str, translator: str,
 
 # ── Validation & normalisation ─────────────────────────────────────────────────
 
+def price_tier(model: str) -> tuple[float, float]:
+    mid = (model or "").lower()
+    if "pro" in mid:
+        return PRICE_PER_M["pro"]
+    return PRICE_PER_M["flash"]
+
+
+def cost_usd(usage: dict, model: str) -> float:
+    pin, pout = price_tier(model)
+    inn = int(usage.get("prompt_tokens", 0) or 0)
+    out = int(usage.get("completion_tokens", 0) or 0)
+    return (inn * pin + out * pout) / 1_000_000
+
+
+def append_jsonl(path: pathlib.Path, rec: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8", newline="\n") as fh:
+        fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+
 def normalise(raw: str, classification: dict, note_index: int,
-              translator: str) -> dict:
+              translator: str, comment_id: str | None = None) -> dict:
     """Merge raw input fields with classification output; validate; fill defaults."""
     topics   = [t for t in classification.get("axis_1_topic", []) if t in VALID_TOPICS]
     kazansky = classification.get("axis_2_kazansky", "G")
@@ -235,7 +284,7 @@ def normalise(raw: str, classification: dict, note_index: int,
     has_iast = has_iast_regex or classification.get("has_iast", False)
 
     return {
-        "comment_id":               f"{translator}/comment_{note_index:04d}",
+        "comment_id":               comment_id or f"{translator}/comment_{note_index:04d}",
         "translator":               translator,
         "raw_text":                 raw,
         "char_count":               len(raw),
@@ -253,9 +302,11 @@ def normalise(raw: str, classification: dict, note_index: int,
 # ── Pipeline ───────────────────────────────────────────────────────────────────
 
 def run(translator: str, backend_name: str, model: str, limit: int | None,
-        dry_run: bool, sleep: float) -> None:
-    source_file = SOURCES / f"{translator}_notes.json"
-    output_file = DATA    / f"{translator}_full.json"
+        dry_run: bool, sleep: float, source_file=None, output_file=None,
+        jsonl_path=None) -> None:
+    source_file = pathlib.Path(source_file) if source_file else SOURCES / f"{translator}_notes.json"
+    output_file = pathlib.Path(output_file) if output_file else DATA / f"{translator}_full.json"
+    jsonl_file = pathlib.Path(jsonl_path) if jsonl_path else None
 
     if not source_file.exists():
         print(f"ERROR: source file not found: {source_file}")
@@ -298,7 +349,7 @@ def run(translator: str, backend_name: str, model: str, limit: int | None,
     errors = 0
 
     for i, note in enumerate(notes, start=1):
-        cid = f"{translator}/comment_{i:04d}"
+        cid = note.get("comment_id") or f"{translator}/comment_{i:04d}"
         if cid in done_indices:
             continue
 
@@ -311,18 +362,43 @@ def run(translator: str, backend_name: str, model: str, limit: int | None,
 
         try:
             classification = classify_note(backend, system_prompt, raw, translator, model)
-            record = normalise(raw, classification, i, translator)
+            record = normalise(raw, classification, i, translator, comment_id=cid)
             # Carry through optional fields from source
             for field in ("shloka_addr", "editor"):
                 if field in note:
                     record[field] = note[field]
             results.append(record)
+            if jsonl_file is not None:
+                usage = getattr(backend, "last_usage", {}) or {}
+                append_jsonl(jsonl_file, {
+                    "ts": datetime.now(timezone.utc).isoformat(),
+                    "model": model,
+                    "backend": backend_name,
+                    "comment_id": cid,
+                    "translator": translator,
+                    "ok": True,
+                    **usage,
+                    "cost_usd": round(cost_usd(usage, model), 8),
+                })
             print(f"✓ {record['axis_2_kazansky']} {record['axis_4_paribok']}"
                   f"{' FF:' + ','.join(record['false_friends']) if record['false_friends'] else ''}")
         except Exception as e:
             # Fatal config error (bad key/permission) — every remaining call fails
             # identically. Abort now (break, not exit) so the guarded save below
             # preserves whatever already succeeded; the run is resumable.
+            if jsonl_file is not None:
+                usage = getattr(backend, "last_usage", {}) or {}
+                append_jsonl(jsonl_file, {
+                    "ts": datetime.now(timezone.utc).isoformat(),
+                    "model": model,
+                    "backend": backend_name,
+                    "comment_id": cid,
+                    "translator": translator,
+                    "ok": False,
+                    "error": f"{type(e).__name__}: {e}",
+                    **usage,
+                    "cost_usd": round(cost_usd(usage, model), 8),
+                })
             if backend.is_fatal(e):
                 print(f"\nFATAL: {type(e).__name__}: {e}")
                 print("Aborting — fix credentials/permissions, then re-run (resumable).")
@@ -371,6 +447,12 @@ if __name__ == "__main__":
         help="Delay between calls, seconds (raise for low-RPM free tiers). Default 0.2.")
     parser.add_argument("--dry-run", action="store_true",
         help="Print what would be done without calling any API (no key needed).")
+    parser.add_argument("--source", default=None,
+        help="Override sources/{translator}_notes.json (remainder / sidecar runs).")
+    parser.add_argument("--output", default=None,
+        help="Override data/{translator}_full.json. Remainder must not point at gold.")
+    parser.add_argument("--jsonl", default=None,
+        help="Append one JSON object per API call (tokens, $, ok/error).")
     args = parser.parse_args()
 
     backend_name = args.backend or os.environ.get("LLM_BACKEND", "openai")
@@ -379,4 +461,5 @@ if __name__ == "__main__":
         print(f"ERROR: no model for backend {backend_name!r}. Pass --model or set $LLM_MODEL.")
         sys.exit(1)
 
-    run(args.translator, backend_name, model, args.limit, args.dry_run, args.sleep)
+    run(args.translator, backend_name, model, args.limit, args.dry_run, args.sleep,
+        source_file=args.source, output_file=args.output, jsonl_path=args.jsonl)

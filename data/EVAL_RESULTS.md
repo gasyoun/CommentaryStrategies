@@ -173,4 +173,16 @@ python scripts/run_blind_iaa_pass.py --skip-existing
 | Orchestration / adjudication write-up | Grok 4.5 (H1469 session, 24-07-2026); handoff intended executor was Opus 4.8 — session ran on explicit user launch |
 | Kalyanov Pass B | Reused committed `data/kalyanov_full.json` (byte-identical DeepSeek run already on main; not re-tuned) |
 
+---
+
+## H2677 — unlabeled remainder (not a gold re-run)
+
+_Created: 14-08-2026 · Last updated: 14-08-2026_
+
+IAA `sources/{tr}_notes.json` is the gold 300 and was **not** re-labelled.
+Unlabeled machine-readable remainder = 1058 Leonov/Kostina own-apparatus notes
+→ [data/iaa/flash_w1/leonov_own_flash.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/iaa/flash_w1/leonov_own_flash.json)
+(`deepseek-v4-flash`, 1058/1058 schema-valid, $0.559). Sidecar only; no κ re-gate.
+Report: [data/iaa/flash_w1/H2677_W1_CS_REPORT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/iaa/flash_w1/H2677_W1_CS_REPORT.md).
+
 _Dr. Mārcis Gasūns_
