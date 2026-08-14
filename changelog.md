@@ -10,6 +10,7 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.18.0] - 2026-08-14
 ### Added
 
 - **H2736 review platform (Codex GPT-5)** — официальный GitHub Pages-портал
