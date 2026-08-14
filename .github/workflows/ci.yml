@@ -117,3 +117,39 @@ jobs:
             tei/ pages/ visualizations.html \
             data/ramayana_epithets.json data/nilakantha_profile.json data/false_friends_profile.json \
             || { echo "::error::Generated artifacts are stale — re-run the generators and commit."; exit 1; }
+
+  review-platform:
+    name: Review platform contracts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Python contracts and immutable evidence
+        run: |
+          python scripts/gate_ledger_selftest.py
+          python scripts/validate_adjudication_policy.py
+          python scripts/build_apparatus_review_portal.py --check
+          python scripts/validate_apparatus_submission.py tests/fixtures/apparatus_submission_valid.json
+          python scripts/import_apparatus_submission.py tests/fixtures/apparatus_submission_valid.json --dry-run
+          python scripts/build_gate_disagreement_queue.py --check
+          python scripts/review_platform_selftest.py
+          python scripts/validate_submission_changes.py
+      - name: Browser install
+        run: npm ci
+      - name: Chromium install
+        run: npx playwright install --with-deps chromium
+      - name: Browser acceptance
+        run: npx playwright test --project=desktop --project=mobile
+      - name: Worker/D1 acceptance
+        working-directory: review-api
+        run: |
+          npm ci
+          npm test

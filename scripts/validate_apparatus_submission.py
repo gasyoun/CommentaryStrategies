@@ -37,7 +37,8 @@ def validate(doc: dict, manifest: dict | None = None) -> list[str]:
     for entry in manifest["sargas"]:
         ballot = json.loads((MANIFEST.parent / entry["data_url"]).read_text(encoding="utf-8"))
         allowed_by_sarga[entry["sarga"]] = {
-            note["id"]: note for verse in ballot["verses"] for note in verse["notes"]
+            note["id"]: {**note, "verse_id": verse["verse_id"]}
+            for verse in ballot["verses"] for note in verse["notes"]
             if note.get("votable")
         }
     seen: set[str] = set()
