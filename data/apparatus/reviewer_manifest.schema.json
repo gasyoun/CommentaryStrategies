@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gasyoun.github.io/CommentaryStrategies/data/apparatus/reviewer_manifest.schema.json",
+  "title": "CommentaryStrategies reviewer manifest",
+  "type": "object",
+  "required": ["schema_version", "reviewer", "repo_revision", "generated_at", "source_hash", "sargas"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "reviewer": {"const": "Костина"},
+    "repo_revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "source_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sargas": {
+      "type": "array",
+      "minItems": 68,
+      "maxItems": 68,
+      "items": {
+        "type": "object",
+        "required": ["sarga", "url", "data_url", "note_count", "ballot_hash", "source_hash"],
+        "properties": {
+          "sarga": {"type": "integer", "minimum": 1, "maximum": 68},
+          "url": {"type": "string"},
+          "data_url": {"type": "string"},
+          "note_count": {"type": "integer", "minimum": 0},
+          "ballot_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

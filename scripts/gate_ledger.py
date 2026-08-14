@@ -120,5 +120,25 @@ def reviewers(ledger: dict) -> list[str]:
 
 
 def conflict(vs: dict) -> bool:
-    """True when the reviewers who voted did not agree on the action."""
-    return len({v.get("action") for v in vs.values()}) > 1
+    """True when actions differ or two edits propose different text."""
+    signatures = {
+        (v.get("action"), v.get("edited_note", "") if v.get("action") == "edit" else "")
+        for v in vs.values()
+    }
+    return len(signatures) > 1
+
+
+def derived_outcome(vs: dict) -> str:
+    """Conservative, non-destructive outcome for two-reviewer evidence."""
+    actions = [v.get("action") for v in vs.values() if v.get("action")]
+    if len(actions) < 2:
+        return "pending"
+    if any(action == "reject" for action in actions):
+        return "exclude" if len(set(actions)) == 1 else "editorial_queue"
+    if conflict(vs):
+        return "editorial_queue"
+    if set(actions) == {"accept"}:
+        return "eligible"
+    if set(actions) == {"edit"}:
+        return "eligible_edited"
+    return "editorial_queue"

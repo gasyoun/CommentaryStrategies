@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "policy_id": "sundara-review-policy-2026-08-14",
+  "statistical_bar": {"confidence": 0.95, "minimum_lower_bound": 0.95},
+  "classes": [
+    {
+      "id": "dual_accept_exact",
+      "definition": "Both named reviewers accept the same immutable note revision.",
+      "kind": "deterministic",
+      "risk": "low",
+      "action": "auto_apply",
+      "evidence_revision": "gate-ledger-schema-v2",
+      "invariants": {"two_distinct_reviewers": true, "same_note_hash": true, "no_reject": true, "no_edit": true, "reversible": true}
+    },
+    {
+      "id": "dual_reject_exact",
+      "definition": "Both named reviewers reject the same immutable note revision.",
+      "kind": "deterministic",
+      "risk": "low",
+      "action": "auto_exclude",
+      "evidence_revision": "gate-ledger-schema-v2",
+      "invariants": {"two_distinct_reviewers": true, "same_note_hash": true, "both_reject": true, "reversible": true}
+    },
+    {
+      "id": "reviewer_disagreement",
+      "definition": "Actions differ, edit texts differ, or either reviewer vetoes inclusion.",
+      "kind": "editorial",
+      "risk": "high",
+      "action": "human_escalation",
+      "evidence_revision": "gate-ledger-schema-v2",
+      "invariants": {"preserve_all_verdicts": true, "editorial_veto": true, "reversible": true}
+    },
+    {
+      "id": "agent_adjudication_candidate",
+      "definition": "A frozen future agent-derived class; it is ineligible until preregistered blind evidence clears the locked bar.",
+      "kind": "agent",
+      "risk": "high",
+      "action": "human_escalation",
+      "evidence_revision": "none",
+      "sample": {"preregistered": false, "blind": false, "size": 0, "successes": 0, "method": "wilson", "lower_95": 0.0},
+      "audit": {"model": "unassigned", "prompt_revision": "unassigned", "data_revision": "unassigned", "reversible": true}
+    }
+  ]
+}

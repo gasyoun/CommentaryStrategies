@@ -124,6 +124,20 @@ def test_conflict_detection():
     check("accept vs edit -> conflict (different editorial outcome)",
           gate_ledger.conflict({"Леонов": {"action": "accept"},
                                 "Костина": {"action": "edit"}}) is True)
+    check("different edit text -> conflict",
+          gate_ledger.conflict({"Леонов": {"action": "edit", "edited_note": "A"},
+                                "Костина": {"action": "edit", "edited_note": "B"}}) is True)
+    check("identical edit text -> eligible edited",
+          gate_ledger.derived_outcome(
+              {"Леонов": {"action": "edit", "edited_note": "A"},
+               "Костина": {"action": "edit", "edited_note": "A"}}) ==
+          "eligible_edited")
+    check("reject veto -> editorial queue",
+          gate_ledger.derived_outcome(
+              {"Леонов": {"action": "accept"},
+               "Костина": {"action": "reject"}}) == "editorial_queue")
+    check("single reviewer -> pending",
+          gate_ledger.derived_outcome({"Леонов": {"action": "accept"}}) == "pending")
     check("a single verdict is never a conflict",
           gate_ledger.conflict({"Леонов": {"action": "reject"}}) is False)
 
