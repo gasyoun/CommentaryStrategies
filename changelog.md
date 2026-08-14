@@ -10,6 +10,7 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.17.1] - 2026-08-14
 ### Added
 
 - **W1 Flash IAA on unlabeled Leonov/Kostina notes** (H2677, Grok 4.6
