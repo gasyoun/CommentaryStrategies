@@ -1,6 +1,6 @@
 # Метадок: LEONOV_SUNDARAKANDA_GUIDE.md
 
-_Created: 10-07-2026 · Last updated: 12-07-2026 (в интро добавлен указатель на отдельную линию — среду автосносок книг 5–7)_
+_Created: 10-07-2026 · Last updated: 14-08-2026 (общий §5 синхронизирован с Pages-порталом и неизменяемым двойным гейтом)_
 
 Метадок для [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md).
 

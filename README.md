@@ -1,6 +1,6 @@
 # CommentaryStrategies
 
-_Created: 24-04-2026 · Last updated: 11-07-2026_
+_Created: 24-04-2026 · Last updated: 14-08-2026_
 
 Аналитический репозиторий для сравнительного изучения **комментаторских стратегий**
 русских переводчиков санскритских текстов.
@@ -9,7 +9,12 @@ _Created: 24-04-2026 · Last updated: 11-07-2026_
 
 ## Быстрый старт
 
-Открыть [`index.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/index.html) в браузере — сводный анализ шести переводчиков.
+Сводный анализ шести переводчиков: [`index.html`](https://gasyoun.github.io/CommentaryStrategies/).
+
+Официальный интерфейс рецензирования Сундараканды для Е. Костиной:
+[`data/apparatus/`](https://gasyoun.github.io/CommentaryStrategies/data/apparatus/) —
+одна стартовая страница, все 68 песней, локальное возобновление и единый JSON.
+Окончательная отправка всегда выполняется отдельно; локальное сохранение ее не запускает.
 
 ## Документация
 
@@ -120,6 +125,7 @@ python scripts/build_sutra_tm.py --corpus ys --report   # только Йога�
 | [SUNDARA_COMMENTARY_RATIONALE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/SUNDARA_COMMENTARY_RATIONALE.md) | Решебник: почему ЭТИ примечания и почему не другие |
 | [data/sundara_decision_ledger.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara_decision_ledger.json) | Машиночитаемый журнал приема/отклонения |
 | [docs/MANUAL.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md) | Операторский справочник тома: два яруса, конвейер, листы гейтов, apply |
+| [data/apparatus/](https://gasyoun.github.io/CommentaryStrategies/data/apparatus/) | Официальный Pages-портал: 68 бюллетеней Костиной, прогресс, восстановление и единый экспорт |
 | [docs/LEONOV_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) · [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) · [docs/GASUNS_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md) | Три ролевых руководства «что делать именно тебе»: переводчик и литредактор — нетехнический регистр, оркестратор — ранбук критического пути |
 
 ## Воспроизводимость

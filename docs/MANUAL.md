@@ -102,14 +102,25 @@ python scripts/apply_phase2_decisions.py <файл> --dry-run            # ре�
 (сейчас один: 5.21.19 → вероятно, стих 18) скрипт откажется без `--allow-flagged-anchor`.
 После применения — пересборка тремя командами из §4.
 
-**Сборочный гейт (Леонов/Костина, ярус per-sarga аппарата).** Голосование на
-`sarga_NN.html` (все слои, кроме яруса-1) экспортируется отдельным форматом
-(`decisions_sarga_N.json`, ключи `{слой}:{стих}:{idx}`) и применяется своим
-скриптом — не `apply_phase2_decisions.py`:
+**Сборочный гейт (Леонов/Костина, ярус per-sarga аппарата).** Официальная точка
+входа для Костиной — [Pages-портал всех 68 песней](https://gasyoun.github.io/CommentaryStrategies/data/apparatus/).
+Он сохраняет каждый бюллетень локально, показывает общий прогресс и скачивает
+один агрегат. Удаленная синхронизация не заменяет локальную копию, а окончательная
+отправка всегда отдельна и создает новый неизменяемый raw-submission PR.
+
+Одиночный `decisions_sarga_N.json` остается явным legacy-режимом:
 
 ```sh
 python scripts/apply_apparatus_decisions.py votes/decisions_sarga_N.json --reviewer Леонов
 python scripts/apply_apparatus_decisions.py <файл> --reviewer Костина --dry-run   # репетиция
+```
+
+Полный агрегат нельзя делить на 68 вызовов и нельзя атрибутировать флагом CLI:
+
+```sh
+python scripts/validate_apparatus_submission.py votes/submissions/kostina/<файл>.json
+python scripts/import_apparatus_submission.py votes/submissions/kostina/<файл>.json --dry-run
+python scripts/build_gate_disagreement_queue.py
 ```
 
 Скрипт пишет **оверлей-реестр** [data/apparatus/gate_ledger.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/apparatus/gate_ledger.json)
@@ -122,7 +133,7 @@ python scripts/apply_apparatus_decisions.py <файл> --reviewer Костина
 ## 7. Типовые сценарии (use cases)
 
 1. **Леонов: посмотреть песнь N со всем аппаратом.** Открыть
-   [data/apparatus/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/apparatus)`sarga_NN.html`
+   [официальный портал](https://gasyoun.github.io/CommentaryStrategies/data/apparatus/) и выбрать песнь
    — стихи (IAST + подстрочник), все пять слоев примечаний с бейджами провенанса и
    статуса гейта.
 2. **Костина: проверить формат примечаний.** Редполитика — §3
@@ -148,7 +159,7 @@ python scripts/apply_apparatus_decisions.py <файл> --reviewer Костина
 ## 8. Что сейчас блокирует печать (07-07-2026)
 
 1. Четыре листа §5 не проголосованы (М.Г.).
-2. Сборочный гейт Леонова/Костиной не назначен (механизм + срок) — самое длинное звено.
+2. Инфраструктура сборочного гейта готова; остаются человеческие действия: настройки GitHub App/Cloudflare Free, отправка проверенной ссылки Костиной и ее реальные голоса.
 3. Рулинги §8: шаблон/формат ЛП, судьба помет Костиной (~427), бюджет страниц.
 4. Мелочь: недостающие стихи песней 2 (55/58) и 28 (19/20); якорь 5.21.19.
 

@@ -10,6 +10,21 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **H2736 review platform (Codex GPT-5)** — официальный GitHub Pages-портал
+  Костиной для всех 68 песней: общий прогресс, revision-scoped local/offline
+  resume, единый JSON и явная финальная отправка. Общий vanilla-JS/CSS клиент
+  заменяет 68 встроенных копий логики; manifest/build-check детерминирован.
+- Free-only Cloudflare Worker/D1 слой: GitHub OAuth с state+PKCE, allow-list,
+  HttpOnly session + CSRF, optimistic draft versions и GitHub App raw-submission
+  PR. Ни браузер, ни Worker не могут писать schema-v2 ledger; отсутствие Free
+  account/secrets закрывает hosted path, оставляя локальный экспорт рабочим.
+- Строгий raw validator, транзакционный идемпотентный importer, компактная
+  очередь разногласий с reject-veto и versioned policy gate (agent auto-apply
+  только при preregistration и lower 95% bound ≥0.95). Playwright desktop/mobile,
+  Worker failure matrix и обязательный CI закрепляют V1–V14.
+
 ## [1.17.1] - 2026-08-14
 ### Added
 

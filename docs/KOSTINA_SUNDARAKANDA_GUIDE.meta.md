@@ -1,6 +1,10 @@
 # Метадок: KOSTINA_SUNDARAKANDA_GUIDE.md
 
-_Created: 10-07-2026 · Last updated: 11-07-2026_
+_Created: 10-07-2026 · Last updated: 14-08-2026_
+
+Обновление 14-08-2026: §§4–5 переведены с raw-download инструкции на
+официальный 68-песенный Pages-портал; явно разведены локальное сохранение,
+единый резервный JSON, удаленная синхронизация и окончательная отправка.
 
 Метадок для [docs/KOSTINA_SUNDARAKANDA_GUIDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md).
 

@@ -61,7 +61,8 @@ def validate_html_structure(path: Path) -> list[str]:
     return errors
 
 def main():
-    skip_dirs = {'.git', '__pycache__', 'archive', 'महाभारत_files',
+    skip_dirs = {'.git', '__pycache__', 'node_modules', 'test-results',
+                 'playwright-report', 'archive', 'महाभारत_files',
                  'Рамаяна. Книга 5. Сундараканда_files'}
     # Rule-definition docs must quote the forbidden strings in order to define them —
     # don't let the validator flag its own rulebook.
