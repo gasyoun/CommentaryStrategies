@@ -14,6 +14,8 @@ if run.returncode:
 bad=[]
 for line in run.stdout.splitlines():
     status,*paths=line.split("\t")
+    if paths[-1] == "votes/submissions/README.md" and status in {"A", "M"}:
+        continue
     if status!="A" or not paths[-1].endswith(".json"):
         bad.append(line)
 if bad:
