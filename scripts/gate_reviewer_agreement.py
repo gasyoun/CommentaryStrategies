@@ -55,7 +55,7 @@ def collect(ledger: dict) -> tuple[dict, dict]:
     per_note, layer = {}, {}
     for nid, entry in ledger.get("entries", {}).items():
         vs = entry.get("verdicts") or {}
-        acts = {r: v.get("action") for r, v in vs.items() if v.get("action")}
+        acts = {r: v for r, v in vs.items() if v.get("action")}
         if acts:
             per_note[nid] = acts
             layer[nid] = entry.get("layer") or nid.split(":")[0]
@@ -80,7 +80,8 @@ def main() -> int:
     print(f"  ledger entries       : {len(per_note)}")
     print(f"  reviewers on record  : {reviewers or '(none)'}")
     for r in reviewers:
-        c = Counter(a for acts in per_note.values() for who, a in acts.items() if who == r)
+        c = Counter(v.get("action") for acts in per_note.values()
+                    for who, v in acts.items() if who == r)
         print(f"    {r}: {sum(c.values())} verdict(s) · {dict(c)}")
 
     if len(reviewers) < 2:
@@ -100,7 +101,7 @@ def main() -> int:
               "pairs": {}}
 
     for a, b in combinations(reviewers, 2):
-        pairs = [(acts[a], acts[b]) for acts in per_note.values()
+        pairs = [(acts[a].get("action"), acts[b].get("action")) for acts in per_note.values()
                  if a in acts and b in acts]
         overlap = [nid for nid, acts in per_note.items() if a in acts and b in acts]
         print()
@@ -122,8 +123,9 @@ def main() -> int:
 
         disagreements = defaultdict(list)
         for nid in sorted(overlap):
-            x, y = per_note[nid][a], per_note[nid][b]
-            if x != y:
+            av, bv = per_note[nid][a], per_note[nid][b]
+            x, y = av.get("action"), bv.get("action")
+            if gate_ledger.conflict({a: av, b: bv}):
                 disagreements[layer[nid]].append((nid, x, y))
         total_dis = sum(len(v) for v in disagreements.values())
         if total_dis:

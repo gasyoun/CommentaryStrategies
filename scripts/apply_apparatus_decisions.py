@@ -49,6 +49,11 @@ Usage:
   python scripts/apply_apparatus_decisions.py votes/decisions_sarga_1.json \
       --reviewer Леонов [--dry-run] [--require-agreement]
 
+This command is the explicit legacy single-sarga path. Complete authenticated
+68-sarga submissions must go through `validate_apparatus_submission.py` and
+`import_apparatus_submission.py`; do not split an aggregate into 68 invocations
+or trust reviewer identity from a CLI flag.
+
 After a real (non-dry) apply, rebuild the downstream artifacts so the gate shows:
   python scripts/build_sarga_apparatus.py
 """

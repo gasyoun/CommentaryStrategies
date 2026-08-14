@@ -27,7 +27,9 @@ def sha(data: bytes) -> str:
 
 def source_revision() -> tuple[str, str]:
     paths = ["scripts/build_sarga_apparatus.py", "scripts/build_apparatus_review_portal.py",
-             "data/apparatus/gate_ledger.json", "data/analysis/sundara_commentary_segmented.json"]
+             "js/apparatus-review.js", "js/review-portal.js", "js/review-sync.js",
+             "css/apparatus-review.css", "data/apparatus/gate_ledger.json",
+             "data/analysis/sundara_commentary_segmented.json"]
     commit = subprocess.run(["git", "log", "-1", "--format=%H", "--", *paths],
                             cwd=ROOT, check=True, capture_output=True,
                             encoding="utf-8").stdout.strip()
