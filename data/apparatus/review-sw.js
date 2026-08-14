@@ -1,4 +1,4 @@
-"use strict";const CACHE="sundara-review-9831aa74718946f4";const SHELL=["./", "index.html", "reviewer_manifest.json", "review.webmanifest", "../../css/commentary.css", "../../css/apparatus-review.css", "../../js/review-portal.js", "../../js/review-sync.js", "../../js/apparatus-review.js"];
+"use strict";const CACHE="sundara-review-b5cf5fd402212b7a";const SHELL=["./", "index.html", "reviewer_manifest.json", "review.webmanifest", "../../css/commentary.css", "../../css/apparatus-review.css", "../../js/review-portal.js", "../../js/review-sync.js", "../../js/apparatus-review.js"];
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));
 self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
 self.addEventListener("fetch",event=>{if(event.request.method!=="GET")return;event.respondWith(fetch(event.request).then(response=>{const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));return response;}).catch(()=>caches.match(event.request)));});
