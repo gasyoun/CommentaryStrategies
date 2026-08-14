@@ -60,7 +60,7 @@ jobs:
           if [ -f pyproject.toml ]; then pip install -e . || true; fi
       - name: Run pytest
         run: |
-          if [ -d tests ] || [ -d test ] || compgen -G "test_*.py" > /dev/null || compgen -G "*_test.py" > /dev/null; then
+          if find tests test -type f -name 'test_*.py' -print -quit 2>/dev/null | grep -q . || compgen -G "test_*.py" > /dev/null || compgen -G "*_test.py" > /dev/null; then
             pytest -v --tb=short
           else
             echo "::warning::No tests directory or test_*.py files found. Add tests/ to enable test coverage."
@@ -132,6 +132,7 @@ jobs:
         with:
           node-version: "22"
           cache: npm
+          cache-dependency-path: review-tests/package-lock.json
       - name: Python contracts and immutable evidence
         run: |
           python scripts/gate_ledger_selftest.py
@@ -143,10 +144,13 @@ jobs:
           python scripts/review_platform_selftest.py
           python scripts/validate_submission_changes.py
       - name: Browser install
+        working-directory: review-tests
         run: npm ci
       - name: Chromium install
+        working-directory: review-tests
         run: npx playwright install --with-deps chromium
       - name: Browser acceptance
+        working-directory: review-tests
         run: npx playwright test --project=desktop --project=mobile
       - name: Worker/D1 acceptance
         working-directory: review-api

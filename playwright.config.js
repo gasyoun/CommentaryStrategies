@@ -1,2 +1,0 @@
-import {defineConfig,devices} from "@playwright/test";
-export default defineConfig({testDir:"./tests",testMatch:"review-platform.spec.js",fullyParallel:false,retries:0,workers:1,reporter:"line",use:{baseURL:"http://127.0.0.1:4173",trace:"retain-on-failure"},projects:[{name:"desktop",use:{...devices["Desktop Chrome"]}},{name:"mobile",use:{...devices["Pixel 7"]}}],webServer:{command:"python -m http.server 4173 --bind 127.0.0.1",url:"http://127.0.0.1:4173/data/apparatus/",reuseExistingServer:true,timeout:30000}});

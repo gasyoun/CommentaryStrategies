@@ -59,7 +59,8 @@ def build_manifest() -> dict:
                         "data_url": f"sarga_{sarga:02d}_kostina.json",
                         "note_count": len(notes),
                         "votable_count": sum(bool(n.get("votable")) for n in notes),
-                        "ballot_hash": sha(hp.read_bytes()), "source_hash": source_hash})
+                        "ballot_hash": sha(hp.read_text(encoding="utf-8").encode("utf-8")),
+                        "source_hash": source_hash})
     revision, stamp = source_revision()
     return {"schema_version": 1, "reviewer": REVIEWER, "repo_revision": revision,
             "generated_at": stamp, "source_hash": combined.hexdigest(), "sargas": entries}
