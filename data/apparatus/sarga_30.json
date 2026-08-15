@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 30,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 29,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -19,7 +55,8 @@
       "phase2": 5,
       "edition": 0,
       "crosstext": 2
-    }
+    },
+    "source_hash": "9b64bbbef7eab9113e9102373524c535ccfdec949d91bccbff73a2c4a9a9d9e5"
   },
   "sarga": 30,
   "verses": [
@@ -34,6 +71,7 @@
         "siromani": "हनुमद्वृत्तान्तमाह हनूमानित्यादिभिः । विक्रान्तः अतिविक्रमवान् हनूमान् सीतायाः विलापं त्रिजटायाः स्वप्नं राक्षसीनां तर्जितं च सर्वं तत्त्वतः शुश्राव"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "lexical:5.30.1:0",
@@ -42,11 +80,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "tattvataḥ",
-          "note_ru": "Таттватах (tattvataḥ, adv.) — «в истинности, согласно природе вещей, воистину»: tattva n. (tad «то» + суфф. абстракта -tva, «та-кость» = «истинная природа, сущность») + аблативный суфф. -taḥ. MW: tattva n. 'true or real state, truth, reality; the essence or nature of anything'. Термин несёт сāмкхьяическую нагрузку: tattva в Sāṃkhya — «категория реальности» (25 tattva-категорий мироздания). В эпическом контексте tattvataḥ = «как оно есть на самом деле, точно, без искажения». Ханuman śuśrāva tattvataḥ — «услышал в истинном виде»: не просто «слышал», а достиг правильного понимания (правильного tattva-знания). Подстрочник «правдиво/верно» нейтрален; теряется эпистемологический акцент: Хануман прошёл через сомнения и достиг tattvata-знания, что подготавливает его решение.",
+          "note_ru": "Таттватах (tattvataḥ, adv.) — «в истинности, согласно природе вещей, воистину»: tattva n. (tad «то» + суфф. абстракта -tva, «та-кость» = «истинная природа, сущность») + аблативный суфф. -taḥ. MW: tattva n. 'true or real state, truth, reality; the essence or nature of anything'. Термин несёт самкхьяическую нагрузку: tattva в Sāṃkhya — «категория реальности» (25 tattva-категорий мироздания). В эпическом контексте tattvataḥ = «как оно есть на самом деле, точно, без искажения». Hanuman śuśrāva tattvataḥ — «услышал в истинном виде»: не просто «слышал», а достиг правильного понимания (правильного tattva-знания). Подстрочник «правдиво/верно» нейтрален; теряется эпистемологический акцент: Хануман прошёл через сомнения и достиг tattvata-знания, что подготавливает его решение.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:tattva"
+          "source": "dic_mw:tattva",
+          "source_links": [
+            {
+              "label": "MW tattva",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=tattva"
+            }
+          ],
+          "seq": 1
         },
         {
           "id": "phase2:5.30.1:0",
@@ -66,7 +111,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch2_draft"
-          }
+          },
+          "seq": 2
         }
       ]
     },
@@ -81,6 +127,7 @@
         "siromani": "अवेक्षमाण इति । नन्दने देवतामिव तां सीतामवेक्षमाणो हनूमान् बहुविधाम् अनेकप्रकारां चिन्तां चिन्तयामास चकार"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "lexical:5.30.2:0",
@@ -89,11 +136,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "nandana",
-          "note_ru": "Нандана (nandana, n.) — «роща Индры, сад богов в Сварге»: от √nand- (класс I, «радоваться, наслаждаться», Whitney #239) + суфф. -ana (место или средство действия). MW: nandana n. 'gladdening; son; Indra's paradise'. Нандана — конкретное лоаlе в космографии: сад на вершине Меру, место отдыха и удовольствия богов. Сравнение Ситы с «деватой в Нандане» (devatām iva nandane) задаёт вертикальный образ: она не просто пленница, но небожительница в неправильном раю (Ланка — антитеза Нандане). Это сравнение входит в типовой эпический арсенал возвышения feminine — параллели у Кāлидāсы (Meghadūta) и в Рāмаяне Вāлмики. Подстрочник «в саду богов» теряет космографическую специфику и литературную кonnотацию.",
+          "note_ru": "Нандана (nandana, n.) — «роща Индры, сад богов в Сварге»: от √nand- (класс I, «радоваться, наслаждаться», Whitney #239) + суфф. -ana (место или средство действия). MW: nandana n. 'gladdening; son; Indra's paradise'. Нандана — конкретное лоале в космографии: сад на вершине Меру, место отдыха и удовольствия богов. Сравнение Ситы с «деватой в Нандане» (devatām iva nandane) задаёт вертикальный образ: она не просто пленница, но небожительница в неправильном раю (Ланка — антитеза Нандане). Это сравнение входит в типовой эпический арсенал возвышения feminine — параллели у Калидасы (Meghadūta) и в Рамаяне Валмики. Подстрочник «в саду богов» теряет космографическую специфику и литературную коннотацию.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:nandana"
+          "source": "dic_mw:nandana",
+          "source_links": [
+            {
+              "label": "MW nandana",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nandana"
+            }
+          ],
+          "seq": 3
         }
       ]
     },
@@ -107,6 +161,7 @@
         "siromani": "चारेणेति । सुप्रयुक्तेन स्वामिना नियुक्तेन अत एव शत्रोः शक्तिम् अवेक्षता अत एव गूढेन रूपेण चरता चारेण मया तावत्प्रथमम् इदं वृत्तमवेक्षितं ज्ञातम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "lexical:5.30.4:0",
@@ -115,11 +170,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "cāra",
-          "note_ru": "Чāра (cāra, m.) — «лазутчик, агент разведки»: от √car- (класс I, «двигаться, ходить», Whitney #610) + суфф. -a. MW: cāra m. 'a spy, secret agent; going, motion'. Арташāстра Каутильи выстраивает развёрнутую теорию cāra-системы (кн. I, гл. 11–12): cāra — только один тип разведчика (оперативник в поле), противопоставленный sūtra («нити» агентурной сети) и aṃśa (агентам внедрения). Cāreṇa suyuktena = «через хорошо отправленного лазутчика» — Артхашāстрический термин для оценки сил противника (paracakravicāra). Хануман ретроспективно описывает своё собственное проникновение на Ланку в артхашāстрических категориях, тем самым придавая миссии государственно-политическое измерение.",
+          "note_ru": "Чара (cāra, m.) — «лазутчик, агент разведки»: от √car- (класс I, «двигаться, ходить», Whitney #610) + суфф. -a. MW: cāra m. 'a spy, secret agent; going, motion'. Арташастра Каутильи выстраивает развёрнутую теорию cāra-системы (кн. I, гл. 11–12): cāra — только один тип разведчика (оперативник в поле), противопоставленный sūtra («нити» агентурной сети) и aṃśa (агентам внедрения). Cāreṇa suyuktena = «через хорошо отправленного лазутчика» — Артхашастрический термин для оценки сил противника (paracakravicāra). Хануман ретроспективно описывает своё собственное проникновение на Ланку в артхашастрических категориях, тем самым придавая миссии государственно-политическое измерение.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:cAra"
+          "source": "dic_mw:cAra",
+          "source_links": [
+            {
+              "label": "MW cAra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=cAra"
+            }
+          ],
+          "seq": 4
         },
         {
           "id": "lexical:5.30.4:1",
@@ -128,11 +190,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "gūḍha",
-          "note_ru": "Гудха (gūḍha, adj./adv.) — «скрытый, тайный, замаскированный»: p.p.p. от √guh- (класс I, «прятать, скрывать», Whitney #454). MW: gūḍha 'concealed, hidden, secret; not easily understood'. Семья корня √guh- продуктивна: guha «пещера, тайник» (отсюда Guha «обитатель пещеры» — эпитет Сканды); guhya «тайное, сокровенное» (Бхагавадгīта 18.63: sarva-guhyatamaṃ). Хануман caratā gūḍhena = «действуя скрытно» — gūḍha-cara, технический термин для разведчика в Артхашāстре (I.12: gūḍhapuruṣa). Двойная семантика: физически скрытый (замаскированный обезьяна-разведчик) и эпистемически скрытый (цель его миссии не объявлена). Подстрочник «тайно» точен, но лишает слово тактической и мифологической нагруженности.",
+          "note_ru": "Гудха (gūḍha, adj./adv.) — «скрытый, тайный, замаскированный»: p.p.p. от √guh- (класс I, «прятать, скрывать», Whitney #454). MW: gūḍha 'concealed, hidden, secret; not easily understood'. Семья корня √guh- продуктивна: guha «пещера, тайник» (отсюда Guha «обитатель пещеры» — эпитет Сканды); guhya «тайное, сокровенное» (Бхагавадгита 18.63: sarva-guhyatamaṃ). Хануман caratā gūḍhena = «действуя скрытно» — gūḍha-cara, технический термин для разведчика в Артхашастре (I.12: gūḍhapuruṣa). Двойная семантика: физически скрытый (замаскированный обезьяна-разведчик) и эпистемически скрытый (цель его миссии не объявлена). Подстрочник «тайно» точен, но лишает слово тактической и мифологической нагруженности.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:gUQa"
+          "source": "dic_mw:gUQa",
+          "source_links": [
+            {
+              "label": "MW gUQa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=gUQa"
+            }
+          ],
+          "seq": 5
         }
       ]
     },
@@ -145,6 +214,7 @@
         "tilaka": "अप्रमेयस्यापरिच्छेद्यस्वरूपस्यापरिच्छेधगुणस्य च सर्वसत्त्वदयावतः सर्वं सत्त्वं बलं दया च यस्य सर्वसत्त्वेषु दयावत इति वा । दयावत्त्वादेव सीतार्थे त्रैलोक्यानाशनं रामस्य । समाश्वासयितुं । युक्तमिति शेषः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "phase2:5.30.6:0",
@@ -164,7 +234,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch2_draft"
-          }
+          },
+          "seq": 6
         }
       ]
     },
@@ -178,15 +249,19 @@
         "bhusana": "यद्यप्यहमिमां देवीं शोकोपहतचेतनाम् ।\n\nअनाश्वास्य गमिष्यामि दोषवद् गमनं भवेत्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "То я совершу ошибку (doṣavad gamanaṃ bhavet) – букв. «уход будет ошибочным»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "То я совершу ошибку (doṣavad gamanaṃ bhavet) – букв. «уход будет ошибочным».",
+          "service": [],
+          "suggestions": [],
+          "seq": 7
         },
         {
           "id": "phase2:5.30.8:0",
@@ -207,7 +282,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch2_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 8
         }
       ]
     },
@@ -221,15 +297,26 @@
         "siromani": "सीतेति । सीतासंदेशरहितं मां काकुत्स्थो रामः निर्दहेदपि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.14:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «tvarayā» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "tvarayā",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 9
         }
       ]
     },
@@ -244,15 +331,19 @@
         "siromani": "आश्वासनमन्तरा महाननर्थो भविष्यतीति निश्चित्याह यदीति । रामकारणात् रामप्रयोजनाद्धेतोः यदि भर्तारं सुग्रीवम् उद्योजयिष्यामि तर्हि ससैन्यस्य तस्य सुग्रीवस्यागमनं व्यर्थं भविष्यति । एतेन आश्वासनमन्तरा सीता जीवनं नैव भविष्यतीति सूचितम् । तेन सीता ऽवश्यमाश्वासनीयेति व्यञ्जितम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.15:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Если же я подвигну / К походу владыку Сугриву (yadi vodyojayiṣyāmi bhartāraṃ rāmakāraṇāt) – букв.: «Если я подвигну господина ради Рамы…». Комментарий «Тилака» поясняет, что под господином (bhartāram) здесь подразумевается Сугрива."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Если же я подвигну / К походу владыку Сугриву (yadi vodyojayiṣyāmi bhartāraṃ rāmakāraṇāt) – букв.: «Если я подвигну господина ради Рамы…». Комментарий «Тилака» поясняет, что под господином (bhartāram) здесь подразумевается Сугрива.",
+          "service": [],
+          "suggestions": [],
+          "seq": 10
         }
       ]
     },
@@ -267,15 +358,19 @@
         "siromani": "अन्तरमिति । राक्षसीनां मध्ये अवस्थितो ऽहम् अन्तरमवकाशं राक्षसीनामवधानतामित्यर्थः । आसाद्य प्राप्य संतापबहुलां सीतां शनैराश्वासयामि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.16:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Подожду я, пока / Ослабят ракшаси бдительность (antaraṃ tv aham āsādya rākṣasīnām iha sthitaḥ) – букв. «достигнув промежутка (antaram) у ракшаси…». По комментарию «Тилака» слово antara здесь следует понимать как удобный «удобный случай» (avakāśa), то есть речь идет о моменте, когда ракшаси будут невнимательны (tāsām anavadhānasamayam)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Подожду я, пока / Ослабят ракшаси бдительность (antaraṃ tv aham āsādya rākṣasīnām iha sthitaḥ) – букв. «достигнув промежутка (antaram) у ракшаси…». По комментарию «Тилака» слово antara здесь следует понимать как удобный «удобный случай» (avakāśa), то есть речь идет о моменте, когда ракшаси будут невнимательны (tāsām anavadhānasamayam).",
+          "service": [],
+          "suggestions": [],
+          "seq": 11
         }
       ]
     },
@@ -290,6 +385,7 @@
         "siromani": "अहमिति । वानरः वानररूपो ऽहम् अतितनुः अतिसूक्ष्मशरीरः सन् संस्कृतां व्याकरणसंस्कारयुक्तां वाचमुदाहरिष्यामि"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "lexical:5.30.17:0",
@@ -298,11 +394,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "saṃskṛtā vāc",
-          "note_ru": "Самскрита вāч (saṃskṛtā vāc, f.) — «речь, очищенная/упорядоченная» → «санскрит»: saṃskṛta p.p.p. от sam-√kṛ- (sam «со-», √kṛ- «делать», класс VIII, Whitney #890) «приведённая в совершенный порядок, обработанная» + vāc f. «речь» (√vac- «говорить», Whitney #955). MW: saṃskṛta 'refined, adorned, purified; the Sanskrit language'. Этимология прозрачна, но социолингвистическая значимость — нет: saṃskṛtā vāk в эпическом контексте противопоставлена prākṛta («природная, необработанная речь»). Сравнение dvijātir iva («как дваждырождённый-брāхман») в 30.18 добавляет варновый маркер: санскрит — язык ритуально очищенных (saṃskāra-несущих). Решение Ханумана говорить на санскрите означает самопредъявление в брāхманическом регистре — стратегически значимо, поскольку он обезьяна-посланец. Подстрочник «человеческая речь» или «санскрит» не объясняет ни этимологии инкорпорированной культурной иерархии, ни тактического выбора Ханумана.",
+          "note_ru": "Самскрита вач (saṃskṛtā vāc, f.) — «речь, очищенная/упорядоченная» → «санскрит»: saṃskṛta p.p.p. от sam-√kṛ- (sam «со-», √kṛ- «делать», класс VIII, Whitney #890) «приведённая в совершенный порядок, обработанная» + vāc f. «речь» (√vac- «говорить», Whitney #955). MW: saṃskṛta 'refined, adorned, purified; the Sanskrit language'. Этимология прозрачна, но социолингвистическая значимость — нет: saṃskṛtā vāk в эпическом контексте противопоставлена prākṛta («природная, необработанная речь»). Сравнение dvijātir iva («как дваждырождённый-брахман») в 30.18 добавляет варновый маркер: санскрит — язык ритуально очищенных (saṃskāra-несущих). Решение Ханумана говорить на санскрите означает самопредъявление в брахманическом регистре — стратегически значимо, поскольку он обезьяна-посланец. Подстрочник «человеческая речь» или «санскрит» не объясняет ни этимологии инкорпорированной культурной иерархии, ни тактического выбора Ханумана.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:saMskfta"
+          "source": "dic_mw:saMskfta",
+          "source_links": [
+            {
+              "label": "MW saMskfta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=saMskfta"
+            }
+          ],
+          "seq": 12
         }
       ]
     },
@@ -317,15 +420,26 @@
         "siromani": "वानररूपत्वे हेतुमाह यदीति । यदि द्विजातिर्ब्राह्मण इव संस्कृतां वाचं प्रवक्ष्यामि तदा मां रावणं मन्यमाना सीता भीतां भविष्यति । एतेनापहरणसमयकृततद्रूपस्य स्मृतिर्भविष्यतीति सूचितम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.18:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Примет меня за Равану.» Нужен комм., почему это так"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Примет меня за Равану.",
+              "kind": "note",
+              "text": "Нужен комм., почему это так"
+            }
+          ],
+          "suggestions": [],
+          "seq": 13
         },
         {
           "id": "phase2:5.30.18:0",
@@ -346,7 +460,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch2_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 14
         }
       ]
     },
@@ -361,15 +476,26 @@
         "siromani": "ननु वानरवाक्येनैवोच्यतामित्यत आह अवश्यमिति । मानुषमेव वाक्यं मयावश्यं वक्तव्यम् अन्यथा इयं सान्त्वयितुं न शक्या"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.19:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Надо мне говорить / На языке подходящем (avaśyam eva vaktavyaṃ mānuṣaṃ vākyam arthavat) – по мнению автора комментария «Бхушана», речь здесь идет о разговорном языке царства Косала.[Е. Костина] «,» В комм. надо добавить буквальный перевод"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Надо мне говорить / На языке подходящем (avaśyam eva vaktavyaṃ mānuṣaṃ vākyam arthavat) – по мнению автора комментария «Бхушана», речь здесь идет о разговорном языке царства Косала.",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": ",",
+              "kind": "note",
+              "text": "В комм. надо добавить буквальный перевод"
+            }
+          ],
+          "suggestions": [],
+          "seq": 15
         }
       ]
     },
@@ -382,15 +508,19 @@
         "bhusana": "ततो जातपरित्रासा शब्दं कुर्यान्मनस्विनी ।\n\nजानमाना विशालाक्षी रावणं कामरूपिणम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.21:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Меня принимая за Равану, / Изменившего облик (jānānā māṃ viśālākṣī rāvaṇaṃ kāmarūpiṇam) – букв. rāvaṇaṃ kāmarūpiṇam – «за Равану, меняющего облик по собственной воле»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Меня принимая за Равану, / Изменившего облик (jānānā māṃ viśālākṣī rāvaṇaṃ kāmarūpiṇam) – букв. rāvaṇaṃ kāmarūpiṇam – «за Равану, меняющего облик по собственной воле».",
+          "service": [],
+          "suggestions": [],
+          "seq": 16
         }
       ]
     },
@@ -404,15 +534,19 @@
         "bhusana": "ततो मां संपरिक्षिप्य सर्वतो विकृताननाः ।\n\nवधे च ग्रहणे चैव कुर्युर्यत्नं यथाबलम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.23:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Тогда, увидев меня (tato māṃ samparikṣipya) – комментарий «Широмани» поясняет samparikṣipya как «бросанием взгляда увидев» (cakṣuḥprekṣepeṇāvalokya)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Тогда, увидев меня (tato māṃ samparikṣipya) – комментарий «Широмани» поясняет samparikṣipya как «бросанием взгляда увидев» (cakṣuḥprekṣepeṇāvalokya).",
+          "service": [],
+          "suggestions": [],
+          "seq": 17
         }
       ]
     },
@@ -427,15 +561,19 @@
         "siromani": "ममेति । वने विचरतो मम रूपं संप्रेक्ष्य भयवित्रस्ता राक्षस्यो विकृतस्वरा भवेयुः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.25:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Увидев, как я, огромный, / Расхаживаю по роще (mama rūpaṃ ca saṃprekṣya vane vicarato mahat) – возможно, речь идет о том, что в минуту опасности Хануман снова увеличит свои размеры."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Увидев, как я, огромный, / Расхаживаю по роще (mama rūpaṃ ca saṃprekṣya vane vicarato mahat) – возможно, речь идет о том, что в минуту опасности Хануман снова увеличит свои размеры.",
+          "service": [],
+          "suggestions": [],
+          "seq": 18
         }
       ]
     },
@@ -450,15 +588,26 @@
         "siromani": "विमृशन्निति । यो वानरः महोदधिं लङ्घयेत तं विमृशन् विचारयन्नहं न पश्यामि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.33:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «vimṛśaṃś ca na paśyāmi» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "vimṛśaṃś ca na paśyāmi",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 19
         }
       ]
     },
@@ -472,15 +621,19 @@
         "bhusana": "असत्यानि च युद्धानि संशयो मे न रोचते ।\n\nकश्च निस्संशयं कार्यं कुर्यात् प्राज्ञः ससंशयम्\nअसत्यानि अनिश्चितजयापजयानि । क्लेशस्तु भूयानिति भावः । ततो नैतन्मम मतमित्याह संशय इति । संशयः संशयितार्थः । स च सङ्ग्रामः । अथापि तथाकरणे स एव कार्यहन्ता बुद्धिहीनो निन्दाभाजनं चेत्याशयोनाह कश्चेति । प्राज्ञः कः ससंशयं कार्यं निस्संशयं निर्विचारम् कुर्यात्?"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.35:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Битвы исход ненадежен (asatyāni ca yuddhāni) – букв. «битвы неистинны». Комментарий «Тилака» интерпретирует прилагательное asatyani как «в победе которых нет уверенности» (aniścitajayāni)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Битвы исход ненадежен (asatyāni ca yuddhāni) – букв. «битвы неистинны». Комментарий «Тилака» интерпретирует прилагательное asatyani как «в победе которых нет уверенности» (aniścitajayāni).",
+          "service": [],
+          "suggestions": [],
+          "seq": 20
         },
         {
           "id": "phase2:5.30.35:0",
@@ -502,7 +655,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch2_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 21
         }
       ]
     },
@@ -516,6 +670,7 @@
         "bhusana": "भूताश्चार्था विनश्यन्ति देशकालविरोधिताः ।\n\nविक्लवं दूतमासाद्य तमः सूर्योदये यथा\nभूताश्चार्थाः निष्पन्नार्थाः । विक्लवम् अविवेकिनम् दूतमासाद्य देशकालविरोधिताः सन्तः सूर्योदये तमो यथा विनश्यति तथा विनश्यन्तीति सम्बन्धः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "lexical:5.30.37:0",
@@ -524,11 +679,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "dūta",
-          "note_ru": "Дута (dūta, m.) — «посланец, посол»: MW: dūta m. 'a messenger, envoy, ambassador, agent' — этимология неясна (возможно, √dū- «сжигать»? или от dur-√i-?; MW помечает как 'probably not from √dū'). В «Артхашāстре» Каутильи (I.16) различаются три типа посла: niṣṭha (полномочный, действует по своему усмотрению), parimitākṣara (ограниченный инструкцией) и śāsanahara («несущий грамоту», только курьер). Хануман — типичный niṣṭha-дута: Рāма не дал ему конкретных слов для Ситы, он должен найти её и действовать по ситуации. Стих 30.37 bhūtāś cārthā vinaśyanti («дела гибнут») описывает поведение dūta как политическую переменную: dūta-failure = провал всей кампании. Подстрочник «посланец» передаёт значение, но не артхашāстрическую теоретическую рамку, которую Вальмики явно использует в этом рассуждении Ханумана.",
+          "note_ru": "Дута (dūta, m.) — «посланец, посол»: MW: dūta m. 'a messenger, envoy, ambassador, agent' — этимология неясна (возможно, √dū- «сжигать»? или от dur-√i-?; MW помечает как 'probably not from √dū'). В «Артхашастре» Каутильи (I.16) различаются три типа посла: niṣṭha (полномочный, действует по своему усмотрению), parimitākṣara (ограниченный инструкцией) и śāsanahara («несущий грамоту», только курьер). Хануман — типичный niṣṭha-дута: Рама не дал ему конкретных слов для Ситы, он должен найти её и действовать по ситуации. Стих 30.37 bhūtāś cārthā vinaśyanti («дела гибнут») описывает поведение dūta как политическую переменную: dūta-failure = провал всей кампании. Подстрочник «посланец» передаёт значение, но не артхашастрическую теоретическую рамку, которую Вальмики явно использует в этом рассуждении Ханумана.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:dUta"
+          "source": "dic_mw:dUta",
+          "source_links": [
+            {
+              "label": "MW dUta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=dUta"
+            }
+          ],
+          "seq": 22
         },
         {
           "id": "crosstext:5.30.37:0",
@@ -548,9 +710,11 @@
           "sundara_sa_iast": "na vinaśyet kathaṁ kāryaṁ vaiklavyaṁ na kathaṁ bhavet |laṅghanaṁ ca samudrasya kathaṁ nu na vṛthā bhavet ||",
           "quality": "GOOD",
           "source": "DCS parallel-search (GOOD); Rām 5.2.37–39 (крит. изд.)",
+          "source_links": [],
           "edition_flag": "vulgate",
           "shloka_critical": "V.28.37–39",
-          "verse_address_vulgate": "Rām V.2.39–41 (вульгата)"
+          "verse_address_vulgate": "Rām V.2.39–41 (вульгата)",
+          "seq": 23
         }
       ]
     },
@@ -564,15 +728,26 @@
         "siromani": "अर्थेति । हि यदि पण्डितमानिनो दूताः कार्याणि घातयन्ति तर्हि अर्थानर्थान्तरं कर्तव्याकर्तव्यविषये निश्चितापि स्वामिसचिवैर्निश्चयं प्रापितापि बुद्धिर्न शोभते । यतः पण्डितमानिनः पण्डितंमन्याः दूताः कार्याणि घातयन्ति"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "tier1:5.30.38:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «arthānarthāntare» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "arthānarthāntare",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 24
         },
         {
           "id": "lexical:5.30.38:0",
@@ -581,12 +756,19 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "paṇḍitamānin",
-          "note_ru": "Пандита-манин (paṇḍita-mānin, adj., упапада-самāса) — «мнящий себя учёным, самонадеянный»: paṇḍita «знающий, учёный» (MW: от paṇḍā «мудрость»? или от paṇ-?) + mānin (суфф. -in от √man- класс IV «думать, считать», Whitney #788) «думающий себя [таковым]». MW: paṇḍita-māni(n) 'thinking oneself learned; pseudo-scholar'. Саркастический сложный тип: в санскрите целый ряд упапада-композитов с -mānin обозначает самонадеянность (vīra-mānin «мнящий себя героем», dharma-mānin «считающий себя праведником»). Предложение ghātayanti hi kāryāṇi dūtāḥ paṇḍitamāninaḥ («послы, считающие себя мудрецами, губят дела») — сжатая политическая максима, обращённая внутрь: Хануман страхуется сам от себя, применяя критерий к своему собственному поведению. Подстрочник «возомнившие себя мудрецами» передаёт смысл, но не композитный характер эпистемического само-диагноза.",
+          "note_ru": "Пандита-манин (paṇḍita-mānin, adj., упапада-самаса) — «мнящий себя учёным, самонадеянный»: paṇḍita «знающий, учёный» (MW: от paṇḍā «мудрость»? или от paṇ-?) + mānin (суфф. -in от √man- класс IV «думать, считать», Whitney #788) «думающий себя [таковым]». MW: paṇḍita-māni(n) 'thinking oneself learned; pseudo-scholar'. Саркастический сложный тип: в санскрите целый ряд упапада-композитов с -mānin обозначает самонадеянность (vīra-mānin «мнящий себя героем», dharma-mānin «считающий себя праведником»). Предложение ghātayanti hi kāryāṇi dūtāḥ paṇḍitamāninaḥ («послы, считающие себя мудрецами, губят дела») — сжатая политическая максима, обращённая внутрь: Хануман страхуется сам от себя, применяя критерий к своему собственному поведению. Подстрочник «возомнившие себя мудрецами» передаёт смысл, но не композитный характер эпистемического само-диагноза.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:paNDitamAnin",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW paNDitamAnin",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=paNDitamAnin"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 25
         },
         {
           "id": "lexical:5.30.38:1",
@@ -595,12 +777,19 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "vaiklavya",
-          "note_ru": "Вайклавья (vaiklavya, n.) — «растерянность, потеря самообладания, замешательство»: vi- (разделительная или интенсивная приставка) + klava adj. «робкий, растерявшийся» (√klav-? MW помечает этимологию как неясную; Böhtlingk-Roth: возможно связь с √kram-) + абстрактный суфф. -ya → viklava → vaiklavya (vriddhi-образование). MW: vaiklavya 'flurry, agitation, loss of equanimity, distraction'. Редкое абстрактное существительное (в отличие от обычных viṣāda, kātarya) с акцентом на моментальной дестабилизации — мгновенной потере присутствия духа в критический момент. В тексте viklavaṃ dūtam āsādya (30.37) — «наткнувшись на вконец растерянного посла» — Ханuman диагностирует это как главную угрозу своей миссии. Редкость термина и его точная психологическая нагрузка (не хроническое малодушие, а острое ситуативное замешательство) добавляют кОмментарную ценность.",
+          "note_ru": "Вайклавья (vaiklavya, n.) — «растерянность, потеря самообладания, замешательство»: vi- (разделительная или интенсивная приставка) + klava adj. «робкий, растерявшийся» (√klav-? MW помечает этимологию как неясную; Böhtlingk-Roth: возможно связь с √kram-) + абстрактный суфф. -ya → viklava → vaiklavya (vriddhi-образование). MW: vaiklavya 'flurry, agitation, loss of equanimity, distraction'. Редкое абстрактное существительное (в отличие от обычных viṣāda, kātarya) с акцентом на моментальной дестабилизации — мгновенной потере присутствия духа в критический момент. В тексте viklavaṃ dūtam āsādya (30.37) — «наткнувшись на вконец растерянного посла» — Hanuman диагностирует это как главную угрозу своей миссии. Редкость термина и его точная психологическая нагрузка (не хроническое малодушие, а острое ситуативное замешательство) добавляют кОмментарную ценность.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:vaiklavya",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW vaiklavya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vaiklavya"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 26
         },
         {
           "id": "crosstext:5.30.38:0",
@@ -620,7 +809,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Śāntiparvan (MBh XII) 12.136.137",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 27
         }
       ]
     },
@@ -635,6 +826,7 @@
         "siromani": "तदाकारमाह यामिति । यां सीता कपीनां बहूनि सहस्राणि अयुतानि च सर्वासु दिक्षु मार्गन्ते सा इयं माया आसादिता प्राप्ता"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "lexical:5.30.41:0",
@@ -643,11 +835,22 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "akliṣṭakarman",
-          "note_ru": "Аклишта-карман (a-kliṣṭa-karman, adj., бахуврихи) — «чьи действия не запятнаны, чьи дела незапятнанны»: a- (отрицание) + kliṣṭa (p.p.p. от √kliś- «страдать, терзаться; пятнать, загрязнять», Whitney #690: kliśnāti/kliśyate) + karman n. «деяние, действие, дело» (от √kṛ-). MW: akliṣṭa 'untroubled, unwearied; undistorted'; kliṣṭa-karman 'one whose actions are painful/impure'. Бахуврихи «чьи карманы не-kliṣṭa» = «чьи действия никогда не оборачиваются бедой / не загрязнены грехом». В карма-теории kliṣṭa-karman — «связывающее» действие, порождающее duḥkha; akliṣṭa-karman — «незагрязнённое» действие, не производящее кармических последствий. Используемый как эпитет Рāмы, он означает онтологическую праведность: его деяния по природе своей не могут быть kliṣṭa. Подстрочник «неустанный в делах» (или «тот, чьи дела безупречны») не передаёт кармической нагрузки.",
+          "note_ru": "Аклишта-карман (a-kliṣṭa-karman, adj., бахуврихи) — «чьи действия не запятнаны, чьи дела незапятнанны»: a- (отрицание) + kliṣṭa (p.p.p. от √kliś- «страдать, терзаться; пятнать, загрязнять», Whitney #690: kliśnāti/kliśyate) + karman n. «деяние, действие, дело» (от √kṛ-). MW: akliṣṭa 'untroubled, unwearied; undistorted'; kliṣṭa-karman 'one whose actions are painful/impure'. Бахуврихи «чьи карманы не-kliṣṭa» = «чьи действия никогда не оборачиваются бедой / не загрязнены грехом». В карма-теории kliṣṭa-karman — «связывающее» действие, порождающее duḥkha; akliṣṭa-karman — «незагрязнённое» действие, не производящее кармических последствий. Используемый как эпитет Рамы, он означает онтологическую праведность: его деяния по природе своей не могут быть kliṣṭa. Подстрочник «неустанный в делах» (или «тот, чьи дела безупречны») не передаёт кармической нагрузки.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:akliSTa+dic_mw:karman"
+          "source": "dic_mw:akliSTa+dic_mw:karman",
+          "source_links": [
+            {
+              "label": "MW akliSTa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=akliSTa"
+            },
+            {
+              "label": "MW karman",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=karman"
+            }
+          ],
+          "seq": 28
         }
       ]
     },
@@ -662,6 +865,7 @@
         "siromani": "इतीति । जगतिपतेर्जगतीपतेर्निखिलब्रह्माण्डस्वामिनो रामस्य प्रमदामवेक्षमाणः अत एव द्रुमविटपान्तरं तरुशाखामध्यम् आस्थितो हनूमान् मधुरं शोभनवर्णादिजनितमाधुर्यविशिष्टम् अवितथं मृषासंसर्गशून्यं वाक्यं जगाद"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-30",
       "notes": [
         {
           "id": "lexical:5.30.44:0",
@@ -670,11 +874,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "mahānubhāva",
-          "note_ru": "Махāнубхāва (mahā-anubhāva, adj./m., тат-пуруша) — «великий достоинством, высокий духом»: mahā «великий» + anubhāva m. (anu-√bhū- «следовать за бытием» → «проявление, последствие, сила духа»). MW: anubhāva 'the indication of feeling by gesture and look; dignity, consequence, power of intellect'. В нāтьяшāстре Бхараты анубхāва — технический термин: «последующие индикаторы» (consequents) эмоциональных состояний (рядом со вьябхичāри-бхāвами и стхāйи-бхāвами). Как эпитет (mahānubhāva = «великодушный, высокосословный») он бытует в эпосе повсеместно, но двойная семантика (практическая «сила/величие» + эстетическая «явление эмоции вовне») добавляет смысловой слой: финальный стих гл. 30, описывающий, как Хануман произносит «сладкое и правдивое слово» (madhuram avitathaṃ vākyam), представляет саму речь как анубхāву его внутренней решимости.",
+          "note_ru": "Маханубхава (mahā-anubhāva, adj./m., тат-пуруша) — «великий достоинством, высокий духом»: mahā «великий» + anubhāva m. (anu-√bhū- «следовать за бытием» → «проявление, последствие, сила духа»). MW: anubhāva 'the indication of feeling by gesture and look; dignity, consequence, power of intellect'. В натьяшастре Бхараты анубхава — технический термин: «последующие индикаторы» (consequents) эмоциональных состояний (рядом со вьябхичари-бхавами и стхайи-бхавами). Как эпитет (mahānubhāva = «великодушный, высокосословный») он бытует в эпосе повсеместно, но двойная семантика (практическая «сила/величие» + эстетическая «явление эмоции вовне») добавляет смысловой слой: финальный стих гл. 30, описывающий, как Хануман произносит «сладкое и правдивое слово» (madhuram avitathaṃ vākyam), представляет саму речь как анубхаву его внутренней решимости.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:anubhAva"
+          "source": "dic_mw:anubhAva",
+          "source_links": [
+            {
+              "label": "MW anubhAva",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=anubhAva"
+            }
+          ],
+          "seq": 29
         }
       ]
     }

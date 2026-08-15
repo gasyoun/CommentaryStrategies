@@ -34,6 +34,7 @@ import argparse
 import hashlib
 
 import gate_ledger
+import apparatus_notes
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
@@ -50,6 +51,9 @@ PILOT = os.path.join(DATA, "analysis", "phase2_pilot", "pilot_candidates.json")
 FOOTNOTES = os.path.join(DATA, "edition_footnotes", "candidates.json")
 ARCHIVE_V = os.path.join(DATA, "crosstext", "archive_parallels_vulgate.json")
 GATE_LEDGER = os.path.join(DATA, "apparatus", "gate_ledger.json")
+# The full text of book V the verse ids link back to (п.12).
+BOOK_URL = ("https://github.com/gasyoun/CommentaryStrategies/blob/main/"
+            "data/book/sundarakanda_print_master.md")
 
 LAYER_LABEL = {
     "tier1": "ярус 1 · Леонов/Костина",
@@ -59,6 +63,61 @@ LAYER_LABEL = {
     "crosstext": "cross-text",
 }
 LAYER_ORDER = ["tier1", "lexical", "phase2", "edition", "crosstext"]
+
+# votes/sarga.md п.3 («что значит ярус 1? где легенда?») and п.7 («а сколько
+# всего фаз? Кроме лексич. какие ещё?»). Both questions had the same cause: the
+# labels are internal pipeline vocabulary that was never written down anywhere
+# the reviewer could reach. The glossary now ships INSIDE the ballot data, so it
+# cannot drift away from the labels it explains.
+LAYER_GLOSSARY = {
+    "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий "
+                "файл перевода. Это единственный слой, который идёт в печать "
+                "как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не "
+                "дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда "
+                      "2026.html» (scripts/extract_leonov_notes.py), 1058 "
+                      "примечаний на 68 песней.",
+    },
+    "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, "
+                "Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; "
+                      "отклонённые кандидаты хранятся рядом с причиной отказа.",
+    },
+    "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к "
+                "включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0).",
+    },
+    "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) "
+                "или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные "
+                      "шлоки, диапазоны и целые песни (см. поле «объём»).",
+    },
+    "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими "
+                "книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на "
+                      "вульгату.",
+    },
+}
+# Всего слоёв пять; «фаз» в этой нумерации две — 1 (лексика) и 2 (комментаторы).
+PHASE_NOTE = ("«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — "
+              "лексический слой, фаза 2 — санскритские комментаторы. Других фаз "
+              "нет; остальные три слоя (ярус 1, издания, cross-text) в этой "
+              "нумерации не участвуют.")
 COMM_LABEL = {"tilaka": "Тилака", "bhusana": "Бхушана", "siromani": "Широмани"}
 # ASCII slugs for per-reviewer output filenames (Cyrillic names in paths are a
 # portability hazard on Windows/CI, and the download filename must round-trip).
@@ -181,12 +240,24 @@ def mk_note(layer, vid, idx, src):
         "votable": layer != "tier1",
     }
     if layer == "tier1":
+        # п.5/п.13/п.17: three kinds of text used to share one paragraph. The
+        # editor's service reminders and the machine's proposals are lifted out
+        # of the prose so the page can mark what will never see print.
+        seg = apparatus_notes.segment_tier1(src.get("raw_text", ""))
         n.update({
-            "status": "принято (печать)",
-            "editor": src.get("editor") or "Леонов",
-            "note_ru": src.get("raw_text", ""),
+            # п.2 «принято (печать) — когда, кем?». The old label asserted a
+            # decision with no decider and no date. There is no per-note verdict
+            # in the source at all: these notes are simply the ones already IN
+            # the translation file, so the badge now says exactly that, and the
+            # provenance line carries the extraction date the data does have.
+            "status": "в печатном аппарате перевода",
+            "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+            "note_ru": seg["note_ru"],
+            "service": seg["service"],
+            "suggestions": seg["suggestions"],
         })
     elif layer == "lexical":
+        source = apparatus_notes.ru_source(src.get("source", ""))
         n.update({
             "status": "review_required" if src.get("review_required") else "принято",
             "lemma_iast": src.get("lemma_iast", ""),
@@ -194,7 +265,8 @@ def mk_note(layer, vid, idx, src):
             "type": src.get("type", ""),
             "subtype": src.get("subtype", ""),
             "trigger": src.get("trigger", ""),
-            "source": src.get("source", ""),
+            "source": source,
+            "source_links": apparatus_notes.source_links(src.get("source", "")),
         })
     elif layer == "phase2":
         gate = src.get("gate") or {}
@@ -217,10 +289,18 @@ def mk_note(layer, vid, idx, src):
         if gate.get("action"):          # already gated — no second vote control
             n["votable"] = False
     elif layer == "edition":
+        # п.15: «у нас отмечены только единичные шлоки, или также несколько шлок
+        # или главы подряд?» — all three, and the ballot never said which one a
+        # given card was. `scope` puts the answer on every card.
+        scope = {"single": "одна шлока", "verse_range": "несколько шлок подряд",
+                 "sarga_absence": "песнь целиком"}.get(src.get("kind", ""), "")
         n.update({
             "status": "ожидает гейта М.Г.",
-            "note_ru": src.get("note_ru", ""),
+            # п.15 fallout: every card read «(2 шлок)» / «(3 шлок)» regardless
+            # of the number — Russian numeral agreement was never applied.
+            "note_ru": apparatus_notes.fix_shlok_count(src.get("note_ru", "")),
             "kind": src.get("kind", ""),
+            "scope": scope,
             "range": src.get("range", ""),
             "confidence": src.get("confidence", ""),
             "verses_iast": src.get("verses_iast", []),
@@ -240,7 +320,8 @@ def mk_note(layer, vid, idx, src):
             "parallel_sa_iast": src.get("parallel_sa_iast", ""),
             "sundara_sa_iast": src.get("sundara_sa_iast", ""),
             "quality": src.get("quality", ""),
-            "source": src.get("source", ""),
+            "source": apparatus_notes.ru_source(src.get("source", "")),
+            "source_links": apparatus_notes.source_links(src.get("source", "")),
         })
         if src.get("_cluster") == "archive_parallels":
             n["edition_flag"] = src.get("edition", "")
@@ -307,10 +388,13 @@ def apply_gate(note, ledger, for_reviewer=None):
                               "reject_reason") if v.get(k)}
         for r, v in vs.items()
     }
-    note["status"] = " · ".join(
-        f"{ACTION_LABEL.get(v.get('action'), v.get('action', ''))}: "
-        f"{r} ({v.get('gated_date', '')})"
-        for r, v in sorted(vs.items()))
+    # п.8: «Раз уже есть label принято: Леонов (2026-07-11), то уже избыточно
+    # внизу Леонов: accept · 2026-07-11». Same fact twice, in two notations. The
+    # badge now carries the STATE only; who voted and when stays in the verdict
+    # block below, which is the half that also carries the reason and the edit.
+    acts = sorted({ACTION_LABEL.get(v.get("action"), v.get("action", ""))
+                   for v in vs.values()})
+    note["status"] = " / ".join(a for a in acts if a)
     # An `edit` supplies replacement text. With a reviewer in view, prefer a
     # COLLEAGUE's edit so the ballot shows the text actually under discussion.
     edits = [(r, v["edited_note"]) for r, v in sorted(vs.items())
@@ -397,16 +481,44 @@ def build_sarga(sarga, seg, seg_idx, leonov, lexical, pilot, edition, crosstext,
             "leonov_ru": v.get("leonov_ru", ""),
             "commentary": v.get("commentary", {}),
             "has_tier1": has_tier1,
+            # п.12: «5.1.2 должно быть кликабельно — на общий текст пятой книги,
+            # куда сразу попадаем». Verse-level anchors do not survive GitHub's
+            # footnote rendering, so the link lands on the песнь heading of the
+            # print master — the finest addressing the target actually supports.
+            "verse_ref": (BOOK_URL + "#песнь-" + str(sarga)),
             "notes": notes,
         }
         if v.get("_synthetic"):
             rec["verse_not_segmented"] = True
+            # п.16: «5.1.213 — почему пусто? почему без пояснений?» The card was
+            # blank because the note's verse is not in the segmented corpus, and
+            # the page printed two em-dashes instead of saying so.
+            rec["empty_reason"] = (
+                "Шлока есть в нумерации примечаний, но отсутствует в "
+                "сегментированном корпусе (data/analysis/"
+                "sundara_commentary_segmented.json), поэтому санскрит и "
+                "подстрочник здесь не показаны. Примечание сохранено и "
+                "голосуется; текст стиха нужно досегментировать.")
         out_verses.append(rec)
+    # п.12: «надо сквозную нумерацию для каждой сноски, чтобы можно было
+    # сослаться на конкретный ID». `note["id"]` was already stable and unique,
+    # but it never reached the page, so nothing on screen was citable. `seq` is
+    # the human-readable running number; the id stays the machine handle.
+    seq = 0
+    for v in out_verses:
+        for n in v["notes"]:
+            seq += 1
+            n["seq"] = seq
     return {
         "_meta": {
             "generated_by": "scripts/build_sarga_apparatus.py",
             "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+            "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
             "sarga": sarga,
+            "glossary": LAYER_GLOSSARY,
+            "phase_note": PHASE_NOTE,
+            "book_url": BOOK_URL,
+            "notes_total": seq,
             "numbering": "southern vulgate (Leonov); archive cross-text layer remapped "
                          "from critical via scripts/remap_archive_parallels.py",
             "sources": {k: LAYER_LABEL[k] for k in LAYER_ORDER},
@@ -464,6 +576,8 @@ def main():
         blob = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
         html = (shared_page_template(PAGE).replace("/*DATA*/null", blob)
                     .replace("{SARGA}", str(sarga))
+                    .replace("{REVIEWER_SUFFIX}",
+                             f" · бюллетень: {who}" if who else " · только просмотр")
                     .replace("{REVIEWER}", who or "")
                     .replace("{VKEY}", (suffix or "_all").lstrip("_"))
                     .replace("{VSUF}", suffix))
@@ -481,7 +595,7 @@ def main():
 SHARED_BODY = r"""<body>
 <header class="review-header">
   <div class="breadcrumb"><a href="index.html">Портал рецензирования</a> › песнь {SARGA}</div>
-  <h1>Сундараканда · песнь {SARGA} · бюллетень Костиной</h1>
+  <h1>Сундараканда · песнь {SARGA} · сводный аппарат{REVIEWER_SUFFIX}</h1>
   <div class="toolbar">
     <strong id="progress">—</strong>
     <span id="sync-status" class="status-pill" role="status" aria-live="polite">local</span>

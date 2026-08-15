@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 37,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 38,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 2
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "3266de394ec841803eb28b5b056a0d4e2fec05fb135628986e612572c4264840"
+    "source_hash": "44bc7dafeaff700819b072f29cbec78cca258a1281e35773ffb64d60fdc35a1a"
   },
   "sarga": 37,
   "verses": [
@@ -35,15 +71,19 @@
         "bhusana": "सीता तद्वचनं श्रुत्वा पूर्णचन्द्रनिभानना ।\n\nहनूमन्तमुवाचेदं धर्मार्थसहितं वचः\nसीतेत्यादि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.1:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Луноликая Сита (pūrṇacandranibhānanā) – букв. «лицо которой подобно полной луне» (pūrṇacandranibhānanā)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Луноликая Сита (pūrṇacandranibhānanā) – букв. «лицо которой подобно полной луне» (pūrṇacandranibhānanā).",
+          "service": [],
+          "suggestions": [],
+          "seq": 1
         }
       ]
     },
@@ -57,6 +97,7 @@
         "bhusana": "अमृतं विषसंसृष्टं त्वया वानरभाषितम् ।\n\nयच्च नान्यमना रामो यच्च शोकपरायणः\nअमृतमिति । यच्च नान्यमना इत्यमृतत्वे हेतुः । यच्च शोकपरायण इति विषसंसृष्टत्वे"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "lexical:5.37.2:0",
@@ -69,7 +110,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:amfta"
+          "source": "dic_mw:amfta",
+          "source_links": [
+            {
+              "label": "MW amfta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=amfta"
+            }
+          ],
+          "seq": 2
         }
       ]
     },
@@ -83,15 +131,26 @@
         "bhusana": "ऐश्वर्ये वा सुविस्तीर्णे व्यसने वा सुदारुणे ।\n\nरज्ज्वेव पुरुषं बद्ध्वा कृतान्तः परिकर्षति\nरामवियोगो न स्वबुद्धिकृत इत्याह ऐश्वर्य इति । कृतान्तः दैवम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.3:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Судьба» Нужно примечание по толкованию kṛtāntaḥ Широмани - कृतान्तः कालः Бхушана - कृतान्तः दैवम्"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Судьба",
+              "kind": "note",
+              "text": "Нужно примечание по толкованию kṛtāntaḥ Широмани - कृतान्तः कालः Бхушана - कृतान्तः दैवम्"
+            }
+          ],
+          "suggestions": [],
+          "seq": 3
         },
         {
           "id": "lexical:5.37.3:0",
@@ -105,7 +164,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:kftAnta",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW kftAnta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kftAnta"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 4
         },
         {
           "id": "phase2:5.37.3:0",
@@ -125,7 +191,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_pilot_draft"
-          }
+          },
+          "seq": 5
         }
       ]
     },
@@ -140,6 +207,7 @@
         "bhusana": "विधिर्नूनमसंहार्थः प्राणिनां प्लवगोत्तम ।\n\nसौमित्रिं मां च रामं च व्यसनैः पश्य मोहितान्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "lexical:5.37.4:0",
@@ -152,7 +220,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:viDi"
+          "source": "dic_mw:viDi",
+          "source_links": [
+            {
+              "label": "MW viDi",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=viDi"
+            }
+          ],
+          "seq": 6
         }
       ]
     },
@@ -167,6 +242,7 @@
         "siromani": "शोकस्येति । सागरे हता विनष्टा नौर्यस्य अत एव प्लवमानः बाहुभ्यां संतरन् परिक्रान्तः अतिपराक्रमवान् पुरुष इव शोकस्य सागरे प्लवमानो राघवः शोकस्य पारं कदा अधिगमिष्यति"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "lexical:5.37.5:0",
@@ -179,7 +255,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:nO"
+          "source": "dic_mw:nO",
+          "source_links": [
+            {
+              "label": "MW nO",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nO"
+            }
+          ],
+          "seq": 7
         }
       ]
     },
@@ -193,15 +276,26 @@
         "siromani": "स इति । संवत्सरः द्वादशमासात्मको ऽयं कालः यावन्न पूर्यते तावदेव मम जीवितम् अतः संत्वरस्वेति स रामः त्वया वाच्यः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.7:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Пока этот год не кончится» Нужен комментарий, почему так. В Сундараканде про изначальный срок нигде не говорилось, фигурировали только 2 месяца, поэтому читателю может быть непонятно (если там, где 2 месяца, не будет разъяснено)"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Пока этот год не кончится",
+              "kind": "note",
+              "text": "Нужен комментарий, почему так. В Сундараканде про изначальный срок нигде не говорилось, фигурировали только 2 месяца, поэтому читателю может быть непонятно (если там, где 2 месяца, не будет разъяснено)"
+            }
+          ],
+          "suggestions": [],
+          "seq": 8
         },
         {
           "id": "lexical:5.37.7:0",
@@ -215,7 +309,14 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:saMvatsara",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW saMvatsara",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=saMvatsara"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 9
         }
       ]
     },
@@ -229,6 +330,7 @@
         "siromani": "ममेति । कालवशं गतं रावणं संख्ये संग्रामे मृत्युर्मार्गते अत एव रावणस्य मम प्रतिपदानं न रोचते"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "lexical:5.37.10:0",
@@ -241,7 +343,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:pratidAna"
+          "source": "dic_mw:pratidAna",
+          "source_links": [
+            {
+              "label": "MW pratidAna",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=pratidAna"
+            }
+          ],
+          "seq": 10
         }
       ]
     },
@@ -254,15 +363,26 @@
         "bhusana": "ज्येष्टा कन्या ऽनला नाम विभीषणसुता कपे ।\n\nतया ममेदमाख्यातं मात्रा प्रहितया स्वयम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.11:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «kape» Опущено обращение. Я понимаю, почему это делается, но, вероятно, не помешает комментарий. Далее также отмечу на всякий случай"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "kape",
+              "kind": "omission",
+              "text": "опущено обращение. Я понимаю, почему это делается, но, вероятно, не помешает комментарий. Далее также отмечу на всякий случай"
+            }
+          ],
+          "suggestions": [],
+          "seq": 11
         },
         {
           "id": "lexical:5.37.11:0",
@@ -276,7 +396,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:kanyA",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW kanyA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kanyA"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 12
         }
       ]
     },
@@ -289,6 +416,7 @@
         "bhusana": "[अविन्ध्यो नाम मेधावी विद्वान् राक्षसपुङ्गवः ।\n\nद्युतिमाञ्छीलवान् वृद्धो रावणस्य सुसंमतः ।।\n\nरामक्षयमनुप्राप्तं रक्षसां प्रत्यचोदयत् ।\n\nन च तस्य स दुष्टात्मा शृणोति वचनं हितम् ।।]\n\nअसंशयं हरिश्रेष्ठ क्षिप्रं मां प्राप्स्यते पतिः ।\n\nअन्तरात्मा हि मे शुद्धस्तस्मिंश्च बहवो गुणाः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "phase2:5.37.12:0",
@@ -308,7 +436,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_pilot_draft"
-          }
+          },
+          "seq": 13
         }
       ]
     },
@@ -322,15 +451,26 @@
         "siromani": "नन्वेतत्त्वया कथं ज्ञातमित्यत आह ज्येष्ठेति । विभीषणसुता विभीषणादुत्पन्ना अनला नाम ज्येष्ठा कन्या ऽस्तीति शेषः । मात्रा अभिहितया कथितया तया अनलया मम समीपे एतत् स्वयमाख्यातं कथितम्\nननु पृष्ठारोहणमात्रेण कथं दुःखापगमो भविष्यतीत्यत आह त्वामिति । सरावणां रावणसहितां लङ्कां वोढुं हि यतो मे शक्तिरस्ति अतः पृष्ठगतां त्वां कृत्वा सागरं संतरिष्यामि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.14:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «hariśreṣṭha» Опущено обращение"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "hariśreṣṭha",
+              "kind": "omission",
+              "text": "опущено обращение"
+            }
+          ],
+          "suggestions": [],
+          "seq": 14
         },
         {
           "id": "lexical:5.37.14:0",
@@ -344,7 +484,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:antarAtman",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW antarAtman",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=antarAtman"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 15
         }
       ]
     },
@@ -359,6 +506,7 @@
         "siromani": "गुणानेवाह उत्साह इति । उत्साहादयः राघवे सन्ति"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "lexical:5.37.15:0",
@@ -371,7 +519,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:AnfSaMsya"
+          "source": "dic_mw:AnfSaMsya",
+          "source_links": [
+            {
+              "label": "MW AnfSaMsya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=AnfSaMsya"
+            }
+          ],
+          "seq": 16
         }
       ]
     },
@@ -384,6 +539,7 @@
         "bhusana": "न स इति । तुलयितु चालयितुम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "lexical:5.37.1522:0",
@@ -397,7 +553,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:tara",
-          "anchor_verse_id": "5.37.22"
+          "source_links": [
+            {
+              "label": "MW tara",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=tara"
+            }
+          ],
+          "anchor_verse_id": "5.37.22",
+          "seq": 17
         }
       ]
     },
@@ -411,15 +574,32 @@
         "siromani": "नेति । स रामः व्यसनैः व्यसनप्रापकराक्षसैः तुलयितुं तोलयितुं न शक्यः शक्रस्य पुलोमजेव तस्य रामस्य अनुभावज्ञाहमस्मि\nअवशिष्टमासं बोधयन्ती आह वर्तत इति । रावणेन यः समयो मम समीपे कृतः तस्य दशमो मासो वर्तते द्वौ तु शेषौ वर्तेते"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.17:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Шачи» Комм. про pulomajā[Е. Костина] «kape» Опущено обращение"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Шачи",
+              "kind": "note",
+              "text": "Комм. про pulomajā"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "kape",
+              "kind": "omission",
+              "text": "опущено обращение"
+            }
+          ],
+          "suggestions": [],
+          "seq": 18
         },
         {
           "id": "lexical:5.37.17:0",
@@ -428,12 +608,19 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "pulomajā",
-          "note_ru": "Пуломаджā (Pulomajā, f.) — «дочь Пуломы» = Шачи, супруга Индры. Пуломан (Puloman) — асур, отец Шачи; по Махабхарата (Ādiparvan), Пуломан похитил невесту Индры, но Индра вернул её и убил Пуломана. MW: Pulomajā f. 'daughter of Puloman = Śacī, wife of Indra'. Параллель структурная: Сита знает могущество Рамы так же, как Шачи — Индры: это уподобление «законной жены, знающей силу мужа» прописано через прецедент.",
+          "note_ru": "Пуломаджа (Pulomajā, f.) — «дочь Пуломы» = Шачи, супруга Индры. Пуломан (Puloman) — асур, отец Шачи; по Махабхарата (Ādiparvan), Пуломан похитил невесту Индры, но Индра вернул её и убил Пуломана. MW: Pulomajā f. 'daughter of Puloman = Śacī, wife of Indra'. Параллель структурная: Сита знает могущество Рамы так же, как Шачи — Индры: это уподобление «законной жены, знающей силу мужа» прописано через прецедент.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:pulomajA",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW pulomajA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=pulomajA"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 19
         }
       ]
     },
@@ -447,6 +634,7 @@
         "siromani": "शरेति । हे कपे शरजालांशुमान् शरसमूहरूपकिरणविशिष्टः रामदिवाकरः रामसूर्यः शत्रुरक्षोमयं शत्रुरूपाराक्षसप्रचुरं तोयम् उपशोषं नयिष्यति नेष्यति प्रापयिष्यति"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "lexical:5.37.18:0",
@@ -459,7 +647,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:divAkara"
+          "source": "dic_mw:divAkara",
+          "source_links": [
+            {
+              "label": "MW divAkara",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=divAkara"
+            }
+          ],
+          "seq": 20
         }
       ]
     },
@@ -473,15 +668,28 @@
         "siromani": "पक्षान्तरमाह-- अथवेति । हे अनिन्दिते मम पृष्ठम् उपारोह अतः सराक्षसात् राक्षससहितात् अस्मात् दुःखात् अद्यैव मोचयिष्यामि । किंच सो ऽहं राक्षसात् राक्षसजन्यात् दुःखात् मोचयिष्यामि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.21:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Или сейчас от беды, / Что терпим мы из-за ракшасы (adyaiva sa rākṣasāt asmād duḥkhād) – в комментарии «Тилака» слово rākṣasāt понимается как rākṣasakṛtāt. Таким образом, rākṣasāt asmād duḥkhāt надо понимать как rākṣasakṛtād asmād duḥkhāt, то есть «из этого несчастья, вызвванного ракшасой».[Claude.AI — желательно] [термин] (не учтено) Первое появление в кн. V; введено в :"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Или сейчас от беды, / Что терпим мы из-за ракшасы (adyaiva sa rākṣasāt asmād duḥkhād) – в комментарии «Тилака» слово rākṣasāt понимается как rākṣasakṛtāt. Таким образом, rākṣasāt asmād duḥkhāt надо понимать как rākṣasakṛtād asmād duḥkhāt, то есть «из этого несчастья, вызвванного ракшасой».",
+          "service": [],
+          "suggestions": [
+            {
+              "author": "Claude.AI",
+              "strength": "желательно",
+              "kind": "термин",
+              "accounted": "не учтено",
+              "text": "Первое появление в кн. V; введено в :",
+              "incomplete": true
+            }
+          ],
+          "seq": 21
         }
       ]
     },
@@ -495,15 +703,35 @@
         "bhusana": "त्वद्दर्शनकृतोत्साहमाश्रमस्थं महाबलम् ।\n\nपुरन्दरमिवासीनं नाकराजस्य मूर्धनि\nत्वद्दर्शनेति । नाकराजस्य मूर्धनि नाकपृष्ठसंज्ञस्य मूर्धनि । नगराजस्येति पाठे मेरोरित्यर्थः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.25:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "На вершине владыки гор (nagarājasya mūrdhani) – комментарий «Тилака» поясняет, что речь идет о горе Прасраване. В различных рукописях в качестве первого элемента композита могут стоять слова naga (гора); nāga (слон/наг) или naka (небо). Во втором элементе композита также могут быть разночтения: rājasya или pṛṣṭhasya. Таким образом, композит может переводиться как «на вершине неба», «на голове царя нагов» и т. п. Здесь перевод сделан по бомбейскому изданию.[Е. Костина] «.» Непонятно, почему предпочтение отдано Бомбейскому изданию. Если в качестве основного рассматривается Гита-пресс, отход от него должен как-то аргументироваться[Claude.AI — желательно] [термин] (не учтено) Первое появление в кн. V; введено в :"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "На вершине владыки гор (nagarājasya mūrdhani) – комментарий «Тилака» поясняет, что речь идет о горе Прасраване. В различных рукописях в качестве первого элемента композита могут стоять слова naga (гора); nāga (слон/наг) или naka (небо). Во втором элементе композита также могут быть разночтения: rājasya или pṛṣṭhasya. Таким образом, композит может переводиться как «на вершине неба», «на голове царя нагов» и т. п. Здесь перевод сделан по бомбейскому изданию.",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": ".",
+              "kind": "note",
+              "text": "Непонятно, почему предпочтение отдано Бомбейскому изданию. Если в качестве основного рассматривается Гита-пресс, отход от него должен как-то аргументироваться"
+            }
+          ],
+          "suggestions": [
+            {
+              "author": "Claude.AI",
+              "strength": "желательно",
+              "kind": "термин",
+              "accounted": "не учтено",
+              "text": "Первое появление в кн. V; введено в :",
+              "incomplete": true
+            }
+          ],
+          "seq": 22
         },
         {
           "id": "phase2:5.37.25:0",
@@ -524,7 +752,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_pilot_draft"
-          }
+          },
+          "seq": 23
         }
       ]
     },
@@ -539,15 +768,19 @@
         "siromani": "मैथिलीति । अद्भुतं वचनं श्रुत्वा हर्षविस्मितसर्वाङ्गी मैथिली हनूमन्तमब्रीत्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.30:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Затрепетала Сита (harṣavismitasarvāṅgī) – букв.: «та, у которой все тело затрепетало от радости» (harṣavismitasarvāṅgī). Автор комментария «Тилака» объясняет слово vismita (изумленный) как pulakita (на котором встали волоски – обычный в древнеиндийской поэзии образ эмоционального возбуждения)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Затрепетала Сита (harṣavismitasarvāṅgī) – букв.: «та, у которой все тело затрепетало от радости» (harṣavismitasarvāṅgī). Автор комментария «Тилака» объясняет слово vismita (изумленный) как pulakita (на котором встали волоски – обычный в древнеиндийской поэзии образ эмоционального возбуждения).",
+          "service": [],
+          "suggestions": [],
+          "seq": 24
         }
       ]
     },
@@ -562,15 +795,26 @@
         "tilaka": "तदेव दृश्यमानमेव ।। 5.37.31,32 ।।\n\nनवं परिभवमल्पशरीरो ऽशक्त इत्येवंरूपम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.31:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "…обезьянья природа (kapitvam) – согласно комментарию «Широмани», Сита сомневается в способности Ханумана отнести ее к Раме. Однако более правильной представляется интерпретация Голдменов, которые под kapitvam понимают свойственное обезьянам легкомыслие («простодушную грандиозность мышления») (см.: Goldman 1984: 452). Ср. в строфе V.55.15: prathitaṃ triṣu lokeṣu //kapitvam anavasthitam («известную в трех мирах // свойственную обезьянам непоседливость»).[Е. Костина] «hariyūthapa» Опущено обращение"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…обезьянья природа (kapitvam) – согласно комментарию «Широмани», Сита сомневается в способности Ханумана отнести ее к Раме. Однако более правильной представляется интерпретация Голдменов, которые под kapitvam понимают свойственное обезьянам легкомыслие («простодушную грандиозность мышления») (см.: Goldman 1984: 452). Ср. в строфе V.55.15: prathitaṃ triṣu lokeṣu //kapitvam anavasthitam («известную в трех мирах // свойственную обезьянам непоседливость»).",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "hariyūthapa",
+              "kind": "omission",
+              "text": "опущено обращение"
+            }
+          ],
+          "suggestions": [],
+          "seq": 25
         }
       ]
     },
@@ -584,15 +828,19 @@
         "siromani": "सीताया इति । सीतायाः वचनं श्रुत्वा कृतं सीतया संपादितं नवं प्रथमं परिभवं स्वानादरं ज्ञात्वेति शेषः । चिन्तयामास"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.33:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Впервые / Она меня оскорбила (navaṃ paribhavaṃ kṛtam) – букв. «сделана [Ситой] новая обида». В комментарии «Широмани» слово navam (новую) глоссируется как prathamam (первую)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Впервые / Она меня оскорбила (navaṃ paribhavaṃ kṛtam) – букв. «сделана [Ситой] новая обида». В комментарии «Широмани» слово navam (новую) глоссируется как prathamam (первую).",
+          "service": [],
+          "suggestions": [],
+          "seq": 26
         },
         {
           "id": "lexical:5.37.33:0",
@@ -606,7 +854,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:paribhava",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW paribhava",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=paribhava"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 27
         }
       ]
     },
@@ -619,6 +874,7 @@
         "siromani": "तदाकारमाह नेति । मे सत्वं बलं प्रभावं च वैदेही न जानाति तस्माद्धेतोः मम यद्रूपं तत् कामतः स्वेच्छया पश्यतु\nइतीति । प्लवगसत्तमो हनुमान् इति संचिन्य वैदेह्या वैदेह्यै स्वरूपं दर्शयामास"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "crosstext:5.37.35:0",
@@ -637,7 +893,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Mahābhārata, Āraṇyakaparvan (Rāmopākhyāna) III.270.14"
+          "source": "Mahābhārata, Āraṇyakaparvan (Rāmopākhyāna) III.270.14",
+          "source_links": [],
+          "seq": 28
         }
       ]
     },
@@ -650,15 +908,26 @@
         "siromani": "स इति । स हनूमान् तस्याः प्रत्ययकारणात् प्रतीतिहेतोः पादपात् आप्लुत्य वर्धितुमारेभे"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.36:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "С дерева спрыгнул мудрый… (sa tasmāt pādapād dhīmān āplutya) – по контексту можно понять, что Хануман уже давно сошел с дерева.[Е. Костина] Нужно сделать здесь отсылку на строфы ранее, где это обсуждается, а там - на эту строфу"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "С дерева спрыгнул мудрый… (sa tasmāt pādapād dhīmān āplutya) – по контексту можно понять, что Хануман уже давно сошел с дерева.",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "",
+              "kind": "note",
+              "text": "Нужно сделать здесь отсылку на строфы ранее, где это обсуждается, а там - на эту строфу"
+            }
+          ],
+          "suggestions": [],
+          "seq": 29
         },
         {
           "id": "phase2:5.37.36:0",
@@ -678,7 +947,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_pilot_draft"
-          }
+          },
+          "seq": 30
         }
       ]
     },
@@ -691,6 +961,7 @@
         "bhusana": "सपर्वतवनोद्देशां साट्टप्रकारतोरणाम् ।\n\nलङ्कामिमां सनाथां व नयितुं शक्तिरस्ति मे"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "lexical:5.37.39:0",
@@ -699,11 +970,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "aṭṭa",
-          "note_ru": "Аṭṭа (aṭṭa, m.) — «башня, укреплённая платформа» (от √aṭ- «ходить кругом»): элемент крепостной архитектуры. MW: aṭṭa m. 'a building, a house; a tower or turret'. prākāra «стена», toraṇa «арка, ворота», aṭṭa «башня»: три элемента средневековой южноазиатской фортификации. Описание Ланки через её архитектуру — указание на её неприступность, которую Хануман берётся преодолеть.",
+          "note_ru": "Aṭṭa (aṭṭa, m.) — «башня, укреплённая платформа» (от √aṭ- «ходить кругом»): элемент крепостной архитектуры. MW: aṭṭa m. 'a building, a house; a tower or turret'. prākāra «стена», toraṇa «арка, ворота», aṭṭa «башня»: три элемента средневековой южноазиатской фортификации. Описание Ланки через её архитектуру — указание на её неприступность, которую Хануман берётся преодолеть.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:awwa"
+          "source": "dic_mw:awwa",
+          "source_links": [
+            {
+              "label": "MW awwa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=awwa"
+            }
+          ],
+          "seq": 31
         }
       ]
     },
@@ -718,15 +996,19 @@
         "bhusana": "तदवस्थाप्यतां बुद्धिरलं देवि विकाङ्क्षया ।\n\nविशोकं कुरु वैदेहि राघवं सहलक्ष्मणम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.40:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Пора решаться… (tad avasthāpyatāṃ buddhir ) – букв. «да будет [твоя] мысль/разум установлена»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Пора решаться… (tad avasthāpyatāṃ buddhir ) – букв. «да будет [твоя] мысль/разум установлена».",
+          "service": [],
+          "suggestions": [],
+          "seq": 32
         }
       ]
     },
@@ -741,15 +1023,26 @@
         "siromani": "जानामीति । गमने समुद्रलङ्घने मम नयने च ते शक्तिं जानामि तथापि आत्मनः कार्यसिद्धिः अवश्यं संप्रधार्या विचारणीया"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.44:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «gamane» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "gamane",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 33
         }
       ]
     },
@@ -763,6 +1056,7 @@
         "siromani": "पतितेति । सागरे पतिता ऽहं विवशा सती यादसां जलजन्तूनामन्नमाशु भवेयम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "lexical:5.37.47:0",
@@ -775,7 +1069,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:timi"
+          "source": "dic_mw:timi",
+          "source_links": [
+            {
+              "label": "MW timi",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=timi"
+            }
+          ],
+          "seq": 34
         }
       ]
     },
@@ -788,16 +1089,27 @@
         "bhusana": "मयीति । तव राजकुलस्य सुग्रीवराजकुलस्य"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.5860:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Сугривы» Комм., в оригинале просто tava",
-          "anchor_verse_id": "5.37.60"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Сугривы",
+              "kind": "note",
+              "text": "Комм., в оригинале просто tava"
+            }
+          ],
+          "suggestions": [],
+          "anchor_verse_id": "5.37.60",
+          "seq": 35
         },
         {
           "id": "lexical:5.37.5860:0",
@@ -806,13 +1118,20 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "āyatta",
-          "note_ru": "Аяттa (āyatta, adj.) — «зависящий от, находящийся во власти» (ā + p.p.p. √yat- «прилагать усилие, достигать»). MW: āyatta adj. 'resting on, depending on, subject to'. mayi jīvitam āyattam — «от меня зависит жизнь»: āyatta подчёркивает не просто связь, а структуру зависимости — жизнь Рамы и братьев буквально «стоит на» Хануману как на опоре. Мощная риторическая формула убеждения.",
+          "note_ru": "Аятта (āyatta, adj.) — «зависящий от, находящийся во власти» (ā + p.p.p. √yat- «прилагать усилие, достигать»). MW: āyatta adj. 'resting on, depending on, subject to'. mayi jīvitam āyattam — «от меня зависит жизнь»: āyatta подчёркивает не просто связь, а структуру зависимости — жизнь Рамы и братьев буквально «стоит на» Хануману как на опоре. Мощная риторическая формула убеждения.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:Ayatta",
+          "source_links": [
+            {
+              "label": "MW Ayatta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=Ayatta"
+            }
+          ],
           "anchor_verse_id": "5.37.60",
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 36
         }
       ]
     },
@@ -825,6 +1144,7 @@
         "bhusana": "भर्तृमक्तिं पुरस्कृत्य रामादन्यस्य वानर ।\n\nन स्पृशामि शरीरं तु पुंसो वाररपुङ्गवः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "crosstext:5.37.62:0",
@@ -843,7 +1163,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Gītārthasaṃgraha Yāmunācārya 24 и 26; Bhagavadgītā 9.30"
+          "source": "Gītārthasaṃgraha Yāmunācārya 24 и 26; Bhagavadgītā 9.30",
+          "source_links": [],
+          "seq": 37
         }
       ]
     },
@@ -858,15 +1180,19 @@
         "tilaka": "अनीशा स्रीत्वात्स्वयमसमर्था, विवशा विचेष्टा, विनाथा ऽसंनिहितरामलक्ष्मणा । हा सीते लक्ष्मणेति मारीचवाक्यं श्रुत्वा रामानर्थशङ्कया लक्ष्मणस्यापि प्रस्थापनादिति भावः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-37",
       "notes": [
         {
           "id": "tier1:5.37.63:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Беспомощная, беззащитная (anīśā… vināthā vivaśā sati) – букв. anīśā (бессильная), «лишенная господина» (vināthā) и «беспомощная» (vivaśā). Авторы комментариев «Тилака» и «Таттвадипика» глоссируют последнее слово как viceṣṭā (неподвижная)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Беспомощная, беззащитная (anīśā… vināthā vivaśā sati) – букв. anīśā (бессильная), «лишенная господина» (vināthā) и «беспомощная» (vivaśā). Авторы комментариев «Тилака» и «Таттвадипика» глоссируют последнее слово как viceṣṭā (неподвижная).",
+          "service": [],
+          "suggestions": [],
+          "seq": 38
         }
       ]
     }

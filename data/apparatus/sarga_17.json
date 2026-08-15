@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 17,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 21,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -19,7 +55,8 @@
       "phase2": 2,
       "edition": 0,
       "crosstext": 2
-    }
+    },
+    "source_hash": "0a59e7995375762a117c87469eee3263a7a50c4433ede039a2adaf4f49992055"
   },
   "sarga": 17,
   "verses": [
@@ -33,6 +70,7 @@
         "siromani": "हनुमत्कर्तृकस्पष्टदर्शनं वर्णयितुमाह तत इति । कुमुदखण्डाभः कुमुदसमूहसदृशः निर्मलोदयः चन्द्रः निर्मलं नभः प्रजगाम । तत्र दृष्टान्तः, हंसो नीलमुदकमिव"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "lexical:5.17.1:0",
@@ -45,7 +83,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:kumuda"
+          "source": "dic_mw:kumuda",
+          "source_links": [
+            {
+              "label": "MW kumuda",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kumuda"
+            }
+          ],
+          "seq": 1
         },
         {
           "id": "lexical:5.17.1:1",
@@ -58,7 +103,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:haMsa"
+          "source": "dic_mw:haMsa",
+          "source_links": [
+            {
+              "label": "MW haMsa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=haMsa"
+            }
+          ],
+          "seq": 2
         }
       ]
     },
@@ -72,6 +124,7 @@
         "siromani": "साचिव्यमिति । शीतै रश्मिभिरुपलक्षितः निर्मलप्रभश्चन्द्रमाः प्रभया स्वकान्त्या साचिव्यं साहाय्यमिव कुर्वन् पवनात्मजं सिषेवे"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "lexical:5.17.2:0",
@@ -84,7 +137,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:sAcivya"
+          "source": "dic_mw:sAcivya",
+          "source_links": [
+            {
+              "label": "MW sAcivya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=sAcivya"
+            }
+          ],
+          "seq": 3
         }
       ]
     },
@@ -98,6 +158,7 @@
         "siromani": "स इति । स हनूमान् शोकभारैः न्यस्तां नतामिव अत एव भारैर्न्यस्तामम्भसि नावमिव प्रतीयमानां सीतां ददर्श"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "crosstext:5.17.3:0",
@@ -116,7 +177,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Mahābhārata, Āraṇyakaparvan (Nalopākhyāna) III.65.10"
+          "source": "Mahābhārata, Āraṇyakaparvan (Nalopākhyāna) III.65.10",
+          "source_links": [],
+          "seq": 4
         }
       ]
     },
@@ -130,15 +193,19 @@
         "siromani": "दर्शनप्रकारमाह एकेत्यादिभिः । एकाक्षीप्रभृतीः रोमहर्शणदर्शनाः ताः राक्षसीः ददर्श । तस्य शिंशुपाभिधतरोः अधस्तात् देवीं सीतां च ददर्श । तत्र कर्णावेव प्रावरणौ शरीराच्छादकौ यस्याः अतविशालकर्णविशिष्टामित्यर्थः, मस्तके उच्छ्वासहेतुभूतनासिका यस्यास्तां तन्वी सूक्ष्मा दीर्घा स्थूला शिरोधरा ग्रीवा यस्यास्तां चिबुकौ चिबुकसंबद्धौ ओष्ठौ यस्यास्ताम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "tier1:5.17.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…ушами покрытую (karṇaprāvaraṇāṃ) – выражение karṇaprāvaraṇā комментарий «Тилака» толкует как viśālakarṇī, то есть «имеющая широкие уши». Комментарий «Бхушана» уточняет, что уши покрывали голову ракшаси подобно капюшону. Согласно комментарию «Широмани», уши у ракшаси закрывали тело, то есть слово prāvaraṇа понимается в значении «одежда, закрывающая верхнюю часть тела». С такой интерпретацией согласны Голдмены, которые перевели это полустишие как «While another’s ears covered her entire upper body» (см.: Goldman 1984: 398)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…ушами покрытую (karṇaprāvaraṇāṃ) – выражение karṇaprāvaraṇā комментарий «Тилака» толкует как viśālakarṇī, то есть «имеющая широкие уши». Комментарий «Бхушана» уточняет, что уши покрывали голову ракшаси подобно капюшону. Согласно комментарию «Широмани», уши у ракшаси закрывали тело, то есть слово prāvaraṇa понимается в значении «одежда, закрывающая верхнюю часть тела». С такой интерпретацией согласны Голдмены, которые перевели это полустишие как «While another’s ears covered her entire upper body» (см.: Goldman 1984: 398).",
+          "service": [],
+          "suggestions": [],
+          "seq": 5
         }
       ]
     },
@@ -151,15 +218,19 @@
         "bhusana": "ह्रस्वदीर्घां तथा कुब्जां विकटां वामनां तथा ।\n\nकरालां भुग्नवक्त्रां च पिङ्गाक्षीं विकृताननाम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "tier1:5.17.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Горбатую… (vikaṭāṃ) – автор «Тилаки» понимает слово vikaṭā как «та, чье тело искривлено» (vakraśarīrā). Комментарий «Бхушана» толкует это слово как «та, у которой широкие голени» (sthūlajaṅghā). Голдмены в своем переводе следуют комментарию «Тилака» (см.: Goldman 1984: 160).Ощерившуюся… (karālām) – cлово karālā комментарий «Тилака» толкует как «имеющая вызывающий ужас черный цвет» (bhayaṃkarakṛṣṇavarnā). Комментарий «Таттвадипика» предлагает другую интерпретацию: «имеющая выступающие зубы» (danturā). Такое же толкование дает и комментарий «Бхушана»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Горбатую… (vikaṭāṃ) – автор «Тилаки» понимает слово vikaṭā как «та, чье тело искривлено» (vakraśarīrā). Комментарий «Бхушана» толкует это слово как «та, у которой широкие голени» (sthūlajaṅghā). Голдмены в своем переводе следуют комментарию «Тилака» (см.: Goldman 1984: 160).Ощерившуюся… (karālām) – слово karālā комментарий «Тилака» толкует как «имеющая вызывающий ужас черный цвет» (bhayaṃkarakṛṣṇavarnā). Комментарий «Таттвадипика» предлагает другую интерпретацию: «имеющая выступающие зубы» (danturā). Такое же толкование дает и комментарий «Бхушана».",
+          "service": [],
+          "suggestions": [],
+          "seq": 6
         }
       ]
     },
@@ -170,18 +241,23 @@
       "leonov_ru": "",
       "commentary": {},
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "tier1:5.17.10:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "С головами, погруженными в тело (nikhātaśirasaḥ) – комментарий «Тилака» интерпетирует этот композит как «те, у которых голова ушла в грудь, как у Кабандхи». В III книге «Рамаяны» ракшаса Кабандха описывается так: «Огромный, без головы и шеи, // С мордой посреди брюха» (III, 69, 27). Само имя «Кабандха» означает «безголовое тело»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "С головами, погруженными в тело (nikhātaśirasaḥ) – комментарий «Тилака» интерпетирует этот композит как «те, у которых голова ушла в грудь, как у Кабандхи». В III книге «Рамаяны» ракшаса Кабандха описывается так: «Огромный, без головы и шеи, // С мордой посреди брюха» (III, 69, 27). Само имя «Кабандха» означает «безголовое тело».",
+          "service": [],
+          "suggestions": [],
+          "seq": 7
         }
       ],
-      "verse_not_segmented": true
+      "verse_not_segmented": true,
+      "empty_reason": "Шлока есть в нумерации примечаний, но отсутствует в сегментированном корпусе (data/analysis/sundara_commentary_segmented.json), поэтому санскрит и подстрочник здесь не показаны. Примечание сохранено и голосуется; текст стиха нужно досегментировать."
     },
     {
       "verse_id": "5.17.13",
@@ -192,15 +268,26 @@
         "bhusana": "हस्तिपादा महापादा गोपादाः पादचूडिकाः ।\n\nअतिमात्रशिरोग्रीवा अतिमात्रकुचोदरीः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "tier1:5.17.13:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «mahāpādā» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "mahāpādā",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 8
         }
       ]
     },
@@ -213,6 +300,7 @@
         "bhusana": "मांसशोणितदिग्धाङ्गीर्मांसशोणितभोजनाः ।\n\nता ददर्श कपिश्रेष्ठो सोमहर्षणदर्शनाः ।\n\nस्कन्धवन्तमुपासीनाः परिवार्य वनस्पतिम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "lexical:5.17.17:0",
@@ -225,7 +313,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:romaharzoRa"
+          "source": "dic_mw:romaharzoRa",
+          "source_links": [
+            {
+              "label": "MW romaharzoRa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=romaharzoRa"
+            }
+          ],
+          "seq": 9
         }
       ]
     },
@@ -238,6 +333,7 @@
         "bhusana": "क्षीणपुण्यां च्युतां भूमौ तारां निपतितामिव ।\n\nचारित्रव्यपदेशाढ्यां भर्तृदर्शनदुर्गताम्\nच्युतां स्थानाच्चलिताम् । चारित्रव्यपदेशाढ्यां पतिव्रताधर्माचरणख्यातिसम्पन्नाम् । भर्तृदर्शनेन दुर्गतां दरिद्राम्, भर्तृदर्शनरहितामित्यर्थः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "lexical:5.17.20:0",
@@ -250,7 +346,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:kzIRapuRya"
+          "source": "dic_mw:kzIRapuRya",
+          "source_links": [
+            {
+              "label": "MW kzIRapuRya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kzIRapuRya"
+            }
+          ],
+          "seq": 10
         }
       ]
     },
@@ -263,16 +366,20 @@
         "siromani": "तामेव वर्णयन्नाह क्षीणेति । क्षीणपुण्याम् अत एव निपतितां तारामिव चारित्रव्यपदेशेन मुख्याचरणेन आढ्यां भर्तृदर्शनं दुर्गतं दुष्प्रापं यस्याः तां भर्तृवात्सल्येन पत्युरतिप्रीत्या भूषितां राक्षसाधिपेन संरुद्धाम् अत एव बन्धुभिर्विनाकृताम् अत एव सिंहसंरुद्धां वियूथां यूथहीनां बद्धां स्वयूथविषयकातिस्नेहयुक्तां गजवधूमिव पयोदान्ते वर्षापाये शारदाभ्रैरावृतां चन्द्ररेखामिव असंस्पर्शात् पतिस्पर्शराहित्यात् क्रिष्टरूपां पराभूतस्वरूपाम् अत एव अयुक्तां वादकहीनां वल्लकीं वीणामिव भर्तृहिते युक्तां रक्षसां वशे अयुक्ताम् अयोग्यां शोकसागरमाप्लुतां सग्रहां क्रूरग्रहविशिष्टां रोहिणीमिव ताभिः पूर्वोक्तराक्षसीभिः परिवृताम् अकुसुमितां कुसुमरहितां लतामिव तां सीतां स हनूमान् ददर्श । सार्धश्लोकपञ्चकमेकान्वयि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "tier1:5.17.2024:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
           "note_ru": "Среди беспечальной рощи / В пучине печали тонула (aśokavanikāmadhye śokasāgaram āplutām) – букв. «посреди рощи ашоки». Здесь снова игра созвучиями śoka (горе, печаль) – aśoka (название дерева, букв. «беспечальный»).",
-          "anchor_verse_id": "5.17.24"
+          "service": [],
+          "suggestions": [],
+          "anchor_verse_id": "5.17.24",
+          "seq": 11
         },
         {
           "id": "lexical:5.17.2024:0",
@@ -286,8 +393,15 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:rohiRI",
+          "source_links": [
+            {
+              "label": "MW rohiRI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=rohiRI"
+            }
+          ],
           "anchor_verse_id": "5.17.24",
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 12
         }
       ]
     },
@@ -300,24 +414,38 @@
         "bhusana": "भूषणैरुत्तमैर्हीनां भर्तृवात्सल्यभूषणाम् ।\n\nराक्षसाधिपसंरुद्धां बन्धुभिश्च विनाकृताम्\nभर्तृवात्सल्यभूषणां वात्सल्यपदमत्र स्नेहमात्रवाचि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "tier1:5.17.21:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «ākṣasādhipa» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "ākṣasādhipa",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 13
         },
         {
           "id": "tier1:5.17.21:1",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "У нее из всех украшений / Только к мужу любовь осталась (bhūṣaṇair uttamair hīnāṃ bhartṛvātsalyabhūṣitām) – букв. «лишенную лучших украшений, [но] украшенную любовью к мужу»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "У нее из всех украшений / Только к мужу любовь осталась (bhūṣaṇair uttamair hīnāṃ bhartṛvātsalyabhūṣitām) – букв. «лишенную лучших украшений, [но] украшенную любовью к мужу».",
+          "service": [],
+          "suggestions": [],
+          "seq": 14
         },
         {
           "id": "lexical:5.17.21:0",
@@ -326,12 +454,19 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "bhartṛvātsalya",
-          "note_ru": "Бхартривасалья (bhartṛ-vātsalya, n.) — «нежная любовь к мужу»; bhartṛ «господин, муж» (от √bhṛ-, «нести, содержать», Whitney #588) + vātsalya «нежная привязанность» (от vatsa «телёнок» → «любимый ребёнок»). MW: vātsalya 'fondness for offspring or young, tender love'. Словосочетание строится на парадоксе: Сита лишена внешних украшений (bhūṣaṇa), но «украшена» (bhūṣita) невидимым — своей привязанностью к мужу. Это прямое переопределение концепта «украшения» (alaṃkāra): не ювелирное, а нравственное. Типичная пативратā-риторика Вальмики, но здесь создана тонкой семантической игрой bhūṣaṇair hīnā / bhartṛvātsalyabhūṣitā.",
+          "note_ru": "Бхартривасалья (bhartṛ-vātsalya, n.) — «нежная любовь к мужу»; bhartṛ «господин, муж» (от √bhṛ-, «нести, содержать», Whitney #588) + vātsalya «нежная привязанность» (от vatsa «телёнок» → «любимый ребёнок»). MW: vātsalya 'fondness for offspring or young, tender love'. Словосочетание строится на парадоксе: Сита лишена внешних украшений (bhūṣaṇa), но «украшена» (bhūṣita) невидимым — своей привязанностью к мужу. Это прямое переопределение концепта «украшения» (alaṃkāra): не ювелирное, а нравственное. Типичная пативрата-риторика Вальмики, но здесь создана тонкой семантической игрой bhūṣaṇair hīnā / bhartṛvātsalyabhūṣitā.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:vAtsalya",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW vAtsalya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vAtsalya"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 15
         }
       ]
     },
@@ -344,6 +479,7 @@
         "bhusana": "वियूथां सिंहसंरुद्धां बद्धां गजवधूमिव ।\n\nचन्द्ररेखां पयोदान्ते शारदाभ्रैरिवावृताम् ।\n\nक्लुष्टरूपामसंस्पर्शादयुक्तामिव वल्लकीम् ।\nपयोदान्ते वर्षान्ते । चन्द्ररेखायाः स्पष्टास्पष्टत्वद्योतनायेदं विशेषणम् । असंस्पर्शात् उद्वर्तनादिसंस्कारराहित्यात् । अयुक्ताम् अनारोपिततन्त्रीम् । वल्लकीं वीणाम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "phase2:5.17.22:0",
@@ -363,7 +499,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 16
         }
       ]
     },
@@ -376,6 +513,7 @@
         "bhusana": "सीतां भर्तृवशे युक्तामयुक्तां राक्षसीवशे"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "lexical:5.17.23:0",
@@ -388,7 +526,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:vallakI"
+          "source": "dic_mw:vallakI",
+          "source_links": [
+            {
+              "label": "MW vallakI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vallakI"
+            }
+          ],
+          "seq": 17
         }
       ]
     },
@@ -402,15 +547,19 @@
         "siromani": "सेति । मलेन दिग्धं प्रवृद्धमङ्गं यस्याः सा वपुषा शरीरकान्त्या अलंकृता पङ्कदिग्धा कर्दमसंलग्ना मृणाली इव विभाति न भाति च । अर्धद्वयमेकान्वयि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "tier1:5.17.25:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Так прелесть свою хранит, / стебель лотоса в тине (mṛṇālī paṅkadigdheva vibhāti ca na bhāti ca) – букв. «[она], подобная стеблю лотоса, вымазанному тиной, и не сияла, и [в то же время] сияла»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Так прелесть свою хранит, / стебель лотоса в тине (mṛṇālī paṅkadigdheva vibhāti ca na bhāti ca) – букв. «[она], подобная стеблю лотоса, вымазанному тиной, и не сияла, и [в то же время] сияла».",
+          "service": [],
+          "suggestions": [],
+          "seq": 18
         }
       ]
     },
@@ -423,6 +572,7 @@
         "bhusana": "ता क्षमां सुविभक्ताङ्गीं विनाभरणशोभिनीम् ।\n\nप्रहर्षमतुलं लेभे मारुतिः प्रेक्ष्य मैथिलीम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "lexical:5.17.30:0",
@@ -435,7 +585,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:kzAma+dic_apte:kzAma"
+          "source": "dic_mw:kzAma+dic_apte:kzAma",
+          "source_links": [
+            {
+              "label": "MW kzAma",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kzAma"
+            },
+            {
+              "label": "APTE kzAma",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/AP90Scan/2020/web/webtc/indexcaller.php?key=kzAma"
+            }
+          ],
+          "seq": 19
         }
       ]
     },
@@ -449,6 +610,7 @@
         "siromani": "नमस्कृत्वेति । सीतादर्शनसंहृष्टो हनूमान् रामाय लक्ष्मणाय च नमस्कृत्वा संवृतः शाखाविशेषे निलीनो ऽभवत्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-17",
       "notes": [
         {
           "id": "phase2:5.17.32:0",
@@ -469,7 +631,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 20
         },
         {
           "id": "crosstext:5.17.32:0",
@@ -488,7 +651,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Bhagavadgītā 11.40 (Семенцов)"
+          "source": "Bhagavadgītā 11.40 (Семенцов)",
+          "source_links": [],
+          "seq": 21
         }
       ]
     }

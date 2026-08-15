@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 16,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 22,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 3
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "1d6820f9bcfbbaf7dd26999c68cb53911e4c9857a8ed42c48eab0f8884682498"
+    "source_hash": "820fe5e99c7edc41d7d7bde9b212d39b32819a2f02adb14070bc0ab9cc1245bb"
   },
   "sarga": 16,
   "verses": [
@@ -36,15 +72,26 @@
         "siromani": "तदाकारमाह-- मान्येति । गुरुभिर्विनीतस्य शिक्षितस्य लक्ष्मणस्य गुरुप्रिया गुरोः रामस्य प्रिया सीता यदि दुःखार्ता तर्हि कालः परमात्मसंकेतः दुरतिक्रमः अतिक्रमितुमशक्यः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "tier1:5.16.3:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Обученного наставниками (guruvinītasya). Композит guruvinītasya допускает различные интерпретации. Так, в комментарии Сатьятиртхи он толкуется как bahunamra, то есть «очень покорный». Голдмены в своем комментарии к «Сундараканде» отмечают, что его можно понять как «покорный старшему [брату]» (см.: Goldman 1984: 396). Здесь перевод дан по комментариям «Тилака» и «Таттвадипика».Жена в беде оказалась (mānyā… gurupriyā… sītā) – букв. «чтимая… возлюбленная старшим (имеется в виду Рама)… Сита».[Е. Костина] «,» По комм. Складывается впечатление, что Голдманы выбирают вариант «покорный старшему брату», а они его просто приводят как вариант в комментарии, а останавливаются на том же, что и у нас"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Обученного наставниками (guruvinītasya). Композит guruvinītasya допускает различные интерпретации. Так, в комментарии Сатьятиртхи он толкуется как bahunamra, то есть «очень покорный». Голдмены в своем комментарии к «Сундараканде» отмечают, что его можно понять как «покорный старшему [брату]» (см.: Goldman 1984: 396). Здесь перевод дан по комментариям «Тилака» и «Таттвадипика».Жена в беде оказалась (mānyā… gurupriyā… sītā) – букв. «чтимая… возлюбленная старшим (имеется в виду Рама)… Сита».",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": ",",
+              "kind": "note",
+              "text": "По комм. Складывается впечатление, что Голдманы выбирают вариант «покорный старшему брату», а они его просто приводят как вариант в комментарии, а останавливаются на том же, что и у нас"
+            }
+          ],
+          "suggestions": [],
+          "seq": 1
         }
       ]
     },
@@ -58,6 +105,7 @@
         "siromani": "रामस्येति । देवी सीता यतो रामस्य लक्ष्मणस्य च व्यवसायज्ञा अनिवार्यपराक्रमविज्ञात्री अतो ऽत्यर्थमत्यन्तं न क्षुभ्यते । तत्र दृष्टान्तः जलदागमे वर्षर्तौ गङ्गा प्रयागस्थजाह्नवीव"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "lexical:5.16.4:0",
@@ -70,7 +118,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:vyavasAya"
+          "source": "dic_mw:vyavasAya",
+          "source_links": [
+            {
+              "label": "MW vyavasAya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vyavasAya"
+            }
+          ],
+          "seq": 2
         }
       ]
     },
@@ -85,15 +140,19 @@
         "siromani": "तुल्येति । तुल्यानि रामशीलादिसदृशानि शीलं वयश्च वृत्तमाचरणं च यस्याः तुल्ये अभिजनः कुलं लक्षणं सामुद्रिकोक्तसुलक्ष्म यस्याः तां वैदेहीं राघव एवार्हति अत एव इयं वैदेही एव तं राघवमर्हति"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "tier1:5.16.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Равной ему нравом и возрастом (tulyaśīlavayovṛttāṃ) – имеется в виду не то, что Рама и Сита ровесники, а то, что их возрасты идеально подходят для супружеской четы. Согласно представлениям древних индийцев муж должен быть старше жены. Рама же на четыре года старше Ситы."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Равной ему нравом и возрастом (tulyaśīlavayovṛttāṃ) – имеется в виду не то, что Рама и Сита ровесники, а то, что их возрасты идеально подходят для супружеской четы. Согласно представлениям древних индийцев муж должен быть старше жены. Рама же на четыре года старше Ситы.",
+          "service": [],
+          "suggestions": [],
+          "seq": 3
         },
         {
           "id": "lexical:5.16.5:0",
@@ -107,7 +166,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:abhijana",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW abhijana",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=abhijana"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 4
         },
         {
           "id": "phase2:5.16.5:0",
@@ -128,7 +194,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 5
         }
       ]
     },
@@ -143,15 +210,19 @@
         "siromani": "तामिति । लोकः कान्तः शोभावान् यया यत्कान्त्यैव सर्वः प्रकाशते इत्यर्थः, तां श्रियमिव नवहेमाभां तां सीतां दृष्ट्वा मनसा रामं जगाम इदमब्रवीच्च"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "tier1:5.16.6:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…подобную новому золоту (navahemābhāṃ) – комментарий «Тилака» толкует композит navahemābhām как taruṇīṃ hemābhāṃ ca, то есть «юную и сияющую как золото»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…подобную новому золоту (navahemābhāṃ) – комментарий «Тилака» толкует композит navahemābhām как taruṇīṃ hemābhāṃ ca, то есть «юную и сияющую как золото».",
+          "service": [],
+          "suggestions": [],
+          "seq": 6
         }
       ]
     },
@@ -166,15 +237,28 @@
         "siromani": "विराध इति । महेन्द्रेण शम्बर इव विराधश्च हतः अस्या हेतोरित्यनुकृष्यते एवमुत्तरेष्वपि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "tier1:5.16.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "[Claude.AI — желательно] [термин] (не учтено) Первое появление в кн. V; введено в Рамаяна II. 9. 13: Шамбара (śambara) — демон, который упоминается в «Ригведе» как один из врагов Индры; иногда отождествляется с Вритрой."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [],
+          "suggestions": [
+            {
+              "author": "Claude.AI",
+              "strength": "желательно",
+              "kind": "термин",
+              "accounted": "не учтено",
+              "text": "Первое появление в кн. V; введено в Рамаяна II. 9. 13: Шамбара (śambara) — демон, который упоминается в «Ригведе» как один из врагов Индры; иногда отождествляется с Вритрой.",
+              "incomplete": false
+            }
+          ],
+          "seq": 7
         }
       ]
     },
@@ -189,6 +273,7 @@
         "siromani": "चतुरिति । रक्षसां चतुर्दश सहस्राणि निहतानि"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "crosstext:5.16.9:0",
@@ -208,9 +293,11 @@
           "sundara_sa_iast": "caturdaśasahasrāṇi rakṣasāṁ bhīmakarmaṇām |nihatāni janasthāne śarair agniśikhopamaiḥ ||",
           "quality": "GOOD",
           "source": "DCS parallel-search (GOOD); Rām 6.82.14 (крит. изд.)",
+          "source_links": [],
           "edition_flag": "vulgate",
           "shloka_critical": "V.14.9",
-          "verse_address_vulgate": ""
+          "verse_address_vulgate": "",
+          "seq": 8
         }
       ]
     },
@@ -225,15 +312,19 @@
         "siromani": "ऐश्वर्यमिति । वालिपालितम् अत एव दुर्लभम् अन्यैरलभ्यं वानराणामैश्वर्यं वानरनिरूपितेश्वरत्वम् अस्या निमित्ते सुग्रीवः प्राप्तवान्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "tier1:5.16.11:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "И обезьянье царство (aiśvaryaṃ vānarāṇāṃ ca durlabhaṃ) – букв. «власть над обезьянами, которую трудно обрести»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "И обезьянье царство (aiśvaryaṃ vānarāṇāṃ ca durlabhaṃ) – букв. «власть над обезьянами, которую трудно обрести».",
+          "service": [],
+          "suggestions": [],
+          "seq": 9
         }
       ]
     },
@@ -247,15 +338,26 @@
         "siromani": "यदीति । अस्याः कृते प्राप्तये समुद्रान्तां मेदिनीं जगत् त्रिलोकीं वा परिवर्तयेत् भ्रामयेत् तर्हि युक्तमेव इति मे मतिर्निश्चयः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "tier1:5.16.13:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «me matiḥ» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "me matiḥ",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 10
         }
       ]
     },
@@ -269,6 +371,7 @@
         "siromani": "तत्र हेतुमाह-- राज्यमिति । त्रिषु लोकेषु राज्यमधिकमिति शेषः, सीता वा ऽधिकेति विचार्यमाणे सतीति शेषः, सकलं त्रैलोक्यराज्यं सीतायाः कलां  शोडशांशमपि नाप्नुयात्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "lexical:5.16.14:0",
@@ -281,7 +384,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:kalA"
+          "source": "dic_mw:kalA",
+          "source_links": [
+            {
+              "label": "MW kalA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kalA"
+            }
+          ],
+          "seq": 11
         }
       ]
     },
@@ -294,6 +404,7 @@
         "bhusana": "इयं सा धर्मशीलस्य मैथिलस्य महात्मनः ।\n\nसुता जनकराजस्य सीता भर्तृदृढव्रता"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "crosstext:5.16.15:0",
@@ -312,7 +423,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.6.9 (Гринцер, пер. изд. I–III)"
+          "source": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.6.9 (Гринцер, пер. изд. I–III)",
+          "source_links": [],
+          "seq": 12
         }
       ]
     },
@@ -325,6 +438,7 @@
         "bhusana": "उत्थिता मेदिनीं भित्त्वा क्षेत्रे हलमुखक्षते ।\n\nपद्मरेणुनिभैः कीर्णा शुभैः केदारपांसुभिः ।। 4.16.16।।\n\nभर्तृदृढव्रता भर्तिरि दृढव्रता । केदारपांसुभिः यज्ञक्षेत्रपांसुभिः ।। 4.16.15.16।।\n\nविक्रान्तस्यार्यशीलस्य संयुगेष्वनिवर्तिनः ।\n\nस्नुषा दशरथस्यैषा ज्येष्ठा राज्ञो यशस्विनी"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "lexical:5.16.16:0",
@@ -337,7 +451,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:sItA"
+          "source": "dic_mw:sItA",
+          "source_links": [
+            {
+              "label": "MW sItA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=sItA"
+            }
+          ],
+          "seq": 13
         }
       ]
     },
@@ -350,6 +471,7 @@
         "bhusana": "आर्यशीलस्य श्रेष्ठस्वभावस्य"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "lexical:5.16.1718:0",
@@ -362,8 +484,10 @@
           "type": "В",
           "subtype": "base",
           "trigger": "crossref",
-          "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)",
-          "anchor_verse_id": "5.16.17"
+          "source": "первое вхождение в кн. V; указатель Гринцера / комментаторы, где процитировано (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "anchor_verse_id": "5.16.17",
+          "seq": 14
         }
       ]
     },
@@ -377,15 +501,19 @@
         "siromani": "इयमिति । भर्तृदृढव्रतेयं सीता हलमुखेन क्षते आकृष्टे क्षेत्रे मेदिनीं भित्त्वा पद्मरेणुनिभैः केदारपांसुभिः कीर्णां व्याप्ता सती उत्थिता । श्लोकद्वयमेकान्वयि ।। 5.16.15,16 ।।\n\nविक्रान्तस्येति । विक्रान्तस्य अतिपराक्रमविशिष्टस्य आर्यशीलस्य क्षत्रियपरमधर्मप्रवृत्तिस्वभावस्य अत एव संयुगेषु संग्रामेषु अनिवर्तिनो दशरथस्य एषा ज्येष्ठा स्नुषा धर्मज्ञस्य रामस्य दयिता अतिप्रिया भार्या इयं सीता राक्षसीवशम् आगता प्राप्ता । श्लोकद्वयमेकान्वयि ।। 5.16.17,18 ।।\n\nसर्वानिति । भर्तृस्नेहबलात् सर्वान् भोगान् परित्यज्य कष्टानि अचिन्तयित्वा च कृता सहगमनविषयकप्रयत्नवती सीता वनं प्रविष्टा"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "tier1:5.16.18:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Рамы, себя обуздавшего, закон и обычаи знающего (dharmajñasya kṛtajñasya rāmasya viditātmanaḥ) – букв. «знающего Дхарму, знающего правильное поведение Рамы, обуздавшего себя»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Рамы, себя обуздавшего, закон и обычаи знающего (dharmajñasya kṛtajñasya rāmasya viditātmanaḥ) – букв. «знающего Дхарму, знающего правильное поведение Рамы, обуздавшего себя».",
+          "service": [],
+          "suggestions": [],
+          "seq": 15
         }
       ]
     },
@@ -398,6 +526,7 @@
         "bhusana": "सर्वान् भोगान् परित्यज्य भर्तृस्नेहबलात्कृता ।\n\nअचिन्तयित्वा दुःखानि प्रविष्टा निर्जनं वनम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "lexical:5.16.19:0",
@@ -410,7 +539,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:sneha+dic_mw:bhartf"
+          "source": "dic_mw:sneha+dic_mw:bhartf",
+          "source_links": [
+            {
+              "label": "MW sneha",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=sneha"
+            },
+            {
+              "label": "MW bhartf",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=bhartf"
+            }
+          ],
+          "seq": 16
         }
       ]
     },
@@ -424,6 +564,7 @@
         "bhusana": "सेयं कनकवर्णाङ्गी नित्यं सुस्मितभाषिणी ।\n\nसहते यातनामेतामनर्थानामभागिनी\nयातनां तीव्रवेदनाम् । अनर्थानामभागिनी आपदामनर्हेत्यर्थः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "crosstext:5.16.21:0",
@@ -442,7 +583,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Meghadūta II.29 (Kālidāsa)"
+          "source": "Meghadūta II.29 (Kālidāsa)",
+          "source_links": [],
+          "seq": 17
         }
       ]
     },
@@ -456,6 +599,7 @@
         "bhusana": "इमां तु शीलसम्पन्नां द्रष्टुमर्हति राघवः ।\n\nरावणेन प्रमथितां प्रपामिव पिपासितः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "lexical:5.16.22:0",
@@ -468,7 +612,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:prapA"
+          "source": "dic_mw:prapA",
+          "source_links": [
+            {
+              "label": "MW prapA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=prapA"
+            }
+          ],
+          "seq": 18
         }
       ]
     },
@@ -483,6 +634,7 @@
         "siromani": "भर्तेति । भर्ता भूषणादप्यधिकं भार्याशोभनं स्त्रीशोभाहेतुः अतः शोभनार्हा ऽपि एषा सीता तेन रामेण रहिता सती न शोभते"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "lexical:5.16.26:0",
@@ -495,7 +647,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:BUzaNa+dic_mw:Sobha"
+          "source": "dic_mw:BUzaNa+dic_mw:Sobha",
+          "source_links": [
+            {
+              "label": "MW BUzaNa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=BUzaNa"
+            },
+            {
+              "label": "MW Sobha",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=Sobha"
+            }
+          ],
+          "seq": 19
         }
       ]
     },
@@ -509,15 +672,26 @@
         "siromani": "इमामिति । असिताः कृष्णाः केशाः यस्याः तां, तां प्रसिद्धां इमां दुःखितां ज्ञात्वा ममापि मनो व्यथितम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "tier1:5.16.28:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «sukhārhāṃ» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "sukhārhāṃ",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 20
         }
       ]
     },
@@ -532,6 +706,7 @@
         "siromani": "हिमेति । व्यसनस्य दुःखस्य परम्परया निपीड्यमाना अत एव हिमेन हता नलिनी कमलिनी इव जनकसुता सहचरेण चक्रकेण रहिता चक्रवाकीव कृपणां शोचनीयां दशां प्राप्ता"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "lexical:5.16.30:0",
@@ -540,11 +715,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "cakravākī",
-          "note_ru": "Чакраваки (cakravākī, f.) — самка чакраваки (Anas casarca). В 16.30 Сита уподоблена «cakravākī, rahitā sahacareṇa» — «самке чакраваки, лишённой спутника». Ср. 14.24 (самцы чакравак в пруду Раваны): там образ вводился как «влюблённые птицы», здесь — как лишённая пары. Двойная отсылка к cakravāka создаёт рамку вокруг «Аśoka-rощи»: войдя, Хануман видит пары (14.24); покидая образ Ситы, он видит её как cakravākī без пары (16.30). Символика разлучённых птиц замыкает главы 14–16 как единый образный цикл.",
+          "note_ru": "Чакраваки (cakravākī, f.) — самка чакраваки (Anas casarca). В 16.30 Сита уподоблена «cakravākī, rahitā sahacareṇa» — «самке чакраваки, лишённой спутника». Ср. 14.24 (самцы чакравак в пруду Раваны): там образ вводился как «влюблённые птицы», здесь — как лишённая пары. Двойная отсылка к cakravāka создаёт рамку вокруг «Aśoka-рощи»: войдя, Хануман видит пары (14.24); покидая образ Ситы, он видит её как cakravākī без пары (16.30). Символика разлучённых птиц замыкает главы 14–16 как единый образный цикл.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:cakravAkI"
+          "source": "dic_mw:cakravAkI",
+          "source_links": [
+            {
+              "label": "MW cakravAkI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=cakravAkI"
+            }
+          ],
+          "seq": 21
         }
       ]
     },
@@ -558,15 +740,32 @@
         "siromani": "अस्या इति । पुष्पैरवनताः अग्रशाखाः येषां ते अस्याः वनिकायाः अशोकाः हिमव्यपायेन अतिहिमस्याभावात् अभ्युत्थितः प्रकाशितः अनेकसहस्ररश्मिः चन्द्रश्च अस्याः सीतायाः दृढं शोकं जनयन्ति"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-16",
       "notes": [
         {
           "id": "tier1:5.16.31:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «sahasraraśmiḥ» Опущено[Е. Костина] «И луна на исходе зимыБольше не радует душу Ситы».» По Г-пресс - прохладный лунный свет для нее жарок, как солнечный. Не знаю, где они это взяли"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "sahasraraśmiḥ",
+              "kind": "omission",
+              "text": "опущено"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "И луна на исходе зимыБольше не радует душу Ситы",
+              "kind": "note",
+              "text": ".» По Г-пресс - прохладный лунный свет для нее жарок, как солнечный. Не знаю, где они это взяли"
+            }
+          ],
+          "suggestions": [],
+          "seq": 22
         }
       ]
     }

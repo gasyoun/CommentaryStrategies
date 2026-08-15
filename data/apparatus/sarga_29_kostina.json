@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 29,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 10,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 0
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "44f2d97847008735de533cf9082db7660d8a8217bab65eec4e9a4855bd6ae543"
+    "source_hash": "aff8ae775e60ac8a3256cea27a69663aeac9148a67a0326d22ff3493cc53a91f"
   },
   "sarga": 29,
   "verses": [
@@ -36,6 +72,7 @@
         "siromani": "निमित्ताकारं दर्शयितुमाह तथेति । तथा तेन प्रकारेण गतां शाखां प्राप्तां व्यथिताम् अत एव व्यतीतहर्षां निवृत्तानन्दाम् अत एव परिदीनमानसाम् अनिन्दितां शुभां तां सीतां शुभानि निमित्तानि श्रिया जुष्टं नरमुपसेविन इव भेजिरे सिषेविरे"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-29",
       "notes": [
         {
           "id": "lexical:5.29.1:0",
@@ -44,11 +81,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "nimitta",
-          "note_ru": "Нимитта (nimitta, n.) — «знак, предзнаменование; инструментальная причина»: ni-√mit- (MW: ni- + mita, p.p.p. от √mā- «измерять»? или самостоятельный √mit-). MW: nimitta n. 'a mark, sign, omen; instrumental or efficient cause (opp. upādāna, material cause)'. Философская двуплановость существенна: в ньяя-вайшешике нимитта-каузальность противопоставлена упадāна-каузальности (nimitta-kāraṇa = «действенная причина», как гончар; upādāna = «материальная причина», как глина). В предсказательной традиции (nimittaśāstra) телесные спазмы (aṅgaspandana) классифицируются как нимитты: левая сторона у женщин предвещает благо, у мужчин — несчастье (Bṛhatsaṃhitā Varāhamihiry 51). Подстрочник «знак» или «предзнаменование» не передаёт технический статус термина внутри шāстрической системы ангаспанданы, которую Вальмики явно задействует в гл. 29.",
+          "note_ru": "Нимитта (nimitta, n.) — «знак, предзнаменование; инструментальная причина»: ni-√mit- (MW: ni- + mita, p.p.p. от √mā- «измерять»? или самостоятельный √mit-). MW: nimitta n. 'a mark, sign, omen; instrumental or efficient cause (opp. upādāna, material cause)'. Философская двуплановость существенна: в ньяя-вайшешике нимитта-каузальность противопоставлена упадана-каузальности (nimitta-kāraṇa = «действенная причина», как гончар; upādāna = «материальная причина», как глина). В предсказательной традиции (nimittaśāstra) телесные спазмы (aṅgaspandana) классифицируются как нимитты: левая сторона у женщин предвещает благо, у мужчин — несчастье (Bṛhatsaṃhitā Varāhamihiry 51). Подстрочник «знак» или «предзнаменование» не передаёт технический статус термина внутри шастрической системы ангаспанданы, которую Вальмики явно задействует в гл. 29.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:nimitta"
+          "source": "dic_mw:nimitta",
+          "source_links": [
+            {
+              "label": "MW nimitta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nimitta"
+            }
+          ],
+          "seq": 1
         },
         {
           "id": "phase2:5.29.1:0",
@@ -68,7 +112,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 2
         }
       ]
     },
@@ -83,15 +128,19 @@
         "siromani": "तस्या इति । अरालया कुटिलया पक्षमराज्या पक्ष्मणः पङ्क्त्या वृतं युक्तं कृष्णविशालशुक्लं कृष्णत्वादिविशिष्टं तत्र कृष्णत्वं कनीनिकावच्छेदेन शुक्लत्वं तु सर्वदेशावच्छेदेन बोध्यम् । शुभं शुभलक्षणविशिष्टम् अभिताम्रं रक्तप्रान्तदेशं तस्याः वाममेकं नयनं मीनाहतं मत्स्यैः चालितं पद्ममिव प्रास्पन्दत"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-29",
       "notes": [
         {
           "id": "tier1:5.29.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Глаз задрожал, словно красный лотос (prāspandataikaṃ nayanaṃ… padmam ivābhitāmram) – см. примечание к V, 27, 50."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Глаз задрожал, словно красный лотос (prāspandataikaṃ nayanaṃ… padmam ivābhitāmram) – см. примечание к V, 27, 50.",
+          "service": [],
+          "suggestions": [],
+          "seq": 3
         }
       ]
     },
@@ -105,15 +154,26 @@
         "siromani": "गजेन्द्रेति । गजेन्द्रहस्तप्रतिमः शुण्डादण्डसदृशः अत एव पीनः सुजातः अतिसुन्दरः संहतयोः द्वयोः तयोरूर्वोर्मध्ये वाम इति शेषः, प्रस्पन्दमानः अस्याः सीतायाः ऊरुः पुरस्तात्स्थितं रामम् आचचक्षे"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-29",
       "notes": [
         {
           "id": "tier1:5.29.4:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Затем задрожало бедро ее левое (praspandamānaḥ punar ūrur asyā) – слово «левое» добавлено по контексту и в соответствии с комментарием «Тилака».[Е. Костина] «Дивнорожденное и упругое» 1) По Бхушане - सुजातः सुन्दरः ।। 2) Нужен комм. с буквальным переводом, потому что упругое - не = из двух плотно сомкнутых"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Затем задрожало бедро ее левое (praspandamānaḥ punar ūrur asyā) – слово «левое» добавлено по контексту и в соответствии с комментарием «Тилака».",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Дивнорожденное и упругое",
+              "kind": "note",
+              "text": "1) По Бхушане - सुजातः सुन्दरः ।। 2) Нужен комм. с буквальным переводом, потому что упругое - не = из двух плотно сомкнутых"
+            }
+          ],
+          "suggestions": [],
+          "seq": 4
         }
       ]
     },
@@ -128,15 +188,19 @@
         "siromani": "शुभमिति । अमलाक्ष्याः निर्मलनेत्रायाः शिखराग्रवत् दाडिमबीजाग्रभागवत् दन्ता यस्याः चारु गात्रं यस्यास्तस्याः स्थितायाः सीतायाः शुभं मङ्गलप्रदं हेमसमानवर्णम् ईषत् किंचित् रजसा ध्वस्तमिव वासो वस्त्रं शुभं शुभसूचकं यथा भवति तथा किंचित् परिसंस्रत पर्यसंस्रत्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-29",
       "notes": [
         {
           "id": "tier1:5.29.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "… платье …с плеч приспустилось (vāsaḥ… kiṃ cit parisraṃsata) В комментарии «Бхушана» отмечается, что приспустившееся платье – знак, указывающий на приближение возлюбленного.чьи зубы – семена граната (śikharāgradantyāḥ) – перевод композита дан по комментарию «Тилака». Голдмены переводят «the tips of jasmine buds» (см.: Goldman 1984: 190)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "… платье …с плеч приспустилось (vāsaḥ… kiṃ cit parisraṃsata) В комментарии «Бхушана» отмечается, что приспустившееся платье – знак, указывающий на приближение возлюбленного.чьи зубы – семена граната (śikharāgradantyāḥ) – перевод композита дан по комментарию «Тилака». Голдмены переводят «the tips of jasmine buds» (см.: Goldman 1984: 190).",
+          "service": [],
+          "suggestions": [],
+          "seq": 5
         },
         {
           "id": "phase2:5.29.5:0",
@@ -146,7 +210,7 @@
           "status": "ожидает гейта М.Г.",
           "mg_comment": "",
           "lemma_iast": "śikharāgradantyāḥ",
-          "note_ru": "Помимо уже отмеченного Костиной перевода композита («зубы — семена граната», по Тилаке) и толкования приспустившегося платья как знака приближения возлюбленного, Бхушана добавляет самостоятельный мотив: по трактатам саамудрики (сāмудрика-шāстра, наука телесных примет), женщина с зубами, подобными семенам граната, обеспечивает своему мужу долголетие — примета телесной красоты здесь удвоена приметой благой судьбы.",
+          "note_ru": "Помимо уже отмеченного Костиной перевода композита («зубы — семена граната», по Тилаке) и толкования приспустившегося платья как знака приближения возлюбленного, Бхушана добавляет самостоятельный мотив: по трактатам саамудрики (самудрика-шастра, наука телесных примет), женщина с зубами, подобными семенам граната, обеспечивает своему мужу долголетие — примета телесной красоты здесь удвоена приметой благой судьбы.",
           "type": "В",
           "source_commentary": [
             "bhusana"
@@ -157,7 +221,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 6
         }
       ]
     },
@@ -172,15 +237,26 @@
         "siromani": "तस्या इति । बिम्बफलोपमौ औष्ठौ यस्मिन् शोभने अक्षिणी भ्रुवौ च यस्मिन् केशानामन्तः अलको यस्मिन् अरालानि वक्राणि पक्ष्माणि यस्मिन् सिताः स्वच्छाः शुक्लदंष्ट्रा यस्मिंत्तत् तस्या वक्रं राहोर्मुखात् प्रमुक्तः चन्द्र इव बभासे"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-29",
       "notes": [
         {
           "id": "tier1:5.29.7:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «bhrukeśāntam» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "bhrukeśāntam",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 7
         },
         {
           "id": "lexical:5.29.7:0",
@@ -189,12 +265,23 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "bimbaphala",
-          "note_ru": "Бимба-пхала (bimba-phala, n., кармадхāрая) — «плод лианы бимба»: bimba — растение Coccinia grandis (сем. Cucurbitaceae, «красная тыквочка»), известна ярко-красными плодами размером с маслину; phala «плод» (√phal-, «плодоносить», Whitney #726). MW: bimba 'a mirror, disk; the plant Momordica monadelpha'. Апте уточняет: bimbā 'the plant Coccinia Indica, its fruit used as simile for red lips'. Плоды bimba стали устойчивым штампом для описания алых губ красавицы (bimba-phalādharoṣṭha, букв. «губы-нижняя-ноздря ← как плод бимбы»). Знаковое место в Амарукашатаке и Ритусамхāре Кāлидāсы. В нашем стихе bimbaphalopamoṣṭha «губы, подобные плоду бимбы» переносит устойчивую кāвья-формулу в эпический контекст, возводя описание Ситы к высокому поэтическому регистру. Подстрочник «алые губы» теряет ботаническую идентификацию и литературную аллюзию.",
+          "note_ru": "Бимба-пхала (bimba-phala, n., кармадхарая) — «плод лианы бимба»: bimba — растение Coccinia grandis (сем. Cucurbitaceae, «красная тыквочка»), известна ярко-красными плодами размером с маслину; phala «плод» (√phal-, «плодоносить», Whitney #726). MW: bimba 'a mirror, disk; the plant Momordica monadelpha'. Апте уточняет: bimbā 'the plant Coccinia Indica, its fruit used as simile for red lips'. Плоды bimba стали устойчивым штампом для описания алых губ красавицы (bimba-phalādharoṣṭha, букв. «губы-нижняя-ноздря ← как плод бимбы»). Знаковое место в Амарукашатаке и Ритусамхаре Калидасы. В нашем стихе bimbaphalopamoṣṭha «губы, подобные плоду бимбы» переносит устойчивую кавья-формулу в эпический контекст, возводя описание Ситы к высокому поэтическому регистру. Подстрочник «алые губы» теряет ботаническую идентификацию и литературную аллюзию.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:bimba+dic_apte:bimbA",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW bimba",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=bimba"
+            },
+            {
+              "label": "APTE bimbA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/AP90Scan/2020/web/webtc/indexcaller.php?key=bimbA"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 8
         },
         {
           "id": "phase2:5.29.7:0",
@@ -204,7 +291,7 @@
           "status": "ожидает гейта М.Г.",
           "mg_comment": "",
           "lemma_iast": "bhrukeśāntam",
-          "note_ru": "Бхушана поясняет опущенный в подстрочнике композит «бхру-кешāнта»: это не просто «брови и волосы», а разлетевшиеся у висков пряди (кешанта = «конец волос»), обрамляющие лицо в верхней его части — деталь растрёпанности, а не просто перечисление черт.",
+          "note_ru": "Бхушана поясняет опущенный в подстрочнике композит «бхру-кешанта»: это не просто «брови и волосы», а разлетевшиеся у висков пряди (кешанта = «конец волос»), обрамляющие лицо в верхней его части — деталь растрёпанности, а не просто перечисление черт.",
           "type": "Б",
           "source_commentary": [
             "bhusana"
@@ -215,7 +302,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 9
         }
       ]
     },
@@ -229,6 +317,7 @@
         "siromani": "सेति । वीतो व्यतीतः शोको यस्याः व्यपनीता गता तन्द्रा यस्याः शान्तो ज्वरो मनस्तापो यस्याः हर्षेण विबुद्धं प्रकाशितं सत्त्वं चित्तं यस्याः सा आर्या सीता शुक्ले सितपक्षे शीतांशुना चन्द्रेण रात्रिरिव वदनेनाशोभत"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-29",
       "notes": [
         {
           "id": "lexical:5.29.8:0",
@@ -241,7 +330,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:vIta+dic_mw:Soka"
+          "source": "dic_mw:vIta+dic_mw:Soka",
+          "source_links": [
+            {
+              "label": "MW vIta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vIta"
+            },
+            {
+              "label": "MW Soka",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=Soka"
+            }
+          ],
+          "seq": 10
         }
       ]
     }

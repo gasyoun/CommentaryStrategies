@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 44,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 17,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 2
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "13f6f72051b6f9e5f5119adaeca7116580f68eed3cf2500fba8581666401773a"
+    "source_hash": "4639a69ad21697a21451d15fea613e86a5ba7360ab0ad6311935425411313880"
   },
   "sarga": 44,
   "verses": [
@@ -34,6 +70,7 @@
         "bhusana": "सन्दिष्टो राक्षसेन्द्रेण प्रहस्तस्य सुतो बली ।\n\nजम्बुमाली महादंष्ट्रो निर्जगाम धनुर्धरः\nसंदिष्ट इत्यादि"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "lexical:5.44.1:0",
@@ -46,7 +83,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:daMzwrA"
+          "source": "dic_mw:daMzwrA",
+          "source_links": [
+            {
+              "label": "MW daMzwrA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=daMzwrA"
+            }
+          ],
+          "seq": 1
         }
       ]
     },
@@ -59,6 +103,7 @@
         "bhusana": "रक्तमाल्याम्बरधरः स्रग्वी रुचिरगुण्डलः ।\n\nमहान् विवृत्तनयनश्चण्डः समरदुर्जयः\nविवृत्तनयनः मण्डलीकृतनयनः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "lexical:5.44.2:0",
@@ -67,11 +112,22 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "samaradurjaya",
-          "note_ru": "Самарадурджая (samara-durjaya, adj.) — тат-пуруша: samara «битва» (от sam-√ṛ- «сходиться», √ṛ- «идти», Whitney #24) + dur- (отрицательный префикс «трудно») + jaya (√ji- «побеждать»). MW: samara 'conflict, battle'; durjaya 'hard to be conquered'. Стандартный перевод «труднопобедимый в бою» не раскрывает, что samara — именно «схождение, столкновение» (не yuddhа «борьба» и не raṇa «поле»). Samara подчёркивает динамику встречи противников, а durjaya оказывается нагружен дополнительным смыслом: «тот, кого трудно одолеть именно в момент схождения», — то есть его сила проявляется именно в инициации боя.",
+          "note_ru": "Самарадурджая (samara-durjaya, adj.) — тат-пуруша: samara «битва» (от sam-√ṛ- «сходиться», √ṛ- «идти», Whitney #24) + dur- (отрицательный префикс «трудно») + jaya (√ji- «побеждать»). MW: samara 'conflict, battle'; durjaya 'hard to be conquered'. Стандартный перевод «труднопобедимый в бою» не раскрывает, что samara — именно «схождение, столкновение» (не yuddha «борьба» и не raṇa «поле»). Samara подчёркивает динамику встречи противников, а durjaya оказывается нагружен дополнительным смыслом: «тот, кого трудно одолеть именно в момент схождения», — то есть его сила проявляется именно в инициации боя.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:samara+dic_mw:durjaya"
+          "source": "dic_mw:samara+dic_mw:durjaya",
+          "source_links": [
+            {
+              "label": "MW samara",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=samara"
+            },
+            {
+              "label": "MW durjaya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=durjaya"
+            }
+          ],
+          "seq": 2
         }
       ]
     },
@@ -84,6 +140,7 @@
         "bhusana": "धनुः शक्रधनुः प्रख्यं महद्रुचिरसायकम् ।\n\nविस्फारयानो वेगेन वज्राशनिसमस्वनम्\nरुचिरसायकं रुचिरसायकार्हम् । विस्फारयानः विस्फारयमाणः, ज्याकर्षणं कुर्वन्नित्यर्थः । वज्राशनिसमस्वनमिति विस्फारणक्रियाविशेषणम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "lexical:5.44.3:0",
@@ -96,7 +153,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:SAkraDAnus"
+          "source": "dic_mw:SAkraDAnus",
+          "source_links": [
+            {
+              "label": "MW SAkraDAnus",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=SAkraDAnus"
+            }
+          ],
+          "seq": 3
         }
       ]
     },
@@ -111,6 +175,7 @@
         "siromani": "तमिति । तोरणविटङ्कस्थं तोरणविटङ्कः तोरणस्तम्भयोरुपरि तिर्यक्प्रतिष्ठापितकपोतपालिकाकाष्ठं तत्स्थं हनूमन्तं निशितैः शरैः जम्बुमाली विव्याध"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "phase2:5.44.6:0",
@@ -131,7 +196,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 4
         }
       ]
     },
@@ -145,24 +211,38 @@
         "bhusana": "अर्धचन्द्रेण वदने शिरस्येकेन कर्णिना ।\n\nबाह्वोर्विव्याध नाराचैर्दशभिस्तं कपीश्वरम्\nएकेनेत्येतदर्धचन्द्रस्यापि विशेषणम् । अर्धचन्द्राकाराग्रशरेणेत्यर्थः । कर्णिना कर्णवच्छरेण"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "tier1:5.44.7:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «nārācair» если есть комм. про два других типа стрел, то нужен и про эти"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "nārācair",
+              "kind": "note",
+              "text": "если есть комм. про два других типа стрел, то нужен и про эти"
+            }
+          ],
+          "suggestions": [],
+          "seq": 5
         },
         {
           "id": "tier1:5.44.7:1",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "В лицо – стрелой-полумесяцем, / Ушастой стрелою – в голову (ardhacandreṇa vadane śirasy ekena karṇinā) – средневековые комментаторы (в частности, автор комментария «Тилака») поясняют, что ушастой стрелой (karṇin) называется стрела, имеющая наконечник в форме анка. Голдмены переводят «karṇin» как barbed arrow (см.: Goldman 1984: 232). В комментарии «Широмани» сообщается, что «стрела-полумесяц» (ardhacandra) – это стрела, наконечник которой имеет форму полумесяца."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "В лицо – стрелой-полумесяцем, / Ушастой стрелою – в голову (ardhacandreṇa vadane śirasy ekena karṇinā) – средневековые комментаторы (в частности, автор комментария «Тилака») поясняют, что ушастой стрелой (karṇin) называется стрела, имеющая наконечник в форме анка. Голдмены переводят «karṇin» как barbed arrow (см.: Goldman 1984: 232). В комментарии «Широмани» сообщается, что «стрела-полумесяц» (ardhacandra) – это стрела, наконечник которой имеет форму полумесяца.",
+          "service": [],
+          "suggestions": [],
+          "seq": 6
         },
         {
           "id": "lexical:5.44.7:0",
@@ -171,12 +251,19 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "ardhacandra",
-          "note_ru": "Ардхачандра (ardha-candra, m.) — «полумесяц» как тип боевой стрелы с луновидным наконечником (ardhacandra-bāṇa). MW: ardhacandra 'a crescent-shaped arrow-head'. Это специфический тип арсенала, отличный от kṣura (бритвенный), bhalla (широкий) и vatsadanta (зубовидный). Функция ardhacandra — рассекающий удар в лицо (подтверждено контекстом: ārdha-candreṇa vadane). Подстрочник «стрела подобная полумесяцу» не уточняет, что это nomenklaturnoe oружие, а не просто сравнение формы.",
+          "note_ru": "Ардхачандра (ardha-candra, m.) — «полумесяц» как тип боевой стрелы с луновидным наконечником (ardhacandra-bāṇa). MW: ardhacandra 'a crescent-shaped arrow-head'. Это специфический тип арсенала, отличный от kṣura (бритвенный), bhalla (широкий) и vatsadanta (зубовидный). Функция ardhacandra — рассекающий удар в лицо (подтверждено контекстом: ārdha-candreṇa vadane). Подстрочник «стрела подобная полумесяцу» не уточняет, что это nomenklaturnoe оружие, а не просто сравнение формы.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:arDacandra",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW arDacandra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=arDacandra"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 7
         },
         {
           "id": "crosstext:5.44.7:0",
@@ -196,7 +283,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Mahābhārata, Karṇaparva 8.12.50-51",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 8
         }
       ]
     },
@@ -210,15 +299,19 @@
         "siromani": "तस्येति । शरेण अभिहतं तस्य हनूमतस्ताम्रं मुखं भास्कररश्मिना सूर्यकिरणेन विद्धं विकाशितं फुल्लमम्बुजमिव शुशुभे"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "tier1:5.44.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Казалось лицо Ханумана / Огромным лотосом в небе (śuśubhe mukham yathākāśe mahāpadmaṃ) – сравнение лица с лотосом является традиционным в индийской поэзии. С лучами солнца здесь сравниваются стрелы, вонзившиеся в лицо Ханумана."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Казалось лицо Ханумана / Огромным лотосом в небе (śuśubhe mukham yathākāśe mahāpadmaṃ) – сравнение лица с лотосом является традиционным в индийской поэзии. С лучами солнца здесь сравниваются стрелы, вонзившиеся в лицо Ханумана.",
+          "service": [],
+          "suggestions": [],
+          "seq": 9
         }
       ]
     },
@@ -232,15 +325,19 @@
         "bhusana": "तत्तस्य रक्तं रक्तेन ऱञ्जितं शुशुभे मुखम् ।\n\nयथा ऽ ऽकाशे महापद्मं सिक्तं चन्दनबिन्दुभिः\nरक्तं स्वत एव रक्तम् । रक्तेन शोणितेन । महापद्मं रक्तोत्पलम् । चन्दनबिन्दुभिः रक्तचन्दनबिन्दुभिः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "tier1:5.44.9:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Окропленным золотистыми каплями (siktaṃ kāñcanabindubhiḥ) – в комментарии «Тилака» поясняется, что речь идет о каплях нектара цветка ашоки. Автор комментария «Таттвадипика» дает вариант candanabindubhiḥ и поясняет, что речь идет о каплях красного сандала (raktacandanabindubhiḥ). Голдмены переводят «sprinkled with drops of sandalpaste». (см.: Goldman 1984: 471)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Окропленным золотистыми каплями (siktaṃ kāñcanabindubhiḥ) – в комментарии «Тилака» поясняется, что речь идет о каплях нектара цветка ашоки. Автор комментария «Таттвадипика» дает вариант candanabindubhiḥ и поясняет, что речь идет о каплях красного сандала (raktacandanabindubhiḥ). Голдмены переводят «sprinkled with drops of sandalpaste». (см.: Goldman 1984: 471).",
+          "service": [],
+          "suggestions": [],
+          "seq": 10
         },
         {
           "id": "edition:5.44.9:0",
@@ -250,6 +347,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.44.9 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.44.9",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -258,7 +356,8 @@
               "iast": "tattasya raktaṃ raktena rañjitaṅ śuśubhe mukham । yathākāśe mahāpadmaṃ siktaṃ kāñcanabindubhiḥ ॥9॥"
             }
           ],
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 11
         }
       ]
     },
@@ -273,15 +372,26 @@
         "bhusana": "विपन्नं कर्म तद् दृष्ट्वा हनुमांश्चण्डविक्रमः ।\n\nसालं विपुलमुत्पाट्य भ्रामयामास वीर्यवान्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "tier1:5.44.12:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «сала» комм реалии"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "сала",
+              "kind": "note",
+              "text": "комм реалии"
+            }
+          ],
+          "suggestions": [],
+          "seq": 12
         }
       ]
     },
@@ -295,6 +405,7 @@
         "siromani": "स इति । शरैः पूरिततनुः स हनूमान् तं पूर्वगृहीतं परिघं गृह्य गृहीत्वा भ्रामयामास"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "lexical:5.44.15:0",
@@ -307,7 +418,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:parigha"
+          "source": "dic_mw:parigha",
+          "source_links": [
+            {
+              "label": "MW parigha",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=parigha"
+            }
+          ],
+          "seq": 13
         }
       ]
     },
@@ -321,15 +439,19 @@
         "siromani": "अतीति । मदोत्कटो हनूमान् परिघं भ्रामयित्वा जम्बुमालेर्महोरसि पातयामास"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "tier1:5.44.16:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "В широкую грудь Джамбумалину (jambumāler mahorasi) – в этой строфе вместо формы jambumālin использована форма jambumāli. Эта же форма использована в строфе 19."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "В широкую грудь Джамбумалину (jambumāler mahorasi) – в этой строфе вместо формы jambumālin использована форма jambumāli. Эта же форма использована в строфе 19.",
+          "service": [],
+          "suggestions": [],
+          "seq": 14
         }
       ]
     },
@@ -343,6 +465,7 @@
         "siromani": "तस्येति । तस्य हनुमता हतस्य जम्बुमालेः शिरः प्रभृतयो नादृश्यन्त विनष्टा इत्यर्थः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "phase2:5.44.17:0",
@@ -362,7 +485,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 15
         }
       ]
     },
@@ -376,6 +500,7 @@
         "siromani": "जम्बुमालिमिति । रावणः जम्बुमालिप्रभृतिं सुनिहतं श्रुत्वा चुक्रोध"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-44",
       "notes": [
         {
           "id": "lexical:5.44.19:0",
@@ -388,7 +513,9 @@
           "type": "В",
           "subtype": "base",
           "trigger": "realia",
-          "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)"
+          "source": "указатель имён и названий (анализ §09б / формулы тт. 1–2) — первое вхождение в кн. V (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "seq": 16
         },
         {
           "id": "crosstext:5.44.19:0",
@@ -407,7 +534,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.36.21 (Гринцер, пер. изд. I–III)"
+          "source": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.36.21 (Гринцер, пер. изд. I–III)",
+          "source_links": [],
+          "seq": 17
         }
       ]
     }

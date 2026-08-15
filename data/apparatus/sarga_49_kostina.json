@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 49,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 15,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 0
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "eb93ab485386f3e44138f84b0208d66a94cca94d822c41d7cbd74645484aa9c8"
+    "source_hash": "343f6875555ecdef0737831d6283b94ac8ebde52d502cc2114e49a40b2800c6a"
   },
   "sarga": 49,
   "verses": [
@@ -35,15 +71,26 @@
         "siromani": "हनुमतो वृत्तमाह तत इत्यादिभिः । ततः तस्मिन् समये तस्य इन्द्रजितः कर्मणा विस्मितः तस्य रावणस्य कर्मणा सीतापहरणक्रियया क्रोधताम्राक्षः स हनूमान् रक्षोधिपं रावणमवैक्षत । कर्मणेति तस्येति चावृत्त्योभयान्वयि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "tier1:5.49.1:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Изумленный его деяниями (karmaṇā tasya vismito) – средневековые комментаторы расходятся во мнении о том, какие именно деяния Раваны здесь имеются в виду. Особняком стоит мнение автора комментария «Тилака», который считает, что под «владыкой ракшасов» здесь подразумевается не Равана, а Индраджит.[Е. Костина] «.» Г-пр в объединяет обе версии: удивленный искусными деяниями Индраджита и разгневанный похищением Ситы и другими поступками Раваны"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Изумленный его деяниями (karmaṇā tasya vismito) – средневековые комментаторы расходятся во мнении о том, какие именно деяния Раваны здесь имеются в виду. Особняком стоит мнение автора комментария «Тилака», который считает, что под «владыкой ракшасов» здесь подразумевается не Равана, а Индраджит.",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": ".",
+              "kind": "note",
+              "text": "Г-пр в объединяет обе версии: удивленный искусными деяниями Индраджита и разгневанный похищением Ситы и другими поступками Раваны"
+            }
+          ],
+          "suggestions": [],
+          "seq": 1
         },
         {
           "id": "lexical:5.49.1:0",
@@ -57,7 +104,14 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:kroDatAmrAkza",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW kroDatAmrAkza",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kroDatAmrAkza"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 2
         }
       ]
     },
@@ -70,6 +124,7 @@
         "bhusana": "भ्राजमानं महार्हेण काञ्चनेन विराजता ।\n\nमुक्ताजालावृतेनाथ मुकुटेन महाद्युतिम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "lexical:5.49.2:0",
@@ -82,7 +137,14 @@
           "type": "В",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:mukuwa"
+          "source": "dic_mw:mukuwa",
+          "source_links": [
+            {
+              "label": "MW mukuwa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=mukuwa"
+            }
+          ],
+          "seq": 3
         }
       ]
     },
@@ -96,6 +158,7 @@
         "bhusana": "वज्रसंयोगसंयुक्तैर्महार्हमणिविग्रहैः ।\n\nहैमैराभरणैश्चित्रैर्मनसेव प्रकल्पितैः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "lexical:5.49.3:0",
@@ -108,7 +171,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:vajrasaMyoga"
+          "source": "dic_mw:vajrasaMyoga",
+          "source_links": [
+            {
+              "label": "MW vajrasaMyoga",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vajrasaMyoga"
+            }
+          ],
+          "seq": 4
         }
       ]
     },
@@ -122,6 +192,7 @@
         "bhusana": "महार्हक्षौमसंवीतं रक्तचन्दनरूषितम् ।\n\nस्वनुलिप्तं विचित्राभिर्विविधाभिश्च भक्तिभिः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "phase2:5.49.4:0",
@@ -141,7 +212,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 5
         }
       ]
     },
@@ -156,15 +228,19 @@
         "bhusana": "शिरोभिर्दशभिर्वीरं भ्राजमानं महौजसम् ।\n\nनानाव्यालसमाकीर्णैः शिखरैरिव मन्दरम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "tier1:5.49.6:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…Десять голов… (śirobhir daśabhiḥ) – согласно комментарию «Тилака», хотя обычно Равана имел одну голову, но при встрече с Хануманом он принял грозное десятиглавое обличье, которое использовал в битве."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…Десять голов… (śirobhir daśabhiḥ) – согласно комментарию «Тилака», хотя обычно Равана имел одну голову, но при встрече с Хануманом он принял грозное десятиглавое обличье, которое использовал в битве.",
+          "service": [],
+          "suggestions": [],
+          "seq": 6
         }
       ]
     },
@@ -178,15 +254,26 @@
         "bhusana": "नीलाञ्जनचयप्रख्यं हारेणोरसि राजता ।\n\nपूर्णचन्द्राभवक्रेण सबलाकमिवाम्बुदम्\nपूर्णचन्द्राभवक्त्रेण पूर्णचन्द्रतुल्यनायकरत्नेन । वक्त्रं नायकरत्नम् अभितोलग्नमुक्तामणिमण्डलम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "tier1:5.49.7:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Луноликий… (pūrṇacandrābhavaktreṇa) – букв. «с лицом, подобным полной луне».Озаренной восходящим солнцем (sabālārkam ivāmbudam) – в критическое издание вошел другой вариант: sabalākam ivāmbudam «словно туча, [пересекаемая] журавлями» (см.: Jhala 1966: 337).[Е. Костина] «Луноликий» Можно отметить в комм., что Голдмэны соотносят сравнение с луной с камнем в ожерелье"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Луноликий… (pūrṇacandrābhavaktreṇa) – букв. «с лицом, подобным полной луне».Озаренной восходящим солнцем (sabālārkam ivāmbudam) – в критическое издание вошел другой вариант: sabalākam ivāmbudam «словно туча, [пересекаемая] журавлями» (см.: Jhala 1966: 337).",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Луноликий",
+              "kind": "note",
+              "text": "Можно отметить в комм., что Голдмэны соотносят сравнение с луной с камнем в ожерелье"
+            }
+          ],
+          "suggestions": [],
+          "seq": 7
         },
         {
           "id": "lexical:5.49.7:0",
@@ -200,7 +287,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:daRqa",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW daRqa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=daRqa"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 8
         },
         {
           "id": "phase2:5.49.7:0",
@@ -221,7 +315,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 9
         }
       ]
     },
@@ -234,15 +329,19 @@
         "bhusana": "बाहुभिर्बद्धकेयूरैश्चन्दनोत्तमरूषितैः ।\n\nभ्राजमानाङ्गदैः पीनैः पञ्चशीर्षौरिवोरगैः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "tier1:5.49.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Украшенные браслетами (bāhubhir baddhakeyūraiḥ… bhrājamānāṅgadaiḥ) – в оригинале говорится о брасетах кеюра и ангада, которые носились на предплечьях."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Украшенные браслетами (bāhubhir baddhakeyūraiḥ… bhrājamānāṅgadaiḥ) – в оригинале говорится о брасетах кеюра и ангада, которые носились на предплечьях.",
+          "service": [],
+          "suggestions": [],
+          "seq": 10
         }
       ]
     },
@@ -256,15 +355,26 @@
         "siromani": "चिन्ताकारमाह अहो इति । राक्षसराजस्य रूपादिसर्वलक्षणयुक्तता च अहो आश्चर्यम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "tier1:5.49.17:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «благими знаками» потом нужен будет комм"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "благими знаками",
+              "kind": "note",
+              "text": "потом нужен будет комм"
+            }
+          ],
+          "suggestions": [],
+          "seq": 11
         }
       ]
     },
@@ -279,15 +389,44 @@
         "siromani": "यदीति । अयं राक्षसेश्वरः यदि अधर्मः धर्मविरोधी न स्यात् तर्हि सुरलोकस्यापि रक्षिता स्यात्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "tier1:5.49.18:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «saśakrasyāpi» опущено, комм[Е. Костина] «закону следовал» Думаю, нужен комм с учетом наличия расхождений в толковании (См. у Голдмэнов 489), хотя есть ощущение, что такой антонимический перевод снимает проблему[Е. Костина] «asya krūrair nṛśaṃsaiś cakarmabhir lokakutsitaiḥ» сверка[Е. Костина] «nṛśaṃsaiś» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "saśakrasyāpi",
+              "kind": "omission",
+              "text": "опущено, комм"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "закону следовал",
+              "kind": "note",
+              "text": "Думаю, нужен комм с учетом наличия расхождений в толковании (См. у Голдмэнов 489), хотя есть ощущение, что такой антонимический перевод снимает проблему"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "asya krūrair nṛśaṃsaiś cakarmabhir lokakutsitaiḥ",
+              "kind": "note",
+              "text": "сверка"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "nṛśaṃsaiś",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 12
         },
         {
           "id": "phase2:5.49.18:0",
@@ -308,7 +447,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 13
         }
       ]
     },
@@ -322,6 +462,7 @@
         "siromani": "अस्येति । लोककुत्सितैः सर्वजननिन्दितैः नृशंसैः घातुकैः अत एव क्रूरैः अस्य कर्मभिः सामरदानवाः सर्वे लोकाः अस्मात् रावणाद्ब्रिभ्यति\nअयमिति । क्रुद्धः अयं जगदेकार्णवं कर्तुम् उत्सहते समर्थो भवति इति बहुविधां चिन्तां राक्षसराजस्य प्रभावं दृष्ट्वा ऽपि अकरोत् । सार्धश्लोक एकान्वयी"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "lexical:5.49.19:0",
@@ -334,7 +475,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:kAla"
+          "source": "dic_mw:kAla",
+          "source_links": [
+            {
+              "label": "MW kAla",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kAla"
+            }
+          ],
+          "seq": 14
         }
       ]
     },
@@ -347,6 +495,7 @@
         "bhusana": "इत्यार्षे श्रीरामायणे वाल्मीकीये आदिकाव्ये श्रीमत्सुन्दरकाण्डे एकोनपञ्चाशः सर्गः ।। 5.49।।\n\nअस्येति । तेन कर्मभिः कृतेन पूर्वोक्तेनाधर्मेण हेतुना"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-49",
       "notes": [
         {
           "id": "lexical:5.49.1920:0",
@@ -360,7 +509,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:yaSas",
-          "anchor_verse_id": "5.49.20"
+          "source_links": [
+            {
+              "label": "MW yaSas",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=yaSas"
+            }
+          ],
+          "anchor_verse_id": "5.49.20",
+          "seq": 15
         }
       ]
     }

@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 31,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 18,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 3
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "020c767db386a0181a679cee2e3bdbd12741146dab5fdbbb174d8cda7801cf42"
+    "source_hash": "ee9df6d3622cf10d168fe959b0301a25bdaf0fa87624d7945261d3f2c79cefa9"
   },
   "sarga": 31,
   "verses": [
@@ -34,6 +70,7 @@
         "bhusana": "राजर्षीणां गुणश्रेष्टस्तपसा चर्षिभिः समः ।\n\nचक्रवर्तिकुले जातः पुरन्दरसमो बले"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "lexical:5.31.3:0",
@@ -46,7 +83,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:cakravartin"
+          "source": "dic_mw:cakravartin",
+          "source_links": [
+            {
+              "label": "MW cakravartin",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=cakravartin"
+            }
+          ],
+          "seq": 1
         },
         {
           "id": "lexical:5.31.3:1",
@@ -59,7 +103,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:puraMdara"
+          "source": "dic_mw:puraMdara",
+          "source_links": [
+            {
+              "label": "MW puraMdara",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=puraMdara"
+            }
+          ],
+          "seq": 2
         },
         {
           "id": "edition:5.31.3:0",
@@ -69,6 +120,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.31.3 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.31.3",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -76,7 +128,8 @@
               "verse_id": "5.31.3",
               "iast": "rājarṣīṇāṅ guṇaśrēṣṭhas tapasā carṣibhiḥ samaḥ । cakravartikule jātaḥ puraṃdarasamo bale ॥3॥"
             }
-          ]
+          ],
+          "seq": 3
         }
       ]
     },
@@ -89,6 +142,7 @@
         "bhusana": "अहिसारतिरक्षुद्रौ घृणी सत्यपराक्रमः ।\n\nमुख्यश्चेक्ष्वाकुवंशस्य लक्ष्मीवाँल्लक्ष्मिवर्धनः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "crosstext:5.31.4:0",
@@ -107,7 +161,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Mahābhārata, Udyogaparvan V.52.10"
+          "source": "Mahābhārata, Udyogaparvan V.52.10",
+          "source_links": [],
+          "seq": 4
         }
       ]
     },
@@ -120,6 +176,7 @@
         "bhusana": "रक्षिता स्वस्य धर्मस्य स्वजनस्य च रक्षिता ।\n\nरक्षिता जीवलोकस्य धर्मस्य च परन्तपः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "lexical:5.31.7:0",
@@ -132,7 +189,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:paraMtapa"
+          "source": "dic_mw:paraMtapa",
+          "source_links": [
+            {
+              "label": "MW paraMtapa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=paraMtapa"
+            }
+          ],
+          "seq": 5
         },
         {
           "id": "crosstext:5.31.7:0",
@@ -152,9 +216,11 @@
           "sundara_sa_iast": "rakṣitā svasya vṛttasya svajanasyāpi rakṣitā |rakṣitā jīvalokasya dharmasya ca paraṁtapaḥ ||",
           "quality": "GOOD",
           "source": "DCS parallel-search (GOOD); Rām 5.33.10 (крит. изд.)",
+          "source_links": [],
           "edition_flag": "vulgate",
           "shloka_critical": "V.29.6",
-          "verse_address_vulgate": "Rām V.35.10 (вульгата)"
+          "verse_address_vulgate": "Rām V.35.10 (вульгата)",
+          "seq": 6
         }
       ]
     },
@@ -168,6 +234,7 @@
         "bhusana": "तस्य सत्याभिसन्धस्य वृद्धस्य वचनात् पितुः ।\n\nसभार्यः सह च भ्रात्रा वीरः प्रव्राजितो वनम्\nतस्य पितुर्वचनाद्वनं प्रव्राजितः गतः । स्वार्थे णिच्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "lexical:5.31.8:0",
@@ -176,11 +243,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "satyābhisaṃdha",
-          "note_ru": "Сатьябхисандха (satya-abhi-saṃdha, букв. «крепко связанный правдой/обетом») — юридически-этическое понятие: satya «правда» + abhi-saṃdha (от abhi-saṃ-√dhā «скреплять договором, связывать обещанием»). MW: satyābhisaṃdha «true-speaking, faithful to a promise or agreement» (ChUp., R., Car.). Применительно к Дашаратхе (tasya satyābhisaṃdhasya, 31.8) термин прямо формулирует юридическое основание изгнания Рамы: данное Кайкейи varadāna неотчуждаемо именно потому, что царь — satyābhisaṃdha. Ханuman выбирает это слово точно: в мотивации рассказа это не просто добродетель, но правовая необходимость.",
+          "note_ru": "Сатьябхисандха (satya-abhi-saṃdha, букв. «крепко связанный правдой/обетом») — юридически-этическое понятие: satya «правда» + abhi-saṃdha (от abhi-saṃ-√dhā «скреплять договором, связывать обещанием»). MW: satyābhisaṃdha «true-speaking, faithful to a promise or agreement» (ChUp., R., Car.). Применительно к Дашаратхе (tasya satyābhisaṃdhasya, 31.8) термин прямо формулирует юридическое основание изгнания Рамы: данное Кайкейи varadāna неотчуждаемо именно потому, что царь — satyābhisaṃdha. Hanuman выбирает это слово точно: в мотивации рассказа это не просто добродетель, но правовая необходимость.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:satyAbhisaMDa"
+          "source": "dic_mw:satyAbhisaMDa",
+          "source_links": [
+            {
+              "label": "MW satyAbhisaMDa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=satyAbhisaMDa"
+            }
+          ],
+          "seq": 7
         }
       ]
     },
@@ -195,6 +269,7 @@
         "bhusana": "तेन तत्र महारण्ये मृगयां परिधावता ।\n\nराक्षसा निहताः शूरा बहवः कामरूपिणः\nमृगयां परिधावता मृगयामुद्दिश्य परिधावता । अनेन लीलया खरादिवधः सूच्यते"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "phase2:5.31.9:0",
@@ -214,7 +289,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 8
         }
       ]
     },
@@ -229,6 +305,7 @@
         "bhusana": "जनस्थानवधं श्रुत्वा हतौ च खरदूषणौ ।\n\nततस्त्वमर्षापहृता जानकी रावणेन तु ।\n\nवञ्जयित्वा वने रामं मृगरूपेण मायया"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "edition:5.31.10:0",
@@ -238,6 +315,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлоки 5.31.10–15 (6 шлок) отсутствуют в критическом издании (Барода).",
           "kind": "verse_range",
+          "scope": "несколько шлок подряд",
           "range": "5.31.10–15",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -265,7 +343,8 @@
               "verse_id": "5.31.15",
               "iast": "asyā hetor viśālākṣyāḥ sāgaraṃ vegavān plutaḥ । yathārūpāṃ yathāvarṇāṃ tathālakṣmavatīṃ ca tām ॥15॥"
             }
-          ]
+          ],
+          "seq": 9
         },
         {
           "id": "crosstext:5.31.10:0",
@@ -284,7 +363,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Vālmīki Rāmāyaṇa, Rām. Araṇya 3.23.5 (Гринцер, пер. изд. I–III)"
+          "source": "Vālmīki Rāmāyaṇa, Rām. Araṇya 3.23.5 (Гринцер, пер. изд. I–III)",
+          "source_links": [],
+          "seq": 10
         }
       ]
     },
@@ -298,15 +379,19 @@
         "bhusana": "ततः स वालिनं हत्वा रामः परपुरञ्जयः ।\n\nप्रायच्छत् कपिराज्यं तत् सुग्रीवाय महाबलः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "tier1:5.31.12:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Чужих городов покоритель (parapuraṃjaya) – формульный эпитет."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Чужих городов покоритель (parapuraṃjaya) – формульный эпитет.",
+          "service": [],
+          "suggestions": [],
+          "seq": 11
         },
         {
           "id": "lexical:5.31.12:0",
@@ -319,8 +404,10 @@
           "type": "В",
           "subtype": "base",
           "trigger": "crossref",
-          "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)",
-          "collision_tier1": true
+          "source": "первое вхождение в кн. V; указатель Гринцера / комментаторы, где процитировано (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 12
         }
       ]
     },
@@ -334,6 +421,7 @@
         "bhusana": "सुग्रीवेणापि सन्दिष्टा हरयः कामरूपिणः ।\n\nदिक्षु सर्वासु तां देवीं विचिन्वन्ति सहस्रशः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "lexical:5.31.13:0",
@@ -346,7 +434,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:kAmarUpin"
+          "source": "dic_mw:kAmarUpin",
+          "source_links": [
+            {
+              "label": "MW kAmarUpin",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kAmarUpin"
+            }
+          ],
+          "seq": 13
         }
       ]
     },
@@ -360,6 +455,7 @@
         "siromani": "अहमिति । वेगवानहं संपातिवचनात् सीताबोधकसंपातिवाक्यं संश्रुत्य तस्याः सीताया हेतोः समुद्रं प्लुतः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "lexical:5.31.14:0",
@@ -368,11 +464,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "saṃpāti",
-          "note_ru": "Сампати (sampāti) — мифическая птица, старший брат Джатаю, сын Аруны (или Гаруды по некоторым версиям). Оба брата состязались в полёте к солнцу; Сампати лишился крыльев, закрыв ими брата от солнечного жара, и с тех пор живёт на горе на побережье Южного моря. MW: sampāti «N. of a fabulous bird, eldest son of Aruṇa, brother of Jaṭāyu» (MBh., R.). В Кишкиндхаканде именно Сампати — единственный свидетель похищения Ситы, наблюдавший с высоты птичьего полёта. Его testimoniium (sampātivacana, 31.14) — нарративный поворот: без него поиски были бы невозможны. Связь с Джатаю через тему «брат, пожертвовавший собой» создаёт двойник к гибели Джатаю в Арanyakaṇḍe.",
+          "note_ru": "Сампати (sampāti) — мифическая птица, старший брат Джатаю, сын Аруны (или Гаруды по некоторым версиям). Оба брата состязались в полёте к солнцу; Сампати лишился крыльев, закрыв ими брата от солнечного жара, и с тех пор живёт на горе на побережье Южного моря. MW: sampāti «N. of a fabulous bird, eldest son of Aruṇa, brother of Jaṭāyu» (MBh., R.). В Кишкиндхаканде именно Сампати — единственный свидетель похищения Ситы, наблюдавший с высоты птичьего полёта. Его testimoniium (sampātivacana, 31.14) — нарративный поворот: без него поиски были бы невозможны. Связь с Джатаю через тему «брат, пожертвовавший собой» создаёт двойник к гибели Джатаю в Aranyakaṇḍe.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:sampAti"
+          "source": "dic_mw:sampAti",
+          "source_links": [
+            {
+              "label": "MW sampAti",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=sampAti"
+            }
+          ],
+          "seq": 14
         }
       ]
     },
@@ -386,15 +489,19 @@
         "bhusana": "यथारूपां यथावर्णां यथालक्ष्मीं च निश्चिताम् ।\n\nअश्रौषं राघवस्याहं सेयमासादिता मया"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "tier1:5.31.15:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Что обликом и приметами (yathārūpāṃ yathāvarṇāṃ) – букв. «ту… которая как обликом и цветом (кожи), так и приметами…»"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Что обликом и приметами (yathārūpāṃ yathāvarṇāṃ) – букв. «ту… которая как обликом и цветом (кожи), так и приметами…»",
+          "service": [],
+          "suggestions": [],
+          "seq": 15
         }
       ]
     },
@@ -407,6 +514,7 @@
         "bhusana": "निशम्य सीता वचनं कपेश्च दिशश्च सर्वाः प्रदिशश्च वीक्ष्य ।\n\nस्वयं प्रहर्षं परमं जगाम सर्वात्मना राममनुस्मरन्ती"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "edition:5.31.18:0",
@@ -416,6 +524,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.31.18 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.31.18",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -423,7 +532,8 @@
               "verse_id": "5.31.18",
               "iast": "niśamya sītā vacanaṃ kapeśca । diśaśca sarvāḥ pradiśaśca vīkṣya । svayaṃ praharṣam paramaṃ jagāma । sarvātmanā rāmam anusmarantī ॥18॥"
             }
-          ]
+          ],
+          "seq": 16
         }
       ]
     },
@@ -437,15 +547,32 @@
         "bhusana": "सा तिर्यगूर्ध्वं च तथाप्यधस्तान्निरीक्षमाणा तमचिन्त्यबुद्धिम् ।\n\nददर्श पिङ्गाधिपतेरमात्यं वातात्मजं सूर्यमिवोदयस्थम्\nइत्यार्षे श्रीरीमायणे वाल्मीकीये आदिकाव्ये श्रीमत्सुन्दरकाण्डे एकत्रिंशः सर्गः ।। 5.31।।\n\nसेति । पार्श्वम् आकाशं भूमिं चावेक्षमाणा । अधस्तादित्यनेन यथा भूमिं भित्त्वा कश्चिन्नरः रामनामानि कीर्तयेत्तथा ऽन्यत्रापीत्यपिना संभावनोच्यते । शिंशुपावृक्षस्याधस्तात्तिर्यगूर्ध्वमिति वा । तमचिन्त्यबुद्धिं ददर्श । तद्वपुरवलोकनात्पूर्वं तस्य हृदयमेवं परिच्छिनत्ति स्म । इह लङ्कायां प्रविश्यावरोधाराममध्यप्रवेशेनायं निपुणतरमतिरिति निश्चितवतीत्यर्थः । पिङ्गाधिपतेरमात्यं स्वरविशेषेणायं वानरः, तत्रापि न स्वतन्त्रः, किन्तु स्वसजातीयस्य राज्ञः कस्यचिदमात्यो ऽयम्, तद्राज्यकार्यमेतद्धस्तगतमिति निश्चितवती । वातात्मजं रामप्राणहेतुभूतमत्प्राणनहेतुत्वेन सर्वप्राणिप्राणनहेतुत्वेन वायुपुत्रो ऽयमित्यवगतवती । सूर्यमिवोदयस्थं रामदिवाकरस्योदयसूचकमुदयगिरिस्थमरुणमिव स्थितम् । सूरः सूर्यः । \"सूरसूर्यार्यमादित्यद्वादशात्मदिवाकराः\" इत्यमरः । \"सूरसूतो ऽरुणो ऽनुरुः\" इत्युक्तेस्सूरस्य सम्बन्धी सूर्यः । दिगादित्वाद्यत् । भवतापि सम्बन्धः विशेष एव । यद्वा सूर्यशब्देन तत्संबन्ध्यरुणो लक्ष्यते । \"सूर्यो ऽरुणे च सूर्ये च\" इति निघण्टुरस्तीत्याहुः । औचित्यादत्र सूर्यो ऽरुणः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-31",
       "notes": [
         {
           "id": "tier1:5.31.19:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «acintyabuddhim» Опущено[Е. Костина] «piṅgādhipater amātyaṃ» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "acintyabuddhim",
+              "kind": "omission",
+              "text": "опущено"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "piṅgādhipater amātyaṃ",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 17
         },
         {
           "id": "phase2:5.31.19:0",
@@ -466,7 +593,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 18
         }
       ]
     }

@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 7,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 21,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -19,7 +55,8 @@
       "phase2": 3,
       "edition": 0,
       "crosstext": 1
-    }
+    },
+    "source_hash": "4994ef2e596396ea86d7d7a3df3c6a87e8a4262049313c5248fb643cec27209d"
   },
   "sarga": 7,
   "verses": [
@@ -33,6 +70,7 @@
         "bhusana": "स वेश्मजालं बलवान् ददर्श व्यासक्तवैडूर्यसुवर्णजालम् ।\n\nयथा महत् प्रावृषि मेघजालं विद्युत्पिनद्धं सविहङ्गजालम्\nस वेश्मजालमित्यादि । व्यासक्तवैडूर्यसुवर्णजालं वैडूर्यघटितसुवर्णमयजालकरन्ध्रम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "lexical:5.7.1:0",
@@ -45,7 +83,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:vEdUrya+dic_apte:vEdUrya"
+          "source": "dic_mw:vEdUrya+dic_apte:vEdUrya",
+          "source_links": [
+            {
+              "label": "MW vEdUrya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vEdUrya"
+            },
+            {
+              "label": "APTE vEdUrya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/AP90Scan/2020/web/webtc/indexcaller.php?key=vEdUrya"
+            }
+          ],
+          "seq": 1
         }
       ]
     },
@@ -60,15 +109,19 @@
         "siromani": "निवेशनानामिति । प्रधानैः शङ्खायुधचापैः शालन्ते शोभन्ते ताः निवेशनानां\n\nगृहाणां विविधाः शालाः अवान्तरगृहाणि मनोहराः विशालाश्च वेश्माद्रिषु अद्रिसदृशवेश्मसु चन्द्रशालाः शिरोगृहाणि चन्द्रकान्तमणिसंबद्धावान्तरगृहाणि वा पुनर्ददर्श"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "tier1:5.7.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Террасы, просторные и прекрасные (candraśālāḥ) – букв. «лунные комнаты». Комментаторы толкуют это слово как śirogṛhāṇi, то есть некие пристройки, расположенные на крыше дома. Голдмены переводят terraces (см.: Goldman 1984: 127)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Террасы, просторные и прекрасные (candraśālāḥ) – букв. «лунные комнаты». Комментаторы толкуют это слово как śirogṛhāṇi, то есть некие пристройки, расположенные на крыше дома. Голдмены переводят terraces (см.: Goldman 1984: 127).",
+          "service": [],
+          "suggestions": [],
+          "seq": 2
         },
         {
           "id": "lexical:5.7.2:0",
@@ -82,7 +135,14 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:candraSAlA",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW candraSAlA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=candraSAlA"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 3
         }
       ]
     },
@@ -97,15 +157,19 @@
         "siromani": "गृहाणीति । नानावसुभिः अनेकविधधनैः राजितानि देवासुरैरपि सुपूजितानि अतिप्रशंसितानि स्वबलार्जितानि रावणबलेन कुबेरात्प्राप्तानि गृहाणि कपिर्ददर्श"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "tier1:5.7.3:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Добытые силою Раваны (svabalārjitāni) – букв. «обретенные своей силой». Автор «Тилаки» отмечает, что это слово может относиться как к Раване, так и к Хануману. В первом случае речь идет о победе Раваны над Куберой, прежним властителем Ланки. Во втором случае подразумевается сила Ханумана, совершившего разнообразные подвиги, чтобы достичь дворца Раваны."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Добытые силою Раваны (svabalārjitāni) – букв. «обретенные своей силой». Автор «Тилаки» отмечает, что это слово может относиться как к Раване, так и к Хануману. В первом случае речь идет о победе Раваны над Куберой, прежним властителем Ланки. Во втором случае подразумевается сила Ханумана, совершившего разнообразные подвиги, чтобы достичь дворца Раваны.",
+          "service": [],
+          "suggestions": [],
+          "seq": 4
         },
         {
           "id": "lexical:5.7.3:0",
@@ -119,7 +183,9 @@
           "subtype": "hist_cultural",
           "trigger": "myth_background",
           "source": "MW s.v. deva_asura_conflict; Гринцер, кн. I–III",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 5
         }
       ]
     },
@@ -133,6 +199,7 @@
         "siromani": "तानीति । प्रयत्नेन अभिसमाहितानि चतुर्दिक्षु क्रमेण संनिवेशितानि मयेन साक्षान्निर्मितानीव विश्वकर्मणा निर्मितत्वे ऽपि अनेकमायामयत्वान्मयनिर्मितसदृशानीत्यर्थः, सर्वगुणोत्तराणि सर्वगुणैः श्रेष्ठानि गृहाणि ददर्श"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "lexical:5.7.4:0",
@@ -145,7 +212,14 @@
           "type": "В",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:maya"
+          "source": "dic_mw:maya",
+          "source_links": [
+            {
+              "label": "MW maya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=maya"
+            }
+          ],
+          "seq": 6
         },
         {
           "id": "phase2:5.7.4:0",
@@ -166,7 +240,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 7
         }
       ]
     },
@@ -180,15 +255,19 @@
         "bhusana": "महीतले स्वर्गमिव प्रकीर्णं श्रिया ज्वलन्तं बहुरत्नकीर्णम् ।\n\nनानातरूणां कुसुमावकीर्णं गिरेरिवाग्रं रजसा ऽवकीर्णम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "tier1:5.7.6:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "пыльцою усыпанная (rajasāvakīrṇam) – букв. «пылью». В «Тилаке» поясняется, что речь идет о puṣparajas (цветочной пыльце)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "пыльцою усыпанная (rajasāvakīrṇam) – букв. «пылью». В «Тилаке» поясняется, что речь идет о puṣparajas (цветочной пыльце).",
+          "service": [],
+          "suggestions": [],
+          "seq": 8
         }
       ]
     },
@@ -202,6 +281,7 @@
         "bhusana": "नारीप्रवेकैरिव दीप्यमानं तडिद्भिरम्भोदवदर्च्यमानम् ।\n\nहंसप्रवेकैरिव वाह्यमानं श्रिया युतं खे सुकृतां विमानम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "lexical:5.7.7:0",
@@ -214,7 +294,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:vimAna"
+          "source": "dic_mw:vimAna",
+          "source_links": [
+            {
+              "label": "MW vimAna",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vimAna"
+            }
+          ],
+          "seq": 9
         }
       ]
     },
@@ -227,15 +314,19 @@
         "bhusana": "यथा नगाग्रं बहुधातुचित्रं यथा नभश्च ग्रहचन्द्रचित्रम् ।\n\nददर्श युक्तीकृतमेघचित्रं विमानरत्नं बहुरत्नचित्रम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "tier1:5.7.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Увидел Хануман Пушпаку, всю в самоцветах (dadarśa vimānam bahuratnacitram) – в оригинале просто «виману». Комментаторы поясняют, что в этой строфе начинается описание виманы Пушпаки."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Увидел Хануман Пушпаку, всю в самоцветах (dadarśa vimānam bahuratnacitram) – в оригинале просто «виману». Комментаторы поясняют, что в этой строфе начинается описание виманы Пушпаки.",
+          "service": [],
+          "suggestions": [],
+          "seq": 10
         }
       ]
     },
@@ -249,6 +340,7 @@
         "bhusana": "मही कृता पर्वतराजिपूर्णा शैलाः कृता वृक्षवितानपूर्णाः ।\n\nवृक्षाः कृताः पुष्पवितानपूर्णाः पुष्पं कृतं केसरपत्त्रपूर्णम्\nमहीति । यत्रेति शेषः । यत्र विमाने पर्वतराजिपूर्णा मही कृता चित्ररूपेण लिखिता । एवमुत्तरत्रापि बोध्यम् । अत्र पूर्वपूर्वं प्रत्युत्तरोत्तरस्य विशेषवत्त्वादधिकालङ्कारः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "phase2:5.7.9:0",
@@ -268,7 +360,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 11
         }
       ]
     },
@@ -282,15 +375,26 @@
         "siromani": "प्रवालेति । प्रवालैः जाम्बूनदपुष्पैश्च युक्ताः पक्षाः येषाम् अत एव सुपक्षाः शोभनपक्षविशिष्टाः सलीलं लीलापूर्वकम् आवर्जिताः शिल्पविशेषेण मक्षिकादिवर्जनक्रियाविशिष्टाः जिह्यपक्षाः येषां ते सुमुखाः विहङ्गाः कृताः अत एव तेषां पक्षाः कामस्य कामाश्रयीभूतमनसः पक्षाः प्रग्रहीतार इव भान्ति तत्पक्षदर्शनमात्रेण विमाने स्थितिः प्रतीयत इत्यर्थः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "tier1:5.7.13:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «стрелах Камы» По переводам и комментариям (например, Бхушана) эти птицы - как спутники (कामस्य पाक्षा इव कामस्य सहाया इव) Камы"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "стрелах Камы",
+              "kind": "note",
+              "text": "По переводам и комментариям (например, Бхушана) эти птицы - как спутники (कामस्य पाक्षा इव कामस्य सहाया इव) Камы"
+            }
+          ],
+          "suggestions": [],
+          "seq": 12
         }
       ]
     },
@@ -305,15 +409,19 @@
         "siromani": "नियुज्यमाना इति । पद्मिनि पद्मविशिष्टे विमानसरसि उत्पलपत्रहस्ताः अत एव सकेसराः गजा नियुज्यमानाः निर्मिता बभूवुः । पद्महस्ता पद्मयुक्तकरा अत एव सुहस्ता शोभनहस्तविशिष्टाः देवीः अतिप्रकाशविशिष्टा लक्ष्मीः कृता निर्मिता बभूव । बभूवेति वचनविपरिणामेन पूर्वान्वय्यपि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "tier1:5.7.14:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…Лакшми, / Среди лотосового пруда, с лотосами в руке (lakṣmīs tathā padmini padmahastā) – вероятно, отсылка к иконографическому изображению богини Лакшми со слонами (Гаджа-Лакшми). Древнейшие подобные изображения относятся к III – II векам до новой эры."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…Лакшми, / Среди лотосового пруда, с лотосами в руке (lakṣmīs tathā padmini padmahastā) – вероятно, отсылка к иконографическому изображению богини Лакшми со слонами (Гаджа-Лакшми). Древнейшие подобные изображения относятся к III – II векам до новой эры.",
+          "service": [],
+          "suggestions": [],
+          "seq": 13
         },
         {
           "id": "lexical:5.7.14:0",
@@ -327,7 +435,18 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:lakzmI+dic_apte:lakzmI",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW lakzmI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=lakzmI"
+            },
+            {
+              "label": "APTE lakzmI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/AP90Scan/2020/web/webtc/indexcaller.php?key=lakzmI"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 14
         }
       ]
     },
@@ -342,15 +461,19 @@
         "bhusana": "इतीव तद् गृहमभिगम्य शोभनं सविस्मयो नगमिव चारुशोभनम् ।\n\nपुनश्च तत्परमसुगन्धिसुन्दरं हिमात्यये नगमिव चारुकन्दरम्\nइतीवेति । इवशब्दो वाक्यालङ्कारे । तद्गृहं तस्य रावणस्य गृहम् । सविस्मयः, अभूदिति शेषः । नगं पर्वतमिव स्थितम् । शोभनं शोभमानम् । चारुशोभनं चारुमङ्गलम् । इतीवेत्येकनिपातो वा प्रकारार्थः । इतीव तद्गृहम् अभिगम्य अभिगत्य । अद्भुतदर्शनात्पुनश्चाभिगम्य सविस्मयो ऽभूदिति योजना । रुचिरावृत्तमिदम् । \"चतुर्ग्रहैरिह रुचिरा जभस्जगाः\" इति लक्षणात्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "tier1:5.7.15:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…дереву с чарующими дуплами / В начале весны… (himātyaye nagam iva cārukandaram) – в оригинале вторая и четвертая строки почти идентичны. Однако, как отмечают комментаторы, в первом случае слово naga означает гору, а kandara – пещеру, во втором – дерево и дупло соответственно. В начале весны (himātyaye) – букв. «по прошествии снегов». В «Тилаке» поясняется «весной» (vasante)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…дереву с чарующими дуплами / В начале весны… (himātyaye nagam iva cārukandaram) – в оригинале вторая и четвертая строки почти идентичны. Однако, как отмечают комментаторы, в первом случае слово naga означает гору, а kandara – пещеру, во втором – дерево и дупло соответственно. В начале весны (himātyaye) – букв. «по прошествии снегов». В «Тилаке» поясняется «весной» (vasante).",
+          "service": [],
+          "suggestions": [],
+          "seq": 15
         },
         {
           "id": "crosstext:5.7.15:0",
@@ -370,7 +493,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Vālmīki Rāmāyaṇa, Rām. Bāla 1.8.24 (Гринцер, пер. изд. I–III)",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 16
         }
       ]
     },
@@ -385,15 +510,26 @@
         "bhusana": "ततः स तां कपिरभिपत्य पूजितां चरन् पुरीं दशमुखबाहुपालिताम् ।\n\nअदृश्य तां जनकसुतां सुपूजितां सुदुःखितः पतिगुणवेगनिर्जिताम्\nतत इति । अदृश्य अदृष्ट्वा । ऋषिनिपातनान्नञ्पूर्वेपि ल्यप् । सुदुःखितः, अभूदिति शेषः । पतिगुणवेगनिर्जितां भर्तृगुणजवेन वशीकृताम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "tier1:5.7.16:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «suduḥkhitāṃ» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "suduḥkhitāṃ",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 17
         },
         {
           "id": "lexical:5.7.16:0",
@@ -406,8 +542,10 @@
           "type": "В",
           "subtype": "base",
           "trigger": "crossref",
-          "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)",
-          "collision_tier1": true
+          "source": "первое вхождение в кн. V; указатель Гринцера / комментаторы, где процитировано (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 18
         },
         {
           "id": "phase2:5.7.16:0",
@@ -428,7 +566,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 19
         }
       ]
     },
@@ -441,24 +580,45 @@
         "bhusana": "ततस्तदा बहुविधभावितात्मनः कृतात्मनो जनकसुतां सुवर्त्मनः ।\n\nअपश्यतो ऽभवदतिदुःखितं मनः सुचक्षुषः प्रविचरतो महात्मनः\nइत्यार्षे श्रीरामायणे श्रीमत्सुन्दरकाण्डे सप्तमः सर्गः ।। 5.7।।\n\nततस्तदेति । बहुविधभावितात्मनः बहुविधं यथा भवति तथा चिन्तितात्मनः । कृतात्मनः निशितबुद्धेः । सुवर्त्मनः सदाचारसम्पन्नस्य । सुजक्षुषः दूरसूक्ष्मादिदर्शनेषु अप्रतिहतनयनतेजसः । महात्मनः महाधैर्यस्य"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-7",
       "notes": [
         {
           "id": "tier1:5.7.17:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Хитроумный… (kṛtātmanaḥ) – в комментарии «Бхушана» поясняется «обладающий острым умом». Автор «Тилаки» понимает это слово как «обуздавший [свой] ум.[Е. Костина] «Хитроумный» Мне кажется, коннотации слова «хитроумный» не вполне соответствуют kṛtātmana, даже если взять значение, которое предлагает Бхушана. Снижается градус пафоса. Там в других комм и у Голдманов много всего накручено, думаю, можно в комм указать"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Хитроумный… (kṛtātmanaḥ) – в комментарии «Бхушана» поясняется «обладающий острым умом». Автор «Тилаки» понимает это слово как «обуздавший [свой] ум.",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Хитроумный",
+              "kind": "note",
+              "text": "Мне кажется, коннотации слова «хитроумный» не вполне соответствуют kṛtātmana, даже если взять значение, которое предлагает Бхушана. Снижается градус пафоса. Там в других комм и у Голдманов много всего накручено, думаю, можно в комм указать"
+            }
+          ],
+          "suggestions": [],
+          "seq": 20
         },
         {
           "id": "tier1:5.7.17:1",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "0. [Е. Костина] «Восьмая песнь» Не надо ли указать, что в ряде редакций фрагмент отсутствует?"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "0.",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Восьмая песнь",
+              "kind": "note",
+              "text": "Не надо ли указать, что в ряде редакций фрагмент отсутствует?"
+            }
+          ],
+          "suggestions": [],
+          "seq": 21
         }
       ]
     }
