@@ -9,6 +9,8 @@ changes. Each released version is git-tagged (`vX.Y.Z`) with a matching
 Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
+
+## [1.19.0] - 2026-08-15
 ### Changed
 
 - **H2829/H2830 разбор бюллетеня песни 1 (Opus 5 `claude-opus-5`)** — 17 из 19
