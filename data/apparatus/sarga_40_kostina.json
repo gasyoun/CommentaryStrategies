@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 40,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 24,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 4
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "56c75e651fca1f1993bc46967a29b55d0e42a305777a6f1d45da0f5ba61e793f"
+    "source_hash": "4ed5d199a25d8ca6256d10aed8ddbcc569a29131f3c814cf2a15d1f0bfa4bded"
   },
   "sarga": 40,
   "verses": [
@@ -35,15 +71,19 @@
         "bhusana": "श्रुत्वा तु वचनं तस्य वायुसूनोर्महात्मनः ।\n\nउवाचात्महितं वाक्यं सीता सुरसुतोपमा\nश्रुत्वेत्यादि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "tier1:5.40.1:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Речь, для нее полезную / …сказала (uvācātmahitaṃ vākyaṃ) – автор комментария «Тилака» глоссирует ātmahitam как duḥkhoddhāraprayojanam (имеющее цель изгнать страдание)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Речь, для нее полезную / …сказала (uvācātmahitaṃ vākyaṃ) – автор комментария «Тилака» глоссирует ātmahitam как duḥkhoddhāraprayojanam (имеющее цель изгнать страдание).",
+          "service": [],
+          "suggestions": [],
+          "seq": 1
         }
       ]
     },
@@ -57,15 +97,19 @@
         "bhusana": "त्वां दृष्ट्वा प्रियवक्तारं संप्रहृष्यामि वानर ।\n\nअर्धसञ्जातसस्येव वृष्टिं प्राप्य वसुन्धरा"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "tier1:5.40.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "И, Хануман, я радуюсь, / Будто земля со злаками, / Обильным дождем политая (tvāṃ dṛṣṭvā priyavaktāraṃ samprahṛṣyāmi vānara ardhasaṃjātasasyeva vṛṣṭiṃ prāpya vasuṃdharā) – букв. «Увидев тебя, говорящего приятное, радуюсь, обезьяна, словно земля с полупроросшими семенами, обретя дождь»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "И, Хануман, я радуюсь, / Будто земля со злаками, / Обильным дождем политая (tvāṃ dṛṣṭvā priyavaktāraṃ samprahṛṣyāmi vānara ardhasaṃjātasasyeva vṛṣṭiṃ prāpya vasuṃdharā) – букв. «Увидев тебя, говорящего приятное, радуюсь, обезьяна, словно земля с полупроросшими семенами, обретя дождь».",
+          "service": [],
+          "suggestions": [],
+          "seq": 2
         },
         {
           "id": "lexical:5.40.2:0",
@@ -79,7 +123,18 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:sasya+dic_mw:saMjAta (√jan-)+Indological:vasundharA",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW sasya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=sasya"
+            },
+            {
+              "label": "MW saMjAta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=saMjAta"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 3
         }
       ]
     },
@@ -94,15 +149,19 @@
         "siromani": "यथेति । सकामा उत्कटेच्छावती अहं यथा संस्पृशेयं तथा मयि दयां कुरु"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "tier1:5.40.3:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Я руками коснусь исхудавшими ((gātraiḥ śokābhikarśitaiḥ) – в оригинале «членами тела, исхудавшими от горя»"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Я руками коснусь исхудавшими ((gātraiḥ śokābhikarśitaiḥ) – в оригинале «членами тела, исхудавшими от горя»",
+          "service": [],
+          "suggestions": [],
+          "seq": 4
         },
         {
           "id": "crosstext:5.40.3:0",
@@ -122,7 +181,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Mahābhārata, Āraṇyakaparvan III.37.1",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 5
         }
       ]
     },
@@ -137,15 +198,26 @@
         "siromani": "अभिज्ञानमिति । अभिज्ञानं चूडामणिं रामस्य रामाय दद्याः अभिज्ञानान्तरमाह काकस्य एकाक्षिनाशिनीमिषीकां चाभिज्ञानं दद्या कथयेरित्यर्थः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "tier1:5.40.4:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Должен отдать тайный знак / Ты Раме… (abhijñānaṃ ca rāmasya dadyā) В оригинале не вполне ясно, о каком тайном знаке идет речь. В комментарии «Тилака» поясняется, что имеется в виду драгоценный камень, который Сита отдала Хануману, после чего Хануман должен напомнить Раме о случае с вороном.[Е. Костина] «harigaṇottama» Опущено обращение"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Должен отдать тайный знак / Ты Раме… (abhijñānaṃ ca rāmasya dadyā) В оригинале не вполне ясно, о каком тайном знаке идет речь. В комментарии «Тилака» поясняется, что имеется в виду драгоценный камень, который Сита отдала Хануману, после чего Хануман должен напомнить Раме о случае с вороном.",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "harigaṇottama",
+              "kind": "omission",
+              "text": "опущено обращение"
+            }
+          ],
+          "suggestions": [],
+          "seq": 6
         },
         {
           "id": "lexical:5.40.4:0",
@@ -159,7 +231,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:aBijYAna (√jñā-)+Indological:token_of_recognition",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW aBijYAna",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=aBijYAna"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 7
         },
         {
           "id": "lexical:5.40.4:1",
@@ -173,7 +252,14 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:IzikA+Valmiki:BK_Balakanda(kAka_story)",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW IzikA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=IzikA"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 8
         }
       ]
     },
@@ -188,15 +274,19 @@
         "siromani": "मनः शिलाया इति । मम तिलके प्रनष्टे सति मनश्शिलायास्तिलकः गण्डपार्श्वे गण्डैकदेशे निवेशितः तं तिलकं स्मर्तुमर्हसि इदमप्यभिज्ञानं दद्या इति शेषः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "tier1:5.40.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "На щеку… (gaṇḍapārśve) – Голдмены переводят «на лоб» (on my forehead) (см.: Goldman 1984: 224), следуя комментарию «Бхушана», в котором слово gaṇḍapārśve объясняется как gaṇḍasthale gaṇḍaśailapārśve vā и принимая слово gaṇḍaśaila в значении «лоб» (forehead). Красной краской manaḥśilāyās) – в оригинале использовано слово manaḥśilā, которое обозначает реальгар, красный сульфид мышьяка, с древности использовавшийся в качестве краски (упоминается у Плиния Старшего под названием сандарак)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "На щеку… (gaṇḍapārśve) – Голдмены переводят «на лоб» (on my forehead) (см.: Goldman 1984: 224), следуя комментарию «Бхушана», в котором слово gaṇḍapārśve объясняется как gaṇḍasthale gaṇḍaśailapārśve vā и принимая слово gaṇḍaśaila в значении «лоб» (forehead). Красной краской manaḥśilāyās) – в оригинале использовано слово manaḥśilā, которое обозначает реальгар, красный сульфид мышьяка, с древности использовавшийся в качестве краски (упоминается у Плиния Старшего под названием сандарак).",
+          "service": [],
+          "suggestions": [],
+          "seq": 9
         },
         {
           "id": "lexical:5.40.5:0",
@@ -210,7 +300,14 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:manaHzilA+Apte:manaHzilA+mineralogy",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW manaHzilA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=manaHzilA"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 10
         },
         {
           "id": "phase2:5.40.5:0",
@@ -232,7 +329,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 11
         }
       ]
     },
@@ -247,6 +345,7 @@
         "siromani": "स इति । स रामस्त्वं हृतां सीतां कथं समनुमन्यसे सहसे"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "crosstext:5.40.6:0",
@@ -265,7 +364,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Vālmīki Rāmāyaṇa, Rām. Ayodhyā 2.1.4 (Гринцер, пер. изд. I–III)"
+          "source": "Vālmīki Rāmāyaṇa, Rām. Ayodhyā 2.1.4 (Гринцер, пер. изд. I–III)",
+          "source_links": [],
+          "seq": 12
         }
       ]
     },
@@ -280,15 +381,26 @@
         "siromani": "एष इति । एषः पित्रा दत्तः चूडामणिः मया संरक्षितः । तत्र हेतुः व्यसने राक्षसकर्तृकपीडायां सत्यां त्वामिव एतं मणिं दृष्ट्वा प्रहष्यामि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "tier1:5.40.7:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «камень-заколку» Не знаю, как его лучше назвать с учетом того, что Хануман надел его на палец"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "камень-заколку",
+              "kind": "note",
+              "text": "Не знаю, как его лучше назвать с учетом того, что Хануман надел его на палец"
+            }
+          ],
+          "suggestions": [],
+          "seq": 13
         },
         {
           "id": "lexical:5.40.7:0",
@@ -302,7 +414,18 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:cUDA+dic_mw:maNi+Indological:royal_ornament",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW cUDA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=cUDA"
+            },
+            {
+              "label": "MW maNi",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=maNi"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 14
         },
         {
           "id": "phase2:5.40.7:0",
@@ -325,7 +448,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 15
         }
       ]
     },
@@ -340,15 +464,19 @@
         "siromani": "एष इति । वारिसंभवः एषः मणिः मया निर्यातितः त्वत्प्रत्यभिज्ञानार्थं प्रेषितः अतः परम् अवधिकालादुत्तरं शोकलालसा शोकाक्रान्तचित्ताहं जीवितुं न शक्ष्यामि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "tier1:5.40.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Больше жить не смогу я (ataḥ paraṃ na śakṣyāmi jīvitum) – букв. «отныне/поэтому не смогу жить». Авторы комментариев «Широмани» и «Тилака» усматривают здесь намек на срок, отведенный Раваной Сите."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Больше жить не смогу я (ataḥ paraṃ na śakṣyāmi jīvitum) – букв. «отныне/поэтому не смогу жить». Авторы комментариев «Широмани» и «Тилака» усматривают здесь намек на срок, отведенный Раваной Сите.",
+          "service": [],
+          "suggestions": [],
+          "seq": 16
         }
       ]
     },
@@ -362,6 +490,7 @@
         "siromani": "धारयिष्यामीति । मासादूर्ध्वम् अवधिभूतदिनात्परं न जीविष्ये जीवितास्मि"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "lexical:5.40.10:0",
@@ -374,7 +503,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:mAsa+Dharmashastra:avadhi+Indological:waiting_period"
+          "source": "dic_mw:mAsa+Dharmashastra:avadhi+Indological:waiting_period",
+          "source_links": [
+            {
+              "label": "MW mAsa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=mAsa"
+            }
+          ],
+          "seq": 17
         }
       ]
     },
@@ -388,15 +524,19 @@
         "siromani": "घोर इति । अयं राक्षसराजः घोरः अतिक्रूरः अत एव मयि सुखासुखहेतभूता दृष्टिर्न हन्तुमेवेच्छतीत्यर्थः । एतेन जीवनं दुर्लभमिति सूचितम् । हेत्वन्तरमाह विषज्जन्तं त्वां श्रुत्वा क्षणमपि न जीवेयं जीवितुमिच्छेयम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "tier1:5.40.11:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Услышу я, что ты медлишь (tvāṃ ca śrutvā viṣajjantaṃ) – автор комментария «Тилака» глоссирует viṣajjantaṃ как vilambaṃ kurvantam (медлящего). В критическом издании приведен другой вариант tvāṃ ca śrutvā vipadyantam (см.: Jhala 1966: 289), что Голдмены переводят как «Если бы я узнала, что с тобой что-то случилось…» (if I should learn that something had happened to you…) (см.: Goldman 1984: 225)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Услышу я, что ты медлишь (tvāṃ ca śrutvā viṣajjantaṃ) – автор комментария «Тилака» глоссирует viṣajjantaṃ как vilambaṃ kurvantam (медлящего). В критическом издании приведен другой вариант tvāṃ ca śrutvā vipadyantam (см.: Jhala 1966: 289), что Голдмены переводят как «Если бы я узнала, что с тобой что-то случилось…» (if I should learn that something had happened to you…) (см.: Goldman 1984: 225).",
+          "service": [],
+          "suggestions": [],
+          "seq": 18
         }
       ]
     },
@@ -410,15 +550,19 @@
         "bhusana": "त्वच्छोकविमुखो रामो देवि सत्येन ते शपे ।\n\nरामे दुःखाभिभूते तु लक्ष्मणः परितप्यते"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "tier1:5.40.13:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "От всего отвратился Рама / По тебе он тоскует ((tvatsthityaparijñānajaśokena tvaduddhārapravṛttivimukhaḥ) – букв. «из-за горя, рожденного знанием о твоем положении, он отвернулся от твоего освобождения» согласно комментарию «Тилака», речь здесь идет о том, что Рама не приходит на помощь Сите из-за того, что горюет по ней."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "От всего отвратился Рама / По тебе он тоскует ((tvatsthityaparijñānajaśokena tvaduddhārapravṛttivimukhaḥ) – букв. «из-за горя, рожденного знанием о твоем положении, он отвернулся от твоего освобождения» согласно комментарию «Тилака», речь здесь идет о том, что Рама не приходит на помощь Сите из-за того, что горюет по ней.",
+          "service": [],
+          "suggestions": [],
+          "seq": 19
         }
       ]
     },
@@ -432,6 +576,7 @@
         "siromani": "दृष्टेति"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "crosstext:5.40.14:0",
@@ -451,9 +596,11 @@
           "sundara_sa_iast": "imaṁ ca tīvraṁ mama śokavegaṁ rakṣobhir ebhiḥ brūyāstu rāmasya gataḥ samīpaṁ śivaśca te .dhvāstu |",
           "quality": "GOOD",
           "source": "DCS parallel-search (GOOD); Rām 5.65.25,26,33,34,35 (крит. изд.)",
+          "source_links": [],
           "edition_flag": "vulgate",
           "shloka_critical": "V.38.14,17,22,23",
-          "verse_address_vulgate": "Rām V.67.41–43 (вульгата)"
+          "verse_address_vulgate": "Rām V.67.41–43 (вульгата)",
+          "seq": 20
         }
       ]
     },
@@ -467,6 +614,7 @@
         "bhusana": "हनुमन् सिंहसङ्काशौ भ्रातरौ रामलक्ष्मणौ ।\n\nसुग्रीवं च सहामात्वं सर्वान् ब्रूया ह्यनामयम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "lexical:5.40.22:0",
@@ -479,7 +627,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:anAmaya+dic_apte:anAmaya+Indological:greeting_formula"
+          "source": "dic_mw:anAmaya+dic_apte:anAmaya+Indological:greeting_formula",
+          "source_links": [
+            {
+              "label": "MW anAmaya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=anAmaya"
+            },
+            {
+              "label": "APTE anAmaya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/AP90Scan/2020/web/webtc/indexcaller.php?key=anAmaya"
+            }
+          ],
+          "seq": 21
         }
       ]
     },
@@ -494,6 +653,7 @@
         "siromani": "यथेति । अयं पूर्वं व्याख्यातः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "phase2:5.40.23:0",
@@ -513,7 +673,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 22
         },
         {
           "id": "crosstext:5.40.23:0",
@@ -533,9 +694,11 @@
           "sundara_sa_iast": "yathā ca sa mahābāhur māṁ tārayati rāghavaḥ |asmād duḥkhāmbusaṁrodhāt tat samādhātum arhasi ||",
           "quality": "GOOD",
           "source": "DCS parallel-search (GOOD); Rām 5.37.8 (крит. изд.)",
+          "source_links": [],
           "edition_flag": "vulgate",
           "shloka_critical": "V.38.22",
-          "verse_address_vulgate": "Rām V.39.9 (вульгата)"
+          "verse_address_vulgate": "Rām V.39.9 (вульгата)",
+          "seq": 23
         }
       ]
     },
@@ -549,6 +712,7 @@
         "siromani": "इदमिति । रामस्य समीपं गतस्त्वं मम शोकवेगं रक्षोमिः परिभर्त्सनं च ब्रूयाः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-40",
       "notes": [
         {
           "id": "lexical:5.40.24:0",
@@ -561,7 +725,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:vega+dic_mw:Soka (√śuc-)+Indological:vega_physics"
+          "source": "dic_mw:vega+dic_mw:Soka (√śuc-)+Indological:vega_physics",
+          "source_links": [
+            {
+              "label": "MW vega",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vega"
+            },
+            {
+              "label": "MW Soka",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=Soka"
+            }
+          ],
+          "seq": 24
         }
       ]
     }

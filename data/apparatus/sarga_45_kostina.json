@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 45,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 12,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 0
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "18c6b6722c800e20628a6e7181484a37d66b57d03e8998afc071bd2d7a2a925e"
+    "source_hash": "cf479fd0be7396de20e057b6bf5bb901f16670876f627aa3f1cb16a6eb99af9b"
   },
   "sarga": 45,
   "verses": [
@@ -35,6 +71,7 @@
         "bhusana": "ततस्ते राक्षसेन्द्रेण चोदिता मन्त्रिणः सुताः ।\n\nनिर्युयुर्भवनात्तस्मात् सप्त सप्तार्चिवर्चसः\nततस्त इत्यादि । भवनात् तस्मात् रावणभवनात् । सप्तार्चिवर्चस इत्यत्र सप्तार्चीति इकारान्तत्वमार्षम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-45",
       "notes": [
         {
           "id": "lexical:5.45.1:0",
@@ -47,7 +84,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:varcas+dic_mw:arcis"
+          "source": "dic_mw:varcas+dic_mw:arcis",
+          "source_links": [
+            {
+              "label": "MW varcas",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=varcas"
+            },
+            {
+              "label": "MW arcis",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=arcis"
+            }
+          ],
+          "seq": 1
         }
       ]
     },
@@ -61,15 +109,19 @@
         "bhusana": "३\n\nमहाबलपरीवारा धनुष्मन्तो महाबलाः ।\n\nकृतास्त्रास्त्रविदां श्रेष्ठाः परस्परजयैषिणः\nकृतास्त्राः शिक्षिताश्त्राः । आर्षः सन्धिः । कृतास्त्राणामस्त्रविदां च श्रेष्ठा इति वा । ज्ञानसिक्षे उभे अप्येषां स्त इति भावः । परस्परजयैषिणः प्रत्यकं हनुमज्जयैषिण इत्यर्थः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-45",
       "notes": [
         {
           "id": "tier1:5.45.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Соперничающие друг с другом (parasparajayaiṣiṇaḥ) – букв. «желающие победить друг друга»"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Соперничающие друг с другом (parasparajayaiṣiṇaḥ) – букв. «желающие победить друг друга»",
+          "service": [],
+          "suggestions": [],
+          "seq": 2
         },
         {
           "id": "phase2:5.45.2:0",
@@ -79,7 +131,7 @@
           "status": "ожидает гейта М.Г.",
           "mg_comment": "",
           "lemma_iast": "parasparajayaiṣiṇaḥ",
-          "note_ru": "«Соперничающие друг с другом» (parasparajayaiṣiṇaḥ) в «Тилаке» — соперничество семерых сыновей советников между собой (аhamahamikā, «кто первый»); в «Бхушане» — иначе: каждый из них порознь жаждет победить именно Ханумана, а не друг друга. Перевод следует Тилаке (взаимное соперничество братьев).",
+          "note_ru": "«Соперничающие друг с другом» (parasparajayaiṣiṇaḥ) в «Тилаке» — соперничество семерых сыновей советников между собой (ahamahamikā, «кто первый»); в «Бхушане» — иначе: каждый из них порознь жаждет победить именно Ханумана, а не друг друга. Перевод следует Тилаке (взаимное соперничество братьев).",
           "type": "Б",
           "source_commentary": [
             "tilaka",
@@ -91,7 +143,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 3
         }
       ]
     },
@@ -105,6 +158,7 @@
         "bhusana": "हेमजालपरिक्षिप्तैर्ध्वजवद्भिः पताकिभिः ।\n\nतोयदस्वननिर्घोषैर्वाजियुक्तैर्महारथैः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-45",
       "notes": [
         {
           "id": "lexical:5.45.3:0",
@@ -117,7 +171,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:hemajAla"
+          "source": "dic_mw:hemajAla",
+          "source_links": [
+            {
+              "label": "MW hemajAla",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=hemajAla"
+            }
+          ],
+          "seq": 4
         }
       ]
     },
@@ -132,15 +193,26 @@
         "siromani": "सृजन्त इति । प्रावृट्काले अम्भोदाः जलबिन्दुमोचकाः मेघा इव बाणवृष्टिं सृजन्तः रथगर्जितनिःस्वनाः नैऋताम्बुदाः अम्बुदसदृशनैऋताः विचेरुः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-45",
       "notes": [
         {
           "id": "tier1:5.45.7:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Ливень стрел изливая,Ракшасов тучи, подобныеТучам в дождливую пору.» Колесницы=гром, стрелы=дождь, ракшасы=тучи считывается не с первого раза. Тучи ракшасов воспринимается как \"множество ракшасов\", а не тучи-ракшасы"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Ливень стрел изливая,Ракшасов тучи, подобныеТучам в дождливую пору.",
+              "kind": "note",
+              "text": "Колесницы=гром, стрелы=дождь, ракшасы=тучи считывается не с первого раза. Тучи ракшасов воспринимается как \"множество ракшасов\", а не тучи-ракшасы"
+            }
+          ],
+          "suggestions": [],
+          "seq": 5
         },
         {
           "id": "lexical:5.45.7:0",
@@ -154,7 +226,18 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:nErfta+dic_mw:nirfti",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW nErfta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nErfta"
+            },
+            {
+              "label": "MW nirfti",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nirfti"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 6
         }
       ]
     },
@@ -168,15 +251,19 @@
         "siromani": "स इति । धनुष्मद्भिस्तैः राक्षसैः व्योम्नि क्रीडन् स हनूमान् धनुष्मद्भिः इन्द्रचापविशिष्टैर्मेघैरम्बरे प्रभुर्मारुत इव प्रकाशते"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-45",
       "notes": [
         {
           "id": "tier1:5.45.10:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…с тучами, / Пересеченными радугой (dhanuṣmadbhir yathā meghaiḥ) – игра слов: dhanuṣmat означает и «лучник» и «обладающий радугой». В комментарии «Тилака» отмечается, что слово dhanus (лук) в третьей строке следует понимать как «лук Индры» (aindradhanus), то есть «радуга»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…с тучами, / Пересеченными радугой (dhanuṣmadbhir yathā meghaiḥ) – игра слов: dhanuṣmat означает и «лучник» и «обладающий радугой». В комментарии «Тилака» отмечается, что слово dhanus (лук) в третьей строке следует понимать как «лук Индры» (aindradhanus), то есть «радуга».",
+          "service": [],
+          "suggestions": [],
+          "seq": 7
         },
         {
           "id": "lexical:5.45.10:0",
@@ -185,12 +272,23 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "māruteśvara",
-          "note_ru": "В V.45.10 Хануман уподобляется ветру (mārutaḥ prabhur ambare) — «владыке ветров в небе», играющему с тучами-лучниками. māruteśvara / mārutaḥ prabhu — не просто «ветер», а Ваю в его ипостаси prabhу «господина»: MW: mārutа 'the wind-god Vāyu'; prabhu 'master, lord'. Метафора инвертирует облачную иконографию: в V.45.7 ракшасы = «тучи»; теперь Хануман = «ветер», рассеивающий тучи. Двойная метафора туча→ветер замыкает кольцевую структуру боевой сцены. Кроме того, mārutaḥ prabhu — скрытое самоназвание Ханумана (сын Ваю), превращающее сравнение в игру идентичностей.",
+          "note_ru": "В V.45.10 Хануман уподобляется ветру (mārutaḥ prabhur ambare) — «владыке ветров в небе», играющему с тучами-лучниками. māruteśvara / mārutaḥ prabhu — не просто «ветер», а Ваю в его ипостаси prabhu «господина»: MW: māruta 'the wind-god Vāyu'; prabhu 'master, lord'. Метафора инвертирует облачную иконографию: в V.45.7 ракшасы = «тучи»; теперь Хануман = «ветер», рассеивающий тучи. Двойная метафора туча→ветер замыкает кольцевую структуру боевой сцены. Кроме того, mārutaḥ prabhu — скрытое самоназвание Ханумана (сын Ваю), превращающее сравнение в игру идентичностей.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:mAruta+dic_mw:prabhu",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW mAruta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=mAruta"
+            },
+            {
+              "label": "MW prabhu",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=prabhu"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 8
         }
       ]
     },
@@ -204,15 +302,19 @@
         "siromani": "तलेनेति । परंतपो हनूमान् कांश्चित् राक्षसान् तलेन अभिहनत् अभ्यहन् कांश्चिच्च मुष्टिभिः अहनत् अहन् कांश्चित् नखैर्व्यदारयत्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-45",
       "notes": [
         {
           "id": "tier1:5.45.12:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…ступнями (pādaiḥ) – в комментарии «Бхушана» отмечается, что множественное число использовано здесь вместо двойственного, поскольку можно сказать, что у обезьян четыре ступни."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…ступнями (pādaiḥ) – в комментарии «Бхушана» отмечается, что множественное число использовано здесь вместо двойственного, поскольку можно сказать, что у обезьян четыре ступни.",
+          "service": [],
+          "suggestions": [],
+          "seq": 9
         },
         {
           "id": "lexical:5.45.12:0",
@@ -226,7 +328,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:paraMtapa",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW paraMtapa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=paraMtapa"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 10
         }
       ]
     },
@@ -241,15 +350,19 @@
         "siromani": "विनेदुरिति । नागाः गजाः विस्वरं यथा भवति तथा विनेदुः वाजिनो भुवि निपेतुः भग्नानि नीडध्वजच्छत्राणि येषां तैः रथैः कीर्णा व्याप्ता भूरभवत् तत्र नीडं रविस्थितिस्थानम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-45",
       "notes": [
         {
           "id": "tier1:5.45.15:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "И покрылась она / разбитыми колесницами (bhagnanīḍadhvajacchatrair bhūś ca kīrṇābhavad rathaiḥ) – букв.: «И земля была покрыта колесницами, у которых были разбиты сиденья, знамена и зонты»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "И покрылась она / разбитыми колесницами (bhagnanīḍadhvajacchatrair bhūś ca kīrṇābhavad rathaiḥ) – букв.: «И земля была покрыта колесницами, у которых были разбиты сиденья, знамена и зонты».",
+          "service": [],
+          "suggestions": [],
+          "seq": 11
         }
       ]
     },
@@ -263,6 +376,7 @@
         "siromani": "स्रवतेति । स्रवता प्रच्युतेन रुधिरेण स्रवन्त्यः नद्यः पथि दर्शिताः दृष्टाः रामो राज्यमचीकरदित्यादाविव णिच् । विविधैः स्वनैः राक्षसनादैः लङ्का विकृतं ननाद"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-45",
       "notes": [
         {
           "id": "edition:5.45.16:0",
@@ -272,6 +386,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.45.16 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.45.16",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -279,7 +394,8 @@
               "verse_id": "5.45.16",
               "iast": "sravatā rudhireṇātha sravantyo darśitāḥ pathi । vividhaiś ca svanair laṅkā nanāda vikṛtaṃ tadā ॥16॥"
             }
-          ]
+          ],
+          "seq": 12
         }
       ]
     }

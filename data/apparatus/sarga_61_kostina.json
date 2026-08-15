@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 61,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 26,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 2
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "1308e913a16f51c8d43392c449f24bbdcdfee2ee132120d47d002bc2fd88fdaa"
+    "source_hash": "9062eccd1167ca48013a7ea33af3dbdd4337d30d28394591c6fbb832761fa27b"
   },
   "sarga": 61,
   "verses": [
@@ -34,24 +70,51 @@
         "bhusana": "प्रीतिमन्तस्ततः सर्वे वायुपुत्रपुरस्सराः ।\n\nमहेन्द्राद्रिं परित्यज्य पुप्लुवुः प्लवगर्षभाः\nप्रीतिमन्त इत्यादि ।। 5.61.2,3 ।।\n\nसभाज्यमानं भूतैस्तमात्मवन्तं महाबलम् ।\n\nहनूमन्तं महावेगं वहन्त इव दृष्टिभिः\nसभाज्यमानं संपूज्यमानम् । वहन्त इव दृष्टिभिरिति । प्रीतिपूर्वकानिमिषदर्शनाद्दृष्टिष्वारोप्य नयन्त इवेत्युत्प्रेक्षा"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «āgrāt» опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "āgrāt",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 1
         },
         {
           "id": "tier1:5.61.2:1",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Полетели» нужен будет комм[Е. Костина] «ivā» опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Полетели",
+              "kind": "note",
+              "text": "нужен будет комм"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "ivā",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 2
         },
         {
           "id": "lexical:5.61.2:0",
@@ -60,12 +123,19 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "vāyuputra",
-          "note_ru": "Вайюпутра (vāyu-putra, m.) — тат-пуруша: vāyu «ветер» (ведийское божество, MW: 'the god of wind') + putra «сын». Эпитет Ханумана как сына Вайю. Отличается от синонима anilātmaja (анилātmaja: anila «ветер» + ātmaja «рождённый из сути»): vāyu-putra подчёркивает теологическое сыновство — рождение от бога в его личном аспекте, тогда как anilātmaja акцентирует субстанциальное единство с ветром как стихией. MW: vāyuputra 'son of the wind, ep. of Hanumant'. Выбор эпитета в данном контексте (войско летит по воздуху) создаёт тематическое удвоение: Ханuman буквально «возглавляет» полёт как сын воздушной стихии.",
+          "note_ru": "Вайюпутра (vāyu-putra, m.) — тат-пуруша: vāyu «ветер» (ведийское божество, MW: 'the god of wind') + putra «сын». Эпитет Ханумана как сына Вайю. Отличается от синонима anilātmaja (anilātmaja: anila «ветер» + ātmaja «рождённый из сути»): vāyu-putra подчёркивает теологическое сыновство — рождение от бога в его личном аспекте, тогда как anilātmaja акцентирует субстанциальное единство с ветром как стихией. MW: vāyuputra 'son of the wind, ep. of Hanumant'. Выбор эпитета в данном контексте (войско летит по воздуху) создаёт тематическое удвоение: Hanuman буквально «возглавляет» полёт как сын воздушной стихии.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:vAyuputra",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW vAyuputra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vAyuputra"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 3
         }
       ]
     },
@@ -78,15 +148,28 @@
         "bhusana": "मेरुमन्दरसङ्काशा मत्ता इव महागजाः ।\n\nछादयन्त इवाकाशं महाकाया महाबलाः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.3:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "[Claude.AI — желательно] [термин] (не учтено) Первое появление в кн. V; введено в :"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [],
+          "suggestions": [
+            {
+              "author": "Claude.AI",
+              "strength": "желательно",
+              "kind": "термин",
+              "accounted": "не учтено",
+              "text": "Первое появление в кн. V; введено в :",
+              "incomplete": true
+            }
+          ],
+          "seq": 4
         }
       ]
     },
@@ -97,18 +180,23 @@
       "leonov_ru": "",
       "commentary": {},
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.4:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Словно несли его взглядами (vahanta iva dṛṣṭibhiḥ) - то есть смотрели не отрываясь на летящего впереди Ханумана.Чтимого небожителями (sabhājyamānaṃ bhūtais tam) - букв. “почитаемого существами”. Средневековые комментаторы поясняют, что имеются в виду совершенные существа."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Словно несли его взглядами (vahanta iva dṛṣṭibhiḥ) - то есть смотрели не отрываясь на летящего впереди Ханумана.Чтимого небожителями (sabhājyamānaṃ bhūtais tam) - букв. “почитаемого существами”. Средневековые комментаторы поясняют, что имеются в виду совершенные существа.",
+          "service": [],
+          "suggestions": [],
+          "seq": 5
         }
       ],
-      "verse_not_segmented": true
+      "verse_not_segmented": true,
+      "empty_reason": "Шлока есть в нумерации примечаний, но отсутствует в сегментированном корпусе (data/analysis/sundara_commentary_segmented.json), поэтому санскрит и подстрочник здесь не показаны. Примечание сохранено и голосуется; текст стиха нужно досегментировать."
     },
     {
       "verse_id": "5.61.5",
@@ -119,15 +207,19 @@
         "bhusana": "राघवे चार्थनिर्वृत्तिं कर्तुं च परमं यशः ।\n\nसमाधाय समृद्धार्थाः कर्मसिद्धिभिरुन्नताः\nअर्थनिर्वृत्तिम् अर्थसिद्धिम् । समाधाय निश्चित्य सङ्कल्प्य वा । समृद्धार्थाः सिद्धकार्याः । कर्मसिद्धिभिः कार्यसिद्धिभिः उन्नताः इतरेभ्य उत्कृष्टाः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "И снова воспрянув духом (karmasiddhibhir unnatāḥ) - букв. “те, [чей дух] воспрял благодаря успеху дел”. Комментаторы отмечают, что под “делами” здесь подразумеваются встреча Ханумана с Ситой, сожжение им Ланки и т.п."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "И снова воспрянув духом (karmasiddhibhir unnatāḥ) - букв. “те, [чей дух] воспрял благодаря успеху дел”. Комментаторы отмечают, что под “делами” здесь подразумеваются встреча Ханумана с Ситой, сожжение им Ланки и т.п.",
+          "service": [],
+          "suggestions": [],
+          "seq": 6
         },
         {
           "id": "lexical:5.61.5:0",
@@ -141,7 +233,18 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:nirvRtti+dic_mw:artha",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW nirvRtti",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nirvRtti"
+            },
+            {
+              "label": "MW artha",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=artha"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 7
         }
       ]
     },
@@ -155,15 +258,19 @@
         "siromani": "प्रियेति । सर्वे प्रियाख्याने उन्मुखाः समुत्सुकाः बभूवुः । सर्वे रामप्रतीकारे रामार्थं रावणनिग्रहे निश्चितार्था अत एव सर्वे युद्धाभिनन्दिनश्च बभूवुरिति शेषः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.6:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Исполненные решимости / Быть Раме надежным подспорьем (sarve rāmapratīkāre niścitārthā manasvinaḥ) - комментаторы поясняют слово rāmapratīkāre niścitārthāḥ как “готовые помочь Раме в борьбе с Раваной”."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Исполненные решимости / Быть Раме надежным подспорьем (sarve rāmapratīkāre niścitārthā manasvinaḥ) - комментаторы поясняют слово rāmapratīkāre niścitārthāḥ как “готовые помочь Раме в борьбе с Раваной”.",
+          "service": [],
+          "suggestions": [],
+          "seq": 8
         },
         {
           "id": "lexical:5.61.6:0",
@@ -177,7 +284,18 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:AKyAna+dic_mw:priyAKyAna",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW AKyAna",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=AKyAna"
+            },
+            {
+              "label": "MW priyAKyAna",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=priyAKyAna"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 9
         }
       ]
     },
@@ -190,15 +308,26 @@
         "bhusana": "यत्तन्मधुवनं नाम सुग्रीवस्याभिरक्षितम् ।\n\nअधृष्यं सर्वभूतानां सर्वभूतमनोहरम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Медовой она называлась (yat tan madhuvanaṃ nāma) - на санскрите Мадхувана, “Медовая роща”.[Е. Костина] «Для всех была недоступной.» непонятно. если она недоступна, как они туда попали?"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Медовой она называлась (yat tan madhuvanaṃ nāma) - на санскрите Мадхувана, “Медовая роща”.",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Для всех была недоступной.",
+              "kind": "note",
+              "text": "непонятно. если она недоступна, как они туда попали?"
+            }
+          ],
+          "suggestions": [],
+          "seq": 10
         },
         {
           "id": "crosstext:5.61.8:0",
@@ -218,7 +347,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Mahābhārata, Āraṇyakaparvan III.146.1-2",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 11
         }
       ]
     },
@@ -232,15 +363,19 @@
         "siromani": "यदिति । अभिरक्षितं सर्वतो रक्षायुक्तम् अत एव सर्वभूतानामधृष्यं यत् दधिमुखो नाम सुग्रीवस्य मातुलः रक्षति रक्षयति यच्च सुग्रीवस्य मनःकान्तं महावनम् अनेकवनिकाविशिष्टं मधुवनं नाम वनं तत् उपागम्य प्राप्य ते वानराः परमोत्कटा तत्रत्यमधुपानेनातिमत्ताः बभुवुः । श्लोकत्रयमेकान्वयि ।। 5.61.810 .।\n\nमधुपानप्रकारमाह-- तत इति । मधुपिङ्गलाः मधुवत् पिङ्गलवर्णाः ते वानराः मधुवनं दृष्ट्वा कुमारं तद्रक्षकं मधून्ययाचन्त"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.9:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Дядя великого духом / Царя обезьян Сугривы (mātulaḥ kapimukhyasya sugrīvasya mahātmanaḥ) - в оригинале использовано слово mātula “дядя со стороны матери”. Дадхимукха - букв. “с лицом [цвета] свернувшегося молока”."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Дядя великого духом / Царя обезьян Сугривы (mātulaḥ kapimukhyasya sugrīvasya mahātmanaḥ) - в оригинале использовано слово mātula “дядя со стороны матери”. Дадхимукха - букв. “с лицом [цвета] свернувшегося молока”.",
+          "service": [],
+          "suggestions": [],
+          "seq": 12
         },
         {
           "id": "lexical:5.61.9:0",
@@ -253,8 +388,10 @@
           "type": "В",
           "subtype": "base",
           "trigger": "realia",
-          "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
-          "collision_tier1": true
+          "source": "указатель имён и названий (анализ §09б / формулы тт. 1–2) — первое вхождение в кн. V (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 13
         }
       ]
     },
@@ -268,6 +405,7 @@
         "siromani": "तत इति । कुमारः जाम्बवत्प्रमुखान् अनुमान्य सत्कृत्य निसर्गं स्वभावसिद्धं मधु पुष्पविशेषरसं तेषां भक्षणे भक्षणार्थं ददौ"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "lexical:5.61.12:0",
@@ -280,7 +418,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:nisarga"
+          "source": "dic_mw:nisarga",
+          "source_links": [
+            {
+              "label": "MW nisarga",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nisarga"
+            }
+          ],
+          "seq": 14
         }
       ]
     },
@@ -293,6 +438,7 @@
         "siromani": "ते इति । कुमारेण वालिसूनुना ऽङ्गदेन च निसृष्टाः प्रेरिताः ते हरयः मधुकरैः आकुलान् व्याप्तान् द्रुमान् समपद्यन्त प्राप्नुवन्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "lexical:5.61.13:0",
@@ -305,7 +451,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:sUnu"
+          "source": "dic_mw:sUnu",
+          "source_links": [
+            {
+              "label": "MW sUnu",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=sUnu"
+            }
+          ],
+          "seq": 15
         },
         {
           "id": "edition:5.61.13:0",
@@ -313,8 +466,9 @@
           "layer_label": "издания · сноска",
           "votable": true,
           "status": "ожидает гейта М.Г.",
-          "note_ru": "Шлоки 5.61.13–14 (2 шлок) отсутствуют в критическом издании (Барода).",
+          "note_ru": "Шлоки 5.61.13–14 (2 шлоки) отсутствуют в критическом издании (Барода).",
           "kind": "verse_range",
+          "scope": "несколько шлок подряд",
           "range": "5.61.13–14",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -326,7 +480,8 @@
               "verse_id": "5.61.14",
               "iast": "bhakṣyantaḥ sugandhīni mulāni ca phalāni ca । jagmuḥ praharṣaṃ te sarve babhuvuś ca madotkaṭāḥ ॥14॥"
             }
-          ]
+          ],
+          "seq": 16
         }
       ]
     },
@@ -340,15 +495,19 @@
         "siromani": "भक्षयन्त इति । मूलानि फलानि च भक्षयन्तो वानराः प्रहर्षं जग्मुः मदोत्कटाः बभूवुश्च"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.14:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Благоуханных плодов / И кореньев отведав (bhakṣyantaḥ sugandhīni mulāni ca phalāni ca) - во многих рукописях вместо mulāni ca phalāni ca (коренья и плоды) стоит более логичный вариант madhūni ca phalāni ca (меды и плоды)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Благоуханных плодов / И кореньев отведав (bhakṣyantaḥ sugandhīni mulāni ca phalāni ca) - во многих рукописях вместо mulāni ca phalāni ca (коренья и плоды) стоит более логичный вариант madhūni ca phalāni ca (меды и плоды).",
+          "service": [],
+          "suggestions": [],
+          "seq": 17
         }
       ]
     },
@@ -361,15 +520,19 @@
         "bhusana": "गायन्ति केचित् प्रणमन्ति केचिन्नृत्यन्ति केचित् प्रहसन्ति केचित् ।\n\nपतन्ति केचिद्विचरन्ति केचित् प्लवन्ति केचित् प्रलपन्ति केचित्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.16:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…простирались другие (praṇamanti ke cit) - перед Ангадой в знак признательности за позволение попробовать меда (по комментарию “Амритакатака”)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…простирались другие (praṇamanti ke cit) - перед Ангадой в знак признательности за позволение попробовать меда (по комментарию “Амритакатака”).",
+          "service": [],
+          "suggestions": [],
+          "seq": 18
         }
       ]
     },
@@ -383,15 +546,19 @@
         "siromani": "परस्परमिति । अतिब्रुवन्ति विवादं कुर्वन्ति"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.17:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Другие же завели перебранки (ke cid atibruvanti) - переведено в соответствии с комментарием “Тилака”, автор которого глоссирует слово atibruvanti как vivādaṃ kurvanti (заводили ссоры)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Другие же завели перебранки (ke cid atibruvanti) - переведено в соответствии с комментарием “Тилака”, автор которого глоссирует слово atibruvanti как vivādaṃ kurvanti (заводили ссоры).",
+          "service": [],
+          "suggestions": [],
+          "seq": 19
         }
       ]
     },
@@ -405,6 +572,7 @@
         "siromani": "महीतलादिति । उदीर्णवेगाः अतिवेगवन्तः केचित् महीतलात् महाद्रुमाग्राणि अभिसंपतन्ति"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "crosstext:5.61.18:0",
@@ -424,9 +592,11 @@
           "sundara_sa_iast": "jāmbavān yatra netā syād aṅgadasya baleśvaraḥ |hanūmāṁścāpyadhiṣṭhātā na tasya gatir anyathā ||",
           "quality": "PARTLY",
           "source": "DCS parallel-search (PARTLY); Rām 5.62.32 (крит. изд.)",
+          "source_links": [],
           "edition_flag": "critical",
           "shloka_critical": "V.61.18",
-          "verse_address_vulgate": ""
+          "verse_address_vulgate": "",
+          "seq": 20
         }
       ]
     },
@@ -440,15 +610,19 @@
         "siromani": "तुदन्तमिति । तुदन्तं व्यथयन्तमन्यः प्रणदन् अतिनादं कुर्वन्नुपैति प्राप्नोति अतः तत् कपिसैन्यं समाकुलं तुमुलमासीत् । तत्र हेतुः-- यो मत्तो न बभूव सो ऽत्र कश्चिन्न अत एव यो दृप्तो न बभूव सो ऽप्यत्र न बभूव"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.19:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Не было никого, кто бы не был пьяным (na cātra kaś cin na babhūva dṛptaḥ) - в рукописях встречается вариант tṛptaḥ вместо dṛptaḥ “Здесь не было никого, кто бы не насытился”."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Не было никого, кто бы не был пьяным (na cātra kaś cin na babhūva dṛptaḥ) - в рукописях встречается вариант tṛptaḥ вместо dṛptaḥ “Здесь не было никого, кто бы не насытился”.",
+          "service": [],
+          "suggestions": [],
+          "seq": 21
         },
         {
           "id": "edition:5.61.19:0",
@@ -458,6 +632,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.61.19 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.61.19",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -466,7 +641,8 @@
               "iast": "tudantam anyaḥ praṇadann upaiti । samākulaṃ tat kapisainyam āsīt । na cātra kaś cin na babhūva matto । na cātra kaś cin na babhūva tṛptaḥ ॥19॥"
             }
           ],
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 22
         }
       ]
     },
@@ -479,15 +655,26 @@
         "siromani": "तत इति । परिभक्ष्यमाणं वनं विध्वंसितपत्रपुष्पान् द्रुमांश्च समीक्ष्य दधिवक्रनामा कपिः तान् विध्वंसनादिकर्तृ़न् निवारयामास"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.20:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "…Дадхивактра (dadhivaktra) - другой вариант имени Дадхимукхи (с тем же значением). Голдмены используют в переводе в обоих случаях вариант “Дадхимукха”, чтобы избежать путаницы (см.: Goldman 1984: 280 – 283).[Е. Костина] «kopād» опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…Дадхивактра (dadhivaktra) - другой вариант имени Дадхимукхи (с тем же значением). Голдмены используют в переводе в обоих случаях вариант “Дадхимукха”, чтобы избежать путаницы (см.: Goldman 1984: 280 – 283).",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "kopād",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 23
         },
         {
           "id": "lexical:5.61.20:0",
@@ -501,7 +688,18 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:dadhi+dic_mw:vaktra",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW dadhi",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=dadhi"
+            },
+            {
+              "label": "MW vaktra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vaktra"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 24
         }
       ]
     },
@@ -515,15 +713,19 @@
         "siromani": "स इति । प्रवृद्धैः तैर्वानरैः परिभर्त्स्यमानो वनस्य गोप्ता स दधिवक्रनामा वानरेभ्यो वनस्य रक्षां प्रति भूयो मतिं चकार"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "tier1:5.61.21:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…обезьян могучих (taiḥ pravṛddhaiḥ) - автор комментария “Тилака” глоссирует pravṛddhamadaiḥ (очень пьяных)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…обезьян могучих (taiḥ pravṛddhaiḥ) - автор комментария “Тилака” глоссирует pravṛddhamadaiḥ (очень пьяных).",
+          "service": [],
+          "suggestions": [],
+          "seq": 25
         }
       ]
     },
@@ -537,6 +739,7 @@
         "siromani": "स इति । अप्रतिवार्याः वेगाः येषां तैः अत एव तेन रक्षकेण अप्रतिवार्यमाणैः त्यक्तभयैः तैर्वानरैः उद्धर्षणे रक्षकपराभवे दोषं राजदण्डमनवेक्ष्य अपरिगणय्य समेत्य एकीभूय स रक्षकः बलात् प्रकृष्यते पुच्छादिग्रहणेन इतस्ततो नीयते"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-61",
       "notes": [
         {
           "id": "lexical:5.61.23:0",
@@ -549,7 +752,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:pra-DarzaNa"
+          "source": "dic_mw:pra-DarzaNa",
+          "source_links": [
+            {
+              "label": "MW pra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=pra"
+            }
+          ],
+          "seq": 26
         }
       ]
     }

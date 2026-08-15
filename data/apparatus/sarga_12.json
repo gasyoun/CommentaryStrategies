@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 12,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 26,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -19,7 +55,8 @@
       "phase2": 3,
       "edition": 0,
       "crosstext": 2
-    }
+    },
+    "source_hash": "3771314f58cc1f1cde43bf82cef952bfde93c8a41df00c28d87b9d3eda1988f3"
   },
   "sarga": 12,
   "verses": [
@@ -33,36 +70,19 @@
         "bhusana": "स चिन्तयामास ततो महाकपिः प्रियामपश्यन् रघुनन्दनस्य ताम् ।\n\nध्रुवं हि सीता म्रियते यथा न मे विचिन्वतो दर्शनमेति मैथिला\nस इति । यथा यस्मात् कारणात् । विचिन्वतो मे मैथिली दर्शनं नैति तस्मात् म्रियते ममार । यद्वा अथवा नेति वाक्यं पठनीयम् । तदा अपश्यन्निति हेतुगर्भम् । अदर्शनात् मृता वा अथवा दर्शनं नैति । कुत्रचित् गहने प्रदेशे स्थिता वेत्यर्थः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Не увидев той, что любима Рамой (priyām apaśyan raghunandanasya tām) – в оригинале raghunandasya – потомком Рагху."
-        },
-        {
-          "id": "phase2:5.12.2:0",
-          "layer": "phase2",
-          "layer_label": "Фаза 2 · комментаторы",
-          "votable": true,
-          "status": "ожидает гейта М.Г.",
-          "mg_comment": "",
-          "lemma_iast": "aghaṭitaghaṭanāpaṭīyastvam",
-          "note_ru": "К отчаянному выводу Ханумана «верно, нет в живых Ситы» «Широмани» делает тонкое встречное замечание: сама невозможность её найти обычными средствами исподволь указывает (vyañjitam) на её aghaṭitaghaṭanāpaṭīyastvam — «умение обращать необращаемое», то есть на то, что её судьба выходит за рамки обычной логики поиска.",
-          "type": "Б",
-          "source_commentary": [
-            "siromani"
-          ],
-          "why_proposed": "превращает отчаяние Ханумана в косвенное указание на особую, ускользающую от логики судьбу Ситы — эта импликация не считывается из одного подстрочника, где вывод Ханумана звучит как простое отчаяние.",
-          "provenance": {
-            "model": "claude-sonnet-5",
-            "tier": "Sonnet",
-            "step": "phase2_batch3_draft"
-          },
-          "collision_tier1": true
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Не увидев той, что любима Рамой (priyām apaśyan raghunandanasya tām) – в оригинале raghunandasya – потомком Рагху.",
+          "service": [],
+          "suggestions": [],
+          "seq": 1
         }
       ]
     },
@@ -76,15 +96,19 @@
         "bhusana": "सा राक्षसानां प्रवरेण जानकी स्वशीलसंरक्षणतत्परा सती ।\n\nअनेन नूनं प्रतिदुष्टकर्मणा हता भवेदार्यपथे परे स्थिता\nसेति । प्रतिदुष्टकर्मणा अतिदुष्टकर्मणा । वीप्सायां प्रतिः । \"प्रति प्रतिनिधौ वीप्सालक्षणादौ\" इत्यमरः । परे उत्कृष्टे । आर्यपथे सन्मार्गे"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.3:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "И на пути благородных стоящая (svaśīlasaṃrakṣaṇatatparā satī) – в оригинале svaśīlasaṃrakṣaṇatatparā, то есть «преданная сохранению своей добродетели». В комментарии «Тилака» svaśīla объясняется как pātivratya «верность мужу». Выражение «на пути благородных» в «Тилаке» также трактуется как «на пути верных мужу» (parivratānāṃ marge)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "И на пути благородных стоящая (svaśīlasaṃrakṣaṇatatparā satī) – в оригинале svaśīlasaṃrakṣaṇatatparā, то есть «преданная сохранению своей добродетели». В комментарии «Тилака» svaśīla объясняется как pātivratya «верность мужу». Выражение «на пути благородных» в «Тилаке» также трактуется как «на пути верных мужу» (parivratānāṃ marge).",
+          "service": [],
+          "suggestions": [],
+          "seq": 2
         },
         {
           "id": "lexical:5.12.3:0",
@@ -98,7 +122,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:satI",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW satI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=satI"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 3
         },
         {
           "id": "lexical:5.12.3:1",
@@ -112,7 +143,18 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:Arya+dic_mw:paTa",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW Arya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=Arya"
+            },
+            {
+              "label": "MW paTa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=paTa"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 4
         },
         {
           "id": "crosstext:5.12.3:0",
@@ -132,7 +174,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Mahābhārata, Āraṇyakaparva 3.250.1-9",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 5
         }
       ]
     },
@@ -146,36 +190,32 @@
         "siromani": "चिन्तान्तरमाह विरूपेति । विरूपाणि छिन्नैकनासिकादिमन्ति शरीराणि यासामत एव विकृताः विविधविकारविशिष्टाः अत एव दीर्घाः बृहच्छरीराः विरूपाणां राक्षसानां दर्शनं निरन्तरं दृष्टिर्यासु ता एव ता इति कर्मधारयः । अत एव विवर्चसः भयंकरवर्चोविशिष्टा राक्षसराजयोषितः ताः राक्षसीः समीक्ष्यावलोक्य जनकेश्वरात्मजा भयाद्विनष्टा"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.4:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Страшных обличьем, уродливых, черных (virūparūpā vikṛtā vivarcaso) – «Черных» (vivarcasaḥ), букв. «лишенных сияния, великолепия». Под этим может подразумеваться как темный цвет кожи, так и отсутствие высоких душевных качеств и/или социального статуса.Женщин царя ракшасов она увидала (samīkṣya tā rākṣasarājayoṣito) – под «женщинами царя ракшасов» (rākṣasarājayoṣitaḥ) подразумеваются ракшаси, а не жены Раваны, которых Хануман видел ночью в дворцовых покоях.[Е. Костина] «царевна» Комм janakeśvarātmajā[Е. Костина] «dīrgha» Опущено"
-        },
-        {
-          "id": "phase2:5.12.4:0",
-          "layer": "phase2",
-          "layer_label": "Фаза 2 · комментаторы",
-          "votable": true,
-          "status": "ожидает гейта М.Г.",
-          "mg_comment": "",
-          "lemma_iast": "anurāgāt … strīvadhadoṣād vā",
-          "note_ru": "К мысли Ханумана о гибели Ситы «Тилака» добавляет неявную психологическую мотивировку: если Равана и не убил её сам, то либо из влечения к ней (anurāgāt), либо из страха греха убийства женщины (strīvadhadoṣāt) — то есть даже воображаемая пощада со стороны похитителя объясняется не добродетелью, а одним из двух низменных мотивов.",
-          "type": "Б",
-          "source_commentary": [
-            "tilaka"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Страшных обличьем, уродливых, черных (virūparūpā vikṛtā vivarcaso) – «Черных» (vivarcasaḥ), букв. «лишенных сияния, великолепия». Под этим может подразумеваться как темный цвет кожи, так и отсутствие высоких душевных качеств и/или социального статуса.Женщин царя ракшасов она увидала (samīkṣya tā rākṣasarājayoṣito) – под «женщинами царя ракшасов» (rākṣasarājayoṣitaḥ) подразумеваются ракшаси, а не жены Раваны, которых Хануман видел ночью в дворцовых покоях.",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "царевна",
+              "kind": "note",
+              "text": "Комм janakeśvarātmajā"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "dīrgha",
+              "kind": "omission",
+              "text": "опущено"
+            }
           ],
-          "why_proposed": "приписывает Раване два возможных мотива невольной пощады (влечение либо табу на убийство женщины) — подстрочник передаёт только версию Ханумана о гибели Ситы, не касаясь того, почему Равана мог её пощадить.",
-          "provenance": {
-            "model": "claude-sonnet-5",
-            "tier": "Sonnet",
-            "step": "phase2_batch3_draft"
-          },
-          "collision_tier1": true
+          "suggestions": [],
+          "seq": 6
         }
       ]
     },
@@ -190,6 +230,7 @@
         "siromani": "चिन्तान्तरमाह सीतामिति । वानरैः सह चिरंकालं विहृत्य सीताम् अदृष्ट्वा अत एव पौरुषं पुरुषार्थम् अनवाप्य अप्राप्य सुग्रीवसमीपगा सुग्रीवसमीपप्रापिका मे गतिर्मार्गो नास्ति । तत्र हेतुः वानरः सुग्रीवः तीक्ष्णदण्डः बलवांश्च"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "lexical:5.12.5:0",
@@ -202,7 +243,31 @@
           "type": "В",
           "subtype": "base",
           "trigger": "realia",
-          "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)"
+          "source": "первое вхождение в кн. V; указатель Гринцера / комментаторы, где процитировано (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "seq": 7
+        },
+        {
+          "id": "phase2:5.12.5:0",
+          "layer": "phase2",
+          "layer_label": "Фаза 2 · комментаторы",
+          "votable": true,
+          "status": "ожидает гейта М.Г.",
+          "mg_comment": "",
+          "lemma_iast": "pauruṣam",
+          "note_ru": "Паурушам (pauruṣam) в этом стихе толкуется по-разному: в «Тилаке» — как конкретная цель, достижимая именно переходом через океан (samudralaṅghana-rūpa-parākrama-sādhya prayojana), то есть сама находка Ситы; в «Широмани» — как общее «человеческое усилие» (puruṣārtha), без привязки к прыжку. Перевод «плод (моего) мужества» ближе к более общему прочтению Широмани.",
+          "type": "Б",
+          "source_commentary": [
+            "tilaka",
+            "siromani"
+          ],
+          "why_proposed": "Комментаторы расходятся в толковании pauruṣam — конкретная цель (Тилака) против общего усилия (Широмани); перевод следует второму, более общему чтению — нюанс, невидимый в подстрочнике.",
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "tier": "Sonnet",
+            "step": "phase2_batch3_draft"
+          },
+          "seq": 8
         },
         {
           "id": "crosstext:5.12.5:0",
@@ -221,7 +286,9 @@
           "parallel_sa_iast": "",
           "sundara_sa_iast": "",
           "quality": "",
-          "source": "Bhagavadgītā 12.11–12 (Семенцов)"
+          "source": "Bhagavadgītā 12.11–12 (Семенцов)",
+          "source_links": [],
+          "seq": 9
         }
       ]
     },
@@ -235,15 +302,28 @@
         "siromani": "दृष्टमिति । राक्षसयोषितो दृष्ट्वा सर्वमन्तःपुरं मया दृष्टं सीता तु न दृश्यते । अतः मम श्रमः समुद्रलङ्घनादिजनितखेदः वृथा"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.6:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "[Claude.AI — строго] [термин] (не учтено) антахпура (antaḥpura) — внутренние женские покои дворца."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [],
+          "suggestions": [
+            {
+              "author": "Claude.AI",
+              "strength": "строго",
+              "kind": "термин",
+              "accounted": "не учтено",
+              "text": "антахпура (antaḥpura) — внутренние женские покои дворца.",
+              "incomplete": false
+            }
+          ],
+          "seq": 10
         }
       ]
     },
@@ -258,15 +338,51 @@
         "siromani": "ननु किं तेनेत्यत आह-- अदृष्ट्वेति । जनकात्मजाम् अदृष्ट्वा अहं किं प्रवक्ष्यामि नोत्तरमस्तीत्यर्थः, अतः कालस्य सुग्रीवपरिकल्पितसमयस्य व्यतिवर्तने उल्लङ्गने स्थितो ऽहं प्रायं प्रायोपवेशनं ध्रुवमासिष्ये"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "[Claude.AI — строго] [термин] (не учтено) прая — пост до смерти как форма принуждения"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [],
+          "suggestions": [
+            {
+              "author": "Claude.AI",
+              "strength": "строго",
+              "kind": "термин",
+              "accounted": "не учтено",
+              "text": "прая — пост до смерти как форма принуждения.",
+              "incomplete": false
+            }
+          ],
+          "seq": 11
+        },
+        {
+          "id": "phase2:5.12.8:0",
+          "layer": "phase2",
+          "layer_label": "Фаза 2 · комментаторы",
+          "votable": true,
+          "status": "ожидает гейта М.Г.",
+          "mg_comment": "",
+          "lemma_iast": "prāyam upāsiṣye",
+          "note_ru": "Кто именно даёт обет голодной смерти (prāya), в комментариях трактуется по-разному. «Широмани» читает форму как 1-е л. ед. ч. (upāsiṣye) и явно подставляет «ahaṃ» — сам Хануман клянётся уморить себя голодом. «Бхушана» толкует ту же строку как 3-е л. мн. ч. (upaiṣyanti), относя обет к «Джамбавану и прочим» (jāmbavat-prabhṛtayaḥ) — то есть это встречающая партия предпримет прая, если Хануман не вернётся с вестью. Перевод («лучше было мне погибнуть…») следует чтению Широмани — от 1-го лица.",
+          "type": "Б",
+          "source_commentary": [
+            "bhusana",
+            "siromani"
+          ],
+          "why_proposed": "Комментаторы по-разному определяют субъект обета prāya — сам Хануман (Широмани) или Джамбаван/встречающие (Бхушана); это содержательное текстовое расхождение, а не просто лексическая деталь, и не отражено в существующем примечании Леонова/Костиной к этому стиху (термин «прая»).",
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "tier": "Sonnet",
+            "step": "phase2_batch3_draft"
+          },
+          "collision_tier1": true,
+          "seq": 12
         }
       ]
     },
@@ -281,6 +397,7 @@
         "siromani": "किमिति । समुद्रस्य पारम् उत्तरतीरं गतं प्राप्तं मां जाम्बवान् किं वक्ष्यति वानराश्च किं वक्ष्यन्तीति वचनविपरिणामेनान्वयः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "lexical:5.12.9:0",
@@ -293,7 +410,9 @@
           "type": "В",
           "subtype": "base",
           "trigger": "realia",
-          "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)"
+          "source": "первое вхождение в кн. V; указатель Гринцера / комментаторы, где процитировано (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "seq": 13
         },
         {
           "id": "lexical:5.12.9:1",
@@ -306,7 +425,31 @@
           "type": "В",
           "subtype": "base",
           "trigger": "realia",
-          "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)"
+          "source": "первое вхождение в кн. V; указатель Гринцера / комментаторы, где процитировано (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "seq": 14
+        },
+        {
+          "id": "phase2:5.12.9:0",
+          "layer": "phase2",
+          "layer_label": "Фаза 2 · комментаторы",
+          "votable": true,
+          "status": "ожидает гейта М.Г.",
+          "mg_comment": "",
+          "lemma_iast": "kiṃ vā vakṣyati",
+          "note_ru": "Риторический вопрос Ханумана «что скажут…» получает разную эмоциональную окраску у комментаторов. «Тилака» видит здесь прямую угрозу порицания (dhikkariṣyati — «осудят»). «Бхушана» приводит два варианта: нейтральный («просто спросят») и alt. чтение (yad vā), где Джамбаван хвалит подвиг (praśaṃsan), Ангада воодушевлён, а «прочие» могут сказать нечто «презрительное» (jugupsita). Перевод сохраняет открытый, нейтральный тон вопроса, ближе к нейтральному варианту у Бхушаны и Широмани, не педалируя ни осуждение Тилаки, ни похвалу.",
+          "type": "Б",
+          "source_commentary": [
+            "tilaka",
+            "bhusana"
+          ],
+          "why_proposed": "Комментаторы резко расходятся в тональности одного и того же риторического вопроса (осуждение против одобрения/нейтральности) — оттенок, стёртый в плоском подстрочном переводе.",
+          "provenance": {
+            "model": "claude-sonnet-5",
+            "tier": "Sonnet",
+            "step": "phase2_batch3_draft"
+          },
+          "seq": 15
         }
       ]
     },
@@ -320,15 +463,19 @@
         "siromani": "स्वामिकार्यविघातः दुःसहः इत्युत्साहावलम्बिचिन्तान्तरमाह अनिर्वेद इत्यादिभिः । अनिर्वेदः कृत्यात् निवृत्तिर्यस्मात् सः उत्साह इत्यर्थः । श्रियः संपत्तेः मूलं कारणम् अत एव अनिर्वेदः परं सुखं परमसुखहेतुः । अत एव यत्र विचयो ऽन्वेषणं न कृतः तत्र भूयो विचेष्यामि\nउत्साहस्य संपत्तिमूलत्वमुपपादयन्नाह अनिर्वेद इति । सर्वार्थेषु निखिलकर्तव्येषु प्रवर्तकः सो ऽनिर्वेदः यत् कर्म जन्तुः करोति तत् जन्तोः कर्म सफलं करोति"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.10:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Не унывать – вот корень удачи (anirvedaḥ śriyo mūlam). В оригинале anirvedaḥ śriyo mūlam. Это же выражение встречается и в V книге «Махабхараты». В русском переводе В. И. Кальянова она звучит так: «Непоколебимая уверенность есть основа преуспеяния» (V, 39, 44). Слово anirveda также можно перевести как «отсутствие уныния, упадка духа»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Не унывать – вот корень удачи (anirvedaḥ śriyo mūlam). В оригинале anirvedaḥ śriyo mūlam. Это же выражение встречается и в V книге «Махабхараты». В русском переводе В. И. Кальянова она звучит так: «Непоколебимая уверенность есть основа преуспеяния» (V, 39, 44). Слово anirveda также можно перевести как «отсутствие уныния, упадка духа».",
+          "service": [],
+          "suggestions": [],
+          "seq": 16
         },
         {
           "id": "lexical:5.12.10:0",
@@ -342,7 +489,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:nirveda (+ отрицание a-)",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW nirveda",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nirveda"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 17
         }
       ]
     },
@@ -355,15 +509,19 @@
         "bhusana": "इति संचिन्त्य भुयो ऽपि विचेतुमुपचक्रमे ।\n\nभूमीगूहांश्चैत्यगृहान् गृहातिगृहकानपि\nभूमीगृहान् भूमीबिलगृहान् । चैत्यगृहान् चतुष्पथमण्डपान् । गृहातिगृहकान् गृहानतीत्य दूरे स्वैरविहारार्थं निर्मितान् गृहान्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.14:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "И дома многоярусные (vimānāni ca sarvaśaḥ) – в оригинале использовано слово vimānāni. Комментарий «Тилака» трактует его как «Пушпака и другие виманы». Однако поскольку кроме Пушпаки в предыдущем тексте о других виманах не упоминается, то более логичным представляется перевести здесь слово vimāna как «многоэтажное здание/дворец»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "И дома многоярусные (vimānāni ca sarvaśaḥ) – в оригинале использовано слово vimānāni. Комментарий «Тилака» трактует его как «Пушпака и другие виманы». Однако поскольку кроме Пушпаки в предыдущем тексте о других виманах не упоминается, то более логичным представляется перевести здесь слово vimāna как «многоэтажное здание/дворец».",
+          "service": [],
+          "suggestions": [],
+          "seq": 18
         }
       ]
     },
@@ -377,15 +535,26 @@
         "bhusana": "उत्पतन्निपतंश्चापि तिष्ठन् गच्छन् पुनः पुनः ।\n\nअपावृण्वंश्च द्वाराणि कपाटान्यवघाटयन्\nउत्पतन्निपतन् पूर्वमुच्चस्थानान्यधिरुह्य ततो ऽवरोहन् । अवघाटयन् पाटयन्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.15:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «святилища» Нужен будет комм., что представляют собой caityagṛha"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "святилища",
+              "kind": "note",
+              "text": "Нужен будет комм., что представляют собой caityagṛha"
+            }
+          ],
+          "suggestions": [],
+          "seq": 19
         },
         {
           "id": "lexical:5.12.15:0",
@@ -399,7 +568,18 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:caitya+dic_mw:gfha",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW caitya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=caitya"
+            },
+            {
+              "label": "MW gfha",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=gfha"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 20
         }
       ]
     },
@@ -412,15 +592,19 @@
         "siromani": "प्राकारेति । प्राकारान्तरवीथ्यादि सर्वं तेन हनूमता ऽवलोकितं चैत्यः चतुष्पथवर्ती तरुः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.18:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Скамьи у священных деревьев (vedikāś caityasaṃśrayāḥ) - слово caitya комментарий «Тилака» толкует как «[священное]дерево, расположенное на перекрестке дорог» (catuṣpathavartivṛkṣa)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Скамьи у священных деревьев (vedikāś caityasaṃśrayāḥ) - слово caitya комментарий «Тилака» толкует как «[священное]дерево, расположенное на перекрестке дорог» (catuṣpathavartivṛkṣa).",
+          "service": [],
+          "suggestions": [],
+          "seq": 21
         }
       ]
     },
@@ -433,6 +617,7 @@
         "bhusana": "राक्षस्यो विविधाकारा विरूपा विकृतास्तथा ।\n\nदृष्टा हनुमता तत्र न तु सा जनकात्मजा"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "lexical:5.12.19:0",
@@ -445,7 +630,9 @@
           "type": "А",
           "subtype": "base",
           "trigger": "epithet",
-          "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)"
+          "source": "первое вхождение в кн. V; указатель Гринцера / комментаторы, где процитировано (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "seq": 22
         }
       ]
     },
@@ -459,6 +646,7 @@
         "siromani": "रूपेणेति । रूपेण अप्रतिमाः विद्याधरस्त्रियः हनूमता दृष्टाः राघवनन्दिनी सीता तु न दृष्टा"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "lexical:5.12.20:0",
@@ -471,7 +659,9 @@
           "type": "В",
           "subtype": "base",
           "trigger": "realia",
-          "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)"
+          "source": "первое вхождение в кн. V; указатель Гринцера / комментаторы, где процитировано (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "seq": 23
         }
       ]
     },
@@ -485,6 +675,7 @@
         "bhusana": "नागकन्या वरारोहाः पूर्णचन्द्रनिभाननाः ।\n\nदृष्टा हनुमता तत्र न तु सीता सुमध्यमा"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "lexical:5.12.21:0",
@@ -493,11 +684,22 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "nāgakanyā",
-          "note_ru": "Нагакання (nāga-kanyā, f.) — «дочь нагов», тат-пуруша: nāga «змей, нагa» + kanyā «девушка, дочь». MW: nāga 'a snake, a serpent-demon'. Наги — полузмеи-полубоги, обитающие в подземном мире (pātāla); их женщины (nāgakanyā, nāgī) в эпосе изображаются красавицами. Равана, захватив nāgakanyā «силой» (balāt) — 12.22 — демонстрирует тот же modus operandi, что и похищение Ситы: он собирает красавиц из всех мировых рас. Перечисление rākṣasī / vidyādharī / nāgakanyā = каталог пленённых существ из трёх уровней Вселенной (земля / воздух / подземье). Подстрочник «дочерей нагов» точен; космологический каталог уровней бытия не виден.",
+          "note_ru": "Нагакання (nāga-kanyā, f.) — «дочь нагов», тат-пуруша: nāga «змей, нага» + kanyā «девушка, дочь». MW: nāga 'a snake, a serpent-demon'. Наги — полузмеи-полубоги, обитающие в подземном мире (pātāla); их женщины (nāgakanyā, nāgī) в эпосе изображаются красавицами. Равана, захватив nāgakanyā «силой» (balāt) — 12.22 — демонстрирует тот же modus operandi, что и похищение Ситы: он собирает красавиц из всех мировых рас. Перечисление rākṣasī / vidyādharī / nāgakanyā = каталог пленённых существ из трёх уровней Вселенной (земля / воздух / подземье). Подстрочник «дочерей нагов» точен; космологический каталог уровней бытия не виден.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:nAga+dic_mw:kanyA"
+          "source": "dic_mw:nAga+dic_mw:kanyA",
+          "source_links": [
+            {
+              "label": "MW nAga",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nAga"
+            },
+            {
+              "label": "MW kanyA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=kanyA"
+            }
+          ],
+          "seq": 24
         }
       ]
     },
@@ -510,37 +712,26 @@
         "bhusana": "प्रमथ्य राक्षसेन्द्रेण नागकन्या बलाद्धृताः ।\n\nदृष्टा हनुमता तत्र न सा जनकनन्दिनी ।"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "tier1:5.12.22:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Похищенных дочерей нагов,Насильно удерживаемых Раваной» Нужен комм. 1) в 21 тоже есть дочери нагов. Это другие или дополнение к тем? 2) Ранее говорилось, что Равана никого силой не удерживал. Нужно пояснение"
-        },
-        {
-          "id": "phase2:5.12.22:0",
-          "layer": "phase2",
-          "layer_label": "Фаза 2 · комментаторы",
-          "votable": true,
-          "status": "ожидает гейта М.Г.",
-          "mg_comment": "",
-          "lemma_iast": "nāgakanyā balād dhṛtāḥ",
-          "note_ru": "«Тилака» и «Бхушана» независимо друг от друга поясняют, почему упоминание дочерей нагов в стихе 22 не повторяет стих 21: там речь о взятых Раваной в жёны (ūḍhānām), а здесь — о насильно удерживаемых пленницах (balād dhṛtāḥ, bandīkṛtānām); то есть это разные группы женщин, а не тавтология.",
-          "type": "Б",
-          "source_commentary": [
-            "tilaka",
-            "bhusana"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Похищенных дочерей нагов,Насильно удерживаемых Раваной",
+              "kind": "note",
+              "text": "Нужен комм. 1) в 21 тоже есть дочери нагов. Это другие или дополнение к тем? 2) Ранее говорилось, что Равана никого силой не удерживал. Нужно пояснение"
+            }
           ],
-          "why_proposed": "два комментатора независимо снимают кажущуюся тавтологию между стихами 21 и 22 (жёны vs пленницы) — это прямо разрешает открытый вопрос Е. Костиной к этому месту.",
-          "provenance": {
-            "model": "claude-sonnet-5",
-            "tier": "Sonnet",
-            "step": "phase2_batch3_draft"
-          },
-          "collision_tier1": true
+          "suggestions": [],
+          "seq": 25
         }
       ]
     },
@@ -554,6 +745,7 @@
         "bhusana": "अवतीर्य विमानाच्च हनुमान् मारुतात्मजः ।\n\nचिन्तामुपजगामाथ शोकोपहतचेतनः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-12",
       "notes": [
         {
           "id": "lexical:5.12.25:0",
@@ -562,11 +754,22 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "śokopahatacetana",
-          "note_ru": "Шокопахатачетана (śoka-upahata-cetana, adj.) — «тот, чьё сознание (cetana) поражено (upahata) скорбью (śoka)», бахуврихи: śoka «скорбь» (√śuc-, «жечь, скорбеть») + upahata p.p.p. (upa+√han-, «поражать») + cetana «сознание, чувство» (от √cit-, «воспринимать, сознавать»). MW: cetana 'consciousness, understanding'. Cetana в индийской психологической модели — сознающий, воспринимающий аспект manas (ума): именно он «поражается» горем. Tройной сложный адъектив — характерная техника эпоса: описание психического состояния через анатомию «удара» по cetana. Подстрочник «душа которого была охвачена скорбью» — свободный; точность cetana vs ātman (душа) утрачивается.",
+          "note_ru": "Шокопахатачетана (śoka-upahata-cetana, adj.) — «тот, чьё сознание (cetana) поражено (upahata) скорбью (śoka)», бахуврихи: śoka «скорбь» (√śuc-, «жечь, скорбеть») + upahata p.p.p. (upa+√han-, «поражать») + cetana «сознание, чувство» (от √cit-, «воспринимать, сознавать»). MW: cetana 'consciousness, understanding'. Cetana в индийской психологической модели — сознающий, воспринимающий аспект manas (ума): именно он «поражается» горем. Тройной сложный адъектив — характерная техника эпоса: описание психического состояния через анатомию «удара» по cetana. Подстрочник «душа которого была охвачена скорбью» — свободный; точность cetana vs ātman (душа) утрачивается.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:cetana+dic_mw:upahata"
+          "source": "dic_mw:cetana+dic_mw:upahata",
+          "source_links": [
+            {
+              "label": "MW cetana",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=cetana"
+            },
+            {
+              "label": "MW upahata",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=upahata"
+            }
+          ],
+          "seq": 26
         }
       ]
     }

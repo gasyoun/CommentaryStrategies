@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 20,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 38,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 5
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "d7242a4d7b2f5166a44bf016c9ab6e0af009374b679132ea0358cdffc4c4b241"
+    "source_hash": "3dd0cae3c4ff58ef9882136a42993c33929c74d089260e464eb5de097d308ef3"
   },
   "sarga": 20,
   "verses": [
@@ -36,15 +72,32 @@
         "siromani": "मदिति । मत्प्रसादात् मद्विषयककृपातः ललन्त्यास्तव बान्धवाः अपि ललन्ताम् । अर्धं पृथक्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.1:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Ракшаси окруженной (parivṛtāṃ) – в оригинале сказано просто «окруженной». Комментарий «Тилака» уточняет, что здесь опущено слово «ракшаси».[Е. Костина] «tapasvinīm» Опущено, но не критично[Е. Костина] «sākārair» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Ракшаси окруженной (parivṛtāṃ) – в оригинале сказано просто «окруженной». Комментарий «Тилака» уточняет, что здесь опущено слово «ракшаси».",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "tapasvinīm",
+              "kind": "omission",
+              "text": "опущено, но не критично"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "sākārair",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 1
         },
         {
           "id": "lexical:5.20.1:0",
@@ -58,7 +111,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:sAkAra",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW sAkAra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=sAkAra"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 2
         }
       ]
     },
@@ -73,15 +133,26 @@
         "siromani": "तद्वचनाकारमाह-- मामिति । हे नागनासोरु मां दृष्ट्वा भयादिव स्तनोदरं गूहमाना त्वम् आत्मानम् अदर्शनं दर्शनाभावं नेतुं प्रापयितुमिच्छसि तत्किमर्थमिति शेषः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "… дивнобедрая (nāganāsoru) – букв. « та, чьи бедра (ūru) подобны хоботу слона (nāganāsā)».Сделаться невидимкой? (adarśanam ivātmānaṃ… netuṃ tvam icchasi) – в комментарии «Тилака» отмечается, что фраза представляет собой вопрос (в тексте опущено слово kim – почему? отчего?).[Е. Костина] Надо указать, что не все придерживаются этой трактовки"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "… дивнобедрая (nāganāsoru) – букв. « та, чьи бедра (ūru) подобны хоботу слона (nāganāsā)».Сделаться невидимкой? (adarśanam ivātmānaṃ… netuṃ tvam icchasi) – в комментарии «Тилака» отмечается, что фраза представляет собой вопрос (в тексте опущено слово kim – почему? отчего?).",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "",
+              "kind": "note",
+              "text": "Надо указать, что не все придерживаются этой трактовки"
+            }
+          ],
+          "suggestions": [],
+          "seq": 3
         },
         {
           "id": "lexical:5.20.2:0",
@@ -95,7 +166,18 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:nAga+dic_mw:uru",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW nAga",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nAga"
+            },
+            {
+              "label": "MW uru",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=uru"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 4
         }
       ]
     },
@@ -108,15 +190,32 @@
         "bhusana": "स्वधर्मो रक्षसां भीरु सर्वथैव न संशयः ।\n\nगमनं वा परस्त्रीणां हरणं संप्रमथ्य वा"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Собственному закону» Нужен будет комм. про дхарму ракшасов[Е. Костина] «maithili» Опущено обращение"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Собственному закону",
+              "kind": "note",
+              "text": "Нужен будет комм. про дхарму ракшасов"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "maithili",
+              "kind": "omission",
+              "text": "опущено обращение"
+            }
+          ],
+          "suggestions": [],
+          "seq": 5
         },
         {
           "id": "lexical:5.20.5:0",
@@ -130,7 +229,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:svaDarma",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW svaDarma",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=svaDarma"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 6
         },
         {
           "id": "crosstext:5.20.5:0",
@@ -150,7 +256,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Mānavadharmaśāstra (Законы Ману, рус. пер. С.Д. Эльманович / Г.И. Ильин) Manu 3.33; 3.26; 3.24",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 7
         },
         {
           "id": "crosstext:5.20.5:1",
@@ -170,7 +278,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Mānavadharmaśāstra 3.33 (Эльманович–Ильин)",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 8
         },
         {
           "id": "crosstext:5.20.5:2",
@@ -190,7 +300,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Mānavadharmaśāstra 10.97 (Эльманович–Ильин)",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 9
         },
         {
           "id": "crosstext:5.20.5:3",
@@ -210,7 +322,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Bhagavadgītā 2.31 и 3.35 (Семенцов)",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 10
         }
       ]
     },
@@ -225,6 +339,7 @@
         "bhusana": "एवं चैतदकामां तु न त्वां स्प्रक्ष्यामि मैथिलि ।\n\nकाम कामः शरीरे मे यथाकामं प्रवर्तताम्\nएवमात्मानं प्रशस्य रामं निन्दति किं करिष्यसीत्यादिना । निक्षिप्तविजयः त्यक्तविजय इत्यर्थः । स्थण्डिलशायी भूतलशायी ।। 4.20.26।।\n\nनहि वैदेहि रामस्त्वां द्रष्टुं वाप्युपलप्स्यते ।\n\nपुरोबलाकैरसितैर्मेघैर्ज्योत्स्नामिवावृताम्\nनहीति । वाशब्दो ऽवधारणे, द्रष्टुमपि नोपलप्स्यत एवेत्यर्थः । दर्शनमात्रफलमपि दर्शनं (च) न प्राप्स्यतीत्यर्थः पुरो ऽग्रे बलाका येषां ते पुरोबलाकाः तैः । अनेन मेघानामतिविपुलतोच्यते । महामेघेष्वेव बलाकासञ्चारवर्णनात्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "phase2:5.20.6:0",
@@ -244,7 +359,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 11
         }
       ]
     },
@@ -259,6 +375,7 @@
         "siromani": "एकेति । अस्थाने स्वस्थानभिन्ने ऽपि एतान्येकवेण्यादीनि तेन औपयिकानि युक्तानि"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "lexical:5.20.8:0",
@@ -271,7 +388,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:ekaverRI"
+          "source": "dic_mw:ekaverRI",
+          "source_links": [
+            {
+              "label": "MW ekaverRI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=ekaverRI"
+            }
+          ],
+          "seq": 12
         }
       ]
     },
@@ -282,18 +406,42 @@
       "leonov_ru": "",
       "commentary": {},
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.10:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «maithili» Опущено обращение[Е. Костина] «ложа» Комм. śayanāny āsanāni ca[Е. Костина] «maivaṃ bhūḥ» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "maithili",
+              "kind": "omission",
+              "text": "опущено обращение"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "ложа",
+              "kind": "note",
+              "text": "Комм. śayanāny āsanāni ca"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "maivaṃ bhūḥ",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 13
         }
       ],
-      "verse_not_segmented": true
+      "verse_not_segmented": true,
+      "empty_reason": "Шлока есть в нумерации примечаний, но отсутствует в сегментированном корпусе (data/analysis/sundara_commentary_segmented.json), поэтому санскрит и подстрочник здесь не показаны. Примечание сохранено и голосуется; текст стиха нужно досегментировать."
     },
     {
       "verse_id": "5.20.12",
@@ -306,6 +454,7 @@
         "siromani": "भूषणधारणसमयो ऽयमेवेति बोधयन्नाह इदमिति । अतीतं गतं स्रोतस्विनां महाप्रवाहाणां स्रोतः अल्पप्रवाह इव संजातं निष्पन्नं चारु शोभनं यौवनं युवावस्था अतिवर्तते । एतेन भूषणादीनि धारयेति सूचितम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "lexical:5.20.12:0",
@@ -318,7 +467,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:yauvana"
+          "source": "dic_mw:yauvana",
+          "source_links": [
+            {
+              "label": "MW yauvana",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=yauvana"
+            }
+          ],
+          "seq": 14
         }
       ]
     },
@@ -332,15 +488,26 @@
         "bhusana": "त्वां समासाद्य वैदेहि रूपयौवनशालिनीम् ।\n\nकः पुमानतिवर्तेत साक्षादपि पितामहः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.14:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Кто может мимо пройти (kaḥ punar nātivarteta) – в комментарии «Тилака» ativṛt понимается в значении «взволноваться» (kṣubh). Также понимает это слово и автор комментария «Таттвадипика». В комментарии «Широмани» ativṛt понимается сходным образом как «выказывать свое волнение» (svauddhatyaṃ prakāś).[Е. Костина] «,» Комментарий необходимо подредактировать, дописать, что по комментариям - «кто не взволнуется» (или как-то так), иначе без оригинала может может остаться непонятным, перевод следует комментариям или нет+ надо отметить, что у Голдманов - could give you up having once laid eyes on you"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Кто может мимо пройти (kaḥ punar nātivarteta) – в комментарии «Тилака» ativṛt понимается в значении «взволноваться» (kṣubh). Также понимает это слово и автор комментария «Таттвадипика». В комментарии «Широмани» ativṛt понимается сходным образом как «выказывать свое волнение» (svauddhatyaṃ prakāś).",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": ",",
+              "kind": "note",
+              "text": "Комментарий необходимо подредактировать, дописать, что по комментариям - «кто не взволнуется» (или как-то так), иначе без оригинала может может остаться непонятным, перевод следует комментариям или нет+ надо отметить, что у Голдманов - could give you up having once laid eyes on you"
+            }
+          ],
+          "suggestions": [],
+          "seq": 15
         },
         {
           "id": "lexical:5.20.14:0",
@@ -354,7 +521,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:pitAmaha",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW pitAmaha",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=pitAmaha"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 16
         }
       ]
     },
@@ -369,15 +543,26 @@
         "siromani": "भवेति । हे भवमैथिलि भवति भावयति नितरां स्वपतिं चिन्तयति सा एव मैथिली तत्संबोधनम् अग्रस्य सर्वोत्कृष्टस्य रामस्य महिषी त्वं मम बह्वीनामुत्तमस्त्रीणां भार्या सेव्या भव अत एव तं विद्यमानं मे मोहं वैचित्यं विसर्जय त्याजय"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.16:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «maithili» Опущено обращение"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "maithili",
+              "kind": "omission",
+              "text": "опущено обращение"
+            }
+          ],
+          "suggestions": [],
+          "seq": 17
         },
         {
           "id": "lexical:5.20.16:0",
@@ -391,7 +576,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:mahizI",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW mahizI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=mahizI"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 18
         },
         {
           "id": "phase2:5.20.16:0",
@@ -414,7 +606,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 19
         }
       ]
     },
@@ -427,15 +620,19 @@
         "bhusana": "लोकेभ्यो यानि रत्नानि सम्प्रमथ्याहृतानि वै ।\n\nतानि मे भीरु सर्वाणि राज्यं चैतदहं च ते"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.17:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Сокровища всех миров (lokebhyo yāni ratnāni) – букв. ratnāni (драгоценные камни, жемчужины). Голдмены переводят это слово в данном случае как all the choice things (см.: Goldman 1984: 167)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Сокровища всех миров (lokebhyo yāni ratnāni) – букв. ratnāni (драгоценные камни, жемчужины). Голдмены переводят это слово в данном случае как all the choice things (см.: Goldman 1984: 167).",
+          "service": [],
+          "suggestions": [],
+          "seq": 20
         }
       ]
     },
@@ -449,6 +646,7 @@
         "bhusana": "असकृत् संयुगे भग्ना मया विमृदितध्वजाः ।\n\nअशक्ताः प्रत्यनीकेषु स्थातुं मम सुरासुराः\nअसकृदिति । विमृदितध्वजाः भग्नव्यजाः । प्रत्यनीकेषु शत्रुषु मध्ये"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "lexical:5.20.20:0",
@@ -457,11 +655,13 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "deva-asura samgrama",
-          "note_ru": "Дева–асура война (deva–asura samgrama) — конфликт богов и демонов как фоновый мифологический топос; введено в Рам. I.20.22 (Гринцер). В V.20.20 Равана похваляется: asakrt samyuge bhagna maya vimrditadhvajah asakta pratyanikeSu sthatum mama surasurAh — «Не раз в сражении боги и асуры, не в силах стоять передо мной, бежали с поверженными знамёнами». Равана позиционирует себя выше обеих сторон извечного конфликта: он победил не только богов, но и асуров, то есть вышел за рамки самой дихотомии добро/зло эпической мифологии. Дева–асура война — структурообразующий конфликт мифологии: его порождения — все великие мифы (пахтание океана, битвы Индры и Вритры). Победитель над обеими сторонами — существо, разрушившее космический порядок; именно это служит обоснованием аватары Вишну (рождения Рамы) в Балаканде.",
+          "note_ru": "Дева–асура война (deva–asura samgrama) — конфликт богов и демонов как фоновый мифологический топос; введено в Рам. I.20.22 (Гринцер). В V.20.20 Равана похваляется: asakrt samyuge bhagna maya vimrditadhvajah asakta pratyanīkeṣu sthatum mama surāsurāḥ — «Не раз в сражении боги и асуры, не в силах стоять передо мной, бежали с поверженными знамёнами». Равана позиционирует себя выше обеих сторон извечного конфликта: он победил не только богов, но и асуров, то есть вышел за рамки самой дихотомии добро/зло эпической мифологии. Дева–асура война — структурообразующий конфликт мифологии: его порождения — все великие мифы (пахтание океана, битвы Индры и Вритры). Победитель над обеими сторонами — существо, разрушившее космический порядок; именно это служит обоснованием аватары Вишну (рождения Рамы) в Балаканде.",
           "type": "Г",
           "subtype": "hist_cultural",
           "trigger": "myth_background",
-          "source": "Рам. I.20.22 (Гринцер); Grintser e101 (Вишну)"
+          "source": "Рам. I.20.22 (Гринцер); Grintser e101 (Вишну)",
+          "source_links": [],
+          "seq": 21
         }
       ]
     },
@@ -476,15 +676,26 @@
         "bhusana": "प्रतिकर्माभिसंयुक्ता दाक्षिण्येन वरानने ।\n\nभुङ्क्ष्व भोगान् यथाकामं पिब भीरु रमस्व च\nप्रतिकर्मेति । दाक्षिण्येन सरलत्वेन । भुङ्क्ष्व अनुभव । \"दक्षिणे सरलोदारौ\"इत्यमरः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.22:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Увижу» Можно отметить, что здесь в оригинале наст. время в значении будущего"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Увижу",
+              "kind": "note",
+              "text": "Можно отметить, что здесь в оригинале наст. время в значении будущего"
+            }
+          ],
+          "suggestions": [],
+          "seq": 22
         },
         {
           "id": "edition:5.20.22:0",
@@ -494,6 +705,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.20.22 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.20.22",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -502,7 +714,8 @@
               "iast": "sādhu paśyāmi te rūpaṃ suyuktaṃ pratikarmaṇā । pratikarmābhisaṃyuktā dākṣiṇyena varānane ॥22॥"
             }
           ],
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 23
         }
       ]
     },
@@ -516,15 +729,26 @@
         "siromani": "शूर्पणखाविरूपादिकरणजनिततापशान्तये रामविषयकसीतातिप्रीतिं निवारयितुमाह निक्षिप्तेति । निक्षिप्तस्तव हरणादिना विनष्टः विजयः विजयसामग्र्युत्साहादिर्यस्य अत एव गतश्रीः रामः जीवति न वा इत्यहं शङ्के विचारयामि\nननु जीवति चेदानयेत्यत आह न हीति । हे वैदेहि रामः त्वां द्रष्टुमपि नोपलभ्यते संभाव्यते । तत्र दृष्टान्तः पुरो ऽग्रे बलाका बकपङ्क्तयो येषां तैर्मेघैरावृतां ज्योत्स्नामिव"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.26:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Отказавшийся от победы,» Нужен комм. По г-пресс - оставил надежду на победу, по комментариям - способность победить и пр., у Голдманов - has renounced the triumph of a warrior"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Отказавшийся от победы,",
+              "kind": "note",
+              "text": "Нужен комм. По г-пресс - оставил надежду на победу, по комментариям - способность победить и пр., у Голдманов - has renounced the triumph of a warrior"
+            }
+          ],
+          "suggestions": [],
+          "seq": 24
         },
         {
           "id": "lexical:5.20.26:0",
@@ -538,7 +762,14 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:sTaNDilaSAyin",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW sTaNDilaSAyin",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=sTaNDilaSAyin"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 25
         },
         {
           "id": "phase2:5.20.26:0",
@@ -559,7 +790,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 26
         }
       ]
     },
@@ -572,15 +804,19 @@
         "tilaka": "द्रष्टुं वापि प्राप्तिस्तु दूरतरेत्यर्थः । उपलभ्यते । व्यत्ययेन श्यन्प्रत्ययः समर्थो भवतीत्यर्थः । \"उपलप्स्यते\" इति पाठे समर्थो भविष्यतीत्यर्थः । पुरोबलाकैरग्रेसरबलाकैः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.27:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Скрытое грозовыми тучами ((purobalākair asitair meghaiḥ) – букв. «черными тучами, перед которыми летят журавли». Журавли – предвестники сезонных ливней (см. см.: Goldman 1984: 406)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Скрытое грозовыми тучами ((purobalākair asitair meghaiḥ) – букв. «черными тучами, перед которыми летят журавли». Журавли – предвестники сезонных ливней (см. см.: Goldman 1984: 406).",
+          "service": [],
+          "suggestions": [],
+          "seq": 27
         }
       ]
     },
@@ -595,6 +831,7 @@
         "siromani": "नेति । मम हस्तात् त्वां प्राप्तुं राघवो नार्हति । तत्र दृष्टान्तः इन्द्रहस्तगतां कीर्तिं हिरण्यकशिपुरिव"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "lexical:5.20.28:0",
@@ -607,7 +844,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:hiraNyakaSipu"
+          "source": "dic_mw:hiraNyakaSipu",
+          "source_links": [
+            {
+              "label": "MW hiraNyakaSipu",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=hiraNyakaSipu"
+            }
+          ],
+          "seq": 28
         },
         {
           "id": "phase2:5.20.28:0",
@@ -627,7 +871,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 29
         }
       ]
     },
@@ -641,15 +886,26 @@
         "siromani": "दौदासीन्यं निवारयितुमाह चार्विति । सुपर्णः पन्नगमिव मे मनस्त्वं हरसि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.29:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «bhīru» Опущено обращение"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "bhīru",
+              "kind": "omission",
+              "text": "опущено обращение"
+            }
+          ],
+          "suggestions": [],
+          "seq": 30
         },
         {
           "id": "lexical:5.20.29:0",
@@ -663,7 +919,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:suparRa",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW suparRa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=suparRa"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 31
         },
         {
           "id": "crosstext:5.20.29:0",
@@ -683,7 +946,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Mahābhārata, Āraṇyakaparva 3.176.2",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 32
         }
       ]
     },
@@ -697,15 +962,26 @@
         "siromani": "अनलंकृतामिति । अनलंकृतां त्वां त्वद्दुःखमित्यर्थः, दृष्ट्वा स्वेषु दारेषु रतिं प्रीतिम् अहं नोपलभामि अतिदुःखितं मनः क्वापि न प्रवर्तते इत्यर्थः । एतेन रावणस्य दयालुत्वं सूचितम्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.30:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «sveṣu» ? опущение в комм."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "sveṣu",
+              "kind": "note",
+              "text": "? опущение в комм."
+            }
+          ],
+          "suggestions": [],
+          "seq": 33
         },
         {
           "id": "phase2:5.20.30:0",
@@ -726,7 +1002,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 34
         }
       ]
     },
@@ -740,6 +1017,7 @@
         "siromani": "ममेति । हे असितकेशान्ते हे अबद्धकेशभागे अप्सरसः श्रियमिव त्रैलोक्य प्रवरस्त्रियः त्वां परिचरिष्यन्ति"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "lexical:5.20.32:0",
@@ -752,7 +1030,9 @@
           "type": "В",
           "subtype": "base",
           "trigger": "realia",
-          "source": "first occurrence in кн. V; Grintser index / commentators where cited (verse-level, soft)"
+          "source": "первое вхождение в кн. V; указатель Гринцера / комментаторы, где процитировано (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "seq": 35
         }
       ]
     },
@@ -766,15 +1046,32 @@
         "siromani": "यानीति । मयोपार्जितानि वैश्रवणे कुबेरे यानि रत्नानि धनानि च तानि मां विष्णुलोकलक्ष्मीं च लोकांश्च भुङ्क्ष्व स्वाधीनत्वं प्रापयेत्यर्थः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.33:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «subhru» Опущено обращение[Е. Костина] «suśroṇi» Опущено обращение"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "subhru",
+              "kind": "omission",
+              "text": "опущено обращение"
+            },
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "suśroṇi",
+              "kind": "omission",
+              "text": "опущено обращение"
+            }
+          ],
+          "suggestions": [],
+          "seq": 36
         },
         {
           "id": "lexical:5.20.33:0",
@@ -788,7 +1085,14 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:vESravaRa",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW vESravaRa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vESravaRa"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 37
         }
       ]
     },
@@ -802,15 +1106,26 @@
         "siromani": "कुसुमितेति । कुसुमितैस्तरुजालैः सन्ततानि व्याप्तानि समुद्रतीरजानि मया सर्वसंपत्या सह सहितानि काननानि कनकविमलहारभूषिताङ्गी त्वं विहर"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-20",
       "notes": [
         {
           "id": "tier1:5.20.36:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «в яркие золотые ожерелья» Чистые ожерелья звучит несколько иначе, чем vimalahāra,По-русски кажется, что их помыли"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "в яркие золотые ожерелья",
+              "kind": "note",
+              "text": "Чистые ожерелья звучит несколько иначе, чем vimalahāra,По-русски кажется, что их помыли"
+            }
+          ],
+          "suggestions": [],
+          "seq": 38
         }
       ]
     }

@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 23,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 16,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -19,7 +55,8 @@
       "phase2": 0,
       "edition": 1,
       "crosstext": 0
-    }
+    },
+    "source_hash": "6ec193160ca535a233235e6de93f88e4846694aea35240e88a039f058e5c1b21"
   },
   "sarga": 23,
   "verses": [
@@ -32,15 +69,26 @@
         "bhusana": "इत्युक्त्वा मैथिलीं राजा रावणः शत्रुरावणः ।\n\nसंदिश्य च ततः सर्वा राक्षसीर्निर्जगाम ह"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "tier1:5.23.1:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «рощу ашоки» Поскольку это добавление, нужен комм"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "рощу ашоки",
+              "kind": "note",
+              "text": "Поскольку это добавление, нужен комм"
+            }
+          ],
+          "suggestions": [],
+          "seq": 1
         },
         {
           "id": "lexical:5.23.1:0",
@@ -54,7 +102,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:rAvaRa",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW rAvaRa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=rAvaRa"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 2
         }
       ]
     },
@@ -68,15 +123,26 @@
         "siromani": "निष्क्रन्त इति । निष्क्रन्ते अन्तःपुरान्निर्गते रावणे पुनरन्तःपुरं च गते सति भीमरूपा राक्षस्यः सीतां समभिदुद्रुवुः जग्मुः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "tier1:5.23.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «покои» Комм.? Или отсылка на более ранний комм к этому слову"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "покои",
+              "kind": "note",
+              "text": "Комм.? Или отсылка на более ранний комм к этому слову"
+            }
+          ],
+          "suggestions": [],
+          "seq": 3
         }
       ]
     },
@@ -91,6 +157,7 @@
         "bhusana": "पौलस्त्यस्य वरिष्ठस्य रावणस्य महात्मनः ।\n\nदशग्रीवस्य भार्यात्वं सीते न बहु मन्यसे"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "lexical:5.23.4:0",
@@ -103,7 +170,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:paulastya"
+          "source": "dic_mw:paulastya",
+          "source_links": [
+            {
+              "label": "MW paulastya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=paulastya"
+            }
+          ],
+          "seq": 4
         }
       ]
     },
@@ -116,15 +190,19 @@
         "siromani": "ननु राक्षसीकर्तृकपूजामहं न ग्रहीष्यामीत्युत्थापितसीताशङ्कां निवर्तयितुं वचनान्तरमुपक्रमते तत इति । ततः तदुक्त्यनन्तरं करतलोदरीं सूक्ष्मोदरविशिष्टामित्यर्थः, सीतामामन्त्र्य संबोध्य क्रोधताम्राक्षी एकजटानाम राक्षसी अब्रवीत्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "tier1:5.23.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…чей гладок живот (karatalodarīm) – букв. «той, чей живот [гладок] словно ладонь»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…чей гладок живот (karatalodarīm) – букв. «той, чей живот [гладок] словно ладонь».",
+          "service": [],
+          "suggestions": [],
+          "seq": 5
         }
       ]
     },
@@ -139,15 +217,26 @@
         "bhusana": "प्रजापतीनां षण्णां तु चतुर्थो यः प्रजापतिः ।\n\nमानसो ब्रह्मणः पुत्रः पुलस्त्य इति विश्रुतः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "tier1:5.23.6:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Отпрыск разума» Нужен будет комм"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Отпрыск разума",
+              "kind": "note",
+              "text": "Нужен будет комм"
+            }
+          ],
+          "suggestions": [],
+          "seq": 6
         },
         {
           "id": "lexical:5.23.6:0",
@@ -161,7 +250,9 @@
           "subtype": "hist_cultural",
           "trigger": "myth_background",
           "source": "Rām. VII.9–10 (генеалогия Раваны); Мбх. I.65.12–14",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 7
         },
         {
           "id": "lexical:5.23.6:1",
@@ -175,7 +266,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:prajApati",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW prajApati",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=prajApati"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 8
         }
       ]
     },
@@ -189,6 +287,7 @@
         "siromani": "पुलस्त्यस्येति । पुलस्त्यस्य मानसः सुतो विश्रवा नाम"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "lexical:5.23.7:0",
@@ -201,7 +300,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:viSravas"
+          "source": "dic_mw:viSravas",
+          "source_links": [
+            {
+              "label": "MW viSravas",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=viSravas"
+            }
+          ],
+          "seq": 9
         }
       ]
     },
@@ -216,6 +322,7 @@
         "siromani": "तद्वचनाकारमाह येनेत्यादिभिः । येन देवा देवराजश्च निर्जिताः तस्य भार्याः पत्नीः भवितुं पूज्यात्वेन प्राप्तुं त्वमर्हसि"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "edition:5.23.10:0",
@@ -225,6 +332,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.23.10 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.23.10",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -232,7 +340,8 @@
               "verse_id": "5.23.10",
               "iast": "vivartya nayane kopān mārjārasadṛśekṣaṇā | । yena devāstrāyastriṃśad devarājaśca nirjatāḥ || ॥10॥"
             }
-          ]
+          ],
+          "seq": 10
         }
       ]
     },
@@ -247,15 +356,19 @@
         "bhusana": "वीर्योत्सिक्तस्य शूरस्य सङ्ग्रामेष्वनिवर्तिनः ।\n\nबलिनो वीर्ययुक्तस्य भार्यात्वं किं न लप्स्यसे"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "tier1:5.23.11:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Почему же ты не желаешь (kiṃ na lipsase) – букв. «не обретешь». В комментарии «Тилака» это слово объясняется как necchasi «не желаешь»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Почему же ты не желаешь (kiṃ na lipsase) – букв. «не обретешь». В комментарии «Тилака» это слово объясняется как necchasi «не желаешь».",
+          "service": [],
+          "suggestions": [],
+          "seq": 11
         },
         {
           "id": "lexical:5.23.11:0",
@@ -269,7 +382,14 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:utsikta",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW utsikta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=utsikta"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 12
         }
       ]
     },
@@ -283,15 +403,19 @@
         "bhusana": "प्रियां बहुमतां भर्यां त्यक्त्वा राजा महाबलः ।\n\nसर्वासां च महाभागां त्वामुपैष्यति रावणः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "tier1:5.23.12:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Покинув любимую Мандодари (priyāṃ bahumatāṃ bhāryāṃ tyaktvā) – имя Мандодари добавлено по контексту и в соответствии с комментарием «Тилака»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Покинув любимую Мандодари (priyāṃ bahumatāṃ bhāryāṃ tyaktvā) – имя Мандодари добавлено по контексту и в соответствии с комментарием «Тилака».",
+          "service": [],
+          "suggestions": [],
+          "seq": 13
         }
       ]
     },
@@ -306,6 +430,7 @@
         "bhusana": "तस्य सर्वसमृद्धस्य रावणस्य महात्मनः ।\n\nकिमद्य राक्षसेन्द्रस्य भार्यात्वं नेच्छसे ऽधमे ।\n\nततस्तु दुर्मुखी नाम राक्षसी वाक्यमब्रवीत्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "lexical:5.23.16:0",
@@ -318,7 +443,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:ApAGga"
+          "source": "dic_mw:ApAGga",
+          "source_links": [
+            {
+              "label": "MW ApAGga",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=ApAGga"
+            }
+          ],
+          "seq": 14
         }
       ]
     },
@@ -333,6 +465,7 @@
         "siromani": "पुष्पेति । यस्य भयात् यदा इच्छति तदैव तरवो पुष्पवृष्टिं मुमुचुः शैलाः गिरयः जलदाश्च पानीयं सुस्रुवुः तस्य भार्यार्थे तद्भार्याणां कल्याणार्थं बुद्धिं निश्चयं त्वं किं कथं न कुरुषे । अर्धचतुष्टयमेकान्वयि ।। 5.23.17,18 ।।\n\nसाध्विति । हे भामिनि तत्त्वतः यथार्थं साधु कथितं वाक्यं मद्वचनं साधु गृहाण स्वीकुरु अन्यथा न भविष्यसि राक्षस्यो हनिष्यन्तीत्यर्थः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "lexical:5.23.17:0",
@@ -345,7 +478,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:puzpavfzwi"
+          "source": "dic_mw:puzpavfzwi",
+          "source_links": [
+            {
+              "label": "MW puzpavfzwi",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=puzpavfzwi"
+            }
+          ],
+          "seq": 15
         }
       ]
     },
@@ -358,6 +498,7 @@
         "tilaka": "भार्यार्थे भार्यात्वनिमित्तम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-23",
       "notes": [
         {
           "id": "lexical:5.23.18:0",
@@ -370,7 +511,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:nairfta"
+          "source": "dic_mw:nairfta",
+          "source_links": [
+            {
+              "label": "MW nairfta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nairfta"
+            }
+          ],
+          "seq": 16
         }
       ]
     }

@@ -9,6 +9,31 @@ changes. Each released version is git-tagged (`vX.Y.Z`) with a matching
 Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
+### Changed
+
+- **H2829/H2830 разбор бюллетеня песни 1 (Opus 5 `claude-opus-5`)** — 17 из 19
+  замечаний Костиной/М.Г. из
+  [votes/sarga.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/votes/sarga.md)
+  закрыты. Ключевое: примечания яруса 1 больше не одна строка `raw_text` —
+  проза переводчика, служебные пометки редактора (493) и машинные заготовки
+  (114, из них 18 незаполненных) разведены в данных и по-разному показаны;
+  легенда пяти слоёв ездит внутри бюллетеня; санскрит в прозе набирается
+  курсивом по диакритике; у каждого примечания сквозной номер и якорь;
+  «Источник» ведёт на Cologne (925 ссылок); шрифтовой стек выбран по покрытию
+  IAST (Georgia не покрывала ретрофлексы). Ответ по пунктам:
+  [docs/SUNDARA_BALLOT_REVIEW_RESPONSE_SARGA01.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/SUNDARA_BALLOT_REVIEW_RESPONSE_SARGA01.md).
+
+### Fixed
+
+- **H2831 гигиена транслитерации (Opus 5 `claude-opus-5`)** — один замеченный
+  `saketakodDālakа` оказался классом: 643 места смешанной письменности по всему
+  корпусу примечаний, 553 исправлено, 90 выписано в отчёт как требующие
+  человеческого прочтения. Новый
+  [scripts/translit_hygiene.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/translit_hygiene.py)
+  (`--check` годится как гейт CI) чинит по транслитерационной, а не визуальной
+  карте и разрешает спорные буквы по самому корпусу.
+- Согласование числительных в сносках об изданиях: было «(2 шлок)» при любом
+  числе, стало «(2 шлоки)» / «(5 шлок)».
 
 ## [1.18.0] - 2026-08-14
 ### Added

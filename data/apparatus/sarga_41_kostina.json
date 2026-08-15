@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 41,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 19,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 0
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "b91ed2e13ddb70500aa435819fd0a67105562f409d036b6d61e254eca25a13b0"
+    "source_hash": "502fd6a2f90f630aa84c6fadc0e97e5fd518712be6c2575e4c66e0e5ba93eb47"
   },
   "sarga": 41,
   "verses": [
@@ -35,15 +71,19 @@
         "siromani": "चिन्ताकारमाह अल्पेत्यादिभिः । इयं सीता दृष्टा प्रधानकार्यं सिद्धमित्यर्थः । इदं परबलदर्शनरूपं कार्यमल्पशेषं स्वल्पं सत् शिष्यते इह परबलदर्शनरूपकार्ये तु यतः त्रीन् सामादीन् उपायान् अतिक्रम्य त्यक्त्वा चतुर्थो दण्ड एव उपायः दृश्यते"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "tier1:5.41.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…я вижу / Здесь еще и четвертое (caturtha iha dṛśyate) – под четвертым средством подразумевается daṇḍa (наказание, то есть применение силы)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…я вижу / Здесь еще и четвертое (caturtha iha dṛśyate) – под четвертым средством подразумевается daṇḍa (наказание, то есть применение силы).",
+          "service": [],
+          "suggestions": [],
+          "seq": 1
         },
         {
           "id": "lexical:5.41.2:0",
@@ -57,7 +97,14 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:upAya+Arthashastra:catvAra_upAyAH+Indological:political_theory",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW upAya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=upAya"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 2
         },
         {
           "id": "phase2:5.41.2:0",
@@ -78,7 +125,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 3
         }
       ]
     },
@@ -93,15 +141,19 @@
         "bhusana": "कथं नु खल्वद्य भवेत् सुखागतं प्रसह्य युद्धं मम राक्षसैः सह ।\n\nतथैव खल्वात्मबलं च सारवत् संमानयेन्मां च रणे दशाननः\nकथं न्विति । युद्धं कथं सुखागतं सुखेन प्राप्तं भवेत्तथा कर्तव्यमित्यर्थः । युद्धस्य फलमाह तथैवेत्यादिना सार्द्धश्लोकेन । तथैव खलु युद्धकरणे खलु । सः दशाननः । रणे आत्मबलं स्वपक्षबलं मां च । सारवत् मानयेत्परिच्छिन्द्यात्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "tier1:5.41.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Чтобы собственную силу направил (ātmabalaṃ ca sāravat samānayen) – в оригинале ātmabalam, что можно понять как «свою силу» или «свое войско»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Чтобы собственную силу направил (ātmabalaṃ ca sāravat samānayen) – в оригинале ātmabalam, что можно понять как «свою силу» или «свое войско».",
+          "service": [],
+          "suggestions": [],
+          "seq": 4
         },
         {
           "id": "lexical:5.41.8:0",
@@ -114,8 +166,10 @@
           "type": "А",
           "subtype": "base",
           "trigger": "epithet",
-          "source": "gazetteer (analysis §09б / formulas tt.1-2) — first occurrence in кн. V (verse-level, soft)",
-          "collision_tier1": true
+          "source": "указатель имён и названий (анализ §09б / формулы тт. 1–2) — первое вхождение в кн. V (привязка к стиху, нестрогая)",
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 5
         }
       ]
     },
@@ -130,6 +184,7 @@
         "siromani": "युद्धेच्छायां प्रयोजनमाह तत इति । ततः तस्मिन् रणे सयायिनं ससारथिं दशाननं समासाद्य प्राप्य तस्य रावणस्य हृदि स्थितं मतमभिप्रायं बलं च मत्वा ज्ञात्वा इतः लङ्कायाः पुनर्व्रजे"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "lexical:5.41.9:0",
@@ -142,7 +197,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:mantrin (√man-)+Arthashastra:mantriparishad"
+          "source": "dic_mw:mantrin (√man-)+Arthashastra:mantriparishad",
+          "source_links": [
+            {
+              "label": "MW mantrin",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=mantrin"
+            }
+          ],
+          "seq": 6
         },
         {
           "id": "phase2:5.41.9:0",
@@ -163,7 +225,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 7
         },
         {
           "id": "edition:5.41.9:0",
@@ -173,6 +236,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.41.9 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.41.9",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -180,7 +244,8 @@
               "verse_id": "5.41.9",
               "iast": "tataḥ samāsādya raṇe daśānanaṃ । samantrivargaṃ sabalaṃ sayāyinam । hṛdi sthitaṃ tasya mataṃ balaṃ ca । sukhena mattvāhamitaḥ punar vraje ॥9॥"
             }
-          ]
+          ],
+          "seq": 8
         }
       ]
     },
@@ -194,6 +259,7 @@
         "bhusana": "इदं विध्वंसयिष्यामि शुष्कं वनमिवानलः ।\n\nअस्मिन् भग्ने ततः कोपं करिष्यति दशाननः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "lexical:5.41.11:0",
@@ -206,7 +272,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:dAva+dic_mw:anala+Indological:fire_taxonomy"
+          "source": "dic_mw:dAva+dic_mw:anala+Indological:fire_taxonomy",
+          "source_links": [
+            {
+              "label": "MW dAva",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=dAva"
+            },
+            {
+              "label": "MW anala",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=anala"
+            }
+          ],
+          "seq": 9
         },
         {
           "id": "lexical:5.41.11:1",
@@ -219,7 +296,9 @@
           "type": "Г",
           "subtype": "hist_cultural",
           "trigger": "myth_background",
-          "source": "Rām. I.13–14 (Агни как свидетель); Rām. VI.104 (agni-parīkṣā)"
+          "source": "Rām. I.13–14 (Агни как свидетель); Rām. VI.104 (agni-parīkṣā)",
+          "source_links": [],
+          "seq": 10
         }
       ]
     },
@@ -233,6 +312,7 @@
         "bhusana": "ततो मारुतवत् क्रुद्धो मारुतिर्भीमविक्रमः ।\n\nउरुवेगेन महता द्रुमान् क्षेप्तुमथारभत्\nततः तेन चिन्तितेन हेतुना"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "lexical:5.41.14:0",
@@ -245,7 +325,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:mAruta+dic_mw:marut+Indological:Maruts_RV"
+          "source": "dic_mw:mAruta+dic_mw:marut+Indological:Maruts_RV",
+          "source_links": [
+            {
+              "label": "MW mAruta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=mAruta"
+            },
+            {
+              "label": "MW marut",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=marut"
+            }
+          ],
+          "seq": 11
         }
       ]
     },
@@ -260,6 +351,7 @@
         "bhusana": "ततस्तु हनुमान् वीरो बभञ्च प्रमदावनम् ।\n\nमत्तद्विजसमाघुष्टं नानाद्रुमलतायुतम्\nप्रमदावनम् अन्तःपुरवनम् । \"प्रमदावनमन्तः पुरोचितम्\" इत्यमरः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "lexical:5.41.15:0",
@@ -272,7 +364,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:pramadAvana+dic_mw:pramadA (√mad-)+Indological:antahpura"
+          "source": "dic_mw:pramadAvana+dic_mw:pramadA (√mad-)+Indological:antahpura",
+          "source_links": [
+            {
+              "label": "MW pramadAvana",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=pramadAvana"
+            },
+            {
+              "label": "MW pramadA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=pramadA"
+            }
+          ],
+          "seq": 12
         }
       ]
     },
@@ -286,15 +389,19 @@
         "siromani": "तदिति । मथितैः सलिलाशयैर्भिन्नैर्भञ्जितैर्वृक्षैश्च चूर्णितैः पर्वताग्रैश्च तद्वनमप्रियदर्शनं बभूव"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "tier1:5.41.16:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "С сокрушенными горками (cūrṇitaiḥ parvatāgraiś ca) – букв. «и с разбитыми вершинами гор». Автор «Тилаки» отмечает, что речь идет о горках для игр (krīḍaparvata)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "С сокрушенными горками (cūrṇitaiḥ parvatāgraiś ca) – букв. «и с разбитыми вершинами гор». Автор «Тилаки» отмечает, что речь идет о горках для игр (krīḍaparvata).",
+          "service": [],
+          "suggestions": [],
+          "seq": 13
         }
       ]
     },
@@ -308,6 +415,7 @@
         "siromani": "नानेति । नानाशकुन्तविरुतैः पक्षिणामुत्कटशब्दैः प्रभिन्नसलिसाशयैश्च क्लान्तैर्म्लानैः किसलयैश्च क्लान्तद्रुमलतानामयुतैश्च उपलक्षितं दावानलहतमिव तद्वनं तत्र तस्मिन् समये न बभौ । सार्धश्लोक एकान्वयी"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "edition:5.41.17:0",
@@ -315,8 +423,9 @@
           "layer_label": "издания · сноска",
           "votable": true,
           "status": "ожидает гейта М.Г.",
-          "note_ru": "Шлоки 5.41.17–18 (2 шлок) отсутствуют в критическом издании (Барода).",
+          "note_ru": "Шлоки 5.41.17–18 (2 шлоки) отсутствуют в критическом издании (Барода).",
           "kind": "verse_range",
+          "scope": "несколько шлок подряд",
           "range": "5.41.17–18",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -328,7 +437,8 @@
               "verse_id": "5.41.18",
               "iast": "na babhau tad vanaṃ tatra dāvānalahataṃ yathā । vyākulāvaraṇā rejur vihvalā iva tā latāḥ ॥18॥"
             }
-          ]
+          ],
+          "seq": 14
         }
       ]
     },
@@ -343,15 +453,19 @@
         "siromani": "व्याकुलेति । व्याकुलानि संचलितानि आवरणानि यासां ताः लताः विह्वला नार्य इव रेजुः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "tier1:5.41.18:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "И поникшими женами / Казались лианы дрожащие (vyākulāvaraṇā rejur vihvalā iva tā latāḥ) – автор «Тилаки» толкует vyākulāvaraṇā как «те, с которых были сорваны одежды» (srastamāvaraṇaṃ yāsāṃ tāḥ). Такой же трактовки придерживается и автор комментария «Широмани». Голдмены переводят «women in distress» (см.: Goldman 1984: 468)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "И поникшими женами / Казались лианы дрожащие (vyākulāvaraṇā rejur vihvalā iva tā latāḥ) – автор «Тилаки» толкует vyākulāvaraṇā как «те, с которых были сорваны одежды» (srastamāvaraṇaṃ yāsāṃ tāḥ). Такой же трактовки придерживается и автор комментария «Широмани». Голдмены переводят «women in distress» (см.: Goldman 1984: 468).",
+          "service": [],
+          "suggestions": [],
+          "seq": 15
         }
       ]
     },
@@ -366,15 +480,19 @@
         "siromani": "सेति । विह्वलाः अशोकलताप्रतानाः विस्तृताशोकलताः यस्यां सा वनस्थली प्रमदस्य उत्कृष्टमदस्य अवनं रक्षणं यस्मिन् तस्य नित्यं मदविशिष्टस्येत्यर्थः, दशास्यप्रमदावनस्य रावणस्त्रीसमूहस्य कपेर्बलात् शोकरूपलताप्रतानः लताविस्तारो यस्यां सा जाता"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "tier1:5.41.20:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "В оригинале игра слов: pramadāvana – и «роща возле женских покоев» (pramadā + vana) и «защита женщины» (pramadā + avana)"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "В оригинале игра слов: pramadāvana – и «роща возле женских покоев» (pramadā + vana) и «защита женщины» (pramadā + avana)",
+          "service": [],
+          "suggestions": [],
+          "seq": 16
         },
         {
           "id": "phase2:5.41.20:0",
@@ -395,7 +513,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 17
         },
         {
           "id": "edition:5.41.20:0",
@@ -405,6 +524,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.41.20 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.41.20",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -413,7 +533,8 @@
               "iast": "sā vihvalāśokalatāpratānā । vanasthalī śokalatāpratānā । jātā daśāsyapramadāvanasya । kapērbalāddhi pramadāvanasya ॥20॥"
             }
           ],
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 18
         }
       ]
     },
@@ -426,6 +547,7 @@
         "bhusana": "उपपत्तिपूर्वकमेतदेव विवृणोति न सामेति । \"अनित्यो विजयो यस्माद्दृश्यते युद्ध्यमानयोः । पराजयश्च संग्रामे तस्माद्युद्धं विसर्जयेत् ।।\" इति युद्धस्य अव्यवस्थितफलकत्वेऽपि सर्वं बलवतः पथ्यम्' इति न्यायेन सर्वातिशायिबलपराक्रमस्य मम पराजयप्रसङ्ग एव नास्तीत्यभिप्रायेणाह पराक्रम इति। मम तु इह रक्षोविषये पराक्रम एव रोचत इति संबन्धः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-41",
       "notes": [
         {
           "id": "phase2:5.41.34:0",
@@ -445,7 +567,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 19
         }
       ]
     }

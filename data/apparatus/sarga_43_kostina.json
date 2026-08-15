@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 43,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 17,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 1
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "239ccb773f893470412ecd45be178723261a7db60a3ba7ae520674aa6e8b6797"
+    "source_hash": "1695fcfaaf44e0249510cbf43d536e4f67d28126b62f7543fcd0b35d2a0042ef"
   },
   "sarga": 43,
   "verses": [
@@ -36,15 +72,26 @@
         "siromani": "किंकराभिधराक्षसविध्वंसानन्तरकालिकं हनुमद्वृत्तान्तमाह तत इत्यादिभिः । किंकरान् हत्वा ध्यानं विचारमास्थितः । विचाराकारमाह मया वनं भग्नं चैत्यप्रासादः राक्षसकुलदेवताधिष्ठानीभूतप्रासादविशेषः न विनाशितः तस्मात् बलं स्वपराक्रमं दर्शयन् सन् इमं प्रासादमपि विध्वंसयामि इति अनेन प्रकारेण मनसा संचिन्त्य अवर्ततेति शेषः । श्लोकद्वयमेकान्वयि ।। 5.43.1,2 ।।\n\nचैत्येति । हनूमानुत्प्लुत्य मेरुशृङ्गमिवोन्नतं चैत्यप्रासादमारुरोह"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "tier1:5.43.1:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Стал Хануман раздумывать (hanūmān dhyānam āsthitaḥ) – в некоторых вариантах вместо dhyānam стоит sthānam āsthitaḥ «вернулся на [прежнее] место».[Е. Костина] «caityaprāsādo» Комм о \"форме\" дворца, поскольку ниже будет в комм про это говориться"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Стал Хануман раздумывать (hanūmān dhyānam āsthitaḥ) – в некоторых вариантах вместо dhyānam стоит sthānam āsthitaḥ «вернулся на [прежнее] место».",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "caityaprāsādo",
+              "kind": "note",
+              "text": "Комм о \"форме\" дворца, поскольку ниже будет в комм про это говориться"
+            }
+          ],
+          "suggestions": [],
+          "seq": 1
         },
         {
           "id": "phase2:5.43.1:0",
@@ -65,7 +112,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 2
         }
       ]
     },
@@ -80,6 +128,7 @@
         "siromani": "आरुह्येति । प्रासादमारुह्य उदितः प्रतिसूर्य इव हरियूथपो बभौ"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "lexical:5.43.4:0",
@@ -92,7 +141,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:pratisUrya"
+          "source": "dic_mw:pratisUrya",
+          "source_links": [
+            {
+              "label": "MW pratisUrya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=pratisUrya"
+            }
+          ],
+          "seq": 3
         },
         {
           "id": "phase2:5.43.4:0",
@@ -112,7 +168,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 4
         },
         {
           "id": "edition:5.43.4:0",
@@ -122,6 +179,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.43.4 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.43.4",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -129,7 +187,8 @@
               "verse_id": "5.43.4",
               "iast": "āruhya girisaṃkāśaṃ prāsādaṃ hariyūthapaḥ । babhau sa sumahātejāḥ pratisūrya ivoditaḥ ॥4॥"
             }
-          ]
+          ],
+          "seq": 5
         }
       ]
     },
@@ -143,15 +202,19 @@
         "siromani": "समिति । चैत्यप्रासादं संप्रधृष्य पराभवं प्रापय्य लक्ष्म्या स्वविजयसंपत्त्या प्रज्वलन् हनूमान् पारियात्रोपमकुलाचलसदृशः अभवत्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "tier1:5.43.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…разрушил / Этот дворец высокий (sampradhṛṣya tu caityaprāsādam unnatam) Букв. «напав же… на возвышающийся дворец, [имеющий форму] ступы». Автор комментария «Тилака» глоссирует sampradhṛṣya как bhaṅktvā (разрушив). Иную интерпретацию дает автор комментария «Бхушана», который толкует это слово как «напав/взобравшись» (ākramya). Голдмены согласны с последним и переводят: «When the invincible monkey… had scaled that lofty palace». (Когда непобедимая обезьяна.. взобралась на тот высокий дворец»; см.: Goldman 1984: 230).Париятра – одна из семи высочайших гор Джамбудвипы наряду с горами Махендра, Малайя, Сахья, Шуктимат, Рикшапарвата и Виндхья. Париятра упоминается также в четвертой книге «Рамаяны» (IV, 41,16)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…разрушил / Этот дворец высокий (sampradhṛṣya tu caityaprāsādam unnatam) Букв. «напав же… на возвышающийся дворец, [имеющий форму] ступы». Автор комментария «Тилака» глоссирует sampradhṛṣya как bhaṅktvā (разрушив). Иную интерпретацию дает автор комментария «Бхушана», который толкует это слово как «напав/взобравшись» (ākramya). Голдмены согласны с последним и переводят: «When the invincible monkey… had scaled that lofty palace». (Когда непобедимая обезьяна.. взобралась на тот высокий дворец»; см.: Goldman 1984: 230).Париятра – одна из семи высочайших гор Джамбудвипы наряду с горами Махендра, Малайя, Сахья, Шуктимат, Рикшапарвата и Виндхья. Париятра упоминается также в четвертой книге «Рамаяны» (IV, 41,16).",
+          "service": [],
+          "suggestions": [],
+          "seq": 6
         },
         {
           "id": "lexical:5.43.5:0",
@@ -165,7 +228,14 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:pAriyAtra",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW pAriyAtra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=pAriyAtra"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 7
         }
       ]
     },
@@ -178,6 +248,7 @@
         "bhusana": "अस्त्रविज्जयतां रामो लक्ष्मणश्च महाबलः ।\n\nराजा जयति सुग्रीवो राघवेणाभिपालितः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "lexical:5.43.8:0",
@@ -190,7 +261,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:astravid"
+          "source": "dic_mw:astravid",
+          "source_links": [
+            {
+              "label": "MW astravid",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=astravid"
+            }
+          ],
+          "seq": 8
         },
         {
           "id": "crosstext:5.43.8:0",
@@ -210,9 +288,11 @@
           "sundara_sa_iast": "jayatyatibalo rāmo lakṣmaṇaśca mahābalaḥ |rājā jayati sugrīvo rāghaveṇābhipālitaḥ ||",
           "quality": "GOOD",
           "source": "DCS parallel-search (GOOD); Rām 6.32.13 (крит. изд.)",
+          "source_links": [],
           "edition_flag": "vulgate",
           "shloka_critical": "V.41.6",
-          "verse_address_vulgate": ""
+          "verse_address_vulgate": "",
+          "seq": 9
         }
       ]
     },
@@ -225,6 +305,7 @@
         "bhusana": "दासो ऽहं कोसलेन्द्रस्य रामस्याक्लिष्टकर्मणः ।\n\nहनुमान् शत्रुसैन्यानां निहन्ता मारुतात्मजः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "lexical:5.43.9:0",
@@ -237,7 +318,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:aklifwa"
+          "source": "dic_mw:aklifwa",
+          "source_links": [
+            {
+              "label": "MW aklifwa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=aklifwa"
+            }
+          ],
+          "seq": 10
         }
       ]
     },
@@ -252,6 +340,7 @@
         "siromani": "आवर्त इति । गङ्गायाः तोयस्य महान् आवर्त इव विपुलो रक्षसां गणः हरिश्रेष्ठं परिक्षिप्य गदादिभिः संताड्य बभौ"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "edition:5.43.15:0",
@@ -261,6 +350,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.43.15 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.43.15",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -268,7 +358,8 @@
               "verse_id": "5.43.15",
               "iast": "ājagmur vānaraśrēṣṭhaṃ bāṇaiś cādityasannibhaiḥ । āvarta iva gaṅgāyāstoyasya vipulo mahān ॥15॥"
             }
-          ]
+          ],
+          "seq": 11
         }
       ]
     },
@@ -283,15 +374,19 @@
         "bhusana": "तत्र चाग्निः समभवत् प्रासादश्चाप्यदह्यत"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "tier1:5.43.18:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "…подобную ваджре (śatadhāram) – букв. «имеющую сотню вершин». Переведено по комментарию «Бхушана», автор которого глоссирует «подобную ваджре» (vajravat sthitam). Также он предлагает иную интерпретацию: śatadhā aram (śīghram), то есть «в ста направлениях» и «стремительно»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "…подобную ваджре (śatadhāram) – букв. «имеющую сотню вершин». Переведено по комментарию «Бхушана», автор которого глоссирует «подобную ваджре» (vajravat sthitam). Также он предлагает иную интерпретацию: śatadhā aram (śīghram), то есть «в ста направлениях» и «стремительно».",
+          "service": [],
+          "suggestions": [],
+          "seq": 12
         },
         {
           "id": "lexical:5.43.18:0",
@@ -305,7 +400,18 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:SataDAra+dic_mw:vajra",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW SataDAra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=SataDAra"
+            },
+            {
+              "label": "MW vajra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vajra"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 13
         },
         {
           "id": "edition:5.43.18:0",
@@ -315,6 +421,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.43.18 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.43.18",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -323,7 +430,8 @@
               "iast": "tatas taṃ bhrāmayām āsa śatadhāraṃ mahābalaḥ । tatra cāgniḥ samabhavat prāsādaś cāpy adahyata ॥18॥"
             }
           ],
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 14
         }
       ]
     },
@@ -336,6 +444,7 @@
         "bhusana": "अटन्ति वसुधां कृत्स्नां वयमन्ये च वानराः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "edition:5.43.21:0",
@@ -343,8 +452,9 @@
           "layer_label": "издания · сноска",
           "votable": true,
           "status": "ожидает гейта М.Г.",
-          "note_ru": "Шлоки 5.43.21–24 (4 шлок) отсутствуют в критическом издании (Барода).",
+          "note_ru": "Шлоки 5.43.21–24 (4 шлоки) отсутствуют в критическом издании (Барода).",
           "kind": "verse_range",
+          "scope": "несколько шлок подряд",
           "range": "5.43.21–24",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -364,7 +474,8 @@
               "verse_id": "5.43.24",
               "iast": "īdṛgvidhais tu haribhir vṛto dantanakhāyudhaiḥ । śataiḥ śatasahasraiś ca koṭībhiś cāyutair api ॥24॥"
             }
-          ]
+          ],
+          "seq": 15
         }
       ]
     },
@@ -377,6 +488,7 @@
         "bhusana": "दशनागबलाः केचित् केचिद्दशगुणोत्तराः ।\n\nकेचिन्नागसहस्रस्य बभूवुस्तुल्यविक्रमाः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "lexical:5.43.22:0",
@@ -389,7 +501,18 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:nAga+dic_mw:daSanAgabala"
+          "source": "dic_mw:nAga+dic_mw:daSanAgabala",
+          "source_links": [
+            {
+              "label": "MW nAga",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=nAga"
+            },
+            {
+              "label": "MW daSanAgabala",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=daSanAgabala"
+            }
+          ],
+          "seq": 16
         }
       ]
     },
@@ -403,6 +526,7 @@
         "siromani": "नेति । इक्ष्वाकुवीरेण महात्मना यस्येदं वैरं बद्धं प्रवृद्धं तस्य इयं पुरी लङ्का नास्ति नङ्क्ष्यतीत्यर्थः । यूयं न रावणश्च न । अर्धद्वयमेकान्वयि"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-43",
       "notes": [
         {
           "id": "lexical:5.43.25:0",
@@ -415,7 +539,18 @@
           "type": "В",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:ikzvAku+dic_apte:ikzvAku"
+          "source": "dic_mw:ikzvAku+dic_apte:ikzvAku",
+          "source_links": [
+            {
+              "label": "MW ikzvAku",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=ikzvAku"
+            },
+            {
+              "label": "APTE ikzvAku",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/AP90Scan/2020/web/webtc/indexcaller.php?key=ikzvAku"
+            }
+          ],
+          "seq": 17
         }
       ]
     }

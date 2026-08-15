@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 65,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 22,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 0
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "110ad78c0f65b4b99e066d4752654638d206d2539d1df910ecadae5666304258"
+    "source_hash": "f15d3b4e156a7084096070aef71257ae2229b83d7d8c354170ffa30428027a28"
   },
   "sarga": 65,
   "verses": [
@@ -34,6 +70,7 @@
         "bhusana": "युवराजं पुरस्कृत्य सुग्रीवमभिवाद्य च ।\n\nप्रवृत्तिमथ सीतायाः प्रवक्तुमुपचक्रमुः\nप्रवृत्तिं वार्ताभ्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "lexical:5.65.2:0",
@@ -46,7 +83,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:puraskftya"
+          "source": "dic_mw:puraskftya",
+          "source_links": [
+            {
+              "label": "MW puraskftya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=puraskftya"
+            }
+          ],
+          "seq": 1
         }
       ]
     },
@@ -59,15 +103,19 @@
         "bhusana": "रावणान्तःपुरे रोधं राक्षसीभिश्च तर्जनम् ।\n\nरामे समनुरागं च यश्चायं समयः कृतः ।\n\nएतदाख्यान्ति ते सर्वे हरयो रामसन्निधौ"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "tier1:5.65.3:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Как плачет она у Раваны (rāvaṇāntaḥpure rodham) - букв. “в женских покоях (антахпуре) Раваны”."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Как плачет она у Раваны (rāvaṇāntaḥpure rodham) - букв. “в женских покоях (антахпуре) Раваны”.",
+          "service": [],
+          "suggestions": [],
+          "seq": 2
         },
         {
           "id": "lexical:5.65.3:0",
@@ -81,7 +129,14 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:antaHpura",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW antaHpura",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=antaHpura"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 3
         },
         {
           "id": "lexical:5.65.3:1",
@@ -95,7 +150,14 @@
           "subtype": "lexical",
           "trigger": "gloss",
           "source": "dic_mw:tarjana",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW tarjana",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=tarjana"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 4
         }
       ]
     },
@@ -108,6 +170,7 @@
         "bhusana": "वैदेहीमक्षतां श्रुत्वा रामस्तूत्तरमब्रवीत्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "lexical:5.65.4:0",
@@ -120,7 +183,14 @@
           "type": "В",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:akzatA"
+          "source": "dic_mw:akzatA",
+          "source_links": [
+            {
+              "label": "MW akzatA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=akzatA"
+            }
+          ],
+          "seq": 5
         }
       ]
     },
@@ -134,15 +204,19 @@
         "bhusana": "क्व सीता वर्तते देवी कथं च मयि वर्तते ।\n\nएतन्मे सर्वमाख्यात वैदेहीं प्रति वानराः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "tier1:5.65.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Помнит ли меня Сита? (kathaṃ ca mayi vartate) - букв. “и как относится ко мне”. Автор комментария “Широмани” поясняет: “с каким чувством”?"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Помнит ли меня Сита? (kathaṃ ca mayi vartate) - букв. “и как относится ко мне”. Автор комментария “Широмани” поясняет: “с каким чувством”?",
+          "service": [],
+          "suggestions": [],
+          "seq": 6
         },
         {
           "id": "phase2:5.65.5:0",
@@ -163,7 +237,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 7
         }
       ]
     },
@@ -177,6 +252,7 @@
         "bhusana": "रामस्य गदितं श्रुत्वा हरयो रामसन्निधौ ।\n\nचोदयन्ति हनूमन्तं सीतावृत्तान्तकोविदम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "lexical:5.65.6:0",
@@ -185,11 +261,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "vṛttānta",
-          "note_ru": "Врттанта (vṛttānta, m.) — «происшедшее, повествование о случившемся», vṛtta (p.p.p. от √vṛt-, «совершаться, происходить») + anta («конец, завершение»). MW: vṛttānta 'what has occurred, an account, report'. Технически: полный нарратив от начала до конца события. Ханuman назван sītā-vṛttānta-kovida — «знаток истории Ситы»: не просто очевидец, а specialist по полному нарративу. Kovida (√ku-/vid-, «знать») = expert witness, знаток по всему делу.",
+          "note_ru": "Врттанта (vṛttānta, m.) — «происшедшее, повествование о случившемся», vṛtta (p.p.p. от √vṛt-, «совершаться, происходить») + anta («конец, завершение»). MW: vṛttānta 'what has occurred, an account, report'. Технически: полный нарратив от начала до конца события. Hanuman назван sītā-vṛttānta-kovida — «знаток истории Ситы»: не просто очевидец, а specialist по полному нарративу. Kovida (√ku-/vid-, «знать») = expert witness, знаток по всему делу.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:vfttAnta"
+          "source": "dic_mw:vfttAnta",
+          "source_links": [
+            {
+              "label": "MW vfttAnta",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vfttAnta"
+            }
+          ],
+          "seq": 8
         }
       ]
     },
@@ -202,15 +285,26 @@
         "siromani": "तदेव भङ्ग्यन्तरेणाह तमिति । तं सीतया दत्तं मणिं रामाय दत्त्वा हनूमानब्रवीत्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "tier1:5.65.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «заколке» Не уверена, что это заколка. См. ранее"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "заколке",
+              "kind": "note",
+              "text": "Не уверена, что это заколка. См. ранее"
+            }
+          ],
+          "suggestions": [],
+          "seq": 9
         },
         {
           "id": "lexical:5.65.8:0",
@@ -224,7 +318,14 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:maRi",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW maRi",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=maRi"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 10
         }
       ]
     },
@@ -239,15 +340,26 @@
         "siromani": "तदेव भङ्ग्यन्तरेणाह त्वयीति । राक्षसीमध्ये मुहुर्मुहुस्तर्ज्यमाना मनोरथं त्वयि संन्यस्य जीवन्ती रामा सीता मया दृष्टा"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "tier1:5.65.12:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Одной на тебя надеждой / Жизнь сохраняет прекрасная (tvayi saṃnyasya jīvantī rāmā rāma manoratham) - букв. “На тебя возложив желание, жива прекрасная, Рама”. В оригинале - звуковой повтор (rāmā rāma).[Е. Костина] «,» Если говорим про звуковой повтор, надо расписать подробнее значение слов, которые его создают, иначе читатель останется в недоумении"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Одной на тебя надеждой / Жизнь сохраняет прекрасная (tvayi saṃnyasya jīvantī rāmā rāma manoratham) - букв. “На тебя возложив желание, жива прекрасная, Рама”. В оригинале - звуковой повтор (rāmā rāma).",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": ",",
+              "kind": "note",
+              "text": "Если говорим про звуковой повтор, надо расписать подробнее значение слов, которые его создают, иначе читатель останется в недоумении"
+            }
+          ],
+          "suggestions": [],
+          "seq": 11
         },
         {
           "id": "lexical:5.65.12:0",
@@ -261,7 +373,14 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:manoraTa",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW manoraTa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=manoraTa"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 12
         }
       ]
     },
@@ -274,15 +393,26 @@
         "siromani": "राक्षसीभिरिति । त्वया सुखोचिता अक्षता अहिंसिता सीता प्रमदावने राक्षसीभिः करणैर्दुःखमापद्यते प्राप्नोति"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "tier1:5.65.13:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «привыкшая» или достойная счастья?"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "привыкшая",
+              "kind": "note",
+              "text": "или достойная счастья?"
+            }
+          ],
+          "suggestions": [],
+          "seq": 13
         }
       ]
     },
@@ -295,6 +425,7 @@
         "bhusana": "अधःशय्या विवर्णाङ्गी पद्मिनीव हिमागमे ।\n\nरावणाद्विनिवृत्तार्था मर्तव्यकृतनिश्चया ।\n\nदेवी कथंचित् काकुत्स्थ त्वन्मना मार्गिता मया"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "lexical:5.65.15:0",
@@ -307,7 +438,14 @@
           "type": "В",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:aDaHSayyA"
+          "source": "dic_mw:aDaHSayyA",
+          "source_links": [
+            {
+              "label": "MW aDaHSayyA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=aDaHSayyA"
+            }
+          ],
+          "seq": 14
         },
         {
           "id": "lexical:5.65.15:1",
@@ -320,7 +458,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "compound",
-          "source": "dic_mw:padminI"
+          "source": "dic_mw:padminI",
+          "source_links": [
+            {
+              "label": "MW padminI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=padminI"
+            }
+          ],
+          "seq": 15
         }
       ]
     },
@@ -335,6 +480,7 @@
         "siromani": "रामेति । रामसुग्रीवसख्यं श्रुत्वा हर्षं प्रमोदमुपागता प्राप्ता । अर्धं पृथक् नियत इति । अस्याः मद्बुद्धिस्थायाः सीतायास्त्वयि भक्तिः परप्रीतिः तथा समुदाचारः तदनुकूलानुचरणं नियतः नियमेन वर्तमानो ऽस्तीति शेषः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "lexical:5.65.18:0",
@@ -347,7 +493,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:Bakti+warnemyr(Baj)"
+          "source": "dic_mw:Bakti+warnemyr(Baj)",
+          "source_links": [
+            {
+              "label": "MW Bakti",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=Bakti"
+            }
+          ],
+          "seq": 16
         },
         {
           "id": "edition:5.65.18:0",
@@ -357,6 +510,7 @@
           "status": "ожидает гейта М.Г.",
           "note_ru": "Шлока 5.65.18 отсутствует в критическом издании (Барода).",
           "kind": "single",
+          "scope": "одна шлока",
           "range": "5.65.18",
           "confidence": "structural_absence (best_crit_jaccard < 0.25)",
           "verses_iast": [
@@ -364,7 +518,8 @@
               "verse_id": "5.65.18",
               "iast": "rāmasugrīvasakhyaṃ ca śrutvā harṣam upāgatā । niyataḥ samudācāro bhaktiś cāsyāḥ sadā tvayi ॥18॥"
             }
-          ]
+          ],
+          "seq": 17
         }
       ]
     },
@@ -378,6 +533,7 @@
         "siromani": "एवमिति । उग्रेण तपसा त्वद्भक्त्या च युक्ता जनकनन्दिनी एवमुक्तप्रकारेण मया दृष्टा"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "lexical:5.65.19:0",
@@ -390,7 +546,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:ugra"
+          "source": "dic_mw:ugra",
+          "source_links": [
+            {
+              "label": "MW ugra",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=ugra"
+            }
+          ],
+          "seq": 18
         }
       ]
     },
@@ -404,15 +567,26 @@
         "siromani": "अभिज्ञानमिति । चित्रकूटे वायसं जयन्तं प्रति तवान्तिके यद्वृत्तं वृत्तान्तं तदभिज्ञानं मत्संवादचिह्नं मे मह्यं दत्तं कथितमित्यर्थः\nताविति । जाताश्वासौ प्राप्ताश्वासनौ राजपुत्रौ विदित्वा सर्वम् अभिज्ञानं प्रदाय देव्या सीतया आख्यातं संपूर्णं वायुपुत्रो वाचा शशंस"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "tier1:5.65.20:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «Между тобой и ворономНа горе Читракуте.» Нужна ссылка на соответствующий стих"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "Между тобой и ворономНа горе Читракуте.",
+              "kind": "note",
+              "text": "Нужна ссылка на соответствующий стих"
+            }
+          ],
+          "suggestions": [],
+          "seq": 19
         },
         {
           "id": "phase2:5.65.20:0",
@@ -433,7 +607,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 20
         }
       ]
     },
@@ -447,6 +622,7 @@
         "siromani": "जीवितमिति । मासादूर्ध्वं न जीवेयम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "phase2:5.65.25:0",
@@ -466,7 +642,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 21
         }
       ]
     },
@@ -479,6 +656,7 @@
         "bhusana": "तौ जाताश्वासौ राजपुत्रौ विदित्वा तच्चाभिज्ञानं राघवाय प्रदाय ।\n\nदेव्या चाख्यातं सर्वमेवानुपूर्व्याद्वाचा सम्पूर्णं वायुपुत्रः शशंस\nइत्यार्षे श्रीरामायणे वाल्मीकीये आदिकाव्ये श्रीमत्सुन्दरकाण्डे पञ्चषष्टितमः सर्गः ।। 5.65 ।।\n\nताविति । पूर्ववद्वैश्वदेवीवृत्तम् । समुद्रतरणे सुरसानिरसनादिकम् अक्षवधलङ्कादहनादिकं सजातीयेभ्यः पूर्वमुक्तमपि प्रभुसन्निधावात्मश्लाघायां पर्यवस्येदिति नोक्तमिति ध्योयम् । स्ववृत्तान्तं सर्वमाख्यातवानिति सामान्येन वक्तुं युक्तत्वे ऽप्यङ्गदसन्निधौ प्रपञ्चनं गोप्यविशेषगोपनार्थम् । अत्र त्वप्रपञ्चनम् अकथनीयाकथनार्थं चेति ज्ञेयम् । अस्मिन्सर्गे सार्धसप्तविंशतिश्लोकाः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-65",
       "notes": [
         {
           "id": "phase2:5.65.28:0",
@@ -498,7 +676,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 22
         }
       ]
     }

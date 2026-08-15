@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 66,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 11,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -21,7 +57,7 @@
       "crosstext": 0
     },
     "built_for_reviewer": "Костина",
-    "source_hash": "8cc359cd502d92faabef0be973b0e70ebed4aea60b631612da96ccdeb29a8cc6"
+    "source_hash": "ea934d352961f5dc9b2f87f4837e16deba8ca01407cf4f67139fbd1ca5c38f58"
   },
   "sarga": 66,
   "verses": [
@@ -32,15 +68,19 @@
       "leonov_ru": "",
       "commentary": {},
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-66",
       "notes": [
         {
           "id": "tier1:5.66.3:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Согласно традиционным индийским представлениям, корова дает молоко только в присутствии своих телят."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Согласно традиционным индийским представлениям, корова дает молоко только в присутствии своих телят.",
+          "service": [],
+          "suggestions": [],
+          "seq": 1
         },
         {
           "id": "lexical:5.66.3:0",
@@ -54,10 +94,18 @@
           "subtype": "lexical",
           "trigger": "realia",
           "source": "dic_mw:saKya",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW saKya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=saKya"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 2
         }
       ],
-      "verse_not_segmented": true
+      "verse_not_segmented": true,
+      "empty_reason": "Шлока есть в нумерации примечаний, но отсутствует в сегментированном корпусе (data/analysis/sundara_commentary_segmented.json), поэтому санскрит и подстрочник здесь не показаны. Примечание сохранено и голосуется; текст стиха нужно досегментировать."
     },
     {
       "verse_id": "5.66.4",
@@ -69,15 +117,26 @@
         "bhusana": "मणिरत्नमिदं दत्तं वैदेह्याः श्वशुरेण मे ।\n\nवधूकाले यथा बद्धमधिकं मूर्ध्नि शोभते\nमणेरागतिमाहमणिरत्नमिति । मे श्वशुरेण जनकेन । वधूकाले वधूप्रतिग्रहकाले, विवाहकाल इत्यर्थः । यथा शोभते तथा बद्धमित्यन्वयः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-66",
       "notes": [
         {
           "id": "tier1:5.66.4:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «На челе» На лбу заколки точно не носят. Только если заколка \"съедет\" на лоб, но это вряд ли наш случай. Чудамани можно считать украшением для волос, но оно ничего не закалывает и свисает на лоб с головы, поэтому называть его заколкой неправомерно"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "На челе",
+              "kind": "note",
+              "text": "На лбу заколки точно не носят. Только если заколка \"съедет\" на лоб, но это вряд ли наш случай. Чудамани можно считать украшением для волос, но оно ничего не закалывает и свисает на лоб с головы, поэтому называть его заколкой неправомерно"
+            }
+          ],
+          "suggestions": [],
+          "seq": 3
         },
         {
           "id": "phase2:5.66.4:0",
@@ -98,7 +157,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 4
         }
       ]
     },
@@ -112,15 +172,19 @@
         "bhusana": "अयं हि जलसम्भूतो मणिः सज्जनपूजितः ।\n\nयज्ञे परमतुष्टेन दत्तः शक्रेण धीमता\nजनकेनापि कुतस्तल्लब्धम् ? तत्राह अयं हीति"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-66",
       "notes": [
         {
           "id": "tier1:5.66.5:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Почитаем богами (pravarapūjitaḥ) – автор комментария «Тилака» глоссирует pravarapūjitaḥ как «почитаемый лучшими богами». В комментарии «Бхушана» дается вариант sajjanapūjitaḥ (почитаемый добродетельными), оставляя это слово без комментария."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Почитаем богами (pravarapūjitaḥ) – автор комментария «Тилака» глоссирует pravarapūjitaḥ как «почитаемый лучшими богами». В комментарии «Бхушана» дается вариант sajjanapūjitaḥ (почитаемый добродетельными), оставляя это слово без комментария.",
+          "service": [],
+          "suggestions": [],
+          "seq": 5
         }
       ]
     },
@@ -134,15 +198,19 @@
         "bhusana": "किमाह सीता वैदेही ब्रूहि सौम्य पुनः पुनः ।\n\nपिपासुमिव तोयेन सिञ्चन्ति वाक्यवारिणा"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-66",
       "notes": [
         {
           "id": "tier1:5.66.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Как влага на чувств лишившегося (parāsum iva toyena) – в оригинале использовано слово «parāsu», что значит «мертвый» или «умирающий». В комментарии «Тилака» оно глоссируется как mūrcchita (лишившийся чувств)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Как влага на чувств лишившегося (parāsum iva toyena) – в оригинале использовано слово «parāsu», что значит «мертвый» или «умирающий». В комментарии «Тилака» оно глоссируется как mūrcchita (лишившийся чувств).",
+          "service": [],
+          "suggestions": [],
+          "seq": 6
         },
         {
           "id": "lexical:5.66.8:0",
@@ -156,7 +224,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:ASA",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW ASA",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=ASA"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 7
         }
       ]
     },
@@ -170,6 +245,7 @@
         "bhusana": "कथं सा मम सुश्रोणी भीरुभीरुः सती सदा ।\n\nभयावहानां घोराणां मध्ये तिष्ठति रक्षसाम्\nभीरुभीरुः अत्यन्तभीरुः ।। 5.66.12,13।।\n\nकिमाह सीता हनुंस्तत्त्वतः कथयाद्य मे ।\n\nएतेन खलु जीविष्ये भेषजेनातुरो यथा\nतत्त्वतः, सङ्कोचेन न किंचित् गोपनीयमिति भावः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-66",
       "notes": [
         {
           "id": "phase2:5.66.12:0",
@@ -189,7 +265,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 8
         }
       ]
     },
@@ -203,15 +280,19 @@
         "bhusana": "शारदस्तिभिरोन्मुक्तो नूनं चन्द्र इवाम्बुदैः ।\n\nआवृतं वदनं तस्या न विराजति राक्षसैः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-66",
       "notes": [
         {
           "id": "tier1:5.66.13:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "И скрыли темные пятна (timironmuktaḥ) – букв. «освободившийся от тьмы». В комментарии «Широмани» говорится, что под словом timira «тьма» здесь следует понимать пятна на луне (знак зайца)."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "И скрыли темные пятна (timironmuktaḥ) – букв. «освободившийся от тьмы». В комментарии «Широмани» говорится, что под словом timira «тьма» здесь следует понимать пятна на луне (знак зайца).",
+          "service": [],
+          "suggestions": [],
+          "seq": 9
         },
         {
           "id": "lexical:5.66.13:0",
@@ -225,7 +306,18 @@
           "subtype": "lexical",
           "trigger": "compound",
           "source": "dic_mw:suKa+dic_mw:ucita",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW suKa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=suKa"
+            },
+            {
+              "label": "MW ucita",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=ucita"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 10
         }
       ]
     },
@@ -239,6 +331,7 @@
         "bhusana": "मधुरा मधुरालापा किमाह मम भामिनी ।\n\nमद्विहीना वरारोहा हनुमन् कथयस्व मे ।।\n\n[दुःखाद्दुःखतरं प्राप्य कथं जीवति जानकी ]\nइत्यार्षे श्रीरामायणे वाल्मीकीये आदिकाव्ये श्रीमत्सुन्दरकाण्डे षट्षष्टितमः सर्गः ।। 5.66 ।।\n\nमधुरा सुन्दरी । मधुरालापा, येन तद्वचनानुवादेपि भवद्वचनं मधुरं भवतीत्यर्थः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-66",
       "notes": [
         {
           "id": "lexical:5.66.15:0",
@@ -251,7 +344,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:martavya+warnemyr(mf)"
+          "source": "dic_mw:martavya+warnemyr(mf)",
+          "source_links": [
+            {
+              "label": "MW martavya",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=martavya"
+            }
+          ],
+          "seq": 11
         }
       ]
     }

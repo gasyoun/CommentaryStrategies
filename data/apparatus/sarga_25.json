@@ -2,7 +2,43 @@
   "_meta": {
     "generated_by": "scripts/build_sarga_apparatus.py",
     "handoff": "H141 — сводный per-sarga аппарат (roadmap §5 п.6, ruling R3)",
+    "review": "H2829/H2830 — правки по votes/sarga.md (разбор Костиной/М.Г.)",
     "sarga": 25,
+    "glossary": {
+      "tier1": {
+        "title": "Ярус 1 — примечания самого перевода",
+        "what": "Примечания М. Леонова и Е. Костиной, уже входящие в рабочий файл перевода. Это единственный слой, который идёт в печать как есть.",
+        "vote": "Не голосуется: показан для сверки, чтобы новые примечания не дублировали уже написанное.",
+        "provenance": "Извлечено 01-07-2026 из «Рамаяна. Книга 5. Сундараканда 2026.html» (scripts/extract_leonov_notes.py), 1058 примечаний на 68 песней."
+      },
+      "lexical": {
+        "title": "Фаза 1 — лексический слой",
+        "what": "Пословные глоссы и этимологии, порождённые по словарям (MW, Апте) и отобранные состязательным фильтром.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/lexical_pilot.py -> data/lexical/ch{N}.json; отклонённые кандидаты хранятся рядом с причиной отказа."
+      },
+      "phase2": {
+        "title": "Фаза 2 — санскритские комментаторы",
+        "what": "Материал «Тилаки», «Бхушаны» и «Широмани», предложенный к включению в русский аппарат.",
+        "vote": "Голосуется, но сперва проходит гейт М. Г.",
+        "provenance": "data/analysis/phase2_*/ (Gita Supersite, CC BY 4.0)."
+      },
+      "edition": {
+        "title": "Издания — сноска о расхождении",
+        "what": "Отметки о шлоках, отсутствующих в критическом издании (Барода) или расходящихся с ним.",
+        "vote": "Голосуется.",
+        "provenance": "scripts/build_edition_apparatus.py; охват — одиночные шлоки, диапазоны и целые песни (см. поле «объём»)."
+      },
+      "crosstext": {
+        "title": "Cross-text — параллельные места",
+        "what": "Переклички с «Махабхаратой», кавьей, упанишадами и другими книгами «Рамаяны».",
+        "vote": "Голосуется.",
+        "provenance": "data/crosstext/*.json + слой DCS, перенумерованный на вульгату."
+      }
+    },
+    "phase_note": "«Фаза» — это очередь порождения, а не ярус качества: фаза 1 — лексический слой, фаза 2 — санскритские комментаторы. Других фаз нет; остальные три слоя (ярус 1, издания, cross-text) в этой нумерации не участвуют.",
+    "book_url": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md",
+    "notes_total": 18,
     "numbering": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
     "sources": {
       "tier1": "ярус 1 · Леонов/Костина",
@@ -19,7 +55,8 @@
       "phase2": 3,
       "edition": 0,
       "crosstext": 2
-    }
+    },
+    "source_hash": "45a5ddfb41d1d3dbaf6b6e9e7806bd9e7cb490f42aee5ae2e09ba0a220403ee2"
   },
   "sarga": 25,
   "verses": [
@@ -34,15 +71,19 @@
         "siromani": "एवमिति । राक्षसीभिः एवमुक्ता वैदेही बाष्पगद्गदया गिरा उवाच"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "tier1:5.25.2:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "Добродетельная Вайдехи (vaidehī… manasvinī) – комментарий «Тилака» объясняет это слово как «та, чья душа тверда в верности мужу»."
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Добродетельная Вайдехи (vaidehī… manasvinī) – комментарий «Тилака» объясняет это слово как «та, чья душа тверда в верности мужу».",
+          "service": [],
+          "suggestions": [],
+          "seq": 1
         },
         {
           "id": "lexical:5.25.2:0",
@@ -51,12 +92,19 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "bāṣpagadgada",
-          "note_ru": "Бāшпагадгада (bāṣpa-gadgada, adj.) — «(речь,) прерывающаяся (gadgada) от слёз (bāṣpa)». gadgada — звукоподражательное слово (√gad- «говорить неясно» + редупликация), MW: gadgada 'stammering, stuttering; indistinct or convulsive utterance (as sobbing)'. bāṣpa «слеза» восходит к корню √bāṣp- или связывается народной этимологией с «паром, испарением» (ср. bahiṣpavamāna). Сложное слово gadgada-gir/gadgada-vācā — устойчивая формула эпической речи в состоянии аффекта; принципиально, что gadgada означает именно конвульсивную, «захлёбывающуюся» речь, а не простую неясность — это маркер предельного горя, близкого к потере речи.",
+          "note_ru": "Башпагадгада (bāṣpa-gadgada, adj.) — «(речь,) прерывающаяся (gadgada) от слёз (bāṣpa)». gadgada — звукоподражательное слово (√gad- «говорить неясно» + редупликация), MW: gadgada 'stammering, stuttering; indistinct or convulsive utterance (as sobbing)'. bāṣpa «слеза» восходит к корню √bāṣp- или связывается народной этимологией с «паром, испарением» (ср. bahiṣpavamāna). Сложное слово gadgada-gir/gadgada-vācā — устойчивая формула эпической речи в состоянии аффекта; принципиально, что gadgada означает именно конвульсивную, «захлёбывающуюся» речь, а не простую неясность — это маркер предельного горя, близкого к потере речи.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:gadgada",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW gadgada",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=gadgada"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 2
         }
       ]
     },
@@ -70,15 +118,28 @@
         "bhusana": "न मानुषी राक्षसस्य भार्या भवितुमर्हति ।\n\nकामं खादत मां सर्वा न करिष्यामि वो वचः\nखादत भक्षयत"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "tier1:5.25.3:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "Леонов",
-          "note_ru": "[Claude.AI — не обязательно] ? [кат.8 — поэтика] Формульный повтор — ср. V.24.8"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [],
+          "suggestions": [
+            {
+              "author": "Claude.AI",
+              "strength": "не обязательно",
+              "kind": "кат.8 — поэтика",
+              "accounted": "",
+              "text": "Формульный повтор — ср. V.24.8.",
+              "incomplete": false
+            }
+          ],
+          "seq": 3
         },
         {
           "id": "phase2:5.25.3:0",
@@ -93,13 +154,14 @@
           "source_commentary": [
             "tilaka"
           ],
-          "why_proposed": "даёт доктринальную рамку (авāтара играет человеческую роль), отсутствующую в подстрочнике и не отмеченную ни в тексте самого Леонова/Костиной, ни в Фазе-1",
+          "why_proposed": "даёт доктринальную рамку (аватара играет человеческую роль), отсутствующую в подстрочнике и не отмеченную ни в тексте самого Леонова/Костиной, ни в Фазе-1",
           "provenance": {
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 4
         }
       ]
     },
@@ -114,6 +176,7 @@
         "siromani": "तदेव भङ्ग्यन्तरेणाह वेपते इति । आत्मनो ऽङ्गम् आविशन्तीव कमठवत् सङ्कचितशरीरेत्यर्थः, सीता कोकैः वृकैः अर्दिता वृकी इव वेपते स्म"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "lexical:5.25.5:0",
@@ -122,11 +185,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "koka",
-          "note_ru": "Кока (koka, m.) — «волк» (в эпике) или «утка-кокā (cakravāka)» в зависимости от контекста. MW: koka m. 'a wolf; the cakravāka bird'. Стих: «как антилопа в лесу, отбившаяся от стада, терзаемая kokaḥ». Переводчик (Леонов) переводит «волками» — и это правильно для данного контекста; однако без пояснения неясно, почему кока (а не vṛka, стандартный «волк»). koka в эпическом языке — волк именно как охотник на одиночных животных, семантически выделяющийся из vṛka своей «стайной» агрессией против выбившихся из группы. Параллель к положению Ситы: она отделена от «стаи» (Рāмы и ванаров) и уязвима именно как единица без группы.",
+          "note_ru": "Кока (koka, m.) — «волк» (в эпике) или «утка-кока (cakravāka)» в зависимости от контекста. MW: koka m. 'a wolf; the cakravāka bird'. Стих: «как антилопа в лесу, отбившаяся от стада, терзаемая kokaḥ». Переводчик (Леонов) переводит «волками» — и это правильно для данного контекста; однако без пояснения неясно, почему кока (а не vṛka, стандартный «волк»). koka в эпическом языке — волк именно как охотник на одиночных животных, семантически выделяющийся из vṛka своей «стайной» агрессией против выбившихся из группы. Параллель к положению Ситы: она отделена от «стаи» (Рамы и ванаров) и уязвима именно как единица без группы.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "gloss",
-          "source": "dic_mw:koka"
+          "source": "dic_mw:koka",
+          "source_links": [
+            {
+              "label": "MW koka",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=koka"
+            }
+          ],
+          "seq": 5
         },
         {
           "id": "phase2:5.25.5:0",
@@ -147,7 +217,8 @@
             "model": "claude-sonnet-5",
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
-          }
+          },
+          "seq": 6
         }
       ]
     },
@@ -161,15 +232,26 @@
         "siromani": "सेति । अशोकस्य अशोकसदृशस्य शिंशुपायाः विपुलां शाखामालम्ब्य शोकेन उपलक्षिता अतः भग्नमानसा सा सीता भर्तारं चिन्तयामास । अशोकशब्दः आचारक्विबन्तप्रकृतिककर्तृक्विबन्तः । इवार्थकः तुशब्दो वा"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "tier1:5.25.6:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «śokena» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "śokena",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 7
         },
         {
           "id": "phase2:5.25.6:0",
@@ -192,7 +274,8 @@
             "tier": "Sonnet",
             "step": "phase2_batch3_draft"
           },
-          "collision_tier1": true
+          "collision_tier1": true,
+          "seq": 8
         }
       ]
     },
@@ -206,15 +289,26 @@
         "siromani": "सेति । राक्षसीनां भयत्रस्ता अत एव प्रवातकदलीव वेपमाना अत एव पतिता सा सीता विवर्णवदना अभवत्"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "tier1:5.25.8:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «patitā» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "patitā",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 9
         },
         {
           "id": "lexical:5.25.8:0",
@@ -228,7 +322,14 @@
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:vivarRa",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW vivarRa",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=vivarRa"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 10
         },
         {
           "id": "crosstext:5.25.8:0",
@@ -248,7 +349,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Mahābhārata, Āraṇyakaparva 3.61.95",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 11
         }
       ]
     },
@@ -263,6 +366,7 @@
         "bhusana": "तस्याः सा दीर्घविपुला वेपन्त्या सीतया तदा ।\n\nददृशे कम्पिनी वेणी व्यालीव परिसर्पती\nसीतयेति व्यत्ययेन षष्ठ्यर्थे तृतीया । परिसर्पती परिसर्पन्ती । नुमभाव आर्षः"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "lexical:5.25.9:0",
@@ -275,7 +379,14 @@
           "type": "А",
           "subtype": "lexical",
           "trigger": "realia",
-          "source": "dic_mw:veRI"
+          "source": "dic_mw:veRI",
+          "source_links": [
+            {
+              "label": "MW veRI",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=veRI"
+            }
+          ],
+          "seq": 12
         }
       ]
     },
@@ -290,15 +401,26 @@
         "siromani": "लोकेति । यत्र यतः आभिः राक्षसीभिः अर्दिता रामेण च हीना अत एव दुःखिता अहं मुहूर्तमपि जीवामि अतः पण्डितैः समुदाहृतः अकाले मृत्युर्दुर्लभः अयं लोकप्रवादः सत्यः । श्लोकद्वयमेकान्वयि ।। 5.25.12,13 ।।\n\nएषेति । अल्पपुण्येव एषा ऽहं विनशिष्यामि विनङ्क्ष्यामि । तत्र दृष्टान्तः वायुवेगैराहता पूर्णां समुद्रमध्ये गौरिव"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "tier1:5.25.12:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «paṇḍitaiḥ samudāhṛtaḥ» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "paṇḍitaiḥ samudāhṛtaḥ",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 13
         },
         {
           "id": "lexical:5.25.12:0",
@@ -307,12 +429,19 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "akāla",
-          "note_ru": "Акāла (akāla, m./ind.) — «не-время, неподходящий момент» (a-privativum + kāla «время, смерть, Яма»). MW: akāla 'wrong or bad time; unseasonable'. В стихе loka-pravāda «народная мудрость»: «в недолжное время (akāle) смерть трудна (durlabha)» — смерть приходит только в нужный момент. Здесь ключевая двусмысленность: kāla означает и «время», и «Яма» (бог смерти). Akāla — буквально «отсутствие Ямы», то есть Яма не пришёл за ней. Это не пессимизм, а констатация дхармического закона: невозможно умереть «вне расписания» даже при желании. Подстрочник передаёт «трудно умереть», но не объясняет, почему это «народная мудрость» (paṇḍita-udāhṛta).",
+          "note_ru": "Акала (akāla, m./ind.) — «не-время, неподходящий момент» (a-privativum + kāla «время, смерть, Яма»). MW: akāla 'wrong or bad time; unseasonable'. В стихе loka-pravāda «народная мудрость»: «в недолжное время (akāle) смерть трудна (durlabha)» — смерть приходит только в нужный момент. Здесь ключевая двусмысленность: kāla означает и «время», и «Яма» (бог смерти). Akāla — буквально «отсутствие Ямы», то есть Яма не пришёл за ней. Это не пессимизм, а констатация дхармического закона: невозможно умереть «вне расписания» даже при желании. Подстрочник передаёт «трудно умереть», но не объясняет, почему это «народная мудрость» (paṇḍita-udāhṛta).",
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
           "source": "dic_mw:akAla",
-          "collision_tier1": true
+          "source_links": [
+            {
+              "label": "MW akAla",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=akAla"
+            }
+          ],
+          "collision_tier1": true,
+          "seq": 14
         },
         {
           "id": "crosstext:5.25.12:0",
@@ -332,7 +461,9 @@
           "sundara_sa_iast": "",
           "quality": "",
           "source": "Śāntiparvan (MBh XII) 12.169.14",
-          "collision_tier1": true
+          "source_links": [],
+          "collision_tier1": true,
+          "seq": 15
         }
       ]
     },
@@ -346,15 +477,26 @@
         "siromani": "तमिति । सिंहविक्रान्तवत् गच्छति तच्छीलः तं मे नाथं मे पश्यन्ति ते धन्याः"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "tier1:5.25.16:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "Букв. «подобны лепесткам распустившегося лотоса». Автор комментария «Тилака» толкует композит padmadala как «распустившийся лотос» (padmadalaṃ vikasitam).[Е. Костина] «kṛtajñaṃ priyavādinam» Опущено"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "Букв. «подобны лепесткам распустившегося лотоса». Автор комментария «Тилака» толкует композит padmadala как «распустившийся лотос» (padmadalaṃ vikasitam).",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "kṛtajñaṃ priyavādinam",
+              "kind": "omission",
+              "text": "опущено"
+            }
+          ],
+          "suggestions": [],
+          "seq": 16
         }
       ]
     },
@@ -368,6 +510,7 @@
         "siromani": "कीदृशमिति । येन कर्मणा इदं महद्दुःखं प्राप्यते तत् देहान्तरे देहमध्ये पापमिव कीदृशं कर्म मया कृतं संचितम्"
       },
       "has_tier1": false,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "lexical:5.25.18:0",
@@ -376,11 +519,18 @@
           "votable": true,
           "status": "review_required",
           "lemma_iast": "dehāntara",
-          "note_ru": "Дехāнтара (dehāntara, n.) — «другое тело, иное воплощение» (deha «тело» + antara «иное»). MW: dehāntara 'another body; obtaining another body — transmigration'. В стихе Сита спрашивает: «какой великий грех совершила я в прошлом воплощении (dehāntare)?» — это прямое указание на доктрину кармы и перевоплощения. Примечательно, что dehāntara (а не janmāntara «иное рождение» или pūrvajanna «прошлая жизнь») акцентирует именно смену телесной оболочки — технический термин, близкий к буддийскому pudgala-parāvṛtti, хотя здесь он в контексте брāхманической кармической доктрины.",
+          "note_ru": "Дехантара (dehāntara, n.) — «другое тело, иное воплощение» (deha «тело» + antara «иное»). MW: dehāntara 'another body; obtaining another body — transmigration'. В стихе Сита спрашивает: «какой великий грех совершила я в прошлом воплощении (dehāntare)?» — это прямое указание на доктрину кармы и перевоплощения. Примечательно, что dehāntara (а не janmāntara «иное рождение» или pūrvajanna «прошлая жизнь») акцентирует именно смену телесной оболочки — технический термин, близкий к буддийскому pudgala-parāvṛtti, хотя здесь он в контексте брахманической кармической доктрины.",
           "type": "А",
           "subtype": "lexical",
           "trigger": "etymology",
-          "source": "dic_mw:dehAntara"
+          "source": "dic_mw:dehAntara",
+          "source_links": [
+            {
+              "label": "MW dehAntara",
+              "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/2020/web/webtc/indexcaller.php?key=dehAntara"
+            }
+          ],
+          "seq": 17
         }
       ]
     },
@@ -394,15 +544,26 @@
         "siromani": "जीवितमिति । राक्षसीभिः रक्ष्यन्त्या रक्ष्यमाणया मया रामो नासाद्यते प्राप्यते अतः महता शोकेन वृता ऽहं जीवितं जीवनं त्यक्तुमिच्छामि"
       },
       "has_tier1": true,
+      "verse_ref": "https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md#песнь-25",
       "notes": [
         {
           "id": "tier1:5.25.19:0",
           "layer": "tier1",
           "layer_label": "ярус 1 · Леонов/Костина",
           "votable": false,
-          "status": "принято (печать)",
-          "editor": "kostina",
-          "note_ru": "[Е. Костина] «yat» Г-пресс рассматривает первое высказывание как причину второй: удел человека презренен, поскольку она не может по своей воле расстаться с жизнью. У Голдманов в комментариях тоже про это говорится"
+          "status": "в печатном аппарате перевода",
+          "provenance": "рабочий файл перевода, извлечено 01-07-2026",
+          "note_ru": "",
+          "service": [
+            {
+              "author": "Е. Костина",
+              "lemma_iast": "yat",
+              "kind": "note",
+              "text": "Г-пресс рассматривает первое высказывание как причину второй: удел человека презренен, поскольку она не может по своей воле расстаться с жизнью. У Голдманов в комментариях тоже про это говорится"
+            }
+          ],
+          "suggestions": [],
+          "seq": 18
         }
       ]
     }

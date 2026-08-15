@@ -1,19 +1,87 @@
-:root{--bg:#f6f2ea;--card:#fffdf8;--ink:#24211d;--mut:#6f675d;--line:#ded4c5;--acc:#73562c;--ok:#26733a;--edit:#946b00;--no:#a63737;--focus:#155eef;--t1:#8b2f2f;--lex:#285d7d;--p2:#674b98;--ed:#816817;--ct:#337454}
-*{box-sizing:border-box}body{font:16px/1.55 Georgia,serif;margin:0;background:var(--bg);color:var(--ink)}
-a{color:#654513}button,a.action{font:600 13px system-ui,sans-serif;padding:8px 13px;border:1px solid var(--acc);background:#fff;color:var(--acc);border-radius:6px;cursor:pointer;text-decoration:none}
+/* Apparatus ballot styling. Rebuilt under H2830 against votes/sarga.md.
+ *
+ * п.6 «cāraṇa — ṇ из другого шрифта взят, некрасиво, отличается от остальных»:
+ * the page was set in Georgia, which has no Latin Extended Additional, so the
+ * browser silently substituted a different face for exactly the retroflex and
+ * long vowels that carry the meaning — every ṇ, ṛ, ṭ, ḍ, ś, ṣ, ḥ, ṃ in a
+ * different typeface from the word around it. The stack below is ordered by
+ * IAST coverage, not by taste: Gentium (SIL, designed for this) first, then any
+ * local scholarly serif, and Times New Roman as the last resort because it is
+ * the one ubiquitous face that does cover the block. Georgia is gone. */
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{--bg:#f6f2ea;--card:#fffdf8;--ink:#24211d;--mut:#6f675d;--line:#ded4c5;--acc:#73562c;--ok:#26733a;--edit:#946b00;--no:#a63737;--focus:#155eef;--t1:#8b2f2f;--lex:#285d7d;--p2:#674b98;--ed:#816817;--ct:#337454;--machine:#5b6b7a;--service:#8a6d1f;
+--serif:'Gentium Book Plus','Gentium Plus','Charis SIL','Doulos SIL','Noto Serif','Source Serif 4','Times New Roman',serif;
+--ui:system-ui,'Segoe UI',sans-serif}
+*{box-sizing:border-box}body{font:17px/1.6 var(--serif);margin:0;background:var(--bg);color:var(--ink)}
+a{color:#654513}button,a.action{font:600 13px var(--ui);padding:8px 13px;border:1px solid var(--acc);background:#fff;color:var(--acc);border-radius:6px;cursor:pointer;text-decoration:none}
 button:hover,a.action:hover{background:var(--acc);color:#fff}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .review-header{position:sticky;top:0;background:#fffdfb;border-bottom:2px solid var(--acc);padding:12px 20px;z-index:10;box-shadow:0 2px 8px #00000012}
-.review-header h1{font-size:20px;margin:2px 0 6px}.breadcrumb{font:12px system-ui,sans-serif;color:var(--mut)}
-.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;font:13px/1.4 system-ui,sans-serif;color:var(--mut)}.toolbar b{color:var(--ink)}
-.review-shell{max-width:1040px;margin:0 auto;padding:18px}.legend,.recovery{font:13px system-ui,sans-serif;background:#eee7d9;border:1px solid var(--line);border-radius:7px;padding:10px 13px;margin:0 0 15px}
-.vcard,.portal-card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:15px 18px;margin:0 0 18px;box-shadow:0 1px 4px #0000000d}.vhead{font:13px system-ui,sans-serif;color:var(--mut)}
-.verse{background:#f3ede1;border-radius:6px;padding:9px 12px;margin:7px 0 10px}.verse .sa,.lemma{font-style:italic}.verse .ru{color:#39342e}
-.note{border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:6px;padding:11px 13px;margin:10px 0}.l-tier1{border-left-color:var(--t1);background:#fdf4f4}.l-lexical{border-left-color:var(--lex)}.l-phase2{border-left-color:var(--p2)}.l-edition{border-left-color:var(--ed)}.l-crosstext{border-left-color:var(--ct)}
+.review-header h1{font-size:20px;margin:2px 0 6px}.breadcrumb{font:12px var(--ui);color:var(--mut)}
+.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;font:13px/1.4 var(--ui);color:var(--mut)}.toolbar b,.toolbar strong{color:var(--ink)}
+.review-shell{max-width:1040px;margin:0 auto;padding:18px}
+
+/* п.1: every Sanskrit run in the prose is italic, in the same face as the text
+ * around it — the renderer marks the runs, this gives them one look. */
+.sa,.lemma{font-style:italic}
+.verse .sa{color:#4a3f2c}
+
+/* п.3 + п.7: the legend is a real legend now, not a one-line caption. */
+.legend,.recovery{font:13px/1.55 var(--ui);background:#eee7d9;border:1px solid var(--line);border-radius:7px;padding:10px 13px;margin:0 0 15px}
+.legend>summary{cursor:pointer;font-weight:600;color:var(--acc)}
+.legend-phase{margin:8px 0 10px}
+.legend-row{display:grid;grid-template-columns:180px 1fr;gap:2px 10px;padding:7px 0;border-top:1px solid var(--line)}
+.legend-row b{grid-column:2}.legend-row span:not(.badge){grid-column:2}
+.legend-vote{color:var(--acc)}.legend-prov,.legend-foot{color:var(--mut);font-size:12px}
+.legend-foot{margin:9px 0 0}
+
+.vcard,.portal-card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:15px 18px;margin:0 0 18px;box-shadow:0 1px 4px #0000000d}
+.vhead{font:13px var(--ui);color:var(--mut)}.vhead a{font:600 15px var(--ui)}
+.verse{background:#f3ede1;border-radius:6px;padding:9px 12px;margin:7px 0 10px}.verse .ru{color:#39342e}
+/* п.16: an empty verse pane explains itself instead of printing two dashes. */
+.verse.empty{background:#fbf5e6;border-left:4px solid var(--edit)}
+.empty-why{font:12.5px/1.5 var(--ui);color:#6d5715}
+
+.note{border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:6px;padding:11px 13px;margin:10px 0;scroll-margin-top:90px}
+.l-tier1{border-left-color:var(--t1);background:#fdf4f4}.l-lexical{border-left-color:var(--lex)}.l-phase2{border-left-color:var(--p2)}.l-edition{border-left-color:var(--ed)}.l-crosstext{border-left-color:var(--ct)}
 .d-accept{outline:2px solid var(--ok)}.d-edit{outline:2px solid var(--edit)}.d-reject{outline:2px solid var(--no);opacity:.78}
-.badge{font:11px system-ui,sans-serif;padding:2px 8px;border-radius:11px;background:#e9e1d2;color:var(--acc);margin-right:5px;display:inline-block}.b-tier1{background:var(--t1);color:#fff}.b-lexical{background:var(--lex);color:#fff}.b-phase2{background:var(--p2);color:#fff}.b-edition{background:var(--ed);color:#fff}.b-crosstext{background:var(--ct);color:#fff}.b-status{background:#fff;border:1px solid var(--line);color:var(--mut)}
-.controls{margin-top:9px;display:flex;gap:8px;flex-wrap:wrap;font:13px system-ui,sans-serif}.controls label{display:inline-flex;gap:5px;align-items:center;padding:5px 10px;border:1px solid var(--line);border-radius:20px;cursor:pointer}.controls input{accent-color:var(--acc)}
-textarea,.reject-reason{width:100%;font:14px Georgia,serif;padding:8px;border:1px solid var(--line);border-radius:5px;margin-top:7px}.hidden{display:none!important}.meta,.colleague,.mine,.sync-detail{font:12px system-ui,sans-serif;color:var(--mut);margin-top:6px}.colleague,.mine{padding:6px 9px;border-radius:5px}.colleague{background:#ebf3fa}.mine{background:#eaf6ec;color:var(--ok)}
-.status-pill{font:600 12px system-ui,sans-serif;padding:4px 9px;border-radius:12px;background:#e9e1d2}.status-synced,.status-submitted{background:#dff3e4;color:var(--ok)}.status-conflict,.status-offline{background:#fff0d5;color:#765500}.status-error{background:#fae0e0;color:var(--no)}
-.portal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.portal-card{margin:0}.portal-card h2{font-size:17px;margin:0 0 6px}.progress-track{height:8px;background:#e1d8c9;border-radius:6px;overflow:hidden}.progress-fill{height:100%;background:var(--ok);width:0}.portal-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.warning{border-left:5px solid var(--edit);padding:9px 12px;background:#fff6df}
-@media(max-width:600px){.review-header{position:static;padding:10px}.review-shell{padding:10px}.vcard{padding:12px}.toolbar button,.toolbar a.action{min-height:42px}.controls label{flex:1;justify-content:center}}
-@media print{.review-header,.controls,.portal-actions{display:none}.review-shell{max-width:none}.vcard{break-inside:avoid}}
+.nhead{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:5px}
+/* п.12: the running number is the citable handle, so it looks like one. */
+.seq{font:600 12px var(--ui);color:var(--mut);text-decoration:none;border:1px solid var(--line);border-radius:11px;padding:2px 8px;margin-right:5px;background:#fff}
+.seq:hover{border-color:var(--acc);color:var(--acc)}
+.ntext{margin:5px 0 0}
+
+.badge{font:11px var(--ui);padding:2px 8px;border-radius:11px;background:#e9e1d2;color:var(--acc);margin-right:5px;display:inline-block}
+.b-tier1{background:var(--t1);color:#fff}.b-lexical{background:var(--lex);color:#fff}.b-phase2{background:var(--p2);color:#fff}.b-edition{background:var(--ed);color:#fff}.b-crosstext{background:var(--ct);color:#fff}
+.b-status{background:#fff;border:1px solid var(--line);color:var(--mut)}
+.b-machine{background:var(--machine);color:#fff}
+.b-crit{background:#f8d7da;border:1px solid var(--no);color:#842029}
+
+/* п.5: the editor's service reminders are visibly NOT part of the note that
+ * goes to print — different ground, a dashed rule, and a label saying so. */
+.service{font:13px/1.5 var(--ui);background:#fbf6e8;border:1px dashed var(--service);border-radius:6px;padding:7px 10px;margin:8px 0 0;color:#5f4c14}
+.service-tag{display:block;font-size:11px;letter-spacing:.02em;text-transform:uppercase;color:var(--service);margin-bottom:3px}
+/* п.17: a machine proposal is a proposal; an unfilled template says so. */
+.suggestion{font:13.5px/1.55 var(--ui);background:#f2f5f8;border:1px solid #ccd6df;border-radius:6px;padding:7px 10px;margin:8px 0 0}
+.suggestion.incomplete{background:#fff6df;border-color:var(--edit)}
+.stub{color:#7a5c00;font-style:italic}
+
+.controls{margin-top:9px;display:flex;gap:8px;flex-wrap:wrap;font:13px var(--ui);border:0;padding:0}
+.controls label{display:inline-flex;gap:5px;align-items:center;padding:5px 10px;border:1px solid var(--line);border-radius:20px;cursor:pointer;background:#fff}
+.controls label:hover{border-color:var(--acc)}.controls input{accent-color:var(--acc)}
+textarea,.reject-reason,.comment{width:100%;font:14px var(--serif);padding:8px;border:1px solid var(--line);border-radius:5px;margin-top:7px}
+.comment{font-size:13px}
+.hidden{display:none!important}
+.meta,.colleague,.mine,.sync-detail{font:12px var(--ui);color:var(--mut);margin-top:6px}
+.meta a{color:var(--lex)}.hint{color:var(--mut)}
+.colleague,.mine{padding:6px 9px;border-radius:5px}.colleague{background:#ebf3fa}.mine{background:#eaf6ec;color:var(--ok)}
+.was{display:block;color:var(--mut);font-style:italic;margin-top:2px}
+.collide{font:12px var(--ui);background:#fff0f0;border:1px dashed var(--no);color:var(--no);border-radius:5px;padding:3px 8px;margin:7px 0 0;display:inline-block}
+
+.status-pill{font:600 12px var(--ui);padding:4px 9px;border-radius:12px;background:#e9e1d2}
+.status-synced,.status-submitted{background:#dff3e4;color:var(--ok)}.status-conflict,.status-offline{background:#fff0d5;color:#765500}.status-error{background:#fae0e0;color:var(--no)}
+.portal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.portal-card{margin:0}.portal-card h2{font-size:17px;margin:0 0 6px}
+.progress-track{height:8px;background:#e1d8c9;border-radius:6px;overflow:hidden}.progress-fill{height:100%;background:var(--ok);width:0}
+.portal-actions{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.warning{border-left:5px solid var(--edit);padding:9px 12px;background:#fff6df}
+@media(max-width:600px){.review-header{position:static;padding:10px}.review-shell{padding:10px}.vcard{padding:12px}.toolbar button,.toolbar a.action{min-height:42px}.controls label{flex:1;justify-content:center}.legend-row{grid-template-columns:1fr}.legend-row b,.legend-row span:not(.badge){grid-column:1}}
+@media print{.review-header,.controls,.portal-actions,.service,.suggestion{display:none}.review-shell{max-width:none}.vcard{break-inside:avoid}}
