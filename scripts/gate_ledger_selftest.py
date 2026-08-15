@@ -165,8 +165,13 @@ def test_apply_gate_keeps_colleague_cards_live():
 
     n = bsa.apply_gate(note(), ledger, for_reviewer="Костина")
     check("colleague voted -> still votable for Kostina", n["votable"] is True)
-    check("his verdict is shown on her card", "Леонов" in n["status"], n["status"])
-    check("verdict exposed to the template", "Леонов" in n.get("gate_verdicts", {}))
+    # The colleague's verdict must reach her card — but through `gate_verdicts`,
+    # which carries who/when/why, not through the status badge. Until H2830 the
+    # badge repeated the same fact in a second notation («принято: Леонов
+    # (2026-07-11)» above, «Леонов: accept · 2026-07-11» below), which is what
+    # votes/sarga.md п.8 objected to. The badge now states the state alone.
+    check("his verdict is shown on her card", "Леонов" in n.get("gate_verdicts", {}))
+    check("badge states the state, not the voter", n["status"] == "принято", n["status"])
 
     n = bsa.apply_gate(note(), ledger, for_reviewer="Леонов")
     check("own verdict -> control withdrawn", n["votable"] is False)
