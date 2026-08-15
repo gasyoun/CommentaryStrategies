@@ -10,6 +10,10 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **H1324 feasibility probe — a register of tradition-attested Pāṇini deviations is a GO, and cheaper than the handoff assumed (Opus 5 `claude-opus-5`).** Probed the licence vocabulary (`ārṣa`/`आर्ष`, `chāndasa`/`छान्दस`, `pramāda`) against two sources: GRETIL's four-commentary Bhagavadgītā TEI (1.74 M chars, IAST) and this repo's own committed Nīlakaṇṭha ṭīkā on the Nalopākhyāna and Rāmopākhyāna (Devanāgarī). **31 of 31 hand-checked hits are genuine licence-claims — 100 % precision against a ~30 % NO-GO floor.** Three findings reshape the build: (1) `pramāda` scores **0 of 56** (it always carries the moral "heedlessness" sense), so the narrow vocabulary is not a precision/recall trade-off but simply correct; (2) the handoff's headline claim that Nīlakaṇṭha "exists ONLY as page scans" was **already false when written** — the 11-07-2026 scrape recorded in [NILAKANTHA_VULGATE_CENSUS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/mahabharata-nilakantha/NILAKANTHA_VULGATE_CENSUS.md) covers 83,971 shlokas with 24,694 carrying ṭīkā, so the entire OCR fork dissolves; (3) locus alignment, feared as "where an unbudgeted project dies", costs **nothing**, because the ṭīkā is stored interleaved with its verse. Produced all 27 Gītā rows in the target shape rather than the single row the probe asked for, 8 of them independently attested by two or three commentators at the same verse. Report: [reports/COMMENTARY_LICENCE_REGISTER_FEASIBILITY_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/reports/COMMENTARY_LICENCE_REGISTER_FEASIBILITY_2026.md); dataset: [data/licence_register/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/licence_register); build handoff minted as H2860.
+
 ## [1.19.0] - 2026-08-15
 ### Changed
 
