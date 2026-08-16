@@ -1,4 +1,4 @@
-# The Nīlakaṇṭha licence register — 152 tradition-attested Pāṇini deviations from the *Bhāratabhāvadīpa*
+# The Nīlakaṇṭha licence register — 151 tradition-attested Pāṇini deviations from the *Bhāratabhāvadīpa*
 
 _Created: 16-08-2026 · Last updated: 16-08-2026_
 
