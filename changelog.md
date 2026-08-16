@@ -10,9 +10,17 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.24.0] — 2026-08-16
+
+Corpus-truth reconciliation at source (H2872) plus the H2809 footnote
+review-gate change, which was under [Unreleased] and ships in this tag.
+
 ### Changed
 
 - **H2809 — edition-footnote generator no longer stamps `review_required` on mechanically checkable claims (Grok 4.6 `grok-4.6`).** [`scripts/build_edition_footnotes.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_edition_footnotes.py) used to set `review_required: true` on every candidate, which is why the H1685 sheet carried 839 variant-reading cards that a locate-both-readings check already decides. New cards take [`scripts/footnote_review_required.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/footnote_review_required.py): default false, true only for `ASSEMBLY-GATE` (Leonov/Kostina edition-note overlap), `VAR-NO-TEXT` / `VAR-UNLOCATED`, `ABS-BORDERLINE`, or `ABS-NO-EVIDENCE`. The HTML builder skips the checkable ones rather than minting another sheet. Frozen H1685 sample (`data/analysis/h1685_adjudication/evidence.json`, 26-07-2026): **1013 → 61** `review_required` (−952, 94 %); of 839 variants, 793 `VAR-OK` + 5 `VAR-NULL` drop, 41 assembly-gate stay. Command: `python scripts/footnote_review_required.py --frozen-sample`. Existing book notes and the v1 sheet are not rewritten.
+### Fixed
+
+- **H2872 — corpus truth reconciled at source: the 17,863 composition, the 241 remainder, and every conflicting translator statistic (Fable 5 `claude-fable-5`).** Every published figure reproduced from the lowest committed source — the hash-pinned SamudraManthanam canonical JSONL (frozen 20-06-2026, state `0e3460b`) — with a lineage verdict per discrepancy: [docs/CORPUS_TRUTH_RECONCILIATION_17863.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/CORPUS_TRUTH_RECONCILIATION_17863.md) + machine table [data/analysis/corpus_truth_reconciliation.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/corpus_truth_reconciliation.json). Headline verdicts: Кальянов **7 424 confirmed exact**; В–Н **5 574 provably includes 1 685 notes of «XII(б). Мокшадхарма»** against its own canonical 9-book list (which yields 3 885 committed); Эрман 758 → committed 776; Гринцер 2 245 contradicts its own essay table (2 220) and the committed 2 157; Сыркин 1 621 vs committed 1 605 in 26 works; остаток **241 UNRESOLVED** with an evidence-bounded candidate composition 139 (XII-2017) + 82 (Rāmāyaṇa V online). The Erman book-VI imprint is **resolved as М.: Ладомир, 2009** from the committed digitization header (three conflicting variants — «М.: Наука, 1977», «СПб.: Наука, 2009», «М.: Ладомир» — collapsed to one; [articles/article1_vya.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article1_vya.md) bibliography and both HTML pages corrected; Кальянов edition range 1950–1992 → 1950–1996 per committed anchors). The unresolvable March-2026 rubric contradictions (Васильков «текстология» 3,4 %/7,7 %; Эрман «термин» 40,2 %/27,8 %) stay on the pages as **explicitly dated snapshot values** with pointers to the reconciliation — never silently re-picked. Regression gate: [scripts/corpus_truth_census.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/corpus_truth_census.py) `--check` wired into CI (fails on census drift, on any surface re-asserting a retired value, and on live recount divergence when the sibling corpus is present).
 
 ## [1.23.0] — 2026-08-16
 

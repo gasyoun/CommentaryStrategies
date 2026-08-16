@@ -147,6 +147,16 @@ confirmed in frontmatter (D resolved). Deltas found:
 5. **Cover letter typo:** line 42 «Гасунс **Мāрцис** Юрьевич» mixes an IAST ā into a
    Cyrillic name — should be «Марцис».
 
+**Addendum 16-08-2026 (H2872, Fable 5 `claude-fable-5`):** the bibliography entry
+«Эрман 2009» is corrected from «СПб.: Наука, 2009» to **«М.: Ладомир, 2009»** — resolved
+against the committed digitization header + meta imprint (see
+[docs/CORPUS_TRUTH_RECONCILIATION_17863.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/CORPUS_TRUTH_RECONCILIATION_17863.md)).
+The five sub-corpus figures cited above (7 424 … 1 621) are the published March-2026
+composition per the canon; their source reconciliation (Кальянов confirmed exact; В–Н
+5 574 includes «XII(б). Мокшадхарма»; остальные — snapshot values) is documented in the
+same memo and guarded by `scripts/corpus_truth_census.py --check` in CI. The article's
+own claims (17 863 = 17 622 + 241) remain canon-consistent and unchanged.
+
 **Net readiness: stays 4/5.** Human gates after H1469 (24-07-2026): Петров 1788
 (archival) and the Paribok attribution + bibliography fix (AXIS4_KD_DECISION §5).
 The axis_4/axis_2 inter-coder number is no longer missing — measured κ reported in
