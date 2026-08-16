@@ -1,6 +1,6 @@
 # Metadoc — SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md
 
-_Created: 27-07-2026 · Last updated: 27-07-2026_
+_Created: 27-07-2026 · Last updated: 16-08-2026_
 
 Спутник-запись к [SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/SUNDARAKANDA_QUEUE_ADJUDICATION_H1685_2026.md).
 
@@ -25,6 +25,7 @@ _Created: 27-07-2026 · Last updated: 27-07-2026_
 - **Проверяемый судья:** Sonnet 5 (`claude-sonnet-5`), проходы H268 WS-C1 / H276 WS-2 (07-07-2026).
 - **Предшественник по форме:** [H1657](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1657-Opus_SanskritLexicography_acc-ncc-p2-agent-adjudication-49k_26.07.26.md) (ACC×NCC, 49 019 строк).
 - Данные и скрипты: [`data/analysis/h1685_adjudication/`](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/analysis/h1685_adjudication), `scripts/h1685_*.py`.
+- **H2809 (16-08-2026):** ступень 0 вписана в генератор; раздел 11 этого отчёта + [`scripts/footnote_review_required.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/footnote_review_required.py).
 
 ## Что фиксирует этот отчёт такого, чего нет в коде
 

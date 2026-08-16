@@ -2,20 +2,22 @@
 """Generate footnote candidates for critical↔southern edition differences.
 
 Deterministic (no LLM — these are structural statements). Two candidate
-kinds, both `review_required`:
+kinds. ``review_required`` defaults false (H2809 / method step 0) unless
+``footnote_review_required.review_required_for`` marks the claim
+uncheckable or it overlaps a Leonov/Kostina edition note:
 
 1. **Absence footnotes** («в критическом издании (Барода) отсутствует») from
    genuine structural absences (significant_absences.json → divergence ==
    'structural_absence'), grouped into contiguous passages, deduped against
-   Leonov/Kostina's own notes.
+   Leonov/Kostina's own notes. At generation time there is no independent
+   global re-search, so absences stay ``review_required`` (ABS-NO-EVIDENCE).
 2. **Variant-reading footnotes** (H776) — the counterpart for verses that DO
    have a critical-edition match but read differently: the actual competing
    readings from the akṣara-level apparatus
    (data/analysis/helayo_spike/apparatus_sundara_variants.json → entries),
    one candidate per verse carrying its `apparatus` loci (`crit`]`south`
-   pairs), not just a generic "reworded" label. Before H776 this layer was
-   computed (by build_edition_apparatus.py) but never reached the footnote
-   review gate at all -- variant verses had no footnote-candidate path.
+   pairs), not just a generic "reworded" label. Both sides are located in
+   their edition verse texts; located claims are not ``review_required``.
 
 Format is per COMMENTARY_ROADMAP §3 and is [to ratify].
 
@@ -35,20 +37,49 @@ CD = os.path.join(REPO, "data", "edition_comparison")
 OUTDIR = os.path.join(REPO, "data", "edition_footnotes")
 APPARATUS_PATH = os.path.join(REPO, "data", "analysis", "helayo_spike", "apparatus_sundara_variants.json")
 
+sys.path.insert(0, HERE)
+from footnote_review_required import (  # noqa: E402
+    load_footnote_evidence_index,
+    review_required_for_candidate,
+    variant_locate,
+)
+
 MIN_RUN = 2          # [to ratify] min passage length for a standalone footnote
 WHOLE_FRAC = 0.8     # a run covering >= this fraction of a sarga = whole-sarga absence
 EDITION_KW = ["критическ", "южн", "издани", "выпал", "отсутств", "редакц", "рецензи", "вульгат", "рукопис"]
 
 
-def build_variant_reading_candidates(leo_any, leo_edition):
+def _edition_texts():
+    """crit_id / south_id → IAST. Missing corpus → empty maps (variants stay uncheckable)."""
+    try:
+        from compare_editions import load_critical, load_southern
+    except Exception as exc:
+        sys.stderr.write(f"WARN: edition texts unavailable ({exc})\n")
+        return {}, {}
+    try:
+        crit = {f"5.{s}.{v}": t for s, v, t in load_critical()}
+        south = {f"5.{s}.{v}": t for s, v, t in load_southern()}
+        return crit, south
+    except Exception as exc:
+        sys.stderr.write(f"WARN: could not load edition texts ({exc})\n")
+        return {}, {}
+
+
+def build_variant_reading_candidates(leo_any, leo_edition, crit_by_id=None,
+                                    south_by_id=None, evidence_idx=None):
     """H776: one candidate per clean-variant verse in the akṣara-level
     apparatus, carrying the actual competing readings (not just a
     'reworded' label). Source: build_edition_apparatus.py's output --
-    read-only here, this generator never re-runs the aligner."""
+    read-only here, this generator never re-runs the aligner.
+
+    ``review_required`` is the H2809 predicate (located readings are
+    not a human card unless they overlap a Leonov edition note)."""
     if not os.path.exists(APPARATUS_PATH):
         return []
     ap = json.load(open(APPARATUS_PATH, encoding="utf-8"))
     other_key = ap["_meta"].get("other_key", "southern")
+    crit_by_id = crit_by_id or {}
+    south_by_id = south_by_id or {}
     out = []
     for e in ap["entries"]:
         vid = e["critical"]
@@ -56,6 +87,15 @@ def build_variant_reading_candidates(leo_any, leo_edition):
         s = vparts(vid)[0]
         readings = [{"crit": a["crit"], other_key: a[other_key]} for a in e["apparatus"]]
         note = "; ".join(f"{r['crit']} ] {r[other_key]}" for r in readings)
+        live_c, live_s = crit_by_id.get(vid, ""), south_by_id.get(south_id, "")
+        if live_c and live_s:
+            var_ev = variant_locate(readings, live_c, live_s, other_key=other_key)
+        else:
+            var_ev = (evidence_idx or {}).get(("variant_reading", vid)) or {
+                "verse_texts_available": False,
+                "all_readings_located": False,
+                "n_readings_distinct": 0,
+            }
         rec = {
             "anchor": vid, "kind": "variant_reading", "sarga": s,
             "range": vid, "southern_id": south_id, "count": len(readings),
@@ -65,11 +105,19 @@ def build_variant_reading_candidates(leo_any, leo_edition):
             "confidence": f"aksara-level Gotoh, {len(readings)} loci (H776)",
             "leonov_note_here": [south_id] if south_id in leo_any else None,
             "leonov_edition_note_here": [south_id] if south_id in leo_edition else None,
-            "review_required": True,
             "source": "helayo_spike/apparatus_sundara_variants.entries",
             "provenance": {"generator": "scripts/build_edition_footnotes.py",
                           "aligner": "scripts/build_edition_apparatus.py (H776 aksara-level)",
-                          "deterministic": True},
+                          "deterministic": True,
+                          "review_required_predicate": "scripts/footnote_review_required.py"},
+        }
+        req, reason = review_required_for_candidate(rec, variant_ev=var_ev)
+        rec["review_required"] = req
+        rec["review_required_reason"] = reason
+        rec["mechanical_check"] = {
+            "verse_texts_available": var_ev["verse_texts_available"],
+            "all_readings_located": var_ev["all_readings_located"],
+            "n_readings_distinct": var_ev["n_readings_distinct"],
         }
         out.append(rec)
     return out
@@ -107,6 +155,7 @@ def main():
             runs.append({"sarga": s, "verses": [v]})
 
     text_by_id = {r["southern"]: r.get("text", "") for r in structural}   # IAST of each absent verse
+    evidence_idx = load_footnote_evidence_index()
 
     candidates, singletons = [], []
     for run in runs:
@@ -134,13 +183,24 @@ def main():
             "confidence": "structural_absence (best_crit_jaccard < 0.25)",
             "leonov_note_here": leo_here or None,
             "leonov_edition_note_here": leo_ed or None,
-            "review_required": True,
             "source": "edition_comparison/structural_absence",
-            "provenance": {"generator": "scripts/build_edition_footnotes.py", "deterministic": True},
+            "provenance": {
+                "generator": "scripts/build_edition_footnotes.py",
+                "deterministic": True,
+                "review_required_predicate": "scripts/footnote_review_required.py",
+            },
         }
+        # Prefer H1685 independent global re-search; generator Jaccard is not evidence.
+        abs_ev = (evidence_idx or {}).get((kind, ids[0]))
+        req, reason = review_required_for_candidate(rec, absence_ev=abs_ev)
+        rec["review_required"] = req
+        rec["review_required_reason"] = reason
         (singletons if kind == "single" else candidates).append(rec)
 
-    variant_candidates = build_variant_reading_candidates(leo_any, leo_edition)
+    crit_by_id, south_by_id = _edition_texts()
+    variant_candidates = build_variant_reading_candidates(
+        leo_any, leo_edition, crit_by_id, south_by_id, evidence_idx
+    )
 
     os.makedirs(OUTDIR, exist_ok=True)
     payload = {
@@ -156,7 +216,15 @@ def main():
             "sarga_absences": sum(1 for c in candidates if c["kind"] == "sarga_absence"),
             "with_leonov_note_on_verse": sum(1 for c in candidates if c["leonov_note_here"]),
             "with_leonov_edition_note": sum(1 for c in candidates if c["leonov_edition_note_here"]),
-            "all_review_required": True,
+            "review_required_true": sum(
+                1 for c in candidates + singletons + variant_candidates
+                if c.get("review_required")
+            ),
+            "review_required_false": sum(
+                1 for c in candidates + singletons + variant_candidates
+                if not c.get("review_required")
+            ),
+            "review_required_predicate": "scripts/footnote_review_required.py",
             "rights_note": "coordinates are corpus-derived — verify against the print critical apparatus",
         },
         "candidates": candidates,
@@ -179,6 +247,9 @@ def main():
     print(f"footnote candidates: {m['footnote_candidates']} passages "
           f"({m['sarga_absences']} whole-sarga) + {m['single_verse_absences']} singletons")
     print(f"variant-reading candidates (H776): {m['variant_reading_candidates']}")
+    print(f"review_required: {m['review_required_true']} true / "
+          f"{m['review_required_false']} false "
+          f"(predicate {m['review_required_predicate']})")
     print(f"dedup: {m['with_leonov_edition_note']} overlap a Leonov EDITION note; "
           f"{m['with_leonov_note_on_verse']} have any Leonov note on the verse")
     print(f"wrote candidates.json -> {OUTDIR}")

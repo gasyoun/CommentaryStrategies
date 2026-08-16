@@ -1,6 +1,6 @@
 # Адъюдикация очередей Сундараканды — H1685 (ruling В2)
 
-_Created: 27-07-2026 · Last updated: 28-07-2026_
+_Created: 27-07-2026 · Last updated: 16-08-2026_
 
 Агентная адъюдикация всех карточек, стоявших в четырёх воротных листах
 Сундараканды, с процитированными доказательствами по каждой; человеку остаётся
@@ -295,5 +295,32 @@ integrity-issue, потому что «в очереди 51 карточка» �
 - Одна сносочная карточка (`5.58.161`) припаркована как единственная, которую
   корпусными средствами не решить: нужна сверка с **печатным** критическим
   аппаратом Бароды.
+
+## 11. Ступень 0 в генераторе (H2809, 16-08-2026)
+
+Адъюдикация H1685 была ступенью 2. Ступень 0 — не создавать карточку, если
+утверждение механически проверяемо — теперь сидит в самом
+[`scripts/build_edition_footnotes.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_edition_footnotes.py)
+через предикат
+[`scripts/footnote_review_required.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/footnote_review_required.py).
+Книжные заметки и лист `…edition-footnotes_v1_review.html` не переписывались.
+
+Замороженный образец — тот же H1685-класс
+[`data/analysis/h1685_adjudication/evidence.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/h1685_adjudication/evidence.json)
+(26-07-2026). Команда:
+`python scripts/footnote_review_required.py --frozen-sample`.
+
+| class | before `review_required` | after |
+|---|---:|---:|
+| all footnotes | 1013 | **61** |
+| variant_reading | 839 | 41 |
+| verse_range | 50 | 7 |
+| single | 123 | 13 |
+| sarga_absence | 1 | 0 |
+
+После, по именному предикату: `VAR-OK` 793 · `ABS-OK` 154 · `ASSEMBLY-GATE` 60 ·
+`VAR-NULL` 5 · `ABS-BORDERLINE` 1. Гейт сборки (пересечение с edition-заметкой
+Леонова/Костиной) остаётся `review_required`. Карточек, которых больше не
+создавать: **952 (94 %)**.
 
 _Dr. Mārcis Gasūns_
