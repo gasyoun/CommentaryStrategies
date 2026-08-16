@@ -15,6 +15,7 @@ Read-only.
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import sys
 
@@ -37,6 +38,12 @@ def main() -> int:
     ap.add_argument("--max", type=int, default=40)
     ap.add_argument("--context", type=int, default=0, help="chars of context around a hit")
     ap.add_argument("--stats-range", help="A-B: per-page char/image stats for that PDF page range")
+    ap.add_argument("--dump-range", help="A-B: page range to dump as text")
+    ap.add_argument(
+        "--dump-to",
+        help="directory for --dump-range (one p####.txt per page). Point it OUTSIDE "
+        "the repo: extracted text of a copyrighted volume is working material.",
+    )
     args = ap.parse_args()
 
     doc = fitz.open(args.pdf)
@@ -70,6 +77,19 @@ def main() -> int:
             t = page.get_text("text")
             head = " ".join(t.split()[:9])
             print(f"p{pno + 1:>4}  chars={len(t):>5}  imgs={len(page.get_images())}  {head}")
+
+    if args.dump_range:
+        if not args.dump_to:
+            print("--dump-range needs --dump-to", file=sys.stderr)
+            return 2
+        os.makedirs(args.dump_to, exist_ok=True)
+        a, b = (int(x) for x in args.dump_range.split("-"))
+        for pno in range(a - 1, min(b, doc.page_count)):
+            text = doc.load_page(pno).get_text("text")
+            dest = os.path.join(args.dump_to, f"p{pno + 1:04d}.txt")
+            with open(dest, "w", encoding="utf-8", newline="\n") as fh:
+                fh.write(text)
+        print(f"dumped pages {a}-{b} -> {args.dump_to}")
 
     return 0
 
