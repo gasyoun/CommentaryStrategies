@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.21.0] — 2026-08-16
+
 ## [1.20.0] - 2026-08-16
 
 ### Added
