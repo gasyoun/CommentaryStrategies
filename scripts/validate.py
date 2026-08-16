@@ -61,8 +61,14 @@ def validate_html_structure(path: Path) -> list[str]:
     return errors
 
 def main():
+    # `review/` holds gitignored vote sheets built by the org's shared emitter
+    # (csl_pyutil.render_review_sheet). Those are self-contained by design — no
+    # external stylesheet, their own shell — so the design-system check below
+    # would fail every one of them. CI never sees the folder; this keeps a local
+    # `validate.py` run from flagging an artifact this repo does not own the
+    # markup for.
     skip_dirs = {'.git', '__pycache__', 'node_modules', 'test-results',
-                 'playwright-report', 'archive', 'महाभारत_files',
+                 'playwright-report', 'archive', 'review', 'महाभारत_files',
                  'Рамаяна. Книга 5. Сундараканда_files'}
     # Rule-definition docs must quote the forbidden strings in order to define them —
     # don't let the validator flag its own rulebook.
