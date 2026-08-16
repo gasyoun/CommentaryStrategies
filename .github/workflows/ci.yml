@@ -110,6 +110,12 @@ jobs:
       # h2864 vote settled all but three declared exceptions, so this can gate.
       - name: Transliteration hygiene (no undeclared mixed-script words)
         run: python scripts/translit_hygiene.py --check
+      # Corpus-truth gate (H2872): committed census stays internally consistent
+      # and no surface re-asserts the reconciled defects (Erman 1977/SPb imprint,
+      # Kalyanov 1950-1992, unqualified snapshot totals). The live recount half
+      # runs only where ../SamudraManthanam exists (not in CI).
+      - name: Corpus-truth reconciliation gate
+        run: python scripts/corpus_truth_census.py --check
       - name: All generated artifacts reproducible from data
         run: |
           python scripts/export_tei.py

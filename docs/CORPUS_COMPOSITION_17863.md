@@ -1,6 +1,6 @@
 # Канонический состав корпуса: 17 863 примечания
 
-_Created: 21-07-2026 · Last updated: 21-07-2026_
+_Created: 21-07-2026 · Last updated: 16-08-2026_
 
 Единственная каноническая формулировка состава корпуса *CommentaryStrategies*. Любая статья
 серии, ссылающаяся на «17 863 примечания», обязана быть совместима с этим документом; источник
@@ -63,6 +63,26 @@ _Created: 21-07-2026 · Last updated: 21-07-2026_
 [data/book/intro_article_skeleton.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/intro_article_skeleton.md) (M02),
 [articles/SUBMISSION_READINESS_A19.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/SUBMISSION_READINESS_A19.md).
 
-_Fable 5 (`claude-fable-5`), H1377._
+## Сверка по источникам (H2872, 16-08-2026)
+
+Источниковая сверка всех цифр этой таблицы выполнена в
+[docs/CORPUS_TRUTH_RECONCILIATION_17863.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/CORPUS_TRUTH_RECONCILIATION_17863.md)
+(машиночитаемая таблица: [data/analysis/corpus_truth_reconciliation.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/corpus_truth_reconciliation.json);
+регрессионный гейт: [scripts/corpus_truth_census.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/corpus_truth_census.py)).
+Каноническая формулировка выше — **опубликованная композиция** (снимок марта 2026) и для статей
+не меняется. Зафиксированные сверкой факты, которые обязана учитывать любая новая цифровая работа:
+
+- **7 424 Кальянова подтверждены точно** коммитнутым корпусом.
+- **5 574 Василькова–Невелевой включают 1 685 примечаний «XII(б). Мокшадхарма»** (по
+  собственной таблице [vassilkov_commentary_analysis.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/vassilkov_commentary_analysis.html)) —
+  книги XII в списке книг этой таблицы НЕТ; по каноническому списку девяти книг коммитнутый
+  корпус даёт 3 885.
+- Эрман 758 / Гринцер 2 245 / Сыркин 1 621 из коммитнутого корпуса не воспроизводятся
+  (776 / 2 157 / 1 605 в 26 работах); вердикты и кандидатная композиция остатка 241
+  (139 + 82, UNRESOLVED) — в сверке.
+- Отпечаток Эрмана: **М.: Ладомир, 2009** (решено по коммитнутой оцифровке; «М.: Наука, 1977»
+  и «СПб.: Наука, 2009» сняты).
+
+_Fable 5 (`claude-fable-5`), H1377; сверка — H2872._
 
 _Dr. Mārcis Gasūns_
