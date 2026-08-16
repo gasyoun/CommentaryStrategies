@@ -10,6 +10,7 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.23.1] - 2026-08-16
 ### Changed
 
 - **H2809 — edition-footnote generator no longer stamps `review_required` on mechanically checkable claims (Grok 4.6 `grok-4.6`).** [`scripts/build_edition_footnotes.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_edition_footnotes.py) used to set `review_required: true` on every candidate, which is why the H1685 sheet carried 839 variant-reading cards that a locate-both-readings check already decides. New cards take [`scripts/footnote_review_required.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/footnote_review_required.py): default false, true only for `ASSEMBLY-GATE` (Leonov/Kostina edition-note overlap), `VAR-NO-TEXT` / `VAR-UNLOCATED`, `ABS-BORDERLINE`, or `ABS-NO-EVIDENCE`. The HTML builder skips the checkable ones rather than minting another sheet. Frozen H1685 sample (`data/analysis/h1685_adjudication/evidence.json`, 26-07-2026): **1013 → 61** `review_required` (−952, 94 %); of 839 variants, 793 `VAR-OK` + 5 `VAR-NULL` drop, 41 assembly-gate stay. Command: `python scripts/footnote_review_required.py --frozen-sample`. Existing book notes and the v1 sheet are not rewritten.
