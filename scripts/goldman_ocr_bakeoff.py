@@ -124,9 +124,23 @@ def levenshtein(a: str, b: str) -> int:
     return prev[-1]
 
 
+# Typographic folding: curly vs. straight quotes and dash width are the
+# typesetter's business, not an extraction error, and punishing them would
+# flatter whichever engine happens to share our gold's convention.
+TYPO_FOLD = str.maketrans(
+    {
+        "‘": "'", "’": "'", "‛": "'", "´": "'", "`": "'",
+        "“": '"', "”": '"', "„": '"', "‟": '"', "″": '"',
+        "–": "—", "‒": "—", "―": "—",
+        "­": "", "​": "",
+        "ﬁ": "fi", "ﬂ": "fl",
+    }
+)
+
+
 def normalize(s: str) -> str:
     """Whitespace-insensitive comparison — line wrapping is not an OCR error."""
-    return " ".join(s.split())
+    return " ".join(s.translate(TYPO_FOLD).split())
 
 
 # --- engines ----------------------------------------------------------------
