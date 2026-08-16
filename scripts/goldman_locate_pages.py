@@ -17,6 +17,8 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import shutil
+import subprocess
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -25,9 +27,29 @@ sys.stderr.reconfigure(encoding="utf-8")
 import fitz  # noqa: E402
 
 
+TESSERACT = shutil.which("tesseract") or r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+
 def clean(s: str) -> str:
     """Bookmark titles in these files are NUL-padded."""
     return s.replace("\x00", "").strip()
+
+
+def _ocr_page(doc, pno: int, workdir: str, dpi: int) -> str:
+    """Render one page and run Tesseract over it. Returns the recognised text."""
+    zoom = dpi / 72.0
+    png = os.path.join(workdir, "_ocr_tmp.png")
+    doc.load_page(pno).get_pixmap(matrix=fitz.Matrix(zoom, zoom)).save(png)
+    base = os.path.join(workdir, "_ocr_tmp")
+    subprocess.run(
+        [TESSERACT, png, base, "-l", "eng", "--psm", "1"],
+        check=True,
+        capture_output=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    with open(base + ".txt", encoding="utf-8") as fh:
+        return fh.read()
 
 
 def main() -> int:
@@ -44,6 +66,14 @@ def main() -> int:
         help="directory for --dump-range (one p####.txt per page). Point it OUTSIDE "
         "the repo: extracted text of a copyrighted volume is working material.",
     )
+    ap.add_argument(
+        "--ocr",
+        action="store_true",
+        help="re-OCR the page with Tesseract instead of reading the embedded layer. "
+        "Slower (~5 s/page) but its ASCII is clean, whereas the Acrobat Paper "
+        "Capture layer renders every IAST diacritic as punctuation debris.",
+    )
+    ap.add_argument("--dpi", type=int, default=300)
     args = ap.parse_args()
 
     doc = fitz.open(args.pdf)
@@ -85,11 +115,14 @@ def main() -> int:
         os.makedirs(args.dump_to, exist_ok=True)
         a, b = (int(x) for x in args.dump_range.split("-"))
         for pno in range(a - 1, min(b, doc.page_count)):
-            text = doc.load_page(pno).get_text("text")
+            if args.ocr:
+                text = _ocr_page(doc, pno, args.dump_to, args.dpi)
+            else:
+                text = doc.load_page(pno).get_text("text")
             dest = os.path.join(args.dump_to, f"p{pno + 1:04d}.txt")
             with open(dest, "w", encoding="utf-8", newline="\n") as fh:
                 fh.write(text)
-        print(f"dumped pages {a}-{b} -> {args.dump_to}")
+        print(f"dumped pages {a}-{b} ({'tesseract' if args.ocr else 'embedded'}) -> {args.dump_to}")
 
     return 0
 
