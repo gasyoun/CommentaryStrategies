@@ -1,0 +1,46 @@
+{
+  "sample": {
+    "source": "data/analysis/h1685_adjudication/evidence.json",
+    "handoff": "H1685",
+    "candidates_meta_date_note": "data/edition_footnotes/candidates.json (generator dump that H1685's 1013-card sheet was built from; _meta.all_review_required = True)",
+    "n_footnote_cards": 1013,
+    "n_variants": 839,
+    "bars": {
+      "present_bar_jaccard": 0.4,
+      "absent_bar_jaccard": 0.267
+    }
+  },
+  "before": {
+    "review_required_true": 1013,
+    "review_required_false": 0,
+    "by_kind": {
+      "verse_range": 50,
+      "sarga_absence": 1,
+      "single": 123,
+      "variant_reading": 839
+    }
+  },
+  "after": {
+    "review_required_true": 61,
+    "review_required_false": 952,
+    "by_kind_true": {
+      "verse_range": 7,
+      "single": 13,
+      "variant_reading": 41
+    },
+    "by_reason": {
+      "ABS-OK": 154,
+      "ASSEMBLY-GATE": 60,
+      "ABS-BORDERLINE": 1,
+      "VAR-OK": 793,
+      "VAR-NULL": 5
+    }
+  },
+  "_meta": {
+    "handoff": "H2809",
+    "generated_by": "scripts/footnote_review_required.py --frozen-sample",
+    "tier": "Grok 4.6 (grok-4.6)",
+    "date": "16-08-2026",
+    "command": "python scripts/footnote_review_required.py --frozen-sample"
+  }
+}

@@ -24,14 +24,25 @@ OUT = os.path.join(DIR, "commentarystrategies-edition-footnotes_v1_review.html")
 
 def main():
     d = json.load(open(os.path.join(DIR, "candidates.json"), encoding="utf-8"))
-    items = (d.get("candidates", []) + d.get("single_verse_absences", [])
-             + d.get("variant_reading_candidates", []))  # H776
-    payload = {"meta": d.get("_meta", {}), "items": items}
+    raw = (d.get("candidates", []) + d.get("single_verse_absences", [])
+           + d.get("variant_reading_candidates", []))  # H776
+    # Step 0 (H2809): do not create a card when the claim is mechanically checkable.
+    items = [it for it in raw if it.get("review_required")]
+    skipped = len(raw) - len(items)
+    payload = {
+        "meta": {
+            **d.get("_meta", {}),
+            "cards_emitted": len(items),
+            "cards_skipped_mechanical": skipped,
+        },
+        "items": items,
+    }
     html = PAGE.replace("/*DATA*/null", json.dumps(payload, ensure_ascii=False))
     os.makedirs(DIR, exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as fh:
         fh.write(html)
-    print(f"wrote {OUT} ({len(items)} candidates)")
+    print(f"wrote {OUT} ({len(items)} review_required candidates; "
+          f"{skipped} mechanically checkable skipped)")
 
 
 PAGE = r"""<!DOCTYPE html>
