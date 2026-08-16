@@ -1,15 +1,19 @@
 """H2860 — interactive review sheet for the Nīlakaṇṭha licence register.
 
-Two card groups, 44 in all:
+Two card groups, 46 in all:
 
-  A. the 14 hits no rule could type, ruled by hand (13 rejected as the ārṣa homonym,
-     1 kept with a hand-assigned deviation_type) — the human confirms or overturns;
-  B. a reproducible 30-row uniform sample (seed 2860) of the 151 auto-typed rows —
+  A. the 16 hits no rule could type, ruled by hand (14 rejected as the ārṣa homonym,
+     2 kept with a hand-assigned deviation_type) — the human confirms or overturns;
+  B. a reproducible 30-row uniform sample (seed 2860) of the 149 auto-typed rows —
      the fresh hand-precision sample H2860's acceptance block asks for, offered to a
      second pair of eyes.
 
 Everything an agent or a rule could already settle is screened out and counted, per the
 /review-sheet Phase 0-bis gate; the evidence file is named in the sheet header.
+
+H2883: every count and percentage below is DERIVED from the loaded register/reject
+tables at render time. Do not re-hardcode a figure here — the 92,1 % / 152 / "151 из
+151" drift the published sheet carried came from literals that outlived the data.
 
 Usage: python scripts/build_licence_register_review_sheet.py
 """
@@ -54,30 +58,49 @@ def source_href(locus_id, parva):
             f"?page={upa}&id={locus_id[:13]}")
 
 
-BUTTONS_REJECT = (
-    "<p><b>«Согласен»</b> — строка остаётся вне регистра; она уже учтена в измеренной "
-    "точности 92,1 % (152 из 165) и лежит в "
-    f"<a href=\"{BLOB}nilakantha_licence_rejected.tsv\">nilakantha_licence_rejected.tsv</a> "
-    "вместе с причиной отклонения.</p>"
-    "<p><b>«Не согласен»</b> — строка возвращается в регистр (станет 153), измеренная "
-    "точность вырастет, и в заметке нужно указать deviation_type, который вы считаете "
-    "верным: без него строку некуда положить.</p>"
-    "<p><b>«Отложить»</b> — строка остаётся отклонённой до следующего круга; ничего не "
-    "ломается, но цифра точности остаётся спорной.</p>")
-BUTTONS_HAND = (
-    "<p><b>«Согласен»</b> — строка остаётся в регистре с этим типом и с пометкой "
-    "<code>classification=hand</code>.</p>"
-    "<p><b>«Не согласен»</b> — тип переписывается по вашей заметке; если это вообще не "
-    "licence-claim, строка уходит в отклонённые и регистр становится 151-строчным.</p>"
-    "<p><b>«Отложить»</b> — строка остаётся как есть до следующего круга.</p>")
-BUTTONS_AUTO = (
-    "<p><b>«Согласен»</b> — строка засчитывается как верная в выборке из 30, подтверждая "
-    "измеренные 100 % точности авто-типизации (151 из 151).</p>"
-    "<p><b>«Не согласен»</b> — точность авто-прохода падает. Это <u>та самая</u> цифра, по "
-    "которой H2860 объявляется провалившимся, если она уйдёт ниже ~90 %: три несогласия "
-    "из 30 — ещё порог, четыре — уже провал, и регистр придётся перетипизировать.</p>"
-    "<p><b>«Отложить»</b> — строка выпадает из знаменателя выборки; при большом числе "
-    "отложенных выборка перестаёт быть 30-строчной и оценку придётся повторить.</p>")
+def ru_pct(x):
+    """Russian decimal comma, one place — the sheet's own number format."""
+    return f"{x:.1f}".replace(".", ",")
+
+
+def ru_plural(n, one, few, many):
+    """Russian numeral agreement — 151 строкА, 152 строкИ, 155 строК."""
+    if n % 100 in (11, 12, 13, 14):
+        return many
+    return {1: one, 2: few, 3: few, 4: few}.get(n % 10, many)
+
+
+def buttons_reject(n_reg, n_hits, precision):
+    return (
+        "<p><b>«Согласен»</b> — строка остаётся вне регистра; она уже учтена в измеренной "
+        f"точности {ru_pct(precision)} % ({n_reg} из {n_hits}) и лежит в "
+        f"<a href=\"{BLOB}nilakantha_licence_rejected.tsv\">nilakantha_licence_rejected.tsv</a> "
+        "вместе с причиной отклонения.</p>"
+        f"<p><b>«Не согласен»</b> — строка возвращается в регистр (станет {n_reg + 1}), "
+        "измеренная точность вырастет, и в заметке нужно указать deviation_type, который вы "
+        "считаете верным: без него строку некуда положить.</p>"
+        "<p><b>«Отложить»</b> — строка остаётся отклонённой до следующего круга; ничего не "
+        "ломается, но цифра точности остаётся спорной.</p>")
+
+
+def buttons_hand(n_reg):
+    return (
+        "<p><b>«Согласен»</b> — строка остаётся в регистре с этим типом и с пометкой "
+        "<code>classification=hand</code>.</p>"
+        "<p><b>«Не согласен»</b> — тип переписывается по вашей заметке; если это вообще не "
+        f"licence-claim, строка уходит в отклонённые и регистр становится {n_reg - 1}-строчным.</p>"
+        "<p><b>«Отложить»</b> — строка остаётся как есть до следующего круга.</p>")
+
+
+def buttons_auto(n_auto):
+    return (
+        f"<p><b>«Согласен»</b> — строка засчитывается как верная в выборке из {SAMPLE_N}, "
+        f"подтверждая измеренные 100 % точности авто-типизации ({n_auto} из {n_auto}).</p>"
+        "<p><b>«Не согласен»</b> — точность авто-прохода падает. Это <u>та самая</u> цифра, по "
+        "которой H2860 объявляется провалившимся, если она уйдёт ниже ~90 %: три несогласия "
+        f"из {SAMPLE_N} — ещё порог, четыре — уже провал, и регистр придётся перетипизировать.</p>"
+        "<p><b>«Отложить»</b> — строка выпадает из знаменателя выборки; при большом числе "
+        f"отложенных выборка перестаёт быть {SAMPLE_N}-строчной и оценку придётся повторить.</p>")
 
 
 def main():
@@ -88,6 +111,17 @@ def main():
                               encoding="utf-8")).items()
                if not k.startswith("_")}
     items = []
+
+    # ---- H2883: every figure the cards quote is derived here, never hardcoded ---------
+    auto_rows = [r for r in reg if r["classification"] == "auto"]
+    n_reg, n_rej = len(reg), len(rej)
+    n_hits = n_reg + n_rej
+    n_auto = len(auto_rows)
+    n_hand = n_reg - n_auto
+    precision = 100.0 * n_reg / n_hits
+    BUTTONS_REJECT = buttons_reject(n_reg, n_hits, precision)
+    BUTTONS_HAND = buttons_hand(n_reg)
+    BUTTONS_AUTO = buttons_auto(n_auto)
 
     # ---- group A: the hand rulings -------------------------------------------------
     for r in rej:
@@ -132,7 +166,7 @@ def main():
         })
 
     # ---- group B: the reproducible precision sample over the auto-typed rows --------
-    auto = [r for r in reg if r["classification"] == "auto"]
+    auto = auto_rows
     sample = random.Random(SAMPLE_SEED).sample(auto, SAMPLE_N)
     sample.sort(key=lambda r: (int(r["locus_id"][1:3]), r["locus_id"]))
     for r in sample:
@@ -161,10 +195,13 @@ def main():
         "sheet_id": SHEET_ID,
         "title": "Нилакантха: регистр отступлений от Панини, признанных традицией (H2860)",
         "subtitle": (
-            "152 строки из «Бхаратабхавадипы» Нилакантхи по всем 24 694 шлокам с ṭīkā. "
+            f"{n_reg} {ru_plural(n_reg, 'строка', 'строки', 'строк')} из "
+            "«Бхаратабхавадипы» Нилакантхи по всем 24 694 шлокам с ṭīkā "
+            f"({n_auto} авто-типизации + {n_hand} вручную; измеренная точность "
+            f"{ru_pct(precision)} % — {n_reg} из {n_hits}). "
             "На голосование вынесены только те карточки, которые правило решить не может: "
-            "14 ручных решений и воспроизводимая выборка из 30 авто-типизированных строк "
-            f"(seed {SAMPLE_SEED})."
+            f"{n_rej + n_hand} ручных решений и воспроизводимая выборка из {SAMPLE_N} "
+            f"авто-типизированных строк (seed {SAMPLE_SEED})."
         ),
         "footer": (
             "Регистр: commentary_licence_register_nilakantha.tsv/.jsonl · "
@@ -175,8 +212,8 @@ def main():
         "approve_label": "Согласен с решением",
         "reject_label": "Не согласен (см. заметку)",
         "filters": [
-            ("hand-reject", "отклонено вручную (13)"),
-            ("hand-type", "тип назначен вручную (1)"),
+            ("hand-reject", f"отклонено вручную ({n_rej})"),
+            ("hand-type", f"тип назначен вручную ({n_hand})"),
             ("auto-sample", f"выборка авто-типизации ({SAMPLE_N})"),
         ],
         "generated": GENERATED,
@@ -190,7 +227,9 @@ def main():
     screening = {
         "deterministic": 5,
         "lookup": 0,
-        "agent": 121,
+        # every hit not on a card was settled by the typing rules — derived, not counted
+        # by hand, so it tracks the card count instead of drifting away from it (H2883).
+        "agent": n_hits - len(items),
         "human": len(items),
         "evidence_path": "reports/COMMENTARY_LICENCE_REGISTER_NILAKANTHA_2026.md",
         "rules": ["arsa-word-anchor-independent-vowel",

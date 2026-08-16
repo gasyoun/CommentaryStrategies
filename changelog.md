@@ -10,6 +10,15 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Fixed
+
+- **H2883 — the published gating sheet stated pre-final numbers, and the generator's own labels disagreed with what it emitted (Opus 5 `claude-opus-5`).** [nilakantha_licence_46.html](https://gasyoun.github.io/vote/sheets/nilakantha_licence_46.html) — the page a human actually votes on — said `точность 92,1 % (152 из 165)` on all 14 reject cards, `152 строки` in the subtitle, and `100 % точности автотипизации (151 из 151)` on the sample cards, while the shipped register is **151 rows over 165 hits (91.5 %), 149 auto + 2 hand**; its filter labels read `(13)` and `(1)` for groups that hold 14 and 2. Fixed at the source rather than in the output: every count and percentage in [scripts/build_licence_register_review_sheet.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_licence_register_review_sheet.py) is now **derived from the loaded register/reject tables at render time** — button text, subtitle, filter labels and the agent-screened count alike — so the figures cannot outlive the data again. The docstring's "44 in all / 13 rejected / 1 kept / 151 auto-typed" is corrected to the 14 + 2 + 30 = 46 cards over 149 auto rows the run actually emits, and the sheet republished. The register itself is untouched: it is the verified artifact.
+- **The build report's title contradicted its own body.** Line 1 read "152 tradition-attested Pāṇini deviations" while the body, the data, the changelog and the landing commit all say **151**.
+
+### Added
+
+- **H2883 §8.1 — the `pratīka` field of the H1324 row shape is measured *not* mechanically recoverable, and the shape claim is amended rather than left standing (Opus 5 `claude-opus-5`).** H1324 §2 specified `locus, pratika, commentator, defense_term, deviation_type, quote`; the shipped 15-column schema carries five of those six and has no `pratika` under any name, so *the form actually being defended* is recoverable only by reading the quote. Measured over all 151 rows: the pratīka marker `इति` occurs in **41 (27.2 %)**, 11 of those inside a citation formula (variant reading, sūtra, authority, gloss), leaving **30 (19.9 %)** as an upper bound; the tightest defensible rule recovers **11 (7.3 %)** and at least **3 of those 11 are wrong** — MBh 12.305.38 yields the *sūtra*, MBh 12.272.19 and MBh 9.1.1 yield the *verse's own opening pratīka* rather than the defended form. The structural reason: Nīlakaṇṭha's `इति` most often announces the verse he is commenting on, not the word he is licensing, and no rule separates the two jobs. Recorded as an open question with the two routes that would settle it (mūla-verse join, or a 151-row hand pass) rather than backfilled — guessing it is the named fail condition. Consumers join on `deviation_term_sa`.
+
 ## [1.21.0] — 2026-08-16
 
 ## [1.20.0] - 2026-08-16
