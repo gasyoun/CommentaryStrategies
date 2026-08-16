@@ -10,6 +10,8 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.22.0] — 2026-08-16
+
 ### Fixed
 
 - **H2883 — the published gating sheet stated pre-final numbers, and the generator's own labels disagreed with what it emitted (Opus 5 `claude-opus-5`).** [nilakantha_licence_46.html](https://gasyoun.github.io/vote/sheets/nilakantha_licence_46.html) — the page a human actually votes on — said `точность 92,1 % (152 из 165)` on all 14 reject cards, `152 строки` in the subtitle, and `100 % точности автотипизации (151 из 151)` on the sample cards, while the shipped register is **151 rows over 165 hits (91.5 %), 149 auto + 2 hand**; its filter labels read `(13)` and `(1)` for groups that hold 14 and 2. Fixed at the source rather than in the output: every count and percentage in [scripts/build_licence_register_review_sheet.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_licence_register_review_sheet.py) is now **derived from the loaded register/reject tables at render time** — button text, subtitle, filter labels and the agent-screened count alike — so the figures cannot outlive the data again. The docstring's "44 in all / 13 rejected / 1 kept / 151 auto-typed" is corrected to the 14 + 2 + 30 = 46 cards over 149 auto rows the run actually emits, and the sheet republished. The register itself is untouched: it is the verified artifact.
