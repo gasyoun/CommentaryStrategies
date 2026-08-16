@@ -1,0 +1,79 @@
+{
+ "_about": "H2860 hand rulings — the hits the machine could not type, ruled one by one by reading Nīlakaṇṭha's sentence. verdict 'licence_claim' keeps the row in the register with the hand-assigned deviation_type; any other verdict rejects it into nilakantha_licence_rejected.tsv with the reason. Ruled 16-08-2026, Opus 5 (claude-opus-5). Regenerate the queue with: python scripts/build_licence_register_nilakantha.py --emit-hand-queue",
+ "_verdicts": {
+  "licence_claim": "Nīlakaṇṭha is defending an irregular FORM as ārṣa/chāndasa",
+  "arsa_marriage_type": "ārṣa = one of the eight vivāha types of dharmaśāstra — the homonym H1324 §5 warned about; it produced 0 hits in the Gītā probe and fires 6 times here",
+  "arsa_lexical_gloss": "ārṣa glossed in its ordinary sense ('of the ṛṣis', 'ṛṣi-composed', 'the Veda') as a word of the verse being commented on, not as a claim about a grammatical form"
+ },
+ "_note_on_overrides": "A ruling also OVERRIDES an automatic classification — that is how the one false positive the automatic pass produced (MBh 5.70.7) is taken back out. Rulings are consulted for every hit, not only for the ones no rule could type.",
+
+ "P01_U05_A032_S024#0@128": {
+  "verdict": "licence_claim",
+  "deviation_type": "absence of the āṭ augment",
+  "deviation_term_sa": "āḍ-abhāva",
+  "note": "'navatyo navatīr iti pāṭhe ṅitām āḍbhāva ārṣaḥ'. Written ङितामाडभाव, the fused form is indistinguishable from an aḍ-abhāva, and no rule can tell them apart; ṅitām 'of the ṅit endings' settles it as āṭ (Pāṇini 7.3.112 ṅiti āṭ), so the type is assigned by hand rather than guessed."
+ },
+ "P05_U05_A070_S007#0@225": {
+  "verdict": "arsa_lexical_gloss",
+  "note": "THE FALSE POSITIVE OF THE AUTOMATIC PASS. 'ārṣaṃ vedas tena bhātīty ārṣabha' — ārṣam is being glossed as 'the Veda', and ārṣabha 'illumined by the Veda' derived from it. The 'svārthe taddhitaḥ' two characters upstream, which is what triggered the rule, belongs to the PREVIOUS derivation (sattvataḥ > sātvataḥ) and has nothing to do with the ārṣa. The one case in 165 where a genuine grammatical term stands next to a non-grammatical ārṣa; no rule distinguishes them, only reading the sentence does."
+ },
+
+ "P01_U05_A013_S029#0@229": {
+  "verdict": "arsa_marriage_type",
+  "note": "Quotes Āśvalāyana's list of marriage rites: 'gomithunaṃ datvopayacchheta sa ārṣaḥ'. Nīlakaṇṭha is distinguishing the daiva from the ārṣa wedding, not licensing a form."
+ },
+ "P01_U07_A077_S018#0@0": {
+  "verdict": "arsa_lexical_gloss",
+  "note": "ārṣam glossed ṛṣi-praṇītam 'composed by the ṛṣis' — a gloss of the verse's own word, in a passage about the marriage of siblings."
+ },
+ "P01_U07_A102_S015#0@0": {
+  "verdict": "arsa_marriage_type",
+  "note": "ārṣaṃ vidhim listed among 'ete 'ṣṭau vivāhāḥ' — the eight marriage rites, with the rākṣasa as the eighth."
+ },
+ "P01_U07_A113_S012#0@11": {
+  "verdict": "arsa_marriage_type",
+  "note": "'ārṣe 'pi vivāhe' — the bride-price of a cow-pair prescribed in the ārṣa wedding."
+ },
+ "P01_U07_A118_S001#0@35": {
+  "verdict": "arsa_lexical_gloss",
+  "note": "ārṣaḥ = ṛṣi-prasāda-hetukaḥ 'caused by a ṛṣi's favour' — glossing the birth of the hundred sons, no grammatical operation in sight."
+ },
+ "P03_U03_A031_S008#0@0": {
+  "verdict": "arsa_lexical_gloss",
+  "note": "ārṣam = 'the ṛṣis, the mantras, or their seers Manu and the rest' — a dharma-source gloss."
+ },
+ "P03_U07_A091_S024#0@90": {
+  "verdict": "arsa_lexical_gloss",
+  "note": "ārṣeṇa abheda-darśanena 'by the ṛṣi-like vision of non-difference' — an instrumental of manner, glossing Karṇa's identification with Indra."
+ },
+ "P12_U01_A012_S017#0@0": {
+  "verdict": "arsa_lexical_gloss",
+  "note": "The whole ṭīkā is 'ārṣaḥ ṛṣīṇāṃ hitaḥ' — glossing the verse's own ārṣo vidhiḥ as 'the rule beneficial to ṛṣis'."
+ },
+ "P12_U01_A040_S002#0@29": {
+  "verdict": "licence_claim",
+  "deviation_type": "stem vowel — ī for the expected e of the reduplicated perfect",
+  "deviation_term_sa": "niṣīdatuḥ for niṣedatuḥ",
+  "note": "'niṣīdatur iti niṣedatur ity arthe ārṣam' — Nīlakaṇṭha names no operation, only the two forms: the reduplicated perfect of sad- should show guṇa (niṣedatuḥ), and the epic's niṣīdatuḥ keeps the present-stem vowel. The one hit in the whole corpus where the deviation is stated by contrasting forms rather than by naming a rule, which is exactly why it fell out of the automatic pass."
+ },
+ "P12_U02_A132_S017#0@0": {
+  "verdict": "arsa_lexical_gloss",
+  "note": "The ṭīkā is the two characters 'ārṣaṃ -' and stops: a truncated lemma-gloss of the verse's ārṣam ('scriptural precedent'), not a licence. Truncation is in the source, not in the scrape."
+ },
+ "P12_U03_A268_S010#0@9": {
+  "verdict": "arsa_lexical_gloss",
+  "note": "ārṣam = the Veda, 'breathed out effortlessly by the great Being' — glossing sarvam ārṣaṃ hi manyante."
+ },
+ "P13_U01_A019_S002#0@71": {
+  "verdict": "arsa_marriage_type",
+  "note": "ārṣa heads Nīlakaṇṭha's enumeration of dharma-types (ārṣa / prājāpatya / āsura …) — the dharmaśāstra classification, twice in one ṭīkā."
+ },
+ "P13_U01_A019_S002#0@130": {
+  "verdict": "arsa_marriage_type",
+  "note": "Second occurrence in the same ṭīkā: 'śrauta-smārta-kriyā-rūpa ārṣaḥ'."
+ },
+ "P13_U01_A044_S004#0@206": {
+  "verdict": "arsa_marriage_type",
+  "note": "Again Āśvalāyana's marriage list, verbatim: 'gomithunaṃ datvopayacchheta sa ārṣaḥ'."
+ }
+}
