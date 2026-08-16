@@ -255,8 +255,23 @@ def generate_lms_markdown(corpus, text_name, base_dir="Sanskrit_Vault"):
 # <p class="shloka_text"> (мула) и 0+ <p class="bhavadeepa"> (глоссы Нилакантхи).
 # Адресация P/U/A/S берётся прямо из id — машиночитаемая нумерация вульгаты.
 
+# ВАЖНО (16-08-2026, H2860): sanatana.in переехал на другой эндпоинт. Старый
+# getParvaByPage/{parva}?page={N} жив в роутере, но ВСЕГДА отдаёт 200 + пустое
+# тело ("\n") — не ошибку, поэтому scrape_parva() молча возвращал 0 шлок. Живой
+# путь теперь:
+#   GET /mahabharata/listing/getUpaparvaWindow/{parva}?center={P##_U##}&before=0&after=0
+#     -> JSON {"upaparvas":[{"id","upaParvaName","html"}],"hasPrevious","hasNext","centerId"}
+# Список id упапарв берётся с индексной страницы /mahabharata/Moola/ (ссылки вида
+# /listing/parva/{parva}?page={N}&id=P##_U##). Внутренняя разметка html не менялась:
+# тот же <div class="shloka" id="P/U/A/S"> + <p class="shloka_text"> + <p class="bhavadeepa">.
+# Старый режим оставлен под --legacy-endpoint только для воспроизведения census 11-07-2026.
+
 BASE = "https://sanatana.in/mahabharata"
 PAGE_URL = BASE + "/listing/getParvaByPage/{parva}?page={page}"
+MOOLA_URL = BASE + "/Moola/"
+WINDOW_URL = BASE + "/listing/getUpaparvaWindow/{parva}?center={center}&before=0&after=0"
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 
 # 18 парванов Махабхараты (+ harivamsha — отдельный придаток, по умолчанию НЕ входит).
 PARVAS = [
@@ -351,13 +366,108 @@ def scrape_parva(parva, cache_dir, delay=1.0, max_pages=1000):
     return list(seen.values())
 
 
-def scrape_all(parvas, out_jsonl, cache_dir, delay=1.0, with_iast=True):
+def _http_get(url, timeout=120, tries=4):
+    """GET с UA + ретраями (сервер иногда рвёт соединение без ответа)."""
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "X-Requested-With": "XMLHttpRequest",
+        "Accept": "*/*",
+    })
+    last = None
+    for attempt in range(tries):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read().decode("utf-8", "replace")
+        except urllib.error.HTTPError as e:
+            if e.code == 404:                        # фантомный id — не ретраить
+                raise
+            last = e
+            time.sleep(2 * (attempt + 1))
+        except Exception as e:                       # noqa: BLE001 — ретраим всё
+            last = e
+            time.sleep(2 * (attempt + 1))
+    raise last
+
+
+def fetch_upaparva_index(cache_dir, delay=1.0):
+    """Индекс /Moola/ -> {parva_slug: [upaparva_id, ...]} в порядке страницы."""
+    os.makedirs(cache_dir, exist_ok=True)
+    cache_fp = os.path.join(cache_dir, "_moola_index.html")
+    if os.path.exists(cache_fp):
+        with open(cache_fp, encoding="utf-8") as f:
+            body = f.read()
+    else:
+        body = _http_get(MOOLA_URL)
+        with open(cache_fp, "w", encoding="utf-8") as f:
+            f.write(body)
+        time.sleep(delay)
+    index = {}
+    for parva, upa in re.findall(
+            r'/listing/parva/([a-z]+)\?page=\d+&id=(P\d+_U\d+)"', body):
+        index.setdefault(parva, [])
+        if upa not in index[parva]:
+            index[parva].append(upa)
+    for parva in index:
+        index[parva].sort()
+    return index
+
+
+def fetch_upaparva_window(parva, upa_id, cache_dir, delay=1.0):
+    """Одна упапарва -> HTML-фрагмент (с дисковым кэшем)."""
+    os.makedirs(cache_dir, exist_ok=True)
+    cache_fp = os.path.join(cache_dir, f"{parva}_{upa_id}.html")
+    if os.path.exists(cache_fp):
+        with open(cache_fp, encoding="utf-8") as f:
+            return f.read()
+    raw = _http_get(WINDOW_URL.format(parva=parva, center=upa_id))
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        raise RuntimeError(f"{parva}/{upa_id}: не JSON ({raw[:120]!r})")
+    if data.get("error"):
+        raise RuntimeError(f"{parva}/{upa_id}: {data['error']}")
+    html_body = "\n".join(u.get("html", "") for u in data.get("upaparvas", []))
+    with open(cache_fp, "w", encoding="utf-8") as f:
+        f.write(html_body)
+    time.sleep(delay)                                # вежливость к серверу
+    return html_body
+
+
+def scrape_parva_v2(parva, upa_ids, cache_dir, delay=1.0):
+    """Все упапарвы парвана через getUpaparvaWindow -> дедуплицированные шлоки."""
+    seen = {}
+    for upa_id in upa_ids:
+        try:
+            body = fetch_upaparva_window(parva, upa_id, cache_dir, delay=delay)
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                # /Moola/ содержит «якорные» id вида P01_U00, которых нет в
+                # окне-эндпоинте (это ссылка на верх парвана, не упапарва).
+                print(f"  {parva} {upa_id}: 404 — фантомный id, пропуск")
+                continue
+            raise
+        rows = parse_page(body) if body else []
+        for r in rows:
+            seen[r["id"]] = r                        # дедуп по P/U/A/S id
+        print(f"  {parva} {upa_id}: +{len(rows):5d} shlokas (total {len(seen)})")
+    return list(seen.values())
+
+
+def scrape_all(parvas, out_jsonl, cache_dir, delay=1.0, with_iast=True, legacy=False):
     """Полный скрейп + разбор -> JSONL (мула + ṭīkā, Devanagari [+ IAST])."""
     total = tika_total = 0
+    index = {} if legacy else fetch_upaparva_index(cache_dir, delay=delay)
     with open(out_jsonl, "w", encoding="utf-8") as out:
         for parva in parvas:
             print(f"[{parva}] scraping ...")
-            rows = scrape_parva(parva, cache_dir, delay=delay)
+            if legacy:
+                rows = scrape_parva(parva, cache_dir, delay=delay)
+            else:
+                upa_ids = index.get(parva, [])
+                if not upa_ids:
+                    print(f"[{parva}] НЕТ упапарв в индексе /Moola/ — пропуск")
+                    continue
+                rows = scrape_parva_v2(parva, upa_ids, cache_dir, delay=delay)
             rows.sort(key=lambda r: (r["upaparva"], r["adhyaya"], r["shloka"]))
             nt = sum(1 for r in rows if r["tikas"])
             total += len(rows); tika_total += nt
@@ -411,6 +521,8 @@ if __name__ == "__main__":
                     help="подмножество слугов парванов (по умолчанию все 18)")
     sp.add_argument("--harivamsha", action="store_true", help="включить харивамшу")
     sp.add_argument("--no-iast", action="store_true", help="не считать IAST")
+    sp.add_argument("--legacy-endpoint", action="store_true",
+                    help="старый getParvaByPage (МЁРТВ с ~08-2026: 200 + пустое тело)")
 
     sub.add_parser("lms", help="Старый режим: локальные .md -> Sanskrit_Vault")
 
@@ -420,6 +532,7 @@ if __name__ == "__main__":
         if args.harivamsha:
             parvas.append(HARIVAMSHA)
         scrape_all(parvas, args.out, args.cache_dir,
-                   delay=args.delay, with_iast=not args.no_iast)
+                   delay=args.delay, with_iast=not args.no_iast,
+                   legacy=args.legacy_endpoint)
     else:
         _run_lms()

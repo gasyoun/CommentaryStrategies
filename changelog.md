@@ -10,6 +10,14 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Added
+
+- **H2860 — the Nīlakaṇṭha licence register is built: 151 tradition-attested Pāṇini deviations over all 24,694 ṭīkā-bearing shlokas (Opus 5 `claude-opus-5`).** Every row carries locus (human `MBh 12.284.141` + addressable `P12_U03_A284_S141`), commentator, `defense_term`, `deviation_type` and a quotation; 149 types derived mechanically from the grammatical noun Nīlakaṇṭha names beside the licence word, 2 assigned by hand, 14 further hits rejected as the *ārṣa* homonym with a written reason each. Precision **91.5 %**, hand-checked over **all 165 hits rather than a 30-row sample**. New: [data/licence_register/commentary_licence_register_nilakantha.tsv](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/licence_register/commentary_licence_register_nilakantha.tsv) + `.jsonl`, the per-parvan density census [nilakantha_parvan_density.tsv](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/licence_register/nilakantha_parvan_density.tsv), the audit trail [nilakantha_licence_rejected.tsv](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/licence_register/nilakantha_licence_rejected.tsv) + [nilakantha_hand_rulings.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/licence_register/nilakantha_hand_rulings.json), the 178-row combined table folding in the 27 Gītā probe rows with their multi-commentator agreement column, and the re-runnable [scripts/build_licence_register_nilakantha.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_licence_register_nilakantha.py). Report: [reports/COMMENTARY_LICENCE_REGISTER_NILAKANTHA_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/reports/COMMENTARY_LICENCE_REGISTER_NILAKANTHA_2026.md).
+
+### Fixed
+
+- **The Nīlakaṇṭha scraper was silently dead and would have written an empty corpus (Opus 5 `claude-opus-5`).** [sanatana.in](https://sanatana.in/mahabharata/) retired `listing/getParvaByPage/{parva}?page={N}`, but left it returning **HTTP 200 with a one-byte body** — and `scrape_parva()` reads an empty page as "end of parvan", so a re-run would have produced a valid, empty, successful-looking JSONL. [nilakantha_parser.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/mahabharata-nilakantha/nilakantha_parser.py) now scrapes through the live `listing/getUpaparvaWindow/{parva}?center={P##_U##}` JSON endpoint, enumerating upaparvan ids from `/mahabharata/Moola/` — 107 requests instead of ~1,700, and the restored scrape reproduces the 11-07-2026 census **exactly** (83,971 shlokas, 24,694 with ṭīkā, all 18 per-parvan pairs identical). The dead path is kept behind `--legacy-endpoint`, documented as dead.
+
 ## [1.19.2] - 2026-08-16
 ### Added
 

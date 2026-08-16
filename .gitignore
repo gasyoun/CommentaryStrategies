@@ -9,6 +9,11 @@ __pycache__/
 # orchestrator scratch
 scripts/_rebuild_summary.json
 
+# H2860: the intermediate hand queue is a build by-product of
+# build_licence_register_nilakantha.py --emit-hand-queue; the RULINGS it feeds
+# (nilakantha_hand_rulings.json) are tracked, the queue is not.
+data/licence_register/nilakantha_hand_queue.json
+
 # secrets — never commit
 .env
 .env.*
