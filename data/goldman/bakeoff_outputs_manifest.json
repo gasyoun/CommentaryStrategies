@@ -1,0 +1,441 @@
+{
+  "_note": "Fingerprints only. The engine outputs are OCR of Goldman & Goldman 1996 (© Princeton University Press) and are deliberately not committed; see docs/GOLDMAN_PDF_EXTRACTION_BAKEOFF_2026.md §5.",
+  "sample_verdict": "subset",
+  "full_sample": [
+    "10",
+    "18",
+    "108",
+    "130",
+    "250",
+    "321",
+    "333",
+    "565",
+    "571",
+    "585"
+  ],
+  "partial_coverage": {
+    "vision": [
+      "10",
+      "18",
+      "108",
+      "130",
+      "333",
+      "565",
+      "571"
+    ]
+  },
+  "outside_sample": {},
+  "engines": {
+    "embedded": {
+      "pages": {
+        "10": {
+          "bytes": 1159,
+          "chars": 1159,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "c901b590aa49a35f0847a675702a00ec812939fe2ee8698429d8ca3402f8905c"
+        },
+        "18": {
+          "bytes": 1203,
+          "chars": 1203,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "5c368fe8e67ebc62ab38c5ad941c4672785d91480293e6ee3788338a63703ddc"
+        },
+        "108": {
+          "bytes": 2736,
+          "chars": 2734,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "61216c9e4851311fc37ad760915e948b0463238fad7e741ec50a1e570d99bb7a"
+        },
+        "130": {
+          "bytes": 1974,
+          "chars": 1973,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "36b02de56176c4f866f68b776d69e0a9aab79df645620481ac8f2e97af94e50d"
+        },
+        "250": {
+          "bytes": 1940,
+          "chars": 1936,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "f36997b7575d2c2f6252a60c987ac87bb819198e7b7f2442f1138eacd07dbd17"
+        },
+        "321": {
+          "bytes": 3937,
+          "chars": 3936,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "927de1fb868e9cf108691c09b153044da05ed241e66eefb8bb5eb7835f525dc3"
+        },
+        "333": {
+          "bytes": 4056,
+          "chars": 4055,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "85259acf4c28aa8fa075b6d4c4183e46cb85e5c9838c4bd719ea91fff992e930"
+        },
+        "565": {
+          "bytes": 2433,
+          "chars": 2428,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "0b56a1c6b6c08caf02dcefa8d8fa21873b300759a67942a1063b74c568b275d5"
+        },
+        "571": {
+          "bytes": 2756,
+          "chars": 2756,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "4ead37a26b3e5eb24380ea3f9d37c11cd5c44117ed9937b918584d4a7a72322d"
+        },
+        "585": {
+          "bytes": 2983,
+          "chars": 2978,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "e292b699dd230cc2aaade1558ef0feb59834251cc5e9e85e4a82320ddd9c06bd"
+        }
+      },
+      "page_count": 10,
+      "iast_chars_total": 0,
+      "latin_diacritic_chars_total": 0,
+      "chars_total": 25158
+    },
+    "pdfminer": {
+      "pages": {
+        "10": {
+          "bytes": 1263,
+          "chars": 1263,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "b228cc8395be7bd151452ada8138cb788c136bca2eeb4e85bfb299111e2ca538"
+        },
+        "18": {
+          "bytes": 1287,
+          "chars": 1287,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "251f67007139595239e11a11c8de0e248008247f51a40c37a4b1bf179fb164d4"
+        },
+        "108": {
+          "bytes": 2922,
+          "chars": 2920,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "d0e0e2b8f3600ce87bbc486406ec25e757858753b70c1e5d08dac663dc2edfbe"
+        },
+        "130": {
+          "bytes": 2143,
+          "chars": 2142,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "ddbab9871ccb9c97afc8f9a7f7237e10439b41b068cf60a3c21a761d014117de"
+        },
+        "250": {
+          "bytes": 2073,
+          "chars": 2069,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "a7c01d4ce55ce9fbbe4df5949fbee342ffba949fb40d87f51130f784ebe5d025"
+        },
+        "321": {
+          "bytes": 4131,
+          "chars": 4130,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "0462cd534e246a16b2dba8bec5f176490304d7be44c62af89ea56c60e64dc215"
+        },
+        "333": {
+          "bytes": 4327,
+          "chars": 4326,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "7b1c0a769c3247dfb89c290e3a1ea5299bbc6597d983401ad41c7970faa8843a"
+        },
+        "565": {
+          "bytes": 2515,
+          "chars": 2510,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "bf568666d3ad80910fef56552a11b78d319dad50658786dfd3897e5bc428eb32"
+        },
+        "571": {
+          "bytes": 2943,
+          "chars": 2943,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "30d0471dde19bd4fe13bd6a6b30c0e76ddbd83ecf86c4e1f68ecb0b261c9da2b"
+        },
+        "585": {
+          "bytes": 3177,
+          "chars": 3172,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "7652f2c82093c4b5cbda7d6803dc778684499a64ee2b0268b9194df17efc5cc9"
+        }
+      },
+      "page_count": 10,
+      "iast_chars_total": 0,
+      "latin_diacritic_chars_total": 0,
+      "chars_total": 26762
+    },
+    "tesseract-eng": {
+      "pages": {
+        "10": {
+          "bytes": 1121,
+          "chars": 1118,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "1eb2d3239d1adaded4c3e0781fb7d47595961e69b9c164f7781fc3ee928de9f1"
+        },
+        "18": {
+          "bytes": 1299,
+          "chars": 1199,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "654a0136a9cd817f040f2ed80d6a12eee50565033f0ec878929337f4a09c1e6a"
+        },
+        "108": {
+          "bytes": 2716,
+          "chars": 2690,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "faeda8c7279df727b5b83fc6f35ab836744f277b02972c29ed4dcecaefa2986a"
+        },
+        "130": {
+          "bytes": 1971,
+          "chars": 1944,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 1,
+          "devanagari_chars": 0,
+          "sha256": "258359941056ab29fb5eb53e2f3d8dcb0bd10f21c8771f65bdf039f1a54fabaf"
+        },
+        "250": {
+          "bytes": 1941,
+          "chars": 1909,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "e114dd3f5457b4f4378201b1e170df57664d4b0c33f5f82d741aa645129941d1"
+        },
+        "321": {
+          "bytes": 3987,
+          "chars": 3883,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "607c75da9dc7b61e756a3376ca2ff2707822b60658ba3d50d6fbf3ea32889b9c"
+        },
+        "333": {
+          "bytes": 4111,
+          "chars": 4006,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 1,
+          "devanagari_chars": 0,
+          "sha256": "2d136257b30c1591a4d614671706649ac7abc277a94cd265897f21d169e38a3b"
+        },
+        "565": {
+          "bytes": 2405,
+          "chars": 2385,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "0637c0ab35fcce1dfc8b1c11ef378304675159860ec44d43b62eeec1edf65e0f"
+        },
+        "571": {
+          "bytes": 2653,
+          "chars": 2649,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 4,
+          "devanagari_chars": 0,
+          "sha256": "2e9224eb5419e627be02bc13754e366463cd9820b3522614b6735ddf2d8582b0"
+        },
+        "585": {
+          "bytes": 2965,
+          "chars": 2950,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 1,
+          "devanagari_chars": 0,
+          "sha256": "9f6924d4e9e8f2bbeacee038f56be54b2ee472b876f9ea776d438b9072bbab00"
+        }
+      },
+      "page_count": 10,
+      "iast_chars_total": 0,
+      "latin_diacritic_chars_total": 7,
+      "chars_total": 24733
+    },
+    "tesseract-engsan": {
+      "pages": {
+        "10": {
+          "bytes": 1123,
+          "chars": 1118,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 1,
+          "sha256": "bfd76b77be142e1ee1b08454a59b3932e979a7b342bcc2227e778c45643b3731"
+        },
+        "18": {
+          "bytes": 1289,
+          "chars": 1157,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 11,
+          "sha256": "b07a91c81a8da686f7d422594f82a8999daf2b60eb9278eb3c9298f49f9dee8d"
+        },
+        "108": {
+          "bytes": 2716,
+          "chars": 2690,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "faeda8c7279df727b5b83fc6f35ab836744f277b02972c29ed4dcecaefa2986a"
+        },
+        "130": {
+          "bytes": 1971,
+          "chars": 1944,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 1,
+          "devanagari_chars": 0,
+          "sha256": "258359941056ab29fb5eb53e2f3d8dcb0bd10f21c8771f65bdf039f1a54fabaf"
+        },
+        "250": {
+          "bytes": 1941,
+          "chars": 1909,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "e114dd3f5457b4f4378201b1e170df57664d4b0c33f5f82d741aa645129941d1"
+        },
+        "321": {
+          "bytes": 3987,
+          "chars": 3883,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "607c75da9dc7b61e756a3376ca2ff2707822b60658ba3d50d6fbf3ea32889b9c"
+        },
+        "333": {
+          "bytes": 4108,
+          "chars": 4003,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 1,
+          "devanagari_chars": 0,
+          "sha256": "f3939084b5be6c30dc915867abdb150e696b07e9aba2118e20fdab9843e1b06b"
+        },
+        "565": {
+          "bytes": 2405,
+          "chars": 2385,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 0,
+          "devanagari_chars": 0,
+          "sha256": "0637c0ab35fcce1dfc8b1c11ef378304675159860ec44d43b62eeec1edf65e0f"
+        },
+        "571": {
+          "bytes": 2652,
+          "chars": 2648,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 4,
+          "devanagari_chars": 0,
+          "sha256": "deb7f39eaac53b4def752d1a2f06b01d348c77e812a38a5c125903fa2350a441"
+        },
+        "585": {
+          "bytes": 2966,
+          "chars": 2951,
+          "iast_chars": 0,
+          "latin_diacritic_chars": 1,
+          "devanagari_chars": 0,
+          "sha256": "16b4924141da44856f71de1ca9c94adf3e30f604f796ce57181ace6ca1f4fc38"
+        }
+      },
+      "page_count": 10,
+      "iast_chars_total": 0,
+      "latin_diacritic_chars_total": 7,
+      "chars_total": 24688
+    },
+    "vision": {
+      "pages": {
+        "250": {
+          "bytes": 2040,
+          "chars": 1974,
+          "iast_chars": 40,
+          "latin_diacritic_chars": 40,
+          "devanagari_chars": 0,
+          "sha256": "871e686eca03eaf16416230fff7e357e7480c57bee992bae9e687429231457be"
+        },
+        "321": {
+          "bytes": 3988,
+          "chars": 3942,
+          "iast_chars": 29,
+          "latin_diacritic_chars": 29,
+          "devanagari_chars": 0,
+          "sha256": "0d4e525fe36e8761dba01ab92ce526fbab4f16a64b58ae2031f6c8a8435018bc"
+        },
+        "585": {
+          "bytes": 3298,
+          "chars": 3127,
+          "iast_chars": 132,
+          "latin_diacritic_chars": 132,
+          "devanagari_chars": 0,
+          "sha256": "727a130d825e0a1ca4db640e8db0bb8c107157b9628879d307476870b28fe577"
+        }
+      },
+      "page_count": 3,
+      "iast_chars_total": 201,
+      "latin_diacritic_chars_total": 201,
+      "chars_total": 9043
+    }
+  },
+  "gold": {
+    "250": {
+      "bytes": 2040,
+      "chars": 1974,
+      "iast_chars": 40,
+      "latin_diacritic_chars": 40,
+      "devanagari_chars": 0,
+      "sha256": "871e686eca03eaf16416230fff7e357e7480c57bee992bae9e687429231457be"
+    },
+    "321": {
+      "bytes": 3988,
+      "chars": 3942,
+      "iast_chars": 29,
+      "latin_diacritic_chars": 29,
+      "devanagari_chars": 0,
+      "sha256": "0d4e525fe36e8761dba01ab92ce526fbab4f16a64b58ae2031f6c8a8435018bc"
+    },
+    "585": {
+      "bytes": 3298,
+      "chars": 3127,
+      "iast_chars": 132,
+      "latin_diacritic_chars": 132,
+      "devanagari_chars": 0,
+      "sha256": "727a130d825e0a1ca4db640e8db0bb8c107157b9628879d307476870b28fe577"
+    }
+  },
+  "missing": []
+}
