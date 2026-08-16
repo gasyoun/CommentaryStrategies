@@ -267,6 +267,57 @@ agreement_commentators, quote`.
 `P12_U03_A284_S141` — the two are kept separate because only the second round-trips to the
 source.
 
+### 8.1 The `pratīka` field of the H1324 shape is **not** in this schema — measured, not overlooked
+
+H1324 §2 specified the row shape as `locus, pratika, commentator, defense_term,
+deviation_type, quote`. The 15 columns above carry five of those six. **There is no
+`pratika` under any name**, and the two nearest columns are different things:
+`defense_term` is the licence word (*ārṣa* / *chāndasa*) and `deviation_term_sa` the
+grammatical operation Nīlakaṇṭha names. *The form actually being defended* is recoverable
+only by reading the quote — so the shape claim is hereby amended to five of six fields
+rather than left standing as if all six shipped.
+
+The field was not dropped for convenience. It is **not mechanically recoverable from the
+ṭīkā at the precision this register is held to**, and the measurement is the reason:
+
+| Probe over all 151 rows | Result |
+|---|---:|
+| Quotes containing the pratīka marker `इति` at all | **41 (27.2 %)** |
+| …of those, `इति` in a citation formula (`इति पाठे`, `इति सूत्रेण`, `इत्युक्तेः`, `इति श्रुतेः`, `इत्यर्थः`, `इत्यादिना`) — quoting a *variant reading, a sūtra, an authority or a gloss*, never the defended form | 11 |
+| …leaving `इति` unmarked, i.e. an **upper bound** on mechanical recovery | **30 (19.9 %)** |
+| Tightest defensible rule — the `इति`-bounded token standing within 30 characters of the licence word or the named operation | **11 (7.3 %)** |
+
+And that 7.3 % is not clean either. Of the eleven, at least three are wrong in a way that
+is invisible without reading the Sanskrit:
+
+- **MBh 12.305.38** yields `तवैकेन्केन्यत्वन` — which is the **sūtra** (*kṛtyārthe
+  tavaikenkenyatvanaḥ*), not a form of the text.
+- **MBh 12.272.19** yields `तत` — the *verse's own opening pratīka*, the `— तत इति` with
+  which Nīlakaṇṭha announces which verse he is on. The defended form is `याजयत`.
+- **MBh 9.1.1** yields `अवशिष्टा` from `इति च्छेदः`, a word-division note; the form carrying
+  the *ākāra-lopa* is `अल्पाः`.
+
+That last confusion is the structural one: **Nīlakaṇṭha's `इति` most often marks the verse
+he is commenting on, not the word he is licensing** — the same marker, two different jobs,
+and no rule separates them. A rule that recovers 7 % of the column and is wrong in a quarter
+of what it recovers is worse than an empty column, because a mostly-empty field silently
+invites being read as exhaustive.
+
+**Verdict: `pratika` is recorded as an open question, not backfilled.** Guessing it is
+precisely the failure this register was built to avoid. The two routes that would actually
+settle it are both real work, not a regex:
+
+1. **Join against the mūla verse.** The defended form is a word *of the commented verse*;
+   intersecting the ṭīkā's tokens with the verse's would identify it far better than any
+   `इति` rule. The scrape carries both, but is gitignored on rights grounds (58.9 MB) and so
+   must be restored before this can even be attempted — see §11.
+2. **Hand-read 151 quotes.** Tractable at this corpus size, and the honest fallback if the
+   join proves noisy under sandhi.
+
+Either is a handoff of its own. Until one is done, consumers must take `deviation_term_sa`
+(the operation) as the join key — the same key §10 names for a Pāṇini-sūtra layer — and must
+**not** expect the defended form as a queryable field.
+
 Term split: **121 `ārṣa` · 30 `chāndasa`**. The commonest deviation types:
 
 | Rows | `deviation_type` |
@@ -311,6 +362,9 @@ Both are the handoff's own, and both remain open because they are scope calls, n
   of that job.
 - **Both epics or one** (Q1). MBh is done; Govindarāja on the Rāmāyaṇa is still scan-only and
   still deferred.
+- **What form is each row defending** — the `pratīka` of the H1324 shape. Measured as not
+  mechanically recoverable (§8.1: 7.3 % yield, ~1 in 4 of those wrong), so it is declared
+  open rather than guessed. Settling it needs the mūla-verse join or a 151-row hand pass.
 
 ## 11. Reproduce
 
