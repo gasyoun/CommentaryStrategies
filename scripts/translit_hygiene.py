@@ -111,6 +111,17 @@ CAMEL_RE = re.compile(rf"\b[a-zāīūṛṝḷḹṅñṭḍṇśṣḥṃ]{{2,}
 CAMEL_FIELDS = {"note_ru", "lemma_iast", "raw_text", "candidate_lemma",
                 "edited_note", "text_ru"}
 
+# Declared exceptions — the h2864 vote settled everything else, so `--check` can
+# gate CI. Each of these is deliberate, not tolerated:
+#   ruH        `*bʰruH-`, a PIE root with a laryngeal — the mixing is normative
+#   medъ       `*medъ`, Slavic with a yer — same
+#   maharJayai quoted from Goldman p. 483 inside Kostina's own service note; the
+#              reviewer deferred it («запись в санскрите невозможна, вероятно
+#              ошибка транслитерации — переспросить Костину»), and a quotation is
+#              not ours to silently correct
+# Removing a row here is a claim that the word got fixed; the check will prove it.
+DECLARED_EXCEPTIONS = {"ruH", "medъ", "maharJayai"}
+
 
 def target_files():
     """Every note-bearing JSON that is a SOURCE of truth, not a build artifact.
@@ -329,8 +340,17 @@ def main():
             fh.write("\n".join(lines) + "\n")
         print(f"report -> {args.report}")
 
-    if args.check and total:
-        sys.exit(1)
+    if args.check:
+        undeclared = sorted({w for (_c, w, _s) in words
+                             if w not in DECLARED_EXCEPTIONS})
+        if undeclared:
+            print(f"\nFAIL: {len(undeclared)} undeclared mixed-script word(s): "
+                  + ", ".join(undeclared[:12]))
+            print("Fix them, or — if the mixing is deliberate — add the word to "
+                  "DECLARED_EXCEPTIONS with the reason.")
+            sys.exit(1)
+        print(f"\nPASS: only the {len(DECLARED_EXCEPTIONS)} declared exceptions "
+              "remain.")
 
 
 if __name__ == "__main__":
