@@ -27,7 +27,7 @@ import sys
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
-from csl_pyutil import render_review_sheet  # noqa: E402
+from csl_pyutil import RU_UI_STRINGS, render_review_sheet  # noqa: E402
 from csl_pyutil.evidence import EvidenceManifest  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -223,6 +223,14 @@ def main():
         # The SLP1-in-human-text check reads these three as transliteration; they are an
         # English word, an English grammatical term, and the standard Mahābhārata siglum.
         "preflight": {"allow_slp1_tokens": ("MBh", "perfect", "transfer")},
+        # U6 (H2847): Russian-only reviewer chrome. save_banner overridden
+        # because RU_UI_STRINGS excludes it by design (its default bakes in
+        # this sheet's own sheet_id/save_as).
+        "ui_strings": dict(RU_UI_STRINGS, save_banner=(
+            f'&#128229; Ваш экспорт скачивается как <code>{SHEET_ID}_decisions.json</code> '
+            f'&rarr; сохраните его в <code>CommentaryStrategies\\review\\{SHEET_ID}_decisions.json</code> '
+            f'(значение <code>sheet_id</code> внутри файла &mdash; <code>{SHEET_ID}</code> &mdash; так '
+            'следующая сессия узнаёт, к какому листу относятся эти решения).')),
     }
     screening = {
         "deterministic": 5,
