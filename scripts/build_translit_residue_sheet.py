@@ -33,7 +33,7 @@ REPO = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(os.path.dirname(REPO), "sanskrit-util", "py"))
 
-from csl_pyutil import render_review_sheet, mark_cyrillic  # noqa: E402
+from csl_pyutil import RU_UI_STRINGS, render_review_sheet, mark_cyrillic  # noqa: E402
 from csl_pyutil.evidence import EvidenceManifest  # noqa: E402
 
 try:
@@ -372,6 +372,15 @@ def main():
                    | {x["reading"] for c in human for x in c["candidates"]}
                    # ordinary sigla the SLP1 heuristic mistakes for SLP1
                    | {"MBh", "MW", "PWG", "AP90", "IAST", "SLP1", "QA", "CI"}))},
+        # U6 (H2847): Russian-only reviewer chrome. save_banner overridden
+        # because RU_UI_STRINGS excludes it by design (its default bakes in
+        # this sheet's own sheet_id/save_as).
+        "ui_strings": dict(RU_UI_STRINGS, save_banner=(
+            f'&#128229; Ваш экспорт скачивается как <code>{SHEET_ID}_decisions.json</code> '
+            '&rarr; сохраните его в <code>CommentaryStrategies\\review\\'
+            f'{SHEET_ID}_decisions.json</code> (значение <code>sheet_id</code> внутри '
+            f'файла &mdash; <code>{SHEET_ID}</code> &mdash; так следующая сессия узнаёт, '
+            'к какому листу относятся эти решения).')),
     }
     screening = {
         "deterministic": sum(1 for _c, cls, _w in screened if cls == "deterministic"),
