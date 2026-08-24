@@ -10,13 +10,15 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.25.0] - 2026-08-24
+
+
 ### Changed
 
 - **H2820 — CLAUDE.md truth-pass** (Grok 4.6 `grok-4.6`, 16-08-2026). Dated
   header, what/run/don't (edit JSON not generated `tei/`/`pages/`; no
   checkbox review sheets), primer + DANGER_FACTS pointers. AGENTS.md twin
   regenerated.
-
 ## [1.24.0] — 2026-08-16
 
 Corpus-truth reconciliation at source (H2872) plus the H2809 footnote
