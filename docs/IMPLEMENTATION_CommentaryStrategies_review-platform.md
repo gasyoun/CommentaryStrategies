@@ -247,7 +247,7 @@ Modify together:
 - `docs/KOSTINA_SUNDARAKANDA_GUIDE.md`
 - affected companion metadocs
 - `.ai_state.md`
-- `changelog.md`
+- `CHANGELOG.md`
 
 Replace raw repository navigation with the official Pages portal; explain login,
 local/remote save, aggregate fallback, explicit submit, recovery, privacy, and

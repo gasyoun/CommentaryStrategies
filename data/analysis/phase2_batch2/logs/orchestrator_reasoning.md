@@ -173,7 +173,7 @@ All rebuilt; counts reconcile exactly (38 + 312 = 350). Committing batch-2 data:
 
 - 🔧 `PowerShell` — Commit batch2 candidates and artifacts
 - 🔧 `Grep` — H142|H141|пилот|Фаза-2|Фазы-2
-- 🔧 `Read` — C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22\changelog.md
+- 🔧 `Read` — C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22\CHANGELOG.md
 - 🔧 `Grep` — Next free|H142
 - 🔧 `PowerShell` — Read next-free handoff ID marker
 - 🔧 `Read` — C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22\docs\COMMENTARY_ROADMAP.md
@@ -189,7 +189,7 @@ All rebuilt; counts reconcile exactly (38 + 312 = 350). Committing batch-2 data:
 - 🔧 `Edit` — C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22\docs\PHASE2_METHOD.md
 - 🔧 `PowerShell` — Check PHASE2_METHOD byline
 - 🔧 `Edit` — C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22\docs\PHASE2_METHOD.md
-- 🔧 `Edit` — C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22\changelog.md
+- 🔧 `Edit` — C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22\CHANGELOG.md
 Now `.ai_state.md`:
 
 - 🔧 `Read` — C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22\.ai_state.md
@@ -220,8 +220,8 @@ Now the GTD rollup — locating the CommentaryStrategies rows:
 - 🔧 `PowerShell` — Commit and push Uprava hub updates
 - 🔧 `Skill`
 - 🔧 `PowerShell` — Sync main checkout and list tags
-- 🔧 `Read` — C:\Users\user\Documents\GitHub\CommentaryStrategies\changelog.md
-- 🔧 `Edit` — C:\Users\user\Documents\GitHub\CommentaryStrategies\changelog.md
+- 🔧 `Read` — C:\Users\user\Documents\GitHub\CommentaryStrategies\CHANGELOG.md
+- 🔧 `Edit` — C:\Users\user\Documents\GitHub\CommentaryStrategies\CHANGELOG.md
 - 🔧 `PowerShell` — Promote changelog, commit, tag v1.5.0, push
 - 🔧 `Bash` — Create GitHub release v1.5.0
 **H142 is fully executed and released** — [PR #48](https://github.com/gasyoun/CommentaryStrategies/pull/48) merged, [v1.5.0](https://github.com/gasyoun/CommentaryStrategies/releases/tag/v1.5.0) tagged and released.

@@ -92,6 +92,6 @@ Edit **`index.html`** (it is hand-authored, NOT generated — safe to edit direc
 1. (Opus) Read §2 sources; lift the human numbers from `index.html` + the Leonov row from `leonov_kostina` §10.
 2. (Opus or a Sonnet sub-agent) Recompute/confirm the generated metrics from `sundara_commentary_to_add.json` (density, length, IAST%, type profile) — §3 already has them; verify.
 3. (Opus) Write the matrix extension + method-validation block into `index.html`; `python scripts/validate.py`; commit on a branch → PR (repo uses PRs + a parallel automation on `main`; verify end-state on `origin/main`, don't trust a single push).
-4. Update `changelog.md` (SemVer — next is likely **v1.3.0** or a PATCH), `.ai_state.md`, and the `Uprava/GTD_NEXT_ACTIONS.md` hub.
+4. Update `CHANGELOG.md` (SemVer — next is likely **v1.3.0** or a PATCH), `.ai_state.md`, and the `Uprava/GTD_NEXT_ACTIONS.md` hub.
 
 **Current repo state (2026-06-29):** apparatus = 788 notes, all 4 Kazansky levels, on `main`; releases v1.0.0/v1.1.0/v1.2.0 cut; report `leonov_sundara_corpus_enriched.html` refreshed to 788; `validate.py` green. Phase 2 (Б commentator-dialogue, gated on Gemini-OCR of the 5 commentaries) deferred.

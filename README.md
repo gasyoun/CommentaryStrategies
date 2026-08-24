@@ -114,7 +114,7 @@ python scripts/build_sutra_tm.py --corpus ys --report   # только Йога�
 | **Г** историко-культурологический | вводные статьи ([data/hist_cultural/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/hist_cultural)) |
 
 Пер-типовой ценз на этапе 788 примечаний: А 617 · В 122 · Б 38 · Г 11 (см.
-[changelog.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/changelog.md)).
+[CHANGELOG.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/CHANGELOG.md)).
 Текущий итог яруса-2 (897 на 11-07-2026) отражает последующие добавления
 лексического слоя (тип А).
 
