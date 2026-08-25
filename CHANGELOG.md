@@ -10,6 +10,10 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+### Changed
+
+- **H3492 — Grintser lexical-note conventions applied to Sundara sargas 2–5** (Fable 5 `claude-fable-5`, 25-08-2026). The H2833 conventions ([docs/LEXICAL_NOTE_STYLE_GRINTSER_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEXICAL_NOTE_STYLE_GRINTSER_2026.md)) reached sarga 1 only; sargas 2–5 audited 0 clean. 37 `note_ru` rewritten in `data/lexical/ch2.json`…`ch5.json` (every `keep`/`edit` card; `reject`/`park` untouched, lemma/shloka fields untouched). Audit `clean` 0→14/16, 0→10/13, 0→7/8, 0→6/7 — all 7 residuals are `reject`/`park`; sarga 1 unchanged at 58/51. Applier generalised: [`scripts/apply_grintser_pass.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/apply_grintser_pass.py) `--chapter N --handoff h3492`. Patches, before/after ledgers and the report: [data/lexical/style_pass_h3492/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/lexical/style_pass_h3492) ([REPORT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/lexical/style_pass_h3492/REPORT.md)). Derived `data/apparatus/` not rebuilt in this PR.
+
 ## [1.25.0] - 2026-08-24
 
 
