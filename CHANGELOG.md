@@ -10,6 +10,7 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 
+## [1.26.1] - 2026-08-25
 ### Fixed
 
 - **H3498 — lemma typos fixed, H3492 texts propagated to the print layer** (Fable 5 `claude-fable-5`, 25-08-2026). `data/lexical/ch3.json` `lemma_iast` V.3.5 `bhujagācārita`→`bhujagācarita`, V.3.12 `vasvokaṣārā`→`vasvokasārā` (verse forms), same fix on their aggregate twins. H3492's rewrites had reached only `chN.json`: `build_sarga_apparatus.py` prefers the aggregate twins in `data/sundara_commentary_to_add.json`, so the apparatus still showed the old texts. New [`scripts/sync_grintser_pass_book.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/sync_grintser_pass_book.py) `--chapter N --handoff h3492` (generalised H2833 sarga-1 sync) landed 31 twins (12+7+6+6; ledgers `book_sN_audit.json`). Rebuilt `data/apparatus/sarga_02–05.{json,html}` and `data/book/sundarakanda_print_master.md` (also picks up the H2833 sarga-1 texts, unrebuilt since 16-08). Remaining `MW:` inline in the apparatus = the 7 `reject`/`park` cards only.
