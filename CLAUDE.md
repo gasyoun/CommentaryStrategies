@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-06-2026 · Last updated: 16-08-2026_
+_Created: 28-06-2026 · Last updated: 26-08-2026_
 
 A scholarly corpus + Python tooling for the comparative study of **commentary
 strategies** used by Russian academic translators of Sanskrit texts
@@ -36,6 +36,7 @@ overwrite them from data.
 python scripts/validate.py
 python scripts/derive_urn.py --check
 python scripts/export_tei.py
+python scripts/validate_tei_rng.py   # RelaxNG vs tei_all; SKIP without xmllint/schema
 python scripts/build_pages.py
 python scripts/parse_formulas.py
 python scripts/profile_nilakantha.py
@@ -85,7 +86,10 @@ Verse addressing is CTS-URN via `derive_urn.py`.
 
 - Hand-written `*_commentary_analysis.html` at repo root.
 - Generated `tei/`, `pages/`, `visualizations.html` — regenerate.
-- Generated web-asset dumps (`महाभारत_files/`, `Рамаяна…_files/`).
+- Generated web-asset dumps (`महाभारत_files/`, `Рамаяна…_files/`) — untracked and
+  `.gitignore`d since 26-08-2026 (H3558); still on disk, still not repo material.
+  The two parent `.html` saved pages **stay tracked** — they are the source the
+  Sundarakāṇḍa extractors read; a fresh clone renders them unstyled, by design.
 - UTF-8 BOM — `encoding='utf-8'`, never `utf-8-sig`.
 
 Danger facts:

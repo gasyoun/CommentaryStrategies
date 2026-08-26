@@ -9,12 +9,18 @@
 Полнотекстовая публикация авторизована (data/RIGHTS.md), поэтому raw_text
 включается целиком.
 
-Валидация: xmllint локально недоступен (см. CLAUDE.md), поэтому сигналом
-корректности служит успешный разбор через ElementTree — той же конвенции
-придерживается проект для XML-проверки csl.
+Валидация двухступенчатая: разбор через ElementTree (быстрый сигнал в самом
+экспортере) и полная RelaxNG-валидация против tei_all — отдельным шагом,
+scripts/validate_tei_rng.py.
+
+Размещение примечаний: <standOff><listAnnotation>, не <text><body>. По схеме
+tei_all 4.12.0 listAnnotation достижим только через model.standOffPart, то есть
+внутри <standOff>; в <body> он невалиден. Это показала первая настоящая
+RNG-валидация (26-08-2026, H3558) — ET-разбор такую ошибку не ловит в принципе.
 
 Запуск:
     python scripts/export_tei.py
+    python scripts/validate_tei_rng.py      # полная RNG против tei_all
 """
 
 import json
@@ -130,13 +136,11 @@ def build_tei(translator, records):
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
 {build_header(translator, len(records))}
-  <text>
-    <body>
-      <listAnnotation>
+  <standOff>
+    <listAnnotation type="commentary">
 {notes}
-      </listAnnotation>
-    </body>
-  </text>
+    </listAnnotation>
+  </standOff>
 </TEI>
 """
 

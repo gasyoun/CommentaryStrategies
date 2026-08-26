@@ -1,5 +1,7 @@
 # CommentaryStrategies — Архитектура
 
+_Created: 10-05-2026 · Last updated: 26-08-2026_
+
 > Версия: 2.0 · Дата: 2026-06-13 · Заменяет v1.0 (2026-05-10)
 > Что изменилось: слой данных, генерация и DH-экспорт из «рекомендуемого будущего»
 > стали действующей реальностью (см. [ROADMAP_2026H2.md](ROADMAP_2026H2.md), Workstream B).
@@ -105,11 +107,12 @@ data/{translator}_markup_50.json       (золотая выборка)
         ├─▶ derive_urn.py    → внедряет поле urn (CTS) + валидация
         │
         ├─▶ export_tei.py    → tei/{translator}.xml   (TEI P5, таксономии осей, @ana, @target=URN)
+        │       └─▶ validate_tei_rng.py → RelaxNG-валидация tei/ против tei_all (xmllint)
         ├─▶ build_pages.py   → pages/{translator}.html (табличный data-derived вид)
         └─▶ profile_translator.py → профили по осям (длины, IAST, темы) [stdout]
 
-ramayana-leonov/ramayana-formulas_1-2.md
-        └─▶ parse_formulas.py → data/ramayana_epithets.json   (формульный слой)
+ramayana-leonov/ramayana-formulas_1-2.md   +   sources/leonov_notes.json (IAST + адреса кн. V)
+        └─▶ parse_formulas.py → data/ramayana_epithets.json   (формульный слой + iast_crosswalk)
 
 [LLM-пайплайн, gated на ANTHROPIC_API_KEY]
 sources/*.json ─▶ annotate_batch.py ─▶ data/*.json ─▶ eval_pipeline.py (≥85% vs gold)
@@ -128,7 +131,8 @@ sources/*.json ─▶ annotate_batch.py ─▶ data/*.json ─▶ eval_pipeline.
 | [profile_translator.py](../scripts/profile_translator.py) | профили переводчиков по 4 осям (длины, IAST, темы, сравнение) | stdlib |
 | [derive_urn.py](../scripts/derive_urn.py) | CTS-URN из `shloka_addr` + внедрение поля + валидация | stdlib |
 | [export_tei.py](../scripts/export_tei.py) | JSON → TEI P5 (таксономии, `@ana`, `@target`) | stdlib |
-| [parse_formulas.py](../scripts/parse_formulas.py) | эпитетный слой Рамаяны → JSON | stdlib |
+| [validate_tei_rng.py](../scripts/validate_tei_rng.py) | полная RelaxNG-валидация `tei/*.xml` против tei_all; SKIP-терпим (нет `xmllint`/схемы → exit 0), схема через `--schema` или `$TEI_ALL_RNG` | `xmllint` + `tei_all.rng` |
+| [parse_formulas.py](../scripts/parse_formulas.py) | эпитетный слой Рамаяны (кн. 1–2) → JSON; плюс кросоволок с IAST-леммами из `sources/leonov_notes.json` (поле `iast_crosswalk`, переиспользует `derive_urn.derive`) | stdlib |
 | [build_pages.py](../scripts/build_pages.py) | data → `pages/*.html` (переиспользует profile_translator) | stdlib |
 | [build_visualizations.py](../scripts/build_visualizations.py) | data → `visualizations.html` (Chart.js, 6-way) | stdlib |
 | [extract_false_friends_profile.py](../scripts/extract_false_friends_profile.py) | профиль «ложных друзей» → `data/false_friends_profile.json` (Article 1) | stdlib |
@@ -183,4 +187,13 @@ data-derived артефакты пересобираемы и проверяют
   переводчиках (Сыркин 58 %) — отдельная задача тюнинга оси 4.
 - **Маппинг на ID samskrtam.ru:** для связи URN с параллельным корпусом нужны их ID.
 - **CI:** пересборка `tei/`/`pages/` при изменении данных — пока вручную.
-- **Веб-дампы в git:** `महाभारत_files/`, `Рамаяна…_files/` стоит вынести из дерева.
+- **Веб-дампы в git — снято 26-08-2026 (H3558).** 31 файл (≈ 1,8 МБ) вспомогательных css/js под
+  `*_files/` отвязан от индекса (`git rm --cached`) и закрыт правилом `*_files/` в `.gitignore`.
+  Сами `.html` остаются под версией — их читают `extract_leonov_notes.py` и `build_book_apparatus.py`.
+  Осознанное следствие: в свежем клоне эти две сохранённые страницы открываются без оформления.
+  История не переписывалась (`filter-repo` + force-push — отдельное решение, не сделано).
+- **Схема tei_all не вендорится.** `validate_tei_rng.py` ищет её по `--schema` / `$TEI_ALL_RNG` /
+  `schema/tei_all.rng` и при отсутствии печатает SKIP. Причина: 1,1 МБ чужой схемы в дереве — тот же
+  класс балласта, что и веб-дампы выше.
+
+_Dr. Mārcis Gasūns_
