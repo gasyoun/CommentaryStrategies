@@ -1,6 +1,6 @@
 # CommentaryStrategies
 
-_Created: 24-04-2026 · Last updated: 14-08-2026_
+_Created: 24-04-2026 · Last updated: 26-08-2026_
 
 Аналитический репозиторий для сравнительного изучения **комментаторских стратегий**
 русских переводчиков санскритских текстов.
@@ -22,7 +22,7 @@ _Created: 24-04-2026 · Last updated: 14-08-2026_
 |------|-----------|
 | [docs/GEMINI.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GEMINI.md) | Контекст для AI-агентов (читать первым) |
 | [docs/ROADMAP_2026H2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP_2026H2.md) | Актуальный план (v2.0): DH-санация, праксис Сундараканды, греко-санскритское сравнение |
-| [docs/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP.md) | Прежний пятифазный план (v1.0, фазы 1–3 выполнены) |
+| [archive/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/archive/ROADMAP.md) | Прежний пятифазный план (v1.0, фазы 1–3 выполнены; в архиве с 26-08-2026, остаток перенесён в ROADMAP_2026H2.md) |
 | [docs/ARCHITECTURE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ARCHITECTURE.md) | Архитектурный обзор |
 | [docs/TYPOLOGY_GREEK_SANSKRIT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/TYPOLOGY_GREEK_SANSKRIT.md) | Сравнительная типология: схолии vs ṭīkā |
 | [PROMPT_TEMPLATE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/PROMPT_TEMPLATE.md) | Универсальный промт для LLM-анализа |
