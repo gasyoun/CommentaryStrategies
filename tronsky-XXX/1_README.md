@@ -172,7 +172,7 @@ e.findall(r'class="([^"]+)"', html) для обнаружения структу
 - 	ronsky-XXX/article_current.md — главный артефакт.
 - leonov_kostina_commentary_analysis.html — аналитическая страница Леонова.
 - .ai_state.md — живой state для AI.
-- docs/ROADMAP.md — план развития.
+- docs/ROADMAP_2026H2.md — план развития (v1.0 — в archive/ROADMAP.md).
 - docs/ARCHITECTURE.md — архитектура.
 
 ---

@@ -19,7 +19,7 @@ A comparative study of **commentary strategies** used by Russian translators of 
 
 | File | What it is | Read when |
 |------|-----------|-----------|
-| `docs/ROADMAP.md` | Phased project plan with task lists | Planning work |
+| `docs/ROADMAP_2026H2.md` | Current plan (v2.0) with task lists; v1.0 archived at `archive/ROADMAP.md` | Planning work |
 | `docs/ARCHITECTURE.md` | Structure review + target architecture | Making structural changes |
 | `tronsky-XXX/1_README.md` | **Deep meta-instruction** (33 KB) for the article | Working on the Tronsky article |
 | `.ai_state.md` | Session state journal | Every session start |
@@ -206,9 +206,9 @@ Adjusted plan per `AGENT.md` rules:
 - Phase 4: **DEEP** — eval quality is the core bottleneck (architecture issue C3)
 - Phase 5: **ONGOING** — cost and drift matter when annotation scales to 300+ translators
 
-### Deliverables mapped to ROADMAP.md phases
+### Deliverables mapped to the v1.0 ROADMAP phases (now `archive/ROADMAP.md`)
 
-| ROADMAP.md phase | agent-roadmap-2026 deliverable produced |
+| v1.0 phase (`archive/ROADMAP.md`) | agent-roadmap-2026 deliverable produced |
 |------------------|-----------------------------------------|
 | Phase 1 (article submission) | Phase 0 mental-model doc: write the 2-page doc that explains the 4-axis framework as a context-engineering artifact |
 | Phase 2 (micro-markup) | Phase 2 project: research-analyst deep agent classifying 300 annotations; LangSmith trace URL in README |

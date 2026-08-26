@@ -9,6 +9,9 @@ changes. Each released version is git-tagged (`vX.Y.Z`) with a matching
 Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
+### Changed
+
+- **H3003 — v1.0 roadmap archived, v2.0 truth-passed** (Opus 5 `claude-opus-5`, 26-08-2026). `docs/ROADMAP.md` (v1.0, 2026-05-10, 14 open / 32 done) `git mv`→ [archive/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/archive/ROADMAP.md) with a tombstone at the old path — two independent witnesses said it was superseded (`ROADMAP_2026H2.md` L3 «Заменяет», `README.md` «Прежний пятифазный план»), and six of its 14 open items were verified shipped-but-unticked against disk (`ci.yml` Corpus-integrity job, `validate.py`, `data/commentary_schema.json`, `build_visualizations.py`). [docs/ROADMAP_2026H2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP_2026H2.md) gains a dated header, the promised «Перенесено из v1.0» section (five live carry-overs: indology CONTRIBUTING, interactive filters + radial/timeline in `visualizations.html` — both proven absent — Аверинцев, Лосев), and a status section re-sorting all 12 open v2.0 items by **who can unblock them** (A agent-doable 4 · B waiting on an artefact 2 · C human act 3+3), each with a measurement. Recorded as a proven **negative**: the axis-4 hybrid gloss that `.ai_state.md` still reads as live was already retracted 02-07-2026 — probe run, no edit made. Five referrers repointed (README, `docs/GEMINI.md` ×2, `docs/CLR_INTERFACE_STUDY.md`, `tronsky-XXX/1_README.md`). No new five-doc `/ask` set: the 14-08 review-platform programme is Class 3 and untouched.
 
 ## [1.26.1] - 2026-08-25
 ### Fixed

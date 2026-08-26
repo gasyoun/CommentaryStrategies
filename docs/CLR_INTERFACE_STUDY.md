@@ -1,8 +1,8 @@
 # Изучение интерфейса CLR (Corpus Latino-Rossicum)
 
-_Created: 01-08-2026 · Last updated: 01-08-2026_
+_Created: 01-08-2026 · Last updated: 26-08-2026_
 
-> Roadmap: [docs/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP.md)
+> Roadmap: [archive/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/archive/ROADMAP.md) (план v1.0, в архиве с 26-08-2026)
 > §4.2 «Интеграция с CLR» — первый пункт («Изучить интерфейс CLR»). Следующие два пункта
 > того же раздела («Адаптировать модель парной пагинации для санскрита», «Создать
 > прототип поиска по корпусу») **не входят** в этот проход — они блокированы на контакт с
