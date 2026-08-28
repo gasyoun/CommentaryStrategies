@@ -1,6 +1,6 @@
 # CommentaryStrategies — Roadmap 2026 H2 → 2027
 
-_Created: 12-06-2026 · Last updated: 26-08-2026_
+_Created: 12-06-2026 · Last updated: 28-08-2026_
 
 > Версия: 2.0 · Дата: 2026-06-12 · Заменяет v1.0 — [archive/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/archive/ROADMAP.md) (фазы 1–3 выполнены; перемещён в архив 26-08-2026, надгробие — [docs/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP.md)). Незакрытый остаток v1.0 — раздел «Перенесено из v1.0» ниже
 > Дополняет [roadmap_postdoc_2026.md](../roadmap_postdoc_2026.md) (статьи и монография — там; здесь — репозиторий как DH-объект и комментаторская праксис Рамаяны)
@@ -36,7 +36,7 @@ _Created: 12-06-2026 · Last updated: 26-08-2026_
 ### B2. Канонические идентификаторы — ✅ готово (2026-06-12)
 - [x] CTS-URN для адресации стихов: `urn:cts:sanskritLit:<work>:<passage>` (`scripts/derive_urn.py`). Решение по схеме: один work на эпос (ramayana / mahabharata / <упанишада>), книга — первый элемент passage (не `ramayana.sundara`, чтобы не дублировать). Покрытие: Рам. (7 кāṇḍa), Мбх. (18 parva + upaparva-псевдонимы Gītā→6, Mokṣa→12), 14 упанишад.
 - [x] Поле `urn` добавлено в [commentary_schema.json](../data/commentary_schema.json) и внедрено в 300 примечаний (data/*_markup_50.json). Перекрестная проверка книга↔номер пройдена; **выявила и исправила** неоднородность адресации Кальянова (Ādi adhyāya.verse → префиксуется номером парвы → mahabharata:1.x.y).
-- [ ] Маппинг на ID samskrtam.ru (связь с параллельным корпусом) — нужны их ID (data-gated)
+- [x] Маппинг на ID samskrtam.ru (связь с параллельным корпусом) — ✅ готово (28-08-2026, drain A04). Гейт снят: «их ID» оказались **публично выводимыми** из самих страниц корпуса (сверено с HTML). Схемы: кн. V Рамаяны — постиховые якоря `id="<sarga>.<стих>"`; Рам. I–III и все 18 парв Мхб. — поглавные `id="chapter_<n>"`. Генератор [scripts/samskrtam_map.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/samskrtam_map.py) (derive-don't-store, `--emit`/`--check`; `--check` введён в CI) → [data/samskrtam_id_map.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/samskrtam_id_map.json): 300 примечаний → **244 mapped · 6 anchor-missing · 50 not-in-corpus** (упанишады Сыркина в корпусе отсутствуют). Шесть `anchor-missing` — не дефект маппера, а **сигнал сверки адресов**: Рам. I сарга 80 (в крите Bāla — 77 сарк), Рам. V 31.44 (нет якоря и на живой странице), Мхб. VI adhy. 115/120 (страница корпуса доходит до chapter_111), Мхб. XVIII adhy. 6 (в крите Svargārohaṇa — 5 adhyāya); сверка по печатным изданиям — за владельцем данных. Попутные находки: страница кн. V жива (HTTP 200), но не включена в index_ramayana.html; **отсутствующая страница корпуса отдаёт главную с HTTP 200** (мягкая 404, ровно 33 857 байт) — HEAD-проверка существования страниц samskrtam.ru недоказуема. [PR #205](https://github.com/gasyoun/CommentaryStrategies/pull/205)
 
 ### B3. TEI-экспорт — ✅ готово (2026-06-12)
 - [x] `scripts/export_tei.py`: JSON → TEI P5, 4 оси как `<taxonomy>` в teiHeader, каждое `<note>` с `@target` = CTS-URN, `@ana` = `#a2_A #par_P #lak_L2 #top_myth`, `@n` = адрес, `rend="iast"`. Выход: `tei/*.xml` (6 файлов, 300 примечаний).
@@ -157,7 +157,7 @@ _Created: 12-06-2026 · Last updated: 26-08-2026_
 
 ### Перенесено живым
 
-- [x] **Contribution guidelines для индологов** (§5.2 v1.0) — **shipped** (OxAlpha `opencode/x-preview-f-free`, 28-08-2026, via `/drain`, [PR #204](https://github.com/gasyoun/CommentaryStrategies/pull/204)): [`CONTRIBUTING.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/CONTRIBUTING.md) переписан из 9-строчной универсальной заглушки в онбординг индолога — путь A (новый переводчик: `*_full.json` → золотая 50 → enum схемы → `profile_translator.py` → `build_pages.py` → эссе), путь B (разметка примечания по 4 осям со всеми enum'ами и каноническими ловушками: реалии — только V, никогда B; ось 4 — P/K/D без `C`; URN через `scripts/derive_urn.py`), гейты `scripts/validate.py` (локально + CI), правовой блок. `validate.py` 6042 файла PASS.
+- [ ] **Contribution guidelines для индологов** (§5.2 v1.0) — единственный по-настоящему несделанный пункт: [`CONTRIBUTING.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/CONTRIBUTING.md) сейчас 9-строчная универсальная заглушка (fork → branch → PR) и ничего не говорит о том, как индолог добавляет переводчика, размечает примечание по четырём осям и проходит `validate.py`. Агентский пункт, не человеческий.
 - [ ] **Интерактивные фильтры в `visualizations.html`** (§5.3 v1.0) — в файле нет ни одного `<select>` / чекбокса; графики статические.
 - [ ] **Radial / timeline визуализации эволюции стратегий** (§5.3 v1.0) — ни `radial`, ни `timeline` в файле не встречаются.
 - [ ] **Аверинцев — позднеантичная экзегеза** и **Лосев — Платоновский восьмитомник (Лосев-как-редактор)** (§4.3 v1.0) — расширение сопоставительного ряда; по существу питают Workstream D. «Гаспаров — латинская традиция» из того же §4.3 уже несёт D-пункт «Пробная разметка 50 примечаний Гаспарова», дважды его не заводим.
@@ -199,7 +199,7 @@ _Created: 12-06-2026 · Last updated: 26-08-2026_
 
 | Пункт | Чего ждёт |
 |---|---|
-| B2 «Маппинг на ID samskrtam.ru» | идентификаторов параллельного корпуса (data-gated, помечено в самом пункте) |
+| ~~B2 «Маппинг на ID samskrtam.ru»~~ ✅ **28-08-2026 (drain A04)** — гейт «нужны их ID» снят: ID выводимы из страниц корпуса; crosswalk + CI-гейт в [PR #205](https://github.com/gasyoun/CommentaryStrategies/pull/205). Остаток: сверка шести расходящихся адресов по печатным изданиям (см. чекбокс B2) | ~~идентификаторов параллельного корпуса~~ сверка адресов владельцем данных |
 | B3 «Приложить `tei/leonov.xml` к Article 3/4 как supplementary data» | подачи статьи — артефакт готов, момент приложения не наш |
 
 ### Дорожка C — нужен человеческий акт, агент не имеет права (3+3)
