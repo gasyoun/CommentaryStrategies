@@ -8,7 +8,9 @@
 
 Панели: пузырьки (IAST×длина), тепловая карта (темы×переводчики), столбцы по
 Казанскому (A/B/V/G), радар-профиль, scatter «читательский контракт» (IAST×
-дискурсивность) с контрастом Нилакантхи.
+дискурсивность) с контрастом Нилакантхи. Полоса чипов-фильтров над панелями
+включает/выключает переводчика сразу на всех пяти панелях (Chart.js —
+setDatasetVisibility, тепловая карта — перерисовка колонок).
 
 Запуск:  python scripts/build_visualizations.py
 Зависимости: только stdlib. Цвета — токены дизайн-системы (css/commentary.css).
@@ -86,6 +88,17 @@ HTML = """<!DOCTYPE html>
   .legend-dot{width:.7rem;height:.7rem;border-radius:2px;display:inline-block}
   .gen-note{font-size:.78rem;color:var(--muted);font-style:italic}
   .panel-note{font-size:.85rem;color:var(--muted);margin-top:1rem}
+  .filters{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:0 0 2.2rem;
+    font-family:'JetBrains Mono',monospace;font-size:.68rem;text-transform:uppercase;
+    letter-spacing:.05em;color:var(--muted)}
+  .filters .flabel{margin-right:.4rem}
+  .fchip{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--rule);
+    border-radius:3px;padding:.35rem .7rem;background:var(--paper);cursor:pointer;
+    user-select:none;color:var(--ink)}
+  .fchip:hover{border-color:var(--muted)}
+  .fchip input{accent-color:var(--muted);cursor:pointer;margin:0}
+  .fchip .legend-dot{width:.65rem;height:.65rem}
+  .fchip.off{opacity:.45}
 </style>
 </head>
 <body>
@@ -96,7 +109,10 @@ HTML = """<!DOCTYPE html>
 </header>
 <main class="container">
 <p class="gen-note">Графики построены из данных автоматически (scripts/build_visualizations.py);
-золотая выборка — 50 примечаний на переводчика.</p>
+золотая выборка — 50 примечаний на переводчика. Чипы-фильтры ниже включают/выключают
+переводчика сразу на всех пяти панелях.</p>
+
+<div id="filters" class="filters"><span class="flabel">Переводчики:</span><label class="fchip" id="fchip-all"><input type="checkbox" id="fall" checked>все</label></div>
 
 <section><h2 class="section-title">01. IAST &times; длина примечания</h2>
   <div class="chart-container"><div class="chart-wrap" style="height:420px;"><canvas id="bubble"></canvas></div>
@@ -130,29 +146,36 @@ const D = __DATA__;
 const css = getComputedStyle(document.documentElement);
 const RULE = css.getPropertyValue('--rule') || '#c9bfaf';
 const fade = (hex,a)=>{const n=parseInt(hex.slice(1),16);return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`;};
+const CH = {};
+const active = new Set(D.map(t=>t.slug));
+const TOP=__TOPICS__, TRU=__TOPIC_RU__;
+
+function drawHeat(act){
+  const list=D.filter(t=>act.has(t.slug));
+  const cW=86,cH=34,lW=150,tH=28,W=lW+cW*Math.max(list.length,1)+8,H=tH+cH*TOP.length+6;
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;font-family:'Source Serif 4',serif">`;
+  list.forEach((t,j)=>s+=`<text x="${lW+j*cW+cW/2}" y="${tH-8}" text-anchor="middle" font-size="11" fill="var(--muted)">${t.name}</text>`);
+  TOP.forEach((tk,i)=>{const y=tH+i*cH;s+=`<text x="${lW-8}" y="${y+cH/2+4}" text-anchor="end" font-size="11" fill="var(--ink)">${TRU[tk]}</text>`;
+    list.forEach((t,j)=>{const v=t.topics[tk]||0,x=lW+j*cW,a=Math.min(.85,v/55+.04);
+      s+=`<rect x="${x+1}" y="${y+1}" width="${cW-2}" height="${cH-2}" rx="3" fill="${t.color}" fill-opacity="${a}"/>`;
+      s+=`<text x="${x+cW/2}" y="${y+cH/2+4}" text-anchor="middle" font-size="10.5" font-weight="500" fill="${a>.4?'#fff':'var(--ink)'}">${v>0?v+'%':'—'}</text>`;});});
+  heat.innerHTML=s+'</svg>';
+}
 
 // 01 bubble
-new Chart(bubble,{type:'bubble',data:{datasets:D.map(t=>({label:t.name,
+CH.bubble=new Chart(bubble,{type:'bubble',data:{datasets:D.map(t=>({label:t.name,
   data:[{x:t.iast,y:t.mean_len,r:6+t.multitopic/4}],backgroundColor:fade(t.color,.18),borderColor:t.color,borderWidth:1.5}))},
   options:{responsive:true,maintainAspectRatio:false,layout:{padding:18},plugins:{legend:{display:false}},
   scales:{x:{min:0,max:105,title:{display:true,text:'IAST, %'}},y:{min:55,max:140,title:{display:true,text:'Ср. длина, знаков'}}}}});
 mkleg('leg1',D.map(t=>[t.name,t.color]));
 
 // 02 heatmap (SVG)
-const TOP=__TOPICS__, TRU=__TOPIC_RU__;
-const cW=86,cH=34,lW=150,tH=28,W=lW+cW*D.length+8,H=tH+cH*TOP.length+6;
-let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;font-family:'Source Serif 4',serif">`;
-D.forEach((t,j)=>s+=`<text x="${lW+j*cW+cW/2}" y="${tH-8}" text-anchor="middle" font-size="11" fill="var(--muted)">${t.name}</text>`);
-TOP.forEach((tk,i)=>{const y=tH+i*cH;s+=`<text x="${lW-8}" y="${y+cH/2+4}" text-anchor="end" font-size="11" fill="var(--ink)">${TRU[tk]}</text>`;
-  D.forEach((t,j)=>{const v=t.topics[tk]||0,x=lW+j*cW,a=Math.min(.85,v/55+.04);
-    s+=`<rect x="${x+1}" y="${y+1}" width="${cW-2}" height="${cH-2}" rx="3" fill="${t.color}" fill-opacity="${a}"/>`;
-    s+=`<text x="${x+cW/2}" y="${y+cH/2+4}" text-anchor="middle" font-size="10.5" font-weight="500" fill="${a>.4?'#fff':'var(--ink)'}">${v>0?v+'%':'—'}</text>`;});});
-heat.innerHTML=s+'</svg>';
+drawHeat(active);
 
 // 03 Kazansky stacked
 const KZ=[['A','филологический'],['B','текстологический'],['V','историко-культурный'],['G','культурологический']];
 const KC={A:'#2a5a8b',B:'#5a2d82',V:'#8b4513',G:'#7a3b00'};
-new Chart(kaz,{type:'bar',data:{labels:D.map(t=>t.name),datasets:KZ.map(([c,lab])=>({label:lab,
+CH.kaz=new Chart(kaz,{type:'bar',data:{labels:D.map(t=>t.name),datasets:KZ.map(([c,lab])=>({label:lab,
   data:D.map(t=>Math.round(100*t.kazansky[c]/t.n)),backgroundColor:KC[c],borderWidth:0}))},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
   scales:{x:{stacked:true},y:{stacked:true,max:100,ticks:{callback:v=>v+'%'}}}}});
@@ -162,20 +185,53 @@ mkleg('leg3',KZ.map(([c,lab])=>[lab,KC[c]]));
 const AX=[['Длина',t=>t.mean_len],['IAST %',t=>t.iast],['Понятие P',t=>t.paribok.P],
   ['Кодиф. K',t=>t.paribok.K],['Дискурс D',t=>t.paribok.D],['Философия',t=>t.topics.philosophy||0]];
 const raw=AX.map(([,f])=>D.map(f)),norm=raw.map(a=>{const mn=Math.min(...a),mx=Math.max(...a),d=mx-mn||1;return a.map(v=>Math.round((v-mn)/d*100));});
-new Chart(radar,{type:'radar',data:{labels:AX.map(a=>a[0]),datasets:D.map((t,j)=>({label:t.name,
+CH.radar=new Chart(radar,{type:'radar',data:{labels:AX.map(a=>a[0]),datasets:D.map((t,j)=>({label:t.name,
   data:norm.map(ax=>ax[j]),borderColor:t.color,backgroundColor:fade(t.color,.12),borderWidth:1.5,pointRadius:3}))},
   options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
   scales:{r:{min:0,max:100,ticks:{display:false},grid:{color:RULE},angleLines:{color:RULE}}}}});
 mkleg('leg4',D.map(t=>[t.name,t.color]));
 
 // 05 contract scatter
-new Chart(scatter,{type:'scatter',data:{datasets:D.map(t=>({label:t.name,
+CH.scatter=new Chart(scatter,{type:'scatter',data:{datasets:D.map(t=>({label:t.name,
   data:[{x:t.iast,y:t.paribok.D}],backgroundColor:t.color,borderColor:t.color,pointRadius:8,pointHoverRadius:10}))},
   options:{responsive:true,maintainAspectRatio:false,layout:{padding:18},
   plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+` (IAST ${c.parsed.x}%, D ${c.parsed.y}%)`}}},
   scales:{x:{min:0,max:105,title:{display:true,text:'IAST, %'}},y:{min:-2,max:50,title:{display:true,text:'Дискурсивность (Парибок D), %'}}}}});
 
 function mkleg(id,pairs){const el=document.getElementById(id);pairs.forEach(([n,c])=>{const sp=document.createElement('span');sp.innerHTML=`<span class="legend-dot" style="background:${c}"></span>${n}`;el.appendChild(sp);});}
+
+// фильтры: чип на переводчика + мастер-чип «все»
+const box=document.getElementById('filters');
+const master=document.getElementById('fall');
+const masterChip=document.getElementById('fchip-all');
+const chips=[];
+D.forEach(t=>{
+  const lab=document.createElement('label');
+  lab.className='fchip';
+  lab.innerHTML=`<input type="checkbox" checked><span class="legend-dot" style="background:${t.color}"></span>${t.name}`;
+  const cb=lab.querySelector('input');
+  cb.addEventListener('change',()=>{cb.checked?active.add(t.slug):active.delete(t.slug);
+    lab.classList.toggle('off',!cb.checked);sync();});
+  chips.push({cb,lab});
+  box.appendChild(lab);
+});
+function sync(){
+  const vis=D.filter(t=>active.has(t.slug));
+  D.forEach((t,j)=>['bubble','radar','scatter'].forEach(k=>CH[k].setDatasetVisibility(j,active.has(t.slug))));
+  CH.bubble.update();CH.radar.update();CH.scatter.update();
+  CH.kaz.data.labels=vis.map(t=>t.name);
+  CH.kaz.data.datasets.forEach((ds,i)=>{ds.data=vis.map(t=>Math.round(100*t.kazansky[KZ[i][0]]/t.n));});
+  CH.kaz.update();
+  drawHeat(active);
+  master.checked=chips.every(c=>c.cb.checked);
+  masterChip.classList.toggle('off',!master.checked);
+}
+master.addEventListener('change',()=>{
+  active.clear();
+  chips.forEach(c=>{c.cb.checked=master.checked;c.lab.classList.toggle('off',!master.checked);
+    if(master.checked)active.add(D[chips.indexOf(c)].slug);});
+  sync();
+});
 </script>
 </body>
 </html>
