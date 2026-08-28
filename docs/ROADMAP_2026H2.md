@@ -43,7 +43,11 @@ _Created: 12-06-2026 · Last updated: 28-08-2026_
 - [x] Валидация первого уровня: ET-parse OK по всем (быстрый сигнал внутри самого экспортера).
   _Правка 26-08-2026 (H3558): формулировка «xmllint локально нет — конвенция проекта» была неверна —
   `xmllint` (libxml 20913) на машине есть. См. следующий пункт._
-- [ ] Приложить tei/leonov.xml к Article 3/4 как supplementary data
+- [x] Приложить tei/leonov.xml к Article 3/4 как supplementary data — **28-08-2026 (OxAlpha):** в
+  [article3_nilakantha.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article3_nilakantha.md)
+  добавлен раздел «Дополнительные материалы» (leonov.xml + 5 экспортов изданий, CTS-URN, RelaxNG-валидны,
+  права по data/RIGHTS.md). Физическое приложение к рукописи — в момент подачи (см. строку приоритетов ниже);
+  для Article 4 (JAOS) перенос блока записан в .ai_state.md Queue.
 - [x] **Полная RelaxNG-валидация против tei_all — 26-08-2026 (H3558).** `scripts/validate_tei_rng.py`,
   схема TEI P5 **4.12.0** (`tei_all.rng`, 1 098 331 байт, ревизия 113e933e2; tei-c.org из песочницы
   недоступен, схема извлечена Range-запросами из релизного zip на GitHub). **Первый настоящий прогон
