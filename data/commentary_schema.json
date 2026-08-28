@@ -7,6 +7,8 @@
   "properties": {
     "comment_id":    { "type": "string", "description": "Уникальный ID: {source}/{translator}/comment_{shloka}" },
     "urn":           { "type": "string", "pattern": "^urn:cts:sanskritLit:", "description": "Канонический CTS-URN стиха, выводимый из shloka_addr (scripts/derive_urn.py): urn:cts:sanskritLit:<work>:<passage>, напр. urn:cts:sanskritLit:ramayana:5.1.1" },
+    "samskrtam_ref": { "type": "string", "description": "Якорь (id) стиха/главы на странице параллельного корпуса samskrtam.ru — из data/samskrtam_id_map.json (scripts/samskrtam_map.py): «<sarga>.<стих>» (кн. V Рамаяны, постиховой) или «chapter_<n>» (поглавный). Опционально." },
+    "samskrtam_url": { "type": "string", "description": "Полный URL страницы корпуса с якорем, напр. https://samskrtam.ru/parallel-corpus/05_ramayana-sundarakanda2026.html#1.1. Опционально." },
     "shloka_addr":   { "type": "string", "description": "Человекочитаемый адрес шлоки, напр. Rām. Sundara 5.1.1 (источник для urn)" },
     "translator":    { "type": "string", "enum": ["kalyanov","vassilkov","erman","grintser","syrkin","leonov"] },
     "editor":        { "type": "string", "description": "Редактор (для Леонова: kostina)" },

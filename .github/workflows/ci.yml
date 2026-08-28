@@ -105,6 +105,10 @@ jobs:
         run: python scripts/validate.py
       - name: CTS-URN cross-check (book ↔ number)
         run: python scripts/derive_urn.py --check
+      # B2 (roadmap 2026H2): crosswalk на ID параллельного корпуса samskrtam.ru
+      # должен воспроизводиться из urn байт-в-байт (derive, не ручная разметка).
+      - name: samskrtam.ru ID mapping parity
+        run: python scripts/samskrtam_map.py --check
       # Mixed-script words hide from every search that assumes one alphabet per
       # word (issue #173). 643 of them were found once someone looked; the
       # h2864 vote settled all but three declared exceptions, so this can gate.
