@@ -36,6 +36,7 @@ _Created: 24-04-2026 · Last updated: 26-08-2026_
 |---|---|
 | [data/commentary_schema.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/commentary_schema.json) | JSON-схема разметки (4 оси + URN + IAST) |
 | [data/*_markup_50.json](https://github.com/gasyoun/CommentaryStrategies/tree/main/data) | Золотая выборка, 6×50 примечаний с CTS-URN |
+| [data/samskrtam_id_map.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/samskrtam_id_map.json) | Кроссворк URN → ID параллельного корпуса samskrtam.ru (300 примечаний; 244 привязаны, 50 — упанишады вне корпуса, 6 — расхождение нумерации) |
 | [data/RIGHTS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/RIGHTS.md) | Права: полнотекстовая публикация 5 изданий авторизована |
 | [data/ramayana_epithets.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/ramayana_epithets.json) | Формульно-эпитетный слой Рамаяны (509 статей, кн. 1–2) |
 | [tei/](https://github.com/gasyoun/CommentaryStrategies/tree/main/tei) | Экспорт корпуса в TEI P5 (6 файлов) |
@@ -137,6 +138,7 @@ python scripts/build_sutra_tm.py --corpus ys --report   # только Йога�
 ```sh
 python scripts/profile_translator.py grintser vassilkov kalyanov  # профили по осям
 python scripts/derive_urn.py                                      # CTS-URN из адресов
+python scripts/samskrtam_map.py --emit                            # кроссворк URN → ID samskrtam.ru (B2)
 python scripts/export_tei.py                                      # JSON → TEI P5 (tei/)
 python scripts/parse_formulas.py                                  # эпитетный слой
 python scripts/build_pages.py                                     # data → pages/*.html
