@@ -8,9 +8,11 @@
 
 Панели: пузырьки (IAST×длина), тепловая карта (темы×переводчики), столбцы по
 Казанскому (A/B/V/G), радар-профиль, scatter «читательский контракт» (IAST×
-дискурсивность) с контрастом Нилакантхи. Полоса чипов-фильтров над панелями
-включает/выключает переводчика сразу на всех пяти панелях (Chart.js —
-setDatasetVisibility, тепловая карта — перерисовка колонок).
+дискурсивность) с контрастом Нилакантхи, timeline издательской хронологии
+корпусов (span-бары 1940–2020 + честный остаток «без даты») и радиальная
+хронология (полярные спицы по хронологическому порядку, радиус = IAST%).
+Полоса чипов-фильтров над панелями включает/выключает переводчика сразу на
+всех семи панелях (Chart.js — setDatasetVisibility; SVG-панели — перерисовка).
 
 Запуск:  python scripts/build_visualizations.py
 Зависимости: только stdlib. Цвета — токены дизайн-системы (css/commentary.css).
@@ -49,6 +51,19 @@ TOPIC_RU = {"sanskrit_term": "санскр. термин", "myth": "миф/пе�
 NILAKANTHA = {"verses": 1800, "with_tika": 373, "coverage_pct": 20.7,
               "median_gloss": 30, "substantive": 90}
 
+# Хронология изданий, представленных золотой выборкой (панели 06–07). Источники:
+# точные годы — подзаголовки рукописных эссе (*_commentary_analysis.html);
+# диапазоны — data/RIGHTS.md. None = даты изданий в корпусе НЕ зафиксированы —
+# панели обязаны показывать этот остаток, а не выдумывать год.
+YEARS = {
+    "kalyanov":  (1950, 1996),  # Мхб, М., 1950–1996 (data/RIGHTS.md)
+    "vassilkov": (1987, 2005),  # Мхб, кн. III–XVIII, 1987–2005 (data/RIGHTS.md)
+    "grintser":  (2006, 2006),  # Рамаяна I–III, Ладомир, 2006 (эссе)
+    "erman":     (2009, 2009),  # Мхб VI Бхишмапарва, Ладомир, 2009 (эссе)
+    "syrkin":    None,          # дата изданий упанишад в корпусе не зафиксирована
+    "leonov":    None,          # «продолжающийся перевод» (data/RIGHTS.md)
+}
+
 
 def compute():
     rows = []
@@ -69,6 +84,9 @@ def compute():
             "paribok": {c: round(100 * par.get(c, 0) / n) for c in "PKD"},
             "topics": {t: round(100 * top.get(t, 0) / n, 1) for t in TOPICS},
         })
+        yr = YEARS.get(slug)
+        rows[-1]["year0"] = yr[0] if yr else None
+        rows[-1]["year1"] = yr[1] if yr else None
     return rows
 
 
@@ -110,7 +128,7 @@ HTML = """<!DOCTYPE html>
 <main class="container">
 <p class="gen-note">Графики построены из данных автоматически (scripts/build_visualizations.py);
 золотая выборка — 50 примечаний на переводчика. Чипы-фильтры ниже включают/выключают
-переводчика сразу на всех пяти панелях.</p>
+переводчика сразу на всех семи панелях.</p>
 
 <div id="filters" class="filters"><span class="flabel">Переводчики:</span><label class="fchip" id="fchip-all"><input type="checkbox" id="fall" checked>все</label></div>
 
@@ -138,6 +156,21 @@ HTML = """<!DOCTYPE html>
   философский (верх). Нилакантха (adhikārin) несоизмерим: покрытие лишь
   __NK_COV__&nbsp;% строф, терсная глосса ~__NK_MED__ знаков — на этой плоскости он
   был бы вырожденной точкой у нуля по обеим осям.</p></div></section>
+
+<section><h2 class="section-title">06. Timeline: издательская хронология корпусов</h2>
+  <div class="chart-container"><div id="tl"></div>
+  <p class="panel-note">Диапазон изданий, представленных золотой выборкой: точные годы —
+  подзаголовки эссе (Ладомир 2006/2009), диапазоны — <a href="data/RIGHTS.md">data/RIGHTS.md</a>.
+  Штрихованные строки — честный остаток: для Сыркина даты изданий в корпусе не зафиксированы,
+  перевод Леонова/Костиной — продолжающийся. Подпись на баре — IAST&nbsp;% и средняя длина.</p></div></section>
+
+<section><h2 class="section-title">07. Radial: хронологическая спица профиля</h2>
+  <div class="chart-container"><div id="rad"></div>
+  <p class="panel-note">Те же шесть корпусов по кругу в хронологическом порядке
+  (спицы &laquo;—&raquo; — корпуса без даты). Радиус — IAST&nbsp;% (кольца 25/50/75/100);
+  пунктир соединяет датированные корпуса по ходу времени — «филологический индекс»
+  советской школы (Кальянов, Васильков/Невелева) и постсоветской волны Ладомира
+  (Гринцер, Эрман) при полном IAST-полюсе Кальянова.</p></div></section>
 </main>
 <footer>CommentaryStrategies &copy; 2026 &middot; Визуальный анализ</footer>
 
@@ -162,6 +195,60 @@ function drawHeat(act){
   heat.innerHTML=s+'</svg>';
 }
 
+// 06 timeline: издательские диапазоны корпусов (YEARS в генераторе; без даты — штрих)
+function drawTimeline(act){
+  const rows=D.map((t,i)=>({t,i})).filter(o=>act.has(o.t.slug))
+    .sort((a,b)=>((a.t.year0==null)-(b.t.year0==null))||((a.t.year0||0)-(b.t.year0||0))||(a.i-b.i));
+  const lW=150,rW=270,tPad=46,rowH=58,W=1000,H=Math.max(tPad+rows.length*rowH+10,110);
+  const x=y=>lW+(y-1940)/(2020-1940)*(W-lW-rW);
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;font-family:'Source Serif 4',serif">`;
+  [1940,1960,1980,2000,2020].forEach(y=>{const px=x(y);
+    s+=`<line x1="${px}" y1="${tPad-24}" x2="${px}" y2="${H-8}" stroke="var(--rule)" stroke-dasharray="3 5"/>`;
+    s+=`<text x="${px}" y="${tPad-32}" text-anchor="middle" font-size="11.5" fill="var(--muted)">${y}</text>`;});
+  rows.forEach((o,j)=>{const t=o.t,yC=tPad+j*rowH+rowH/2;
+    s+=`<text x="${lW-12}" y="${yC+4}" text-anchor="end" font-size="12.5" font-weight="500" fill="var(--ink)">${t.name}</text>`;
+    const meta=`IAST ${t.iast}% &middot; ср. ${t.mean_len} зн.`;
+    if(t.year0==null){
+      const bx=x(1996),bw=54;
+      s+=`<rect x="${bx}" y="${yC-11}" width="${bw}" height="22" rx="4" fill="none" stroke="${t.color}" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+      s+=`<text x="${bx+bw+12}" y="${yC+4}" font-size="12" fill="var(--muted)">${t.slug==='leonov'?'перевод в работе (RIGHTS.md)':'даты изданий не зафиксированы'} &middot; ${meta}</text>`;
+    }else if(t.year0===t.year1){
+      const x0=x(t.year0);
+      s+=`<circle cx="${x0}" cy="${yC}" r="9" fill="${t.color}" fill-opacity=".85"/>`;
+      s+=`<text x="${x0+16}" y="${yC+4}" font-size="12" fill="var(--ink)">${t.year0} &middot; ${meta}</text>`;
+    }else{
+      const x0=x(t.year0),x1=x(t.year1);
+      s+=`<rect x="${x0}" y="${yC-11}" width="${Math.max(x1-x0,2)}" height="22" rx="4" fill="${t.color}" fill-opacity=".8"/>`;
+      s+=`<text x="${x1+12}" y="${yC+4}" font-size="12" fill="var(--ink)">${t.year0}&ndash;${t.year1} &middot; ${meta}</text>`;
+    }});
+  tl.innerHTML=s+'</svg>';
+}
+
+// 07 radial: спицы в хронологическом порядке, радиус = IAST%; пунктир по датированным
+function drawRadial(act){
+  const rows=D.filter(t=>act.has(t.slug));
+  const S=660,c=S/2,R=250;
+  let s=`<svg viewBox="0 0 ${S} ${S}" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;font-family:'Source Serif 4',serif">`;
+  [25,50,75,100].forEach(v=>{s+=`<circle cx="${c}" cy="${c}" r="${v/100*R}" fill="none" stroke="var(--rule)" stroke-dasharray="${v===100?'none':'2 6'}"/>`;
+    s+=`<text x="${c+4}" y="${c-v/100*R+13}" font-size="10.5" fill="var(--muted)">${v}%</text>`;});
+  if(!rows.length){s+=`<text x="${c}" y="${c}" text-anchor="middle" font-size="13" fill="var(--muted)">нет активных переводчиков</text>`;rad.innerHTML=s+'</svg>';return;}
+  const n=rows.length;
+  const ang=i=>(-90+i*360/n)*Math.PI/180;
+  const pt=(i,r)=>[c+Math.cos(ang(i))*r,c+Math.sin(ang(i))*r];
+  rows.forEach((t,i)=>{const sx=pt(i,R)[0],sy=pt(i,R)[1];
+    s+=`<line x1="${c}" y1="${c}" x2="${sx}" y2="${sy}" stroke="var(--rule)" stroke-dasharray="2 6"/>`;
+    const tx=pt(i,R+30)[0],ty=pt(i,R+30)[1];
+    s+=`<text x="${tx}" y="${ty}" text-anchor="middle" font-size="12.5" font-weight="500" fill="var(--ink)">${t.name}</text>`;
+    s+=`<text x="${tx}" y="${ty+15}" text-anchor="middle" font-size="10.5" fill="var(--muted)">${t.year0==null?'—':(t.year0===t.year1?t.year0:t.year0+'&ndash;'+t.year1)}</text>`;});
+  const dated=rows.map((t,i)=>({t,i})).filter(o=>o.t.year0!=null).sort((a,b)=>a.t.year0-b.t.year0);
+  if(dated.length>1){s+=`<polyline points="${dated.map(o=>pt(o.i,o.t.iast/100*R).join(',')).join(' ')}" fill="none" stroke="var(--muted)" stroke-dasharray="6 5" stroke-width="1.4"/>`;}
+  rows.forEach((t,i)=>{const px=pt(i,t.iast/100*R)[0],py=pt(i,t.iast/100*R)[1];
+    s+=t.year0==null
+      ?`<circle cx="${px}" cy="${py}" r="7" fill="var(--paper)" stroke="${t.color}" stroke-width="2"/>`
+      :`<circle cx="${px}" cy="${py}" r="7" fill="${t.color}" fill-opacity=".9"/>`;});
+  rad.innerHTML=s+'</svg>';
+}
+
 // 01 bubble
 CH.bubble=new Chart(bubble,{type:'bubble',data:{datasets:D.map(t=>({label:t.name,
   data:[{x:t.iast,y:t.mean_len,r:6+t.multitopic/4}],backgroundColor:fade(t.color,.18),borderColor:t.color,borderWidth:1.5}))},
@@ -171,6 +258,10 @@ mkleg('leg1',D.map(t=>[t.name,t.color]));
 
 // 02 heatmap (SVG)
 drawHeat(active);
+
+// 06/07 timeline + radial (SVG)
+drawTimeline(active);
+drawRadial(active);
 
 // 03 Kazansky stacked
 const KZ=[['A','филологический'],['B','текстологический'],['V','историко-культурный'],['G','культурологический']];
@@ -223,6 +314,8 @@ function sync(){
   CH.kaz.data.datasets.forEach((ds,i)=>{ds.data=vis.map(t=>Math.round(100*t.kazansky[KZ[i][0]]/t.n));});
   CH.kaz.update();
   drawHeat(active);
+  drawTimeline(active);
+  drawRadial(active);
   master.checked=chips.every(c=>c.cb.checked);
   masterChip.classList.toggle('off',!master.checked);
 }
