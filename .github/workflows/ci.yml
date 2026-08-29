@@ -115,6 +115,15 @@ jobs:
       # должен воспроизводиться из urn байт-в-байт (derive, не ручная разметка).
       - name: samskrtam.ru ID mapping parity
         run: python scripts/samskrtam_map.py --check
+      # B6 (roadmap 2026H2): перепись отслеживаемых бинарников не растёт молча —
+      # новый бинарник без вердикта (права / момент публикации / вход сборки)
+      # краснит CI до классификации одним PR. Прецеденты дисциплины: H2832
+      # (сканы Goldman — .gitignore), H3558 (веб-дампы выведены из git).
+      # Выкладка в релизы — не здесь, а по allowlist владельца: см.
+      # docs/BINARY_RELEASES.md (замер 26-08-2026: 21,8 МБ, из них 20 МБ —
+      # скан чужой статьи, правовое решение, Дорожка C).
+      - name: Tracked-binary census gate
+        run: python scripts/release_binaries.py --check
       # Mixed-script words hide from every search that assumes one alphabet per
       # word (issue #173). 643 of them were found once someone looked; the
       # h2864 vote settled all but three declared exceptions, so this can gate.
