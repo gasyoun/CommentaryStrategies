@@ -74,7 +74,7 @@ _Created: 12-06-2026 · Last updated: 28-08-2026_
 - [x] README расширен: корпус/данные, оси, воспроизводимость (скрипты), как цитировать, лицензия данных ≠ лицензия кода
 - [x] Исправлено расхождение ARCHITECTURE.md: ось 4 «P/C/K» → «P/K/D»; ось 1 синхронизирована с 9-значной схемой. _Глосса «понятие/кодификатор/концепт-расхождение», записанная здесь 2026-06-13, была гибридной и снята решением 02-07-2026 — см. [docs/AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md)._
 - [x] `poetics` добавлен в enum `axis_1_topic` схемы (находка C0.1; уже был в TEI-таксономии и ARCHITECTURE.md)
-- [ ] Zenodo-релиз: DOI, версионирование (нужен человек — депозит)
+- [x] Zenodo-релиз: DOI, версионирование (нужен человек — депозит) — **repo-side готово (29-08-2026, drain A05, [PR #208](https://github.com/gasyoun/CommentaryStrategies/pull/208)):** устранён дрифт `.zenodo.json` (в нём стоял cff-version «1.2.0» вместо релиза 1.26.1) + правовая нота слоя Vālmīki (CC BY 4.0); паритет-гейт `scripts/check_release_meta.py` (CITATION.cff ↔ .zenodo.json ↔ теги) введён в CI; прогон депозита для владельца — [docs/ZENODO_DEPOSIT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ZENODO_DEPOSIT.md). **Остаток — Дорожка C, за М.Г.:** депозит по прогону (шаги 1–6, ≈15 мин) и вписывание concept DOI в CITATION.cff/README
 - [x] **Веб-дампы вынесены из git — 26-08-2026 (H3558).** 31 отслеживаемый файл (≈ 1,8 МБ) под
   `महाभारत_files/` (22) и `Рамаяна…_files/` (9) — `git rm --cached` + правило `*_files/` в `.gitignore`.
   Сами `.html` остаются под версией: это исходный материал, его читают `scripts/extract_leonov_notes.py`
