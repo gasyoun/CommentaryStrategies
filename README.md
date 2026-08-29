@@ -158,6 +158,10 @@ python scripts/build_sutra_tm.py           # Брахмасутры + Йогас
 условия использования **текстов примечаний** — отдельно, см. [data/RIGHTS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/RIGHTS.md)
 (полнотекстовая публикация авторизована, с обязательным указанием издания-источника).
 
+Zenodo-депозит (концепт-DOI) — после ручного депозита владельцем: прогон —
+[docs/ZENODO_DEPOSIT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ZENODO_DEPOSIT.md);
+пока DOI не выдан, цитировать по репозиторию и CITATION.cff (версия релиза).
+
 ### Корпус Вальмики (Gita Supersite) — CC BY 4.0, по разрешению
 
 Санскритский текст, семь традиционных санскритских комментариев и современные английские

@@ -103,6 +103,12 @@ jobs:
         run: pip install -r requirements.txt
       - name: Schema + content validation
         run: python scripts/validate.py
+      # B6 (roadmap 2026H2): релизные метаданные не дрейфуют — версия в
+      # .zenodo.json обязана совпадать с CITATION.cff (ловушка «cff-version
+      # вместо релиза», найденная drain A05 29-08-2026); теги сверяются
+      # мягко — в этом job'е checkout неглубокий, без тегов.
+      - name: Release metadata parity (CITATION.cff ↔ .zenodo.json)
+        run: python scripts/check_release_meta.py
       - name: CTS-URN cross-check (book ↔ number)
         run: python scripts/derive_urn.py --check
       # B2 (roadmap 2026H2): crosswalk на ID параллельного корпуса samskrtam.ru
