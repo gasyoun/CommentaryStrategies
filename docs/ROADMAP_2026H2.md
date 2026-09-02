@@ -1,6 +1,6 @@
 # CommentaryStrategies — Roadmap 2026 H2 → 2027
 
-_Created: 12-06-2026 · Last updated: 29-08-2026_
+_Created: 12-06-2026 · Last updated: 02-09-2026_
 
 > Версия: 2.0 · Дата: 2026-06-12 · Заменяет v1.0 — [archive/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/archive/ROADMAP.md) (фазы 1–3 выполнены; перемещён в архив 26-08-2026, надгробие — [docs/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP.md)). Незакрытый остаток v1.0 — раздел «Перенесено из v1.0» ниже
 > Дополняет [roadmap_postdoc_2026.md](../roadmap_postdoc_2026.md) (статьи и монография — там; здесь — репозиторий как DH-объект и комментаторская праксис Рамаяны)
@@ -122,17 +122,17 @@ _Created: 12-06-2026 · Last updated: 29-08-2026_
 - [x] Свести IAST-леммы с sources/leonov_notes.json (śatrukarśana, mahābala…) — **уже отгружено** (работа H3558, [PR #203](https://github.com/gasyoun/CommentaryStrategies/pull/203); truth-pass-тик 28-08-2026): поле `iast_crosswalk` пишет сам генератор `parse_formulas.py`, не рука — 45 IAST-лемм, все с валидным CTS-URN через `derive_urn.derive()`, 15 статей, 24 засвидетельствования (перед тиком сверено с диском)
 
 ### C3. Пилот: 20 строф Sundara 1 (в выбранной по C0 модели)
-- [ ] Образцовые примечания для 20 строф; born-structured (сразу в JSON-схему, не ретро-разметка)
-- [ ] Параллельно: глоссы Говиндараджи/Тилаки к тем же строфам (tertium comparationis, по методу Article 3)
-- [ ] Ревью Леонова/Костиной → итерация guidelines
+- [x] Образцовые примечания для 20 строф; born-structured (сразу в JSON-схему, не ретро-разметка) — [data/sundara1_pilot_c3_20.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara1_pilot_c3_20.json), разбор — [ramayana-leonov/C3_PILOT_SUNDARA1_20.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/C3_PILOT_SUNDARA1_20.md) (модель II, D2)
+- [x] Параллельно: глоссы Говиндараджи/Тилаки к тем же строфам (tertium comparationis, по методу Article 3) — тот же JSON, поля `govindaraja_bhusana_raw`/`tilaka_raw`/`siromani_raw`/`tattvadipika_raw`, сегментированы существующим верифицированным парсером `scripts/extract_yellow_sargas.py` (точность 0.887/0.931); перевод этого слоя на русский — часть следующего пункта, не сделан механически
+- [ ] Ревью Леонова/Костиной → итерация guidelines `{gate: human:leonov,kostina}`
 
 ---
 
 ## Workstream D — Греко-санскритский сравнительный слой (вход в Article 5 / гл. 5 монографии)
 
 - [x] `docs/TYPOLOGY_GREEK_SANSKRIT.md` ✅ (2026-06-12): систематическое сопоставление (схолии/hypomnema vs bhāṣya/ṭīkā; Бек/Томашевский vs pañca-lakṣaṇa; критический текст-прежде-комментария vs комментарий-конституирует-текст; имплицитный адресат vs adhikārin), рецептивная асимметрия = причина расхождения, прогноз переносимости 4 осей + аргумент конвергенции трех полюсов
-- [ ] Пробная разметка 50 примечаний Гаспарова (Светоний или Овидий) по той же 4-осной схеме — проверка переносимости сетки
-- [ ] Контакт с CLR (Casus: Казанский) — соответствие осей корпусной номенклатуре CLR
+- [ ] Пробная разметка 50 примечаний Гаспарова (Светоний или Овидий) по той же 4-осной схеме — проверка переносимости сетки `{gate: data:gasparov-corpus-not-acquired}` (репозиторий не несёт текста примечаний Гаспарова к Светонию/Овидию; сверка H3778 — `grep -rli gaspar .` вне archive пусто)
+- [ ] Контакт с CLR (Casus: Казанский) — соответствие осей корпусной номенклатуре CLR `{gate: external:CLR (Казанский)}`
 
 ---
 
@@ -171,7 +171,7 @@ _Created: 12-06-2026 · Last updated: 29-08-2026_
 - [x] **Contribution guidelines для индологов** (§5.2 v1.0) — **shipped** (OxAlpha `opencode/x-preview-f-free`, 28-08-2026, via `/drain`, [PR #204](https://github.com/gasyoun/CommentaryStrategies/pull/204)): [`CONTRIBUTING.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/CONTRIBUTING.md) переписан из 9-строчной универсальной заглушки в онбординг индолога — путь A (новый переводчик: `*_full.json` → золотая 50 → enum схемы → `profile_translator.py` → `build_pages.py` → эссе), путь B (разметка примечания по 4 осям со всеми enum'ами и каноническими ловушками: реалии — только V, никогда B; ось 4 — P/K/D без `C`; URN через `scripts/derive_urn.py`), гейты `scripts/validate.py` (локально + CI), правовой блок. `validate.py` 6042 файла PASS.
 - [x] **Интерактивные фильтры в `visualizations.html`** (§5.3 v1.0) — **shipped** (OxAlpha `opencode/z-ai/glm-5.3-flash`, 28-08-2026, via `/drain`, [PR #207](https://github.com/gasyoun/CommentaryStrategies/pull/207)): полоса чипов-фильтров (переводчик + мастер «все») над пятью панелями — bubble/radar/scatter через `setDatasetVisibility`, казанский stacked пересборкой labels+data из `D` (его датасеты тип-индексированы, не транслятор-индексированы), тепловая карта перерисовкой SVG с активными колонками; фильтры живут в генераторе `build_visualizations.py` (derive-don't-store); данные `__DATA__` не изменились, `validate.py` 6044 PASS, Playwright-смоук на реальном Chart.js 4.4.1 — SMOKE_PASS (0 ошибок консоли).
 - [x] **Radial / timeline визуализации эволюции стратегий** (§5.3 v1.0) — **shipped** (OxAlpha `opencode/z-ai/glm-5.3-flash`, 29-08-2026, via `/roadmap-item-exec`, [PR #209](https://github.com/gasyoun/CommentaryStrategies/pull/209)): панель 06 timeline — span-бары 1940–2020 по изданиям, представленным золотой выборкой, панель 07 radial — спицы в хронологическом порядке, радиус = IAST % (кольца 25/50/75/100), пунктирная polyline по датированным корпусам; обе в генераторе `build_visualizations.py` (derive-don't-store) и обе под чипами-фильтрами. Хронология честная: диапазоны из `data/RIGHTS.md` (Кальянов 1950–1996, Васильков/Невелева 1987–2005), точные годы — подзаголовки эссе (Гринцер/Эрман, Ладомир 2006/2009); Сыркин (даты изданий в корпусе не зафиксированы) и Леонов/Костина (перевод в работе) — штрихованные/полые с пометкой, без выдуманного года. Проверки: повторная сборка — 0 diff, `validate.py` 6044 PASS, Playwright-смоук на реальном Chart.js 4.4.1 — SMOKE_PASS (0 ошибок консоли).
-- [ ] **Аверинцев — позднеантичная экзегеза** и **Лосев — Платоновский восьмитомник (Лосев-как-редактор)** (§4.3 v1.0) — расширение сопоставительного ряда; по существу питают Workstream D. «Гаспаров — латинская традиция» из того же §4.3 уже несёт D-пункт «Пробная разметка 50 примечаний Гаспарова», дважды его не заводим.
+- [ ] **Аверинцев — позднеантичная экзегеза** и **Лосев — Платоновский восьмитомник (Лосев-как-редактор)** (§4.3 v1.0) — расширение сопоставительного ряда; по существу питают Workstream D. «Гаспаров — латинская традиция» из того же §4.3 уже несёт D-пункт «Пробная разметка 50 примечаний Гаспарова», дважды его не заводим. `{gate: data:averintsev-losev-corpus-not-acquired}` (то же самое ограничение, что и у Гаспарова-50 выше — текст ещё не в репозитории)
 
 ### Уже дублируется v2.0 — переносить нечего
 
