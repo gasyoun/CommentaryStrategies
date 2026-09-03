@@ -36,6 +36,7 @@ A PR is **in scope** when its changed files, minus exclusions, are non-empty:
    - `fail` → **failure** — ≥1 finding with severity ≥ P1, each carrying file/line, failure mode, and repro/test (findings missing any of the four are comments, never a fail);
    - `neutral` → **error** — infrastructure unavailable; **blocks merge until retried**.
 4. The status context is `oxalpha-review`, independent of CI's existing jobs — a CI green never substitutes for it. A terminal status is immutable for that SHA; a new commit re-opens review.
+5. **Required-check mirror:** GitHub binds required checks to the Actions app, so the workflow carries an Actions job named exactly `oxalpha-review` that **mirrors** the authoritative commit status (green only on a session's pass verdict; red on fail/neutral/timeout; polls while pending — session verdicts typically land inside its 35-min window, `gh run rerun` re-polls otherwise). It is a mirror, not the gate: it can never fabricate a pass because the status it reads is writable only by `ensure`/`verdict`. It runs for every actor (skipped jobs count as success on GitHub — so it deliberately does not skip dependabot PRs).
 
 ## 4. Human approval layer (decision #13)
 

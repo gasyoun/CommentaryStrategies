@@ -131,6 +131,30 @@ jobs:
               --input - <<< "$payload" >/dev/null
           fi
 
+  oxalpha-review:
+    # REQUIRED CHECK (branch protection matches this job name via the Actions
+    # app). It is a MIRROR, not the gate itself: it polls the authoritative
+    # `oxalpha-review` commit status — written only by ensure (pending/skip)
+    # and by an OxAlpha session's `verdict` — and turns green ONLY on a
+    # session's pass verdict. Skipped jobs count as success on GitHub, so
+    # this job deliberately runs for EVERY actor (dependabot included).
+    name: oxalpha-review
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - name: Mirror the gate status (green only on session verdict pass)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          python scripts/oxalpha_gate.py wait --pr "$PR" \
+            --repo "${{ github.repository }}" --timeout-sec 2100
+
   sweep:
     name: Sweep open PRs (idempotent arming)
     runs-on: ubuntu-latest
