@@ -9,7 +9,9 @@ changes. Each released version is git-tagged (`vX.Y.Z`) with a matching
 Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
-<!-- entries land in changelog_queue/ -- appended via tools/changelog_queue_consume.py, consumed by cut_release.py at release-cut (H3355); direct bullets here are hook-blocked -->
+### Added
+
+- **Canonical GitHub issue-tracker adapter (H3551 Wave 0)** (OxAlpha `zai-coding-plan/glm-5.3-flash`, 03-09-2026): [docs/agents/issue-tracker.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/agents/issue-tracker.md) (gh-CLI conventions, PR intake OFF), [docs/agents/triage-labels.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/agents/triage-labels.md) (five-role vocabulary), [docs/agents/domain.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/agents/domain.md) (single-context domain-docs layout); Agent skills block added to [CLAUDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/CLAUDE.md); canonical labels `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human` created on GitHub (`wontfix` already existed).<!-- H3551 -->
 
 ## [1.26.3] - 2026-09-02
 ### Added

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-06-2026 · Last updated: 26-08-2026_
+_Created: 28-06-2026 · Last updated: 03-09-2026_
 
 A scholarly corpus + Python tooling for the comparative study of **commentary
 strategies** used by Russian academic translators of Sanskrit texts
@@ -81,6 +81,23 @@ Verse addressing is CTS-URN via `derive_urn.py`.
 3. Never add a 5th analytical axis without explicit permission.
 4. Human review artifacts are interactive HTML with a decisions export —
    never Markdown checkbox sheets.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in this repo's GitHub Issues via the `gh` CLI; PRs are NOT a triage
+surface (intake OFF). See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default five-role vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`,
+`ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context layout (root `CONTEXT.md` + `docs/adr/`, created lazily —
+do not scaffold them upfront). See `docs/agents/domain.md`.
 
 ## Do not touch
 
