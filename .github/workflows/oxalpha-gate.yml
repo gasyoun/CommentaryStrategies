@@ -1,96 +1,127 @@
-name: OxAlpha review gate (shadow)
+name: OxAlpha review gate
 
 # H3551 Wave 3 — design: docs/OXALPHA_STATUS_GATE_DESIGN_2026.md.
-# ROLLOUT STATE: design §6 step 2 — shadow mode. This job is REPORT-ONLY:
-# it computes the executable-code scope and posts one shadow report comment.
-# It NEVER blocks a merge and is NOT a required check. Design §6 step 3
-# (flipping `oxalpha-review` to required + the §4 human-approval ruleset)
-# is a dated, human-owned flip — until the real verdict source is wired,
-# forcing it required would wedge merges on `neutral`.
+# ROLLOUT STATE: §6 steps 3-4 LIVE (ruling 03-09-2026, MG «required now»).
 #
-# "Never a silent pass" (plan contract): in shadow the report says exactly
-# what would be gated; the eventual check returns pass / evidence-backed
-# fail / neutral — never an implicit green.
+# The gate is the REQUIRED commit-status context `oxalpha-review` on main
+# (branch protection). This workflow and the scheduled sweep only ever set
+# `pending` (in-scope: review owed) or `success` (docs/data-only: evidenced
+# skip). TERMINAL verdicts (success/failure/error) are set exclusively by an
+# OxAlpha session after the independent 2-axis review pass, via
+#   python scripts/oxalpha_gate.py verdict --pr N --verdict pass|fail|neutral \
+#       --evidence <url> --note "..."
+# Never a silent pass: pending blocks; skip carries scope evidence; neutral
+# (error state) blocks until retried.
+#
+# Dependabot PRs: the PR-event token is read-only by GitHub design, so the
+# sweep job (schedule, full token) is what arms those — within 30 min.
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  schedule:
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: read
   pull-requests: write
+  statuses: write
 
 concurrency:
-  group: oxalpha-gate-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  group: oxalpha-gate-${{ github.event.pull_request.number || 'sweep' }}
+  cancel-in-progress: false
 
 jobs:
-  oxalpha-review:
-    name: OxAlpha review (shadow — report only)
+  selftest:
+    name: Gate classifier selftest
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: "3.11"
+      - run: |
+          python scripts/gate_needs_review.py --selftest
+          python scripts/oxalpha_gate.py --help >/dev/null
 
-      - name: Classifier selftest (workflow_dispatch path)
-        if: github.event_name == 'workflow_dispatch'
-        run: python scripts/gate_needs_review.py --selftest
-
-      - name: Compute executable-code scope
-        id: scope
-        if: github.event_name == 'pull_request'
+  arm-pr:
+    name: Arm gate on PR
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - name: Classify scope and arm the required status
+        id: arm
         env:
           GH_TOKEN: ${{ github.token }}
           PR: ${{ github.event.pull_request.number }}
         run: |
-          gh api "repos/${{ github.repository }}/pulls/${PR}/files?per_page=100" \
-            --paginate --jq '.[].filename' > pr_files.txt
-          python scripts/gate_needs_review.py --files pr_files.txt --json > scope.json
-          cat scope.json
-          applies=$(python -c "import json;print(str(json.load(open('scope.json'))['applies']).lower())")
-          echo "applies=${applies}" >> "$GITHUB_OUTPUT"
-          echo "body<<EOF" >> "$GITHUB_OUTPUT"
-          python - "${PR}" <<'PY' >> "$GITHUB_OUTPUT"
-          import json, sys
-          scope = json.load(open("scope.json"))
-          pr = sys.argv[1]
-          files = "\n".join(f"- `{f}`" for f in scope["in_scope"][:50]) or "- (none)"
-          extra = "" if scope["in_scope_count"] <= 50 \
-              else f"\n- … +{scope['in_scope_count'] - 50} more"
-          print(f"<!-- oxalpha-gate-shadow -->")
-          print(f"## OxAlpha review gate — shadow report (PR #{pr})")
-          print()
-          print("Design §6 step 2: **report-only**; this check never blocks and is "
-                "not required. Step 3 (required flag + human-approval ruleset) is a "
-                "dated, human-owned flip — see the design doc §6.")
-          print()
-          print(f"Executable-code scope: **{scope['in_scope_count']} file(s)** "
-                f"of {scope['files_seen']} changed — gate **would apply**."
-                if scope["applies"] else
-                f"Executable-code scope: 0 of {scope['files_seen']} changed — "
-                "gate would **skip** this PR (docs/data-only).")
-          print()
-          print(files + extra)
-          print()
-          print("_Design: [docs/OXALPHA_STATUS_GATE_DESIGN_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/OXALPHA_STATUS_GATE_DESIGN_2026.md)_")
+          python scripts/oxalpha_gate.py ensure --pr "$PR" --repo "${{ github.repository }}" | tee arm.log
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, subprocess, os
+          pr = os.environ["PR"]
+          repo = "${{ github.repository }}"
+          head = subprocess.run(["gh","api",f"repos/{repo}/pulls/{pr}","--jq",".head.sha"],
+                                capture_output=True, text=True).stdout.strip()
+          st = subprocess.run(["python","scripts/oxalpha_gate.py","status","--pr",pr,"--repo",repo],
+                              capture_output=True, text=True).stdout
+          gate = json.loads(st)["gate"]
+          print(f"state={gate['state'] if gate else 'unknown'}")
+          files = subprocess.run(["gh","api",f"repos/{repo}/pulls/{pr}/files?per_page=100",
+                                  "--paginate","--jq",".[].filename"],
+                                 capture_output=True, text=True).stdout.splitlines()
+          import sys
+          sys.path.insert(0, "scripts")
+          from gate_needs_review import classify
+          scope = classify(files)
+          if scope["applies"]:
+              lst = "\n".join(f"- `{f}`" for f in scope["in_scope"][:50])
+              extra = "" if scope["in_scope_count"] <= 50 else \
+                  f"\n- … +{scope['in_scope_count'] - 50} more"
+              print(f"in_scope=true")
+              print(f"body<<EOF")
+              print(f"<!-- oxalpha-gate-request -->")
+              print(f"## OxAlpha review REQUIRED before merge (PR #{pr})")
+              print()
+              print(f"Status `oxalpha-review` = **pending** on `{head[:12]}`. "
+                    f"Executable-code scope: **{scope['in_scope_count']} file(s)** "
+                    f"of {scope['files_seen']} changed. Merge is blocked until an "
+                    f"OxAlpha session completes the independent Standards+Spec pass "
+                    f"and records the verdict:")
+              print()
+              print("```sh")
+              print(f"python scripts/oxalpha_gate.py verdict --pr {pr} \\")
+              print(f"    --verdict pass|fail|neutral --evidence <evidence-url> \\")
+              print(f'    --note "2-axis result in one line"')
+              print("```")
+              print()
+              print("In scope:")
+              print(lst + extra)
+              print()
+              print("_Docs/data-only PRs arm `success` automatically (evidenced skip). "
+                    "Neutral = infra unavailable, blocks until retried — never a silent pass. "
+                    "Design: [docs/OXALPHA_STATUS_GATE_DESIGN_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/OXALPHA_STATUS_GATE_DESIGN_2026.md)_")
+              print(f"EOF")
+          else:
+              print("in_scope=false")
           PY
-          echo "EOF" >> "$GITHUB_OUTPUT"
-
-      - name: Post/update shadow report
-        if: github.event_name == 'pull_request' && steps.scope.outputs.applies == 'true'
+      - name: Post/update review request
+        if: steps.arm.outputs.in_scope == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PR: ${{ github.event.pull_request.number }}
         run: |
           BODY=$(cat <<'MSGBODY'
-          ${{ steps.scope.outputs.body }}
+          ${{ steps.arm.outputs.body }}
           MSGBODY
           )
           existing=$(gh api "repos/${{ github.repository }}/issues/${PR}/comments" \
-            --paginate --jq '.[] | select(.body | startswith("<!-- oxalpha-gate-shadow -->")) | .id' | head -1)
+            --paginate --jq '.[] | select(.body | startswith("<!-- oxalpha-gate-request -->")) | .id' | head -1)
           payload=$(python -c "import json,sys;print(json.dumps({'body':sys.stdin.read()}))" <<< "$BODY")
           if [ -n "$existing" ]; then
             gh api -X PATCH "repos/${{ github.repository }}/issues/comments/${existing}" \
@@ -99,3 +130,16 @@ jobs:
             gh api -X POST "repos/${{ github.repository }}/issues/${PR}/comments" \
               --input - <<< "$payload" >/dev/null
           fi
+
+  sweep:
+    name: Sweep open PRs (idempotent arming)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/oxalpha_gate.py sweep --repo "${{ github.repository }}"

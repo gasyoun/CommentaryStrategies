@@ -107,8 +107,11 @@ def main() -> int:
 
     if args.files is None:
         ap.error("need --files FILE ('-' for stdin) or --selftest")
-    raw = sys.stdin.read() if args.files == "-" else open(
-        args.files, encoding="utf-8").read()
+    if args.files == "-":
+        raw = sys.stdin.read()
+    else:
+        with open(args.files, encoding="utf-8") as fh:
+            raw = fh.read()
     files = raw.splitlines()
     result = classify(files)
     if args.as_json:
