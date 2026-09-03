@@ -22,6 +22,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
 # Design §2 include set: executable code and its CI surfaces.
+# Gate is REQUIRED on main since 03-09-2026 (ruling «required now») — a
+# change to this table re-arms oxalpha-review on every open PR.
 INCLUDE = [
     "scripts/**",
     "review-api/**",
