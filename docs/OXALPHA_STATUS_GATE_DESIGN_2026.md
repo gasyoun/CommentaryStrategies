@@ -3,6 +3,9 @@
 _Created: 03-09-2026 · Last updated: 03-09-2026_
 Handoff: [Uprava H3551](https://github.com/gasyoun/Uprava/blob/main/handoffs/H3551-OxAlpha_CommentaryStrategies_oxalpha-30d-risk-review-gate_26.08.26.md) (Wave 3) · Plan decision #12: **design but do not enable**; plan decision #13: human approval additionally covers security/production paths.
 
+> **Activation ruling 03-09-2026 (MG «flip on»):** the §6 rollout is LIVE.
+> Steps 1–2 executed (matcher [scripts/gate_needs_review.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/gate_needs_review.py) + shadow workflow [.github/workflows/oxalpha-gate.yml](https://github.com/gasyoun/CommentaryStrategies/blob/main/.github/workflows/oxalpha-gate.yml) — report-only, never blocks, not required). Steps 3–4 (required flag + human-approval ruleset) stay a **dated, human-owned flip on 17-09-2026** after the two-week shadow — and require the real verdict source (label-driven OxAlpha session or scheduled drain) to be wired first; until then the check is `neutral` and forcing it required would wedge merges. Matcher path adjusted from the drafted `tools/…` to house `scripts/…` layout in the same ruling.
+
 **Status: DESIGN ONLY. Nothing in this document was enabled.** No workflow file, branch-protection rule, or required status check was created, modified, or scheduled by this handoff — verified by the PR manifests of [#213](https://github.com/gasyoun/CommentaryStrategies/pull/213) and [#214](https://github.com/gasyoun/CommentaryStrategies/pull/214) (docs, labels, one JS/PY fix pair; zero `.github/` changes beyond none).
 
 ## 1. What the gate is for

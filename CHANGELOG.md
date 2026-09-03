@@ -9,6 +9,9 @@ changes. Each released version is git-tagged (`vX.Y.Z`) with a matching
 Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
+### Added
+
+- **OxAlpha review gate — shadow mode LIVE (H3551 activation ruling)** (OxAlpha `zai-coding-plan/glm-5.3-flash`, 03-09-2026, MG «flip on» on the [gate @DECIDE](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)). Design §6 rollout steps 1–2 executed: new stdlib scope matcher [`scripts/gate_needs_review.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/gate_needs_review.py) (include scripts/review-api/js/review-tests/workflows/css + Nilakantha `.py`, exclude data/docs/tei/pages/reports/votes/markdown; 17 classifier fixtures, `--selftest` in CI dispatch) and the report-only shadow workflow [`.github/workflows/oxalpha-gate.yml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.github/workflows/oxalpha-gate.yml) (`pull_request` + `workflow_dispatch`: computes scope via the API, posts/updates one `<!-- oxalpha-gate-shadow -->` comment naming exactly which files the gate would cover, never blocks, not a required check). Steps 3–4 — flipping `oxalpha-review` to required plus the §4 human-approval ruleset — remain a **dated, human-owned flip on 17-09-2026** (two-week shadow per design §6), gated on wiring the real OxAlpha verdict source first; until then a required `neutral` check would wedge merges. Design doc §6 status block updated.
 
 ## [1.27.0] - 2026-09-03
 ### Fixed
