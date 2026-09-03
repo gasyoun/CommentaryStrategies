@@ -168,10 +168,52 @@ def sweep(r: str, dry: bool = False) -> None:
             print(f"PR #{num}: ensure failed — {exc}")
 
 
+def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20) -> int:
+    """Mirror loop for the required Actions check run (job `oxalpha-review`).
+
+    GitHub's required-check policy matches check RUNS from the Actions app —
+    a bare commit status alone does not satisfy it. This job therefore polls
+    the authoritative commit status (written only by `ensure`/`verdict`) and
+    mirrors it as its own conclusion:
+
+      status success          -> exit 0 (check green; merge allowed)
+      status failure / error  -> exit 1 fast (verdict fail / infra-neutral)
+      status pending / absent -> poll until timeout, then exit 1 (blocked —
+                                 never a silent pass)
+    """
+    import time
+
+    deadline = time.monotonic() + timeout_sec
+    sha = head_sha(r, pr)
+    while time.monotonic() < deadline:
+        have = current(r, sha)
+        if have:
+            desc = have.get("description", "")
+            if have["state"] == "success":
+                print(f"gate PASS: {desc}")
+                return 0
+            if have["state"] in ("failure", "error"):
+                print(f"gate FAIL ({have['state']}): {desc}")
+                return 1
+            print(f"waiting on verdict… ({desc})")
+        else:
+            print("status not armed yet…")
+        time.sleep(poll_sec)
+    print(
+        f"TIMEOUT after {timeout_sec}s: oxalpha-review never reached success "
+        f"— merge stays blocked; re-run this job after the session verdict lands"
+    )
+    return 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("cmd", choices=["status", "ensure", "verdict", "sweep"])
+    ap.add_argument(
+        "cmd", choices=["status", "ensure", "verdict", "sweep", "wait"]
+    )
     ap.add_argument("--pr", type=int, default=None)
+    ap.add_argument("--timeout-sec", type=int, default=2100,
+                    help="wait subcommand: poll budget (default 2100s)")
     ap.add_argument("--verdict", choices=sorted(STATES), default=None)
     ap.add_argument(
         "--evidence",
@@ -203,6 +245,10 @@ def main() -> int:
         verdict(r, args.pr, args.verdict, args.evidence, args.note, dry=args.dry)
     elif args.cmd == "sweep":
         sweep(r, dry=args.dry)
+    elif args.cmd == "wait":
+        if not args.pr:
+            ap.error("--pr required")
+        raise SystemExit(wait(r, args.pr, args.timeout_sec))
     return 0
 
 
