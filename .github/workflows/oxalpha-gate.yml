@@ -1,0 +1,101 @@
+name: OxAlpha review gate (shadow)
+
+# H3551 Wave 3 — design: docs/OXALPHA_STATUS_GATE_DESIGN_2026.md.
+# ROLLOUT STATE: design §6 step 2 — shadow mode. This job is REPORT-ONLY:
+# it computes the executable-code scope and posts one shadow report comment.
+# It NEVER blocks a merge and is NOT a required check. Design §6 step 3
+# (flipping `oxalpha-review` to required + the §4 human-approval ruleset)
+# is a dated, human-owned flip — until the real verdict source is wired,
+# forcing it required would wedge merges on `neutral`.
+#
+# "Never a silent pass" (plan contract): in shadow the report says exactly
+# what would be gated; the eventual check returns pass / evidence-backed
+# fail / neutral — never an implicit green.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: oxalpha-gate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  oxalpha-review:
+    name: OxAlpha review (shadow — report only)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Classifier selftest (workflow_dispatch path)
+        if: github.event_name == 'workflow_dispatch'
+        run: python scripts/gate_needs_review.py --selftest
+
+      - name: Compute executable-code scope
+        id: scope
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          gh api "repos/${{ github.repository }}/pulls/${PR}/files?per_page=100" \
+            --paginate --jq '.[].filename' > pr_files.txt
+          python scripts/gate_needs_review.py --files pr_files.txt --json > scope.json
+          cat scope.json
+          applies=$(python -c "import json;print(str(json.load(open('scope.json'))['applies']).lower())")
+          echo "applies=${applies}" >> "$GITHUB_OUTPUT"
+          echo "body<<EOF" >> "$GITHUB_OUTPUT"
+          python - "${PR}" <<'PY' >> "$GITHUB_OUTPUT"
+          import json, sys
+          scope = json.load(open("scope.json"))
+          pr = sys.argv[1]
+          files = "\n".join(f"- `{f}`" for f in scope["in_scope"][:50]) or "- (none)"
+          extra = "" if scope["in_scope_count"] <= 50 \
+              else f"\n- … +{scope['in_scope_count'] - 50} more"
+          print(f"<!-- oxalpha-gate-shadow -->")
+          print(f"## OxAlpha review gate — shadow report (PR #{pr})")
+          print()
+          print("Design §6 step 2: **report-only**; this check never blocks and is "
+                "not required. Step 3 (required flag + human-approval ruleset) is a "
+                "dated, human-owned flip — see the design doc §6.")
+          print()
+          print(f"Executable-code scope: **{scope['in_scope_count']} file(s)** "
+                f"of {scope['files_seen']} changed — gate **would apply**."
+                if scope["applies"] else
+                f"Executable-code scope: 0 of {scope['files_seen']} changed — "
+                "gate would **skip** this PR (docs/data-only).")
+          print()
+          print(files + extra)
+          print()
+          print("_Design: [docs/OXALPHA_STATUS_GATE_DESIGN_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/OXALPHA_STATUS_GATE_DESIGN_2026.md)_")
+          PY
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Post/update shadow report
+        if: github.event_name == 'pull_request' && steps.scope.outputs.applies == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          BODY=$(cat <<'MSGBODY'
+          ${{ steps.scope.outputs.body }}
+          MSGBODY
+          )
+          existing=$(gh api "repos/${{ github.repository }}/issues/${PR}/comments" \
+            --paginate --jq '.[] | select(.body | startswith("<!-- oxalpha-gate-shadow -->")) | .id' | head -1)
+          payload=$(python -c "import json,sys;print(json.dumps({'body':sys.stdin.read()}))" <<< "$BODY")
+          if [ -n "$existing" ]; then
+            gh api -X PATCH "repos/${{ github.repository }}/issues/comments/${existing}" \
+              --input - <<< "$payload" >/dev/null
+          else
+            gh api -X POST "repos/${{ github.repository }}/issues/${PR}/comments" \
+              --input - <<< "$payload" >/dev/null
+          fi
