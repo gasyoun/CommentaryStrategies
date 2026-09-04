@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
 
 REPO = Path(__file__).resolve().parent.parent
 SRC = REPO / "data" / "typed_link_sundara_concordance.jsonl"

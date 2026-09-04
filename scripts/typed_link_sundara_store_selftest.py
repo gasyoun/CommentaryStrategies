@@ -11,7 +11,10 @@ Guards the invariants a silent store-write bug could break:
      regression here would mean the promotion step corrupted a row;
   4. the store-write invariant the H3346 dedup pass proved holds after
      promotion too: 0 root-overlap rows made it into the confirmed tier
-     (156 unique-vs-1058 + 102 verse-overlap == 258, root-overlap == 0);
+     (156 unique-vs-1058 + 102 verse-overlap == 258, root-overlap == 0) --
+     cross-checked against the independent dedup_vs_1058.json report, not
+     just the _dedup_status field baked into the same JSONL the promotion
+     reads from;
   5. the decisions.json this promotion was built from carries no open votes
      (apply_decisions() already refuses that, but the store selftest checks
      the artifact independently of the script that produced it).
@@ -38,6 +41,8 @@ CONFIRMED_JSONL = os.path.join(REPO, "data",
 DECISIONS = os.path.join(
     REPO, "data", "analysis", "typed_link_sundara",
     "commentarystrategies-sundarakanda-typed-link-q41_decisions.json")
+DEDUP_REPORT = os.path.join(REPO, "data", "analysis", "typed_link_sundara",
+                             "dedup_vs_1058.json")
 
 ANCHOR_RE = re.compile(r"^root:[A-Za-z]+$")
 LOCUS_RE = re.compile(r"^commentary:sundara-lexical:V\.\d+\.\d+[ab]?$")
@@ -109,6 +114,21 @@ def main():
                     if r.get("_dedup_status") == "root-overlap"]
     check("no root-overlap-vs-1058 row was promoted into the confirmed store",
           not root_overlap, f"{len(root_overlap)} promoted anyway")
+
+    # Cross-check against the INDEPENDENT dedup report (H3346), not just the
+    # _dedup_status field baked into the same JSONL the promotion reads from.
+    dedup_report = json.load(open(DEDUP_REPORT, encoding="utf-8"))
+    check("dedup report's own baseline is the 1058-note tier-1 corpus",
+          dedup_report.get("baseline_total_notes") == 1058,
+          f"baseline_total_notes={dedup_report.get('baseline_total_notes')}")
+    report_counts = dedup_report.get("counts", {})
+    check("dedup report shows 0 root-overlap rows (independent of the JSONL)",
+          "root-overlap" not in report_counts,
+          f"counts={report_counts}")
+    check("dedup report unique+verse-overlap counts match the confirmed tier",
+          report_counts.get("unique-vs-1058") == 156 and
+          report_counts.get("verse-overlap") == 102,
+          f"counts={report_counts}")
 
     known = {r["_row_key"]: r for r in proposed}
     unknown_votes = set(votes) - set(known)

@@ -44,13 +44,17 @@ verse), 102 verse-overlap (tier-1 covers the verse but never cites this root),
 genuinely never duplicates a tier-1 note's exact root point. All three tiers
 are shown per card; the vote decides promotion, not the counts.
 
-**Human gate before ANY store write (handoff Fail condition).** Nothing here
-has been written into `data/apparatus/*`, the book aggregate, or any other
-store. The review sheet is the only path to promotion: vote it, save
+**Human gate before ANY store write (handoff Fail condition, H3346-era).** Held
+until the vote below: nothing had been written into `data/apparatus/*`, the
+book aggregate, or any other store. The review sheet was the only path to
+promotion: vote it, save
 `commentarystrategies-sundarakanda-typed-link-q41_decisions.json`, then run
 `python scripts/build_typed_link_sundara_concordance.py --apply-decisions FILE`
 which refuses unvoted/partial files (all-or-nothing) and writes only the
-confirmed tier TSV/JSONL beside the proposed ones.
+confirmed tier TSV/JSONL beside the proposed ones. **Cleared 04-09-2026 — see
+Store merge below.** The confirmed tier is the promotion target; nothing has
+been written into `data/apparatus/*` or the book aggregate, and none is
+planned by this pass (Q2.1 kosha-manifest scope note below still applies).
 
 **Store merge — DONE 04-09-2026 (H4087).** Vote `h3346_typed_store`
 (mega-sheet `uprava-drain-assumptions_04-09-26` card 25) — MG ruling
