@@ -1,7 +1,7 @@
 {
   "study": "H1469 axis_2/axis_4 blind LLM second-annotator IAA",
   "date": "2026-07-24",
-  "pass_a": "human gold data/*_markup_50.json",
+  "pass_a": "model-generated (Gemini Flash, commit 1c83044, 2026-05-10) labels in data/*_markup_50.json — synthetic gold; the 'human gold' wording is retired 2026-09-04 per H3537 red-team review-sheet row 5 (gold provenance)",
   "pass_b": "DeepSeek Chat (deepseek-chat) via scripts/annotate_batch.py + prompts/classify_note.md",
   "protocol": "PROTOCOL_BLIND_LLM_SECOND_ANNOTATOR_RELIABILITY_2026.md + ruling D2",
   "bootstrap": {
