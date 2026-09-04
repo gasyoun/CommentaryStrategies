@@ -9,6 +9,9 @@ changes. Each released version is git-tagged (`vX.Y.Z`) with a matching
 Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
+<!-- entries land in changelog_queue/ -- appended via tools/changelog_queue_consume.py, consumed by cut_release.py at release-cut (H3355); direct bullets here are hook-blocked -->
+
+## [1.27.1] - 2026-09-05
 ### Added
 
 - **H4087 — H3346 Type-D concordance merged into the confirmed store** (Sonnet 5 `claude-sonnet-5`, 04-09-2026). Vote `h3346_typed_store` (Uprava mega-sheet `uprava-drain-assumptions_04-09-26`, card 25) — MG ruling "approve (a)": the whole 258-row Type-D `commentary-citation` pilot (H3346) merges as a bulk policy decision, not a per-card vote on the review sheet. A `..._decisions.json` built from that ruling (258 approve, 0 reject) was applied via `scripts/build_typed_link_sundara_concordance.py --apply-decisions`, writing [`data/typed_link_sundara_concordance.confirmed.tsv`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/typed_link_sundara_concordance.confirmed.tsv) / [`.confirmed.jsonl`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/typed_link_sundara_concordance.confirmed.jsonl) (258 confirmed, 0 rejected, 0 root-overlap-vs-1058 promoted). New [`scripts/typed_link_sundara_store_selftest.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/typed_link_sundara_store_selftest.py) guards the promotion (13 checks: vote/row-count parity, TSV↔JSONL identical row set, linkid grammar shape, zero root-overlap rows promoted) — all green. Manifest counters updated in [`data/typed_link_sundara_concordance.README.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/typed_link_sundara_concordance.README.md); kosha manifest registration stays deferred to Q2.1 (§5 D2b), unchanged by this pass.
