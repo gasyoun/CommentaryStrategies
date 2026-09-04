@@ -103,6 +103,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: Schema + content validation
         run: python scripts/validate.py
+      # H4087: the H3346 258-row Type-D concordance confirmed-tier store —
+      # vote/row-count parity, TSV<->JSONL identical row set, linkid
+      # grammar shape, zero root-overlap rows promoted.
+      - name: Type-D concordance store selftest
+        run: python scripts/typed_link_sundara_store_selftest.py
       # B6 (roadmap 2026H2): релизные метаданные не дрейфуют — версия в
       # .zenodo.json обязана совпадать с CITATION.cff (ловушка «cff-version
       # вместо релиза», найденная drain A05 29-08-2026); теги сверяются
