@@ -1,6 +1,6 @@
 # typed_link_sundara_concordance — dataset resolution note
 
-_Created: 26-08-2026 · Last updated: 26-08-2026_
+_Created: 26-08-2026 · Last updated: 04-09-2026_
 
 **What.** The Q4.1 Type-D `commentary-citation` pilot concordance on the
 Sundarakāṇḍa lexical layer ([H3346](https://github.com/gasyoun/Uprava/blob/main/handoffs/H3346-OxAlpha_CommentaryStrategies_q41-type-d-pilot-concordance_22.08.26.md)):
@@ -51,6 +51,29 @@ store. The review sheet is the only path to promotion: vote it, save
 `python scripts/build_typed_link_sundara_concordance.py --apply-decisions FILE`
 which refuses unvoted/partial files (all-or-nothing) and writes only the
 confirmed tier TSV/JSONL beside the proposed ones.
+
+**Store merge — DONE 04-09-2026 (H4087).** Vote `h3346_typed_store`
+(mega-sheet `uprava-drain-assumptions_04-09-26` card 25) — MG ruling
+"approve (a)": the whole 258-row batch merges, a bulk policy vote rather
+than a per-card vote on the review sheet above. `decisions.json` was built by
+[scripts/build_h4087_typed_link_decisions.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_h4087_typed_link_decisions.py)
+from that ruling (all 258 rows `approve`, 0 `reject`) and applied:
+
+| | rows |
+|---|---|
+| proposed (H3346) | 258 |
+| confirmed (H4087) | 258 |
+| rejected | 0 |
+| unique-vs-1058 | 156 |
+| verse-overlap-vs-1058 | 102 |
+| root-overlap-vs-1058 (promoted) | 0 |
+
+Confirmed tier: [typed_link_sundara_concordance.confirmed.tsv](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/typed_link_sundara_concordance.confirmed.tsv) /
+[.confirmed.jsonl](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/typed_link_sundara_concordance.confirmed.jsonl).
+Invariants checked by
+[scripts/typed_link_sundara_store_selftest.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/typed_link_sundara_store_selftest.py)
+(row-count/vote parity, TSV↔JSONL identical row set, linkid grammar shape,
+zero root-overlap rows promoted).
 
 **Registration scope (§5 D2b).** Per-consumer-repo only — NOT added to the
 kosha manifest until roadmap Q2.1 freezes Type A–D schema.
