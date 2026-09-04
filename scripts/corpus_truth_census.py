@@ -24,6 +24,7 @@ docs/CORPUS_TRUTH_RECONCILIATION_17863.md for verdicts and lineage.
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
@@ -34,7 +35,11 @@ sys.stderr.reconfigure(encoding='utf-8')
 
 REPO = Path(__file__).resolve().parents[1]
 OUT = REPO / "data" / "analysis" / "corpus_truth_reconciliation.json"
-JSONL = REPO.parent / "SamudraManthanam" / "web" / "corpus_builder" / "jsonl"
+# H4075 fix 6: sibling path is overridable so the tamper selftest can point the
+# checker at a byte-patched temp copy without ever touching the real sibling.
+JSONL = Path(os.environ.get(
+    "CORPUS_JSONL_DIR",
+    str(REPO.parent / "SamudraManthanam" / "web" / "corpus_builder" / "jsonl")))
 
 SEG_COMM = re.compile(r'^comm\d+$')
 ANCHOR = re.compile(r'title="([^"]*?)(?::\s*[0-9IVXLC–\-, ]+)?"')
@@ -255,6 +260,13 @@ def check():
                 failures.append(
                     f"{w['slug']}: corpus drift — committed census {w['comm_live']}, live {comm} "
                     f"(sha {w['sha256'][:12]} -> {sha[:12]}); re-run the generator and reconcile the memo")
+            elif sha != w["sha256"]:
+                # SHARED_CODE s24 tamper rule: the vendored pin follows the exact
+                # upstream bytes, not just the counted total — byte drift with an
+                # unchanged count is still drift.
+                failures.append(
+                    f"{w['slug']}: upstream moved — rebuild and re-commit "
+                    f"(sha {w['sha256'][:12]} -> {sha[:12]}, note count unchanged: {comm})")
     else:
         print("note: sibling corpus absent — recount skipped (surface + consistency checks only)")
 
