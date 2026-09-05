@@ -266,9 +266,24 @@ def main():
         "Local-only per BORI_CRITICAL_SOURCE.md, and the vulgate-vs-critical join is a "
         "downstream consumer's problem, not a fact any of these cards turns on.")
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    # H4116 D4: ssb-evidence provenance stamp (sheet_evidence_gate) — every card's
+    # verification rides the register/manifest evidence already joined above.
+    import json as _json
+    stamp = _json.dumps(
+        {it["id"]: {"verifier": "CommentaryStrategies register pipeline (H2883-derived, "
+                                   "agent-ruled hand queue)",
+                    "method": "primary_source_quote",
+                    "sources": ["data/licence_register/commentary_licence_register_nilakantha.tsv",
+                                 "data/licence_register/nilakantha_licence_rejected.tsv",
+                                 "data/licence_register/nilakantha_hand_rulings.json"],
+                    "verified_date": "05-09-2026"}
+            for it in items},
+        ensure_ascii=False)
+    html = render_review_sheet(items=items, config=cfg, screening=screening,
+                               manifest=man)
+    html = html.replace("</body>", f"<!-- ssb-evidence: {stamp} -->\n</body>")
     with open(OUT, "w", encoding="utf-8") as f:
-        f.write(render_review_sheet(items=items, config=cfg, screening=screening,
-                                    manifest=man))
+        f.write(html)
     print(f"{len(items)} cards -> {OUT}")
 
 
