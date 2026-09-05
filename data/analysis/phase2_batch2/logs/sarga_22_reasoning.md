@@ -1,3 +1,5 @@
+_Created: 04-07-2026 · Last updated: 05-09-2026_
+
 # Drafting reasoning log — sarga 22
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -191,3 +193,4 @@ Everything reconciles cleanly: no BOM, valid JSON, 7 drafted + 39 rejected = 46 
 
 Verses considered / drafted / rejected: 46 / 7 / 39
 
+_Dr. Mārcis Gasūns_

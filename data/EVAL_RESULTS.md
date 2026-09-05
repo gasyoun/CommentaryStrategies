@@ -1,6 +1,6 @@
 # EVAL_RESULTS — axis_2 / axis_4 inter-annotator agreement (H1469)
 
-_Created: 24-07-2026 · Last updated: 24-07-2026_
+_Created: 24-07-2026 · Last updated: 05-09-2026_
 
 **Status:** complete. Cohen's κ measured on the full 300-note gold sample
 (6 translators × 50). Gate closed as an **honest reliability report**, not by
@@ -14,7 +14,7 @@ tuning toward the roadmap target.
 | Pass A | Human gold `data/{translator}_markup_50.json` |
 | Pass B | Blind LLM — **DeepSeek Chat** (`deepseek-chat`) via OpenAI-compatible API; `scripts/annotate_batch.py` reading label-free `sources/{translator}_notes.json` |
 | Scoring | `scripts/compute_iaa_kappa.py` (stdlib Cohen's κ + 2 000-bootstrap CI, seed **20260724**) |
-| Machine artifacts | [data/iaa/iaa_kappa_stats.json](iaa/iaa_kappa_stats.json), [disagreement_adjudication.json](iaa/disagreement_adjudication.json) |
+| Machine artifacts | [data/iaa/iaa_kappa_stats.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/iaa/iaa_kappa_stats.json), [disagreement_adjudication.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/iaa/disagreement_adjudication.json) |
 
 **Scope reading (H1469 watch-out #1):** B5 roadmap text says «50 примечаний × 2 оси»;
 SUBMISSION_READINESS_A19 says 50-per-translator. The **full 300-note set** is on
@@ -97,7 +97,7 @@ the soft boundary, not a single confusable pair.
 
 ## Disagreement adjudication (every row categorized)
 
-Full machine list: [data/iaa/disagreement_adjudication.json](iaa/disagreement_adjudication.json).
+Full machine list: [data/iaa/disagreement_adjudication.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/iaa/disagreement_adjudication.json).
 Rule: **protocol-ambiguity** = both codes defensible under the frozen codebook
 or the boundary is underspecified; **coder-error** = one side clearly violates
 `classify_note.md`.

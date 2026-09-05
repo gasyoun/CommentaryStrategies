@@ -115,3 +115,5 @@ The register is the whole point; get it wrong and it isn't publishable. Grintser
 - `review_required: true` on every generated note — nothing is editor-approved until Leonov/Kostina sign off.
 - CI corpus gate must stay green: `python scripts/validate.py` + `python scripts/derive_urn.py --check`.
 - Attribution obligation: any deposit/redistribution carries the Gita Supersite permission string (CC BY 4.0).
+
+_Dr. Mārcis Gasūns_

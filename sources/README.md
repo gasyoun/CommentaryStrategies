@@ -1,3 +1,5 @@
+_Created: 15-05-2026 · Last updated: 05-09-2026_
+
 # sources/ — Input format for annotation pipeline
 
 Each translator gets one file: `{translator}_notes.json`
@@ -59,3 +61,5 @@ Common footnote formats to handle:
 - `[1] Note text here` (bracketed)
 - `* Note text here` (asterisk, for short texts like Petrov 1788)
 - Superscript in Word/PDF exports — strip the number, keep the text
+
+_Dr. Mārcis Gasūns_

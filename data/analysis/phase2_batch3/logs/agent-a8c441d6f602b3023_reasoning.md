@@ -1,3 +1,5 @@
+_Created: 07-07-2026 · Last updated: 05-09-2026_
+
 # Agent log agent-a8c441d6f602b3023
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -784,5 +786,6 @@ sarga 17 judged: 2 notes → keep 2 / edit 0 / park 0 / reject 0 / flag_anchor 0
 sarga 18 judged: 7 notes → keep 7 / edit 0 / park 0 / reject 0 / flag_anchor 0
 ```
 
-Totals: 97 notes → keep 84 / edit 3 / park 0 / reject 10 / flag_anchor 0. All 18 [`data/analysis/phase2_batch3/sarga_NN_candidates.json`](../sarga_01_candidates.json) files were rewritten in place (UTF-8, no BOM, `ensure_ascii=False, indent=2`), `_meta` updated with `judged: true` and verdict counts, `review_required` and all drafter/reject fields left untouched. No git operations were run.
+Totals: 97 notes → keep 84 / edit 3 / park 0 / reject 10 / flag_anchor 0. All 18 [`data/analysis/phase2_batch3/sarga_NN_candidates.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_01_candidates.json) files were rewritten in place (UTF-8, no BOM, `ensure_ascii=False, indent=2`), `_meta` updated with `judged: true` and verdict counts, `review_required` and all drafter/reject fields left untouched. No git operations were run.
 
+_Dr. Mārcis Gasūns_

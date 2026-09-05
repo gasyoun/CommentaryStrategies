@@ -1,11 +1,13 @@
+_Created: 13-06-2026 · Last updated: 05-09-2026_
+
 # Структурный профиль ṭīkā Нилакантхи + пул для Article 4
 
 > Источник: `MBh-Nalopakhyanam-Nilakantha.md` (302 КБ) + `MBh-Ramopakhyanam-Nilakantha.md`
 > (210 КБ) — комментарий Нилакантхи (*Bhāratabhāvadīpa*) к двум нарративным эпизодам
 > Махабхараты (Вана-парва, кн. 3).
-> Результат: [data/nilakantha_profile.json](../data/nilakantha_profile.json).
+> Результат: [data/nilakantha_profile.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/nilakantha_profile.json).
 > Воспроизводится: `python scripts/profile_nilakantha.py` (переиспользует
-> [nilakantha_parser.py](nilakantha_parser.py)).
+> [nilakantha_parser.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/mahabharata-nilakantha/nilakantha_parser.py)).
 > Питает Article 4 (JAOS) и гл. 3 монографии.
 
 ---
@@ -74,3 +76,5 @@
   следующий шаг после отбора 30 и получения русских корпусов.
 - **IAST-нормализация:** транслитерация автоматическая (indic_transliteration); перед
   публикацией выверить диакритику в отобранных 30.
+
+_Dr. Mārcis Gasūns_

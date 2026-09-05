@@ -1,3 +1,5 @@
+_Created: 04-07-2026 · Last updated: 05-09-2026_
+
 # Drafting reasoning log — sarga 26
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -84,10 +86,11 @@ No BOM (starts with `7b` = `{`), reconciliation checks out. The garbled `style` 
 - 🔧 `Bash` — cd "C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22" && py
 Correct — that was just a shell display encoding quirk, the file content is proper UTF-8.
 
-Sarga 26 done: 56 verses considered / 7 drafted / 49 rejected. Output written to [data/analysis/phase2_batch2/sarga_26_candidates.json](../sarga_26_candidates.json). Drafted notes cover: an added half-verse at 7 (Bhūṣaṇa, śraddhā jīvite), a named interpolation attribution to Kataka at 15 (verses 13–14), a full additional stanza at 31 (poison-plea to Vaivasvata), two doctrinal frames (jīvanmukta at 37, śruti-citation on dharma requiring a wife at 40), a meaning-changing epithet variant at 47 (satyasammatāḥ/tyaktakilbiṣāḥ), and an emotional-lexical turn on priya at 49. Two entries (8/45 pair with tier-1 verses) carry `complements_leonov` — wait, those were culled; only 15 in the final set does not carry it either since I dropped that field during trimming — let me verify.
+Sarga 26 done: 56 verses considered / 7 drafted / 49 rejected. Output written to [data/analysis/phase2_batch2/sarga_26_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/sarga_26_candidates.json). Drafted notes cover: an added half-verse at 7 (Bhūṣaṇa, śraddhā jīvite), a named interpolation attribution to Kataka at 15 (verses 13–14), a full additional stanza at 31 (poison-plea to Vaivasvata), two doctrinal frames (jīvanmukta at 37, śruti-citation on dharma requiring a wife at 40), a meaning-changing epithet variant at 47 (satyasammatāḥ/tyaktakilbiṣāḥ), and an emotional-lexical turn on priya at 49. Two entries (8/45 pair with tier-1 verses) carry `complements_leonov` — wait, those were culled; only 15 in the final set does not carry it either since I dropped that field during trimming — let me verify.
 
 - 🔧 `Bash` — cd "C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22" && py
 Confirmed: 15 and 47 carry `complements_leonov` (both address verses where tier-1 already has a note but the drafted note adds a distinct facet — the Kataka interpolation attribution and the epithet variant respectively).
 
 **56 verses considered / 7 drafted / 49 rejected.**
 
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 10-05-2026 · Last updated: 05-09-2026_
+
 # GEMINI.md — Agent Context for CommentaryStrategies
 
 > This file is the **cold-start briefing** for any AI agent (Gemini, Claude, Codex)
@@ -51,7 +53,7 @@ Every annotation is classified along 4 axes:
 `sanskrit_term` · `myth` · `context` · `realia` · `geography` · `reference` · `textology` · `philosophy` · `poetics`
 
 ### Axis 2 — Commentary type (Kazansky 2025)
-> Canonical definitions: [`data/commentary_schema.json`](../data/commentary_schema.json) (`axis_2_kazansky`). **Realia belong to V, never B.**
+> Canonical definitions: [`data/commentary_schema.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/commentary_schema.json) (`axis_2_kazansky`). **Realia belong to V, never B.**
 - **A** — Philological / lexical: gloss, derivation, etymology of the Sanskrit form itself (literal sense, morphology, epithet rendering). *Not* realia.
 - **B** — Textological (*not* "realia"): metatext on the state of the source or the act of translation — omission in the translation, manuscript/commentator variant, interpolation verdict.
 - **V** — Historical-cultural / realia: in-world identification + realia — deity, demon class, sage, king, caste, river, mountain, city, people, weapon, battle formation, plot scene. **Realia go here, never in B.**
@@ -226,3 +228,5 @@ Adjusted plan per `AGENT.md` rules:
 
 Social-political (Lelyukhin 2011): *adhyakṣa*, *rājan*, *gaṇa*,
 *saṃgha*, *daṇḍa*, *varṇa*, *jāti*
+
+_Dr. Mārcis Gasūns_

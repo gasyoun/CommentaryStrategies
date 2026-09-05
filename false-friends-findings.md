@@ -1,7 +1,9 @@
+_Created: 13-06-2026 · Last updated: 05-09-2026_
+
 # «Ложные друзья»: корпусный профиль (данные для Article 1)
 
-> Эмпирический спутник [false-friends-lexicon.md](false-friends-lexicon.md) (рамка ВЯ-статьи).
-> Источник истины: [data/false_friends_profile.json](data/false_friends_profile.json).
+> Эмпирический спутник [false-friends-lexicon.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/false-friends-lexicon.md) (рамка ВЯ-статьи).
+> Источник истины: [data/false_friends_profile.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/false_friends_profile.json).
 > Воспроизводится: `python scripts/extract_false_friends_profile.py`.
 >
 > ⚠️ **Объем:** только золотая выборка — 300 примечаний (6×50), ~80 попаданий терминов.
@@ -53,10 +55,12 @@
 
 ## 4. Связь с лексиконом и статьей
 
-- JSON ([data/false_friends_profile.json](data/false_friends_profile.json)) — источник истины
+- JSON ([data/false_friends_profile.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/false_friends_profile.json)) — источник истины
   для «Corpus sample»-строк лексикона; их можно сверять с ним.
 - Для Article 1: §«профили переводчиков на оси непереводимости» опирается на таблицу §1
   (робастно); §по-термовые claims — на §2 (засвидетельствованные) с явной пометкой
   «гипотеза» для §3.
 - T/C/D — прокси по примечаниям, не прочтение перевода; перед публикацией отобранные
   примеры выверить вручную по текстам.
+
+_Dr. Mārcis Gasūns_

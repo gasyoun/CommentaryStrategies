@@ -1,3 +1,5 @@
+_Created: 04-07-2026 · Last updated: 05-09-2026_
+
 # Drafting reasoning log — sarga 30
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -111,5 +113,6 @@ Let me verify the JSON is valid and counts reconcile.
 - 🔧 `Bash` — cd "C:/Users/user/Documents/GitHub/CommentaryStrategies/.claude/worktrees/silly-diffie-1e1e22" && py
 JSON is valid, no BOM, counts reconcile (5 + 39 = 44 = verses_considered).
 
-Verses considered / drafted / rejected: 44 / 5 / 39. Output written to [data/analysis/phase2_batch2/sarga_30_candidates.json](../sarga_30_candidates.json). Drafted notes: V.1 (Śiromani's three-way split of "everything" heard), V.6 (Tilaka's dayā-restraint frame explaining why Rama spared the three worlds), V.8 (Tilaka's kāryahāni gloss on doṣa, complementing Kostina's literal note), V.18 (Śiromani directly answers Kostina's flagged "why would Sita think Ravana?" gap via the disguise-memory link), V.35 (Bhūṣaṇa/Śiromani's reputational-risk motive complementing the tier-1 lexical gloss).
+Verses considered / drafted / rejected: 44 / 5 / 39. Output written to [data/analysis/phase2_batch2/sarga_30_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/sarga_30_candidates.json). Drafted notes: V.1 (Śiromani's three-way split of "everything" heard), V.6 (Tilaka's dayā-restraint frame explaining why Rama spared the three worlds), V.8 (Tilaka's kāryahāni gloss on doṣa, complementing Kostina's literal note), V.18 (Śiromani directly answers Kostina's flagged "why would Sita think Ravana?" gap via the disguise-memory link), V.35 (Bhūṣaṇa/Śiromani's reputational-risk motive complementing the tier-1 lexical gloss).
 
+_Dr. Mārcis Gasūns_

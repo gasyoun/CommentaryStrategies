@@ -1,3 +1,5 @@
+_Created: 07-07-2026 · Last updated: 05-09-2026_
+
 # Agent log agent-ab8253b386aaddf8b
 
 _Model: `claude-haiku-4-5-20251001`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -140,3 +142,4 @@ The document treats these metadata artifacts as **prerequisites for honest ACL r
 | Mandatory Limitations section (desk-reject if missing) | `ACL_DH_COMPATIBILITY_ANALYSIS.md:73–74` |
 | Data statement + CITATION.cff requirements | `ACL_DH_COMPATIBILITY_ANALYSIS.md:165–169` |
 
+_Dr. Mārcis Gasūns_

@@ -1,10 +1,10 @@
 # CommentaryStrategies — Архитектура
 
-_Created: 10-05-2026 · Last updated: 26-08-2026_
+_Created: 10-05-2026 · Last updated: 05-09-2026_
 
 > Версия: 2.0 · Дата: 2026-06-13 · Заменяет v1.0 (2026-05-10)
 > Что изменилось: слой данных, генерация и DH-экспорт из «рекомендуемого будущего»
-> стали действующей реальностью (см. [ROADMAP_2026H2.md](ROADMAP_2026H2.md), Workstream B).
+> стали действующей реальностью (см. [ROADMAP_2026H2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP_2026H2.md), Workstream B).
 
 ---
 
@@ -71,8 +71,8 @@ CommentaryStrategies/
 | 3. Структура толкования | Лидова 2024 | L1–L5 *lakṣaṇa* по «Парашара-упапуране» |
 | 4. Глубина комментаторского хода | операциональная шкала по мотивам Парибка 2011 | P глосса-идентификация / K системное позиционирование / D дискурсивное развертывание. НЕ тождественна собственно парибоковскому П/К/Д (понятие / концепт / кодификатор — типология *терминов*, с. 86); канон формулировки — [docs/AXIS4_KD_DECISION.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/AXIS4_KD_DECISION.md) |
 
-Реальная схема — [data/commentary_schema.json](../data/commentary_schema.json). Пример записи
-(из [grintser_markup_50.json](../data/grintser_markup_50.json)):
+Реальная схема — [data/commentary_schema.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/commentary_schema.json). Пример записи
+(из [grintser_markup_50.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/grintser_markup_50.json)):
 
 ```json
 {
@@ -92,7 +92,7 @@ CommentaryStrategies/
 **Адресация стихов — каноническими CTS-URN** (`urn:cts:sanskritLit:<work>:<passage>`,
 по образцу Perseus/SARIT): один work на эпос (ramayana / mahabharata / <упанишада>),
 книга — первый элемент passage. Выводится из `shloka_addr` детерминированно
-([derive_urn.py](../scripts/derive_urn.py)) с перекрестной проверкой книга↔номер.
+([derive_urn.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/derive_urn.py)) с перекрестной проверкой книга↔номер.
 
 ---
 
@@ -120,7 +120,7 @@ sources/*.json ─▶ annotate_batch.py ─▶ data/*.json ─▶ eval_pipeline.
 
 Принцип: **данные → артефакты**, не наоборот. `tei/` и `pages/` пересобираемы;
 править нужно JSON, а не выход. Рукописные `*_commentary_analysis.html` — вне пайплайна
-(содержательно богаче выборки; см. [pages/README.md](../pages/README.md)).
+(содержательно богаче выборки; см. [pages/README.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/pages/README.md)).
 
 ---
 
@@ -128,21 +128,21 @@ sources/*.json ─▶ annotate_batch.py ─▶ data/*.json ─▶ eval_pipeline.
 
 | Скрипт | Назначение | Зависимости |
 |---|---|---|
-| [profile_translator.py](../scripts/profile_translator.py) | профили переводчиков по 4 осям (длины, IAST, темы, сравнение) | stdlib |
-| [derive_urn.py](../scripts/derive_urn.py) | CTS-URN из `shloka_addr` + внедрение поля + валидация | stdlib |
-| [export_tei.py](../scripts/export_tei.py) | JSON → TEI P5 (таксономии, `@ana`, `@target`) | stdlib |
-| [validate_tei_rng.py](../scripts/validate_tei_rng.py) | полная RelaxNG-валидация `tei/*.xml` против tei_all; SKIP-терпим (нет `xmllint`/схемы → exit 0), схема через `--schema` или `$TEI_ALL_RNG` | `xmllint` + `tei_all.rng` |
-| [parse_formulas.py](../scripts/parse_formulas.py) | эпитетный слой Рамаяны (кн. 1–2) → JSON; плюс кросоволок с IAST-леммами из `sources/leonov_notes.json` (поле `iast_crosswalk`, переиспользует `derive_urn.derive`) | stdlib |
-| [build_pages.py](../scripts/build_pages.py) | data → `pages/*.html` (переиспользует profile_translator) | stdlib |
-| [build_visualizations.py](../scripts/build_visualizations.py) | data → `visualizations.html` (Chart.js, 6-way) | stdlib |
-| [extract_false_friends_profile.py](../scripts/extract_false_friends_profile.py) | профиль «ложных друзей» → `data/false_friends_profile.json` (Article 1) | stdlib |
-| [profile_nilakantha.py](../scripts/profile_nilakantha.py) | структурный профиль ṭīkā Нилакантхи → `data/nilakantha_profile.json` (Article 4) | `indic-transliteration` |
+| [profile_translator.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/profile_translator.py) | профили переводчиков по 4 осям (длины, IAST, темы, сравнение) | stdlib |
+| [derive_urn.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/derive_urn.py) | CTS-URN из `shloka_addr` + внедрение поля + валидация | stdlib |
+| [export_tei.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/export_tei.py) | JSON → TEI P5 (таксономии, `@ana`, `@target`) | stdlib |
+| [validate_tei_rng.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/validate_tei_rng.py) | полная RelaxNG-валидация `tei/*.xml` против tei_all; SKIP-терпим (нет `xmllint`/схемы → exit 0), схема через `--schema` или `$TEI_ALL_RNG` | `xmllint` + `tei_all.rng` |
+| [parse_formulas.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/parse_formulas.py) | эпитетный слой Рамаяны (кн. 1–2) → JSON; плюс кросоволок с IAST-леммами из `sources/leonov_notes.json` (поле `iast_crosswalk`, переиспользует `derive_urn.derive`) | stdlib |
+| [build_pages.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_pages.py) | data → `pages/*.html` (переиспользует profile_translator) | stdlib |
+| [build_visualizations.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_visualizations.py) | data → `visualizations.html` (Chart.js, 6-way) | stdlib |
+| [extract_false_friends_profile.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/extract_false_friends_profile.py) | профиль «ложных друзей» → `data/false_friends_profile.json` (Article 1) | stdlib |
+| [profile_nilakantha.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/profile_nilakantha.py) | структурный профиль ṭīkā Нилакантхи → `data/nilakantha_profile.json` (Article 4) | `indic-transliteration` |
 | [taxonomy.py](../scripts/taxonomy.py) | единый источник кодов осей (читает схему); `assert_covers` | stdlib |
-| [annotate_batch.py](../scripts/annotate_batch.py) | LLM-аннотация через Anthropic API (preflight, возобновляемая) | `anthropic` |
-| [eval_pipeline.py](../scripts/eval_pipeline.py) | оценка точности vs золотая выборка (порог ≥85%) | stdlib |
-| [validate.py](../scripts/validate.py) | схемная валидация корпуса + запрещенные формулы | stdlib |
+| [annotate_batch.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/annotate_batch.py) | LLM-аннотация через Anthropic API (preflight, возобновляемая) | `anthropic` |
+| [eval_pipeline.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/eval_pipeline.py) | оценка точности vs золотая выборка (порог ≥85%) | stdlib |
+| [validate.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/validate.py) | схемная валидация корпуса + запрещенные формулы | stdlib |
 
-Третья сторона ([requirements.txt](../requirements.txt)): `anthropic` (пайплайн),
+Третья сторона ([requirements.txt](https://github.com/gasyoun/CommentaryStrategies/blob/main/requirements.txt)): `anthropic` (пайплайн),
 `indic-transliteration` (profile_nilakantha); остальное — stdlib Python 3.10+. Все
 data-derived артефакты пересобираемы и проверяются CI-джобом **Corpus integrity**
 (.github/workflows/ci.yml): валидация + URN-кросс-чек + git diff после регенерации.
@@ -155,7 +155,7 @@ data-derived артефакты пересобираемы и проверяют
 |---|---|
 | Данные | JSON (рабочий формат) + TEI P5 (экспорт) + CTS-URN (адресация) |
 | Аналитика | Python (stdlib) ; Anthropic API для пайплайна |
-| Страницы | HTML + [css/commentary.css](../css/commentary.css) ; шаблон [translator_template.html](../templates/translator_template.html) |
+| Страницы | HTML + [css/commentary.css](https://github.com/gasyoun/CommentaryStrategies/blob/main/css/commentary.css) ; шаблон [translator_template.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/templates/translator_template.html) |
 | Визуализации | Chart.js 4.4 (radar / bubble / stacked bar / heatmap) |
 | Статья / DOCX | Markdown → DOCX (`tronsky-XXX/scripts/build_docx.py`) |
 
@@ -168,7 +168,7 @@ data-derived артефакты пересобираемы и проверяют
 | **CTS-URN, один work на эпос** | стандарт Perseus/SARIT; книга в passage, без дублирования (не `ramayana.sundara`) |
 | **JSON-источник, TEI-экспорт** | LLM-пайплайн удобнее на JSON; TEI дает DH-легитимность без переписывания |
 | **`pages/` отдельно от рукописных** | генерация не затирает богатую ручную аналитику; два источника, две роли |
-| **Полнотекстовая публикация** | авторизована для 5 изданий ([RIGHTS.md](../data/RIGHTS.md)); raw_text включается в TEI/релиз |
+| **Полнотекстовая публикация** | авторизована для 5 изданий ([RIGHTS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/RIGHTS.md)); raw_text включается в TEI/релиз |
 
 ---
 

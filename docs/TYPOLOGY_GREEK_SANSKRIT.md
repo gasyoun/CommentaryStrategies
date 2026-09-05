@@ -1,9 +1,11 @@
+_Created: 13-06-2026 · Last updated: 05-09-2026_
+
 # Типология комментария: греко-латинская и санскритская традиции
 
-> Шаг D-док дорожной карты ([ROADMAP_2026H2.md](ROADMAP_2026H2.md), Workstream D).
+> Шаг D-док дорожной карты ([ROADMAP_2026H2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP_2026H2.md), Workstream D).
 > Питает Article 5 (ВЯ, «Комментаторский аппарат в русских переводах санскрита и
 > греко-латинской классики: сравнительная типология») и гл. 5 монографии
-> ([roadmap_postdoc_2026.md](../roadmap_postdoc_2026.md)).
+> ([roadmap_postdoc_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/roadmap_postdoc_2026.md)).
 > Цель: проверить, переносима ли 4-осная сетка проекта на греческий материал, и
 > обосновать тезис о **конвергентной**, а не заимствованной типологии русской
 > индологии.
@@ -43,7 +45,7 @@
 историко-литературный / **реальный** / словарно-лингвистический комментарий. Это и есть
 стандартная номенклатура *Altertumswissenschaft*, которую Н. Н. Казанский **применяет**
 (не изобретает) к Corpus Latino-Rossicum — см.
-[Kazanskiy-typology.md](../tronsky-XXX/archive/Kazanskiy-typology.md). Современный жанровый
+[Kazanskiy-typology.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/tronsky-XXX/archive/Kazanskiy-typology.md). Современный жанровый
 спектр расщеплен: критический аппарат (app. crit.); лемматизированный научный комментарий
 (кембриджский «green-and-yellow»); перевод-с-легкими-примечаниями для общего читателя.
 **Ключ:** переводчику классики можно держать примечания легкими — отдельная
@@ -65,7 +67,7 @@
 Mahābhārata, Baroda Rāmāyaṇa) — XX век. Комментарий не следует за текстом, а
 **конституирует** его смысл и передачу. Для Сундараканды это не абстракция: примечания
 Леонова/Костиной цитируют именно Говиндараджу («Бхушана»), Махешваратиртху («Тилака»),
-«Широмани», «Таттвадипику» — живую цепочку ṭīkā (см. [sources/leonov_notes.json](../sources/leonov_notes.json)).
+«Широмани», «Таттвадипику» — живую цепочку ṭīkā (см. [sources/leonov_notes.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/sources/leonov_notes.json)).
 
 **Теория адресата.** Эксплицитное понятие *adhikārin* — «допущенный», квалифицированный
 читатель. Классический комментатор (от Шанкары до Нилакантхи) сначала определяет, **кто
@@ -105,7 +107,7 @@ Mahābhārata, Baroda Rāmāyaṇa) — XX век. Комментарий не �
 христианского и гуманистического посредничества — у переводчика есть готовые
 эквиваленты. Санскритские (*dharma*, *ātman*, *brahman*) пришли «сырыми» в XIX веке, без
 посредующего слоя → концептуальная несоизмеримость (тезис Article 1,
-[articles/article1_vya.md](../articles/article1_vya.md)).
+[articles/article1_vya.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article1_vya.md)).
 
 Отсюда главный аргумент: русская индология **заново изобрела** читательские контракты, а
 не унаследовала их решения. Это **конвергентная эволюция**, а не провинциальное
@@ -142,7 +144,7 @@ Mahābhārata, Baroda Rāmāyaṇa) — XX век. Комментарий не �
 | **Аверинцев** — культурологический максимум | реалии + миф + сравнение | Васильков/Невелева |
 | **Лосев** — философский аппарат | доктрина, система, читатель-собеседник | Семенцов / Сыркин |
 
-\* Уточнение по корпусным данным ([GRINTSER_PROFILE.md](../ramayana-leonov/GRINTSER_PROFILE.md),
+\* Уточнение по корпусным данным ([GRINTSER_PROFILE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/GRINTSER_PROFILE.md),
 C0.1): Кальянов на деле ближе к **плоскому лемма-глоссарию** (100 % IAST, 100 % L2), чем к
 курируемому «минимуму» Гаспарова. Карта верна по *функции* (минимальный контракт), но не
 по *исполнению* — это само по себе предмет для §Article 5.
@@ -169,3 +171,5 @@ Boeckh, *Encyklopädie und Methodologie der philologischen Wissenschaften* (1877
 Sanskrit* (пять *lakṣaṇa*) · Pollock, *The Language of the Gods in the World of Men*
 (śāstric commentary) · Bronkhorst (грамматическая комментаторская традиция) · Minkowski
 (Нилакантха, JAOS 122:2, 2002) · Казанский 2025 (CLR).
+
+_Dr. Mārcis Gasūns_

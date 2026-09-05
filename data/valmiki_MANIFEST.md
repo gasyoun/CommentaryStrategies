@@ -1,3 +1,5 @@
+_Created: 30-06-2026 · Last updated: 05-09-2026_
+
 # Vālmīki Rāmāyaṇa corpus — provenance & coverage manifest
 
 Covers [`data/valmiki_shlokas/`](valmiki_shlokas/) (verse text + English glosses) and
@@ -6,7 +8,7 @@ Covers [`data/valmiki_shlokas/`](valmiki_shlokas/) (verse text + English glosses
 ## Source & provenance
 
 - **Source:** [valmiki.gitasupersite.in](https://valmiki.gitasupersite.in) — the "GitaSupersite," IIT Kanpur.
-- **Acquired:** 2026-06-29, via [`scripts/scrape_valmiki_shlokas.py`](../scripts/scrape_valmiki_shlokas.py) + [`scripts/scrape_valmiki_commentaries.py`](../scripts/scrape_valmiki_commentaries.py).
+- **Acquired:** 2026-06-29, via [`scripts/scrape_valmiki_shlokas.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/scrape_valmiki_shlokas.py) + [`scripts/scrape_valmiki_commentaries.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/scrape_valmiki_commentaries.py).
 - **Regenerable:** yes — re-run the two scrapers with `--force`. The cached files are not authored here.
 
 ## ✅ RIGHTS — CLEARED (2026-07-01)
@@ -16,8 +18,8 @@ Sanskrit commentaries, and the modern English word‑by‑word glosses and expla
 <https://valmiki.gitasupersite.in> — for an open‑source research corpus and a Zenodo archive under an open
 license — was granted by **Sudalaimuthu Palaniappan, editor of the Vālmīki Rāmāyaṇa section of the Gita
 Supersite**, on **1 July 2026**. Non‑exclusive, worldwide, perpetual, royalty‑free; **attribution
-required**. Full grant archived verbatim in [`valmiki_PERMISSION.md`](valmiki_PERMISSION.md); summary in
-[`data/RIGHTS.md`](RIGHTS.md).
+required**. Full grant archived verbatim in [`valmiki_PERMISSION.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/valmiki_PERMISSION.md); summary in
+[`data/RIGHTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/RIGHTS.md).
 
 - **License:** CC BY 4.0 (project compilation/derived apparatus; underlying Gita Supersite materials used
   by permission, not claimed as this project's copyright).
@@ -27,11 +29,11 @@ required**. Full grant archived verbatim in [`valmiki_PERMISSION.md`](valmiki_PE
   already tracked in git before clearance; this grant legitimizes the existing commit — no un-ignore was
   needed.)
 - Residual-risk note: editor-level grant, relied upon in good faith; not a separate IIT Kanpur
-  institutional instrument. See [`valmiki_PERMISSION.md`](valmiki_PERMISSION.md).
+  institutional instrument. See [`valmiki_PERMISSION.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/valmiki_PERMISSION.md).
 
 ## Cleanup applied (2026-06-29)
 
-[`scripts/clean_valmiki_corpus.py --apply`](../scripts/clean_valmiki_corpus.py) removed sarga-1 **fallback
+[`scripts/clean_valmiki_corpus.py --apply`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/clean_valmiki_corpus.py) removed sarga-1 **fallback
 duplicates** — the site silently serves sarga-1 content for out-of-range sarga requests, and a pre-guard
 scrape had cached these (every kāṇḍa padded to a uniform ~130 sargas).
 
@@ -85,3 +87,5 @@ standing coverage limits, not as a TODO:
 `tilaka` 66, `bhusana` 68, `siromani` 65 (of 68 sargas) — which is what the ~38% Sanskrit-commentator
 dialogue layer draws on. The gaps above affect other kāṇḍas / the full-corpus deposit's completeness, not
 the Sundara apparatus.
+
+_Dr. Mārcis Gasūns_

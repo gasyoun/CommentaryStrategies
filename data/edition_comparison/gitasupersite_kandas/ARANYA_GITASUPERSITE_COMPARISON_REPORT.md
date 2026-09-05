@@ -1,3 +1,5 @@
+_Created: 12-07-2026 · Last updated: 05-09-2026_
+
 # Araṇyakāṇḍa (III): Critical (GRETIL/Baroda) vs Gita Supersite
 
 _Created: 12-07-2026_
@@ -222,3 +224,5 @@ supersedes the earlier valmikiramayan.net-based comparison, which had no permiss
 ## Full data
 
 Complete machine-readable results alongside this file: `scratchpad/aranya_gitasupersite_alignment.json`
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 14-08-2026 · Last updated: 05-09-2026_
+
 # Review API deployment (Free plan only)
 
 This Worker is optional transport around the always-working Pages/local/export
@@ -19,3 +21,5 @@ Verify `/health` reports `plan: free` and perform only a clearly synthetic test
 against a test namespace/repository. If billing, identity, permissions, or secret
 setup is unavailable, do not deploy: Pages local save plus aggregate download is
 the documented fail-closed result.
+
+_Dr. Mārcis Gasūns_

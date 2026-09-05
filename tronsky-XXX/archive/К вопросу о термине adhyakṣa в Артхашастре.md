@@ -1,3 +1,5 @@
+_Created: 01-05-2026 · Last updated: 05-09-2026_
+
 # К вопросу о термине *adhyakṣa* в «Артхашастре»
 
 ## Аннотация
@@ -87,3 +89,5 @@ Nyāyakośa or Dictionary of Technical Terms of Indian Philosophy / Bhimacarya J
 Tubb G. A., Boose E. R. *Scholastic Sanskrit*. American Institute of Buddhist Studies, 2007. [Подзаголовок требует проверки по титульному листу: в каталогах встречаются варианты *A Manual for Students* и *A Handbook for Students*.]
 
 Kauṭilya. *The Kauṭilīya Arthaśāstra*. Part II: An English Translation with Critical and Explanatory Notes / ed. and tr. by R. P. Kangle. Bombay: University of Bombay, 1963.
+
+_Dr. Mārcis Gasūns_

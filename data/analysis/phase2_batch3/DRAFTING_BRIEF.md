@@ -101,3 +101,5 @@ repo. Return ONE line per sarga: `sarga NN: <considered> considered / <drafted> 
 
 _Auto-generated for the H268 batch-3 run; orchestration Fable 5 (`claude-fable-5`), drafting
 Sonnet 5 (`claude-sonnet-5`)._
+
+_Dr. Mārcis Gasūns_

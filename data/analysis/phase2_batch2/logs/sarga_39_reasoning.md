@@ -1,3 +1,5 @@
+_Created: 04-07-2026 · Last updated: 05-09-2026_
+
 # Drafting reasoning log — sarga 39
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -95,5 +97,6 @@ I'm missing verse 2 and 26 in the rejected list (since verse 2 became a drafted 
 - 🔧 `Bash` — cd "C:\Users\user\Documents\GitHub\CommentaryStrategies\.claude\worktrees\silly-diffie-1e1e22" && py
 No BOM, file written correctly.
 
-Verses considered: 53 / drafted: 3 / rejected: 50. Output written to [data/analysis/phase2_batch2/sarga_39_candidates.json](../sarga_39_candidates.json) — drafted notes for V.39.2 (jewel's wedding-day provenance + Bhūṣaṇa's rejection of a rival interpretation), V.39.29 (Hanuman's motive for insisting Rama complete the rescue, answering Kostina's flagged 29→30 logic gap), and V.39.39 (Śiromani's a fortiori logic behind "the best aren't sent," answering Kostina's "нужен комм" flag).
+Verses considered: 53 / drafted: 3 / rejected: 50. Output written to [data/analysis/phase2_batch2/sarga_39_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/sarga_39_candidates.json) — drafted notes for V.39.2 (jewel's wedding-day provenance + Bhūṣaṇa's rejection of a rival interpretation), V.39.29 (Hanuman's motive for insisting Rama complete the rescue, answering Kostina's flagged 29→30 logic gap), and V.39.39 (Śiromani's a fortiori logic behind "the best aren't sent," answering Kostina's "нужен комм" flag).
 
+_Dr. Mārcis Gasūns_

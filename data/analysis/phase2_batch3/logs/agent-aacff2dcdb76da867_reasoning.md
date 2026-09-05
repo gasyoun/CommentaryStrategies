@@ -1,3 +1,5 @@
+_Created: 07-07-2026 · Last updated: 05-09-2026_
+
 # Agent log agent-aacff2dcdb76da867
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -354,9 +356,9 @@ All 52 bundles accounted for exactly once, no overlaps, no missing entries, no B
 All three files validate: correct JSON, UTF-8 no BOM, exact count reconciliation, and a healthy mix of contrastive vs. single-commentator notes (5 of 10 total drafted notes are contrastive, matching the brief's contrastive-first preference where genuine divergence existed).
 
 All three sarga files for the assigned batch (40, 41, 42) are complete, verified for count reconciliation (`notes_drafted + notes_rejected == verses_considered`), UTF-8 with no BOM, and written to:
-- [data/analysis/phase2_batch3/sarga_40_candidates.json](../sarga_40_candidates.json)
-- [data/analysis/phase2_batch3/sarga_41_candidates.json](../sarga_41_candidates.json)
-- [data/analysis/phase2_batch3/sarga_42_candidates.json](../sarga_42_candidates.json)
+- [data/analysis/phase2_batch3/sarga_40_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_40_candidates.json)
+- [data/analysis/phase2_batch3/sarga_41_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_41_candidates.json)
+- [data/analysis/phase2_batch3/sarga_42_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_42_candidates.json)
 
 Notable finds: sarga 41's "5.41.34" bundle and sarga 42's "5.42.810" bundle were segmentation artifacts (content textually anchored to verses 3 and 10 respectively via internal pratīka self-reference) — drafted against their true verse, with the mismatch documented in `why_proposed`. Sarga 42 surfaced a genuine dharmaśāstra "five permitted lies" citation justifying Sita's evasion (5.42.10), and a named character (Jambumālī) missing from both подстрочник and Phase-1.
 
@@ -364,3 +366,4 @@ sarga 40: 30 considered / 3 drafted / 27 rejected / 2 contrastive
 sarga 41: 25 considered / 4 drafted / 21 rejected / 1 contrastive
 sarga 42: 52 considered / 3 drafted / 49 rejected / 0 contrastive
 
+_Dr. Mārcis Gasūns_

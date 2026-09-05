@@ -1,3 +1,5 @@
+_Created: 12-07-2026 · Last updated: 05-09-2026_
+
 _Created: 12-07-2026 · Last updated: 12-07-2026 (MBh Vanaparva pilot shipped)_
 
 # Edition-apparatus rollout — all Rāmāyaṇa kāṇḍas + the Mahābhārata

@@ -1,11 +1,13 @@
+_Created: 12-06-2026 · Last updated: 05-09-2026_
+
 # Профиль Гринцера как ориентир для Сундараканды (C0.1)
 
-> Шаг C0.1 дорожной карты ([docs/ROADMAP_2026H2.md](../docs/ROADMAP_2026H2.md), Workstream C).
+> Шаг C0.1 дорожной карты ([docs/ROADMAP_2026H2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP_2026H2.md), Workstream C).
 > Цель: операционализировать «комментировать по Гринцеру» как **измеримый** профиль-ориентир
 > для примечаний Леонова/Костиной, прежде чем писать guidelines (C1) и пилот (C3).
-> Данные: [data/grintser_markup_50.json](../data/grintser_markup_50.json) (50 размеченных примечаний),
-> сравнение с [vassilkov_markup_50.json](../data/vassilkov_markup_50.json) и
-> [kalyanov_markup_50.json](../data/kalyanov_markup_50.json).
+> Данные: [data/grintser_markup_50.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/grintser_markup_50.json) (50 размеченных примечаний),
+> сравнение с [vassilkov_markup_50.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/vassilkov_markup_50.json) и
+> [kalyanov_markup_50.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/kalyanov_markup_50.json).
 > Воспроизводится: `python scripts/profile_translator.py grintser vassilkov kalyanov`.
 
 ⚠️ **Оговорка о выборке.** Это 50-примечаниевые золотые выборки, не полный корпус
@@ -91,8 +93,10 @@
 ## Побочная находка (DH-гигиена, Workstream B)
 
 В `axis_1_topic` встречается значение **`poetics`**, которого **нет в enum схемы**
-[data/commentary_schema.json](../data/commentary_schema.json)
+[data/commentary_schema.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/commentary_schema.json)
 (`sanskrit_term, myth, context, realia, geography, reference, textology, philosophy`).
 Поскольку `poetics` — ключевая отличительная подпись Гринцера, это не шум, а реальная
 категория. → задача B-трека: добавить `poetics` в enum схемы и в TEI-таксономию, либо
 сознательно решить, к чему его сводить. Зафиксировано здесь, чтобы не потерять.
+
+_Dr. Mārcis Gasūns_

@@ -1,9 +1,9 @@
 # CommentaryStrategies — Roadmap 2026 H2 → 2027
 
-_Created: 12-06-2026 · Last updated: 02-09-2026_
+_Created: 12-06-2026 · Last updated: 05-09-2026_
 
 > Версия: 2.0 · Дата: 2026-06-12 · Заменяет v1.0 — [archive/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/archive/ROADMAP.md) (фазы 1–3 выполнены; перемещён в архив 26-08-2026, надгробие — [docs/ROADMAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP.md)). Незакрытый остаток v1.0 — раздел «Перенесено из v1.0» ниже
-> Дополняет [roadmap_postdoc_2026.md](../roadmap_postdoc_2026.md) (статьи и монография — там; здесь — репозиторий как DH-объект и комментаторская праксис Рамаяны)
+> Дополняет [roadmap_postdoc_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/roadmap_postdoc_2026.md) (статьи и монография — там; здесь — репозиторий как DH-объект и комментаторская праксис Рамаяны)
 
 ---
 
@@ -20,7 +20,7 @@ _Created: 12-06-2026 · Last updated: 02-09-2026_
 
 ## Workstream A — Статьи (без изменений, хребет проекта)
 
-Очередь и статусы — в [.ai_state.md](../.ai_state.md) и [roadmap_postdoc_2026.md](../roadmap_postdoc_2026.md).
+Очередь и статусы — в [.ai_state.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/.ai_state.md) и [roadmap_postdoc_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/roadmap_postdoc_2026.md).
 Краткий порядок: Article 3 (Нилакантха) → отправка; Article 1 (ВЯ) → межкодерская проверка + Петров 1788; Article 2 (ВФ) → верификация таблиц 5–7 (ждем М.Г.).
 
 ---
@@ -35,7 +35,7 @@ _Created: 12-06-2026 · Last updated: 02-09-2026_
 
 ### B2. Канонические идентификаторы — ✅ готово (2026-06-12)
 - [x] CTS-URN для адресации стихов: `urn:cts:sanskritLit:<work>:<passage>` (`scripts/derive_urn.py`). Решение по схеме: один work на эпос (ramayana / mahabharata / <упанишада>), книга — первый элемент passage (не `ramayana.sundara`, чтобы не дублировать). Покрытие: Рам. (7 кāṇḍa), Мбх. (18 parva + upaparva-псевдонимы Gītā→6, Mokṣa→12), 14 упанишад.
-- [x] Поле `urn` добавлено в [commentary_schema.json](../data/commentary_schema.json) и внедрено в 300 примечаний (data/*_markup_50.json). Перекрестная проверка книга↔номер пройдена; **выявила и исправила** неоднородность адресации Кальянова (Ādi adhyāya.verse → префиксуется номером парвы → mahabharata:1.x.y).
+- [x] Поле `urn` добавлено в [commentary_schema.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/commentary_schema.json) и внедрено в 300 примечаний (data/*_markup_50.json). Перекрестная проверка книга↔номер пройдена; **выявила и исправила** неоднородность адресации Кальянова (Ādi adhyāya.verse → префиксуется номером парвы → mahabharata:1.x.y).
 - [x] Маппинг на ID samskrtam.ru (связь с параллельным корпусом) — ✅ готово (28-08-2026, drain A04). Гейт снят: «их ID» оказались **публично выводимыми** из самих страниц корпуса (сверено с HTML). Схемы: кн. V Рамаяны — постиховые якоря `id="<sarga>.<стих>"`; Рам. I–III и все 18 парв Мхб. — поглавные `id="chapter_<n>"`. Генератор [scripts/samskrtam_map.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/samskrtam_map.py) (derive-don't-store, `--emit`/`--check`; `--check` введён в CI) → [data/samskrtam_id_map.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/samskrtam_id_map.json): 300 примечаний → **244 mapped · 6 anchor-missing · 50 not-in-corpus** (упанишады Сыркина в корпусе отсутствуют). Шесть `anchor-missing` — не дефект маппера, а **сигнал сверки адресов**: Рам. I сарга 80 (в крите Bāla — 77 сарк), Рам. V 31.44 (нет якоря и на живой странице), Мхб. VI adhy. 115/120 (страница корпуса доходит до chapter_111), Мхб. XVIII adhy. 6 (в крите Svargārohaṇa — 5 adhyāya); сверка по печатным изданиям — за владельцем данных. Попутные находки: страница кн. V жива (HTTP 200), но не включена в index_ramayana.html; **отсутствующая страница корпуса отдаёт главную с HTTP 200** (мягкая 404, ровно 33 857 байт) — HEAD-проверка существования страниц samskrtam.ru недоказуема. [PR #205](https://github.com/gasyoun/CommentaryStrategies/pull/205)
 
 ### B3. TEI-экспорт — ✅ готово (2026-06-12)
@@ -58,16 +58,16 @@ _Created: 12-06-2026 · Last updated: 02-09-2026_
   схемы → exit 0), путь к схеме — `--schema` или `$TEI_ALL_RNG`.
 
 ### B4. Воспроизводимость: данные → страницы — ✅ готово (2026-06-12)
-- [x] `scripts/build_pages.py`: генерирует `pages/<translator>.html` из `data/*_markup_50.json` по [translator_template.html](../templates/translator_template.html); переиспользует `profile_translator.py` (без дублирования статистики). Все 6 страниц собраны, HTML парсится, плейсхолдеров не осталось.
-- [x] **Решение об источнике истины:** генератор пишет в отдельную `pages/` (data-derived таблица), **не затрагивая** рукописные `*_commentary_analysis.html` в корне — они содержательно богаче (см. [pages/README.md](../pages/README.md)).
+- [x] `scripts/build_pages.py`: генерирует `pages/<translator>.html` из `data/*_markup_50.json` по [translator_template.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/templates/translator_template.html); переиспользует `profile_translator.py` (без дублирования статистики). Все 6 страниц собраны, HTML парсится, плейсхолдеров не осталось.
+- [x] **Решение об источнике истины:** генератор пишет в отдельную `pages/` (data-derived таблица), **не затрагивая** рукописные `*_commentary_analysis.html` в корне — они содержательно богаче (см. [pages/README.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/pages/README.md)).
 - [x] `requirements.txt` создан (единственная третья сторона — `anthropic` для пайплайна).
 - [x] **Корректировка:** «дублирования» `nilakantha_parser.py` не было — файлы различались (scripts/ = 2 КБ заглушка-placeholder, mahabharata-nilakantha/ = 11 КБ стабильный v1.0). Заглушка удалена; канонический — в `mahabharata-nilakantha/`.
 - [x] CI-job на пересборку pages/ при изменении данных — `.github/workflows/ci.yml` "Corpus integrity" job runs `build_pages.py` + `git diff --exit-code` on `pages/` (and other generated artifacts) on every push
 
 ### B5. Межкодерская надежность (методологический блокер статей 1–2)
 - [x] Второй кодировщик на полный 300-note gold (6×50) × 2 оси (axis_2, axis_4) — H1469, 24-07-2026: blind LLM Pass B = DeepSeek Chat; Cohen's κ axis_2 = **0.648** [0.571–0.719] agr 77.7 %, axis_4 = **0.521** [0.430–0.608] agr 77.0 %. Цель ≥0.7 / ≥85 % **не достигнута** — закрыто как честный finding по D2/H453 (см. `data/EVAL_RESULTS.md`)
-- [x] Протокол расхождений → 96–100 % protocol-ambiguity (V/G и P/K/D depth); рекомендации по уточнению [classify_note.md](../prompts/classify_note.md) зафиксированы в EVAL_RESULTS (патч codebook = отдельное pre-registered исследование, не silent re-tune)
-- [x] Запуск scoring на всех 6 золотых выборках; результаты в [`data/EVAL_RESULTS.md`](../data/EVAL_RESULTS.md) + `data/iaa/`
+- [x] Протокол расхождений → 96–100 % protocol-ambiguity (V/G и P/K/D depth); рекомендации по уточнению [classify_note.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/prompts/classify_note.md) зафиксированы в EVAL_RESULTS (патч codebook = отдельное pre-registered исследование, не silent re-tune)
+- [x] Запуск scoring на всех 6 золотых выборках; результаты в [`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md) + `data/iaa/`
 
 ### B6. Цитируемость и гигиена — частично готово (2026-06-13)
 - [x] `CITATION.cff` создан (CFF 1.2.0, Apache-2.0, версия 2.0)
@@ -101,21 +101,21 @@ _Created: 12-06-2026 · Last updated: 02-09-2026_
 
 ### C0. Эксперимент по выбору модели (решает D2)
 Модель не назначается априори — она выбирается на образцах. Кандидаты по итогам обсуждения 2026-06-12:
-- **(а) «по Гринцеру»** — исходный план команды; baseline. ✅ Квантифицирован: [ramayana-leonov/GRINTSER_PROFILE.md](../ramayana-leonov/GRINTSER_PROFILE.md) (C0.1 готов 2026-06-12). Подпись Гринцера = короткое примечание (медиана 86 знаков) + низкий IAST (12 %) + уникальный поэтологический слой (12 %, нет у др.) + миф без компаративного аппарата. Скрипт: `python scripts/profile_translator.py grintser vassilkov kalyanov`
+- **(а) «по Гринцеру»** — исходный план команды; baseline. ✅ Квантифицирован: [ramayana-leonov/GRINTSER_PROFILE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/GRINTSER_PROFILE.md) (C0.1 готов 2026-06-12). Подпись Гринцера = короткое примечание (медиана 86 знаков) + низкий IAST (12 %) + уникальный поэтологический слой (12 %, нет у др.) + миф без компаративного аппарата. Скрипт: `python scripts/profile_translator.py grintser vassilkov kalyanov`
 - **(б) Васильков-тип** — привлекателен, но мифологически-компаративный слой дорог при текущей компетенции команды; оценить, какую долю васильковских примечаний реально воспроизвести без сравнительной мифологии (его профиль минус myth-ось)
 - **(в) двухъярусный гибрид** — гаспаровский минимум в печати + филологический слой (IAST, формулы, варианты, глоссы Говиндараджи/Тилаки) на samskrtam.ru с привязкой к URN (B2); кандидат от данного проекта (один аппарат не обслуживает два контракта)
 - Кальянов-тип исключен (решение М.Г.)
 
 Процедура: одни и те же **10 строф Sundara 1** комментируются в трех стилях (а/б/в) → слепое сравнение Леоновым и Костиной → решение D2 фиксируется здесь и в guidelines.
 
-✅ **C0.2 готов (2026-06-12)**: [ramayana-leonov/C0_SPECIMENS_SUNDARA1.md](../ramayana-leonov/C0_SPECIMENS_SUNDARA1.md) — Sundara 1.1–10 (перевод Леонова) с тремя слепыми аппаратами (I = б, II = в, III = а; расшифровка и калибровка — [C0_KEY.md](../ramayana-leonov/C0_KEY.md)) + вопросник из 5 пунктов. Калибровка по корпусу: III медиана 83 зн. / IAST 12 % (цель Гринцера 86 / 12 %); ярус 2 аппарата II = дословно текущие примечания Леонова/Костиной (работа сохраняется, дописывается только ярус 1). Находка: «Васильков минус мифология» дрейфует к более длинному примечанию (157 зн.), а не к более легкому. **ЖДЕМ: слепое ревью Леонова/Костиной → решение D2.**
+✅ **C0.2 готов (2026-06-12)**: [ramayana-leonov/C0_SPECIMENS_SUNDARA1.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/C0_SPECIMENS_SUNDARA1.md) — Sundara 1.1–10 (перевод Леонова) с тремя слепыми аппаратами (I = б, II = в, III = а; расшифровка и калибровка — [C0_KEY.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/C0_KEY.md)) + вопросник из 5 пунктов. Калибровка по корпусу: III медиана 83 зн. / IAST 12 % (цель Гринцера 86 / 12 %); ярус 2 аппарата II = дословно текущие примечания Леонова/Костиной (работа сохраняется, дописывается только ярус 1). Находка: «Васильков минус мифология» дрейфует к более длинному примечанию (157 зн.), а не к более легкому. **ЖДЕМ: слепое ревью Леонова/Костиной → решение D2.**
 
 ### C1. Guidelines (после C0) — ✅ готово (28-07-2026, H1761)
 - [x] [ramayana-leonov/COMMENTARY_GUIDELINES.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/COMMENTARY_GUIDELINES.md): 12 правил модели II — длина, IAST-политика, формула/эпитет-слой, формат ссылок на тика-традицию, чек-лист Костиной; каждое правило с провенансом § 3 и пометкой [ратифицировать], пока Леонов/Костина не подписали
 - [x] Эксплицитный читательский контракт — абзац для предисловия переводчика (первый русский перевод, делающий имплицитную теорию читателя явной) — § 4 того же документа
 
 ### C2. Формульный слой (гомеровская модель) — ✅ структурирование готово (2026-06-12)
-- [x] `scripts/parse_formulas.py` → [data/ramayana_epithets.json](../data/ramayana_epithets.json): 509 эпитетных статей, **478 различных персонажей**, 2212 эпитетов, 29 омонимов, 12 групповых рубрик; квадратные уточнения составителей помечены. Разбор + [EPITHET_LAYER.md](../ramayana-leonov/EPITHET_LAYER.md).
+- [x] `scripts/parse_formulas.py` → [data/ramayana_epithets.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/ramayana_epithets.json): 509 эпитетных статей, **478 различных персонажей**, 2212 эпитетов, 29 омонимов, 12 групповых рубрик; квадратные уточнения составителей помечены. Разбор + [EPITHET_LAYER.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/EPITHET_LAYER.md).
 - [x] Методическая рамка зафиксирована (de Jong, Brockington): формула комментируется *один раз системно*.
 - [x] **Находка: «300 vs 459» устарело** — уже по 2 книгам 478 персонажей > 459 во всем Словаре; сравнение apples-to-oranges (объем текста, единица счета, свертки Гринцера). Полная реконсиляция — data-gated (нужны данные «Словаря имен»).
 - [x] Привязать эпитеты к построфным CTS-URN (извлечь адреса из текста Леонова) — **наполовину, честно** (H3558, [PR #203](https://github.com/gasyoun/CommentaryStrategies/pull/203); тик 28-08-2026): `grep -c 'urn:cts' data/ramayana_epithets.json` 0 → **24** — адреса кн. V, где засвидетельствована санскритская лемма, не адреса самих статей; собственные построфные адреса статей кн. 1–2 → **Дорожка B**: ни артефакт, ни его единственный источник `ramayana-formulas_1-2.md` построфных адресов не несут — перечень организован по именам, не по стихам, выводить URN механически неоткуда (замер — в «Статус-проверке» ниже)

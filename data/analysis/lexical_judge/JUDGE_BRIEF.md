@@ -68,3 +68,5 @@ Return one line: `chunk NN judged: N notes → keep K / edit E / park P / reject
 
 _Auto-generated for the H276 lexical judge run; judging Sonnet 5 (`claude-sonnet-5`),
 orchestration Fable 5 (`claude-fable-5`)._
+
+_Dr. Mārcis Gasūns_

@@ -1,8 +1,10 @@
+_Created: 12-06-2026 · Last updated: 05-09-2026_
+
 # Ключ к эксперименту C0.2 — НЕ ОТКРЫВАТЬ до выставления оценок
 
-> Расшифровка аппаратов из [C0_SPECIMENS_SUNDARA1.md](C0_SPECIMENS_SUNDARA1.md)
+> Расшифровка аппаратов из [C0_SPECIMENS_SUNDARA1.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/C0_SPECIMENS_SUNDARA1.md)
 > и проверка калибровки каждого против корпусных профилей
-> ([GRINTSER_PROFILE.md](GRINTSER_PROFILE.md), `scripts/profile_translator.py`).
+> ([GRINTSER_PROFILE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/GRINTSER_PROFILE.md), `scripts/profile_translator.py`).
 
 ---
 
@@ -41,6 +43,8 @@
 
 ## Что дальше
 
-Решение D2 фиксируется в [docs/ROADMAP_2026H2.md](../docs/ROADMAP_2026H2.md) (таблица
+Решение D2 фиксируется в [docs/ROADMAP_2026H2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP_2026H2.md) (таблица
 открытых решений) и разворачивается в `COMMENTARY_GUIDELINES.md` (шаг C1): правила
 отбора строф, длина, IAST-политика, формульный слой (C2), чек-лист редактора.
+
+_Dr. Mārcis Gasūns_

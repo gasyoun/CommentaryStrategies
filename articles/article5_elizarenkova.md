@@ -1,3 +1,5 @@
+_Created: 15-05-2026 · Last updated: 05-09-2026_
+
 ---
 title: "Диахронические «ложные друзья»: ведийские термины в русской переводческой традиции (на материале перевода Ригведы Т. Я. Елизаренковой)"
 author: "М. Ю. Гасунс"
@@ -450,3 +452,5 @@ It is shown that the strategies for all three terms constitute a unified *lingui
 **Renou 1955–1969** — Renou L. Études védiques et pāṇinéennes. T. 1–17. Paris: De Boccard, 1955–1969.
 
 **Thieme 1960** — Thieme P. The 'Aryan' Gods of the Mitanni Treaties // Journal of the American Oriental Society. 1960. Vol. 80. No. 4. P. 301–317. DOI: 10.2307/595878.
+
+_Dr. Mārcis Gasūns_

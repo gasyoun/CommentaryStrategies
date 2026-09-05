@@ -1,3 +1,5 @@
+_Created: 26-06-2026 · Last updated: 05-09-2026_
+
 ---
 paper_id: A21
 title: "Submission-readiness report — A21 Nīlakaṇṭha commentary traditions (RU)"
@@ -13,8 +15,8 @@ lang: en
 
 # Submission-readiness report — A21
 
-Manuscript: [`article3_nilakantha.md`](article3_nilakantha.md) (352 lines, ~5,266 words, UTF-8, no BOM — confirmed: first bytes `2d 2d 2d`).
-Cover letter (this pass): [`cover_letter_A21.md`](cover_letter_A21.md).
+Manuscript: [`article3_nilakantha.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article3_nilakantha.md) (352 lines, ~5,266 words, UTF-8, no BOM — confirmed: first bytes `2d 2d 2d`).
+Cover letter (this pass): [`cover_letter_A21.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/cover_letter_A21.md).
 Handoff of record: [`H006-Fable_CommentaryStrategies_nilakantha_ru_26.06.26.md`](../../Uprava/handoffs/H006-Fable_CommentaryStrategies_nilakantha_ru_26.06.26.md).
 
 This is a Month-1 *confirmation* pass on a paper already at 5/5 (revising / ready-to-send). No body rewrite was performed; all proposed edits below are for the author to apply.

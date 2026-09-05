@@ -1,3 +1,5 @@
+_Created: 07-07-2026 · Last updated: 05-09-2026_
+
 # Agent log agent-ab060b327a86784d4
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -377,5 +379,6 @@ sarga 31: 27 considered / 2 drafted / 25 rejected / 0 contrastive
 sarga 32: 15 considered / 4 drafted / 11 rejected / 1 contrastive
 sarga 33: 40 considered / 6 drafted / 34 rejected / 1 contrastive
 
-Outputs written to [sarga_29_candidates.json](../sarga_29_candidates.json), [sarga_31_candidates.json](../sarga_31_candidates.json), [sarga_32_candidates.json](../sarga_32_candidates.json), [sarga_33_candidates.json](../sarga_33_candidates.json).
+Outputs written to [sarga_29_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_29_candidates.json), [sarga_31_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_31_candidates.json), [sarga_32_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_32_candidates.json), [sarga_33_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_33_candidates.json).
 
+_Dr. Mārcis Gasūns_

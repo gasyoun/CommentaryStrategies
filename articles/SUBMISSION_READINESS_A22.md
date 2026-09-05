@@ -1,3 +1,5 @@
+_Created: 10-07-2026 · Last updated: 05-09-2026_
+
 ---
 paper_id: A22
 title: "Submission-readiness report — A22 Nīlakaṇṭha commentary traditions (EN)"

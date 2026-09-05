@@ -1,11 +1,11 @@
 # Формульно-эпитетный слой Рамаяны (C2)
 
-_Created: 13-06-2026 · Last updated: 26-08-2026_
+_Created: 13-06-2026 · Last updated: 05-09-2026_
 
-> Шаг C2 дорожной карты ([docs/ROADMAP_2026H2.md](../docs/ROADMAP_2026H2.md), Workstream C).
-> Источник: [ramayana-formulas_1-2.md](ramayana-formulas_1-2.md) (рукописный перечень
+> Шаг C2 дорожной карты ([docs/ROADMAP_2026H2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP_2026H2.md), Workstream C).
+> Источник: [ramayana-formulas_1-2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/ramayana-formulas_1-2.md) (рукописный перечень
 > эпитетов по книгам 1–2: Bālakāṇḍa, Ayodhyākāṇḍa).
-> Результат: структурированный [data/ramayana_epithets.json](../data/ramayana_epithets.json).
+> Результат: структурированный [data/ramayana_epithets.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/ramayana_epithets.json).
 > Воспроизводится: `python scripts/parse_formulas.py`.
 
 ## Зачем
@@ -60,7 +60,7 @@ iast_crosswalk?}`. Поле `iast_crosswalk` (26-08-2026, H3558) — списо�
 
 ## Кросоволок с IAST — сделано 26-08-2026 (H3558)
 
-Сведение с леммами эпитетов из [sources/leonov_notes.json](../sources/leonov_notes.json)
+Сведение с леммами эпитетов из [sources/leonov_notes.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/sources/leonov_notes.json)
 выполнено в самом генераторе (`scripts/parse_formulas.py`, функции `load_crosswalk` /
 `attach_crosswalk`), а не правкой артефакта. Замер:
 
@@ -86,7 +86,7 @@ iast_crosswalk?}`. Поле `iast_crosswalk` (26-08-2026, H3558) — списо�
 
 - **Собственные построфные адреса статей кн. 1–2 — не агентская задача (Lane B).**
   Замер: ни `data/ramayana_epithets.json`, ни его единственный источник
-  [ramayana-formulas_1-2.md](ramayana-formulas_1-2.md) не несут построфных адресов —
+  [ramayana-formulas_1-2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/ramayana-formulas_1-2.md) не несут построфных адресов —
   перечень организован по именам, а не по стихам, так что выводить URN механически
   неоткуда. Нужен проход по самому тексту книг 1–2 с привязкой каждого эпитета к строфе;
   это работа с корпусом, а не с этим файлом. Кросоволок выше даёт адреса кн. V и

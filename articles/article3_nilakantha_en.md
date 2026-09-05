@@ -1,3 +1,5 @@
+_Created: 18-05-2026 · Last updated: 05-09-2026_
+
 ---
 title: "Indigenous and Academic Commentary Traditions: Nīlakaṇṭha's Bharatabhāvadīpa and Russian Translators of the Mahābhārata"
 author: "M. Gasūns"
@@ -348,3 +350,5 @@ Despite these limitations, the main result remains robust: structural homology u
 **Pollock 2006** — Pollock S. The Language of the Gods in the World of Men: Sanskrit, Culture, and Power in Premodern India. Berkeley: University of California Press, 2006.
 
 **Vassilkov 1995–1996** — Vassilkov Ya. V. The Mahābhārata's Typological Definition Reconsidered // Indologica Taurinensia. 1995–1996.
+
+_Dr. Mārcis Gasūns_

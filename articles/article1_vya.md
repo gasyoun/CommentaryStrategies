@@ -1,3 +1,5 @@
+_Created: 15-05-2026 · Last updated: 05-09-2026_
+
 ---
 title: "Концептуальная непереводимость как переводческая стратегия: санскритские ключевые термины в русских академических переводах"
 author: "М. Ю. Гасунс"
@@ -78,7 +80,7 @@ Drawing on 15,847 annotated notes from the committed corpus of Russian academic 
 
 ### 2.1. Корпус
 
-Анализ проводится на материале примечаний к русским академическим переводам санскритских текстов, агрегированных в репозитории *CommentaryStrategies* (GitHub, 2026). Воспроизводимым основанием служит коммитнутый JSONL-корпус (`SamudraManthanam/web/corpus_builder/jsonl`, снимок 20-06-2026): пять атрибуированных корпусов насчитывают **15 847** примечаний. Ранее публиковавшийся состав (17 863 = 17 622 + 241) восходит к некоммиченному прогону автоматической категоризации (март 2026) и из коммитнутого корпуса не воспроизводится; построчная сверка и вердикты по каждой цифре зафиксированы в [docs/CORPUS_TRUTH_RECONCILIATION_17863.md](../docs/CORPUS_TRUTH_RECONCILIATION_17863.md), настоящий раздел приводит воспроизводимые значения. Корпуса и их объемы:
+Анализ проводится на материале примечаний к русским академическим переводам санскритских текстов, агрегированных в репозитории *CommentaryStrategies* (GitHub, 2026). Воспроизводимым основанием служит коммитнутый JSONL-корпус (`SamudraManthanam/web/corpus_builder/jsonl`, снимок 20-06-2026): пять атрибуированных корпусов насчитывают **15 847** примечаний. Ранее публиковавшийся состав (17 863 = 17 622 + 241) восходит к некоммиченному прогону автоматической категоризации (март 2026) и из коммитнутого корпуса не воспроизводится; построчная сверка и вердикты по каждой цифре зафиксированы в [docs/CORPUS_TRUTH_RECONCILIATION_17863.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/CORPUS_TRUTH_RECONCILIATION_17863.md), настоящий раздел приводит воспроизводимые значения. Корпуса и их объемы:
 
 | Переводчик | Текст | Примечаний | Средняя длина |
 |---|---|---|---|
@@ -488,3 +490,5 @@ Drawing on 15,847 annotated notes from the committed corpus of Russian academic 
 **Jakobson 1959** — Jakobson R. On Linguistic Aspects of Translation // On Translation / ed. R. A. Brower. Cambridge: Harvard UP, 1959. P. 232–239.
 
 **Venuti 1995** — Venuti L. The Translator's Invisibility: A History of Translation. London; New York: Routledge, 1995.
+
+_Dr. Mārcis Gasūns_

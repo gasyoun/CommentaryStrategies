@@ -1,3 +1,5 @@
+_Created: 07-07-2026 · Last updated: 05-09-2026_
+
 # Agent log agent-a797dd15e3bee7bd6
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -334,8 +336,9 @@ Sarga 4 done: 3/36 drafted (8.3%), squarely within the ~5-10% target — no stro
 Both files are correctly written, no BOM, valid JSON, counts reconcile exactly (`notes_drafted + notes_rejected == verses_considered` for both sargas). Let me do a final sanity check on both output files' locations.
 
 - 🔧 `Bash` — Confirm both output files exist at correct paths
-Both output files are in place at [data/analysis/phase2_batch3/sarga_03_candidates.json](../sarga_03_candidates.json) and [data/analysis/phase2_batch3/sarga_04_candidates.json](../sarga_04_candidates.json), UTF-8 no BOM, schema-conformant, counts reconciling exactly per-verse.
+Both output files are in place at [data/analysis/phase2_batch3/sarga_03_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_03_candidates.json) and [data/analysis/phase2_batch3/sarga_04_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_04_candidates.json), UTF-8 no BOM, schema-conformant, counts reconciling exactly per-verse.
 
 sarga 3: 61 considered / 10 drafted / 51 rejected / 4 contrastive
 sarga 4: 36 considered / 3 drafted / 33 rejected / 0 contrastive
 
+_Dr. Mārcis Gasūns_

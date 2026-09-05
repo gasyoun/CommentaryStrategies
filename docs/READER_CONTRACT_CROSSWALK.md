@@ -1,3 +1,5 @@
+_Created: 13-06-2026 · Last updated: 05-09-2026_
+
 # Читательский контракт: кросс-традиционный crosswalk
 
 > Интегративный документ — хребет монографии. Связывает три читательских контракта
@@ -5,10 +7,10 @@
 > (б) индигенным контрактом *adhikārin* (Нилакантха), (в) греко-латинскими полюсами
 > (Гаспаров/Аверинцев/Лосев), (г) осями разметки (Казанский / Парибок / lakṣaṇa).
 >
-> Опирается на: [SIX_TRANSLATOR_SYNTHESIS.md](SIX_TRANSLATOR_SYNTHESIS.md) (данные),
-> [TYPOLOGY_GREEK_SANSKRIT.md](TYPOLOGY_GREEK_SANSKRIT.md) (греко-санскритская рамка),
-> [NILAKANTHA_PROFILE.md](../mahabharata-nilakantha/NILAKANTHA_PROFILE.md) (adhikārin),
-> [roadmap_postdoc_2026.md](../roadmap_postdoc_2026.md) (тезис книги).
+> Опирается на: [SIX_TRANSLATOR_SYNTHESIS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/SIX_TRANSLATOR_SYNTHESIS.md) (данные),
+> [TYPOLOGY_GREEK_SANSKRIT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/TYPOLOGY_GREEK_SANSKRIT.md) (греко-санскритская рамка),
+> [NILAKANTHA_PROFILE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/mahabharata-nilakantha/NILAKANTHA_PROFILE.md) (adhikārin),
+> [roadmap_postdoc_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/roadmap_postdoc_2026.md) (тезис книги).
 
 ---
 
@@ -48,7 +50,7 @@
 классической текстологии. Совпадение типологии → она общая, а различия (выше IAST,
 проблема «ложных друзей», отсутствие диалога с индигенной традицией) объяснимы
 асимметричной рецепцией санскрита в России (см. §рецептивной асимметрии в
-[TYPOLOGY_GREEK_SANSKRIT.md](TYPOLOGY_GREEK_SANSKRIT.md)).
+[TYPOLOGY_GREEK_SANSKRIT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/TYPOLOGY_GREEK_SANSKRIT.md)).
 
 ### 2.3 adhikārin — отсутствующий четвертый
 Санскритская тика-традиция эксплицитно назвала то, что Европа не назвала: *adhikārin*,
@@ -80,3 +82,5 @@
 - Корпусные подписи — золотая выборка (50/переводчик); полнота — пайплайн Года 1.
 - Греко-лат. столбец — пока качественный (тест Гаспаров-50 data-gated, см. typology-doc).
 - adhikārin-строка — два нарративных эпизода Нилакантхи; шастрический корпус усилил бы siddhānta.
+
+_Dr. Mārcis Gasūns_
