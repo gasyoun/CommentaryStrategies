@@ -1,3 +1,5 @@
+_Created: 04-07-2026 · Last updated: 05-09-2026_
+
 # Drafting reasoning log — sarga 24
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -156,3 +158,4 @@ Drafted notes (all Б except one В): lokavidviṣṭam (5.24.7, Tilaka's readin
 
 Rejections cover: restated подстрочник (bulk), duplicates of Phase-1 lexical notes (trailokya, saudāsa/Damayantī cluster, yakṛt-plīha, Nikumbhilā, śūrpaṇakhā, divyābharaṇa), a duplicate of Leonov/Kostina's own note (Ajāmukhī=Praghasā identification, already in her v.45 note), pure grammar invisible to a Russian reader, 11 merged-range markers, and two corrupted data bundles (5.24.48 — empty verse text with only the chapter colophon; 5.24.78 — a verse number outside the chapter's 48-verse range, an orphaned pratīka fragment).
 
+_Dr. Mārcis Gasūns_

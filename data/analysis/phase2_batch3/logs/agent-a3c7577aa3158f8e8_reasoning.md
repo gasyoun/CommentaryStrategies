@@ -1,3 +1,5 @@
+_Created: 07-07-2026 · Last updated: 05-09-2026_
+
 # Agent log agent-a3c7577aa3158f8e8
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -285,5 +287,6 @@ The output matches the schema exactly, register and content are sound, encoding 
 
 sarga 2: 74 considered / 13 drafted / 61 rejected / 1 contrastive
 
-Output written to [data/analysis/phase2_batch3/sarga_02_candidates.json](../sarga_02_candidates.json). Key drafted notes: textual/lexical variants (5.2.16 graha/giri, 5.2.24 interpolation suspicion, 5.2.49 Amarakośa etymology), narrative-technique observations (5.2.4 poet's-voice hyperbole, 5.2.20 intentional repetition, 5.2.44 shrink-not-disguise logic, 5.2.54 lunar-chronology resolution, 5.2.55 dual-emotion causation), realia (5.2.9 muculinda=jambīra, 5.2.51 gandharva-city-as-war-omen), and one true contrastive note (5.2.22, Bhūṣaṇa vs Tattvadīpikā on what Hanuman is pondering). Several strong candidates were rejected specifically because Leonov/Kostina's own tier-1 apparatus already covers the same point (5.2.1, 5.2.6, 5.2.23, 5.2.28, 5.2.31, 5.2.33, 5.2.50) — logged per the brief's dedup discipline rather than drafted.
+Output written to [data/analysis/phase2_batch3/sarga_02_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_02_candidates.json). Key drafted notes: textual/lexical variants (5.2.16 graha/giri, 5.2.24 interpolation suspicion, 5.2.49 Amarakośa etymology), narrative-technique observations (5.2.4 poet's-voice hyperbole, 5.2.20 intentional repetition, 5.2.44 shrink-not-disguise logic, 5.2.54 lunar-chronology resolution, 5.2.55 dual-emotion causation), realia (5.2.9 muculinda=jambīra, 5.2.51 gandharva-city-as-war-omen), and one true contrastive note (5.2.22, Bhūṣaṇa vs Tattvadīpikā on what Hanuman is pondering). Several strong candidates were rejected specifically because Leonov/Kostina's own tier-1 apparatus already covers the same point (5.2.1, 5.2.6, 5.2.23, 5.2.28, 5.2.31, 5.2.33, 5.2.50) — logged per the brief's dedup discipline rather than drafted.
 
+_Dr. Mārcis Gasūns_

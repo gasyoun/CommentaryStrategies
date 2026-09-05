@@ -1,3 +1,5 @@
+_Created: 29-06-2026 · Last updated: 05-09-2026_
+
 # Handoff — Compare Sundarakāṇḍa commentaries (generated + Leonov-real) vs the 5 analyzed translators
 
 > **For:** a new **Opus** chat in `GitHub/CommentaryStrategies`.
@@ -25,12 +27,12 @@
 
 Read these before computing anything (most numbers exist):
 
-- **[index.html](../index.html)** — the **5-way summary matrix** + per-translator badge stats (notes, mean length, IAST%, density, leading category, target reader, stylistic formulas). This is the table you EXTEND.
-- **[leonov_kostina_commentary_analysis.html](../leonov_kostina_commentary_analysis.html)** §10 "Параметры для сводного документа" — **already has a Leonov-real + Kostina comparison row** against Kalyanov/Vassilkov/Grintser. Lift Leonov's real numbers from here (they are marked `≈`, awaiting a final machine count — flag that).
+- **[index.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/index.html)** — the **5-way summary matrix** + per-translator badge stats (notes, mean length, IAST%, density, leading category, target reader, stylistic formulas). This is the table you EXTEND.
+- **[leonov_kostina_commentary_analysis.html](https://github.com/gasyoun/CommentaryStrategies/blob/main/leonov_kostina_commentary_analysis.html)** §10 "Параметры для сводного документа" — **already has a Leonov-real + Kostina comparison row** against Kalyanov/Vassilkov/Grintser. Lift Leonov's real numbers from here (they are marked `≈`, awaiting a final machine count — flag that).
 - **[data/*_markup_50.json](../data/)** — the 4-axis **gold samples** (6×50 notes) for the human translators; `scripts/profile_translator.py` computes axis profiles from them.
-- **[data/sundara_commentary_to_add.json](../data/sundara_commentary_to_add.json)** — the **generated 788-note apparatus** (the new subject). **[data/sundara_book_stats.json](../data/sundara_book_stats.json)** — its aggregate stats.
-- **[SUNDARA_COMMENTARY_RATIONALE.md](../SUNDARA_COMMENTARY_RATIONALE.md)** — how the 788 were built (3 regimes + Г), the adversarial gate, the dedup. Essential for the method-validation angle.
-- **[CLAUDE.md](../CLAUDE.md)** §"4-axis annotation framework" — Kazansky A/B/V/G ↔ the Cyrillic А/Б/В/Г used in the Sundara `type` field. **Note the mapping subtlety**: the gold-sample `axis_2_kazansky` uses A/B/V/G (V = hist-cultural+realia, G = cultural); the Sundara apparatus `type` uses the report's А/Б/В/Г (А philol, Б textol, В realia, Г hist-cultural). Reconcile carefully when comparing.
+- **[data/sundara_commentary_to_add.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara_commentary_to_add.json)** — the **generated 788-note apparatus** (the new subject). **[data/sundara_book_stats.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara_book_stats.json)** — its aggregate stats.
+- **[SUNDARA_COMMENTARY_RATIONALE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/SUNDARA_COMMENTARY_RATIONALE.md)** — how the 788 were built (3 regimes + Г), the adversarial gate, the dedup. Essential for the method-validation angle.
+- **[CLAUDE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/CLAUDE.md)** §"4-axis annotation framework" — Kazansky A/B/V/G ↔ the Cyrillic А/Б/В/Г used in the Sundara `type` field. **Note the mapping subtlety**: the gold-sample `axis_2_kazansky` uses A/B/V/G (V = hist-cultural+realia, G = cultural); the Sundara apparatus `type` uses the report's А/Б/В/Г (А philol, Б textol, В realia, Г hist-cultural). Reconcile carefully when comparing.
 
 ---
 
@@ -95,3 +97,5 @@ Edit **`index.html`** (it is hand-authored, NOT generated — safe to edit direc
 4. Update `CHANGELOG.md` (SemVer — next is likely **v1.3.0** or a PATCH), `.ai_state.md`, and the `Uprava/GTD_NEXT_ACTIONS.md` hub.
 
 **Current repo state (2026-06-29):** apparatus = 788 notes, all 4 Kazansky levels, on `main`; releases v1.0.0/v1.1.0/v1.2.0 cut; report `leonov_sundara_corpus_enriched.html` refreshed to 788; `validate.py` green. Phase 2 (Б commentator-dialogue, gated on Gemini-OCR of the 5 commentaries) deferred.
+
+_Dr. Mārcis Gasūns_

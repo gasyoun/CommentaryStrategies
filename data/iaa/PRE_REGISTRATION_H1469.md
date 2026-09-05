@@ -51,3 +51,5 @@ agreement. A genuine human coding pass over 300 verbatim corpus notes
 (re-sampled by a committed script) with κ recomputation is required before these
 numbers are read as human reliability. The instrument table below has been
 restated accordingly; manuscript §2.1/§2.3/§7.5 carry the same correction.
+
+_Dr. Mārcis Gasūns_

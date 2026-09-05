@@ -1,3 +1,5 @@
+_Created: 04-07-2026 · Last updated: 05-09-2026_
+
 # Drafting reasoning log — sarga 51
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -104,5 +106,6 @@ No BOM present. File written correctly.
 
 Verses considered / drafted / rejected: 50 / 6 / 44
 
-Output written to [data/analysis/phase2_batch2/sarga_51_candidates.json](../sarga_51_candidates.json). Drafted notes cover: V.51.2 (messenger-speech-as-principal's-speech doctrine, bhusana), V.51.6 (tilaka's grammatical argument that vv.4-14 are Hanuman's own addition, not verbatim Sugriva message), V.51.7 (tilaka's deliberate triple ambiguity of bhraṣṭā), V.51.31 (bhusana's deictic reassignment of "aham" to Sugrīva), V.51.34 (tilaka's Kālarātri as goddess-śakti identification), and V.51.44 (bhusana's pariśeṣa syllogism identifying Rāma with Viṣṇu). The five merged-range/colophon tokens (46, 67, 811, 1115, 3944) were rejected per the ambiguous-marker/no-independent-gloss rule.
+Output written to [data/analysis/phase2_batch2/sarga_51_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch2/sarga_51_candidates.json). Drafted notes cover: V.51.2 (messenger-speech-as-principal's-speech doctrine, bhusana), V.51.6 (tilaka's grammatical argument that vv.4-14 are Hanuman's own addition, not verbatim Sugriva message), V.51.7 (tilaka's deliberate triple ambiguity of bhraṣṭā), V.51.31 (bhusana's deictic reassignment of "aham" to Sugrīva), V.51.34 (tilaka's Kālarātri as goddess-śakti identification), and V.51.44 (bhusana's pariśeṣa syllogism identifying Rāma with Viṣṇu). The five merged-range/colophon tokens (46, 67, 811, 1115, 3944) were rejected per the ambiguous-marker/no-independent-gloss rule.
 
+_Dr. Mārcis Gasūns_

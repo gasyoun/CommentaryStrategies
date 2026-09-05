@@ -32,3 +32,5 @@ protocol"`). Do NOT run git.
 
 _Auto-generated for the H276 sarga-12 re-draft; drafting Sonnet 5 (`claude-sonnet-5`),
 orchestration Fable 5 (`claude-fable-5`)._
+
+_Dr. Mārcis Gasūns_

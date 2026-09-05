@@ -1,11 +1,11 @@
 # BORI/Poona критическое издание ↔ Нīлакантха-вульгата — Анушāсанапарва (кн. 13)
 
-_Created: 12-07-2026 · Last updated: 12-07-2026_
+_Created: 12-07-2026 · Last updated: 05-09-2026_
 
 > Часть [H804](https://github.com/gasyoun/Uprava/blob/main/handoffs/H804-Sonnet_CommentaryStrategies_mbh-edition-apparatus-remaining-parvas_12.07.26.md)
 > (продолжение [H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md)/[H802](https://github.com/gasyoun/Uprava/blob/main/handoffs/H802-Sonnet_CommentaryStrategies_mbh-edition-apparatus-virataparva_12.07.26.md)) —
 > тот же пайплайн, без изменений в скриптах. Источники и метод —
-> [`../vanaparva/README.md`](../vanaparva/README.md).
+> [`../vanaparva/README.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_comparison_mbh/vanaparva/README.md).
 
 ## Итог по книге
 
@@ -23,8 +23,8 @@ _Created: 12-07-2026 · Last updated: 12-07-2026_
 
 ## Вариантный аппарат (helayo-Gotoh)
 
-[`apparatus_mbh-anushasanaparva_variants.json`](apparatus_mbh-anushasanaparva_variants.json) /
-[`APPARATUS_MBH-ANUSHASANAPARVA_VARIANTS.md`](APPARATUS_MBH-ANUSHASANAPARVA_VARIANTS.md) —
+[`apparatus_mbh-anushasanaparva_variants.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_comparison_mbh/anushasanaparva/apparatus_mbh-anushasanaparva_variants.json) /
+[`APPARATUS_MBH-ANUSHASANAPARVA_VARIANTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_comparison_mbh/anushasanaparva/APPARATUS_MBH-ANUSHASANAPARVA_VARIANTS.md) —
 **4763 чистых вариантных пары** (из 5288 difflib-«variant», 502 слишком
 переформулированы → в слой отсутствий, 0 кириллических загрязнений) → **27169 позиционных
 loci** по всем 154 адхьяям.

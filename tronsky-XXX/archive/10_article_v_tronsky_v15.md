@@ -1,3 +1,5 @@
+_Created: 04-05-2026 · Last updated: 05-09-2026_
+
 ---
 title: "Комментаторские стратегии русских переводчиков санскритского эпоса"
 author: "Гасунс М. Ю."
@@ -185,3 +187,5 @@ Syrkin, A. Ya. (transl.) 1992: *Upanishady* [Upanishads]. V 3 kn. Moscow: Nauka.
 Tubb, G. A., Boose, E. R. 2007: *Scholastic Sanskrit: A Handbook for Students*. New York: American Institute of Buddhist Studies; Columbia University's Center for Buddhist Studies; Tibet House US.
 
 Vassilkov, Ya. V., Neveleva, S. L. 1987–2005: *Mahabharata* [Mahabharata]. Kn. III, VIII, X–XI, XIV, XV–XVIII. Moscow; St. Petersburg: Nauka; Yanus-K. (In Russian: Васильков, Я. В., Невелева, С. Л. 1987–2005: *Махабхарата*. Кн. III, VIII, X–XI, XIV, XV–XVIII / пер. с санскрита, предисл. и коммент. Я. В. Василькова и С. Л. Невелевой. М.; СПб.: Наука; Янус-К.)
+
+_Dr. Mārcis Gasūns_

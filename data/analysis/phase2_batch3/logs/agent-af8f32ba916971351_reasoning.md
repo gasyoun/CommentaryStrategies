@@ -1,3 +1,5 @@
+_Created: 07-07-2026 · Last updated: 05-09-2026_
+
 # Agent log agent-af8f32ba916971351
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -234,5 +236,6 @@ Sarga 67 is confirmed clean — no duplicates, no missing, no overlap, exact 1:1
 sarga 67: 45 considered / 4 drafted / 41 rejected / 0 contrastive
 sarga 68: 34 considered / 2 drafted / 32 rejected / 0 contrastive
 
-Both output files written to [`data/analysis/phase2_batch3/sarga_67_candidates.json`](../sarga_67_candidates.json) and [`data/analysis/phase2_batch3/sarga_68_candidates.json`](../sarga_68_candidates.json), UTF-8 no BOM, counts reconcile exactly against `verses_considered`, no verse_id duplicated or missing in either file. Neither sarga has Śiromaṇi or Tattvadīpikā in the corpus (confirmed empty in both bundles) — worked entirely from Tilaka + Bhūṣaṇa, with 0 contrastive notes since no verse showed the two commentators genuinely diverging (Bhūṣaṇa's chunks in both sargas are overwhelmingly verbatim verse quotations rather than exegesis, a segmentation characteristic of these two sargas). All 6 drafted notes were checked against both the Leonov/Kostina tier-1 baseline and the Phase-1 tier-2 lexical notes; several strong-looking candidates (dharāntaragataḥ, tvacchokavimukhaḥ, idaṃ muhūrtam, vivardhamānam pāṭhāntara) were rejected specifically because Leonov/Kostina's own apparatus already states them verbatim.
+Both output files written to [`data/analysis/phase2_batch3/sarga_67_candidates.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_67_candidates.json) and [`data/analysis/phase2_batch3/sarga_68_candidates.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_68_candidates.json), UTF-8 no BOM, counts reconcile exactly against `verses_considered`, no verse_id duplicated or missing in either file. Neither sarga has Śiromaṇi or Tattvadīpikā in the corpus (confirmed empty in both bundles) — worked entirely from Tilaka + Bhūṣaṇa, with 0 contrastive notes since no verse showed the two commentators genuinely diverging (Bhūṣaṇa's chunks in both sargas are overwhelmingly verbatim verse quotations rather than exegesis, a segmentation characteristic of these two sargas). All 6 drafted notes were checked against both the Leonov/Kostina tier-1 baseline and the Phase-1 tier-2 lexical notes; several strong-looking candidates (dharāntaragataḥ, tvacchokavimukhaḥ, idaṃ muhūrtam, vivardhamānam pāṭhāntara) were rejected specifically because Leonov/Kostina's own apparatus already states them verbatim.
 
+_Dr. Mārcis Gasūns_

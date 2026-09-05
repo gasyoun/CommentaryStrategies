@@ -1,3 +1,5 @@
+_Created: 01-05-2026 · Last updated: 05-09-2026_
+
 ---
 title: "Комментаторские стратегии русских переводчиков санскритских текстов"
 author: "Гасунс М."
@@ -193,3 +195,5 @@ CommentaryStrategies: Repository of analytical annotations of Russian translatio
 CLR: Corpus Latino-Rossicum. ILI RAN. URL: https://clr.iling.spb.ru (accessed 01.05.2026).
 
 samskrtam.ru: Parallel corpus of Sanskrit texts with Russian translations. URL: https://samskrtam.ru/parallel-corpus/ (accessed 01.05.2026).
+
+_Dr. Mārcis Gasūns_

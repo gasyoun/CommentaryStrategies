@@ -1,9 +1,11 @@
+_Created: 01-07-2026 · Last updated: 05-09-2026_
+
 # Vālmīki Rāmāyaṇa (Gita Supersite) — permission of use
 
 This file archives the verbatim rights grant for the Vālmīki Rāmāyaṇa corpus in
 [`data/valmiki_shlokas/`](valmiki_shlokas/) and [`data/valmiki_commentaries/`](valmiki_commentaries/).
-It is the authoritative provenance record referenced by [`data/RIGHTS.md`](RIGHTS.md) and
-[`data/valmiki_MANIFEST.md`](valmiki_MANIFEST.md). **Status: RIGHTS CLEARED (2026-07-01).**
+It is the authoritative provenance record referenced by [`data/RIGHTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/RIGHTS.md) and
+[`data/valmiki_MANIFEST.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/valmiki_MANIFEST.md). **Status: RIGHTS CLEARED (2026-07-01).**
 
 ## Grant summary
 
@@ -53,3 +55,5 @@ digital edition, the commentaries, and the modern English glosses. This is an ed
 than a separate institutional (IIT Kanpur) instrument; the project relies in good faith on the editor's
 representation of authority over the published section. No further clearance is required for the scope
 above.
+
+_Dr. Mārcis Gasūns_

@@ -1,6 +1,8 @@
+_Created: 12-06-2026 · Last updated: 05-09-2026_
+
 # Права на публикацию текстов примечаний (raw_text)
 
-> Решение принято М. Гасунсом 2026-06-12 (сессия Claude Code; D4 в [ROADMAP_2026H2.md](../docs/ROADMAP_2026H2.md)).
+> Решение принято М. Гасунсом 2026-06-12 (сессия Claude Code; D4 в [ROADMAP_2026H2.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ROADMAP_2026H2.md)).
 
 ## Решение
 
@@ -20,7 +22,7 @@
 
 - Zenodo-релиз (задача B6) — полнотекстовый, не metadata-only.
 - TEI-экспорт (задача B3) включает полный `raw_text` в `<note>`.
-- Лицензия данных указывается отдельно от лицензии кода ([LICENSE](../LICENSE)); для текстов примечаний — указание источника и издания обязательно в каждой записи (`cited` поля схемы).
+- Лицензия данных указывается отдельно от лицензии кода ([LICENSE](https://github.com/gasyoun/CommentaryStrategies/blob/main/LICENSE)); для текстов примечаний — указание источника и издания обязательно в каждой записи (`cited` поля схемы).
 
 ---
 
@@ -28,7 +30,7 @@
 
 Covers [`valmiki_shlokas/`](valmiki_shlokas/) (Sanskrit verse + modern English word‑by‑word glosses &
 explanations) and [`valmiki_commentaries/`](valmiki_commentaries/) (seven traditional Sanskrit
-commentaries). Full grant archived verbatim in [`valmiki_PERMISSION.md`](valmiki_PERMISSION.md).
+commentaries). Full grant archived verbatim in [`valmiki_PERMISSION.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/valmiki_PERMISSION.md).
 
 | Field | Value |
 |---|---|
@@ -44,7 +46,7 @@ commentaries). Full grant archived verbatim in [`valmiki_PERMISSION.md`](valmiki
 > Vālmīki Rāmāyaṇa, as published on the Gita Supersite (https://valmiki.gitasupersite.in), used by permission of the editor, Sudalaimuthu Palaniappan.
 
 Residual-risk note: editor-level grant (not a separate IIT Kanpur institutional instrument); relied upon
-in good faith. Details in [`valmiki_PERMISSION.md`](valmiki_PERMISSION.md).
+in good faith. Details in [`valmiki_PERMISSION.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/valmiki_PERMISSION.md).
 
 ---
 
@@ -69,3 +71,5 @@ Supersite in the RussianRamayana repo). Critical side = GRETIL (CC BY-NC-SA 4.0,
 not yet added to README). Southern side = Gita Supersite `data/valmiki_shlokas/` (CC BY 4.0, permission
 already on file per the section above — `valmiki_PERMISSION.md`). No open rights question remains for
 this material.
+
+_Dr. Mārcis Gasūns_

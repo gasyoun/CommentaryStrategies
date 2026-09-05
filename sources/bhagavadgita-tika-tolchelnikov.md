@@ -1,3 +1,5 @@
+_Created: 16-05-2026 · Last updated: 05-09-2026_
+
 # **Вторая глава**
 
 ## **2.1**
@@ -4299,3 +4301,5 @@ dravyayajñāḥ — BV — те, кто жертвует вещественну
 **Рамануджа:**
 
 daivaṃ — deva-arcana-rūpaṃ yajñam apare karma-yoginaḥ paryupāsate — sevante | tatra eva niṣṭhāṃ kurvanti ity arthaḥ | apare "brahma-arpaṇaṃ brahma haviḥ" iti nyāyena yāga-homayor niṣṭhāṃ kurvanti ||
+
+_Dr. Mārcis Gasūns_

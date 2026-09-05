@@ -1,3 +1,5 @@
+_Created: 01-07-2026 · Last updated: 05-09-2026_
+
 # Phase-2 Sundara — pilot review sheet (sargas 35 / 36 / 37)
 
 > **For M. V. Leonov & E. Kostina to gate.** These are **candidate** notes for the commentator-dialogue
@@ -108,3 +110,5 @@ Send this file back (or mark inline). Approved notes → merged into the per-cha
 `gated_by`/`gated_date` stamp; rejected → kept in a `.rejected.json` with your reason (the reject log is
 the quality signal). Only once the register is approved do we scale beyond the pilot toward ~36 % (Leonov
 parity) across the remaining sargas.
+
+_Dr. Mārcis Gasūns_

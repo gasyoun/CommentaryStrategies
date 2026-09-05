@@ -1,3 +1,5 @@
+_Created: 15-05-2026 · Last updated: 05-09-2026_
+
 # Postdoc Research Roadmap — CommentaryStrategies
 **М. Гасунс / M. Gasūns · ИЛИ РАН · 2026–2029**
 
@@ -218,3 +220,5 @@ From `mahabharata-nilakantha/MBh-Nalopakhyanam-Nilakantha.md` and `MBh-Ramopakhy
 ---
 
 *Document version: 2026-05-15 · repository: CommentaryStrategies*
+
+_Dr. Mārcis Gasūns_

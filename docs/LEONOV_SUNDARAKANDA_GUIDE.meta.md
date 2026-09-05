@@ -1,3 +1,5 @@
+_Created: 10-07-2026 · Last updated: 05-09-2026_
+
 # Метадок: LEONOV_SUNDARAKANDA_GUIDE.md
 
 _Created: 10-07-2026 · Last updated: 14-08-2026 (общий §5 синхронизирован с Pages-порталом и неизменяемым двойным гейтом)_

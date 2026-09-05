@@ -1,3 +1,5 @@
+_Created: 07-07-2026 · Last updated: 05-09-2026_
+
 # Agent log agent-a3630cbdb709df52f
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -771,3 +773,4 @@ Notable findings surfaced during judging (beyond routine keeps):
 - **5.33.11 → reject**: faithfulness capped at 1 — the note co-attributes a vyañjana/lakṣaṇa distinction to both Tilaka and Bhushana, but only Bhushana's text cleanly draws that split; Tilaka's chunk treats the terms together.
 - **5.25.3 → edit** and **5.38.65 → edit**: content fully faithful, but register fails on stray mixed-script typos (Cyrillic/IAST/Latin character mixing) needing a mechanical fix before print.
 
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 28-06-2026 · Last updated: 05-09-2026_
+
 ---
 paper_id: A19
 title: "Концептуальная непереводимость как переводческая стратегия: санскритские ключевые термины в русских академических переводах"
@@ -12,7 +14,7 @@ lang: ru
 
 # A19 — Submission-readiness report (Вопросы языкознания)
 
-Manuscript reviewed in full (484 lines): [article1_vya.md](article1_vya.md).
+Manuscript reviewed in full (484 lines): [article1_vya.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article1_vya.md).
 Handoff: [../../Uprava/handoffs/H005-Fable_CommentaryStrategies_untranslatability_26.06.26.md](../../Uprava/handoffs/H005-Fable_CommentaryStrategies_untranslatability_26.06.26.md).
 This report is **additive** — no body text was rewritten. All edits below are proposals
 for the author to apply.
@@ -34,7 +36,7 @@ Measured facts (this pass, not from the handoff):
 - **Method declared honestly.** *axis_4_paribok* (P/K/D) used as an *instrumental proxy* for the Т/К/Д strategies, not an identity (§2.3 line 109, §7.4 line 407). The LLM annotator (*claude-haiku-4-5*) and the ≥85% validation target are named (line 111).
 - **Limitations section is candid (§7.5, lines 409–415):** sample size, un-verified inter-coder reliability, and the hypothetical status of §6 are all disclosed. This is what makes the 4/5→5/5 gates legitimate rather than hidden.
 - **Bibliography present and split** into Источники (lines 439–467) and Литература (lines 473–483), ГОСТ 7.0.5-2008 base. Казанский 2025 carries a DOI (line 473).
-- **Deliverables for this pass:** [cover_letter_A19.md](cover_letter_A19.md) (RU, ~300 words) written and staged; this report written.
+- **Deliverables for this pass:** [cover_letter_A19.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/cover_letter_A19.md) (RU, ~300 words) written and staged; this report written.
 
 ---
 
@@ -163,3 +165,5 @@ The axis_4/axis_2 inter-coder number is no longer missing — measured κ report
 [`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md)
 (axis_2 κ=0.648, axis_4 κ=0.521; target ≥85 % raw not met; closed as honest finding).
 The house-style fix list above remains agent-/author-doable in the clean submission copy.
+
+_Dr. Mārcis Gasūns_

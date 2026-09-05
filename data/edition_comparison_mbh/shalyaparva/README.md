@@ -1,11 +1,11 @@
 # BORI/Poona критическое издание ↔ Нīлакантха-вульгата — Шальяпарва (кн. 9)
 
-_Created: 12-07-2026 · Last updated: 12-07-2026_
+_Created: 12-07-2026 · Last updated: 05-09-2026_
 
 > Часть [H804](https://github.com/gasyoun/Uprava/blob/main/handoffs/H804-Sonnet_CommentaryStrategies_mbh-edition-apparatus-remaining-parvas_12.07.26.md)
 > (продолжение [H784](https://github.com/gasyoun/Uprava/blob/main/handoffs/H784-Sonnet_CommentaryStrategies_mahabharata_nilakantha_vs_critical_apparatus_12.07.26.md)/[H802](https://github.com/gasyoun/Uprava/blob/main/handoffs/H802-Sonnet_CommentaryStrategies_mbh-edition-apparatus-virataparva_12.07.26.md)) —
 > тот же пайплайн, без изменений в скриптах. Источники и метод —
-> [`../vanaparva/README.md`](../vanaparva/README.md).
+> [`../vanaparva/README.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_comparison_mbh/vanaparva/README.md).
 
 ## Итог по книге
 
@@ -23,8 +23,8 @@ _Created: 12-07-2026 · Last updated: 12-07-2026_
 
 ## Вариантный аппарат (helayo-Gotoh)
 
-[`apparatus_mbh-shalyaparva_variants.json`](apparatus_mbh-shalyaparva_variants.json) /
-[`APPARATUS_MBH-SHALYAPARVA_VARIANTS.md`](APPARATUS_MBH-SHALYAPARVA_VARIANTS.md) —
+[`apparatus_mbh-shalyaparva_variants.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_comparison_mbh/shalyaparva/apparatus_mbh-shalyaparva_variants.json) /
+[`APPARATUS_MBH-SHALYAPARVA_VARIANTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/edition_comparison_mbh/shalyaparva/APPARATUS_MBH-SHALYAPARVA_VARIANTS.md) —
 **1707 чистых вариантных пары** (из 2068 difflib-«variant», 355 слишком
 переформулированы → в слой отсутствий, 0 кириллических загрязнений) → **9367 позиционных
 loci** по всем 64 адхьяям.

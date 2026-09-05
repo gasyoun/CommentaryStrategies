@@ -1,3 +1,5 @@
+_Created: 15-05-2026 · Last updated: 05-09-2026_
+
 # Lexicon of Conceptual False Friends in Sanskrit–Russian Academic Translation
 
 **CommentaryStrategies · M. Gasūns · 2026**  
@@ -653,3 +655,5 @@ Columns: **Paribok K hits** and **Paribok D hits** are from the 50-note sample (
 ---
 
 *Document version: 2026-05-15 · Next step: pipeline architecture for automated extraction*
+
+_Dr. Mārcis Gasūns_

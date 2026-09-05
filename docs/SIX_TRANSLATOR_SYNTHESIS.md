@@ -1,13 +1,15 @@
+_Created: 13-06-2026 · Last updated: 05-09-2026_
+
 # Шесть переводчиков, один типологический результат
 
 > Сводный корпусный синтез: профили шести переводчиков по всем осям + Нилакантха
 > как индигенная база сравнения. Данные монографии (гл. 1 / Заключение).
 >
 > Источники данных (числа встроены ниже; файлы приходят с соответствующими PR):
-> [profile_translator.py](../scripts/profile_translator.py) (PR #5),
-> [data/false_friends_profile.json](../data/false_friends_profile.json) (PR #8),
-> [data/nilakantha_profile.json](../data/nilakantha_profile.json) (PR #7),
-> [GRINTSER_PROFILE.md](../ramayana-leonov/GRINTSER_PROFILE.md) (PR #5).
+> [profile_translator.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/profile_translator.py) (PR #5),
+> [data/false_friends_profile.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/false_friends_profile.json) (PR #8),
+> [data/nilakantha_profile.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/nilakantha_profile.json) (PR #7),
+> [GRINTSER_PROFILE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/ramayana-leonov/GRINTSER_PROFILE.md) (PR #5).
 >
 > ⚠️ Объем: золотая выборка — по 50 примечаний на переводчика (300). Профили по осям
 > робастны уже на 50; по-термовые «ложные друзья» — тоньше (см. false-friends-findings.md).
@@ -60,7 +62,7 @@
 
 ## 3. Нилакантха — индигенная база сравнения
 
-(Из [NILAKANTHA_PROFILE.md](../mahabharata-nilakantha/NILAKANTHA_PROFILE.md), PR #7.)
+(Из [NILAKANTHA_PROFILE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/mahabharata-nilakantha/NILAKANTHA_PROFILE.md), PR #7.)
 1800 строф, ṭīkā лишь к **20.7 %**; преобладает терсная *vivaraṇa* (медиана тела
 глоссы ~30 знаков), словарное «слово = синоним» без маркеров.
 
@@ -85,7 +87,7 @@
 3. **Индигенный контракт (adhikārin) — четвертый, отсутствующий** в русском академическом
    переводе по построению. Его наличие у Нилакантхи и отсутствие у шестерки объясняет
    несоизмеримость: они написаны для непересекающихся читателей.
-4. **Связь с греко-латинскими полюсами** (см. [READER_CONTRACT_CROSSWALK.md](READER_CONTRACT_CROSSWALK.md)):
+4. **Связь с греко-латинскими полюсами** (см. [READER_CONTRACT_CROSSWALK.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/READER_CONTRACT_CROSSWALK.md)):
    филологический ≈ Гаспаров, гуманитарный ≈ Аверинцев, философский ≈ Лосев — русская
    индология воспроизвела типологию русской классической филологии **независимым путем**.
 
@@ -96,3 +98,5 @@
 - T/C/D «ложных друзей» тоньше осевых профилей; редкие термины — гипотезы.
 - Нилакантха — два нарративных эпизода (Вана-парва); шастрические тексты могут дать
   иной профиль (больше siddhānta).
+
+_Dr. Mārcis Gasūns_

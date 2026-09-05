@@ -1,3 +1,5 @@
+_Created: 04-05-2026 · Last updated: 05-09-2026_
+
 ---
 title: "Комментаторские стратегии русских переводчиков санскритского эпоса"
 author: "Гасунс М."
@@ -187,3 +189,5 @@ Malhotra, R., Dasa Babaji, S., Misra, N. 2020: *Sanskrit non-translatables: the 
 *samskrtam.ru* — Параллельный корпус санскритских текстов с русскими переводами. URL: https://samskrtam.ru/parallel-corpus/ (дата обращения: 01.05.2026).
 
 Tubb, G. A., Boose, E. R. 2007: *Scholastic Sanskrit: A Handbook for Students*. New York: American Institute of Buddhist Studies; Columbia University's Center for Buddhist Studies; Tibet House US.
+
+_Dr. Mārcis Gasūns_

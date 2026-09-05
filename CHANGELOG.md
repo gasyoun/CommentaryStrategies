@@ -1,3 +1,5 @@
+_Created: 13-06-2026 · Last updated: 05-09-2026_
+
 # Changelog
 
 All notable changes to CommentaryStrategies are documented here.
@@ -440,7 +442,7 @@ tagged and does not contain this work; they live here so tag and contents agree.
   axis_2 κ = **0.648** [0.571–0.719] agr 77.7 %; axis_4 κ = **0.521** [0.430–0.608]
   agr 77.0 %. Roadmap ≥0.7/≥85 % target not met — closed as honest finding (D2/H453);
   96–100 % of disagreements are protocol-ambiguity (V/G and P/K/D depth), not random
-  coder error. Report: [`data/EVAL_RESULTS.md`](data/EVAL_RESULTS.md); A19 IRR @DO
+  coder error. Report: [`data/EVAL_RESULTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/EVAL_RESULTS.md); A19 IRR @DO
   marked resolved in `articles/SUBMISSION_READINESS_A19.md`; B5 roadmap items ticked.
 
 ## [1.12.2] - 2026-07-21
@@ -936,7 +938,7 @@ tagged and does not contain this work; they live here so tag and contents agree.
 - **Lexical layer (А)** — 611 etymological/lexical gloss notes across all 68 chapters
   (`data/lexical/ch{N}.json`), relaxed rule + adversarial gate (~70 % reject). Raised the
   apparatus from ~5 % to **Grintser-level ~24 % density** (`data/sundara_commentary_to_add.json`
-  166 → 777). Documented in [SUNDARA_COMMENTARY_RATIONALE.md](SUNDARA_COMMENTARY_RATIONALE.md),
+  166 → 777). Documented in [SUNDARA_COMMENTARY_RATIONALE.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/SUNDARA_COMMENTARY_RATIONALE.md),
   Режим 3. (PR #33.)
 
 ### Notes
@@ -954,3 +956,5 @@ tagged and does not contain this work; they live here so tag and contents agree.
 - 2026-06-13 Merge pull request #3 from gasyoun/dependabot/github_actions/actions/checkout-6
 - 2026-06-13 Merge pull request #4 from gasyoun/dependabot/github_actions/github/codeql-action-4
 - 2026-06-13 Merge pull request #9 from gasyoun/synthesis-crosswalk
+
+_Dr. Mārcis Gasūns_

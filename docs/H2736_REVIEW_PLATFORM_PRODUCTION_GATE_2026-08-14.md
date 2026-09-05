@@ -1,3 +1,5 @@
+_Created: 14-08-2026 · Last updated: 05-09-2026_
+
 # H2736 review-platform production gate — 2026-08-14
 
 ## Verdict
@@ -51,3 +53,5 @@ Executing model: **Codex GPT-5**. PR: [#167](https://github.com/gasyoun/Commenta
 No real reviewer vote, reviewer outreach, secret creation, paid Cloudflare feature,
 tier-1/article/four-axis edit, Leonov verdict change, or production Worker deployment
 was performed. The final hosted check after merge covers GitHub Pages only.
+
+_Dr. Mārcis Gasūns_

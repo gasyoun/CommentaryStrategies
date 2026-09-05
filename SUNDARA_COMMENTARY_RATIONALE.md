@@ -1,6 +1,6 @@
 # Логика комментирования Сундараканды — Решебник (Decision Ledger)
 
-_Created: 27-06-2026 · Last updated: 10-07-2026_
+_Created: 27-06-2026 · Last updated: 05-09-2026_
 
 > Ролевой слой (10-07-2026): операторский справочник тома — [`docs/MANUAL.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/MANUAL.md); персональные руководства участников — [`docs/LEONOV_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/LEONOV_SUNDARAKANDA_GUIDE.md) · [`docs/KOSTINA_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/KOSTINA_SUNDARAKANDA_GUIDE.md) · [`docs/GASUNS_SUNDARAKANDA_GUIDE.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GASUNS_SUNDARAKANDA_GUIDE.md).
 > Сформировано: 2026-06-27. Последняя сверка: 2026-07-02 (reconciliation crosstext-expansion
@@ -211,7 +211,7 @@ PIE-этимологии без санскритского выхода, эти�
 и снята дедупликацией — это не пробел, а правильный результат.
 
 Каждое лексическое примечание — `subtype:"lexical"`, `review_required:true`. Подробности пилота —
-[`data/lexical/PILOT_REPORT.md`](data/lexical/PILOT_REPORT.md); пер-главные файлы — `data/lexical/ch{N}.json`
+[`data/lexical/PILOT_REPORT.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/lexical/PILOT_REPORT.md); пер-главные файлы — `data/lexical/ch{N}.json`
 (+ `ch{N}.rejected.json` с причиной отклонения каждого кандидата).
 
 ---
@@ -346,12 +346,14 @@ PIE-этимологии без санскритского выхода, эти�
 }
 ```
 
-Полная таблица записей — [`data/sundara_decision_ledger.json`](data/sundara_decision_ledger.json).
-Итоговые 887 примечаний — [`data/sundara_commentary_to_add.json`](data/sundara_commentary_to_add.json).
-Агрегированная статистика — [`data/sundara_book_stats.json`](data/sundara_book_stats.json).
+Полная таблица записей — [`data/sundara_decision_ledger.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara_decision_ledger.json).
+Итоговые 887 примечаний — [`data/sundara_commentary_to_add.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara_commentary_to_add.json).
+Агрегированная статистика — [`data/sundara_book_stats.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/sundara_book_stats.json).
 
 ---
 
 _Все корпусные свидетельства — уровень шлоки (мягкое). Каждое примечание_
 _`review_required: true`. Межтекстовый слой — наиболее мягкое свидетельство и подлежит_
 _первоочередной редакторской проверке. Текст Леонова не изменен._
+
+_Dr. Mārcis Gasūns_

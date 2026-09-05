@@ -1,3 +1,5 @@
+_Created: 07-07-2026 · Last updated: 05-09-2026_
+
 # Agent log agent-a25efbc975a968436
 
 _Model: `claude-sonnet-5`; extracted by scripts/export_agent_logs.py; raw transcript alongside (.jsonl) holds the full record incl. tool results._
@@ -338,9 +340,10 @@ sarga 6: 57 considered / 4 drafted / 53 rejected / 1 contrastive
 sarga 7: 18 considered / 3 drafted / 15 rejected / 1 contrastive
 
 Output files written:
-- [data/analysis/phase2_batch3/sarga_05_candidates.json](../sarga_05_candidates.json)
-- [data/analysis/phase2_batch3/sarga_06_candidates.json](../sarga_06_candidates.json)
-- [data/analysis/phase2_batch3/sarga_07_candidates.json](../sarga_07_candidates.json)
+- [data/analysis/phase2_batch3/sarga_05_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_05_candidates.json)
+- [data/analysis/phase2_batch3/sarga_06_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_06_candidates.json)
+- [data/analysis/phase2_batch3/sarga_07_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_07_candidates.json)
 
 Sarga 6 (57 bundles, a proper-name palace-catalog sarga) had a low accept rate as expected — most of its textological substance was already exhausted by Leonov's own apparatus and the existing Phase-1 lexical notes (kakṣyā, jāmbūnada, bhūtapati, airāvata, etc.), leaving genuine gaps only in a few contrastive lexical/textual-variant points (mahāmātra "mahouts" vs "ministers", niḥsvanam "resounding" vs "silent") and one śāstric definition (mahāratha). No git operations were run.
 
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 14-08-2026 · Last updated: 05-09-2026_
+
 # Immutable reviewer submissions
 
 Final reviewer payloads are raw evidence. Store each accepted payload at
@@ -12,3 +14,5 @@ before a trusted operator runs the importer.
 No real reviewer submission is committed by automated tests. Fixtures live under
 `tests/fixtures/` and use the synthetic reviewer identity explicitly allowed by
 the validator's `--allow-synthetic` test mode.
+
+_Dr. Mārcis Gasūns_

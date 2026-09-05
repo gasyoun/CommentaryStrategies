@@ -58,3 +58,5 @@ line per sarga: `sarga NN judged: N notes → keep K / edit E / park P / reject 
 
 _Auto-generated for the H268 batch-3 run; judging Sonnet 5 (`claude-sonnet-5`), orchestration
 Fable 5 (`claude-fable-5`)._
+
+_Dr. Mārcis Gasūns_

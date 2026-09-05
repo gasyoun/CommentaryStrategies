@@ -1,3 +1,5 @@
+_Created: 16-05-2026 · Last updated: 05-09-2026_
+
 ---
 title: "Индигенная и академическая комментаторские традиции: Бхарата-бхавадипа Нилакантхи и русские переводчики Махабхараты"
 author: "М. Ю. Гасунс"
@@ -365,3 +367,5 @@ This article compares two commentary apparatuses on the Nalopākhyāna and Rāmo
 ## Дополнительные материалы
 
 Машинно-читаемый корпус примечаний, лежащий в основе статьи, подготовлен к публикации в виде supplementary data в формате TEI P5. Каждое примечание адресовано через CTS-URN, размечено по четырем осям комментаторского хода (`@ana`) и валидировано схемой `tei_all` (TEI P5 4.12.0). Файл [`tei/leonov.xml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tei/leonov.xml) содержит корпус продолжающегося перевода Сундараканды М. В. Леонова (см. примечание 1); полный пакет дополняют экспорты пяти изданий академического корпуса: [`tei/kalyanov.xml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tei/kalyanov.xml), [`tei/vassilkov.xml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tei/vassilkov.xml), [`tei/erman.xml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tei/erman.xml), [`tei/grintser.xml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tei/grintser.xml), [`tei/syrkin.xml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tei/syrkin.xml). Публикация текстов примечаний — по решению о правах от 12.06.2026 ([`data/RIGHTS.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/RIGHTS.md)); издания Леонова/Костиной — по согласованию с авторами. При подаче статьи пакет будет приложен к рукописи как единый supplementary data файл.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 01-05-2026 · Last updated: 05-09-2026_
+
 ---
 title: "Комментаторские стратегии русских переводчиков санскритских текстов"
 author: "Гасунс М."
@@ -205,3 +207,5 @@ Vassilkov, Ya. V., Neveleva, S. L. 1987, 1990, 1998, 2003, 2005: *Mahabharata* [
 
 *Śabdaprakāśa* 2011 — *Shabdaprakasha. Zografsky sbornik I* [Śabdaprakāśa. Zograph collection] / Ed. by Ya. V. Vassilkov, S. V. Pakhomov. Saint Petersburg.
    *Шабдапракаша. Зографский сборник* I / под ред. Я. В. Василькова и С. В. Пахомова. СПб., 2011. 315 с. ISBN 978-5-98709-297-2.
+
+_Dr. Mārcis Gasūns_
