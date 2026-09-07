@@ -137,7 +137,7 @@ sources/*.json ─▶ annotate_batch.py ─▶ data/*.json ─▶ eval_pipeline.
 | [build_visualizations.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/build_visualizations.py) | data → `visualizations.html` (Chart.js, 6-way) | stdlib |
 | [extract_false_friends_profile.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/extract_false_friends_profile.py) | профиль «ложных друзей» → `data/false_friends_profile.json` (Article 1) | stdlib |
 | [profile_nilakantha.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/profile_nilakantha.py) | структурный профиль ṭīkā Нилакантхи → `data/nilakantha_profile.json` (Article 4) | `indic-transliteration` |
-| [taxonomy.py](../scripts/taxonomy.py) | единый источник кодов осей (читает схему); `assert_covers` | stdlib |
+| taxonomy.py | единый источник кодов осей (читает схему); `assert_covers` | stdlib |
 | [annotate_batch.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/annotate_batch.py) | LLM-аннотация через Anthropic API (preflight, возобновляемая) | `anthropic` |
 | [eval_pipeline.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/eval_pipeline.py) | оценка точности vs золотая выборка (порог ≥85%) | stdlib |
 | [validate.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/validate.py) | схемная валидация корпуса + запрещенные формулы | stdlib |

@@ -29,7 +29,7 @@ Commands run live during the pass (all green): `python scripts/validate.py` (605
 | 9 | [#181](https://github.com/gasyoun/CommentaryStrategies/pull/181) | 16-08 | `build_licence_register_review_sheet.py` (+74−35: derive figures at render) | Removes hardcode drift class from a published sheet |
 | 10 | [#183](https://github.com/gasyoun/CommentaryStrategies/pull/183) | 16-08 | 11 `scripts/goldman_*.py` + `pdf_textlayer_probe.py` + `yadisk_inventory.py` (research pipeline) | One-off bake-off harness; no shared critical path |
 
-**Slice #167 content boundary.** The Worker/auth code entered `main` as direct `ai-wip` pushes (`69225d8`…`7d08795`, 14-08, no PR) immediately before the #167 squash. The reviewable H2736 slice is therefore the diff `f136172..e5b4415f` (subsumes the direct pushes + the squash); GitHub's recorded base `0f2cfdfe` is listed for the record. Direct pushes inside the review window are themselves a process finding — see [§5 F9](#f9--process--window-work-landed-as-direct-pushes-to-main).
+**Slice #167 content boundary.** The Worker/auth code entered `main` as direct `ai-wip` pushes (`69225d8`…`7d08795`, 14-08, no PR) immediately before the #167 squash. The reviewable H2736 slice is therefore the diff `f136172..e5b4415f` (subsumes the direct pushes + the squash); GitHub's recorded base `0f2cfdfe` is listed for the record. Direct pushes inside the review window are themselves a process finding — see [§5 F9](#f9-process-window-work-landed-as-direct-pushes-to-main).
 
 ## 3. Slice verdicts — independent Standards and Spec passes
 

@@ -495,7 +495,7 @@ sarga 47: 42 considered / 5 drafted / 37 rejected / 0 contrastive
 sarga 48: 74 considered / 5 drafted / 69 rejected / 0 contrastive
 sarga 49: 27 considered / 3 drafted / 24 rejected / 0 contrastive
 
-Output files (all in [data/analysis/phase2_batch3/](data/analysis/phase2_batch3/)):
+Output files (all in data/analysis/phase2_batch3/):
 - [sarga_46_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_46_candidates.json)
 - [sarga_47_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_47_candidates.json)
 - [sarga_48_candidates.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/phase2_batch3/sarga_48_candidates.json)
