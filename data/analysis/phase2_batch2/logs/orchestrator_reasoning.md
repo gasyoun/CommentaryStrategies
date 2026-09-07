@@ -11,7 +11,7 @@ The handoff is gated on your decisions.json files. Let me first check whether th
 - 🔧 `Glob` — data/analysis/phase2_pilot/*.json
 - 🔧 `PowerShell` — Look for downloaded decisions.json files
 - 🔧 `Glob` — **/*decisions*.json
-No decisions.json found anywhere — not in [data/analysis/phase2_pilot/](data/analysis/phase2_pilot) and not in your Downloads folder. The handoff (H142) is hard-gated on the pilot votes, so I can't start step 1 without them.
+No decisions.json found anywhere — not in data/analysis/phase2_pilot/ and not in your Downloads folder. The handoff (H142) is hard-gated on the pilot votes, so I can't start step 1 without them.
 
 Please provide:
 
@@ -20,7 +20,7 @@ Please provide:
 
 Once I have the pilot file I'll apply the decisions, check the register-feedback stop condition, and — if the accept rate holds up — scale Phase 2 to the seven remaining 🟡 sargas (22, 24, 26, 30, 34, 39, 51).
 
-No decisions.json found anywhere — not in [data/analysis/phase2_pilot/](data/analysis/phase2_pilot) and not in your Downloads folder. The handoff (H142) is hard-gated on the pilot votes, so I can't start step 1 without them.
+No decisions.json found anywhere — not in data/analysis/phase2_pilot/ and not in your Downloads folder. The handoff (H142) is hard-gated on the pilot votes, so I can't start step 1 without them.
 
 Please provide:
 

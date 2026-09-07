@@ -69,7 +69,7 @@ _Created: 01-07-2026 · Last updated: 05-09-2026_
 
 `scripts/build_edition_footnotes.py` → [`../edition_footnotes/`](../edition_footnotes/): **51 сносок-пассажей**
 (из истинных `structural_absence`) + 123 одиночных шлоки, формат §3 [на ратификацию], все `review_required`,
-с dedup против нот Леонова. Ратификация — [`EDITION_FOOTNOTES_REVIEW.md`](../edition_footnotes/EDITION_FOOTNOTES_REVIEW.md).
+с dedup против нот Леонова. Ратификация — `EDITION_FOOTNOTES_REVIEW.md`.
 
 ## Как ещё отмечены отличия (файлы)
 
