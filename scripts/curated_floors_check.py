@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Curated-record floors — the live files may never shrink below the pins.
 
-H4351 (08-09-2026). `tests/conftest.py` freezes, as literals, the curated record
+H4351 (08-09-2026). `tests/curated_floors.py` freezes, as literals, the curated record
 count of every file the ten destructive appliers write (read from the live
 files at authoring time). The pytest suite itself is hermetic — it never opens
 `data/` — so this script is where those literals become load-bearing: it reads
@@ -13,7 +13,7 @@ Usage:
     python scripts/curated_floors_check.py --print    # live counts, to re-pin
 
 Wired into the `corpus` job of .github/workflows/ci.yml. Raising a floor is a
-deliberate edit of CURATED_FLOORS_2026_09_08 in tests/conftest.py, reviewed
+deliberate edit of CURATED_FLOORS_2026_09_08 in tests/curated_floors.py, reviewed
 like any other data claim; lowering one needs the reason in the same commit.
 """
 from __future__ import annotations
@@ -30,7 +30,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 sys.path.insert(0, os.path.join(REPO, "tests"))
 
-from conftest import CURATED_FLOORS_2026_09_08  # noqa: E402
+from curated_floors import CURATED_FLOORS_2026_09_08  # noqa: E402
 
 
 def _load(rel: str):
