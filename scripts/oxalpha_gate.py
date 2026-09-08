@@ -175,6 +175,10 @@ def tolerant(what: str, fn, fallback):
     times over its budget: a single 5xx, a secondary rate limit, or a token
     that may not write statuses must not turn the REQUIRED check red and block
     a PR on something that is not a review verdict.
+
+    It absorbs `gh()`'s SystemExit only. A missing `gh` binary or unparseable
+    JSON still propagates — those are "the environment is broken", where
+    failing closed is the right answer.
     """
     try:
         return fn()
@@ -216,11 +220,18 @@ def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20,
     GitHub design for dependabot and fork PRs, and this job deliberately runs
     for every actor, so a 403 on the write must leave the supersede clean
     rather than red — the new head's own run is what actually gates the merge.
+    When that write does 403, this run exits green on a SHA carrying no
+    re-armed `pending`; the residue closes itself, because a force-push back to
+    that SHA fires `synchronize`, which re-arms via `arm-pr` and starts a fresh
+    mirror whose conclusion supersedes this one.
     """
     import time
 
     deadline = time.monotonic() + timeout_sec
-    sha = sha or head_sha(r, pr)
+    sha = sha or tolerant("initial head lookup", lambda: head_sha(r, pr), None)
+    if not sha:
+        print("cannot resolve the PR head — nothing to mirror")
+        return 1
     while time.monotonic() < deadline:
         live = tolerant("head lookup", lambda: head_sha(r, pr), None)
         if live and live != sha:
