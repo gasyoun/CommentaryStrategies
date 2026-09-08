@@ -114,19 +114,41 @@ def test_truncated_ch1_seed_never_overwrites_a_previous_aggregate(stage):
     s.assert_unchanged(snap)
 
 
-def test_an_unreadable_corpus_shrinks_the_aggregate_silently(stage):
-    """Characterisation, not approval — the shape scripts/curated_floors_check.py
-    exists to catch. load_jsonl() swallows every corpus read error and only warns,
-    so a run with the corpus gone still exits 0 and writes an aggregate holding
-    the ch.1 slice alone. Nothing in the script refuses it; the live-file floor
-    is the only thing standing between that run and a silent curated loss."""
+def test_an_absent_corpus_is_refused_without_overwriting_the_aggregate(stage):
+    """H4370 (was: …_shrinks_the_aggregate_silently). load_jsonl() used to
+    swallow every corpus read error and only warn, so a run with the corpus gone
+    exited 0 and rewrote the aggregate down to the ch.1 slice alone — ~866 notes
+    erased with the live-file floor as the only guard. The corpus is now a hard
+    input: absent means a loud non-zero abort before any write."""
     s = staged(stage)
     s.run(SCRIPT)
+    snap = s.snapshot(*TARGETS)
     full = len(records(s.load(BOOK)))
+    assert full > 2
 
     s.path("corpus/05_ramayana-sundarakanda.jsonl").unlink()
-    r = s.run(SCRIPT)
-    assert "WARN" in r.stderr
-    shrunk = records(s.load(BOOK))
-    assert len(shrunk) == 2 < full, "the ch.2–68 slice is gone, exit code still 0"
-    assert {n["lemma_iast"] for n in shrunk} == {"cāraṇa", "rāghava"}
+    r = s.run(SCRIPT, expect=None)
+    assert r.returncode != 0
+    assert "corpus unreadable" in (r.stdout + r.stderr)
+    s.assert_unchanged(snap)
+
+
+def test_an_absent_corpus_is_refused_before_the_first_write(stage):
+    """The same refusal on a clean tree: nothing is written at all."""
+    s = staged(stage)
+    s.path("corpus/05_ramayana-sundarakanda.jsonl").unlink()
+    r = s.run(SCRIPT, expect=None)
+    assert r.returncode != 0
+    for rel in TARGETS:
+        assert not s.path(rel).exists(), f"{rel} must not be written"
+
+
+def test_an_empty_corpus_is_refused_the_same_way(stage):
+    """A corpus that reads but yields no rows loses exactly as much."""
+    s = staged(stage)
+    s.path("corpus/05_ramayana-sundarakanda.jsonl").write_text("", encoding="utf-8")
+    r = s.run(SCRIPT, expect=None)
+    assert r.returncode != 0
+    assert "no usable rows" in (r.stdout + r.stderr)
+    for rel in TARGETS:
+        assert not s.path(rel).exists()

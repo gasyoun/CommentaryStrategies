@@ -6,9 +6,16 @@ card must carry exactly one verdict; zero or two is a loud failure.
 
 No curated floor is pinned for this writer: ledger_final.json's
 ``{_meta, verdicts}`` shape has no measure in scripts/curated_floors_check.py.
+
 Its `ledger.json` rule-tier input has no live counterpart in
-data/analysis/h1685_adjudication/ either, so a live rerun would abort on it
-today — both recorded in .ai_state.md § H4368.
+data/analysis/h1685_adjudication/, and H4370 established why: `ledger.json` and
+`packet_*.json` are step-3 outputs of scripts/h1685_adjudicate.py, gitignored by
+design (.gitignore lines 30-31) and therefore never committed — `git log --all
+--diff-filter=A` finds that path only as this suite's own fixture. Nothing was
+lost, and the rule tier survives as the 1 649 ``tier == "rule"`` rows inside
+ledger_final.json. The absence is now an explicit refusal naming the producing
+script rather than a FileNotFoundError traceback; that is what
+``test_a_missing_rule_tier_is_refused_with_the_regeneration_command`` pins.
 """
 from conftest import Stage
 
@@ -123,6 +130,20 @@ def test_an_opus_verdict_matching_no_card_aborts_without_write(stage):
     s.write_json(OPUS_B3, doc)
     r = s.run(SCRIPT, expect=1)
     assert "match no card" in (r.stdout + r.stderr)
+    assert not s.path(OUT).exists()
+
+
+def test_a_missing_rule_tier_is_refused_with_the_regeneration_command(stage):
+    """H4370. ledger.json is a gitignored step-3 intermediate, so a fresh
+    checkout genuinely does not have it. The refusal must name the script that
+    regenerates it and must not invite hand-reconstruction of rule verdicts."""
+    s = staged(stage)
+    s.path(f"{AD}/ledger.json").unlink()
+    r = s.run(SCRIPT, expect=1)
+    out = r.stdout + r.stderr
+    assert "ERROR: missing" in out and "ledger.json" in out
+    assert "h1685_adjudicate.py" in out, "the refusal names its producer"
+    assert "ledger_final.json" in out, "and where the rule tier survives"
     assert not s.path(OUT).exists()
 
 
