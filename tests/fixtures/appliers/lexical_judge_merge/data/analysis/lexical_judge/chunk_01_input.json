@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "chunk": 1,
+    "description": "Мини-чанк судейского прохода (H276 WS-2).",
+    "judged": true,
+    "judged_by": "claude-sonnet-5"
+  },
+  "items": [
+    {
+      "note": {
+        "shloka": "V.2.1",
+        "lemma_iast": "laṅkā",
+        "judge": {
+          "verdict": "keep",
+          "reason": "лемма стоит в стихе, глосса не тривиальна",
+          "scores": {"faithfulness": 2, "anchoring": 2, "non_triviality": 2,
+                     "lexical_value": 2, "register": 2}
+        }
+      }
+    },
+    {
+      "note": {
+        "shloka": "V.2.2",
+        "lemma_iast": "rākṣasī",
+        "judge": {
+          "verdict": "edit",
+          "reason": "регистр ниже нормы ЛП",
+          "scores": {"faithfulness": 2, "anchoring": 2, "non_triviality": 2,
+                     "lexical_value": 1, "register": 1}
+        }
+      }
+    }
+  ]
+}
