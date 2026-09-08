@@ -51,15 +51,17 @@ def test_non_shrink_every_source_card_reaches_the_ballot(stage):
     notes = all_notes(doc)
 
     by_layer = doc["_meta"]["notes_by_layer"]
-    assert by_layer == {"tier1": 1, "lexical": 5, "phase2": 2,
+    assert by_layer == {"tier1": 1, "lexical": 4, "phase2": 2,
                         "edition": 2, "crosstext": 2}
-    assert len(notes) == sum(by_layer.values()) == 12, \
+    assert len(notes) == sum(by_layer.values()) == 11, \
         "one ballot card per source record — the rebuild drops nothing"
     assert len({n["id"] for n in notes}) == len(notes), "note ids are unique"
 
     lex = {n["lemma_iast"] for n in notes if n["layer"] == "lexical"}
-    assert lex == {"vadana", "vīkṣā", "guṇasampad", "śokaparāyaṇa", "phantom"}, \
-        "aggregate ∪ ch-file, deduped on (shloka, lemma_iast)"
+    assert lex == {"vadana", "vīkṣā", "guṇasampad", "śokaparāyaṇa"}, \
+        "aggregate ∪ ch-file, deduped on (shloka, lemma_iast); a QA-parked card " \
+        "is NOT a ballot source (MG 08-09-2026) — see " \
+        "test_a_qa_removed_card_is_not_ingested_by_the_ch_glob"
     assert not any(n["layer"] == "lexical" and n.get("subtype") == "commentator"
                    for n in notes), "commentator notes belong to the phase2 layer"
 
@@ -161,16 +163,22 @@ def test_a_ch_file_card_that_vanishes_shrinks_the_ballot(stage):
     assert s.load(JSON_OUT)["_meta"]["notes_by_layer"]["lexical"] == full - 1
 
 
-def test_a_qa_removed_card_is_re_ingested_by_the_ch_glob(stage):
-    """Characterisation, not endorsement: build_sarga_apparatus globs
-    data/lexical/ch*.json and skips only `.rejected`, so the chNN.qa_removed.json
-    files — the parked cards fix_ch11_lexical_anchors.py writes — are read back
-    onto the ballot. Live data/lexical/ holds five such files (ch11, ch20, ch22,
-    ch23, ch27); only ch11.qa_removed.json carries a floor (tests/curated_floors.py). If the
-    skip is ever widened to `.qa_removed`, this test is the one that must change.
+def test_a_qa_removed_card_is_not_ingested_by_the_ch_glob(stage):
+    """MG ruling 08-09-2026 «перестать их подтягивать» (was:
+    …_is_re_ingested_by_the_ch_glob, a characterisation of the opposite).
+    build_sarga_apparatus globs data/lexical/ch*.json; the skip now covers
+    `.qa_removed` as well as `.rejected`, so cards a QA pass deliberately parked
+    stay off the reviewer's ballot instead of being re-rejected by hand every
+    rebuild. Live data/lexical/ holds five such files (ch11, ch20, ch22, ch23,
+    ch27) carrying 25 parked cards between them, none of which exists as a live
+    card elsewhere — so this skip is exactly what keeps those 25 off the ballot.
+    Nothing is deleted: the cards remain in their qa_removed files.
     """
     s = staged(stage)
     s.run(SCRIPT, "35")
     notes = all_notes(s.load(JSON_OUT))
-    assert any(n["layer"] == "lexical" and n["lemma_iast"] == "phantom"
-               for n in notes), "the parked card reaches the reviewer's ballot"
+    assert not any(n.get("lemma_iast") == "phantom" for n in notes), \
+        "a parked card must not reach the reviewer's ballot"
+    # the non-parked lexical cards of the same chapter are untouched
+    assert any(n["layer"] == "lexical" for n in notes), \
+        "the skip must not empty the lexical layer"

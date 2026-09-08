@@ -162,7 +162,14 @@ def load_sources():
         seen_lex.add(key)
         lexical.setdefault(vid, []).append(n)
     for path in sorted(glob.glob(os.path.join(DATA, "lexical", "ch*.json"))):
-        if ".rejected" in path:
+        # `.qa_removed` files hold cards a QA pass deliberately PARKED (written
+        # by fix_ch11_lexical_anchors.py and its siblings). Re-ingesting them put
+        # 25 already-rejected cards back on the reviewer's ballot every rebuild,
+        # to be rejected again by hand. MG ruled 08-09-2026 «перестать их
+        # подтягивать»: a parked decision stays parked. Nothing is deleted — the
+        # cards keep living in their chNN.qa_removed.json files with their
+        # recorded reason, so un-parking one is a deliberate act, not an accident.
+        if ".rejected" in path or ".qa_removed" in path:
             continue
         for n in json.load(open(path, encoding="utf-8")):
             if "_meta" in n:
