@@ -1,7 +1,7 @@
 """backfill_why_proposed.py — one-off why_proposed injection into pilot sargas.
 
 Targets: data/analysis/phase2_pilot/sarga_*_candidates.json (in place).
-Curated floor at authoring: sarga_35 = 6 notes (see conftest).
+Curated floor at authoring: sarga_35 = 6 notes (see tests/curated_floors.py).
 """
 from conftest import Stage
 

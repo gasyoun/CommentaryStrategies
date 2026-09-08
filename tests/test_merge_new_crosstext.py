@@ -2,7 +2,7 @@
 
 Target file: data/sundara_commentary_to_add.json. The checkout root is a
 hard-coded Windows path in the script; conftest rewrites that single line to
-the sandbox. Curated floors at authoring: 896 notes, 170 cross_text (see conftest).
+the sandbox. Curated floors at authoring: 896 notes, 170 cross_text (see tests/curated_floors.py).
 """
 from conftest import Stage, records
 

@@ -1,7 +1,7 @@
 """apply_grintser_pass_ch1.py — the sarga-1 (H2833) variant with fixed paths.
 
 Target file: data/lexical/ch1.json (cwd-relative constant). Curated floor at
-authoring: 58 cards (see conftest).
+authoring: 58 cards (see tests/curated_floors.py).
 """
 from conftest import Stage, records
 

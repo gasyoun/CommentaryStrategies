@@ -2,7 +2,7 @@
 
 Targets: every note-bearing source JSON from translit_hygiene.target_files()
 (here data/lexical/ch1.json). Curated floors at authoring: 45 residue cards,
-ch1 = 58 cards (see conftest).
+ch1 = 58 cards (see tests/curated_floors.py).
 """
 from conftest import Stage, records
 

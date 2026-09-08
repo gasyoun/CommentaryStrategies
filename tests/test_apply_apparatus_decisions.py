@@ -1,7 +1,7 @@
 """apply_apparatus_decisions.py — reviewer verdicts into the gate ledger overlay.
 
 Target file: data/apparatus/gate_ledger.json (schema v2, entries keyed by
-apparatus note id). Curated floor at authoring: 126 entries (see conftest).
+apparatus note id). Curated floor at authoring: 126 entries (see tests/curated_floors.py).
 """
 from conftest import Stage
 

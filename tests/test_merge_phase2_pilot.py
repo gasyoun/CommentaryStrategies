@@ -2,7 +2,7 @@
 
 Targets: data/analysis/<batch>/<prefix>_candidates.json + <prefix>_rejected.json
 (full rewrite from sources). Curated floor at authoring: pilot_candidates.json
-= 16 notes (see conftest).
+= 16 notes (see tests/curated_floors.py).
 """
 from conftest import Stage
 

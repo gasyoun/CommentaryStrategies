@@ -2,7 +2,7 @@
 decision ledger, book stats, _rebuild_summary.json.
 
 Curated floors at authoring: 896 notes (170 cross_text) in the book, 5507
-ledger entries (228 cross_text), kavya 12 / gita 24 source notes (see conftest).
+ledger entries (228 cross_text), kavya 18 / gita 24 source notes (see tests/curated_floors.py).
 """
 from conftest import Stage, records
 

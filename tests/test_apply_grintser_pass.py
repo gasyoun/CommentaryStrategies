@@ -1,7 +1,7 @@
 """apply_grintser_pass.py — Grintser style pass, note_ru rewritten in place.
 
 Target file: data/lexical/ch{N}.json (cwd-relative). Curated floors at
-authoring: ch2 = 16 cards, ch3 = 13 cards (see conftest).
+authoring: ch2 = 16 cards, ch3 = 13 cards (see tests/curated_floors.py).
 """
 from conftest import Stage, records
 
