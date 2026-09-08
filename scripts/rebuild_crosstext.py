@@ -29,6 +29,10 @@ def dump(p, obj):
 # ---------------------------------------------------------------------------
 COMM = os.path.join(DATA, 'sundara_commentary_to_add.json')
 comm = load(COMM)
+# Every input is parsed BEFORE the first write (H4351 pin): a truncated
+# ledger must not leave the commentary already rewritten.
+LEDGER = os.path.join(DATA, 'sundara_decision_ledger.json')
+ledger = load(LEDGER)
 meta_entry = next((x for x in comm if isinstance(x, dict) and '_meta' in x), None)
 all_notes = [x for x in comm if isinstance(x, dict) and '_meta' not in x]
 base = [x for x in all_notes if x.get('subtype') != 'cross_text']
@@ -191,8 +195,7 @@ CLUSTER_FULL = {cl: (cluster_meta.get(cl, {}).get('cluster_label') or lbl)
 # 5. REBUILD decision ledger: keep base entries, rebuild cross_text entries
 #    from all 6 sources (accepted) + 4 rejected files (rejected-with-reason).
 # ---------------------------------------------------------------------------
-LEDGER = os.path.join(DATA, 'sundara_decision_ledger.json')
-ledger = load(LEDGER)
+# (ledger already loaded above, before the first write — H4351)
 old_entries = ledger['entries']
 base_entries = [e for e in old_entries if e.get('subtype') != 'cross_text']
 # base accepted should equal len(base); base rejected preserved as-is
