@@ -51,7 +51,9 @@ DESTRUCTIVE_APPLIERS = (
 # Curated record counts read ONCE from the live files at authoring time
 # (08-09-2026, Fable 5.1 claude-fable-5-1) and frozen here as literals. They are
 # the documented non-shrink floor per target file; the tests themselves assert
-# the invariant on fixtures and never open the live files.
+# the invariant on fixtures and never open the live files; the literals are
+# enforced against the live files by scripts/curated_floors_check.py, which the
+# `corpus` CI job runs on every push (--print re-derives them for re-pinning).
 CURATED_FLOORS_2026_09_08 = {
     "data/apparatus/gate_ledger.json:entries": 126,
     "data/lexical/ch1.json:cards": 58,
@@ -67,7 +69,7 @@ CURATED_FLOORS_2026_09_08 = {
     "data/sundara_commentary_to_add.json:cross_text": 170,
     "data/sundara_decision_ledger.json:entries": 5507,
     "data/analysis/translit_residue_cards.json:cards": 45,
-    "data/crosstext/kavya.json:notes": 12,
+    "data/crosstext/kavya.json:notes": 18,   # records, not the stale _meta.notes_count (12)
     "data/crosstext/gita.json:notes": 24,
 }
 
