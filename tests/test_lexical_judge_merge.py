@@ -29,6 +29,7 @@ def test_idempotent_rerun_is_byte_identical(stage):
     assert "book aggregate: 3 judge objects grafted" in r1.stdout
     assert "lexical ch files: 3 grafted; 1 ch-file notes not in book aggregate" in r1.stdout
     snap1 = s.snapshot(*TARGETS)
+    assert all(snap1.values()), "every target was actually written"
 
     s.run(SCRIPT)
     assert s.snapshot(*TARGETS) == snap1

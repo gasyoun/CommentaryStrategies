@@ -28,8 +28,13 @@ CURATED_FLOORS_2026_09_08 = {
     "data/analysis/translit_residue_cards.json:cards": 45,
     "data/crosstext/kavya.json:notes": 18,   # records, not the stale _meta.notes_count (12)
     "data/crosstext/gita.json:notes": 24,
-    # -- wave 2 (H4368, 08-09-2026, Opus 5 claude-opus-5): the curated files the
-    # eight re-runnable writers own that were not already pinned above.
+    # -- wave 2 (H4368, 08-09-2026, Opus 5 claude-opus-5): the curated OUTPUT
+    # files of the eight re-runnable writers that were not already pinned above.
+    # Several hand-curated INPUTS they read stay unpinned — data/leonov_own_notes.json,
+    # data/lexical/ch35.json, data/analysis/h1685_adjudication/{evidence,ledger_final}.json,
+    # the phase2_batch* and edition_footnotes candidate files — because
+    # scripts/curated_floors_check.py has no measure for their shapes. See
+    # .ai_state.md § H4368.
     "data/lexical/ch11.json:cards": 3,        # after the H276 anchor fix (-7 parked, -2 moved)
     "data/lexical/ch11.qa_removed.json:cards": 7,   # the parked cards ARE the record of the fix
     "data/lexical/ch17.json:cards": 9,        # +1 re-anchored kṣāma @ V.17.30

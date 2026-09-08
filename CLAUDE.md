@@ -45,9 +45,9 @@ python scripts/build_visualizations.py
 ```
 
 Tests: `python -m pytest` ([pytest.ini](https://github.com/gasyoun/CommentaryStrategies/blob/main/pytest.ini),
-[tests/](https://github.com/gasyoun/CommentaryStrategies/tree/main/tests)) — since H4351 (08-09-2026) the ten
-destructive appliers are pinned for idempotence, non-shrink and malformed-input
-refusal; each runs as a real subprocess in a sandbox, never against live `data/`.
+[tests/](https://github.com/gasyoun/CommentaryStrategies/tree/main/tests)) — since H4351 + H4368
+(08-09-2026) the **eighteen** destructive writers are pinned for idempotence, non-shrink and
+malformed-input refusal; each runs as a real subprocess in a sandbox, never against live `data/`.
 Curated-record floors live in
 [tests/curated_floors.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/tests/curated_floors.py)
 and are enforced by `scripts/curated_floors_check.py` in CI. The other gate is the
@@ -55,7 +55,7 @@ and are enforced by `scripts/curated_floors_check.py` in CI. The other gate is t
 [`.github/workflows/ci.yml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.github/workflows/ci.yml):
 `validate.py` + URN check + "every generator reproduces its artifact with no
 git diff" + the floors check. `ruff` / `black` are warn-only. Uncovered modules and
-why: `.ai_state.md` § H4351.
+why: `.ai_state.md` § H4351 and § H4368.
 
 LLM annotation (needs `ANTHROPIC_API_KEY`):
 

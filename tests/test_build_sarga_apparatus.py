@@ -2,8 +2,13 @@
 
 Target files: data/apparatus/sarga_{NN}.json + .html — regenerated from
 scratch on every run, which is exactly the shape where a source that silently
-stops loading erases curated cards from the reviewer's ballot. The five source
-layers are pinned in tests/curated_floors.py.
+stops loading erases curated cards from the reviewer's ballot.
+
+Of the five source layers only data/sundara_commentary_to_add.json carries a
+curated floor (tests/curated_floors.py); data/lexical/ch35.json,
+data/analysis/phase2_pilot/*, data/edition_footnotes/candidates.json and
+data/analysis/sundara_commentary_segmented.json are unpinned — see
+.ai_state.md § H4368.
 """
 from conftest import Stage
 
@@ -34,6 +39,7 @@ def test_idempotent_rerun_is_byte_identical(stage):
     r1 = s.run(SCRIPT, "35")
     assert "sarga 35: 4/4 verses with notes" in r1.stdout
     snap1 = s.snapshot(*TARGETS)
+    assert all(snap1.values()), "every target was actually written"
     s.run(SCRIPT, "35")
     assert s.snapshot(*TARGETS) == snap1
 
@@ -45,14 +51,14 @@ def test_non_shrink_every_source_card_reaches_the_ballot(stage):
     notes = all_notes(doc)
 
     by_layer = doc["_meta"]["notes_by_layer"]
-    assert by_layer == {"tier1": 1, "lexical": 4, "phase2": 1,
-                        "edition": 2, "crosstext": 1}
-    assert len(notes) == sum(by_layer.values()) == 9, \
+    assert by_layer == {"tier1": 1, "lexical": 5, "phase2": 2,
+                        "edition": 2, "crosstext": 2}
+    assert len(notes) == sum(by_layer.values()) == 12, \
         "one ballot card per source record — the rebuild drops nothing"
     assert len({n["id"] for n in notes}) == len(notes), "note ids are unique"
 
     lex = {n["lemma_iast"] for n in notes if n["layer"] == "lexical"}
-    assert lex == {"vadana", "vīkṣā", "guṇasampad", "śokaparāyaṇa"}, \
+    assert lex == {"vadana", "vīkṣā", "guṇasampad", "śokaparāyaṇa", "phantom"}, \
         "aggregate ∪ ch-file, deduped on (shloka, lemma_iast)"
     assert not any(n["layer"] == "lexical" and n.get("subtype") == "commentator"
                    for n in notes), "commentator notes belong to the phase2 layer"
@@ -67,6 +73,13 @@ def test_gate_verdicts_and_tier1_segmentation_survive_the_rebuild(stage):
     s.run(SCRIPT, "35")
     notes = all_notes(s.load(JSON_OUT))
     by_id = {n["id"]: n for n in notes}
+
+    accepted = by_id["phase2:5.35.2:0"]
+    assert accepted["status"] == "принято гейтом М.Г. (2026-07-03)"
+    assert accepted["votable"] is False, "a gated card gets no second vote control"
+    rejected = by_id["phase2:5.35.2:1"]
+    assert rejected["status"] == "отклонено М.Г.: дубль соседней карточки"
+    assert rejected["mg_comment"] == "оставить одну"
 
     gated = by_id["lexical:5.35.1:0"]
     assert gated["status"] == "правлено"
@@ -91,6 +104,14 @@ def test_gate_verdicts_and_tier1_segmentation_survive_the_rebuild(stage):
 
     ct = by_id["crosstext:5.35.4:0"]
     assert ct["cluster"] == "kavya" and ct["cluster_label"].startswith("кавья")
+    # a hand-curated cluster record carries none of the parallel-block fields —
+    # those belong to the remapped archive layer, which lands as its own card
+    assert not any(ct[k] for k in ("work_label", "verse_address",
+                                   "parallel_sa_iast", "quality"))
+    arch = by_id["crosstext:5.35.4:1"]
+    assert arch["cluster"] == "archive_parallels"
+    assert arch["work_label"] == "MBh" and arch["quality"] == "PARTLY"
+    assert arch["edition_flag"] == "critical" and arch["shloka_critical"] == "V.33.4"
 
     html = s.path(HTML_OUT).read_text(encoding="utf-8")
     assert "Гунасампад" in html, "the ballot payload is embedded in the page"
@@ -137,3 +158,18 @@ def test_a_ch_file_card_that_vanishes_shrinks_the_ballot(stage):
                                    if n["lemma_iast"] != "śokaparāyaṇa"])
     s.run(SCRIPT, "35")
     assert s.load(JSON_OUT)["_meta"]["notes_by_layer"]["lexical"] == full - 1
+
+
+def test_a_qa_removed_card_is_re_ingested_by_the_ch_glob(stage):
+    """Characterisation, not endorsement: build_sarga_apparatus globs
+    data/lexical/ch*.json and skips only `.rejected`, so the chNN.qa_removed.json
+    files — the parked cards fix_ch11_lexical_anchors.py writes, pinned as
+    curated at tests/curated_floors.py — are read back onto the ballot. Live
+    data/lexical/ holds five such files (ch11, ch20, ch22, ch23, ch27). If the
+    skip is ever widened to `.qa_removed`, this test is the one that must change.
+    """
+    s = staged(stage)
+    s.run(SCRIPT, "35")
+    notes = all_notes(s.load(JSON_OUT))
+    assert any(n["layer"] == "lexical" and n["lemma_iast"] == "phantom"
+               for n in notes), "the parked card reaches the reviewer's ballot"

@@ -7,7 +7,9 @@ are read from data/sundara_ch1_commentary_to_add.json and carried into the
 aggregate, which is precisely the curated slice a bad rerun can erase.
 
 The script pins two Windows checkout paths; conftest rewrites both into the
-sandbox (HARDCODED_LINES).
+sandbox (HARDCODED_LINES). It also bakes ``date.today()`` into its output
+(scripts/sundara_ch2_68_pipeline.py, TODAY), so the byte-identity check below is
+a rerun within one calendar day — wave 1 avoided this by threading ``--date``.
 """
 from conftest import Stage, records
 
@@ -33,6 +35,7 @@ def test_idempotent_rerun_is_byte_identical(stage):
     assert "ch.2: 5 notes / 2 verses" in r1.stdout
     assert "ch.3: 1 notes / 1 verses" in r1.stdout
     snap1 = s.snapshot(*TARGETS)
+    assert all(snap1.values()), "every target was actually written"
     s.run(SCRIPT)
     assert s.snapshot(*TARGETS) == snap1
 
@@ -40,6 +43,7 @@ def test_idempotent_rerun_is_byte_identical(stage):
 def test_non_shrink_the_ch1_slice_survives_the_re_aggregation(stage):
     s = staged(stage)
     ch1_before = records(s.load(CH1))
+    seed_before = s.read(CH1)
     s.run(SCRIPT)
 
     book = records(s.load(BOOK))
@@ -50,7 +54,7 @@ def test_non_shrink_the_ch1_slice_survives_the_re_aggregation(stage):
         assert b in book, "ch.1 notes are carried verbatim, not re-derived"
     assert len(book) == len(ch1_before) + len(records(s.load(CH2))) \
         + len(records(s.load(CH3))) == 8
-    assert s.path(CH1).read_bytes() == s.read(CH1), "the ch.1 seed file is read-only"
+    assert s.read(CH1) == seed_before, "the ch.1 seed file is read-only"
 
     # book-wide first-appearance dedup: a lemma noted in ch.1 never re-fires
     lemmas = [n["lemma_iast"] for n in book]

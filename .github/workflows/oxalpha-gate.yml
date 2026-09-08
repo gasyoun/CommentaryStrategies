@@ -142,13 +142,16 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     timeout-minutes: 45
-    # H4368 (FINDINGS §727): this job overrides the workflow-level group, which
-    # queues with cancel-in-progress: false. A second push used to leave the
-    # mirror for the OLD head polling for its full budget while the run for the
-    # NEW head waited behind it in the queue — so the new head carried no
+    # H4368 (FINDINGS §727): a second push used to leave the mirror for the OLD
+    # head polling for its full budget while the run for the NEW head waited
+    # behind it in the workflow-level queue — so the new head carried no
     # oxalpha-review check at all and the PR stayed BLOCKED until a human ran
-    # `gh run cancel`. Superseded mirrors are cancelled here, and `wait --sha`
-    # exits SUPERSEDED on its own if the cancel ever fails to reach it.
+    # `gh run cancel`. The fix that actually fires is `wait --sha` below: the
+    # old mirror notices the head moved and exits SUPERSEDED, releasing the
+    # queue. The job-level group here is belt-and-braces for the case where the
+    # workflow-level group (cancel-in-progress: false, so the new run is queued
+    # rather than started) is ever relaxed — then two mirrors could run at once
+    # and this cancels the older one outright.
     concurrency:
       group: oxalpha-mirror-${{ github.event.pull_request.number }}
       cancel-in-progress: true

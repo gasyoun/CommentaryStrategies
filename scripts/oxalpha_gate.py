@@ -168,6 +168,20 @@ def sweep(r: str, dry: bool = False) -> None:
             print(f"PR #{num}: ensure failed — {exc}")
 
 
+def live_head(r: str, pr: int) -> str | None:
+    """head_sha, but a transient API failure is "unchanged", not a dead job.
+
+    gh() exits the process on a non-zero `gh api`, and this is polled ~105
+    times over the mirror's budget — a single 5xx or secondary rate limit must
+    not turn the REQUIRED check red and block a PR on an infra blip.
+    """
+    try:
+        return head_sha(r, pr)
+    except SystemExit as exc:
+        print(f"head lookup failed ({exc}) — treating the head as unchanged")
+        return None
+
+
 def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20,
          sha: str | None = None) -> int:
     """Mirror loop for the required Actions check run (job `oxalpha-review`).
@@ -181,7 +195,8 @@ def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20,
       status failure / error  -> exit 1 fast (verdict fail / infra-neutral)
       status pending / absent -> poll until timeout, then exit 1 (blocked —
                                  never a silent pass)
-      PR head moved on         -> exit 0 SUPERSEDED (H4368 / FINDINGS §727)
+      PR head moved on        -> re-arm `pending` on the SHA this run owns,
+                                 then exit 0 SUPERSEDED (H4368 / FINDINGS §727)
 
     The last case is the trap this loop used to sit in: `sha` was read once,
     and a second push left the old run polling a SHA nobody would ever vote on
@@ -190,17 +205,26 @@ def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20,
     finished — so a passed PR stayed BLOCKED with no check on its head, and
     only a manual `gh run cancel` freed it. A superseded run now exits 0 and
     says so: it never votes on the new head (its status belongs to the old
-    SHA), it just stops holding the queue.
+    SHA), it just stops holding the queue. Before it does, it re-posts
+    `pending` on its own SHA when that SHA carries no terminal verdict: exiting
+    0 makes THIS run's check green, and a green check with no verdict behind it
+    on a commit that could become the head again (force-push back, revert,
+    merge-queue re-evaluation) is exactly the silent pass this gate forbids.
     """
     import time
 
     deadline = time.monotonic() + timeout_sec
     sha = sha or head_sha(r, pr)
     while time.monotonic() < deadline:
-        live = head_sha(r, pr)
+        live = live_head(r, pr)
         if live and live != sha:
             print(f"SUPERSEDED: PR head moved {sha[:12]} -> {live[:12]}; "
                   f"this run no longer owns the gate — the run for the new head does")
+            stale = current(r, sha)
+            if not stale or stale["state"] not in ("success", "failure", "error"):
+                post(r, sha, "pending",
+                     "superseded: PR head moved on before a verdict landed",
+                     None)
             return 0
         have = current(r, sha)
         if have:

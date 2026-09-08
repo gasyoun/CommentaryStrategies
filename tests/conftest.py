@@ -1,4 +1,4 @@
-"""Test harness for the destructive appliers (H4351, 08-09-2026).
+"""Test harness for the destructive writers (H4351 + H4368, 08-09-2026).
 
 Every applier under test is copied into a throw-away tree (tmp_path/scripts +
 tmp_path/data + tmp_path/votes …) and executed there as a REAL subprocess with
@@ -9,9 +9,10 @@ inside the sandbox:
   tmp_path/scripts resolves REPO to tmp_path;
 * cwd-relative (``data/lexical/ch1.json``) — cwd is tmp_path.
 
-Two scripts hard-code a Windows checkout path; ``Stage.script`` rewrites exactly
-that one assignment line to the sandbox (and fails loudly if the line moved, so
-the rewrite can never silently point at the wrong place).
+Three scripts hard-code Windows checkout paths — four assignment lines in all,
+since ``sundara_ch2_68_pipeline.py`` pins two. ``Stage.script`` rewrites each
+pinned line to the sandbox and fails loudly if any of them moved, so the rewrite
+can never silently point at the wrong place.
 
 No test reads or writes under the real ``data/``: fixtures live under
 ``tests/fixtures/appliers/<applier>/`` as miniature copies of the real column

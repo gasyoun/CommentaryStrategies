@@ -4,7 +4,15 @@ Target files: data/book/sundarakanda_print_master.md and
 data/book/BOOK_BUILD_REPORT.md — a full rewrite from the HTML translation
 source plus the two note tiers. The invariant this guards: nothing loses its
 gate status and no note silently drops out of the endnote apparatus.
+
+Curated floor at authoring: data/sundara_commentary_to_add.json = 896 notes
+(tests/curated_floors.py). Its other curated input, data/leonov_own_notes.json,
+is unpinned — see .ai_state.md § H4368. The staged sa_align.py resolves its
+optional `sanskrit-util` sibling relative to the sandbox, which has none, so
+these tests exercise its stdlib `canon()` fallback.
 """
+import re
+
 from conftest import Stage
 
 SCRIPT = "build_book_apparatus.py"
@@ -31,8 +39,9 @@ def test_idempotent_rerun_is_byte_identical(stage):
     s = staged(stage)
     r1 = s.run(SCRIPT)
     assert "translation verses: 3/0; sargas: 2" in r1.stdout
-    assert "t1 notes 2, kostina marks 1, t2 notes 4 (MG-gated 1)" in r1.stdout
+    assert "t1 notes 2, kostina marks 1, t2 notes 5 (MG-gated 1)" in r1.stdout
     snap1 = s.snapshot(*TARGETS)
+    assert all(snap1.values()), "every target was actually written"
     s.run(SCRIPT)
     assert s.snapshot(*TARGETS) == snap1
 
@@ -52,12 +61,16 @@ def test_non_shrink_every_note_of_both_tiers_reaches_the_master(stage):
     assert "*vākya* — Тилака поясняет" in master and "⟦ожидает гейта⟧" in master
     assert "*laṅkā* — Ср. «Махабхарата» III.266" in master
     # a gate-pending batch candidate is slotted with its batch and judge verdict
-    assert "⟦ожидает гейта М.Г. (phase2_batch2, судья: keep)⟧" in master
+    assert "⟦ожидает гейта М.Г. (phase2_batch3, судья: keep)⟧" in master
     assert "Широмани отмечает форму аориста" in master
     # …and the judge-rejected one never enters the print path
     assert "Отклонённый судьёй кандидат" not in master
+    # an un-judged batch-2 candidate is included — the gate, not the judge, decides
+    assert "⟦ожидает гейта М.Г. (phase2_batch2)⟧" in master
+    assert "Кандидат батча 2 без вердикта судьи" in master
 
     # Kostina's marks are a separate stratum, not reader endnotes
+    assert "# Приложение А." in master, "the service-stratum appendix heading"
     body, appendix = master.split("# Приложение А.", 1)
     assert "Опущено сравнение" not in body
     assert "Опущено сравнение — вернуть по критическому изданию." in appendix
@@ -67,11 +80,13 @@ def test_non_shrink_every_note_of_both_tiers_reaches_the_master(stage):
     assert "**1.** Тогда она взглянула в лицо" in master
     assert "**1.** И увидел он город Ланку." in master
 
+    # counts, not label prose: an editorial re-wording of a report line must not
+    # red a test that is really about how many notes reached the apparatus
     report = text(s, REPORT)
-    assert "**3 строф** в 2 песнях" in report
-    assert "Примечания яруса 1 (Леонов, читательский аппарат): **2**" in report
-    assert "Пометы Костиной (служебный слой, Приложение А): **1**" in report
-    assert "Ноты яруса 2 в мастере: **4** (из них гейтированы М.Г.: 1" in report
+    assert re.search(r"\*\*3 строф\*\* в 2 песнях", report)
+    assert re.search(r"Примечания яруса 1[^\n]*: \*\*2\*\*", report)
+    assert re.search(r"Пометы Костиной[^\n]*: \*\*1\*\*", report)
+    assert re.search(r"Ноты яруса 2 в мастере: \*\*5\*\*[^\n]*гейтированы М\.Г\.: 1", report)
 
 
 def test_a_verse_with_no_note_carries_no_endnote_marker(stage):
