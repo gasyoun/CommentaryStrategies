@@ -168,7 +168,27 @@ def sweep(r: str, dry: bool = False) -> None:
             print(f"PR #{num}: ensure failed — {exc}")
 
 
-def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20) -> int:
+def tolerant(what: str, fn, fallback):
+    """Run a `gh api` helper without letting one bad response red the check.
+
+    gh() exits the process on any non-zero `gh api`, and the mirror polls ~105
+    times over its budget: a single 5xx, a secondary rate limit, or a token
+    that may not write statuses must not turn the REQUIRED check red and block
+    a PR on something that is not a review verdict.
+
+    It absorbs `gh()`'s SystemExit only. A missing `gh` binary or unparseable
+    JSON still propagates — those are "the environment is broken", where
+    failing closed is the right answer.
+    """
+    try:
+        return fn()
+    except SystemExit as exc:
+        print(f"{what} failed ({exc}) — continuing with {fallback!r}")
+        return fallback
+
+
+def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20,
+         sha: str | None = None) -> int:
     """Mirror loop for the required Actions check run (job `oxalpha-review`).
 
     GitHub's required-check policy matches check RUNS from the Actions app —
@@ -180,13 +200,51 @@ def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20) -> int:
       status failure / error  -> exit 1 fast (verdict fail / infra-neutral)
       status pending / absent -> poll until timeout, then exit 1 (blocked —
                                  never a silent pass)
+      PR head moved on        -> best-effort re-arm of `pending` on the SHA
+                                 this run owns, then exit 0 SUPERSEDED
+                                 (H4368 / FINDINGS §727)
+
+    The last case is the trap this loop used to sit in: `sha` was read once,
+    and a second push left the old run polling a SHA nobody would ever vote on
+    for the rest of its 35-minute budget. Because the workflow serialises this
+    job per PR, the run for the NEW head could not start until that corpse
+    finished — so a passed PR stayed BLOCKED with no check on its head, and
+    only a manual `gh run cancel` freed it. A superseded run now exits 0 and
+    says so: it never votes on the new head (its status belongs to the old
+    SHA), it just stops holding the queue. Before it does, it re-posts
+    `pending` on its own SHA when that SHA carries no terminal verdict: exiting
+    0 makes THIS run's check green, and a green check with no verdict behind it
+    on a commit that could become the head again (force-push back, revert,
+    merge-queue re-evaluation) is exactly the silent pass this gate forbids.
+    That re-post is BEST EFFORT: the `pull_request` token is read-only by
+    GitHub design for dependabot and fork PRs, and this job deliberately runs
+    for every actor, so a 403 on the write must leave the supersede clean
+    rather than red — the new head's own run is what actually gates the merge.
+    When that write does 403, this run exits green on a SHA carrying no
+    re-armed `pending`; the residue closes itself, because a force-push back to
+    that SHA fires `synchronize`, which re-arms via `arm-pr` and starts a fresh
+    mirror whose conclusion supersedes this one.
     """
     import time
 
     deadline = time.monotonic() + timeout_sec
-    sha = head_sha(r, pr)
+    sha = sha or tolerant("initial head lookup", lambda: head_sha(r, pr), None)
+    if not sha:
+        print("cannot resolve the PR head — nothing to mirror")
+        return 1
     while time.monotonic() < deadline:
-        have = current(r, sha)
+        live = tolerant("head lookup", lambda: head_sha(r, pr), None)
+        if live and live != sha:
+            print(f"SUPERSEDED: PR head moved {sha[:12]} -> {live[:12]}; "
+                  f"this run no longer owns the gate — the run for the new head does")
+            stale = tolerant("status lookup", lambda: current(r, sha), None)
+            if not stale or stale["state"] not in ("success", "failure", "error"):
+                tolerant("status re-arm", lambda: post(
+                    r, sha, "pending",
+                    "superseded: PR head moved on before a verdict landed",
+                    None), None)
+            return 0
+        have = tolerant("status lookup", lambda: current(r, sha), None)
         if have:
             desc = have.get("description", "")
             if have["state"] == "success":
@@ -214,6 +272,10 @@ def main() -> int:
     ap.add_argument("--pr", type=int, default=None)
     ap.add_argument("--timeout-sec", type=int, default=2100,
                     help="wait subcommand: poll budget (default 2100s)")
+    ap.add_argument("--sha", default=None,
+                    help="wait subcommand: the head SHA this run was triggered "
+                         "for; the loop exits SUPERSEDED once the PR head moves "
+                         "past it (default: the PR head at start)")
     ap.add_argument("--verdict", choices=sorted(STATES), default=None)
     ap.add_argument(
         "--evidence",
@@ -248,7 +310,7 @@ def main() -> int:
     elif args.cmd == "wait":
         if not args.pr:
             ap.error("--pr required")
-        raise SystemExit(wait(r, args.pr, args.timeout_sec))
+        raise SystemExit(wait(r, args.pr, args.timeout_sec, sha=args.sha))
     return 0
 
 

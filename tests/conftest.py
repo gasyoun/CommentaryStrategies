@@ -1,4 +1,4 @@
-"""Test harness for the destructive appliers (H4351, 08-09-2026).
+"""Test harness for the destructive writers (H4351 + H4368, 08-09-2026).
 
 Every applier under test is copied into a throw-away tree (tmp_path/scripts +
 tmp_path/data + tmp_path/votes …) and executed there as a REAL subprocess with
@@ -9,9 +9,10 @@ inside the sandbox:
   tmp_path/scripts resolves REPO to tmp_path;
 * cwd-relative (``data/lexical/ch1.json``) — cwd is tmp_path.
 
-Two scripts hard-code a Windows checkout path; ``Stage.script`` rewrites exactly
-that one assignment line to the sandbox (and fails loudly if the line moved, so
-the rewrite can never silently point at the wrong place).
+Three scripts hard-code Windows checkout paths — four assignment lines in all,
+since ``sundara_ch2_68_pipeline.py`` pins two. ``Stage.script`` rewrites each
+pinned line to the sandbox and fails loudly if any of them moved, so the rewrite
+can never silently point at the wrong place.
 
 No test reads or writes under the real ``data/``: fixtures live under
 ``tests/fixtures/appliers/<applier>/`` as miniature copies of the real column
@@ -34,9 +35,10 @@ REPO = Path(__file__).resolve().parents[1]
 SCRIPTS = REPO / "scripts"
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "appliers"
 
-# The ten destructive appliers this suite covers (rank-2 row of Uprava
-# reports/TEST_GAP_CENSUS_ORGWIDE_08-09-2026.md). test_coverage_manifest.py
-# asserts each one is actually invoked by some test.
+# The eighteen destructive writers this suite covers — the ten of wave 1
+# (H4351) plus the eight re-runnable curated-file writers of wave 2 (H4368),
+# both rank-2 rows of Uprava reports/TEST_GAP_CENSUS_ORGWIDE_08-09-2026.md.
+# test_coverage_manifest.py asserts each one is actually invoked by some test.
 DESTRUCTIVE_APPLIERS = (
     "apply_apparatus_decisions.py",
     "apply_grintser_pass.py",
@@ -48,21 +50,37 @@ DESTRUCTIVE_APPLIERS = (
     "merge_new_crosstext.py",
     "merge_phase2_pilot.py",
     "rebuild_crosstext.py",
+    # -- wave 2 (H4368) --
+    "build_book_apparatus.py",
+    "build_sarga_apparatus.py",
+    "fix_ch11_lexical_anchors.py",
+    "h1685_merge_ledger.py",
+    "lexical_judge_merge.py",
+    "sundara_ch2_68_pipeline.py",
+    "sync_grintser_pass_book.py",
+    "sync_grintser_pass_book_s1.py",
 )
 
 # Curated record floors live in tests/curated_floors.py (pytest-free, so the
 # `corpus` CI job can import it without pytest); re-exported here for tests.
 from curated_floors import CURATED_FLOORS_2026_09_08  # noqa: E402,F401
 
-# Exact source lines that pin a Windows checkout; rewritten per sandbox.
+# Exact source lines that pin a Windows checkout; rewritten per sandbox. The
+# value is a tuple of (old, new) pairs — one script pins two paths.
 HARDCODED_LINES = {
     "backfill_grintser_crossrefs.py": (
-        "S='C:/Users/user/Documents/GitHub/SamudraManthanam/web/corpus_builder/jsonl/'",
-        "S={jsonl!r}",
+        ("S='C:/Users/user/Documents/GitHub/SamudraManthanam/web/corpus_builder/jsonl/'",
+         "S={jsonl!r}"),
     ),
     "merge_new_crosstext.py": (
-        'CS_DIR  = Path(r"C:\\Users\\user\\Documents\\GitHub\\CommentaryStrategies")',
-        "CS_DIR  = Path({root!r})",
+        ('CS_DIR  = Path(r"C:\\Users\\user\\Documents\\GitHub\\CommentaryStrategies")',
+         "CS_DIR  = Path({root!r})"),
+    ),
+    "sundara_ch2_68_pipeline.py": (
+        ('CS_DIR   = Path(r"C:\\Users\\user\\Documents\\GitHub\\CommentaryStrategies")',
+         "CS_DIR   = Path({root!r})"),
+        ('CORPUS_DIR = Path(r"C:\\Users\\user\\Documents\\GitHub\\SamudraManthanam\\web\\corpus_builder\\jsonl")',
+         "CORPUS_DIR = Path({jsonl!r})"),
     ),
 }
 
@@ -83,8 +101,7 @@ class Stage:
     def script(self, name: str, **fmt) -> Path:
         """Copy scripts/<name> into the sandbox, rewriting a hard-coded path."""
         src = (SCRIPTS / name).read_text(encoding="utf-8")
-        if name in HARDCODED_LINES:
-            old, new = HARDCODED_LINES[name]
+        for old, new in HARDCODED_LINES.get(name, ()):
             assert old in src, (f"{name}: expected hard-coded line not found — "
                                 f"update HARDCODED_LINES in conftest")
             src = src.replace(old, new.format(**fmt))

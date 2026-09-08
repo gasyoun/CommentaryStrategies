@@ -28,4 +28,21 @@ CURATED_FLOORS_2026_09_08 = {
     "data/analysis/translit_residue_cards.json:cards": 45,
     "data/crosstext/kavya.json:notes": 18,   # records, not the stale _meta.notes_count (12)
     "data/crosstext/gita.json:notes": 24,
+    # -- wave 2 (H4368, 08-09-2026, Opus 5 claude-opus-5): the curated files the
+    # eight re-runnable writers touch that were not already pinned above. Four of
+    # the five are outputs; sundara_ch1_commentary_to_add.json is the input seed
+    # sundara_ch2_68_pipeline.py carries into the aggregate verbatim.
+    #
+    # Still unpinned, deliberately: data/leonov_own_notes.json, data/lexical/ch35.json,
+    # data/analysis/h1685_adjudication/evidence.json and the phase2_batch* candidate
+    # files — their shapes DO have a measure here (:notes / :cards), they simply have
+    # not been reviewed for a floor yet. Two genuinely have no measure:
+    # data/edition_footnotes/candidates.json (key `candidates`) and
+    # data/analysis/h1685_adjudication/ledger_final.json (key `verdicts`), and
+    # widening the measure table is outside H4368's edit scope. See .ai_state.md § H4368.
+    "data/lexical/ch11.json:cards": 3,        # after the H276 anchor fix (-7 parked, -2 moved)
+    "data/lexical/ch11.qa_removed.json:cards": 7,   # the parked cards ARE the record of the fix
+    "data/lexical/ch17.json:cards": 9,        # +1 re-anchored kṣāma @ V.17.30
+    "data/lexical/ch25.json:cards": 6,        # +1 re-anchored vivarṇa @ V.25.8
+    "data/sundara_ch1_commentary_to_add.json:notes": 30,  # the seed sundara_ch2_68_pipeline.py reads
 }
