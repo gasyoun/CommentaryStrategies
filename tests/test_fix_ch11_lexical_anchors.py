@@ -123,6 +123,10 @@ def test_truncated_ch11_is_refused_without_partial_write(stage):
     snap = s.snapshot(*TARGETS)
     r = s.run(SCRIPT, expect=None)
     assert r.returncode != 0
+    # the refusal must be the malformed ch11 file, not the idempotent guard or
+    # a staging slip — a bare non-zero exit would pass vacuously on either
+    assert "JSONDecodeError" in r.stderr or "Expecting value" in r.stderr
+    assert "idempotent guard" not in (r.stdout + r.stderr)
     s.assert_unchanged(snap)
 
 
@@ -137,6 +141,10 @@ def test_truncated_book_is_refused_without_partial_write(stage):
     snap = s.snapshot(*TARGETS)
     r = s.run(SCRIPT, expect=None)
     assert r.returncode != 0
+    # the refusal must be the malformed book file, not the idempotent guard or
+    # a staging slip — a bare non-zero exit would pass vacuously on either
+    assert "JSONDecodeError" in r.stderr or "Expecting value" in r.stderr
+    assert "idempotent guard" not in (r.stdout + r.stderr)
     s.assert_unchanged(snap)
 
 
@@ -147,6 +155,10 @@ def test_truncated_stats_is_refused_without_partial_write(stage):
     snap = s.snapshot(*TARGETS)
     r = s.run(SCRIPT, expect=None)
     assert r.returncode != 0
+    # the refusal must be the malformed stats file, not the idempotent guard or
+    # a staging slip — a bare non-zero exit would pass vacuously on either
+    assert "JSONDecodeError" in r.stderr or "Expecting value" in r.stderr
+    assert "idempotent guard" not in (r.stdout + r.stderr)
     s.assert_unchanged(snap)
 
 

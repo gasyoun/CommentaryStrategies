@@ -150,6 +150,13 @@ def main():
     for n in moved:
         ch = int(n["shloka"].split(".")[1])
         path = os.path.join(LEX, f"ch{ch}.json")
+        # Deferring the dumps means each target is loaded from the same on-disk
+        # state, so two notes re-anchored into ONE chapter would have the second
+        # dump drop the first. REANCHOR targets V.17 and V.25 today; this keeps
+        # that a refusal rather than a silent loss if it ever stops being true.
+        if any(path == p for _, p, _, _ in chapter_docs):
+            sys.exit(f"ERROR: two notes re-anchored into ch{ch} in one run; "
+                     "batch them into a single doc before dumping")
         doc = load(path)
         if any(m.get("lemma_iast") == n["lemma_iast"] and
                m.get("shloka") == n["shloka"] for m in doc if "_meta" not in m):
