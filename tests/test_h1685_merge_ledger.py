@@ -68,8 +68,9 @@ def test_non_shrink_every_queued_card_gets_exactly_one_row(stage):
     assert m["by_verdict"] == {"accept": 1, "reject": 1, "edit": 1, "park": 1}
     assert m["by_queue"] == {"batch2": {"accept": 1}, "batch3": {"reject": 1},
                              "lexical": {"edit": 1}, "footnotes": {"park": 1}}
-    # batch2 and footnotes verdicts carry no inline judge_verdict live, so the
-    # count below proves the fallback onto the evidence card's own `judge`
+    # only the batch3 and lexical queues carry a judge — live and here alike
+    # (batch2: 38/38 judge null, footnotes: 1013/1013). The third counted row is
+    # the rule-tier one, which carries its judge_verdict through from ledger.json
     assert m["cards_with_a_prior_judge_verdict"] == 3
     assert m["adjudicator_overturns"] == 1
     assert m["overturned_cards"] == [{"card_id": B3, "judge": "park",

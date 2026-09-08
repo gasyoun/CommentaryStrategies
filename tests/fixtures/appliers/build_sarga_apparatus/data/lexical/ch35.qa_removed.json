@@ -18,6 +18,29 @@
     "trigger": "compound",
     "priority": "med",
     "source": "dic_mw:phantom",
-    "review_required": true
+    "review_required": true,
+    "cited_indian_commentators": [],
+    "cited_western_sources": [
+      "MW"
+    ],
+    "src_candidate_id": "lex-ch35-phantom",
+    "judge": {
+      "scores": {
+        "anchoring": 0
+      },
+      "verdict": "flag_anchor",
+      "reason": "anchor_precheck=absent — леммы нет в стихе",
+      "judged_by": "claude-sonnet-5",
+      "step": "lexical_judge_h276",
+      "date": "2026-09-08"
+    },
+    "qa_removed": {
+      "fixed_by": "scripts/fix_ch11_lexical_anchors.py",
+      "handoff": "H276",
+      "date": "2026-09-08",
+      "confirmed_by": "fixture",
+      "reason": "фантомный якорь: леммы нет в вульгате",
+      "original_shloka": "V.35.4"
+    }
   }
 ]

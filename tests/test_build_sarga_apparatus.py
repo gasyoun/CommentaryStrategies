@@ -79,7 +79,8 @@ def test_gate_verdicts_and_tier1_segmentation_survive_the_rebuild(stage):
     assert accepted["votable"] is False, "a gated card gets no second vote control"
     rejected = by_id["phase2:5.35.2:1"]
     assert rejected["status"] == "отклонено М.Г.: дубль соседней карточки"
-    assert rejected["mg_comment"] == "оставить одну"
+    assert rejected["mg_comment"] == "", \
+        "apply_phase2_decisions.py attaches mg_comment only on accept/edit"
 
     gated = by_id["lexical:5.35.1:0"]
     assert gated["status"] == "правлено"
@@ -163,9 +164,9 @@ def test_a_ch_file_card_that_vanishes_shrinks_the_ballot(stage):
 def test_a_qa_removed_card_is_re_ingested_by_the_ch_glob(stage):
     """Characterisation, not endorsement: build_sarga_apparatus globs
     data/lexical/ch*.json and skips only `.rejected`, so the chNN.qa_removed.json
-    files — the parked cards fix_ch11_lexical_anchors.py writes, pinned as
-    curated at tests/curated_floors.py — are read back onto the ballot. Live
-    data/lexical/ holds five such files (ch11, ch20, ch22, ch23, ch27). If the
+    files — the parked cards fix_ch11_lexical_anchors.py writes — are read back
+    onto the ballot. Live data/lexical/ holds five such files (ch11, ch20, ch22,
+    ch23, ch27); only ch11.qa_removed.json carries a floor (tests/curated_floors.py). If the
     skip is ever widened to `.qa_removed`, this test is the one that must change.
     """
     s = staged(stage)

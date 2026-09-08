@@ -168,18 +168,19 @@ def sweep(r: str, dry: bool = False) -> None:
             print(f"PR #{num}: ensure failed — {exc}")
 
 
-def live_head(r: str, pr: int) -> str | None:
-    """head_sha, but a transient API failure is "unchanged", not a dead job.
+def tolerant(what: str, fn, fallback):
+    """Run a `gh api` helper without letting one bad response red the check.
 
-    gh() exits the process on a non-zero `gh api`, and this is polled ~105
-    times over the mirror's budget — a single 5xx or secondary rate limit must
-    not turn the REQUIRED check red and block a PR on an infra blip.
+    gh() exits the process on any non-zero `gh api`, and the mirror polls ~105
+    times over its budget: a single 5xx, a secondary rate limit, or a token
+    that may not write statuses must not turn the REQUIRED check red and block
+    a PR on something that is not a review verdict.
     """
     try:
-        return head_sha(r, pr)
+        return fn()
     except SystemExit as exc:
-        print(f"head lookup failed ({exc}) — treating the head as unchanged")
-        return None
+        print(f"{what} failed ({exc}) — continuing with {fallback!r}")
+        return fallback
 
 
 def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20,
@@ -195,8 +196,9 @@ def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20,
       status failure / error  -> exit 1 fast (verdict fail / infra-neutral)
       status pending / absent -> poll until timeout, then exit 1 (blocked —
                                  never a silent pass)
-      PR head moved on        -> re-arm `pending` on the SHA this run owns,
-                                 then exit 0 SUPERSEDED (H4368 / FINDINGS §727)
+      PR head moved on        -> best-effort re-arm of `pending` on the SHA
+                                 this run owns, then exit 0 SUPERSEDED
+                                 (H4368 / FINDINGS §727)
 
     The last case is the trap this loop used to sit in: `sha` was read once,
     and a second push left the old run polling a SHA nobody would ever vote on
@@ -210,23 +212,28 @@ def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20,
     0 makes THIS run's check green, and a green check with no verdict behind it
     on a commit that could become the head again (force-push back, revert,
     merge-queue re-evaluation) is exactly the silent pass this gate forbids.
+    That re-post is BEST EFFORT: the `pull_request` token is read-only by
+    GitHub design for dependabot and fork PRs, and this job deliberately runs
+    for every actor, so a 403 on the write must leave the supersede clean
+    rather than red — the new head's own run is what actually gates the merge.
     """
     import time
 
     deadline = time.monotonic() + timeout_sec
     sha = sha or head_sha(r, pr)
     while time.monotonic() < deadline:
-        live = live_head(r, pr)
+        live = tolerant("head lookup", lambda: head_sha(r, pr), None)
         if live and live != sha:
             print(f"SUPERSEDED: PR head moved {sha[:12]} -> {live[:12]}; "
                   f"this run no longer owns the gate — the run for the new head does")
-            stale = current(r, sha)
+            stale = tolerant("status lookup", lambda: current(r, sha), None)
             if not stale or stale["state"] not in ("success", "failure", "error"):
-                post(r, sha, "pending",
-                     "superseded: PR head moved on before a verdict landed",
-                     None)
+                tolerant("status re-arm", lambda: post(
+                    r, sha, "pending",
+                    "superseded: PR head moved on before a verdict landed",
+                    None), None)
             return 0
-        have = current(r, sha)
+        have = tolerant("status lookup", lambda: current(r, sha), None)
         if have:
             desc = have.get("description", "")
             if have["state"] == "success":
