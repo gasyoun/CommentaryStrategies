@@ -128,6 +128,30 @@ def main() -> int:
     if sargas != list(range(1, 69)) or len(set(sargas)) != 68:
         print("FAIL: manifest must contain exactly unique sargas 1–68")
         return 1
+
+    # H4371: the reviewer ballot (sarga_NN_kostina.json) and its view-only twin
+    # (sarga_NN.json) are built from the same sources by the same generator, so
+    # they must carry the same notes. They diverged once, silently: a rebuild of
+    # only the view-only half left 25 QA-parked cards live on the ballot Kostina
+    # actually votes on, which is the only half that matters to her. Nothing in
+    # CI noticed. This is that missing check.
+    drift = []
+    for n in range(1, 69):
+        view = ROOT / "data" / "apparatus" / f"sarga_{n:02d}.json"
+        ballot = ROOT / "data" / "apparatus" / f"sarga_{n:02d}_kostina.json"
+        if not view.exists() or not ballot.exists():
+            drift.append(f"sarga_{n:02d}: missing half")
+            continue
+        ids = lambda f: [x["id"] for v in json.loads(
+            f.read_text(encoding="utf-8"))["verses"] for x in v["notes"]]
+        if ids(view) != ids(ballot):
+            drift.append(f"sarga_{n:02d}")
+    if drift:
+        print("FAIL: reviewer ballot and view-only twin disagree: "
+              + ", ".join(drift)
+              + "\n      rebuild BOTH: build_sarga_apparatus.py <NN> and "
+                "build_sarga_apparatus.py --reviewer \u041a\u043e\u0441\u0442\u0438\u043d\u0430 <NN>")
+        return 1
     print(f"PASS: 68 Kostina ballots; manifest {manifest['manifest_hash']}; check={args.check}")
     return 0
 
