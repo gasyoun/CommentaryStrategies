@@ -9,7 +9,18 @@ the report).
 
 Fails loudly on any card that ends up with zero verdicts or two.
 
-Usage: python scripts/h1685_merge_ledger.py
+Inputs. `ledger.json` (the rule tier) and `packet_*.json` are step-3 outputs of
+scripts/h1685_adjudicate.py and are deliberately NOT committed — .gitignore
+lines 30-31 exclude both. They have therefore never existed in this repo's
+history (H4370 checked `git log --all --diff-filter=A`: the only ledger.json
+ever committed under that path is H4368's test fixture). Nothing was lost; the
+step-3 intermediate is simply regenerated rather than stored, and the surviving
+record of the rule tier is ledger_final.json itself, whose 1 649 `tier: "rule"`
+rows carry their rule_id, reason and cited evidence. So a fresh checkout must
+re-run step 3 before this step, and the absence of ledger.json is an explicit
+refusal below, not a FileNotFoundError traceback.
+
+Usage: python scripts/h1685_adjudicate.py  &&  python scripts/h1685_merge_ledger.py
 """
 import sys
 import os
@@ -38,7 +49,19 @@ def load(p):
 def main():
     ev = load(os.path.join(AD, "evidence.json"))
     cards = {c["card_id"]: c for c in ev["cards"]}
-    rule = load(os.path.join(AD, "ledger.json"))["verdicts"]
+
+    rule_path = os.path.join(AD, "ledger.json")
+    if not os.path.exists(rule_path):
+        sys.exit(
+            f"ERROR: missing {rule_path}\n"
+            "       The rule tier is a step-3 intermediate, gitignored by "
+            "design (.gitignore lines 30-31) and never committed, so a fresh\n"
+            "       checkout does not have it. Regenerate it first:\n"
+            "           python scripts/h1685_adjudicate.py\n"
+            "       The already-merged rule-tier verdicts survive in "
+            "ledger_final.json as the rows with tier == \"rule\"; do not "
+            "reconstruct them by hand.")
+    rule = load(rule_path)["verdicts"]
 
     rows = {}
     for r in rule:

@@ -5,11 +5,12 @@ ch11.qa_removed.json — nothing is deleted. Target files: data/lexical/ch11.jso
 (+ ch11.qa_removed.json, ch17.json, ch25.json), the book aggregate and
 data/sundara_book_stats.json. Curated floors: tests/curated_floors.py.
 
-Write-order caveat, recorded rather than fixed (edit scope of H4368 excludes
-this script): ch11.json is written BEFORE the book aggregate is read, so a
-malformed *book* would leave a partial write behind. The refusal case below
-therefore corrupts the FIRST input read (ch11.json), which is the input a
-truncated export actually produces here.
+Write order (H4368 found it, H4370 fixed it): the script used to write
+ch11.json before it had even opened the book aggregate, so a malformed *book*
+left a partial write behind. Every input is now read and every output computed
+before the first dump, and the refusal cases below corrupt the LAST input read
+(the book aggregate, then the stats file) — the inputs that could only ever
+have been proven safe once the order was fixed.
 """
 from conftest import Stage, records
 
@@ -116,8 +117,33 @@ def test_book_and_stats_stay_consistent_with_the_lexical_files(stage):
 
 
 def test_truncated_ch11_is_refused_without_partial_write(stage):
+    """The FIRST input read — the case that already held before H4370."""
     s = staged(stage)
     s.truncate(CH11)
+    snap = s.snapshot(*TARGETS)
+    r = s.run(SCRIPT, expect=None)
+    assert r.returncode != 0
+    s.assert_unchanged(snap)
+
+
+def test_truncated_book_is_refused_without_partial_write(stage):
+    """The real guarantee (H4370). The book aggregate is read AFTER ch11.json,
+    ch11.qa_removed.json and the two re-anchor targets have been computed — under
+    the old write order those four files were already on disk by the time the
+    book was opened, so a malformed book left a half-migrated lexical layer
+    behind. Nothing may be written now."""
+    s = staged(stage)
+    s.truncate(BOOK)
+    snap = s.snapshot(*TARGETS)
+    r = s.run(SCRIPT, expect=None)
+    assert r.returncode != 0
+    s.assert_unchanged(snap)
+
+
+def test_truncated_stats_is_refused_without_partial_write(stage):
+    """The LAST input read — the strongest form of the same guarantee."""
+    s = staged(stage)
+    s.truncate(STATS)
     snap = s.snapshot(*TARGETS)
     r = s.run(SCRIPT, expect=None)
     assert r.returncode != 0
@@ -131,8 +157,10 @@ def test_a_target_chapter_that_already_holds_the_card_aborts(stage):
     doc.append({"shloka": "V.17.30", "lemma_iast": "kṣāma", "subtype": "lexical",
                 "note_ru": "Дубль.", "review_required": True})
     s.write_json(CH17, doc)
+    snap = s.snapshot(*TARGETS)
     r = s.run(SCRIPT, expect=None)
     assert r.returncode != 0
     assert "already in ch17" in (r.stderr + r.stdout)
-    # the book aggregate is read only after this abort — it must be untouched
+    # H4370: this abort now happens before ANY write, not just before the book's
     assert len(records(s.load(BOOK))) == 6
+    s.assert_unchanged(snap)
