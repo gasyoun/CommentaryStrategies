@@ -87,3 +87,26 @@ def test_truncated_ledger_aborts_without_partial_write(stage):
     r = s.run(SCRIPT, expect=None)
     assert r.returncode != 0
     s.assert_unchanged(snap)
+
+
+def test_a_ledger_that_disagrees_with_the_note_count_aborts_before_any_write(stage):
+    """H4368: the `accepted == merged` invariant now runs BEFORE the first write.
+
+    An extra accepted base row in the ledger makes accepted_total exceed the
+    rebuilt note count. The run must abort with the book byte-identical — until
+    H4368 the book had already been overwritten by the time the assert fired.
+    """
+    s = staged(stage)
+    ledger = s.load(LEDGER)
+    ledger["entries"].append({
+        "shloka": "V.99.1", "lemma_iast": "ghost", "trigger": "term",
+        "decision": "accepted", "reason": "accepted_new_first", "chapter": 99,
+    })
+    s.write_json(LEDGER, ledger)
+    snap = s.snapshot(*TARGETS)
+
+    r = s.run(SCRIPT, expect=None)
+    assert r.returncode != 0
+    assert "accepted 5 != notes 4" in r.stderr
+    assert "WROTE commentary" not in r.stdout, "no write may precede the invariant"
+    s.assert_unchanged(snap)

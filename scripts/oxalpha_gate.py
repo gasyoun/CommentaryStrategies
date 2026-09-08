@@ -168,7 +168,8 @@ def sweep(r: str, dry: bool = False) -> None:
             print(f"PR #{num}: ensure failed — {exc}")
 
 
-def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20) -> int:
+def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20,
+         sha: str | None = None) -> int:
     """Mirror loop for the required Actions check run (job `oxalpha-review`).
 
     GitHub's required-check policy matches check RUNS from the Actions app —
@@ -180,12 +181,27 @@ def wait(r: str, pr: int, timeout_sec: int, poll_sec: int = 20) -> int:
       status failure / error  -> exit 1 fast (verdict fail / infra-neutral)
       status pending / absent -> poll until timeout, then exit 1 (blocked —
                                  never a silent pass)
+      PR head moved on         -> exit 0 SUPERSEDED (H4368 / FINDINGS §727)
+
+    The last case is the trap this loop used to sit in: `sha` was read once,
+    and a second push left the old run polling a SHA nobody would ever vote on
+    for the rest of its 35-minute budget. Because the workflow serialises this
+    job per PR, the run for the NEW head could not start until that corpse
+    finished — so a passed PR stayed BLOCKED with no check on its head, and
+    only a manual `gh run cancel` freed it. A superseded run now exits 0 and
+    says so: it never votes on the new head (its status belongs to the old
+    SHA), it just stops holding the queue.
     """
     import time
 
     deadline = time.monotonic() + timeout_sec
-    sha = head_sha(r, pr)
+    sha = sha or head_sha(r, pr)
     while time.monotonic() < deadline:
+        live = head_sha(r, pr)
+        if live and live != sha:
+            print(f"SUPERSEDED: PR head moved {sha[:12]} -> {live[:12]}; "
+                  f"this run no longer owns the gate — the run for the new head does")
+            return 0
         have = current(r, sha)
         if have:
             desc = have.get("description", "")
@@ -214,6 +230,10 @@ def main() -> int:
     ap.add_argument("--pr", type=int, default=None)
     ap.add_argument("--timeout-sec", type=int, default=2100,
                     help="wait subcommand: poll budget (default 2100s)")
+    ap.add_argument("--sha", default=None,
+                    help="wait subcommand: the head SHA this run was triggered "
+                         "for; the loop exits SUPERSEDED once the PR head moves "
+                         "past it (default: the PR head at start)")
     ap.add_argument("--verdict", choices=sorted(STATES), default=None)
     ap.add_argument(
         "--evidence",
@@ -248,7 +268,7 @@ def main() -> int:
     elif args.cmd == "wait":
         if not args.pr:
             ap.error("--pr required")
-        raise SystemExit(wait(r, args.pr, args.timeout_sec))
+        raise SystemExit(wait(r, args.pr, args.timeout_sec, sha=args.sha))
     return 0
 
 
