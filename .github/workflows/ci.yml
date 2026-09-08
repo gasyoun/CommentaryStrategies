@@ -58,13 +58,10 @@ jobs:
           pip install pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           if [ -f pyproject.toml ]; then pip install -e . || true; fi
+      # H4351 (08-09-2026): tests/ exists — the suite is a hard gate, no
+      # "no tests found" warning branch any more. Config: pytest.ini.
       - name: Run pytest
-        run: |
-          if find tests test -type f -name 'test_*.py' -print -quit 2>/dev/null | grep -q . || compgen -G "test_*.py" > /dev/null || compgen -G "*_test.py" > /dev/null; then
-            pytest -v --tb=short
-          else
-            echo "::warning::No tests directory or test_*.py files found. Add tests/ to enable test coverage."
-          fi
+        run: pytest -v --tb=short
 
   yaml-lint:
     name: YAML lint
@@ -108,6 +105,11 @@ jobs:
       # grammar shape, zero root-overlap rows promoted.
       - name: Type-D concordance store selftest
         run: python scripts/typed_link_sundara_store_selftest.py
+      # H4351: the curated-record floors frozen in tests/conftest.py may never
+      # be undercut by a live file — the applier suite is hermetic, this is the
+      # one place the pins meet data/.
+      - name: Curated-record floors (destructive appliers)
+        run: python scripts/curated_floors_check.py
       # B6 (roadmap 2026H2): релизные метаданные не дрейфуют — версия в
       # .zenodo.json обязана совпадать с CITATION.cff (ловушка «cff-version
       # вместо релиза», найденная drain A05 29-08-2026); теги сверяются

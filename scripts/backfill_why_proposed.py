@@ -42,8 +42,13 @@ WHY = {
 
 def main():
     changed = 0
+    # Parse EVERY per-sarga file before writing ANY of them: a truncated
+    # sarga_36 must not leave sarga_35 already rewritten (H4351 pin).
+    docs = []
     for f in sorted(glob.glob(os.path.join(PILOT_DIR, "sarga_*_candidates.json"))):
-        d = json.load(open(f, encoding="utf-8"))
+        with open(f, encoding="utf-8") as fh:
+            docs.append((f, json.load(fh)))
+    for f, d in docs:
         for n in d.get("notes", []):
             w = WHY.get(n["verse_id"])
             if w and n.get("why_proposed") != w:
@@ -51,7 +56,6 @@ def main():
                 changed += 1
         with open(f, "w", encoding="utf-8") as fh:
             json.dump(d, fh, ensure_ascii=False, indent=2)
-    missing = [vid for vid in WHY if not any(True for _ in [1])]  # noqa (kept simple)
     print(f"back-filled why_proposed on {changed} notes across per-sarga files")
 
 
