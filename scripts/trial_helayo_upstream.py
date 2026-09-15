@@ -118,7 +118,8 @@ def run_helayo(helayo, matrix, mode, fas_path, xml_path):
     cmd = [helayo, "-x", matrix, "-l", mode, str(fas_path)]
     for attempt in range(3):                      # transient-error retry ×3
         try:
-            r = subprocess.run(cmd, capture_output=True, timeout=120)
+            r = subprocess.run(cmd, capture_output=True, timeout=120,
+                               check=False)
         except subprocess.TimeoutExpired:
             continue
         if r.returncode == 0 and r.stdout.startswith(b"<?xml"):
@@ -175,11 +176,11 @@ def loci(crit_cells, south_cells):
             continue
         if not a or not b:
             kind = "ins/del"
-        elif norm_for_canary(a) == norm_for_canary(b):
-            kind = "orth-only"
-        elif len(norm_for_canary(a)) == len(norm_for_canary(b)) and all(
-                y in _NEARMAP.get(x, ()) for x, y in zip(norm_for_canary(a),
-                                                         norm_for_canary(b))):
+        elif (norm_for_canary(a) == norm_for_canary(b)
+              or (len(norm_for_canary(a)) == len(norm_for_canary(b))
+                  and all(y in _NEARMAP.get(x, ())
+                          for x, y in zip(norm_for_canary(a),
+                                          norm_for_canary(b))))):
             kind = "orth-only"
         else:
             kind = "substantive"
