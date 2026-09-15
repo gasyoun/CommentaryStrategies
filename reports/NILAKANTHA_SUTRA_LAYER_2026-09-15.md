@@ -17,7 +17,7 @@ Join of `deviation_term_sa` in `commentary_licence_register_nilakantha.tsv` (59 
 
 ## Coverage
 
-- register rows: 151; rows with ≥1 sutra match: 120
+- register rows: 151; rows with ≥1 sutra match: 120 (3 phrase · 69 word · 48 substring · 31 unmatched)
 - unique terms matched: 39; unmatched: 20
 - kosha map: `/Users/mac/Documents/GitHub/kosha/data/concordance/sutra_coverage_map.tsv`
 

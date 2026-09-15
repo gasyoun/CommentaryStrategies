@@ -242,6 +242,16 @@ def main() -> int:
     return 0
 
 
+def tier_counts_agg(rows: list[dict]) -> str:
+    """'3 phrase · 69 word · 48 substring · 31 unmatched' style aggregate."""
+    counts: dict[str, int] = {}
+    for r in rows:
+        k = r["match_kind"] or "unmatched"
+        counts[k] = counts.get(k, 0) + 1
+    return " · ".join(f"{counts[t]} {t}" for t in ("phrase", "word", "substring", "unmatched")
+                      if counts.get(t))
+
+
 def write_report(rows: list[dict], sutras: dict[str, str], kosha_map: Path) -> None:
     """Dated report: method, term->sutra table, coverage, hand-check, residue."""
     by_term: dict[str, list[dict]] = {}
@@ -274,7 +284,8 @@ def write_report(rows: list[dict], sutras: dict[str, str], kosha_map: Path) -> N
         "",
         "## Coverage",
         "",
-        f"- register rows: {n_rows}; rows with ≥1 sutra match: {n_matched_rows}",
+        f"- register rows: {n_rows}; rows with ≥1 sutra match: {n_matched_rows} "
+        f"({tier_counts_agg(rows)})",
         f"- unique terms matched: {len(matched_terms)}; unmatched: {len(unmatched)}",
         f"- kosha map: `{kosha_map}`",
         "",
