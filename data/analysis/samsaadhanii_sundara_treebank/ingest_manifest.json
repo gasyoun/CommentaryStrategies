@@ -1,0 +1,94 @@
+{
+  "handoff": "H4738",
+  "census": "sibling census A5 pilot 1 (slot s5a)",
+  "created": "2026-09-15",
+  "tier": "OxAlpha (opencode/z-ai/glm-5.3-flash)",
+  "validation_only": true,
+  "upstream": {
+    "repo": "https://github.com/samsaadhanii/datasets",
+    "path": "Annotated-data/Sundarakanda.csv",
+    "license": "NONE on upstream repo — validation-only, no redistribution",
+    "sha256_12": "eed7e126b86b"
+  },
+  "notation": "WX (SCL); sentence identity = (book, chaptno, sentno)",
+  "counts": {
+    "word_rows": 38126,
+    "unannotated_rows": 5,
+    "unannotated_lines": [
+      14,
+      723,
+      7514,
+      18841,
+      18855
+    ],
+    "sentences": 92,
+    "verses_slokas": 85,
+    "sargas": 62,
+    "per_sarga_row_range": [
+      155,
+      2864
+    ]
+  },
+  "parity": {
+    "word_rows_csv-module_walk": 38126,
+    "unannotated_rows": 5,
+    "source_nonheader_lines_raw_census": 38131,
+    "sentence_groups_book,chaptno,sentno": 92
+  },
+  "layer_emitted": true,
+  "layer_path": "/tmp/opencode/h4738-layer/sundara_treebank_sentences.jsonl",
+  "layer_sentence_count": 92,
+  "rosette_sample": [
+    {
+      "sarga.sloka": "001.001",
+      "first_words_wx": [
+        "wawaH",
+        "rAvaNa-",
+        "nIwAyAH",
+        "sIwAyAH",
+        "Sawru-"
+      ],
+      "first_words_iast": [
+        "tataḥ",
+        "rāvaṇa-",
+        "nītāyāḥ",
+        "sītāyāḥ",
+        "śatru-"
+      ]
+    },
+    {
+      "sarga.sloka": "002.001",
+      "first_words_wx": [
+        "saH",
+        "svasWaH",
+        "xaxarSa",
+        "ha",
+        "sAgaram"
+      ],
+      "first_words_iast": [
+        "saḥ",
+        "svasthaḥ",
+        "dadarśa",
+        "ha",
+        "sāgaram"
+      ]
+    },
+    {
+      "sarga.sloka": "003.001-002.1",
+      "first_words_wx": [
+        "saH",
+        "niSi",
+        "lafkAm",
+        "mahA-",
+        "sawwvaH"
+      ],
+      "first_words_iast": [
+        "saḥ",
+        "niśi",
+        "laṛkām",
+        "mahā-",
+        "sattvaḥ"
+      ]
+    }
+  ]
+}
