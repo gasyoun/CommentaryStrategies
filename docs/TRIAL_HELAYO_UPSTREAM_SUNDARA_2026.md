@@ -36,7 +36,7 @@ Upstream helayo **runs correctly on our Sundara witnesses and reproduces the spi
 
 ## Delivery (five fields)
 
-- **Changed:** new trial script + trial artifacts (30×2 FASTT, 30×2 TEI XML, `trial_results.json`) + this report + CHANGELOG entry.
+- **Changed:** new trial script + trial artifacts (30 FASTT (reused across modes), 30×2 TEI XML, `trial_results.json`) + this report + CHANGELOG entry.
 - **Unchanged:** spike script/docs, edition-comparison data, `compare_editions.py`/`sa_align.py`/`build_edition_footnotes.py` — nothing downstream was rewired (that is H776's call).
 - **Checks:** `python3 scripts/trial_helayo_upstream.py --helayo <bin> --matrix <csv>` → `CANARY: 60/60 round-trips PASS, 0 FAIL`; JSON aggregate in `trial_results.json`.
 - **Risks:** word-grouped loci unreliable at sim ≲ 0.7 (human-read those); upstream binary is a foreign x86_64 executable — provenance pinned to upstream commit `ed643c3`, never committed here.
