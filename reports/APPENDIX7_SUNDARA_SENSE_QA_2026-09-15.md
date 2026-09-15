@@ -21,8 +21,8 @@ Regenerate: `python3 scripts/appendix7_sense_qa.py` (default CSV path = sibling 
 
 | Match tier | Notes | Share |
 |---|---|---|
-| exact (IAST lemma = DCS lemma) | 433 | 63.2% |
-| folded (NFC + ṁ→ṃ + quote variants) | 5 | 0.7% |
+| exact (raw lemma_iast = DCS lemma string) | 410 | 59.9% |
+| folded (NFC + ṁ→ṃ + quote variants via fold index) | 28 | 4.1% |
 | annotation (strip "(…)" qualifier) | 10 | 1.5% |
 | hyphen-join | 1 | 0.1% |
 | **covered total** | **449** | **65.5%** |
@@ -35,7 +35,7 @@ Regenerate: `python3 scripts/appendix7_sense_qa.py` (default CSV path = sibling 
 
 Stratified: one matched note per sarga across ch1→ch56 (`total_occ ≥ 5` for informative profiles), deterministic order. Each: does the DCS collocate field corroborate the `note_ru` sense claim?
 
-| # | Note | DCS lemma (total) | Top collocates (abridged) | Verdict |
+| # | Note | DCS lemma (total) | Collocates cited (selected from the committed top-20 profile; values verbatim) | Verdict |
 |---|---|---|---|---|
 | 1 | V.1.100 kākutstha — "патроним Рамы" | kākutstha (272) | rāma 7 · lakṣmaṇa 6 · viśvāmitra 4 · rājan 4 | **CONFIRMED-CONTEXT** — patronymic-of-Rāma usage field |
 | 2 | V.7.1 vaidūrya — "кошачий глаз, не изумруд" | vaidūrya (15) | sphaṭika · vajra · vidruma · vimala | **CONFIRMED-CONTEXT (weak n)** — gem-cluster, generic precious-materials register |
@@ -48,7 +48,9 @@ Stratified: one matched note per sarga across ch1→ch56 (`total_occ ≥ 5` for 
 | 9 | V.50.19 āgneya — "огненный, относящийся к Агни" | āgneya (36) | mahāpurāṇa 22 · rāmāyaṇa 7 · agni | **CONFIRMED-CONTEXT with caveat** — sense holds, but profile polluted by work-title lemmas (below) |
 | 10 | V.56.20 rohiṇī — "любимая жена Луны" | rohiṇī (276) | śaśin 8 · candra 8 · soma 7 · devakī 5 · graha | **CONFIRMED-CONTEXT (strong)** — lunar-wife/nakṣatra frame direct |
 
-**Canary (own-data, miss-tier behaviour):** V.14.3 `aśoka` (tree, Saraca asoca, "без-скорби") — DCS total=2 (collocates: aravinda), i.e. honest **NO-SIGNAL** at this n; the note must stand on MW/Apte, and the context file says so by carrying `total=2` instead of inventing support. Tier-labelled, no fabricated evidence.
+**Canary (own-data, no-signal behaviour):** V.14.3 `aśoka` (tree, Saraca asoca, "без-скорби") — an **exact-tier** match whose DCS profile carries total=2 (collocate: aravinda), i.e. honest **NO-SIGNAL** at this n; the note must stand on MW/Apte, and the context file says so by carrying `total=2` instead of inventing support. Tier-labelled, no fabricated evidence.
+
+**Paired-family verifier (DeepSeek, 15-09-2026):** numerics confirmed (tier sum 685, coverage arithmetic, all 10 sample dcs_total values, read-only guarantee); its three report defects were fixed in this revision — (1) `exact` tier now means raw-string identity only (fold-index hits labelled `folded`; counts corrected 433/5 → 410/28, covered 449 and 65.5% unchanged), (2) canary re-labelled exact/no-signal, (3) collocate column re-framed as selected-from-profile. The join spot-check DeepSeek was sandbox-blocked from was completed by the executor against the raw CSV: kākutstha 272/rāma 7, prākāra 177/toraṇa 22, rohiṇī 276/śaśin 8 — all match.
 
 **Sample verdict: 10/10 usable QA context, 0 contradictions with `note_ru`; strongest where the note claims a semantic field (prākāra, akāla, rohiṇī, mahādaṁṣṭra).**
 
@@ -71,7 +73,8 @@ Stratified: one matched note per sarga across ch1→ch56 (`total_occ ≥ 5` for 
 
 - [x] QA context file — `data/analysis/appendix7_sense_qa/sundara_sense_qa_context.json` (685 notes)
 - [x] Report with 10-note sample — this file
-- [x] Own-data canary — V.14.3 `aśoka` NO-SIGNAL honest-miss row (above)
+- [x] Own-data canary — V.14.3 `aśoka` exact-tier NO-SIGNAL row (above)
+- [x] Paired-family verifier — DeepSeek static verification + fixes landed; raw-CSV join spot-check 3/3
 - [x] Edge registered — Uprava `interlinks_edges.tsv` row `CommentaryStrategies → VisualDCS` (consumes, 15-09-2026) + kosha consumer flip
 
 _Гасунс_

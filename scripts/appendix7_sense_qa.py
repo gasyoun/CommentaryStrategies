@@ -97,22 +97,25 @@ def load_notes():
 
 
 def match(lemma: str, table, folded_idx, joined_idx):
-    """Return (tier, dcs_lemma) or (None-tier, None)."""
-    for tier, cand in (
-        ("exact", lemma),
-        ("folded", fold(lemma)),
-    ):
-        if cand in table:
-            return tier, cand
-        if cand in folded_idx:
-            return tier, folded_idx[cand]
+    """Return (tier, dcs_lemma) or (None-tier, None).
+
+    Tier truthfulness (H4709 verifier fix): `exact` is returned ONLY for a raw
+    string identity with a DCS lemma; any hit via the fold index is `folded`,
+    even when reached from the exact branch of the note's own spelling.
+    """
+    if lemma in table:
+        return "exact", lemma
+    f = fold(lemma)
+    hit = folded_idx.get(f)
+    if hit is not None:
+        return "folded", hit
     stripped = re.sub(r"\s*\([^)]*\)\s*", "", lemma).strip()
     if stripped and stripped != lemma:
-        for cand in (stripped, fold(stripped)):
-            if cand in table:
-                return "annotation", cand
-            if cand in folded_idx:
-                return "annotation", folded_idx[cand]
+        if stripped in table:
+            return "annotation", stripped
+        hit = folded_idx.get(fold(stripped))
+        if hit is not None:
+            return "annotation", hit
     f2 = fold(lemma).replace("-", "").replace("’", "")
     if f2 in joined_idx:
         return "hyphen-join", joined_idx[f2]
