@@ -20,8 +20,8 @@ _Created: 15-09-2026 · Last updated: 15-09-2026_
   fragment while columns stay correct); upstream default matrix weaker than the spike's
   near-equivalence matrix. Adopt decision unchanged → H776 (human); the "never actually
   ran it" risk is retired.
-- Trial artifacts committed: `data/analysis/helayo_upstream_trial/` (120 files + results
-  JSON). The foreign binary itself is NOT committed — re-fetch per upstream provenance.
+- Trial artifacts committed: `data/analysis/helayo_upstream_trial/` (30 FASTT + 60 TEI XML + results
+  JSON = 91 data files). The foreign binary itself is NOT committed — re-fetch per upstream provenance.
 
 ### Unchanged
 
