@@ -1,16 +1,17 @@
 {
   "handoff": "H4738",
   "census": "sibling census A5 pilot 1 (slot s5a)",
-  "created": "2026-09-15",
+  "created": "2026-09-16",
   "tier": "OxAlpha (opencode/z-ai/glm-5.3-flash)",
   "validation_only": true,
+  "relabel": "2026-09-16 MG ruling (а) on verifier DISAGREE: sentence identity re-measured by anvaya_no; prior '92 sentences' was a (book,chaptno,sentno) grouping artifact",
   "upstream": {
     "repo": "https://github.com/samsaadhanii/datasets",
     "path": "Annotated-data/Sundarakanda.csv",
     "license": "NONE on upstream repo — validation-only, no redistribution",
     "sha256_12": "eed7e126b86b"
   },
-  "notation": "WX (SCL); sentence identity = (book, chaptno, sentno)",
+  "notation": "WX (SCL); sentence identity = anvaya_no N.M → (book, chaptno, N)",
   "counts": {
     "word_rows": 38126,
     "unannotated_rows": 5,
@@ -21,73 +22,92 @@
       18841,
       18855
     ],
-    "sentences": 92,
-    "verses_slokas": 85,
+    "sentences_anvaya": 1742,
+    "sentno_buckets_degenerate": {
+      "count": 92,
+      "chapters_with_sentno_always_1": 44,
+      "chapters_total": 62,
+      "max_tokens_in_one_bucket": 2864,
+      "note": "chapter-level constant, NOT a sentence count"
+    },
+    "verse_pairs_chaptno_x_slokano": 2198,
+    "distinct_slokano_labels": 576,
     "sargas": 62,
     "per_sarga_row_range": [
       155,
       2864
     ]
   },
+  "wx_f_ambiguity_census": {
+    "rows_with_substring_lafk_any_cell": 139,
+    "rows_word_exact_lafkAm": 55,
+    "rows_word_contains_lafkA": 117,
+    "lafkAm_literal_occurrences_all_cells": 119,
+    "laMk_literal_occurrences_all_cells": 0
+  },
   "parity": {
     "word_rows_csv-module_walk": 38126,
     "unannotated_rows": 5,
     "source_nonheader_lines_raw_census": 38131,
-    "sentence_groups_book,chaptno,sentno": 92
+    "anvaya_sentences_book,chaptno,N": 1742
   },
   "layer_emitted": true,
-  "layer_path": "/tmp/opencode/h4738-layer/sundara_treebank_sentences.jsonl",
-  "layer_sentence_count": 92,
+  "layer_path": "/tmp/h4738-relabel-layer/sundara_treebank_sentences.jsonl",
+  "layer_sentence_count": 1742,
+  "layer_token_sum": 38126,
   "rosette_sample": [
     {
-      "sarga.sloka": "001.001",
+      "sarga.anvaya": "001.1",
+      "slokano": "001",
       "first_words_wx": [
-        "wawaH",
-        "rAvaNa-",
-        "nIwAyAH",
-        "sIwAyAH",
-        "Sawru-"
+        "AnupUrvyeNa",
+        "ApAwe",
+        "Asye",
+        "BImam",
+        "BUyaH"
       ],
       "first_words_iast": [
-        "tataḥ",
-        "rāvaṇa-",
-        "nītāyāḥ",
-        "sītāyāḥ",
-        "śatru-"
+        "ānupūrvyeṇa",
+        "āpāte",
+        "āsye",
+        "bhīmam",
+        "bhūyaḥ"
       ]
     },
     {
-      "sarga.sloka": "002.001",
+      "sarga.anvaya": "001.2",
+      "slokano": "001",
       "first_words_wx": [
-        "saH",
-        "svasWaH",
-        "xaxarSa",
-        "ha",
-        "sAgaram"
+        "AkASa-",
+        "Alokayan",
+        "AviRtam",
+        "BakRyaH",
+        "SEla-"
       ],
       "first_words_iast": [
-        "saḥ",
-        "svasthaḥ",
-        "dadarśa",
-        "ha",
-        "sāgaram"
+        "ākāśa-",
+        "ālokayan",
+        "āviṣṭam",
+        "bhakṣyaḥ",
+        "śaila-"
       ]
     },
     {
-      "sarga.sloka": "003.001-002.1",
+      "sarga.anvaya": "001.3",
+      "slokano": "001",
       "first_words_wx": [
-        "saH",
-        "niSi",
-        "lafkAm",
-        "mahA-",
-        "sawwvaH"
+        "AsAxiwaH",
+        "AsWAya",
+        "AvixXam",
+        "AyawA",
+        "BakRyAn"
       ],
       "first_words_iast": [
-        "saḥ",
-        "niśi",
-        "laṛkām",
-        "mahā-",
-        "sattvaḥ"
+        "āsāditaḥ",
+        "āsthāya",
+        "āviddham",
+        "āyatā",
+        "bhakṣyān"
       ]
     }
   ]
