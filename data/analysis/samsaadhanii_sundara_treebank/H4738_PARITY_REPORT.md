@@ -56,8 +56,10 @@ nasal. Derived census (all 38131 data
 rows): substring `lafk` in any cell — 139 rows
 (incl. `alafkArAm` = alaṅkāram, unrelated to Laṅkā); exact word `lafkAm` —
 55 rows (= **laṅkām**, lemma `lafkA` tagged
-`swrI` feminine); word cells containing `lafkA` —
-117 rows; zero `laMk` spellings. The literal table
+`swrI` feminine; 119 literal occurrences);
+word cells containing `lafkA` —
+117 rows; `laMk` spellings —
+0. The literal table
 renders it ṛ — word-level IAST below is indicative, not authoritative; any
 future WX layer needs a context-resolved converter (sanskrit_util + WX
 mode), not this table.

@@ -115,6 +115,8 @@ def parse_treebank(csv_path: str):
     wx_lafk_any_cell = 0
     wx_lafkAm_word = 0
     wx_lafkA_word = 0
+    wx_lafkAm_occurrences = 0
+    wx_lamk_occurrences = 0
     per_sarga_rows = Counter()
     anu_re = re.compile(r"^\d+\.\d+$")
     with open(csv_path, "r", encoding="utf-8", newline="") as fh:
@@ -141,6 +143,8 @@ def parse_treebank(csv_path: str):
                 wx_lafkAm_word += 1
             if "lafkA" in d["word"]:
                 wx_lafkA_word += 1
+            wx_lafkAm_occurrences += sum(c.count("lafkAm") for c in rec)
+            wx_lamk_occurrences += sum(c.count("laMk") for c in rec)
             if d["anvaya_no"] == "-":
                 # upstream quirk: punctuation/interpolation rows carry no
                 # anvaya identity — counted separately, not treebank tokens
@@ -182,6 +186,8 @@ def parse_treebank(csv_path: str):
         "wx_lafk_rows_any_cell": wx_lafk_any_cell,
         "wx_lafkAm_word_rows": wx_lafkAm_word,
         "wx_lafkA_word_rows": wx_lafkA_word,
+        "wx_lafkAm_occurrences": wx_lafkAm_occurrences,
+        "wx_lamk_occurrences": wx_lamk_occurrences,
     }
     return sentences, stats
 
@@ -333,6 +339,8 @@ def run(datasets_dir: str, outdir: str, emit_layer: str, force: bool) -> dict:
             "rows_with_substring_lafk_any_cell": stats["wx_lafk_rows_any_cell"],
             "rows_word_exact_lafkAm": stats["wx_lafkAm_word_rows"],
             "rows_word_contains_lafkA": stats["wx_lafkA_word_rows"],
+            "lafkAm_literal_occurrences_all_cells": stats["wx_lafkAm_occurrences"],
+            "laMk_literal_occurrences_all_cells": stats["wx_lamk_occurrences"],
         },
         "parity": {k.replace(" ", "_").replace("(", "").replace(")", ""): v
                    for k, v in parity.items()},
@@ -406,8 +414,10 @@ nasal. Derived census (all {stats["rows"] + stats["unannotated_rows"]} data
 rows): substring `lafk` in any cell — {stats["wx_lafk_rows_any_cell"]} rows
 (incl. `alafkArAm` = alaṅkāram, unrelated to Laṅkā); exact word `lafkAm` —
 {stats["wx_lafkAm_word_rows"]} rows (= **laṅkām**, lemma `lafkA` tagged
-`swrI` feminine); word cells containing `lafkA` —
-{stats["wx_lafkA_word_rows"]} rows; zero `laMk` spellings. The literal table
+`swrI` feminine; {stats["wx_lafkAm_occurrences"]} literal occurrences);
+word cells containing `lafkA` —
+{stats["wx_lafkA_word_rows"]} rows; `laMk` spellings —
+{stats["wx_lamk_occurrences"]}. The literal table
 renders it ṛ — word-level IAST below is indicative, not authoritative; any
 future WX layer needs a context-resolved converter (sanskrit_util + WX
 mode), not this table.
