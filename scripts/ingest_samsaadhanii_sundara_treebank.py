@@ -98,6 +98,13 @@ def parse_treebank(csv_path: str):
     unannotated_lines = []
     sentences = {}
     per_sarga_rows = Counter()
+    # WX-`f` ambiguity census (H4738 verifier, 15-09-2026): counts over ALL
+    # data rows (annotated + quirk), using the verifier's exact definitions.
+    wx_rows_substr = 0  # rows carrying substring `lafk` in ANY cell
+    wx_rows_exact = 0  # rows whose `word` cell is exactly `lafkAm`
+    wx_word_cells_lafkA = 0  # word cells containing `lafkA`
+    wx_occurrences = 0  # literal `lafkAm` occurrences, whole file
+    wx_lamk = 0  # literal `laMk` occurrences (expected 0)
     anu_re = re.compile(r"^\d+\.\d+$")
     with open(csv_path, "r", encoding="utf-8", newline="") as fh:
         reader = csv.reader(fh, delimiter="\t")
@@ -111,6 +118,14 @@ def parse_treebank(csv_path: str):
             if len(rec) != len(EXPECTED_COLUMNS):
                 raise SystemExit(f"FAIL row {lineno}: {len(rec)} cols, want 14")
             d = dict(zip(EXPECTED_COLUMNS, rec))
+            if any("lafk" in c for c in rec):
+                wx_rows_substr += 1
+            if d["word"] == "lafkAm":
+                wx_rows_exact += 1
+            if "lafkA" in d["word"]:
+                wx_word_cells_lafkA += 1
+            wx_occurrences += sum(c.count("lafkAm") for c in rec)
+            wx_lamk += sum(c.count("laMk") for c in rec)
             for key in ("word", "sentno", "chaptno", "slokano", "book"):
                 if not d[key].strip():
                     raise SystemExit(f"FAIL row {lineno}: empty {key!r}")
@@ -139,6 +154,11 @@ def parse_treebank(csv_path: str):
         "sargas": len({k[1] for k in sentences}),
         "per_sarga_rows_min": min(per_sarga_rows.values()),
         "per_sarga_rows_max": max(per_sarga_rows.values()),
+        "wx_f_rows_substr": wx_rows_substr,
+        "wx_f_rows_exact_lafkAm": wx_rows_exact,
+        "wx_f_word_cells_lafkA": wx_word_cells_lafkA,
+        "wx_f_occurrences_lafkAm": wx_occurrences,
+        "wx_f_occurrences_laMk": wx_lamk,
     }
     return sentences, stats
 
@@ -299,10 +319,15 @@ malformed rows abort with a loud FAIL (none fired).
 
 ## Rosette (aggregate-only, rosette words ≤5 per sentence, 3 sentences)
 
-⚠️ WX `f` is ambiguous in this dataset: standard vocalic ṛ AND, 139×,
-pre-stop nasal (lafkAm = **laṅkām**, lemma `lafkA` tagged `swrI` feminine;
-zero `laMk` spellings). The literal table renders it ṛ — word-level IAST
-below is indicative, not authoritative; any future WX layer needs a
+⚠️ WX `f` is ambiguous in this dataset: standard vocalic ṛ AND pre-stop
+nasal. Measured over this file: {stats["wx_f_rows_substr"]} rows carry the
+substring `lafk` in any cell — but that set includes `alafkArAm` (alaṅkāram,
+unrelated to Laṅkā); the exact word form `lafkAm` (= **laṅkām**, lemma
+`lafkA` tagged `swrI` feminine) occupies {stats["wx_f_rows_exact_lafkAm"]}
+rows ({stats["wx_f_occurrences_lafkAm"]} literal occurrences), `lafkA`-bearing
+word cells {stats["wx_f_word_cells_lafkA"]}; `laMk` spellings:
+{stats["wx_f_occurrences_laMk"]}. The literal table renders it ṛ — word-level
+IAST below is indicative, not authoritative; any future WX layer needs a
 context-resolved converter (sanskrit_util + WX mode), not this table.
 
 | sarga.śloka | first words (WX) | IAST |

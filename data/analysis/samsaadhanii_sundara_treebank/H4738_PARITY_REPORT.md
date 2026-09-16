@@ -1,6 +1,6 @@
 # H4738 — Samsaadhanii Sundarakāṇḍa treebank ingest parity report
 
-_Created: 2026-09-15 · tier: OxAlpha (opencode/z-ai/glm-5.3-flash) · VALIDATION-ONLY_
+_Created: 2026-09-16 · tier: OxAlpha (opencode/z-ai/glm-5.3-flash) · VALIDATION-ONLY_
 
 ## Inputs (provenance)
 
@@ -29,10 +29,15 @@ malformed rows abort with a loud FAIL (none fired).
 
 ## Rosette (aggregate-only, rosette words ≤5 per sentence, 3 sentences)
 
-⚠️ WX `f` is ambiguous in this dataset: standard vocalic ṛ AND, 139×,
-pre-stop nasal (lafkAm = **laṅkām**, lemma `lafkA` tagged `swrI` feminine;
-zero `laMk` spellings). The literal table renders it ṛ — word-level IAST
-below is indicative, not authoritative; any future WX layer needs a
+⚠️ WX `f` is ambiguous in this dataset: standard vocalic ṛ AND pre-stop
+nasal. Measured over this file: 139 rows carry the
+substring `lafk` in any cell — but that set includes `alafkArAm` (alaṅkāram,
+unrelated to Laṅkā); the exact word form `lafkAm` (= **laṅkām**, lemma
+`lafkA` tagged `swrI` feminine) occupies 55
+rows (119 literal occurrences), `lafkA`-bearing
+word cells 117; `laMk` spellings:
+0. The literal table renders it ṛ — word-level
+IAST below is indicative, not authoritative; any future WX layer needs a
 context-resolved converter (sanskrit_util + WX mode), not this table.
 
 | sarga.śloka | first words (WX) | IAST |
