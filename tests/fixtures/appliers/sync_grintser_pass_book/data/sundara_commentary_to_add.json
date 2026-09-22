@@ -1,0 +1,63 @@
+[
+ {
+  "_meta": {
+   "description": "Мини-копия книжного агрегата: три сарги, пять записей.",
+   "total_verses": 319,
+   "total_notes": 5
+  }
+ },
+ {
+  "shloka": "V.2.1",
+  "lemma_iast": "lanka",
+  "subtype": "lexical",
+  "type": "лексический",
+  "trigger": "first_appearance",
+  "priority": "high",
+  "note_ru": "Старый текст книги 1.",
+  "review_required": true,
+  "judge": {"verdict": "keep", "scores": {"faithfulness": 2}}
+ },
+ {
+  "shloka": "V.2.2",
+  "lemma_iast": "rakshasi",
+  "subtype": "lexical",
+  "type": "лексический",
+  "trigger": "first_appearance",
+  "priority": "normal",
+  "note_ru": "Старый текст книги 2.",
+  "review_required": true,
+  "judge": {"verdict": "reject", "scores": {"faithfulness": 0}}
+ },
+ {
+  "shloka": "V.2.3",
+  "lemma_iast": "cintā",
+  "subtype": "lexical",
+  "type": "лексический",
+  "trigger": "first_appearance",
+  "priority": "normal",
+  "note_ru": "Старый текст книги 3.",
+  "review_required": true,
+  "judge": {"verdict": "keep", "scores": {"faithfulness": 2}}
+ },
+ {
+  "shloka": "V.2.4",
+  "lemma_iast": "setu",
+  "subtype": "base",
+  "type": "базовый",
+  "trigger": "omission",
+  "priority": "normal",
+  "note_ru": "Базовая заметка сарги 2 — не лексическая, патч её не касается.",
+  "review_required": true
+ },
+ {
+  "shloka": "V.3.1",
+  "lemma_iast": "cintā",
+  "subtype": "lexical",
+  "type": "лексический",
+  "trigger": "first_appearance",
+  "priority": "normal",
+  "note_ru": "Заметка сарги 3 — вне охвата --chapter 2.",
+  "review_required": true,
+  "judge": {"verdict": "keep", "scores": {"faithfulness": 2}}
+ }
+]

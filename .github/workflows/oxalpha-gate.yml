@@ -142,6 +142,19 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     timeout-minutes: 45
+    # H4368 (FINDINGS §727): a second push used to leave the mirror for the OLD
+    # head polling for its full budget while the run for the NEW head waited
+    # behind it in the workflow-level queue — so the new head carried no
+    # oxalpha-review check at all and the PR stayed BLOCKED until a human ran
+    # `gh run cancel`. The fix that actually fires is `wait --sha` below: the
+    # old mirror notices the head moved and exits SUPERSEDED, releasing the
+    # queue. The job-level group here is belt-and-braces for the case where the
+    # workflow-level group (cancel-in-progress: false, so the new run is queued
+    # rather than started) is ever relaxed — then two mirrors could run at once
+    # and this cancels the older one outright.
+    concurrency:
+      group: oxalpha-mirror-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -151,9 +164,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           python scripts/oxalpha_gate.py wait --pr "$PR" \
-            --repo "${{ github.repository }}" --timeout-sec 2100
+            --repo "${{ github.repository }}" --timeout-sec 2100 --sha "$HEAD_SHA"
 
   sweep:
     name: Sweep open PRs (idempotent arming)

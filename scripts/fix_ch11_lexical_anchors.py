@@ -99,6 +99,9 @@ def rederive_verdict(scores):
 
 
 def main():
+    # ---- read EVERY input first; nothing is written until all of them parse ----
+    # (H4370: this script used to dump ch11.json before the book aggregate was
+    # even opened, so a malformed book left a partial write behind.)
     ch11 = load(os.path.join(LEX, "ch11.json"))
     lemmas = {n.get("lemma_iast") for n in ch11 if "_meta" not in n}
     targets = set(PARK) | {lem for _, lem in REANCHOR}
@@ -131,9 +134,6 @@ def main():
     keep_ch11[0]["_meta"]["anchor_fix"] = (
         "07-07-2026 (H276 WS-3b): 9 фантомных якорей разрешено — 2 переякорено "
         "(kṣāma→V.17.30, vivarṇa→V.25.8), 7 запарковано в ch11.qa_removed.json")
-    dump(os.path.join(LEX, "ch11.json"), keep_ch11)
-    print(f"ch11.json: {len(keep_ch11)-1} notes remain "
-          f"(-{len(parked)} parked, -{len(moved)} re-anchored away)")
 
     # parked -> ch11.qa_removed.json (append if the file ever re-runs partially)
     qa_path = os.path.join(LEX, "ch11.qa_removed.json")
@@ -144,26 +144,30 @@ def main():
     qa[0]["_meta"]["qa_pruned"] = "2026-07-07"
     qa[0]["_meta"]["removed_count"] = len(qa) - 1
     qa[0]["_meta"]["qa_pass"] = "H276 WS-3b (phantom verse anchors)"
-    dump(qa_path, qa)
-    print(f"ch11.qa_removed.json: {len(parked)} parked")
 
     # re-anchored -> their new chapters' lexical files
+    chapter_docs = []
     for n in moved:
         ch = int(n["shloka"].split(".")[1])
         path = os.path.join(LEX, f"ch{ch}.json")
+        # Deferring the dumps means each target is loaded from the same on-disk
+        # state, so two notes re-anchored into ONE chapter would have the second
+        # dump drop the first. REANCHOR targets V.17 and V.25 today; this keeps
+        # that a refusal rather than a silent loss if it ever stops being true.
+        if any(path == p for _, p, _, _ in chapter_docs):
+            sys.exit(f"ERROR: two notes re-anchored into ch{ch} in one run; "
+                     "batch them into a single doc before dumping")
         doc = load(path)
         if any(m.get("lemma_iast") == n["lemma_iast"] and
                m.get("shloka") == n["shloka"] for m in doc if "_meta" not in m):
             sys.exit(f"ERROR: {n['shloka']} {n['lemma_iast']} already in ch{ch}")
         doc.append(n)
         doc[0]["_meta"]["notes_count"] = len(doc) - 1
-        dump(path, doc)
-        print(f"ch{ch}.json: +1 re-anchored ({n['lemma_iast']} @ {n['shloka']})")
+        chapter_docs.append((ch, path, doc, n))
 
     # ---- book aggregate ----
     book = load(BOOK)
     new_book, removed_book = [], 0
-    reanchor_by_lemma = {lem: REANCHOR[(old, lem)][0] for old, lem in REANCHOR}
     for n in book:
         if "_meta" not in n and n.get("subtype") == "lexical" \
                 and str(n.get("shloka", "")).startswith("V.11."):
@@ -184,9 +188,6 @@ def main():
     bm["by_type"] = dict(Counter(n.get("type") for n in notes if n.get("type")))
     bm["by_trigger"] = dict(Counter(n.get("trigger") for n in notes if n.get("trigger")))
     bm["anchor_fix"] = keep_ch11[0]["_meta"]["anchor_fix"]
-    dump(BOOK, new_book)
-    print(f"book: -{removed_book} parked, {len(moved)} re-anchored "
-          f"(total {len(notes)})")
 
     # ---- stats ----
     stats = load(STATS)
@@ -208,6 +209,19 @@ def main():
     stats["_meta"]["generated"] = "2026-07-07"
     stats["_meta"]["source"] = ("sundara_commentary_to_add.json "
                                 "(fix_ch11_lexical_anchors.py rebuild)")
+
+    # ---- every input parsed; only now does anything land on disk ----
+    dump(os.path.join(LEX, "ch11.json"), keep_ch11)
+    print(f"ch11.json: {len(keep_ch11)-1} notes remain "
+          f"(-{len(parked)} parked, -{len(moved)} re-anchored away)")
+    dump(qa_path, qa)
+    print(f"ch11.qa_removed.json: {len(parked)} parked")
+    for ch, path, doc, n in chapter_docs:
+        dump(path, doc)
+        print(f"ch{ch}.json: +1 re-anchored ({n['lemma_iast']} @ {n['shloka']})")
+    dump(BOOK, new_book)
+    print(f"book: -{removed_book} parked, {len(moved)} re-anchored "
+          f"(total {len(notes)})")
     dump(STATS, stats)
     print(f"stats: total_notes={stats['total_notes']}")
 

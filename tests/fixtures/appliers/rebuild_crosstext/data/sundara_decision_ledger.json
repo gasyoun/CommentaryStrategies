@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "description": "Decision ledger — why each note was accepted or rejected (fixture)",
+    "rule": "Примечание добавляется ТОЛЬКО когда оно даёт то, чего нет в подстрочнике Леонова",
+    "generated": "2026-07-02",
+    "total_candidates": 4,
+    "accepted": 3,
+    "rejected": 1,
+    "accepted_by_bucket": {
+      "accepted_realia": 1,
+      "accepted_new_first": 1,
+      "accepted_cross_text": 1
+    },
+    "rejected_by_bucket": {
+      "rejected_in_podstrochnik": 1
+    },
+    "reason_glossary": {
+      "accepted_new_first": "принято — первое вхождение термина/эпитета в кн. V"
+    }
+  },
+  "per_work_cross_text_map": {},
+  "entries": [
+    {
+      "shloka": "V.1.1",
+      "lemma_iast": "cāraṇa",
+      "trigger": "term",
+      "decision": "accepted",
+      "reason": "accepted_new_first",
+      "chapter": 1
+    },
+    {
+      "shloka": "V.20.5",
+      "lemma_iast": "svadharma",
+      "trigger": "term",
+      "decision": "accepted",
+      "reason": "accepted_realia",
+      "chapter": 20
+    },
+    {
+      "shloka": "V.1.1",
+      "lemma_iast": "sītā",
+      "trigger": "term",
+      "decision": "rejected",
+      "reason": "rejected_in_podstrochnik",
+      "chapter": 1
+    },
+    {
+      "shloka": "V.13.11",
+      "lemma_iast": "tapasvinī (Sītā)",
+      "trigger": "crosstext",
+      "subtype": "cross_text",
+      "cluster": "kavya",
+      "source": "Kālidāsa, Raghuvaṃśa 14.47",
+      "decision": "accepted",
+      "reason": "accepted_cross_text",
+      "chapter": 13
+    }
+  ]
+}

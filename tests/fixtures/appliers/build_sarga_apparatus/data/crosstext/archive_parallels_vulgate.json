@@ -1,0 +1,45 @@
+[
+  {
+    "_meta": {
+      "cluster": "archive_parallels",
+      "cluster_label": "DCS parallel-search (archive.sqlite)",
+      "description": "Мини-копия ремапленного архивного слоя (fixture).",
+      "method": "fulltext",
+      "generator": "scripts/remap_archive_parallels.py",
+      "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+      "remap_rule": "critical -> vulgate",
+      "remap_source": "fixture"
+    }
+  },
+  {
+    "shloka": "V.35.4",
+    "lemma_iast": "śyāma subhrū",
+    "note_ru": "",
+    "type": "А",
+    "trigger": "parallel",
+    "priority": "medium",
+    "source": "DCS parallel-search (PARTLY); MBh 3.65.10",
+    "subtype": "cross_text",
+    "scope": "crosstext",
+    "parallel_sa_iast": "pūrṇacandrānanāṁ śyāmāṁ cāruvṛttapayodharām",
+    "parallel_ru": "",
+    "work_label": "MBh",
+    "verse_address": "MBh 3.65.10",
+    "sundara_sa_iast": "pūrṇacandrānanāṁ subhrūṁ cāruvṛttapayodharām",
+    "quality": "PARTLY",
+    "matched_words": "+ subhrū - śyāma",
+    "overlap_tokens": [
+      "cāruvṛttapayodharām",
+      "pūrṇacandrānanāṁ"
+    ],
+    "overlap_n": 2,
+    "method": "fulltext",
+    "run": "2026",
+    "provenance": "VisualDCS archive.sqlite parallels (fulltext run 2026)",
+    "edition": "critical",
+    "shloka_critical": "V.33.4",
+    "verse_address_vulgate": "MBh 3.65.10 (vulgate)",
+    "verse_map": "critical V.33.4 -> vulgate V.35.4",
+    "review_required": true
+  }
+]

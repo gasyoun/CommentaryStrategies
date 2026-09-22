@@ -33,6 +33,14 @@ TODAY = str(date.today())
 # ── helpers ──────────────────────────────────────────────────────────────────
 
 def load_jsonl(path):
+    """Read a corpus .jsonl, or abort.
+
+    H4370: this used to swallow every read error and only warn on stderr, so a
+    run without the sibling corpus exited 0 and wrote an aggregate holding the
+    ch.1 slice alone — a silent erasure of ~866 curated notes. The corpus is a
+    hard input: an unreadable, absent or empty one is a loud non-zero abort,
+    raised here, i.e. before this script writes anything.
+    """
     rows = []
     try:
         with open(path, encoding='utf-8') as f:
@@ -43,8 +51,14 @@ def load_jsonl(path):
                         rows.append(json.loads(line))
                     except json.JSONDecodeError:
                         pass
-    except Exception as e:
-        print(f"  WARN: {path}: {e}", file=sys.stderr)
+    except OSError as e:
+        sys.exit(f"ERROR: corpus unreadable: {path}: {e}\n"
+                 f"       Refusing to rebuild the book aggregate from the ch.1 "
+                 f"slice alone (that would silently drop the ch.2-68 notes).")
+    if not rows:
+        sys.exit(f"ERROR: corpus holds no usable rows: {path}\n"
+                 f"       Refusing to rebuild the book aggregate from the ch.1 "
+                 f"slice alone (that would silently drop the ch.2-68 notes).")
     return rows
 
 def short_addr(ch: int, v: int) -> str:

@@ -29,6 +29,10 @@ def dump(p, obj):
 # ---------------------------------------------------------------------------
 COMM = os.path.join(DATA, 'sundara_commentary_to_add.json')
 comm = load(COMM)
+# Every input is parsed BEFORE the first write (H4351 pin): a truncated
+# ledger must not leave the commentary already rewritten.
+LEDGER = os.path.join(DATA, 'sundara_decision_ledger.json')
+ledger = load(LEDGER)
 meta_entry = next((x for x in comm if isinstance(x, dict) and '_meta' in x), None)
 all_notes = [x for x in comm if isinstance(x, dict) and '_meta' not in x]
 base = [x for x in all_notes if x.get('subtype') != 'cross_text']
@@ -170,8 +174,9 @@ new_meta.update({
     'crosstext_expansion': 'book-wide multi-perspective cross-text run recovered from data/crosstext/*.json (all 6 verified/confirmed works: dharmashastra, gita, kavya, mbh_gnomic, mbh_narrative, ramayana_grintser). Idempotent full rebuild.',
 })
 out_comm = [{'_meta': new_meta}] + base + cross_final
-dump(COMM, out_comm)
-print(f'WROTE commentary: {merged_total} notes')
+# The write itself waits for the accepted == merged invariant below (H4368):
+# it used to land here, so a ledger that disagreed with the note count aborted
+# only AFTER the book had already been overwritten.
 
 # ---------------------------------------------------------------------------
 # Cluster display labels (prompt grouping) -> ordered
@@ -191,8 +196,7 @@ CLUSTER_FULL = {cl: (cluster_meta.get(cl, {}).get('cluster_label') or lbl)
 # 5. REBUILD decision ledger: keep base entries, rebuild cross_text entries
 #    from all 6 sources (accepted) + 4 rejected files (rejected-with-reason).
 # ---------------------------------------------------------------------------
-LEDGER = os.path.join(DATA, 'sundara_decision_ledger.json')
-ledger = load(LEDGER)
+# (ledger already loaded above, before the first write — H4351)
 old_entries = ledger['entries']
 base_entries = [e for e in old_entries if e.get('subtype') != 'cross_text']
 # base accepted should equal len(base); base rejected preserved as-is
@@ -261,8 +265,12 @@ total_candidates = len(new_entries)
 accepted_total = sum(1 for e in new_entries if e['decision'] == 'accepted')
 rejected_total = sum(1 for e in new_entries if e['decision'] == 'rejected')
 
-# accepted must equal final note count
+# accepted must equal final note count — checked BEFORE the first write (H4368),
+# so a disagreeing ledger leaves data/sundara_commentary_to_add.json untouched
 assert accepted_total == merged_total, f'accepted {accepted_total} != notes {merged_total}'
+
+dump(COMM, out_comm)
+print(f'WROTE commentary: {merged_total} notes')
 
 # accepted-by-bucket
 acc_buckets = Counter(e['reason'] for e in new_entries if e['decision'] == 'accepted')

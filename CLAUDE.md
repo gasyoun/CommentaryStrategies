@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-06-2026 · Last updated: 03-09-2026_
+_Created: 28-06-2026 · Last updated: 15-09-2026_
 
 A scholarly corpus + Python tooling for the comparative study of **commentary
 strategies** used by Russian academic translators of Sanskrit texts
@@ -44,11 +44,18 @@ python scripts/extract_false_friends_profile.py
 python scripts/build_visualizations.py
 ```
 
-There is **no real test suite** — CI's Pytest job is a stub. The gate is the
+Tests: `python -m pytest` ([pytest.ini](https://github.com/gasyoun/CommentaryStrategies/blob/main/pytest.ini),
+[tests/](https://github.com/gasyoun/CommentaryStrategies/tree/main/tests)) — since H4351 + H4368
+(08-09-2026) the **eighteen** destructive writers are pinned for idempotence, non-shrink and
+malformed-input refusal; each runs as a real subprocess in a sandbox, never against live `data/`.
+Curated-record floors live in
+[tests/curated_floors.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/tests/curated_floors.py)
+and are enforced by `scripts/curated_floors_check.py` in CI. The other gate is the
 **Corpus integrity** job in
 [`.github/workflows/ci.yml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.github/workflows/ci.yml):
 `validate.py` + URN check + "every generator reproduces its artifact with no
-git diff". `ruff` / `black` are warn-only.
+git diff" + the floors check. `ruff` / `black` are warn-only. Uncovered modules and
+why: `.ai_state.md` § H4351 and § H4368.
 
 LLM annotation (needs `ANTHROPIC_API_KEY`):
 
@@ -113,5 +120,9 @@ Danger facts:
 [Uprava DANGER_FACTS.md](https://github.com/gasyoun/Uprava/blob/main/DANGER_FACTS.md)
 and the generated block of
 [AGENTS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/AGENTS.md).
+
+## Memory store
+
+This repo keeps a committed memory store at [`.claude/projects/CommentaryStrategies/memory/`](https://github.com/gasyoun/CommentaryStrategies/tree/main/.claude/projects/CommentaryStrategies/memory) per the org Memory-routing rule ([`/danger-memory`](https://github.com/gasyoun/claude-config/blob/main/commands/danger-memory.md)) — write dangerous/durable facts there and index each in its `MEMORY.md` (H4547).
 
 _Dr. Mārcis Gasūns_
