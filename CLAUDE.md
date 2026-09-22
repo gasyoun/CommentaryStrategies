@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-06-2026 · Last updated: 08-09-2026_
+_Created: 28-06-2026 · Last updated: 15-09-2026_
 
 A scholarly corpus + Python tooling for the comparative study of **commentary
 strategies** used by Russian academic translators of Sanskrit texts
@@ -120,5 +120,9 @@ Danger facts:
 [Uprava DANGER_FACTS.md](https://github.com/gasyoun/Uprava/blob/main/DANGER_FACTS.md)
 and the generated block of
 [AGENTS.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/AGENTS.md).
+
+## Memory store
+
+This repo keeps a committed memory store at [`.claude/projects/CommentaryStrategies/memory/`](https://github.com/gasyoun/CommentaryStrategies/tree/main/.claude/projects/CommentaryStrategies/memory) per the org Memory-routing rule ([`/danger-memory`](https://github.com/gasyoun/claude-config/blob/main/commands/danger-memory.md)) — write dangerous/durable facts there and index each in its `MEMORY.md` (H4547).
 
 _Dr. Mārcis Gasūns_
