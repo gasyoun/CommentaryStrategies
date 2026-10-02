@@ -166,4 +166,32 @@ The axis_4/axis_2 inter-coder number is no longer missing — measured κ report
 (axis_2 κ=0.648, axis_4 κ=0.521; target ≥85 % raw not met; closed as honest finding).
 The house-style fix list above remains agent-/author-doable in the clean submission copy.
 
+## Addendum — 02-10-2026 (OxAlpha `zai-coding-plan/glm-5.3-flash`, grill 02-10 ruling «A19-фиксы сейчас»)
+
+Three agent-doable residuals from the 02-07 verification applied before the 01-11 unfreeze:
+
+1. **Казанский 2025 entry FIXED against the actual publication** (was delta 3, "upgrade to fix").
+   `articles/article1_vya.md` bibliography now reads: Казанский Н. Н. **Проблемы комментирования
+   и сопоставления в русско-латинском параллельном корпусе** // **Индоевропейское языкознание
+   и классическая филология. 2025. Вып. 29.** С. 857–873. DOI: 10.30842/ielcp2306901529049.
+   The DOI was resolved live (landing page, 02-10-2026): the previous entry carried BOTH a wrong
+   venue («Известия РАН. Серия литературы и языка. Т. 84. № 6») AND a wrong title
+   («"Ложные друзья переводчика" в параллельном корпусе…»). Pages 857–873 and the DOI are
+   confirmed correct, so the in-text pinpoints (Казанский 2025: 860–862, §1 and §7) stand as cited.
+2. **Cover-letter «Мāрцис» typo — confirmed already fixed**: the only remaining match for the
+   IAST-ā spelling is this report's own delta list; `cover_letter_A19.md` reads
+   «Гасунс Марцис Юрьевич». No edit needed.
+3. **Clean submission copy created**: [`articles/article1_vya_clean.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article1_vya_clean.md)
+   (479 lines vs 494) — the three dev comment blocks stripped (СТАТУС header 31–35, СТАТУС §6
+   337–340, ГОСТ 442–444, line numbers per the +3-drift recomputation). Deliberately KEPT in the
+   clean copy: the Петров 1788 attribution bracket (standing until the archival @DO), and the two
+   unresolved item-F bibliography brackets («Гринцер 2014» год/статус, «Леонов» дата обращения) —
+   removing them would silently fake resolvedness; they are content TODOs, not dev artefacts.
+   The working draft `article1_vya.md` keeps its comments (edit-8 contract: strip in a copy,
+   not the draft).
+
+Not touched (gated): the P/K/D attribution rewording and the Парибок 2011 entry stay behind
+AXIS4_KD_DECISION §5 (книжная сверка, human @DO); abstract trim / keywords ≤8 remain optional
+house-style. **Readiness: 4/5, unchanged** — the remaining gate is Петров 1788.
+
 _Dr. Mārcis Gasūns_
