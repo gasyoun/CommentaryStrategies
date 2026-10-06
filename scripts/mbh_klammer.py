@@ -67,10 +67,11 @@ SHEET_ROWS = 60        # human-sheet rows (stratified over disagreements)
 SEED = 20261006
 N_BOOT = 2000
 
-# Devanagari block MINUS separators/punctuation, which act as token breaks:
-# excluded U+0964-U+0970 entirely — । ॥ daṇḍa, ०-९ digits, ऽ-family and the
-# abbreviation sign; ऽ avagraha (U+093D) is inside 0900-0963 but is split
-# separately below. Letters/marks/combinings (incl. nukta) are retained.
+# Devanagari block MINUS separators/punctuation, which act as token breaks.
+# Excluded: all of U+0964-U+0970 — । ॥ daṇḍa/double, ०-९ digits, and the
+# U+0970 abbreviation sign. Avagraha ऽ (U+093D) sits INSIDE the retained
+# 0900-0963 range but is split out pre-tokenize via SPLIT_AVAGRAHA below.
+# Letters/marks/combinings (incl. nukta) are retained.
 DEVANAGARI = re.compile(r"[\u0900-\u0963\u0971-\u097F]+")
 CLEAN_MARK = re.compile(r"\[\[[^\]]*\]\]")
 # split tokens on avagraha (clitic, never compound-internal)
@@ -102,7 +103,9 @@ def parse_layer(layer: str, raw_text: str) -> list[dict]:
             rows.append({"sutra": rec["sutra"], "layer": layer, "text": plain})
     else:
         for key, text in data.items():
-            if not key.isdigit() or len(key) < 3 or int(key[:1]) not in range(1, 9):
+            if (not key.isdigit() or len(key) < 3
+                    or int(key[:1]) not in range(1, 9)
+                    or int(key[1:2]) not in range(1, 5)):
                 print(f"skip malformed bhashya key: {key!r}", file=sys.stderr)
                 continue
             a, p, n = int(key[:1]), int(key[1:2]), int(key[2:])

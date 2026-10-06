@@ -29,7 +29,7 @@ Double annotation = two independent mechanical passes over a shared corpus-induc
 
 1. **High κ is agreement between two mechanical passes sharing one vocabulary and one greedy family — it is NOT a correctness claim.** It says the segmentation is *deterministically reproducible*, which is the property the scale pass needs.
 2. Spot-check (visible in the sample file): true compounds split correctly (दोषभाष्यम् → दोष | भाष्यम्; प्रत्ययलक्षणेन → प्रत्यय | लक्षणेन) coexist with **false positives**: sandhi-fused sequences (पुरुषस्येति = पुरुषस्य इति) and over-split simple words (निष्ठायां → निष्ठा | यां). Precision is unknown until the human lane lands.
-3. Dual coverage ~8–9% of the bank: a ≤7-char simple-word vocabulary cannot segment member-internal sandhi. The bank itself (92,271 rows) is the complete candidate census; the dual subset is the machine-verifiable core.
+3. Dual coverage ~10.2% of the bank: a ≤7-char simple-word vocabulary cannot segment member-internal sandhi. The bank itself (89,327 rows) is the complete candidate census; the dual subset is the machine-verifiable core.
 4. Bracket-node labelling (the Klammerdiagramm tree proper) is **deferred to v2** — `tree: null, tree_status: "deferred_v2"`; no labelling is fabricated.
 
 ## Independent verifier round (cou-2, deepseek/deepseek-v4.1-flash)

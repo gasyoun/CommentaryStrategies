@@ -37,7 +37,7 @@ Two **independent mechanical annotators** segment every candidate over the share
 
 1. **κ measures machine–machine agreement, not correctness.** Both passes share the vocabulary and the greedy family, so high κ (0.98) is expected and claims nothing about gold accuracy.
 2. The dual-segmented subset contains **true compounds correctly split** (दोषभाष्यम् → दोष | भाष्यम्) **and false positives**: sandhi-fused word sequences (पुरुषस्येति = पुरुषस्य इति) and over-split simple inflected words (निष्ठायां → निष्ठा | यां). Precision is unknown pending the human sheet.
-3. Dual coverage is ~8–9% of the candidate bank — most long tokens resist segmentation by a ≤7-char simple-word vocabulary (member-internal sandhi, morphology). The bank itself is the full census.
+3. Dual coverage is ~10.2% of the candidate bank — most long tokens resist segmentation by a ≤7-char simple-word vocabulary (member-internal sandhi, morphology). The bank itself is the full census.
 4. Bracket-node labelling (which member modifies which) is **deferred to v2** — deliberately not fabricated (`tree: null`).
 
 ## Reproduce
