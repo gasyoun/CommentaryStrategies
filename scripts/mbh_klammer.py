@@ -67,7 +67,11 @@ SHEET_ROWS = 60        # human-sheet rows (stratified over disagreements)
 SEED = 20261006
 N_BOOT = 2000
 
-DEVANAGARI = re.compile(r"[ऀ-ॿ]+")
+# Devanagari block MINUS separators/punctuation, which act as token breaks:
+# excluded U+0964-U+0970 entirely — । ॥ daṇḍa, ०-९ digits, ऽ-family and the
+# abbreviation sign; ऽ avagraha (U+093D) is inside 0900-0963 but is split
+# separately below. Letters/marks/combinings (incl. nukta) are retained.
+DEVANAGARI = re.compile(r"[\u0900-\u0963\u0971-\u097F]+")
 CLEAN_MARK = re.compile(r"\[\[[^\]]*\]\]")
 # split tokens on avagraha (clitic, never compound-internal)
 SPLIT_AVAGRAHA = "ऽ"
@@ -98,6 +102,9 @@ def parse_layer(layer: str, raw_text: str) -> list[dict]:
             rows.append({"sutra": rec["sutra"], "layer": layer, "text": plain})
     else:
         for key, text in data.items():
+            if not key.isdigit() or len(key) < 3 or int(key[:1]) not in range(1, 9):
+                print(f"skip malformed bhashya key: {key!r}", file=sys.stderr)
+                continue
             a, p, n = int(key[:1]), int(key[1:2]), int(key[2:])
             plain = CLEAN_MARK.sub(" ", text).replace(SPLIT_AVAGRAHA, " ")
             rows.append({"sutra": f"{a}.{p}.{n}", "layer": layer, "text": plain})
@@ -155,7 +162,8 @@ def cohen_kappa(labels_a: list[str], labels_b: list[str]) -> float:
         return float("nan")
     po = sum(1 for a, b in zip(labels_a, labels_b) if a == b) / n
     ca, cb = Counter(labels_a), Counter(labels_b)
-    cats = set(ca) | set(cb)
+    # sorted => deterministic float summation order across processes/hash seeds
+    cats = sorted(set(ca) | set(cb))
     pe = sum((ca[c] / n) * (cb[c] / n) for c in cats)
     if pe == 1.0:
         return 1.0

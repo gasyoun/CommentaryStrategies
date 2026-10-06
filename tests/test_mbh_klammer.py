@@ -32,6 +32,13 @@ def test_tokenize_keeps_devanagari_drops_noise():
     assert toks == ["कुत्वं", "कस्मान्न", "भवति"]
 
 
+def test_tokenize_danda_digits_are_separators_not_word_chars():
+    # verifier finding (cou-2): U+0964/0965 daṇḍa and Devanagari digits must
+    # never end up inside a token — they inflated the census as प्राप्नोति।
+    toks = mod.tokenize("प्राप्नोति। प्राप्नोति॥ वक्तव्यम्। १२३कर्तव्यम्")
+    assert toks == ["प्राप्नोति", "प्राप्नोति", "वक्तव्यम्", "कर्तव्यम्"], toks
+
+
 def test_segmenters_split_true_compound_both_directions():
     assert mod.seg_left("दोषभाष्यम्", VOCAB) == ["दोष", "भाष्यम्"]
     assert mod.seg_right("दोषभाष्यम्", VOCAB) == ["दोष", "भाष्यम्"]
@@ -43,9 +50,10 @@ def test_segmenters_fail_loud_on_unknown_residue():
     assert mod.seg_right("qqqqदोष", VOCAB) is None
 
 
-def test_directional_greed_diverges_on_ambiguous_form():
-    # अन्तइति: from the left greed takes अन्त first; from the right इति first,
-    # leaving अन्त -- both segment, and both are full segmentations.
+def test_directional_greed_converges_on_short_ambiguous_form():
+    # अन्तइति: both directions resolve to the same two members — the
+    # short-form convergence case (divergence lives in the long tail, which
+    # the κ sample + disagreement bank capture).
     assert mod.seg_left("अन्तइति", VOCAB) == ["अन्त", "इति"]
     assert mod.seg_right("अन्तइति", VOCAB) == ["अन्त", "इति"]
 

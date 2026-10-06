@@ -15,8 +15,8 @@ H1 (first full pass = Patañjali's MBh) · H2 (one full commentary) · H11 (JSON
 
 | file | content |
 |---|---|
-| `mbh_klammer_per_sutra.tsv` | per-sūtra × layer: tokens, candidates, dually-segmented, exact-agree |
-| `mbh_klammer_bank.json` → `build/` (gitignored) | full candidate bank (92,271 rows) |
+| `mbh_klammer_per_sutra.tsv` | per-sūtra × layer: tokens, candidates, dually-segmented, exact-agree (keyed by sūtra × layer, so 921 vārttika records collapse to 516 distinct sūtras → 4,499 data rows) |
+| `mbh_klammer_bank.json` → `build/` (gitignored) | full candidate bank (89,327 rows) |
 | `mbh_klammer_sample.json` | the seeded κ sample (300 rows, both passes) |
 | `mbh_klammer_disagreements.json` | stratified disagreement subset feeding the sheet |
 | `mbh_klammer_topcompounds.tsv` | top-100 candidate frequency table |
@@ -31,7 +31,7 @@ Record schema (`mbh-klammer-v1`, ruling H11): `layer, sutra, form, len` (code po
 
 ## Method
 
-Two **independent mechanical annotators** segment every candidate over the shared vocabulary: pass A = greedy longest-match left-to-right; pass B = right-to-left. "Dually segmented" = both fully segment. κ = Cohen's κ on the canonical segmentation label, plus a boundary-level κ over every interior position; 95% bootstrap CI.
+Two **independent mechanical annotators** segment every candidate over the shared vocabulary: pass A = greedy longest-match left-to-right; pass B = right-to-left. "Dually segmented" = both fully segment. κ = Cohen's κ on the canonical segmentation label, plus a boundary-level κ over every interior position; 95% bootstrap CI. Measured (seed 20261006): item κ **0.9732** CI [0.9530, 0.9899] · boundary κ **0.9808** · 89,327 candidates · 9,129 dual · 278 disagreements.
 
 ## Honest limitations (read before using)
 

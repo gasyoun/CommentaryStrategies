@@ -17,12 +17,12 @@ Double annotation = two independent mechanical passes over a shared corpus-induc
 
 | layer | candidates | dually segmented | exact agree | disagreements | A-only | B-only |
 |---|---|---|---|---|---|---|
-| bhashya | 91,114 | 7,688 (8.4%) | 7,527 | 161 | 769 | 1,255 |
-| vartika | 1,157 | 63 (5.4%) | 61 | 2 | 6 | 6 |
-| **total** | **92,271** | **7,751** | **7,588** | **163** | **775** | **1,261** |
+| bhashya | 88,170 | 9,058 (10.3%) | 8,783 | 275 | 833 | 1,603 |
+| vartika | 1,157 | 71 (6.1%) | 68 | 3 | 7 | 11 |
+| **total** | **89,327** | **9,129** | **8,851** | **278** | **840** | **1,614** |
 
-- κ sample n=300 (layer-proportional): **item κ 0.9833, 95% CI [0.9664, 0.9966], raw agreement 0.9833**; boundary κ **0.9867** over 3,235 decisions.
-- Member-count distribution (bhashya, A-pass segmentations): 2-member 5,180 · 3: 2,182 · 4: 775 · 5: 255 · 6+: 65 — a long tail out to 8 members (max token length 123 code points).
+- κ sample n=300 (layer-proportional): **item κ 0.9732, 95% CI [0.9530, 0.9899], raw agreement 0.9733**; boundary κ **0.9808** over 3,153 decisions.
+- Member-count distribution (bhashya, agreeing rows): 2-member 5,020 · 3: 2,278 · 4: 958 · 5: 424 · 6+: 103 — a long tail out to 10 members (max token length 123 code points).
 - Top recurring candidates and the full per-sūtra table are in the data dir (`mbh_klammer_topcompounds.tsv`, `mbh_klammer_per_sutra.tsv`).
 
 ## Honest limitations (H5312 spirit — never soften)
@@ -31,6 +31,15 @@ Double annotation = two independent mechanical passes over a shared corpus-induc
 2. Spot-check (visible in the sample file): true compounds split correctly (दोषभाष्यम् → दोष | भाष्यम्; प्रत्ययलक्षणेन → प्रत्यय | लक्षणेन) coexist with **false positives**: sandhi-fused sequences (पुरुषस्येति = पुरुषस्य इति) and over-split simple words (निष्ठायां → निष्ठा | यां). Precision is unknown until the human lane lands.
 3. Dual coverage ~8–9% of the bank: a ≤7-char simple-word vocabulary cannot segment member-internal sandhi. The bank itself (92,271 rows) is the complete candidate census; the dual subset is the machine-verifiable core.
 4. Bracket-node labelling (the Klammerdiagramm tree proper) is **deferred to v2** — `tree: null, tree_status: "deferred_v2"`; no labelling is fabricated.
+
+## Independent verifier round (cou-2, deepseek/deepseek-v4.1-flash)
+
+A distinct-model static inspection returned **disagree** with two genuine defects, both fixed in the same PR:
+
+1. **Tokenizer swallowed daṇḍa/digits** — the character class `[ऀ-ॿ]+` kept `। ॥ ०-९` inside tokens, inflating the census with punctuated duplicates (`प्राप्नोति` + `प्राप्नोति।` counted separately). Fixed: the class now excludes U+0964–U+0970; a regression test (`test_tokenize_danda_digits_are_separators_not_word_chars`) pins it. Census went 92,271 → **89,327**; the frequency table de-duplicated (प्राप्नोति now 2,468, merged).
+2. **κ chance-term summed over an unordered set** — float summation order followed Python hash randomization, so the 4-dp κ could flip across processes and flake `--check`. Fixed: `sorted(cats)`. Also hardened the bhashya key parse (malformed keys now skip loudly) and renamed a misleading test.
+
+The verifier also correctly noted the per-sūtra TSV is keyed by (sūtra × layer), so 921 vārttika records collapse to 516 distinct sūtras — 4,499 data rows, not 3,983+921. That is intended shape, now documented here.
 
 ## The human lane (next session's entry point)
 
