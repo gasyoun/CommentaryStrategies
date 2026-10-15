@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-06-2026 · Last updated: 15-09-2026_
+_Created: 28-06-2026 · Last updated: 03-10-2026_
 
 A scholarly corpus + Python tooling for the comparative study of **commentary
 strategies** used by Russian academic translators of Sanskrit texts
@@ -90,6 +90,16 @@ Verse addressing is CTS-URN via `derive_urn.py`.
    never Markdown checkbox sheets.
 
 ## Agent skills
+
+### Reference PDF intake
+
+Inbound scholarly PDFs (scans, offprints, methodichkas — e.g. the Kostina
+Sundarakāṇḍa lane, deadline 15-10-2026) are ingested through
+[`/reference-pdf-ingest`](https://github.com/gasyoun/claude-config/blob/main/commands/reference-pdf-ingest.md):
+metadata, self-identifying home, BibTeX, crosslink, reference-index row.
+Scanned pages (Cologne front matter, IAST bodies, pre-reform Cyrillic) go
+through [`/sanscritica-ocr`](https://github.com/gasyoun/claude-config/blob/main/commands/sanscritica-ocr.md)
+before they count as quotable sources (wired H5790, 03-10-2026).
 
 ### Issue tracker
 
