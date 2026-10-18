@@ -338,6 +338,7 @@ def write_sheet(rows: list[dict], kappa: dict) -> None:
             f"<td class='fill'></td></tr>")
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <title>MBh Klammeranalyse — second-annotator sheet v1 (H6055)</title>
+<link rel="stylesheet" href="../../css/commentary.css">
 <style>
 body{{font-family:Georgia,serif;max-width:1100px;margin:2rem auto;padding:0 1rem}}
 table{{border-collapse:collapse;width:100%}}
@@ -346,6 +347,7 @@ td,th{{border:1px solid #999;padding:.35rem .5rem;font-size:.95rem;text-align:le
 .fill{{background:#fdf6e3;min-width:22ch}}
 .note{{background:#f4f4f4;border-left:4px solid #888;padding:.5rem 1rem;margin:1rem 0;font-size:.9rem}}
 </style></head><body>
+<main class="container">
 <h1>Mahābhāṣya Klammeranalyse — second-annotator sheet v1</h1>
 <p>H6055 · generated {SEED} · protocol H5312/H5313 shape: this sheet shows the
 <strong>disagreements</strong> between the two mechanical passes (A = greedy
@@ -365,6 +367,7 @@ Reported as measured.</div>
 file — mirror-only cache, never committed). This sheet and every other committed
 artifact are derived measurements. tree_status: deferred_v2 — bracket-node
 labelling is the human lane, not fabricated here.</p>
+</main>
 </body></html>"""
     (DATA / "second_annotator_sheet.html").write_text(html, encoding="utf-8")
 
