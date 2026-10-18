@@ -14,7 +14,9 @@ What this builds (deterministic, stdlib-only, no network at build time):
   data/panini_klammer/build/mbh_klammer_bank.json    — full candidate bank
   data/panini_klammer/mbh_klammer_per_sutra.tsv      — per-sūtra counts (derived)
   data/panini_klammer/mbh_klammer_sample.json        — κ sample, both passes
-  data/panini_klammer/mbh_klammer_disagreements.json — every exact mismatch
+  data/panini_klammer/mbh_klammer_disagreements.json — the disagreement
+        sheet pool: all exact mismatches when ≤ SHEET_ROWS, else a
+        layer-stratified SHEET_ROWS sample (README is authoritative)
   data/panini_klammer/mbh_klammer_topcompounds.tsv   — frequency table
   data/panini_klammer/mbh_klammer_kappa.json         — κ + bootstrap CI
   data/panini_klammer/second_annotator_sheet.html    — human lane (H5312 shape)
