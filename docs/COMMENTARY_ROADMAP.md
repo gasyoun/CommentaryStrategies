@@ -1,5 +1,9 @@
 # Сундараканда (Леонов/Костина) — манифест стратегии и план работы
 
+> **Wave-2 verdict 22-10-2026 (H7126):** retained in place — live canonical Sundarakāṇḍa programme record; Phase-2 commentator apparatus stays human-gated (MG/Kostina approval) per the standing skill contract; all shipped waves verified.
+
+
+
 _Created: 01-07-2026 · Last updated: 28-07-2026_
 
 > **Что это.** Roadmap комментаторского аппарата Сундараканды: сверху — манифест стратегии и
