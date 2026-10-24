@@ -1,6 +1,10 @@
 _Created: 15-05-2026 · Last updated: 05-09-2026_
 
 # Postdoc Research Roadmap — CommentaryStrategies
+
+> **Wave-2 verdict 22-10-2026 (H7126):** retained in place — 2026–2029 postdoc research agenda (ИЛИ РАН); horizon prose is the agenda, not a stale queue.
+
+
 **М. Гасунс / M. Gasūns · ИЛИ РАН · 2026–2029**
 
 ---
