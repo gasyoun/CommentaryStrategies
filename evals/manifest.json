@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "marker": "eval_harness",
+  "repo": "CommentaryStrategies",
+  "created": "2026-10-26",
+  "handoff": "H6846",
+  "description": "Minimal eval scaffold over CommentaryStrategies' own human apparatus gold. No new gold was created and no annotation was added.",
+  "suites": [
+    {
+      "id": "apparatus-gate-locus",
+      "class": "canary",
+      "measures": "Integrity of the human final-assembly gate overlay: every verdict in data/apparatus/gate_ledger.json resolves to a real apparatus note in the matching sarga file, with the same layer and (when present) the same lemma.",
+      "gold": {
+        "path": "data/apparatus/gate_ledger.json",
+        "provenance": "R1/R3 human assembly gate (H141/H2829/H2830); 126 committed verdict entries, last applied 2026-07-11"
+      },
+      "grader": "exact locus/layer/lemma match (stdlib, deterministic)",
+      "cases": 126,
+      "canary": {
+        "gold_expectation": "pass",
+        "mutation": "rewrite one verdict key and its entry verse_id to a nonexistent verse (5.99.99)",
+        "mutation_expectation": "fail"
+      }
+    }
+  ]
+}
