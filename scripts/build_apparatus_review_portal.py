@@ -2,10 +2,14 @@
 """Build/check the deterministic 68-sarga reviewer portal (Kostina or Leonov).
 
 Kostina keeps her legacy single-instance filenames (index.html,
-reviewer_manifest.json, review.webmanifest, review-sw.js) byte-identical, so her
-saved PWA state and any existing links keep working. Every other reviewer gets
-slug-suffixed filenames (index_<slug>.html, ...), derived from the same
-REVIEWER_SLUG map the ballot builder uses.
+reviewer_manifest.json, review.webmanifest, review-sw.js) — structure and
+filenames stable, existing links keep working. Provenance-only deltas to her
+artifacts after source commits are the established H4742 heal recipe (commit
+5264bbd precedent): the repo_revision pin makes any commit touching the pinned
+source paths invalidate both portals' committed provenance, and the follow-up
+regen commit (which touches no pinned path) restores --check green.
+Every other reviewer gets slug-suffixed filenames (index_<slug>.html, ...),
+derived from the same REVIEWER_SLUG map the ballot builder uses.
 """
 from __future__ import annotations
 
@@ -108,7 +112,7 @@ def index_html(doc: dict, reviewer: str, slug: str) -> str:
 <script>window.REVIEW_MANIFEST={blob};</script><script src="../../js/review-portal.js" defer></script></body></html>'''
 
 
-def webmanifest(reviewer: str, slug: str) -> str:
+def webmanifest(reviewer: str) -> str:
     gen = REVIEWER_GEN.get(reviewer, reviewer)
     return json.dumps({"name": f"Сундараканда — рецензирование {gen}",
                        "short_name": "Sundara review", "start_url": "./",
@@ -138,7 +142,7 @@ def expected(reviewer: str, slug: str) -> dict[Path, str]:
     doc = with_manifest_hash(build_manifest(reviewer, slug))
     return {paths["manifest"]: json.dumps(doc, ensure_ascii=False, indent=2) + "\n",
             paths["index"]: index_html(doc, reviewer, slug),
-            paths["webmanifest"]: webmanifest(reviewer, slug),
+            paths["webmanifest"]: webmanifest(reviewer),
             paths["sw"]: service_worker(doc, slug)}
 
 
@@ -149,7 +153,7 @@ def drift_check() -> int:
     # 25 QA-parked cards). Nothing in CI noticed. This is that missing check,
     # run for every reviewer slug whose ballots are on disk.
     failures = 0
-    for slug in ("kostina", "leonov"):
+    for slug in sorted(set(REVIEWER_SLUG.values())):
         missing = [f"sarga_{n:02d}_{slug}" for n in range(1, 69)
                    if not (OUT / f"sarga_{n:02d}_{slug}.json").exists()]
         if len(missing) == 68:
@@ -162,6 +166,9 @@ def drift_check() -> int:
         for n in range(1, 69):
             view = OUT / f"sarga_{n:02d}.json"
             ballot = OUT / f"sarga_{n:02d}_{slug}.json"
+            if not view.exists():
+                drift.append(f"sarga_{n:02d}: missing view-only twin")
+                continue
             ids = lambda f: [x["id"] for v in json.loads(
                 f.read_text(encoding="utf-8"))["verses"] for x in v["notes"]]
             if ids(view) != ids(ballot):
@@ -198,7 +205,7 @@ def main() -> int:
     else:
         for path, content in outputs.items():
             path.write_text(content, encoding="utf-8")
-    manifest = json.loads(outputs[list(outputs)[0]])
+    manifest = json.loads(outputs[paths_for(slug)["manifest"]])
     sargas = [row["sarga"] for row in manifest["sargas"]]
     if sargas != list(range(1, 69)) or len(set(sargas)) != 68:
         print("FAIL: manifest must contain exactly unique sargas 1–68")
