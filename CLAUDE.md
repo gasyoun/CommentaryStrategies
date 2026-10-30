@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-06-2026 · Last updated: 03-10-2026_
+_Created: 28-06-2026 · Last updated: 30-10-2026_
 
 A scholarly corpus + Python tooling for the comparative study of **commentary
 strategies** used by Russian academic translators of Sanskrit texts
