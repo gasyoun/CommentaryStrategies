@@ -56,11 +56,32 @@ Recipe (this is the whole of it):
 ```bash
 python scripts/build_apparatus_review_portal.py                  # default reviewer
 python scripts/build_apparatus_review_portal.py --reviewer Леонов
-git add data/apparatus                                           # data only — no scripts, no js
+python scripts/build_review_test_fixtures.py                     # fixtures quote the manifest hash
+git add data/apparatus tests/fixtures                            # data only — no scripts, no js
 git commit -m "<H####>: regenerate portal provenance (data-only)"
 python scripts/build_apparatus_review_portal.py --check                    # exit 0
 python scripts/build_apparatus_review_portal.py --check --reviewer Леонов  # exit 0
+python scripts/validate_apparatus_submission.py tests/fixtures/apparatus_submission_valid.json
+python scripts/review_platform_selftest.py
 ```
+
+## The second mirror: the submission fixtures
+
+The regenerated manifest hash is quoted in one more place — the synthetic vote-free
+submissions under `tests/fixtures/` that the same CI job validates:
+
+```bash
+python scripts/build_review_test_fixtures.py     # rewrites both fixtures from the live manifest
+```
+
+`build_review_test_fixtures.py` copies `manifest_hash`, `source_hash` and the
+per-sarga hashes out of `data/apparatus/reviewer_manifest.json` and recomputes
+`content_hash`. Skip it after a provenance regen and the job goes red with a
+*different* message — `FAIL: manifest_hash mismatch` from
+`validate_apparatus_submission.py`, and the same assertion inside
+`review_platform_selftest.py` — while `--check` itself is green. Both fixtures
+(`apparatus_submission_valid.json`, `apparatus_submission_invalid_identity.json`)
+move together; the generator is the only thing that should write them.
 
 Inside one PR this works as a second commit; across a **squash** merge it does
 not, because squash rewrites the SHA the artifacts recorded. So a code-changing
