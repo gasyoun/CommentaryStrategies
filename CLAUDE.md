@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-06-2026 · Last updated: 03-10-2026_
+_Created: 28-06-2026 · Last updated: 01-11-2026 — H7274 claims pass: 18/18 paths OK; 6 markup_50 files match the 6x50 gold sample_
 
 A scholarly corpus + Python tooling for the comparative study of **commentary
 strategies** used by Russian academic translators of Sanskrit texts
