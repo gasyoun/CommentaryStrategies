@@ -188,6 +188,11 @@ _Created: 01-11-2026 · Last updated: 01-11-2026_
 языках;[^4] русский перевод 1994 года (Т.Я. Елизаренкова, серия
 «Литературные памятники»)[^5] и продолжающийся перевод М.В. Леонова — два
 полюса русской сундара-традиции, о которых пойдёт речь в §2–3.
+Карта Голдменов (H7925, §§1.1/1.3): генетическая и рецептивная истории — R.P.
+Goldman, «Sundare Kim Na Sundaram?»[^26]; Vol. V, Introduction §§6–8 — Имя
+(pp. 75–78), Судьба (pp. 79–86), Текст, перевод и комментарии (pp. 87–98)[^27].
+Preface Princeton (pp. xiii–xvi) здесь не разбирается отдельно; CSL-введение
+(2006) — карманный двуязычный дубликат без сносок[^4].
 
 ### 1.4. Лес и город: два портрета ракшаса — и третий регистр
 
@@ -397,6 +402,15 @@ _Created: 01-11-2026 · Last updated: 01-11-2026_
 что «анти» в слове «антицивилизация»
 у «Рамаяны» значит: не отсутствие законов, а неисполнимость своих
 собственных законов.
+
+Именованные двигатели §1.4.4 (H7925): «Re-siting Sītā» (Purāṇa XLV.2, 2003,
+pp. 115–135) — гендерное размещение Ситы в городской рамке[^28];
+«Nikumbhilā's Grove» (2012, pp. 255–275) — ритуалы ракшасов[^29];
+«Vālmīki's Hanumān» (Rāmāyaṇa. Journal of Vaiṣṇava Studies, vol. 2, no. 4,
+1994, pp. 31–54, с R.P. Goldman) — характеристика и сокровенная
+божественность Ханумана[^30]. Голос Ситы — «Sītā Speaks»
+(Questioning Rāmāyaṇas, 2001, pp. 223–238)[^31]. «Monstrous Feminine»
+цитируется как косвенная аналогия (Бхаса)[^24].
 
 #### 1.4.5. Регистр III: ярлык
 
@@ -774,12 +788,12 @@ Gonda J. Medieval Religious Literature in Sanskrit. Hamburg, 1977;
 ср. Richman P. (ed.) Many Rāmāyaṇas. Berkeley, 1991, Introduction.
 [^2]: О Сундараканде как «романной» книге эпоса: Goldman R.P.,
 Sutherland-Goldman S.J. The Rāmāyaṇa of Vālmīki. Vol. V: Sundarakāṇḍa.
-Princeton, 1996, Introduction.
+Princeton, 1996, Introduction (§3, Structure and Contents, pp. 13–38).
 [^3]: Gonda J. Medieval Religious Literature in Sanskrit; ср. вводные
 сравнительные очерки в Richman P. (ed.) Many Rāmāyaṇas. Berkeley, 1991.
 [^4]: Goldman, Sutherland-Goldman. Vol. V (Princeton, 1996; переизд.
-2016). Не смешивать с карманным двуязычным изданием CSL (2006) без
-сносок.
+2016). Preface (pp. xiii–xvi) здесь не разбирается отдельно. Не смешивать
+с карманным двуязычным изданием CSL (2006) без сносок.
 [^5]: «Рамаяна. Книга пятая. Сундара-кханда» / пер. Т.Я. Елизаренковой.
 М.: Наука («Литературные памятники»), 1994.
 [^6]: RV 10.87; 7.104; эпитет rakṣohā́ — постоянный титул Агни. Полный
@@ -807,11 +821,11 @@ rākṣasī: 65).
 (лишь сарга 1 коротка более чем на 20 стихов) и не сосредоточены ни в
 одном ракшасовском блоке.
 [^11]: Pollock Sh. The Rāmāyaṇa of Vālmīki. Vol. III: Araṇyakāṇḍa.
-Princeton, 1991 (ed. R.P. Goldman), Introduction («антисакральные»
-лесные ракшасы).
-[^12]: Goldman, Sutherland-Goldman. Vol. V, Introduction (об «изысканной
-утончённости» ланкийцев; о ракшаси-стражах и благородных дамах — S.J.
-Sutherland-Goldman, там же).
+Princeton, 1991 (ed. R.P. Goldman), Introduction §6 Rākṣasas and Others,
+pp. 68–84 («антисакральные» лесные ракшасы).
+[^12]: Goldman, Sutherland-Goldman. Vol. V, Introduction (§4 Characters,
+pp. 39–70; §6, pp. 75–78) (об «изысканной утончённости» ланкийцев; о
+ракшаси-стражах и благородных дамах — S.J. Sutherland-Goldman, там же).
 [^12a]: Sutherland-Goldman S.J. Women at the Margins: Gender and
 Religious Anxieties in Vālmīki's Rāmāyaṇa // JAOS 138.1 (2018),
 pp. 45–72 — о ракшаси как «других» на границах и об угрозах стражей.
@@ -857,19 +871,38 @@ Staal. Honolulu: Univ. of Hawaii Press, 2017, pp. 247–274.
 [^25]: Аётья как «книга без ракшасов»: Pollock Sh. The Rāmāyaṇa of
 Vālmīki. Vol. II: Ayodhyākāṇḍa. Princeton, 1986 (соответствие переписи:
 6 вхождений на 4 053 шлоки).
+[^26]: R.P. Goldman, «Sundare Kim Na Sundaram? The Genetic and Receptive
+Histories of the Sundarakāṇḍa of the Vālmīki Rāmāyaṇa» // Journal of the
+Oriental Institute (Baroda), vol. XLVIII, nos. 1–4 (1998–99), pp. 83–106
+(генетика/рецепция для §§1.1/1.3).
+[^27]: Goldman, Sutherland-Goldman. Vol. V, Introduction: §6 The Name of
+the Sundarakāṇḍa, pp. 75–78; §7 The Destiny of the Sundarakāṇḍa, pp. 79–86;
+§8 Text, Translation, and Commentaries, pp. 87–98 (MUSE TOC).
+[^28]: S.J. Sutherland-Goldman, «Re-siting Sītā: Gender and Narrative in
+Vālmīki's Sundarakāṇḍa» // Purāṇa XLV, no. 2 (July 2003), pp. 115–135.
+[^29]: S.J. Sutherland-Goldman, «Nikumbhilā's Grove: Rākṣasa Rites in
+Vālmīki's Rāmāyaṇa» // Battle, Bards and Brāhmins (ed. J.L. Brockington.
+Delhi: Motilal Banarsidass, 2012), pp. 255–275.
+[^30]: R.P. Goldman & S.J. Sutherland-Goldman, «Vālmīki's Hanumān:
+Characterization and Occluded Divinity» // Rāmāyaṇa. Journal of Vaiṣṇava
+Studies, vol. 2, no. 4 (1994), pp. 31–54.
+[^31]: S.J. Sutherland-Goldman, «Sītā Speaks: The Voice of the Heroine in
+Sundarakāṇḍa of the Vālmīki Rāmāyaṇa» // Questioning Rāmāyaṇas (ed. Paula
+Richman. Berkeley: University of California Press, 2001), pp. 223–238.
 
 ---
 
 ## Литература (к печати)
 
 1. Goldman R.P., Sutherland-Goldman S.J. The Rāmāyaṇa of Vālmīki.
-   Vol. V: Sundarakāṇḍa. Princeton, 1996 (переизд. 2016).
+   Vol. V: Sundarakāṇḍa. Princeton, 1996 (переизд. 2016). Introduction
+   §§6–8: pp. 75–78, 79–86, 87–98.
 2. Pollock Sh. The Rāmāyaṇa of Vālmīki. Vol. III: Araṇyakāṇḍa.
    Princeton, 1991 (ed. R.P. Goldman).
 3. Goldman R.P., Sutherland-Goldman S.J. The Rāmāyaṇa of Vālmīki.
    Vol. VII: Uttarakāṇḍa. Princeton, 2017.
 4. Goldman R.P. Rāvaṇa's Kitchen: A Testimony of Desire and the Other //
-   Richman P. (ed.) Questioning Rāmāyaṇas. Berkeley, 2001.
+   Richman P. (ed.) Questioning Rāmāyaṇas. Berkeley, 2001, pp. 105–116.
 5. Sutherland-Goldman S.J. Women at the Margins: Gender and Religious
    Anxieties in Vālmīki's Rāmāyaṇa // JAOS 138.1 (2018), pp. 45–72.
 6. Sutherland-Goldman S.J. The Monstrous Feminine: Rākṣasīs and Other
@@ -908,6 +941,22 @@ Vālmīki. Vol. II: Ayodhyākāṇḍa. Princeton, 1986 (соответстви�
     по стандартным изданиям (серии «Литературные памятники»).
 28. Иконография ракшасов в индийском искусстве — обзор подобрать при
     корректуре (открытая позиция библио-приложения).
+29. Goldman R.P. Sundare Kim Na Sundaram? The Genetic and Receptive
+    Histories of the Sundarakāṇḍa of the Vālmīki Rāmāyaṇa // Journal of
+    the Oriental Institute (Baroda), vol. XLVIII, nos. 1–4 (1998–99),
+    pp. 83–106.
+30. Sutherland-Goldman S.J. Re-siting Sītā: Gender and Narrative in
+    Vālmīki's Sundarakāṇḍa // Purāṇa XLV, no. 2 (July 2003), pp. 115–135.
+31. Sutherland-Goldman S.J. Nikumbhilā's Grove: Rākṣasa Rites in
+    Vālmīki's Rāmāyaṇa // Battle, Bards and Brāhmins (ed. J.L.
+    Brockington. Delhi: Motilal Banarsidass, 2012), pp. 255–275.
+32. Goldman R.P. & Sutherland-Goldman S.J. Vālmīki's Hanumān:
+    Characterization and Occluded Divinity // Rāmāyaṇa. Journal of
+    Vaiṣṇava Studies, vol. 2, no. 4 (1994), pp. 31–54.
+33. Sutherland-Goldman S.J. Sītā Speaks: The Voice of the Heroine in
+    Sundarakāṇḍa of the Vālmīki Rāmāyaṇa // Questioning Rāmāyaṇas
+    (ed. Paula Richman. Berkeley: University of California Press, 2001),
+    pp. 223–238.
 
 > NB для редколлегии: позиции 21, 23, 28 — открытые позиции
 > библио-приложения досье (п. «добавить при драфте»); в корректуре
