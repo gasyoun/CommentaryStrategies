@@ -23,5 +23,21 @@ _Created: 01-11-2026 · Last updated: 01-11-2026_
   тексте нет) — тезис §1.4.5 перестроен на однонаправленность ярлыка.
 - **Не трогать без ревью:** цитаты тик (проверены по корпусу), цифры таблиц
   (машиночитаемо воспроизводимы).
+- **Числовой журнал (H7924, DH #6):** каждое печатное число → источник.
+
+| Число | Где | Источник (файл / ключ) |
+|---|---|---|
+| 2 045 / 55 / 5 / 5 / 2,7; 4 053 / 6 / 1 / 4 / 0,1; 2 242 / 277 / 23 / 21 / 12,4; 2 235 / 25 / 2 / 3 / 1,1; 2 536 / 326 / 65 / 62 / 12,9; 5 209 / 877 / 24 / 98 / 16,8; 18 320 / 1 566 / 120 / 193 / 8,5 | Таблица 1 | `data/analysis/rakshasa_census_vulgate_2026-11-01.json`: `census_by_kanda`, `totals` (перепрогон 09-11-2026) |
+| 36/28/20/79/38/82/3/26/9/5; блок 22–27: 79 = 31 ж. + 48 м./н.; 31 из 65 (почти половина) | Таблица 2 + §1.4.2 | тот же JSON: `sundara_vs_southern.sundara_blocks`, `sundara_tokens_by_sarga` (68 сарг, суммы 326/65) |
+| Сплит 55→5/50, 6→1/5, 277→23/254, 25→2/23, 326→65/261 (19,9 %), 877→24/853 (2,7 %), 1 566→120/1 446 (7,7 %); карта 31/9/5/4/16 | микрораздел §1.4.2 | тот же JSON: `census_by_kanda` (rākṣasī), `sundara_tokens_by_sarga` (female по саргам) |
+| 2 859 / 2 536 / 11,4; 2 488 / 371 / 1 065 / 1 043 / 307 / 742; 68/66 сарг | §1.4.2, §5 | `data/edition_comparison/book_summary.json`: `book_totals` |
+| 94 / 90 (RV, 1 028 гимнов); пин 04e0778 (заморож.), DCS HEAD 450412c4 (rev-parse) | §1.4.1, [^6] | тот же JSON: `rigveda_full.by_lemma` (`rakṣas`=94, `rakṣ`=90); скрипт: `dcs_pin()` |
+| 0,888 / 0,964 (10 сарг) / 0,945 (58 batch-3); ≈67 % пилота | §6 | `docs/PHASE2_METHOD.md` §9; `docs/ACL_METHODS_ADOPTED.md`; `data/analysis/phase2_pilot/pilot_rejected.json`; `docs/LP_APPARATUS_DESIGN.md` §6 |
+| 1 058 / 368 (34,8 %) / 108 (10,2 %) | §4 | `data/analysis/leonov_commentator_stats.json`: `_meta.total_notes`, `notes_citing_any_commentator`, `contrastive_layer` |
+| 17 863 | §2 | `docs/CORPUS_COMPOSITION_17863.md` |
+| 521 (эпитеты) | §1.2 | `data/ramayana_epithets.json` |
+| ≈37 % / ≈25 % (бенчмарк аппарата) | §2 | `docs/LP_APPARATUS_DESIGN.md` §3 (решение 07-07-2026) |
+| 2 029 (досье) → 1 566 (чистая перепись) | §6, [^8] | `dossier_compatibility` в census-JSON; досье — Uprava/drafts |
+| JAOS 138.1:45–72; Thompson & Payne pp. 247–274; Pollock Vol. III 1991 (ed. Goldman) | сноски/литература | страницы сверены 09-11-2026: JAOS (lockwood, How to Cite), On Meaning and Mantras (UH Press TOC), Vol. III (JAS review / Princeton) — см. PR H7924 |
 
 _к.ф.н. М.Ю. Гасунс_

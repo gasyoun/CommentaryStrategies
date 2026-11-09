@@ -19,6 +19,7 @@ Usage: python3 rakshasa_census_vulgate_2026-11-01.py [--repo-root DIR]
 """
 import json
 import re
+import subprocess
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -39,6 +40,11 @@ KANDAS = [
     ("Сундара", "kanda_5_sundarakanda"),
     ("Юддха", "kanda_6_yuddhakanda"),
 ]
+
+# Таблица 2 статьи (H7924, DH #1): эпизодальные блоки Сундары, сверяемые с
+# sundara_tokens_by_sarga ниже. Сарга 13 — в блоке 9–13 (как в статье).
+SUNDARA_BLOCKS = [(1, 8), (9, 13), (14, 21), (22, 27), (28, 41), (42, 54),
+                  (55, 57), (58, 58), (59, 64), (65, 68)]
 
 DEV_NEUTER = re.compile(r"रक्ष[ःों]|रक्षांसि")
 IAST_FAMILY = re.compile(r"rākṣas")
@@ -92,12 +98,13 @@ def sundara_vs_southern(per_verse):
     bs = json.loads((EDC / "book_summary.json").read_text(encoding="utf-8"))
     southern_by_sarga = {r["sarga"]: r["southern_verses"] for r in bs["per_sarga_by_number_RAW"]}
     # полный проход по всем стихам Сундары: счёт стихов не должен зависеть от токенов
-    local_by_sarga, tokens_by_sarga = {}, {}
+    local_by_sarga, tokens_by_sarga, female_by_sarga = {}, {}, {}
     for f in sorted((SHLOKAS / "kanda_5_sundarakanda").glob("sarga_*.json")):
         sarga = int(f.stem.split("_")[1])
         verses = json.loads(f.read_text(encoding="utf-8"))
         local_by_sarga[sarga] = len(verses)
         tokens_by_sarga[sarga] = sum(clean(v.get("sanskrit", "")).count("राक्षस") for v in verses)
+        female_by_sarga[sarga] = sum(clean(v.get("sanskrit", "")).count("राक्षसी") for v in verses)
     gaps, top = [], []
     for s in sorted(southern_by_sarga):
         loc = local_by_sarga.get(s, 0)
@@ -109,6 +116,12 @@ def sundara_vs_southern(per_verse):
         top.append({"sarga": s, "tokens": c, "local_verses": local_by_sarga.get(s, 0),
                     "southern_verses": southern_by_sarga.get(s)})
     bt = bs["book_totals"]
+    blocks = []
+    for a, b in SUNDARA_BLOCKS:
+        tot = sum(tokens_by_sarga.get(n, 0) for n in range(a, b + 1))
+        fem = sum(female_by_sarga.get(n, 0) for n in range(a, b + 1))
+        blocks.append({"sargas": [a, b], "tokens": tot, "female": fem,
+                       "male_other": tot - fem})
     return {
         "southern_total_sundara": bt["southern_verses"],
         "local_total_sundara": sum(local_by_sarga.values()),
@@ -116,6 +129,14 @@ def sundara_vs_southern(per_verse):
         "top_token_sargas": top,
         "density_if_southern_denominator": round(
             sum(tokens_by_sarga.values()) / bt["southern_verses"] * 100, 1),
+        # H7924 (DH #1): машинный экспорт для Таблицы 2 и гендерного микрораздела.
+        # Таблица 2 статьи сверяется с sundara_blocks; доля rākṣasī — с
+        # sundara_tokens_by_sarga (female) и census_by_kanda (rākṣasī).
+        "sundara_tokens_by_sarga": [
+            {"sarga": s, "verses": local_by_sarga[s], "tokens": tokens_by_sarga[s],
+             "female": female_by_sarga[s]}
+            for s in sorted(tokens_by_sarga)],
+        "sundara_blocks": blocks,
     }
 
 
@@ -159,8 +180,31 @@ def context_5_2_43():
     return out
 
 
+def dcs_pin():
+    """H7924 (DH #2): пин корпуса через git rev-parse, не хардкод.
+    Возвращает (sha, источник) для первого найденного локального
+    dcs-conllu/DCS-клона; (None, ...) если клона нет на машине."""
+    for cand in (RV_DIR.parents[2], Path.home() / "Documents" / "GitHub" / "DCS"):
+        if (cand / ".git").exists():
+            try:
+                sha = subprocess.run(
+                    ["git", "-C", str(cand), "rev-parse", "HEAD"],
+                    capture_output=True, text=True, timeout=10).stdout.strip()
+            except Exception:
+                sha = ""
+            if sha:
+                return sha, "git rev-parse HEAD in %s" % cand
+    return None, "corpus clone absent on this host at re-run; frozen pin retained"
+
+
 def rv_census():
-    """Чек (в): rakṣas-токены по полному RV (DCS conllu, колонка FORM)."""
+    """Чек (в): rakṣas-токены по полному RV (DCS conllu, колонка FORM).
+    DH #9 (containment): при отсутствии корпуса массивы не зануляются —
+    main() сохраняет замороженные значения rigveda_full из прошлого JSON
+    и помечает их, вместо записи пустого счёта."""
+    if not RV_DIR.is_dir() or not any(RV_DIR.glob("*.conllu")):
+        return {"status": "corpus absent at re-run; frozen values preserved by main()",
+                "pin": dcs_pin()[0], "pin_source": dcs_pin()[1]}
     forms = {}
     chapters = 0
     for f in sorted(RV_DIR.glob("*.conllu")):
@@ -180,13 +224,15 @@ def rv_census():
     by_lemma = {}
     for (form, lemma), n in forms.items():
         by_lemma[lemma] = by_lemma.get(lemma, 0) + n
+    sha, how = dcs_pin()
     return {
         "chapters": chapters,
         "total_tokens": sum(forms.values()),
         "by_form": sorted(({"form": f, "lemma": l, "n": n} for (f, l), n in forms.items()),
                           key=lambda x: -x["n"]),
         "by_lemma": dict(sorted(by_lemma.items(), key=lambda kv: -kv[1])),
-        "source": "dcs-conllu/files/Ṛgveda (DCS), FORM column, pin 04e0778",
+        "pin": sha, "pin_source": how,
+        "source": "dcs-conllu/files/Ṛgveda (DCS), FORM column, pin %s (%s)" % (sha, how),
     }
 
 
@@ -222,6 +268,20 @@ def dossier_compatibility():
 
 def main():
     rows, total, per_verse = devanagari_census()
+    out = Path(__file__).with_suffix(".json")
+    prev = {}
+    if out.exists():
+        try:
+            prev = json.loads(out.read_text(encoding="utf-8"))
+        except ValueError:
+            prev = {}
+    rv = rv_census()
+    if rv.get("status"):
+        # корпус отсутствует: сохраняем замороженные RV-значения, а не нули
+        frozen = dict(prev.get("rigveda_full") or {})
+        frozen.update({"repro_status": rv["status"], "pin": rv["pin"],
+                       "pin_source": rv["pin_source"]})
+        rv = frozen
     report = {
         "census_by_kanda": rows,
         "totals": {**total, "per_100": round(total["family"] / total["verses"] * 100, 1)},
@@ -229,7 +289,7 @@ def main():
         "southern_variant_tokens_sundara": southern_variant_tokens(),
         "hanuman_rakshasa_5_43_50": hanuman_check(),
         "context_5_2_40_46": context_5_2_43(),
-        "rigveda_full": rv_census(),
+        "rigveda_full": rv,
         "dossier_compatibility": dossier_compatibility(),
         "commentary_file_hits": commentary_probe(),
     }
