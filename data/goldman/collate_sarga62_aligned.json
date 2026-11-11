@@ -1,41 +1,37 @@
 {
- "apparatus": "C:\\Users\\COMPUTER\\Documents\\GitHub\\CommentaryStrategies-h7941-21248\\data\\apparatus\\sarga_62_kostina.json",
+ "apparatus": "data/apparatus/sarga_62_kostina.json",
  "numbering_ours": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
  "numbering_goldman": "Baroda critical edition (Princeton translation)",
  "anchors": [
+  {
+   "goldman_verse": 6,
+   "offset": 1
+  },
   {
    "goldman_verse": 7,
    "offset": 1
   },
   {
-   "goldman_verse": 12,
-   "offset": 1
-  },
-  {
-   "goldman_verse": 30,
-   "offset": 1
-  },
-  {
-   "goldman_verse": 31,
-   "offset": 1
-  },
-  {
-   "goldman_verse": 32,
-   "offset": 1
+   "goldman_verse": 8,
+   "offset": 4
   }
  ],
- "anchor_count": 5,
+ "anchor_count": 3,
  "our_note_count": 36,
  "our_verses_with_notes": 25,
- "goldman_verses_with_notes": 21,
- "goldman_note_count": 21,
- "both": 15,
+ "goldman_verses_with_notes": 20,
+ "goldman_note_count": 20,
+ "both": 10,
  "only_goldman": [
   1,
+  11,
   14,
+  15,
   20,
-  21,
-  28,
+  24,
+  25,
+  30,
+  32,
   35
  ],
  "only_ours": [
@@ -43,29 +39,34 @@
   3,
   4,
   5,
+  9,
+  10,
   11,
   14,
   17,
+  23,
+  27,
   30,
-  35,
+  31,
+  33,
   38
  ],
  "by_band": {
   "interpolated": {
-   "rows": 8,
-   "with_our_note": 5
+   "rows": 5,
+   "with_our_note": 1
   },
   "measured": {
-   "rows": 12,
-   "with_our_note": 10
+   "rows": 5,
+   "with_our_note": 5
   },
   "carried": {
-   "rows": 1,
-   "with_our_note": 0
+   "rows": 10,
+   "with_our_note": 4
   }
  },
- "naive_join_hits": 15,
- "aligned_join_hits": 15,
+ "naive_join_hits": 14,
+ "aligned_join_hits": 10,
  "rows": [
   {
    "goldman_verse": 1,
@@ -97,7 +98,7 @@
    "our_verse": 7,
    "band": "measured",
    "goldman_heads": [
-    "learning that Hanuman had found Maithili"
+    "learning that Hanumān had found Maithilī"
    ],
    "our_notes": [
     "[tier1] Раззадоренные позволением / И Ханумана успехом (atisargāc ca",
@@ -120,75 +121,48 @@
   },
   {
    "goldman_verse": 8,
-   "offset": 1,
-   "our_verse": 9,
+   "offset": 4,
+   "our_verse": 12,
    "band": "measured",
    "goldman_heads": [
-    "honeycombs’ madhim: Literally, “honeys."
+    "honeycombs"
    ],
    "our_notes": [
-    "[tier1] Вместимостью в целую кадку (droṇamātrāṇi) - в оригинале испо",
-    "[lexical] droṇa"
+    "[tier1] "
    ],
-   "ours": 2
+   "ours": 1
   },
   {
    "goldman_verse": 9,
-   "offset": 1,
-   "our_verse": 10,
+   "offset": 4,
+   "our_verse": 13,
    "band": "measured",
    "goldman_heads": [
     "the honeycombs"
    ],
    "our_notes": [
-    "[tier1] валили ульи (apavidhyanti madhūni) - букв. “швыряли меды”. В"
+    "[tier1] "
    ],
    "ours": 1
   },
   {
    "goldman_verse": 11,
-   "offset": 1,
-   "our_verse": 12,
-   "band": "measured",
+   "offset": 4,
+   "our_verse": 15,
+   "band": "interpolated",
    "goldman_heads": [
     "giddily"
-   ],
-   "our_notes": [
-    "[tier1] "
-   ],
-   "ours": 1
-  },
-  {
-   "goldman_verse": 12,
-   "offset": 1,
-   "our_verse": 13,
-   "band": "measured",
-   "goldman_heads": [
-    "roared like lions"
-   ],
-   "our_notes": [
-    "[tier1] "
-   ],
-   "ours": 1
-  },
-  {
-   "goldman_verse": 14,
-   "offset": 1,
-   "our_verse": 15,
-   "band": "measured",
-   "goldman_heads": [
-    "monkeys . .. guards"
    ],
    "our_notes": [],
    "ours": 0
   },
   {
-   "goldman_verse": 15,
-   "offset": 1,
+   "goldman_verse": 12,
+   "offset": 4,
    "our_verse": 16,
    "band": "interpolated",
    "goldman_heads": [
-    "Granted leave . . . monkeys"
+    "roared like lions"
    ],
    "our_notes": [
     "[tier1] Дорогу богов показали (devamārgaṃ ca darśitāḥ) - неясное выр",
@@ -197,10 +171,32 @@
    "ours": 2
   },
   {
-   "goldman_verse": 20,
-   "offset": 1,
-   "our_verse": 21,
+   "goldman_verse": 14,
+   "offset": 4,
+   "our_verse": 18,
    "band": "interpolated",
+   "goldman_heads": [
+    "monkeys . . . guards"
+   ],
+   "our_notes": [],
+   "ours": 0
+  },
+  {
+   "goldman_verse": 15,
+   "offset": 4,
+   "our_verse": 19,
+   "band": "interpolated",
+   "goldman_heads": [
+    "Granted leave . . . monkeys"
+   ],
+   "our_notes": [],
+   "ours": 0
+  },
+  {
+   "goldman_verse": 20,
+   "offset": 4,
+   "our_verse": 24,
+   "band": "carried",
    "goldman_heads": [
     "the monkey guardians of the grove"
    ],
@@ -209,36 +205,11 @@
   },
   {
    "goldman_verse": 21,
-   "offset": 1,
-   "our_verse": 22,
+   "offset": 4,
+   "our_verse": 25,
    "band": "carried",
    "goldman_heads": [
     "guardians of the grove"
-   ],
-   "our_notes": [],
-   "ours": 0
-  },
-  {
-   "goldman_verse": 22,
-   "offset": 1,
-   "our_verse": 23,
-   "band": "interpolated",
-   "goldman_heads": [
-    "guardians of the grove"
-   ],
-   "our_notes": [
-    "[tier1] ",
-    "[edition] Шлока 5.62.23 отсутствует в критическом издании (Барода)."
-   ],
-   "ours": 2
-  },
-  {
-   "goldman_verse": 24,
-   "offset": 1,
-   "our_verse": 25,
-   "band": "interpolated",
-   "goldman_heads": [
-    "venerable elder"
    ],
    "our_notes": [
     "[tier1] Мощнорукий и быстрый, / Пошел Дадхимукха… (savṛkṣaṃ taṃ mahā"
@@ -246,12 +217,12 @@
    "ours": 1
   },
   {
-   "goldman_verse": 25,
-   "offset": 1,
+   "goldman_verse": 22,
+   "offset": 4,
    "our_verse": 26,
-   "band": "interpolated",
+   "band": "carried",
    "goldman_heads": [
-    "not realizing . . . Angada failed to recognize him"
+    "guardians of the grove"
    ],
    "our_notes": [
     "[tier1] Это же дед мой (āryako ‘yaṃ mama) - Дадхимукха приходится Су",
@@ -260,50 +231,34 @@
    "ours": 2
   },
   {
-   "goldman_verse": 26,
-   "offset": 1,
-   "our_verse": 27,
-   "band": "interpolated",
+   "goldman_verse": 24,
+   "offset": 4,
+   "our_verse": 28,
+   "band": "carried",
    "goldman_heads": [
-    "face averted"
-   ],
-   "our_notes": [
-    "[tier1] "
-   ],
-   "ours": 1
-  },
-  {
-   "goldman_verse": 28,
-   "offset": 1,
-   "our_verse": 29,
-   "band": "measured",
-   "goldman_heads": [
-    "thick-necked"
+    "venerable elder"
    ],
    "our_notes": [],
    "ours": 0
   },
   {
-   "goldman_verse": 30,
-   "offset": 1,
-   "our_verse": 31,
-   "band": "measured",
+   "goldman_verse": 25,
+   "offset": 4,
+   "our_verse": 29,
+   "band": "carried",
    "goldman_heads": [
-    "from father to son"
+    "not realizing . . . Aṅgada failed to recognize him"
    ],
-   "our_notes": [
-    "[tier1] ",
-    "[lexical] pitṛpaitāmaha"
-   ],
-   "ours": 2
+   "our_notes": [],
+   "ours": 0
   },
   {
-   "goldman_verse": 31,
-   "offset": 1,
+   "goldman_verse": 28,
+   "offset": 4,
    "our_verse": 32,
-   "band": "measured",
+   "band": "carried",
    "goldman_heads": [
-    "doomed"
+    "thick-necked"
    ],
    "our_notes": [
     "[phase2] gatāyuṣaḥ",
@@ -312,23 +267,46 @@
    "ours": 2
   },
   {
-   "goldman_verse": 32,
-   "offset": 1,
-   "our_verse": 33,
-   "band": "measured",
+   "goldman_verse": 30,
+   "offset": 4,
+   "our_verse": 34,
+   "band": "carried",
    "goldman_heads": [
-    "king’s rage, arising from his lack of forbearance"
+    "from father to son"
+   ],
+   "our_notes": [],
+   "ours": 0
+  },
+  {
+   "goldman_verse": 31,
+   "offset": 4,
+   "our_verse": 35,
+   "band": "carried",
+   "goldman_heads": [
+    "doomed"
    ],
    "our_notes": [
-    "[tier1] …Гнев, возмущеньем рожденный (amarṣaprabhavo roṣaḥ) - автор "
+    "[lexical] sahasrāṃśusuta",
+    "[crosstext] nimeṣa-antara-mātra"
    ],
-   "ours": 1
+   "ours": 2
+  },
+  {
+   "goldman_verse": 32,
+   "offset": 4,
+   "our_verse": 36,
+   "band": "carried",
+   "goldman_heads": [
+    "king's rage, arising from his lack of forbearance"
+   ],
+   "our_notes": [],
+   "ours": 0
   },
   {
    "goldman_verse": 35,
-   "offset": 1,
-   "our_verse": 36,
-   "band": "interpolated",
+   "offset": 4,
+   "our_verse": 39,
+   "band": "carried",
    "goldman_heads": [
     "level"
    ],

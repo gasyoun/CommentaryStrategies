@@ -1,10 +1,14 @@
 {
- "apparatus": "C:\\Users\\COMPUTER\\Documents\\GitHub\\CommentaryStrategies-h7941-21248\\data\\apparatus\\sarga_28_kostina.json",
+ "apparatus": "data/apparatus/sarga_28_kostina.json",
  "numbering_ours": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
  "numbering_goldman": "Baroda critical edition (Princeton translation)",
  "anchors": [
   {
    "goldman_verse": 3,
+   "offset": 0
+  },
+  {
+   "goldman_verse": 6,
    "offset": 0
   },
   {
@@ -22,31 +26,33 @@
   {
    "goldman_verse": 17,
    "offset": 0
+  },
+  {
+   "goldman_verse": 19,
+   "offset": 1
   }
  ],
- "anchor_count": 5,
+ "anchor_count": 7,
  "our_note_count": 18,
  "our_verses_with_notes": 12,
  "goldman_verses_with_notes": 13,
  "goldman_note_count": 13,
- "both": 10,
+ "both": 11,
  "only_goldman": [
   7,
-  10,
-  19
+  10
  ],
  "only_ours": [
-  12,
-  20
+  12
  ],
  "by_band": {
   "measured": {
    "rows": 13,
-   "with_our_note": 10
+   "with_our_note": 11
   }
  },
  "naive_join_hits": 10,
- "aligned_join_hits": 10,
+ "aligned_join_hits": 11,
  "rows": [
   {
    "goldman_verse": 1,
@@ -54,7 +60,7 @@
    "our_verse": 1,
    "band": "measured",
    "goldman_heads": [
-    "The transition from the previous sarga seems rather poor. It is almost as though"
+    "The transition from the previous sarga seems rather poor. It is almost as though the prec"
    ],
    "our_notes": [
     "[tier1] Услышав слова повелителя ракшасов / Раваны суровые, разлукой"
@@ -67,7 +73,7 @@
    "our_verse": 2,
    "band": "measured",
    "goldman_heads": [
-    "litde girl abandoned"
+    "little girl abandoned"
    ],
    "our_notes": [
     "[tier1] В комментариях «Тилака» и «Таттвадипика» отмечается, что реч"
@@ -159,7 +165,7 @@
    "our_verse": 10,
    "band": "measured",
    "goldman_heads": [
-    "“elder brother of Laksmana—and the younger brother of Rama’ ramanujam"
+    "elder brother of Lakṣmaṇa—and the younger brother of Rāma"
    ],
    "our_notes": [],
    "ours": 0
@@ -207,14 +213,17 @@
   },
   {
    "goldman_verse": 19,
-   "offset": 0,
-   "our_verse": 19,
+   "offset": 1,
+   "our_verse": 20,
    "band": "measured",
    "goldman_heads": [
     "well known in the world"
    ],
-   "our_notes": [],
-   "ours": 0
+   "our_notes": [
+    "[lexical] dhairya",
+    "[phase2] svaṃ ca kulaṃ pravicintayantyāḥ"
+   ],
+   "ours": 2
   }
  ]
 }

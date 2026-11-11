@@ -1,8 +1,16 @@
 {
- "apparatus": "C:\\Users\\COMPUTER\\Documents\\GitHub\\CommentaryStrategies-h7941-21248\\data\\apparatus\\sarga_11_kostina.json",
+ "apparatus": "data/apparatus/sarga_11_kostina.json",
  "numbering_ours": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
  "numbering_goldman": "Baroda critical edition (Princeton translation)",
  "anchors": [
+  {
+   "goldman_verse": 3,
+   "offset": 1
+  },
+  {
+   "goldman_verse": 26,
+   "offset": 3
+  },
   {
    "goldman_verse": 34,
    "offset": 3
@@ -16,16 +24,14 @@
    "offset": 3
   }
  ],
- "anchor_count": 3,
+ "anchor_count": 5,
  "our_note_count": 32,
  "our_verses_with_notes": 26,
  "goldman_verses_with_notes": 23,
  "goldman_note_count": 23,
- "both": 11,
+ "both": 13,
  "only_goldman": [
-  3,
-  10,
-  17,
+  5,
   18,
   25,
   28,
@@ -39,55 +45,80 @@
  "only_ours": [
   1,
   3,
-  4,
-  5,
+  8,
+  9,
   10,
-  12,
   16,
   17,
   18,
-  19,
-  22,
+  23,
   27,
   42,
   46,
   48
  ],
  "by_band": {
-  "carried": {
-   "rows": 9,
-   "with_our_note": 4
+  "measured": {
+   "rows": 14,
+   "with_our_note": 8
   },
   "interpolated": {
-   "rows": 7,
-   "with_our_note": 3
-  },
-  "measured": {
-   "rows": 7,
+   "rows": 8,
    "with_our_note": 4
+  },
+  "carried": {
+   "rows": 1,
+   "with_our_note": 1
   }
  },
  "naive_join_hits": 12,
- "aligned_join_hits": 11,
+ "aligned_join_hits": 13,
  "rows": [
   {
    "goldman_verse": 3,
-   "offset": 3,
-   "our_verse": 6,
-   "band": "carried",
+   "offset": 1,
+   "our_verse": 4,
+   "band": "measured",
    "goldman_heads": [
     "drinking hall"
+   ],
+   "our_notes": [
+    "[lexical] tapasvinī",
+    "[edition] Шлока 5.11.4 отсутствует в критическом издании (Барода)."
+   ],
+   "ours": 2
+  },
+  {
+   "goldman_verse": 4,
+   "offset": 1,
+   "our_verse": 5,
+   "band": "measured",
+   "goldman_heads": [
+    "the women"
+   ],
+   "our_notes": [
+    "[crosstext] klānta"
+   ],
+   "ours": 1
+  },
+  {
+   "goldman_verse": 5,
+   "offset": 1,
+   "our_verse": 6,
+   "band": "measured",
+   "goldman_heads": [
+    "mūrjas"
    ],
    "our_notes": [],
    "ours": 0
   },
   {
-   "goldman_verse": 4,
-   "offset": 3,
+   "goldman_verse": 6,
+   "offset": 1,
    "our_verse": 7,
-   "band": "carried",
+   "band": "interpolated",
    "goldman_heads": [
-    "the women"
+    "Rāvaṇa"
    ],
    "our_notes": [
     "[tier1] О красе друг друга беседующих / Или о смысле песен (rūpasaṃl"
@@ -95,59 +126,36 @@
    "ours": 1
   },
   {
-   "goldman_verse": 5,
-   "offset": 3,
-   "our_verse": 8,
-   "band": "carried",
+   "goldman_verse": 10,
+   "offset": 2,
+   "our_verse": 12,
+   "band": "interpolated",
    "goldman_heads": [
-    "murajas"
+    "gazed upon"
    ],
    "our_notes": [
-    "[tier1] Чьи речи всегда уместны (deśakālābhiyuktena) – букв. «соотве"
+    "[tier1] "
    ],
    "ours": 1
   },
   {
-   "goldman_verse": 6,
-   "offset": 3,
-   "our_verse": 9,
-   "band": "carried",
-   "goldman_heads": [
-    "Ravana"
-   ],
-   "our_notes": [
-    "[phase2] anyatrāpi … śloka-dvayam",
-    "[edition] Шлока 5.11.9 отсутствует в критическом издании (Барода)."
-   ],
-   "ours": 2
-  },
-  {
-   "goldman_verse": 10,
-   "offset": 3,
-   "our_verse": 13,
-   "band": "carried",
-   "goldman_heads": [
-    "gazed upon"
-   ],
-   "our_notes": [],
-   "ours": 0
-  },
-  {
    "goldman_verse": 17,
-   "offset": 3,
-   "our_verse": 20,
+   "offset": 2,
+   "our_verse": 19,
    "band": "carried",
    "goldman_heads": [
     "beds"
    ],
-   "our_notes": [],
-   "ours": 0
+   "our_notes": [
+    "[tier1] Дорогие браслеты (mahānūpurakeyūraiḥ) - в оригинале речь иде"
+   ],
+   "ours": 1
   },
   {
    "goldman_verse": 18,
-   "offset": 3,
-   "our_verse": 21,
-   "band": "carried",
+   "offset": 2,
+   "our_verse": 20,
+   "band": "interpolated",
    "goldman_heads": [
     "he saw"
    ],
@@ -156,25 +164,24 @@
   },
   {
    "goldman_verse": 20,
-   "offset": 3,
-   "our_verse": 23,
-   "band": "carried",
+   "offset": 2,
+   "our_verse": 22,
+   "band": "interpolated",
    "goldman_heads": [
-    "‘jambunada gold"
+    "jāmbūnada gold"
    ],
    "our_notes": [
-    "[tier1] Из сахарного тростника, / Из меда, цветов и плодов (śarkarās",
-    "[edition] Шлока 5.11.23 отсутствует в критическом издании (Барода)."
+    "[tier1] Брага и крепкие вина (surāḥ kṛtasurā api) – автор «Тилаки» п"
    ],
-   "ours": 2
+   "ours": 1
   },
   {
    "goldman_verse": 25,
    "offset": 3,
    "our_verse": 28,
-   "band": "carried",
+   "band": "measured",
    "goldman_heads": [
-    "The syntax of this verse is unclear and the verse itself elliptical. As Cg remarks,"
+    "The syntax of this verse is unclear and the verse itself elliptical. As Cg remarks, the i"
    ],
    "our_notes": [],
    "ours": 0
@@ -183,7 +190,7 @@
    "goldman_verse": 26,
    "offset": 3,
    "our_verse": 29,
-   "band": "interpolated",
+   "band": "measured",
    "goldman_heads": [
     "empty"
    ],
@@ -196,7 +203,7 @@
    "goldman_verse": 27,
    "offset": 3,
    "our_verse": 30,
-   "band": "interpolated",
+   "band": "measured",
    "goldman_heads": [
     "embracing her"
    ],
@@ -209,7 +216,7 @@
    "goldman_verse": 28,
    "offset": 3,
    "our_verse": 31,
-   "band": "interpolated",
+   "band": "measured",
    "goldman_heads": [
     "wore"
    ],
@@ -244,7 +251,7 @@
    "our_verse": 36,
    "band": "measured",
    "goldman_heads": [
-    "Many northern manuscripts ($,N,V,B,D2,6,10,1 1) insert after verse 33, in whole"
+    "Many northern manuscripts (Ś,Ñ,V,B,D2,6,10,11) insert after verse 33, in whole or part, a"
    ],
    "our_notes": [],
    "ours": 0
@@ -268,7 +275,7 @@
    "our_verse": 38,
    "band": "measured",
    "goldman_heads": [
-    "women of another man’s inner apartments"
+    "women of another man's inner apartments"
    ],
    "our_notes": [
     "[tier1] Осматривая ночью / Покои с чужими женами (paradārāvarodhasya",
@@ -282,7 +289,7 @@
    "our_verse": 39,
    "band": "measured",
    "goldman_heads": [
-    "The ambiguities in this verse permit a variety of interpretations. Specifically, the"
+    "The ambiguities in this verse permit a variety of interpretations. Specifically, the term"
    ],
    "our_notes": [
     "[phase2] ayaṃ … paradāraparigrahaḥ"

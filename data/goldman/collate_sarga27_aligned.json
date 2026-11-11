@@ -1,5 +1,5 @@
 {
- "apparatus": "C:\\Users\\COMPUTER\\Documents\\GitHub\\CommentaryStrategies-h7941-21248\\data\\apparatus\\sarga_27_kostina.json",
+ "apparatus": "data/apparatus/sarga_27_kostina.json",
  "numbering_ours": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
  "numbering_goldman": "Baroda critical edition (Princeton translation)",
  "anchors": [
@@ -12,8 +12,12 @@
    "offset": 0
   },
   {
-   "goldman_verse": 22,
-   "offset": 14
+   "goldman_verse": 12,
+   "offset": 0
+  },
+  {
+   "goldman_verse": 33,
+   "offset": 15
   },
   {
    "goldman_verse": 35,
@@ -24,55 +28,61 @@
    "offset": 15
   }
  ],
- "anchor_count": 5,
+ "anchor_count": 6,
  "our_note_count": 50,
  "our_verses_with_notes": 34,
  "goldman_verses_with_notes": 29,
- "goldman_note_count": 30,
- "both": 18,
+ "goldman_note_count": 29,
+ "both": 17,
  "only_goldman": [
   7,
-  10,
+  8,
   11,
+  13,
   14,
   17,
-  18,
+  20,
   21,
-  24,
   25,
   28,
+  31,
   37
  ],
  "only_ours": [
   5,
-  9,
   13,
   16,
   18,
+  19,
   20,
-  22,
-  24,
+  23,
   25,
-  29,
-  31,
-  33,
+  30,
+  32,
+  36,
+  37,
   40,
   44,
+  46,
   54,
   3338
  ],
  "by_band": {
   "measured": {
-   "rows": 16,
-   "with_our_note": 12
+   "rows": 17,
+   "with_our_note": 10
   },
   "interpolated": {
-   "rows": 13,
-   "with_our_note": 6
+   "rows": 8,
+   "with_our_note": 4
+  },
+  "carried": {
+   "rows": 4,
+   "with_our_note": 3
   }
  },
  "naive_join_hits": 20,
- "aligned_join_hits": 18,
+ "aligned_join_hits": 17,
  "rows": [
   {
    "goldman_verse": 1,
@@ -106,7 +116,7 @@
    "our_verse": 4,
    "band": "measured",
    "goldman_heads": [
-    "Trijata"
+    "Trijaṭā"
    ],
    "our_notes": [
     "[lexical] trijaṭā",
@@ -132,22 +142,46 @@
   },
   {
    "goldman_verse": 7,
-   "offset": 1,
-   "our_verse": 8,
+   "offset": 0,
+   "our_verse": 7,
    "band": "measured",
    "goldman_heads": [
-    "After verse 8, northern manuscripts (SI,N,V,B,D1-4,6,10,11) insert one line"
+    "After verse 8, northern manuscripts (Ś1,Ṅ,V,B,D1–4,6,10,11) insert one line [603*] contin"
    ],
    "our_notes": [],
    "ours": 0
   },
   {
    "goldman_verse": 8,
-   "offset": 2,
+   "offset": 0,
+   "our_verse": 8,
+   "band": "measured",
+   "goldman_heads": [
+    "For verses 8 and 9, Ś1,Ṅ,V,B,D1,2,4,6,10,11 substitute 604* and 605*, which are paraphras"
+   ],
+   "our_notes": [],
+   "ours": 0
+  },
+  {
+   "goldman_verse": 9,
+   "offset": 0,
+   "our_verse": 9,
+   "band": "interpolated",
+   "goldman_heads": [
+    "at daybreak"
+   ],
+   "our_notes": [
+    "[tier1] Триджата рассказала / О своем сновидении (uvāca vacanaṃ kāle"
+   ],
+   "ours": 1
+  },
+  {
+   "goldman_verse": 10,
+   "offset": 0,
    "our_verse": 10,
    "band": "measured",
    "goldman_heads": [
-    "For verses 8 and 9, S1,N,V,B,D1,2,4,6,10,11 substitute 604* and 605%, which are"
+    "Verses 10–17 describe the auspicious omens seen by Trijaṭā. See AgniP 229.30–31; MatsyaP"
    ],
    "our_notes": [
     "[lexical] śuklamālyāmbara"
@@ -155,34 +189,10 @@
    "ours": 1
   },
   {
-   "goldman_verse": 9,
-   "offset": 3,
-   "our_verse": 12,
-   "band": "interpolated",
-   "goldman_heads": [
-    "at daybreak"
-   ],
-   "our_notes": [
-    "[phase2] rāmeṇa saṃgatā sītā"
-   ],
-   "ours": 1
-  },
-  {
-   "goldman_verse": 10,
-   "offset": 4,
-   "our_verse": 14,
-   "band": "interpolated",
-   "goldman_heads": [
-    "Verses 10-17 describe the auspicious omens seen by Trijata. See AgniP229.30—"
-   ],
-   "our_notes": [],
-   "ours": 0
-  },
-  {
    "goldman_verse": 11,
-   "offset": 4,
-   "our_verse": 15,
-   "band": "interpolated",
+   "offset": 0,
+   "our_verse": 11,
+   "band": "measured",
    "goldman_heads": [
     "dressed in garments of white"
    ],
@@ -191,37 +201,33 @@
   },
   {
    "goldman_verse": 12,
-   "offset": 5,
-   "our_verse": 17,
-   "band": "interpolated",
+   "offset": 0,
+   "our_verse": 12,
+   "band": "measured",
    "goldman_heads": [
     "a great four-tusked elephant"
    ],
    "our_notes": [
-    "[tier1] ",
-    "[edition] Шлока 5.27.17 отсутствует в критическом издании (Барода)."
+    "[phase2] rāmeṇa saṃgatā sītā"
    ],
-   "ours": 2
+   "ours": 1
   },
   {
    "goldman_verse": 13,
-   "offset": 6,
-   "our_verse": 19,
-   "band": "interpolated",
+   "offset": 1,
+   "our_verse": 14,
+   "band": "measured",
    "goldman_heads": [
     "wearing garlands and clothing of white"
    ],
-   "our_notes": [
-    "[phase2] āruhya puṣpakaṃ divyaṃ vimānaṃ sūryasaṃnibham",
-    "[edition] Шлоки 5.27.19–20 (2 шлоки) отсутствуют в критическом издании"
-   ],
-   "ours": 2
+   "our_notes": [],
+   "ours": 0
   },
   {
    "goldman_verse": 14,
-   "offset": 7,
-   "our_verse": 21,
-   "band": "interpolated",
+   "offset": 1,
+   "our_verse": 15,
+   "band": "measured",
    "goldman_heads": [
     "mounted the back of that elephant, [which was ridden] through the sky"
    ],
@@ -230,119 +236,123 @@
   },
   {
    "goldman_verse": 15,
-   "offset": 8,
-   "our_verse": 23,
+   "offset": 2,
+   "our_verse": 17,
    "band": "interpolated",
    "goldman_heads": [
     "to stroke the sun and the moon"
    ],
    "our_notes": [
-    "[tier1] Масло он пил (piban) – слово «масло» добавлено по комментари",
-    "[lexical] karavīra"
+    "[tier1] ",
+    "[edition] Шлока 5.27.17 отсутствует в критическом издании (Барода)."
    ],
    "ours": 2
   },
   {
    "goldman_verse": 17,
-   "offset": 10,
-   "our_verse": 27,
+   "offset": 4,
+   "our_verse": 21,
    "band": "interpolated",
    "goldman_heads": [
-    "At various places in this sarga, a large number of manuscripts substitute another"
+    "At various places in this sarga, a large number of manuscripts substitute another verse o"
    ],
    "our_notes": [],
    "ours": 0
   },
   {
    "goldman_verse": 18,
-   "offset": 10,
-   "our_verse": 28,
+   "offset": 4,
+   "our_verse": 22,
    "band": "interpolated",
    "goldman_heads": [
-    "Verses 18-25 describe evil omens. See note on verse 10 above. Compare 5.46.20"
+    "Verses 18–25 describe evil omens. See note on verse 10 above. Compare 5.46.20 and note. S"
    ],
-   "our_notes": [],
-   "ours": 0
+   "our_notes": [
+    "[tier1] ",
+    "[lexical] tailasamukṣita",
+    "[edition] Шлока 5.27.22 отсутствует в критическом издании (Барода)."
+   ],
+   "ours": 3
   },
   {
    "goldman_verse": 19,
-   "offset": 11,
-   "our_verse": 30,
+   "offset": 5,
+   "our_verse": 24,
    "band": "interpolated",
    "goldman_heads": [
     "south"
    ],
    "our_notes": [
-    "[phase2] pibatāṃ rakṣasāṃ … sāgare patitā"
+    "[edition] Шлоки 5.27.24–28 (5 шлок) отсутствуют в критическом издании "
    ],
    "ours": 1
   },
   {
    "goldman_verse": 20,
-   "offset": 12,
-   "our_verse": 32,
-   "band": "measured",
+   "offset": 6,
+   "our_verse": 26,
+   "band": "interpolated",
    "goldman_heads": [
     "red garments . . . smeared with mud"
    ],
-   "our_notes": [
-    "[lexical] vibhīṣaṇa"
-   ],
-   "ours": 1
+   "our_notes": [],
+   "ours": 0
   },
   {
    "goldman_verse": 21,
-   "offset": 13,
-   "our_verse": 34,
-   "band": "measured",
+   "offset": 6,
+   "our_verse": 27,
+   "band": "carried",
    "goldman_heads": [
-    "boar ... camel",
-    "I saw"
+    "boar . . . camel"
    ],
    "our_notes": [],
    "ours": 0
   },
   {
    "goldman_verse": 22,
-   "offset": 14,
-   "our_verse": 36,
-   "band": "measured",
+   "offset": 7,
+   "our_verse": 29,
+   "band": "carried",
    "goldman_heads": [
     "singing and musical instruments"
    ],
    "our_notes": [
-    "[tier1] Масло пили они (pibatāṃ) – как и в строфе 23 слово «масло» д"
+    "[tier1] "
    ],
    "ours": 1
   },
   {
    "goldman_verse": 23,
-   "offset": 14,
-   "our_verse": 37,
-   "band": "measured",
+   "offset": 8,
+   "our_verse": 31,
+   "band": "carried",
    "goldman_heads": [
-    "After verse 23, many southern texts (T1,3,G2,3,M1,3, and Cg and others aligned"
+    "After verse 23, many southern texts (T1,3,G2,3,M1,3, and Cg and others aligned with him)"
    ],
    "our_notes": [
-    "[lexical] gopura"
+    "[edition] Шлока 5.27.31 отсутствует в критическом издании (Барода)."
    ],
    "ours": 1
   },
   {
    "goldman_verse": 24,
-   "offset": 14,
-   "our_verse": 38,
-   "band": "measured",
+   "offset": 9,
+   "our_verse": 33,
+   "band": "carried",
    "goldman_heads": [
     "drinking oil, dancing, and laughing loudly"
    ],
-   "our_notes": [],
-   "ours": 0
+   "our_notes": [
+    "[tier1] Строфы 33 и 34 отсутствуют в бомбейском издании, но есть в и",
+    "[edition] Шлоки 5.27.33–35 (3 шлоки) отсутствуют в критическом издании"
+   ],
+   "ours": 2
   },
   {
    "goldman_verse": 25,
-   "offset": 14,
-   "our_verse": 39,
+   "offset": 9,
+   "our_verse": 34,
    "band": "interpolated",
    "goldman_heads": [
     "pool of cow dung"
@@ -352,8 +362,8 @@
   },
   {
    "goldman_verse": 28,
-   "offset": 14,
-   "our_verse": 42,
+   "offset": 11,
+   "our_verse": 39,
    "band": "interpolated",
    "goldman_heads": [
     "That is what I think"
@@ -363,16 +373,14 @@
   },
   {
    "goldman_verse": 31,
-   "offset": 15,
-   "our_verse": 46,
-   "band": "interpolated",
+   "offset": 14,
+   "our_verse": 45,
+   "band": "measured",
    "goldman_heads": [
-    "the raksasa women"
+    "the rākṣasa women"
    ],
-   "our_notes": [
-    "[lexical] praṇipātaprasannā"
-   ],
-   "ours": 1
+   "our_notes": [],
+   "ours": 0
   },
   {
    "goldman_verse": 33,
@@ -393,7 +401,7 @@
    "our_verse": 50,
    "band": "measured",
    "goldman_heads": [
-    "eye ... is throbbing"
+    "eye . . . is throbbing"
    ],
    "our_notes": [
     "[tier1] Глаз у нее дрожит, / Подобный лепестку лотоса (dṛśyate ca sp",
