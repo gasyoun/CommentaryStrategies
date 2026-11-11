@@ -1,11 +1,23 @@
 {
- "apparatus": "C:\\Users\\COMPUTER\\Documents\\GitHub\\CommentaryStrategies-h7941-21248\\data\\apparatus\\sarga_09_kostina.json",
+ "apparatus": "data/apparatus/sarga_09_kostina.json",
  "numbering_ours": "southern vulgate (Leonov); archive cross-text layer remapped from critical via scripts/remap_archive_parallels.py",
  "numbering_goldman": "Baroda critical edition (Princeton translation)",
  "anchors": [
   {
+   "goldman_verse": 3,
+   "offset": 0
+  },
+  {
+   "goldman_verse": 8,
+   "offset": 1
+  },
+  {
    "goldman_verse": 14,
    "offset": 2
+  },
+  {
+   "goldman_verse": 16,
+   "offset": 4
   },
   {
    "goldman_verse": 17,
@@ -24,15 +36,11 @@
    "offset": 4
   },
   {
-   "goldman_verse": 67,
-   "offset": 4
-  },
-  {
    "goldman_verse": 68,
    "offset": 4
   }
  ],
- "anchor_count": 7,
+ "anchor_count": 9,
  "our_note_count": 78,
  "our_verses_with_notes": 52,
  "goldman_verses_with_notes": 49,
@@ -41,21 +49,21 @@
  "only_goldman": [
   4,
   13,
-  16,
   18,
   19,
   28,
   33,
   43,
+  44,
   47,
   55
  ],
  "only_ours": [
-  1,
   2,
+  12,
   13,
   17,
-  20,
+  18,
   25,
   27,
   33,
@@ -66,29 +74,42 @@
   3941
  ],
  "by_band": {
-  "carried": {
-   "rows": 14,
-   "with_our_note": 11
+  "measured": {
+   "rows": 29,
+   "with_our_note": 24
   },
   "interpolated": {
-   "rows": 13,
-   "with_our_note": 11
+   "rows": 9,
+   "with_our_note": 7
   },
-  "measured": {
-   "rows": 22,
-   "with_our_note": 17
+  "carried": {
+   "rows": 11,
+   "with_our_note": 8
   }
  },
- "naive_join_hits": 34,
+ "naive_join_hits": 35,
  "aligned_join_hits": 39,
  "rows": [
   {
    "goldman_verse": 1,
-   "offset": 2,
-   "our_verse": 3,
-   "band": "carried",
+   "offset": 0,
+   "our_verse": 1,
+   "band": "measured",
    "goldman_heads": [
-    "residence . .. palace"
+    "residence . . . palace"
+   ],
+   "our_notes": [
+    "[tier1] Посреди прекрасной обители (tasyālayavariṣṭhasya) – автор «Т"
+   ],
+   "ours": 1
+  },
+  {
+   "goldman_verse": 3,
+   "offset": 0,
+   "our_verse": 3,
+   "band": "measured",
+   "goldman_heads": [
+    "every inch"
    ],
    "our_notes": [
     "[phase2] sarvataḥ paricakrāma"
@@ -96,24 +117,10 @@
    "ours": 1
   },
   {
-   "goldman_verse": 3,
-   "offset": 2,
-   "our_verse": 5,
-   "band": "carried",
-   "goldman_heads": [
-    "every inch"
-   ],
-   "our_notes": [
-    "[tier1] ",
-    "[tier1] Вооруженные стражи (udāyudhaiḥ) – букв. «теми, у которых был"
-   ],
-   "ours": 2
-  },
-  {
    "goldman_verse": 4,
-   "offset": 2,
-   "our_verse": 6,
-   "band": "carried",
+   "offset": 0,
+   "our_verse": 4,
+   "band": "measured",
    "goldman_heads": [
     "by elephants, some with four tusks, some with two, and some with three"
    ],
@@ -122,11 +129,25 @@
   },
   {
    "goldman_verse": 5,
-   "offset": 2,
-   "our_verse": 7,
-   "band": "carried",
+   "offset": 0,
+   "our_verse": 5,
+   "band": "measured",
    "goldman_heads": [
     "palace"
+   ],
+   "our_notes": [
+    "[tier1] ",
+    "[tier1] Вооруженные стражи (udāyudhaiḥ) – букв. «теми, у которых был"
+   ],
+   "ours": 2
+  },
+  {
+   "goldman_verse": 6,
+   "offset": 1,
+   "our_verse": 7,
+   "band": "measured",
+   "goldman_heads": [
+    "crocodiles and sharks . . . whales and great fish"
    ],
    "our_notes": [
     "[lexical] makara"
@@ -134,12 +155,12 @@
    "ours": 1
   },
   {
-   "goldman_verse": 6,
-   "offset": 2,
+   "goldman_verse": 7,
+   "offset": 1,
    "our_verse": 8,
-   "band": "interpolated",
+   "band": "measured",
    "goldman_heads": [
-    "crocodiles and sharks . . . whales and great fish"
+    "Indra of the tawny steeds"
    ],
    "our_notes": [
     "[tier1] Луны или Индры (candre harivāhane) – в оригинале использован",
@@ -148,12 +169,12 @@
    "ours": 2
   },
   {
-   "goldman_verse": 7,
-   "offset": 2,
+   "goldman_verse": 8,
+   "offset": 1,
    "our_verse": 9,
-   "band": "interpolated",
+   "band": "measured",
    "goldman_heads": [
-    "Indra of the tawny steeds"
+    "even greater"
    ],
    "our_notes": [
     "[lexical] varuṇa"
@@ -161,12 +182,12 @@
    "ours": 1
   },
   {
-   "goldman_verse": 8,
-   "offset": 2,
+   "goldman_verse": 9,
+   "offset": 1,
    "our_verse": 10,
-   "band": "interpolated",
+   "band": "measured",
    "goldman_heads": [
-    "even greater"
+    "residential complex . . . separate . . . palace"
    ],
    "our_notes": [
     "[tier1] Увенчанный множеством башенок (bahuniryūhasaṃyuktam) – комме",
@@ -175,12 +196,12 @@
    "ours": 2
   },
   {
-   "goldman_verse": 9,
-   "offset": 2,
+   "goldman_verse": 10,
+   "offset": 1,
    "our_verse": 11,
-   "band": "interpolated",
+   "band": "measured",
    "goldman_heads": [
-    "residential complex ... separate ... palace"
+    "See note on 5.6.4."
    ],
    "our_notes": [
     "[tier1] Для Брахмы (brahmaṇo 'rthe) – в комментарии «Тилака» дается ",
@@ -189,20 +210,6 @@
     "[crosstext] sarva-ratna-vibhūṣita"
    ],
    "ours": 4
-  },
-  {
-   "goldman_verse": 10,
-   "offset": 2,
-   "our_verse": 12,
-   "band": "interpolated",
-   "goldman_heads": [
-    "See note on 5.6.4."
-   ],
-   "our_notes": [
-    "[tier1] …одолев Куберу (kuberam ojasā jitvā) – букв. «победив Куберу",
-    "[lexical] ojas"
-   ],
-   "ours": 2
   },
   {
    "goldman_verse": 12,
@@ -245,28 +252,18 @@
    "ours": 3
   },
   {
-   "goldman_verse": 15,
-   "offset": 3,
-   "our_verse": 18,
-   "band": "measured",
-   "goldman_heads": [
-    "See notes on 4.49.19-21 and 5.3.8—11. The term presents difficulty and translators"
-   ],
-   "our_notes": [
-    "[lexical] candana"
-   ],
-   "ours": 1
-  },
-  {
    "goldman_verse": 16,
-   "offset": 3,
-   "our_verse": 19,
+   "offset": 4,
+   "our_verse": 20,
    "band": "measured",
    "goldman_heads": [
     "seemed to have substance"
    ],
-   "our_notes": [],
-   "ours": 0
+   "our_notes": [
+    "[tier1] ",
+    "[tier1] Воздух собой напитав (rūpavantam ivānilam) – букв. «подобно "
+   ],
+   "ours": 2
   },
   {
    "goldman_verse": 17,
@@ -274,7 +271,7 @@
    "our_verse": 21,
    "band": "measured",
    "goldman_heads": [
-    "where Ravana is"
+    "where Rāvaṇa is"
    ],
    "our_notes": [
     "[phase2] tataḥ ... prasthitaḥ śālām"
@@ -309,7 +306,7 @@
    "our_verse": 24,
    "band": "interpolated",
    "goldman_heads": [
-    "columns . .. columns"
+    "columns . . . columns"
    ],
    "our_notes": [
     "[tier1] Множеством колонн украшенную (subahustambhabhūṣitām) – по мн"
@@ -379,7 +376,7 @@
    "our_verse": 31,
    "band": "measured",
    "goldman_heads": [
-    "“This must be heaven! This must be the realm of the gods! This must be the"
+    "\"This must be heaven! This must be the realm of the gods! This must be the citadel of Ind"
    ],
    "our_notes": [
     "[tier1] Будто бы игроки, / Что проигрались в кости (dhūrtān iva mahā"
@@ -427,7 +424,7 @@
    "our_verse": 43,
    "band": "carried",
    "goldman_heads": [
-    "Ctobserves that the rhetorical figure in this verse is atyuktyalamkara, or hyperbole,"
+    "Ct observes that the rhetorical figure in this verse is atyuktyalamkāra, or hyperbole, an"
    ],
    "our_notes": [
     "[tier1] Женщины здесь сияли / Ослепительной красотою (prabhāvarṇapra"
@@ -474,6 +471,17 @@
    "ours": 0
   },
   {
+   "goldman_verse": 44,
+   "offset": 4,
+   "our_verse": 48,
+   "band": "carried",
+   "goldman_heads": [
+    "beautiful earrings"
+   ],
+   "our_notes": [],
+   "ours": 0
+  },
+  {
    "goldman_verse": 45,
    "offset": 4,
    "our_verse": 49,
@@ -505,7 +513,7 @@
    "our_verse": 51,
    "band": "carried",
    "goldman_heads": [
-    "crowded with hamsas and karandavas and adorned with cakravakas"
+    "crowded with hamsas and kārandavas and adorned with cakravākas"
    ],
    "our_notes": [],
    "ours": 0
@@ -582,7 +590,7 @@
    "our_verse": 59,
    "band": "interpolated",
    "goldman_heads": [
-    "Several of the commentators explain that the women are so intensely focused"
+    "Several of the commentators explain that the women are so intensely focused on Rāvaṇa and"
    ],
    "our_notes": [],
    "ours": 0
@@ -593,7 +601,7 @@
    "our_verse": 61,
    "band": "interpolated",
    "goldman_heads": [
-    "Following the suggestion of Cg, Cra, Cm, these two elliptical verses are to"
+    "Following the suggestion of Cg, Crā, Cm, these two elliptical verses are to be construed"
    ],
    "our_notes": [
     "[tier1] Во власти любви и хмеля (madasnehavaśānugāḥ) – автор «Тилаки"
@@ -645,7 +653,7 @@
    "our_verse": 68,
    "band": "interpolated",
    "goldman_heads": [
-    "We are inclined to agree with Cg, Cm in taking the verse as embodying an"
+    "We are inclined to agree with Cg, Cm in taking the verse as embodying an utprekṣā, or fan"
    ],
    "our_notes": [
     "[tier1] ",
@@ -658,7 +666,7 @@
    "goldman_verse": 65,
    "offset": 4,
    "our_verse": 69,
-   "band": "measured",
+   "band": "interpolated",
    "goldman_heads": [
     "daughters"
    ],
@@ -674,7 +682,7 @@
    "our_verse": 70,
    "band": "measured",
    "goldman_heads": [
-    "According to Cr, this allusion to Ravana’s departure from his custom of never"
+    "According to Cr, this allusion to Rāvaṇa's departure from his custom of never taking wome"
    ],
    "our_notes": [
     "[lexical] janakātmajā"
