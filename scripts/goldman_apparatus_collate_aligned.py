@@ -42,7 +42,7 @@ sys.stderr.reconfigure(encoding="utf-8")
 # Same note-head grammar as the naive collator: a verse number, optionally a
 # span, a full stop, then the head. The OCR renders a line-initial `1` as `I`
 # or `l` often enough that the first digit has to admit them.
-NOTE_HEAD = re.compile(r'(?m)^[ \t]*([IlJ1-9]\d{0,2})(?:-(\d{1,3}))?\.\s+(\S.{0,88})')
+NOTE_HEAD = re.compile(r'(?m)^[ \t]*([IlJ1-9]\d{0,2})(?:[-–—](\d{1,3}))?\.\s+(\S.{0,88})')
 _QUOTED = re.compile(r'["“]([^"”]{1,90})["”]')
 _OCR_ONE = str.maketrans({"I": "1", "l": "1", "J": "1"})
 
