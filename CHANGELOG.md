@@ -1,4 +1,4 @@
-_Created: 13-06-2026 · Last updated: 05-09-2026_
+_Created: 13-06-2026 · Last updated: 12-11-2026_
 
 # Changelog
 
@@ -13,6 +13,341 @@ Work not yet on `main` stays under **[Unreleased]**.
 ## [Unreleased]
 <!-- entries land in changelog_queue/ -- appended via tools/changelog_queue_consume.py, consumed by cut_release.py at release-cut (H3355); direct bullets here are hook-blocked -->
 
+## [1.28.1] - 2026-11-12
+
+_Created: 09-09-2026 · Last updated: 09-09-2026_
+# H4256 — release-envelope-v1 adopted for v1.28.0 (portfolio-wide adoption, OxAlpha)
+### Added
+- **[`data/manifest/envelopes/v1.28.0.envelope.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/manifest/envelopes/v1.28.0.envelope.json)** —
+  this repo's first `release-envelope-v1` object per Uprava
+  [docs/SPEC_RELEASE_ENVELOPE_V6_PORTFOLIO_2026.md](https://github.com/gasyoun/Uprava/blob/main/docs/SPEC_RELEASE_ENVELOPE_V6_PORTFOLIO_2026.md)
+  (kosha `data-v0.5.0` pilot, H4239, is the reference implementation). Pins the six
+  gold-sample annotation files (`data/{erman,grintser,kalyanov,leonov,syrkin,vassilkov}_markup_50.json`,
+  300 annotations total) by sha256 at the `v1.28.0` tag commit
+  (`0ce386f79fbbfceebe2e0e1bc05bd9359044260f`), with source/output digests, code revision,
+  licence (Apache-2.0), and the review provenance of `scripts/validate.py` (6159 files, PASS)
+  and `scripts/derive_urn.py --check` (300/300 resolved, PASS), both rerun at authoring time.
+- **[`scripts/envelope_check.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/envelope_check.py)** —
+  the rerun-side checker, adapted from kosha's stdlib-only reference implementation. Unlike
+  kosha (which pins upstream sibling repos), every `source_pins` entry here resolves against
+  this same repo — the gold sample is hand-authored in-house, not derived from another repo —
+  so CHK-4 re-derives against `REPO` directly instead of a sibling-clone map. **11/11 PASS**
+  on real bytes; a tampered-digest negative control correctly exits 1 (verified, not shipped).
+### Deviation from the handoff's release_kind hint
+H4256's mission line suggested `release_kind=paper/manuscript`. This repo's own
+[`CITATION.cff`](https://github.com/gasyoun/CommentaryStrategies/blob/main/CITATION.cff) and
+[`.zenodo.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.zenodo.json) both
+declare `type`/`upload_type: dataset` for the `v1.28.0` release, so the envelope's
+`release_kind` is set to `data` instead — matching the artifact actually being pinned rather
+than the generic hint.
+### Honest gaps recorded in the envelope, not glossed over
+- **`citation.concept_doi` / `version_doi`: `null`.** No Zenodo DOI has been minted yet —
+  [README.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/README.md) already
+  states the deposit is pending manual action by the repo owner
+  ([docs/ZENODO_DEPOSIT.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/ZENODO_DEPOSIT.md)).
+- **`publication_state.state: "draft"`, not `"published"`.** `v1.28.0` is a public git tag with
+  matching `CITATION.cff`/`.zenodo.json` version fields, but `gh release view v1.28.0` returns
+  "release not found" — no GitHub Release object exists for it yet.
+### Additive only
+Canonical stores untouched — `data/*_markup_50.json` are pinned by digest, not modified. One
+release envelope, one repo, no batch adoption (H4239's cross-repo-adoption fence).
+_Dr. Mārcis Gasūns_
+- **H4368 — test harness wave 2: the eight re-runnable curated-file writers pinned, the rebuild invariant moved before the first write, and the gate mirror stops queueing behind a stale run** (Opus 5 `claude-opus-5`, 08-09-2026). Wave 1 ([H4351](https://github.com/gasyoun/CommentaryStrategies/blob/main/CHANGELOG.md), v1.28.0) covered the ten destructive appliers; this wave covers the eight writers that regenerate curated files on every run — `sync_grintser_pass_book.py`, `sync_grintser_pass_book_s1.py`, `fix_ch11_lexical_anchors.py`, `lexical_judge_merge.py`, `h1685_merge_ledger.py`, `build_sarga_apparatus.py`, `build_book_apparatus.py`, `sundara_ch2_68_pipeline.py` — each with the same three cases (idempotence · non-shrink of the curated record count · malformed/truncated input refused with no partial write) on the wave-1 harness: real subprocess in a sandbox, fixtures under [`tests/fixtures/appliers/`](https://github.com/gasyoun/CommentaryStrategies/tree/main/tests/fixtures/appliers) as miniature copies of the live column shapes, no test touching live `data/`. The suite grows 55 → 113 tests / 19 modules; [`tests/test_coverage_manifest.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tests/test_coverage_manifest.py) now proves all eighteen writers are actually invoked. Five curated floors added to [`tests/curated_floors.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tests/curated_floors.py) (ch11 3 cards · ch11.qa_removed 7 · ch17 9 · ch25 6 · `sundara_ch1_commentary_to_add.json` 30 notes), all green in the `corpus` job. [`scripts/rebuild_crosstext.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/rebuild_crosstext.py): the `accepted_total == merged_total` invariant now runs BEFORE the book is written — a ledger disagreeing with the note count used to abort only after `data/sundara_commentary_to_add.json` had been overwritten; a new test feeds exactly that ledger and asserts the book stays byte-identical. Gate fix (FINDINGS §727): the `oxalpha-review` mirror job in [`.github/workflows/oxalpha-gate.yml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.github/workflows/oxalpha-gate.yml) gets its own `cancel-in-progress` concurrency group (belt-and-braces — the workflow-level group queues rather than starts the new run, so the script half is what actually fires), and [`scripts/oxalpha_gate.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/oxalpha_gate.py) `wait` gains `--sha` and exits **SUPERSEDED** once the PR head moves past the SHA it was triggered for, re-arming `pending` on that old SHA first so exiting 0 never leaves a green check no verdict earned — previously a second push left the old mirror polling a dead SHA for its full 35-minute budget while the new head's run sat queued behind it, so a passed PR stayed BLOCKED until a human ran `gh run cancel`.
+_Created: 08-09-2026 · Last updated: 08-09-2026_
+# H4370 — три дефекта порядка записи и тихой потери исправлены (волна 3)
+Волна 2 ([H4368](https://github.com/gasyoun/CommentaryStrategies/blob/main/.ai_state.md))
+эти три дефекта только зафиксировала характеризационными тестами; здесь они исправлены в самих
+скриптах, так что пол CI перестал быть единственной защитой.
+### Fixed
+- **`scripts/fix_ch11_lexical_anchors.py` — порядок записи.** Скрипт писал `ch11.json`,
+  `ch11.qa_removed.json` и обе целевые главы переякоривания ДО того, как открывал книжный
+  агрегат: сломанная книга оставляла наполовину мигрированный лексический слой на диске.
+  Теперь `main()` читает все входы и считает все выходы до первого `dump()`.
+- **`scripts/sundara_ch2_68_pipeline.py` — тихая потеря ~866 заметок.** `load_jsonl()` глотал
+  любую ошибку чтения корпуса и лишь предупреждал в stderr, поэтому прогон без соседнего
+  корпуса завершался кодом 0 и переписывал агрегат слоем гл. 1. Нечитаемый или пустой корпус —
+  теперь громкий ненулевой отказ до любой записи.
+- **`scripts/h1685_merge_ledger.py` — отсутствующий правиловый ярус.** Голый
+  `FileNotFoundError` на живом прогоне заменён явным отказом, который называет производителя
+  входа. Происхождение установлено: `ledger.json` и `packet_*.json` — намеренно gitignored
+  выходы шага 3 (`scripts/h1685_adjudicate.py`), в живом `data/` их не было никогда
+  (`git log --all --diff-filter=A` находит путь только как фикстуру H4368); сам правиловый
+  ярус пережил слияние как 1 649 строк `tier == "rule"` внутри `ledger_final.json`.
+### Tests
+Ни один тест не удалён: каждый из трёх характеризационных заменён тестом НОВОЙ гарантии, и все
+шесть новых тестов проверены как падающие против старых скриптов. Полный прогон — 118 тестов
+зелены, `scripts/curated_floors_check.py` — 21 кураторский пол держится. Под живым `data/`
+ничего не менялось.
+### Open (решение человека, намеренно не тронуто)
+`scripts/build_sarga_apparatus.py` глобит `data/lexical/ch*.json`, пропуская только
+`.rejected`, поэтому пять живых `chNN.qa_removed.json` (ch11, ch20, ch22, ch23, ch27)
+возвращают запаркованные карточки в бюллетень рецензента. Расширение пропуска до `.qa_removed`
+изменит то, что видит рецензент, — это решение, а не молчаливая правка.
+_Dr. Mārcis Gasūns_
+_Created: 08-09-2026 · Last updated: 08-09-2026_
+# H4371 — запаркованные карточки убраны из бюллетеня рецензента (решение MG 08-09-2026)
+### Changed
+- **`scripts/build_sarga_apparatus.py`** глобил `data/lexical/ch*.json`, пропуская только
+  `.rejected`, поэтому пять живых `chNN.qa_removed.json` (ch11, ch20, ch22, ch23, ch27)
+  возвращали **25** сознательно запаркованных карточек в бюллетень рецензента на каждой
+  пересборке — чтобы он отклонял их вручную заново. Пропуск расширен до `.qa_removed`.
+  Решение MG 08-09-2026: «перестать их подтягивать».
+- Пересобраны затронутые `data/apparatus/sarga_{11,20,22,23,27}.{json,html}`, иначе правка
+  генератора не была бы видна рецензенту.
+**Ничего не удалено.** Карточки остаются в своих `chNN.qa_removed.json` вместе с записанной
+причиной парковки, поэтому вернуть любую — сознательное действие, а не случайность.
+### Proven, не заявлено
+- Из бюллетеня ушли **ровно 25** карточек и **ровно те**: множество удалённых лемм совпадает
+  с множеством запаркованных лемм на диске; добавлено 0; затронут только слой `lexical`.
+- Ни одна удалённая карточка не несла вердикта рецензента: `data/apparatus/gate_ledger.json`
+  содержит 126 записей, из них в этих пяти саргах — **ни одной** (то есть по этим саргам
+  голосования ещё не было вовсе, терять было нечего).
+- `python -m pytest` — 118 тестов зелены; `scripts/curated_floors_check.py` — 21 пол держится;
+  `scripts/validate.py` — PASS на 6 160 файлах.
+### Дефект, найденный независимым критиком, и его исправление
+Первая версия правки пересобрала **не ту половину** бюллетеня. В `data/apparatus/` лежат
+**136** файлов сарг, а не 68: `sarga_NN.json` — просмотровая копия, и `sarga_NN_kostina.json` —
+тот самый бюллетень, который через `index.html` отдаётся Е. Костиной и по которому она
+голосует. Пересобрана была только просмотровая половина, поэтому все 25 запаркованных карточек
+остались живыми у единственного человека, который на них голосует, — то есть решение MG
+фактически НЕ действовало. Ни один тест и ни один job CI этого не заметил.
+Исправлено в том же PR: пересобраны `sarga_{11,20,22,23,27}_kostina.{json,html}`, портал
+перештампован уже поверх настоящих новых бюллетеней. Проверено: на бюллетене рецензента
+запаркованных карточек **0**, и обе половины совпадают карточка в карточку во всех пяти саргах.
+**Чтобы это не повторилось**, в `scripts/build_apparatus_review_portal.py --check` добавлена
+проверка чётности: для всех 68 сарг список идентификаторов карточек в бюллетене рецензента
+должен совпадать с просмотровой копией, иначе — отказ с командой пересборки обеих половин.
+Проверка доказана непустой: при откате просмотровой половины к состоянию `main` она падает с
+кодом 1 (именно тот случай, который прошёл незамеченным), при целом состоянии — проходит.
+Этот `--check` уже гоняется в CI-job'е «Review platform contracts».
+### Прочие следствия, которые стоит знать
+- **Сквозная нумерация «№ N» сдвинулась** у 26/32/32/11/49 уцелевших карточек в саргах
+  11/20/22/23/27: поле `seq` — счётчик по сарге, а не идентификатор. Сохранённые решения
+  привязаны к `id`, не к `seq`, поэтому ничего не испортилось, но прежняя переписка вида
+  «карточка № 7 в сарге 11» теперь указывает на другую карточку.
+- **Семь стихов остались без единой заметки** и потому исчезли из аппарата: 5.11.6, 5.11.21,
+  5.11.35, 5.20.12, 5.23.4, 5.23.16, 5.27.28 — у них не было ничего, кроме запаркованных
+  карточек.
+- **Черновики в браузере на просмотровых страницах** этих пяти сарг станут недоступны:
+  локальное хранилище ключуется `source_hash`'ем, который изменился. Ничего не удаляется,
+  и долговременная запись — `gate_ledger.json` — не тронута. У бюллетеней Костиной до этой
+  правки `source_hash` не менялся, теперь изменился вместе с содержимым.
+### Tests
+Характеризационный `test_a_qa_removed_card_is_re_ingested_by_the_ch_glob` не удалён, а заменён
+на `test_a_qa_removed_card_is_not_ingested_by_the_ch_glob`, который проверяет и то, что
+запаркованная карточка НЕ попадает в бюллетень, и то, что лексический слой при этом не опустел.
+`test_non_shrink_every_source_card_reaches_the_ballot` обновлён: запаркованная карточка больше
+не источник бюллетеня (5 → 4 лексических, 12 → 11 всего), с ссылкой на новый тест в сообщении
+ассерта.
+_Dr. Mārcis Gasūns_
+- **H4709 — Appendix-7 DCS collocate profiles joined onto all 685 Sundarakaṇḍa lexical notes as sense-QA context (Census A3 leg 2)** (OxAlpha `zai-coding-plan/glm-5.3-flash`, 15-09-2026). New stdlib join [`scripts/appendix7_sense_qa.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/appendix7_sense_qa.py) reads every kept note in `data/lexical/ch*.json` (68 sargas, read-only) and attaches the DCS syntagmatic profile of its headword — total occurrences, co-occurrence volume, top-20 ranked collocates — from kosha dataset [`dcs-sintagmatic-appendix7`](https://github.com/gasyoun/kosha/blob/main/data/manifest/datasets.json) (CC BY-SA 4.0, VisualDCS Приложение 7), writing [`data/analysis/appendix7_sense_qa/sundara_sense_qa_context.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/appendix7_sense_qa/sundara_sense_qa_context.json) + [`coverage_stats.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/appendix7_sense_qa/coverage_stats.json). Matches are tier-labelled per note (exact 410 · folded 28 · annotation 10 · hyphen-join 1 · miss 236 — 65.5% covered, all 68 chapters, misses dominated by Epic hapax epithets, never silently fuzzy-matched). A 10-note stratified hand sample ([`reports/APPENDIX7_SUNDARA_SENSE_QA_2026-09-15.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/reports/APPENDIX7_SUNDARA_SENSE_QA_2026-09-15.md)) verifies 10/10 profiles corroborate the `note_ru` sense claims (fortification cluster for prākāra, akāla-mṛtyu idiom, lunar-wife cluster for rohiṇī), plus an honest NO-SIGNAL canary (aśoka, exact-tier, DCS n=2); DeepSeek paired-family verification landed — exact-tier redefined as raw-string identity (counts corrected, coverage unchanged) and two documented limitations: pan-DCS register (Buddhist collocates) and work-title lemma pollution. Notes themselves untouched; edge registered upstream (Uprava `interlinks_edges.tsv` + kosha consumers flip).
+- **H4736 — Panini sutra layer joined onto the Nilakantha licence register: 56→59 terms mapped via kosha's 3,983-sutra coverage map, tiered SLP1 matching with a hand-checked sample** (OxAlpha `opencode/z-ai/glm-5.3-flash`, 15-09-2026). Sibling-census A2 deliverable: each `deviation_term_sa` grammar-operation term in [`commentary_licence_register_nilakantha.tsv`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/licence_register/commentary_licence_register_nilakantha.tsv) (59 unique terms over 151 register rows; the census counted 56, the live register has grown 3) is joined to sūtra numbers in kosha's [`sutra_coverage_map.tsv`](https://github.com/gasyoun/kosha/blob/main/data/concordance/sutra_coverage_map.tsv) (3,983 sutras, data-v0.3.0) through `scripts/build_nilakantha_sutra_layer.py` — IAST→SLP1 token extraction (hyphen-split, `-abhāva`/`-bhāva` suffixes match on X, English connectors dropped), then three recorded match tiers: `phrase` (whole term verbatim, space-normalised so sandhi-compounded texts like 7.1.39 `supAMsuluk...` still hit), `word` (token = sutra word with trailing visarga/anusvāra stripped), `substring` (weakest, flagged as possibly accidental). Output is purely additive: [`data/licence_register/nilakantha_sutra_layer.tsv`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/licence_register/nilakantha_sutra_layer.tsv) (120/151 rows matched: 3 phrase · 69 word · 48 substring) + dated report [`reports/NILAKANTHA_SUTRA_LAYER_2026-09-15.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/reports/NILAKANTHA_SUTRA_LAYER_2026-09-15.md) with a 10-term hand-checked sample (lopa→1.1.60 `adarSanaM lopaH`, mum-āgama→6.3.67, num→7.1.58 `idito num DAtoH`, laṭ→3.2.118 `law sme`, ru→8.3.1, supāṃ suluk→7.1.39, guṇa→1.1.2, pūrvasavarṇa→6.1.102, iṭ→7.2.41, taddhita→4.1.17 — all read verbatim in the map) and the honest unmatched residue (sandhi, vyatyaya-family, samāsānta, strītva… — commentary-tradition meta-terms absent from Aṣṭādhyāyī text; the AG-harvested 1.1.11 lacks `asandhi` in this map). Build is idempotent with a `--check` parity gate (CHECK PASS verified) and `--report` to regenerate the report; the register itself is never rewritten.
+- **H4738 relabel — sentence metric re-measured by `anvaya_no` (1742), «92 sentences» retired as a labeled grouping artifact** (OxAlpha `opencode/z-ai/glm-5.3-flash`, 16-09-2026, MG ruling «а» on the 15-09 DeepSeek verifier DISAGREE). The ingest DoD said «sentence-count parity vs source», and the 15-09 parity report validated **92** — but `sentno` is a chapter-level constant, not a sentence id (44 of 62 chapters carry `sentno=1` on every row; the largest bucket holds 2864 words), so 92 = 62 chapter-buckets + 30 extra `sentno` buckets and the parity was self-referential. The source's own sentence identity is `anvaya_no` (`N.M` = sentence.word): [`scripts/ingest_samsaadhanii_sundara_treebank.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/ingest_samsaadhanii_sundara_treebank.py) now groups sentences by (book, chaptno, N), orders words by M, and gates parity on three non-vacuous cross-checks (word+unannotated == raw census 38126+5==38131; layer records == source anvaya sentences **1742**==1742; layer token sum == word rows 38126==38126). Verse stats re-derived as 2198 (chaptno × slokano) pairs / 576 distinct labels (the old «85 ślokas» counted one representative verse label per chapter-bucket). On top of [#248](https://github.com/gasyoun/CommentaryStrategies/pull/248)'s derived WX-`f` census (139/55/117) this adds two more derived counters — 119 literal `lafkAm` occurrences and 0 `laMk` spellings — so the whole gloss is script-computed. Every number reproduces the 15-09 verifier's independent re-derivation exactly. Selftest fixture now proves the anvaya/sentno split on its own data (3 anvaya sentences vs 4 sentno buckets). Aggregate-only: no row-level data committed (upstream carries no LICENSE).
+- **H4738 — Samsaadhanii Sundarakāṇḍa gold kāraka treebank ingested as a VALIDATION-ONLY analysis layer (sibling census A5 pilot 1)** (OxAlpha `opencode/z-ai/glm-5.3-flash`, 15-09-2026). New [`scripts/ingest_samsaadhanii_sundara_treebank.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/ingest_samsaadhanii_sundara_treebank.py) reads Amba Kulkarni's SCL treebank (`samsaadhanii/datasets` → `Annotated-data/Sundarakanda.csv`, 14-column word-level WX annotation) and validates the ingest end-to-end: 38,126 word rows + 5 unannotated upstream quirk rows (punctuation/interpolation, `anvaya_no='-'`) == 38,131 raw line census; **92 sentences** (identity `(book, chaptno, sentno)`), 85 ślokas, 62 sargas; emitted layer recounts 92==92 — parity **PASS** ([report](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/samsaadhanii_sundara_treebank/H4738_PARITY_REPORT.md)). Upstream carries **no LICENSE**, so only aggregates are committed (script + counts-only manifest + parity report); the row-level layer is emitted solely behind `--emit-layer` with a refuse-if-inside-repo guard. `--selftest` canary: synthetic 4-sentence fixture, parity 4==4, WX rosette (sundarakāṇḍam/tataḥ/dhātu — pairs attested by SCL's own wx2slp.lex, per H4741), malformed-row abort. Residue documented: WX `f` doubles as pre-stop nasal in this dataset (`lafkAm`=laṅkām, 139×); two merged-verse `slokano` labels kept verbatim. Sibling pilots: H4740 (SanskritLexicography morph.cgi), H4741 (dhātupāṭha×mw_roots).
+- **H4738 residue — WX-`f` rosette gloss made measurable (verifier `@DO` closed, 16-09-2026)** (OxAlpha `opencode/z-ai/glm-5.3-flash`, 16-09-2026). The 15-09 headless-Deepseek verification pass flagged the ingest report's risk gloss «139× `lafkAm`=laṅkām» as reproducible only as «rows carrying the substring `lafk` in any cell» — a set that includes `alafkArAm` (alaṅkāram, unrelated to Laṅkā). The gloss is now **computed by the script** instead of hardcoded prose: rows carrying substring `lafk` in any cell (139), exact word form `lafkAm` = **laṅkām** (55 rows, 119 literal occurrences), `lafkA`-bearing word cells (117), `laMk` spellings (0) — counted over all 38,131 data rows (annotated + quirk) and re-derived from a fresh `samsaadhanii/datasets` clone (sha256 `eed7e126b86b…` unchanged). [Parity report](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/samsaadhanii_sundara_treebank/H4738_PARITY_REPORT.md) regenerated — every prior count identical, counts-only manifest untouched; `--selftest` PASS. Semantic sentence-label adjudication (92 buckets vs 1742 `anvaya_no` sentences) stays with the open MG `@DECIDE` row — this PR does not touch it.
+_Created: 15-09-2026 · Last updated: 15-09-2026_
+# H4742 — upstream `helayo` binary trialled on Sundarakāṇḍa witnesses (first real run)
+### Added
+- **`scripts/trial_helayo_upstream.py`** — runs the REAL upstream `helayo`
+  (chchch/sanskrit-alignment `dist/macOS-latest` binary, commit `ed643c3`) over a
+  deterministic 30-verse critical↔southern sample (19 spike pairs of sargas 3/6 + 11
+  seeded extras stratified by difflib similarity, seed 42), in both `-l aksara` and
+  `-l character` modes, writing FASTT inputs, TEI alignment XML and
+  `data/analysis/helayo_upstream_trial/trial_results.json`. The 12-07-2026 spike
+  (`scripts/spike_helayo_align.py`) reimplemented the *method* and explicitly never ran
+  the upstream binary — H4742 closes exactly that gap.
+- **`docs/TRIAL_HELAYO_UPSTREAM_SUNDARA_2026.md`** — trial report: round-trip canary
+  60/60 PASS (both witnesses, both modes), 108 word-level apparatus loci (aksara), the
+  spike's showcase loci reproduce exactly from the untouched upstream tool
+  (`supuṣṭabalasaṃguptāṃ|sampuṣṭāṃ`, `vaidūryatala|kṛta`, `ketumāla|kapimukhya`);
+  known failure mode confined to reworded verses (sim ≲ 0.7, word-grouped readings
+  fragment while columns stay correct); upstream default matrix weaker than the spike's
+  near-equivalence matrix. Adopt decision unchanged → H776 (human); the "never actually
+  ran it" risk is retired.
+- Trial artifacts committed: `data/analysis/helayo_upstream_trial/` (30 FASTT + 60 TEI XML + results
+  JSON = 91 data files). The foreign binary itself is NOT committed — re-fetch per upstream provenance.
+### Unchanged
+- Spike script/docs, `compare_editions.py`, `sa_align.py`, `build_edition_footnotes.py`,
+  all apparatus data — nothing rewired; H776 owns the adopt call.
+_Dr. Mārcis Gasūns_
+- **H6055 — full-Mahābhāṣya Klammeranalyse scale pass v1: 89,327-candidate census, dual mechanical annotation (κ 0.9732, CI [0.9530, 0.9899]), H5312-shape human sheet; two verifier-found defects fixed in-PR** (GLM 5.3 `opencode/zai-coding-plan/glm-5.3`, 06-10-2026). Grill rulings [GRILL_RESEARCH_WIDENING §H](https://github.com/gasyoun/Uprava/blob/main/reports/GRILL_RESEARCH_WIDENING_04-10-2026.md) 04-10: H1 (first full pass = Patañjali's MBh), H2 (one full commentary), H11 (JSON schema), H12 (κ second-annotation gate). New [`scripts/mbh_klammer.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/mbh_klammer.py) (stdlib, deterministic, self-caching): parses both ashtadhyayi-com/data shapes (bhashya dict 3,983 sūtras + vartika list 921), tokenises Devanagari, banks every ≥9-code-point orthographic token (89,327 candidates: 88,170 bhāṣya + 1,157 vārttika), then segments each with two independent mechanical annotators over a corpus-induced vocabulary (greedy longest-match left-to-right vs right-to-left) — 9,129 dually segmented, 8,851 exact-agree, 278 disagreements. κ per the H5312/H5313 protocol shape: item-level Cohen's κ **0.9732** (n=300 layer-stratified, seed 20261006, 2,000-resample bootstrap CI [0.9530, 0.9899]) + boundary-level κ 0.9808 (3,153 decisions), house reference implementation mirrored from csl-observatory `compute_component_kappa.py`. Committed artifacts under [`data/panini_klammer/`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/panini_klammer/README.md): per-sūtra TSV (4,499 rows, keyed sūtra × layer), κ sample, disagreement bank, top-100 compounds, κ stats, and [`second_annotator_sheet.html`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/panini_klammer/second_annotator_sheet.html) (60 stratified disagreement rows, empty human column — the H5312 human lane). Source carries **no license** → mirror-only cache gitignored, only derived measurements committed (license-gated-ingest). **Independent verifier round (cou-2, deepseek/deepseek-v4.1-flash, distinct model) returned `disagree` on a first pass; both genuine defects fixed in the same PR**: (1) tokenizer regex swallowed daṇḍa/digits (U+0964–U+0970) inflating the census with punctuated duplicates — fixed + regression test, census 92,271 → 89,327; (2) κ chance-term summed over an unordered set (hash-randomization could flake `--check`) — fixed with `sorted(cats)`; plus bhashya key-parse hardening and a misleading test rename. Report [`reports/MBH_KLAMMER_V1_2026-10-06.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/reports/MBH_KLAMMER_V1_2026-10-06.md) states the honest limits: κ is machine–machine agreement (same vocabulary, same greedy family), NOT correctness — spot-checks show true compounds split right (दोषभाष्यम् → दोष | भाष्यम्) beside sandhi false positives (पुरुषस्येति = पुरुषस्य इति); precision stays INCONCLUSIVE until the human sheet lands; bracket-node labelling deferred to v2 (`tree: null`). `--check` parity gate: committed artifacts rebuild byte-identically (CHECK PASS); 10 hermetic tests in [`tests/test_mbh_klammer.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tests/test_mbh_klammer.py) (no network, no live data). **CI repair (18-10-2026):** the generated second-annotator sheet emitted its own `<style>` shell and no design-system markup, so the repo's `Corpus integrity` gate (`scripts/validate.py` → every analytical HTML needs `css/commentary.css` and a `<main class="container">` wrapper) failed the PR. The generator template now emits both (link relative to `data/panini_klammer/` → `../../css/commentary.css`), the committed sheet is regenerated in the same shape, and `python3 scripts/validate.py` passes (`Checked 6191 files · [PASS]`).
+_Created: 30-10-2026 · Last updated: 30-10-2026_
+# H7517 — портал рецензента Леонова: флаг `--reviewer` и правило двух коммитов для provenance
+### Added
+- **`scripts/build_apparatus_review_portal.py --reviewer`** — портал 68-саргового
+  рецензирования параметризован по рецензенту. Для Костиной сохраняются прежние
+  одиночные имена (`index.html`, `reviewer_manifest.json`, `review.webmanifest`,
+  `review-sw.js`), поэтому её сохранённое состояние PWA и старые ссылки не меняются;
+  остальные рецензенты получают суффикс слага (`index_leonov.html`,
+  `reviewer_manifest_leonov.json`, `review_leonov.webmanifest`,
+  `review-sw-leonov.js`), выведенный из той же карты `REVIEWER_SLUG`, что и в
+  `build_sarga_apparatus.py`. Кириллица рецензента остаётся в данных, имена файлов
+  латинские.
+- **68 бюллетеней Леонова** — `data/apparatus/sarga_01…68_leonov.{json,html}`,
+  2 502 заметки, 1 302 голосуемых, `_meta.built_for_reviewer == "Леонов"` во всех;
+  портал `index_leonov.html` + `reviewer_manifest_leonov.json` +
+  `review_leonov.webmanifest` + `review-sw-leonov.js`. Проверка дрейфа H4371
+  (бюллетень ↔ view-only двойник) расширена на каждый набор бюллетеней на диске и
+  проходит для обоих слагов; 68 костинских бюллетеней побайтово не тронуты.
+- **`docs/REVIEW_PORTAL_PROVENANCE_CONTRACT.md`** — контракт provenance и правило
+  двух коммитов, с таблицей доказательств на живых деревьях (PR #273, #274, #275).
+### Fixed
+- **Самоссылающийся provenance ронял обязательный чек `Review platform contracts`**
+  (DeepSeek Flash, `deepseek-flash`, 30-10-2026). `source_revision()` берёт
+  `repo_revision`/`generated_at` из `git log -1` по путям генератора и review-JS, а
+  они входят в `manifest_hash` и в имя кэша service worker'а, — поэтому сам коммит,
+  добавляющий `--reviewer`, делает оба манифеста устаревшими: на голове 2c88bec оба
+  прогона `--check` выходили 1, а хэш `7c60f9b6…`, записанный в H7517 как PASS,
+  принадлежал дереву до коммита кода. Лечение — отдельный data-only коммит, который
+  не трогает ни одного пути из списка `source_revision()`: меняются только
+  `repo_revision`/`generated_at`/`manifest_hash`/имя SW-кэша, оба `--check` — 0.
+  Тот же приём, что `5264bbd` (H4742) для `f1c40e2` (H4371). Внутри PR это второй
+  коммит, но squash-merge переписывает SHA, поэтому код-меняющий PR всё равно
+  оставляет `main` self-stale и требует отдельного data-only PR: после squash #274
+  на 5f34d92 оба `--check` снова выходили 1, и хил #275 вернул их в 0
+  (`ee775d1a…` для Костиной, `32816f91…` для Леонова).
+_Created: 01-11-2026 · Last updated: 01-11-2026_
+# H7597 — драфт вступительной статьи тома V ЛП (Сундараканда): §1 «Лес и город» + сборка §1–§6
+### Added
+- **[articles/intro_article_lp5_draft.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/intro_article_lp5_draft.md)** (+ sibling `.meta.md`) —
+  полный драфт вступительной статьи тома «Рамаяна. Книга пятая. Сундараканда»
+  (серия «Литературные памятники», пер. Леонова/Костиной) по скелету
+  H268 WS-D3 и досье «Ракшасы» (Uprava/drafts, 01-11-2026): §1 (сюжет, поэтика,
+  традиция + подраздел «Лес и город: два портрета ракшаса — и третий регистр»
+  с ведийским прологом, двумя таблицами переписи, тремя регистрами,
+  комментаторской вертикалью, приёмом + полный компаративный раздел
+  «Античные параллели»), §2 (стратегии шести русских переводчиков),
+  §3-стуб (авторский текст Леонова/Костиной), §4 (тика-аппарат), §5
+  (критическое издание vs южная вульгата), §6 (метод). Вердикты М.Г. по §8
+  библио-приложения от 01-11-2026 исполнены все шесть: смешанная транслитерация,
+  титул «Лес и город», двойная таблица, развод зон §1.4/§2, все 4 целевых чека,
+  античный раздел.
+- **[data/analysis/rakshasa_census_vulgate_2026-11-01.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/rakshasa_census_vulgate_2026-11-01.py)** (+ `.json`) —
+  воспроизводимая перепись ракшас-лексики по южной вульгате: текст стиха без
+  словарных глосс (у досье счёт был смешанный: 437/2029; чистый: 326/1566,
+  rākṣasī сходится точно — 65 из 120), плотности по кхандам (Аётья 0,1 — «книга
+  без ракшасов»; Сундара 12,9; Юддха 16,8), знаменатель полного южного счёта
+  (2 859 → 11,4), полный RV по DCS-conllu (rakṣas- ≈95 vs глагол rakṣ- ≈90),
+  целевые чеки: контекст 5.2.43 (rākṣasa-rūpa — пороговый стих) и сплошной
+  поиск «Хануман = rākṣasa» в 5.43–50 — **отрицательный результат**: ярлык в
+  Сундаре однонаправлен (все вхождения — противники Ханумана или убитые им);
+  тезис третьего регистра перестроен на однонаправленность.
+_к.ф.н. М.Ю. Гасунс_
+_Created: 10-11-2026 · Last updated: 10-11-2026_
+# H7924 — Stage 1 rakshasa print-blocking fixes (PR #280)
+### Fixed
+- **[articles/intro_article_lp5_draft.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/intro_article_lp5_draft.md)** —
+  дефект A-B: «почти все» → «почти половина» (31 из 65 в блоке стражей
+  22–27); подпись и тело Table 2 state 79 mixed (31 f + 48 m/n); RV-проза
+  точная: 94/90 (было ~95/~90). Princeton freeze: Pollock 1991 Vol III
+  (ed. Goldman) [^11] + лит. 2; JAOS «Women at the Margins» 138.1:45–72
+  [^12a] + лит. 5; Thompson & Payne, Monstrous Feminine, pp. 247–274 [^24]
+  + лит. 6; осиротевшие сноски 3/4/6/7 занесены как [^22][^23][^24][^25].
+  DH10: оговорка о метрике в S6 + substring-denominator caveats в
+  микросекции.
+- **[data/analysis/rakshasa_census_vulgate_2026-11-01.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/rakshasa_census_vulgate_2026-11-01.py)** —
+  DH1: экспорт `sundara_tokens_by_sarga` (68) + `sundara_blocks`;
+  DH2: пин DCS через `git rev-parse` (HEAD 450412c4), замороженный
+  04e0778 отмечен.
+### Added
+- **[articles/intro_article_lp5_draft.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/intro_article_lp5_draft.md)** —
+  микросекция о гендере (без номера, после 1.4.2): split-таблица и карта
+  65 (31/9/5/4/16), тезис 19.9% против 2.7%, движок Sutherland-Goldman
+  [^12a][^24]; DH4: точные 0.888/0.964/0.945 в S6 (+оговорка); DH5:
+  дословная атрибуция Gita Supersite в [^14]; DH7: ~67% paraphrase pilot
+  rate в S6; DH9: containment (frozen RV preserved, unverified chunks
+  unprinted).
+- **[articles/intro_article_lp5_draft.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/intro_article_lp5_draft.meta.md)** —
+  DH6: числовой журнал — каждое печатное число → источник (ключи
+  `data/analysis/rakshasa_census_vulgate_2026-11-01.json`).
+- **[data/analysis/README.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/README.md)** —
+  DH3: README аналитического слоя.
+### Verified
+- Перепрогон (attempt 1): Table 2 == `sundara_blocks`, суммы 326/65/68.
+- PR [#280](https://github.com/gasyoun/CommentaryStrategies/pull/280)
+  merged 09-11-2026 (46d6bc9); строка кормит следующий `/cut-release`
+  (residual закрытого H7924, GTD Y8I).
+_к.ф.н. М.Ю. Гасунс_
+_Created: 09-11-2026 · Last updated: 09-11-2026_
+# H7925 — Stage 2 Goldman 11-item mapping + Sundara apparatus 73 rewrite
+### Fixed
+- **[data/apparatus/sarga_*_kostina.json](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/apparatus) (+ `sarga_*.json`, `sarga_*_leonov.json`, HTML, [data/book/sundarakanda_print_master.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/book/sundarakanda_print_master.md))** —
+  73 авторских примечания (74 вхождения, pp. 101–521) переписаны с
+  `Goldman 1984: NNN` (том I, 1984 — не тот том) на
+  `Goldman & Sutherland-Goldman 1996: NNN` (том V, Princeton 1996, переизд.
+  2016); номера страниц сохранены без изменений, сверены по аудиту
+  `printed = PDF − 19` (docs/GOLDMAN_SARGA01_APPARATUS_DIVERGENCES_2026.md).
+  Контроль: `grep -c "Goldman 1984"` в `data/apparatus/` = 0/444.
+- **nāga 5.1.7 (H7925 Q10)** — подстрочник «слон» (Широмани) сохранён при
+  большинстве «наг» у Голдменов (p. 302); оба примечания (tier1 + lexical)
+  дополнены одной фразой о сознательном следовании Широмани, выбор
+  зафиксирован в [scripts/sundara_ch1_finish_notes.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/sundara_ch1_finish_notes.py).
+  Леонова `leonov_ru` не трогаем (принт-суверенитет LP, H7924 Q2).
+### Added
+- **[articles/intro_article_lp5_draft.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/intro_article_lp5_draft.md)** —
+  карта 11-позиционного корпуса Голдменов поверх H7924: JOIB 48 «Sundare Kim Na Sundaram?»
+  (1998/99, pp. 83–106) → §§1.1/1.3; «Re-siting Sītā» (Purāṇa XLV.2, 2003,
+  pp. 115–135), «Nikumbhilā's Grove» (2012, pp. 255–275),
+  «Vālmīki's Hanumān» (1994, pp. 31–54) → §1.4.4 как именованные двигатели;
+  «Monstrous Feminine» — как косвенная аналогия (Бхаса) с оговоркой;
+  «Sītā Speaks» (2001, pp. 223–238); Vol. V Intro §§6–8 с
+  страницами (pp. 75–78, 79–86, 87–98; MUSE TOC); Preface/CSL — одной строкой
+  каждое. Все сноски Голдменов получили Princeton-страницы; библиография
+  1/4 дополнена, позиции 29–33 добавлены.
+- **[Uprava H7930](https://github.com/gasyoun/Uprava/blob/main/handoffs/H7930-GLM_CommentaryStrategies_goldman-collate-33-sargas_09.11.26.md)** —
+  follow-up для колляции оставшихся 33 сарг (03–64 без 01).
+_к.ф.н. М.Ю. Гасунс_
+_Created: 09-11-2026 · Last updated: 09-11-2026_
+# H7926 — Stage 3 reception §1.4.8 + numbers ledger + §6 exact figures
+### Added
+- **[articles/intro_article_lp5_draft.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/intro_article_lp5_draft.md)** —
+  §1.4.8 «Рецепция за пределами Вальмики: три направления переворота»:
+  (a) шакта-флип «Адбхута-Рамаяны» (Сита=Махакали, Сахасра-Равана, сарга 23;
+  1008 имён, сарги 25–26), (b) шри-ланкийская ветка (Кувени/Махавамса VII
+  Geiger 1912, Ravana Balaya / Ahubudhu 1988 / Obeyesekere), (c)
+  этнографический абзац Ṣaṣṭhī/bāla-graha — верифицированные источники,
+  сноски [^32]–[^39] (перенумерованы +10 против доребейз-черновика, чтобы
+  разойтись с Голдменовскими [^22]–[^31] H7924/H7925; каждая сверена
+  веб-верификацией 09-11-2026, `[лит.]` = 0). §1.4 переформулирован (без
+  «единой проблемы» → «сквозным филологическим срезом»). §6 дополнен
+  блоком «Точные цифры переписи (H7926)» — все числа пересверены с
+  census/commentator JSON в этом проходе. Литература 34–41 (+8: Тулсидас
+  пер. Баранникова 1948, Adbhuta, Adhyatma, Kamban, Mahavamsa+Ravana-line,
+  юго-восточные, Garuda-purāṇa, Katha Sarit Sāgara) + NB-примечание и
+  футер-аддендум.
+- **[articles/intro_article_lp5_draft.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/intro_article_lp5_draft.meta.md)** —
+  H7926-аддендум: статус рецепционного слоя досье, приёмка (`[лит.]` = 0,
+  8 сносок со сверкой), 5 строк числового журнала (каждое печатное число →
+  ключ JSON); таблица-леджер H7924 (DH #6) сохранена без изменений.
+### Verified
+- `scripts/validate.py` PASS (6341 files); ref/def parity 0 orphans; biblio 1–41 sequential; все `лит. №` ∈ 34–41.
+- Независимый верификатор DeepSeek flash (другое семейство, headless 09-11-2026): все числа §6 пересчитаны из JSON, `[лит.]` = 0, 3 веб-claim проверены (Адбхута сарга 23/1008 имён; Махавамса VII Кувени/пулинды; Шаштхи-триада) — VERDICT: PASS.
+- PR [#282](https://github.com/gasyoun/CommentaryStrategies/pull/282) merged 5f8e4fa; close Uprava 49408ba1bbe.
+_к.ф.н. М.Ю. Гасунс_
+_Created: 11-11-2026 · Last updated: 12-11-2026_
+# H7941 — dual-run reconciliation: vision collate (лейн B) заменяет данные PR #285
+### Changed
+- **[data/goldman/](https://github.com/gasyoun/CommentaryStrategies/tree/main/data/goldman) — 66 JSON (33 `offset_sargaNN` + 33 `collate_sargaNN_aligned`)** —
+  H7941 выполнен дважды независимо (dual-run-salvage): лейн A = [PR #285](https://github.com/gasyoun/CommentaryStrategies/pull/285) (MiMo-V2.6-Pro, Tesseract, слит 10-11-2026), лейн B = сессия OxAlpha (crouton-alpha-free, vision 300 dpi). Данные лейна B заменяют данные A: located-якоря **136 → 198** (+46 %), collate `anchor_count` **124 → 176** (+42 %), леммы 488 → 507 (уникально у A ≈ 474 — вход их-Sarga-3 засчитан дважды), леммы с IAST-символом 0/136 → **173/198**, строки `our_verse ≤ 0` 7 → **0**, пути аппаратa абсолютные Windows → относительные, разрез crit 3 по номеру шлоки (03/04 = 6/10 лемм против идентичных 14/14 у A). Самосогласованность: B 198/198, A 136/136. Критерий Fail (песня без якорей) чист у обоих лейнов.
+- **[docs/GOLDMAN_REMAINING33_APPARATUS_DIVERGENCES_2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/docs/GOLDMAN_REMAINING33_APPARATUS_DIVERGENCES_2026.md)** —
+  документ лейна B заменяет версию PR #285; новый **§8 = compare-record dual-run**: лейны и канарейка A (PASS, 15/19 пар эталона), like-for-like метрики («124» у A = collate, «198» у B = located — не сравнивать напрямую), парный счёт **126 общих / 10 только у A / 72 только у B**, адджудикация всех 10 A-only пар чтением страниц (5 подтверждённых глифовых ошибок B + 1 неоднозначность → строка `YAO`, 1 sandhi → `YAP`, 1 вариант — не-матч B корректен, 2 ложных окна A: s36 +25 и s47 +21, немонотонны), нарушение монотонности s58 `(122→+22, 138→−20)` идентично в обоих лейнах = свойство данных, дефект их §1 folio-таблицы (ключёвка страниц по их-нумерации при наших подписях; страницы 14 сарг отсутствуют; противоречит их же §3), висячий `data/goldman/sarga_page_ranges.json` (не закоммичен), ДР-3 `wikatam` не понадобилась (токена нет в транскрипциях B), ДР-4 = артефакт двойного прогона их-Sarga-3, исполненный остаток A о слабых парах (19 → 28 located, ×1,6 — прогноз «1,5–2×» подтверждён), вердикт keep-best (B заменяет; 8 A-only пар без аналога задокументированы и закрыты остатками). Попутно в §2 исправлены печ. диапазоны песен 03/04: 332–340 → **332–337 / 337–341** (gdir-рендеры).
+### Added
+- **[changelog_queue/H7941-dual-run-reconciliation.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/changelog_queue/H7941-dual-run-reconciliation.md)** — эта запись: compare-record dual-run (продублирован в §8 дока и в комментарии к PR #285).
+- **GTD-остатки dual-run ([Uprava GTD_NEXT_ACTIONS.md](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md), 8 строк, 11-11-2026):** `YAI` @DECIDE ДР-1 (форма ссылок на их сарги), `YAJ` @DECIDE ДР-2 (порог «≥15 якорей» — формат «якоря/леммы» либо пересчёт), `YAK` @DECIDE ДР-5 (5.9.28 против Бароды), `YAL` @DECIDE флаг 15.4 (канон `leonov_ru`), `YAM` @DECIDE флаг 19.10 (Широмани против phase2), `YAN` @DO сверка источника перевода (775/791 фрагментов вне печатного мастера), `YAO` @DO вычитка глифов (локусы: `nirghoṣa` 03, `asitāpāṅgim` 18, `kīrtim` 20, `gitavādītra` 27, `gatāyuṣaḥ` 62, `-ṇī`/`-ṇu` 16, `muktaupuspa` 04, `cendre harvāhane` 09), `YAP` @DO sandhi-tolerant matcher (их 67 → наша 71).
+### 12-11-2026 — вычитка `YAO` (глифы) и решения `YAI`–`YAM`
+- **8 локусов вычитаны по рендерам страниц** (300/600 dpi, слой текста PDF + tesseract + попиксельный разбор стеблей/титлов/макронов) и исправлены в источниках транскрипции: `sāgaropamanirghoṣāṃ` (03), `muktāpuspa-` (их 3.20 = наша 4.4), `indre harvāhane` (их 7.7 — заголовок заметки читается `indre`; `cendre` остаётся только в теле обсуждения), `caturdaśasahasrāṇi` (16), `asitāpāṅgim` (18), `hiraṇyakaśipuḥ kīrtim` (20), `gitavādītra-` (27), `gatāyuṣaḥ` (62).
+- **Метрики:** located **198 → 205** (+7), collate `anchor_count` **176 → 182**, леммы с IAST **173/198 → 180/205**; парный уровень §8.3 **126/10/72 → 133/3/72** (перешли в «общие» 03 g3→o3, 04 g20→o4, 16 g9→o9, 18 g28→o32, 20 g27→o28, 27 g22→o36, 62 g31→o32).
+- **Дефект пайплайна устранён:** `LEMMA_LINE` (offset) и `NOTE_HEAD` (collate) принимали только ASCII-дефис в номере диапазона заметки (`3–7.`), поэтому леммы на строках с типографским тире молча выпадали; оба регулярных выражения расширены на `[-–—]` — без этого повторный прогон терял якоря вне целевых сарг.
+- **Решения применены в том же проходе:** `YAI` — номер их сарги не дописывать; `YAJ` — принят формат отчёта «якоря/леммы» (19/88); `YAK` — примечание 5.9.28 уточнено («в Бароде — в составе 5.7.24–25, нумерация и текст расходятся»); `YAL` — канон `leonov_ru` = корпус SamudraManthanam, примечание 15.4 переписано под «подземных покоев» (Q10 «слон» сохранён); `YAM` — phase2-примечание 19.10 смягчено до «по Широмани иначе: …», перевод «пройдя через обряд» не менялся.
+- **Открытыми остаются:** `YAN` (сверка источника перевода) и `YAP` (sandhi-tolerant matcher — их 67 → наша 71).
+- **`/bughunt` on demand — 8 findings, 2 HIGH: a CI gate that cannot fail and a corpus artifact that cannot be reproduced** (DeepSeek Flash `deepseek-flash`, 27-10-2026; interactive day lane, rotation cursor 25/173). [BUGHUNT-FINDINGS-CommentaryStrategies-27.10.2026.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/BUGHUNT-FINDINGS-CommentaryStrategies-27.10.2026.md). **HIGH 1:** [`scripts/derive_urn.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/derive_urn.py#L122-L150) accumulates cross-check failures in `bad`, prints them, and exits 0 — so the `CTS-URN cross-check (book ↔ number)` step of the `corpus` job in [`.github/workflows/ci.yml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.github/workflows/ci.yml#L121-L122) is inert: a wrong leading book number or an unknown parva name on any of the 300 gold-sample URNs lands green (`probe: 2 bad addresses → exit 0`). **HIGH 2:** [`data/leonov_own_notes.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/leonov_own_notes.json) (1 058 notes, the Phase-2 dedup baseline) no longer matches the source HTML it names: regenerating it via [`scripts/extract_leonov_notes.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/extract_leonov_notes.py) reverts 11 records to pre-H2884 mixed-script text and makes `translit_hygiene.py --check` fail with 9 undeclared words (`нāга`, `cлово`, `cогласно`, `bahubhūmigṛhа`, `prāvaraṇа`, `ūthа`, `smа`, `pāpа`, `ofJanaka`). Git names the mechanism: H2884 (`a62b374`, 16-08-2026) repaired the derived artifact — `translit_hygiene.py` lists `data/leonov_own_notes.json` in `target_files()` — while `ramayana-leonov/Рамаяна. Книга 5. Сундараканда 2026.html` was last touched 30-04-2026, so the sweep fixed the shadow, not the object; the extractor is also absent from the reproducibility step, so the drift is invisible. Fixed-shadow/dirty-source is self-contradictory: the committed artifact can no longer be regenerated, and the regenerated artifact cannot pass the repo's own gate. **MEDIUM:** [`samskrtam_map.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/samskrtam_map.py#L69-L138)'s `ANCHOR_VERIFIED` never gates `status` (only stringified into provenance prose), so 73 of 244 `mapped` links (29.9 %) rest on an existence-only page check its docstring says does not count as proof; [`profile_translator.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/profile_translator.py#L51-L90) prints topic percentages labelled «доля примечаний» but computed per topic assignment, so the column sums to 128–172 % across the six gold files. **LOW:** `derive_urn.reorder()` lets the record's stale `urn` overwrite the fresh one (the write path is a structural no-op); the extractor joins ids to note texts by unverified position with `cur_id` dead code (always `None`, 1 058 = 1 058 today); the Uprava-vendored `pyfloor`/`_common`/`git_ops` point at `tools/audit_pyfloor.py` and `docs/DECISION_PYTHON_INTERPRETER_FLOOR_2026.md`, neither of which exists here, and `git_ops.exec(text=True)` silently drops `input_bytes`; `gate_reviewer_agreement.py` measures κ on actions but its worklist on actions-or-text (unexercised — the ledger holds 126 single-reviewer `accept` verdicts). **Green on the same pass:** 132 pytest, all nine `corpus` gates, all five selftests, `py_compile` over 167 modules, and both committed κ tables re-derived from their own confusion matrices to 4 dp. No credential or destructive-writer finding; no fix applied in this pass.
+_Created: 02-10-2026 · Last updated: 02-10-2026_
+# Grill 02-10-2026 — A19 verification fixes + sundara-gate rulings recorded (OxAlpha)
+### Changed
+- **[`articles/article1_vya.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article1_vya.md) — Казанский 2025 bibliography entry fixed against the live-resolved DOI** (grill 02-10 ruling «A19-фиксы сейчас», closing delta 3 of the 02-07 verification pass in [articles/SUBMISSION_READINESS_A19.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/SUBMISSION_READINESS_A19.md)). DOI `10.30842/ielcp2306901529049` resolves to **«Проблемы комментирования и сопоставления в русско-латинском параллельном корпусе» // Индоевропейское языкознание и классическая филология. 2025. Вып. 29. С. 857–873** — the previous entry named both a wrong venue («Известия РАН. Серия литературы и языка. Т. 84. № 6») and a wrong title. Pages and DOI verified correct, so in-text pinpoints (Казанский 2025: 860–862) stand.
+### Added
+- **[`articles/article1_vya_clean.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/article1_vya_clean.md)** — the clean submission copy of the A19 manuscript (479 lines vs 494): the three dev comment blocks stripped (СТАТУС header, СТАТУС §6, ГОСТ bibliography note). Deliberately kept: Петров 1788 attribution bracket (archival @DO) and the unresolved item-F brackets («Гринцер 2014» year/status, «Леонов» access date) — content TODOs, not dev artefacts. Working draft keeps its comments per the edit-8 contract.
+- **[`.ai_state.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.ai_state.md) — «Grill 02-10-2026» section**: 12 MG rulings for the sundara gates — Костина deadline 15-10-2026 (escalation via Леонов, no decide-by-default, final assembly stays blocked on silence), 08-10 vote = blind spotcheck H1685 133 cards only (absorbs H159 batch-2), apply bar by consequences table (default 0.80), whole 1889 queue in one apply wave, flag_anchor 5.21.19 → v.18 confirmed, LP print deadline dead (MG re-checks with the publisher), review-API support frozen at zero live traffic. Cover-letter «Мāрцис» typo verified already fixed (no edit).
 ## [1.28.0] - 2026-09-08
 
 - **H4351 — first test harness: the 10 destructive appliers pinned for idempotence, non-shrink and malformed-input refusal** (Fable 5.1 `claude-fable-5-1`, 08-09-2026). The repo had zero test files across 164 Python modules (rank 2 of Uprava [reports/TEST_GAP_CENSUS_ORGWIDE_08-09-2026.md](https://github.com/gasyoun/Uprava/blob/main/reports/TEST_GAP_CENSUS_ORGWIDE_08-09-2026.md)). New [`pytest.ini`](https://github.com/gasyoun/CommentaryStrategies/blob/main/pytest.ini) + [`tests/`](https://github.com/gasyoun/CommentaryStrategies/tree/main/tests) (55 tests, 11 modules): [`tests/conftest.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tests/conftest.py) stages each applier into a throw-away tree and runs it as a real subprocess, so both path conventions (`__file__`-relative and cwd-relative) land in the sandbox; the two scripts that hard-code a Windows checkout (`backfill_grintser_crossrefs.py`, `merge_new_crosstext.py`) get exactly that one line rewritten, asserted present. Fixtures under [`tests/fixtures/appliers/`](https://github.com/gasyoun/CommentaryStrategies/tree/main/tests/fixtures/appliers) are miniature copies of the real column shapes (apparatus `sarga_NN.json`, gate ledger v2, lexical cards + style-pass patches, Phase-2 candidates/decisions, translit residue cards + sheet export, crosstext clusters, decision ledger, Grintser glossary/corpus JSONL); no test reads or writes the live `data/`. Curated floors frozen as literals in [`tests/curated_floors.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/tests/curated_floors.py) — a pytest-free module, because the `corpus` job installs no pytest (gate ledger 126 entries · ch1 58 cards · book 896 notes / 155 В / 170 cross_text · decision ledger 5507 · pilot 16). `test_coverage_manifest.py` fails if any listed applier is never actually invoked. Two real partial-write defects the suite caught and fixed by parsing every input before the first write: [`scripts/backfill_why_proposed.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/backfill_why_proposed.py) rewrote sarga 35 before parsing a truncated sarga 36; [`scripts/rebuild_crosstext.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/rebuild_crosstext.py) rewrote the book before opening a truncated decision ledger. New [`scripts/curated_floors_check.py`](https://github.com/gasyoun/CommentaryStrategies/blob/main/scripts/curated_floors_check.py) (job `corpus`) is where the floor literals meet `data/`: a live file below its pin reds CI; the pytest suite stays hermetic. Independent pre-merge review caught a mis-pinned kavya floor (stale `_meta.notes_count` 12 vs 18 live records) and two incomplete fixture key sets — fixed in the same PR. CI job `Pytest` in [`.github/workflows/ci.yml`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.github/workflows/ci.yml) now runs the suite unconditionally on 3.10/3.11/3.12. Uncovered-module census (154 remaining, by class and why) recorded in [`.ai_state.md`](https://github.com/gasyoun/CommentaryStrategies/blob/main/.ai_state.md).
