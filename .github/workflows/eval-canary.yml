@@ -1,0 +1,26 @@
+name: eval canary
+
+on:
+  pull_request:
+    paths:
+      - "evals/**"
+      - "data/apparatus/**"
+  push:
+    branches: [main]
+    paths:
+      - "evals/**"
+      - "data/apparatus/**"
+
+permissions:
+  contents: read
+
+jobs:
+  apparatus-gate-locus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Gold replay + mutation must fail
+        run: python evals/run_eval.py --canary
