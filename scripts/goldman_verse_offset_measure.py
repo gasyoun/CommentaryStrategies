@@ -39,7 +39,7 @@ sys.stderr.reconfigure(encoding="utf-8")
 # The lemma sits between the closing quote of the English gloss and the colon
 # that introduces the discussion: `"great serpents" nāga- (used twice…):`
 LEMMA_LINE = re.compile(
-    r'(?m)^[ \t]*([IlJ1-9]\d{0,2})(?:-\d{1,3})?\.\s+["“][^"”]{1,90}["”]\s+([^:\n]{2,60}?):'
+    r'(?m)^[ \t]*([IlJ1-9]\d{0,2})(?:[-–—]\d{1,3})?\.\s+["“][^"”]{1,90}["”]\s+([^:\n]{2,60}?):'
 )
 _OCR_ONE = str.maketrans({"I": "1", "l": "1", "J": "1"})
 
