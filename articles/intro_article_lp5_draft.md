@@ -1065,19 +1065,24 @@ of the Hindus 9, 1911); Katha Sarit Sagara (пер. Tawney, 1880–84;
     Rāmāyaṇas. Berkeley, 1991.
 19. Richman P. (ed.) Many Rāmāyaṇas. Berkeley, 1991.
 20. Richman P. (ed.) Questioning Rāmāyaṇas. Berkeley, 2001.
-21. Raviṣeṇa. Padmapurāṇa (ок. 678); научная рамка — Pattanaik P.
-    // уточнить выходные при корректуре.
+21. Raviṣeṇa. Padmapurāṇa (ок. 678) / ed. P. Jain. 3 vols. Kashi:
+    Bhāratīya Jñānapīth, 1958–1959 (научная рамка: Pattanaik D.
+    A Jain Jatayu // Mid-Day. 16-10-2016).
 22. Vimalasūri. Paumacariya (ed. Jacobi, 1880).
-23. Manoharan K.R. // работы о дравидийском приёме (Перияр); точные
-    выходные — при корректуре.
+23. Manoharan K.R. Periyar: A Study in Political Atheism. Hyderabad:
+    Orient BlackSwan, 2022 (xi, 133 с.); ср. его же: Freedom from God:
+    Periyar and Religion // Religions. Vol. 11, № 1 (2020). Art. 10.
 24. Гасунс М.Ю. Комментаторские стратегии русских переводчиков
     санскритского эпоса (по корпусу 17 863 примечаний; в печати).
 25. Gonda J. Medieval Religious Literature in Sanskrit. Hamburg, 1977.
 26. Fenik B. Iliad X and the Rhesus. Berlin, 1964.
 27. Гесиод. Теогония; Гомер. Илиада; Одиссея; Аристотель. Поэтика —
     по стандартным изданиям (серии «Литературные памятники»).
-28. Иконография ракшасов в индийском искусстве — обзор подобрать при
-    корректуре (открытая позиция библио-приложения).
+28. Иконография ракшасов в индийском искусстве — обзорная рамка:
+    Sutherland G.H. The Disguises of the Demon: The Development of the
+    Yakṣa in Hinduism and Buddhism. Albany: SUNY Press, 1991,
+    pp. 54–59 («Yakṣas and Rākṣasas»; ISBN 978-0-7914-0622-9); ср. Misra
+    R.N. Yaksha Cult and Iconography. Delhi: Munshiram Manoharlal, 1981.
 29. Goldman R.P. Sundare Kim Na Sundaram? The Genetic and Receptive
     Histories of the Sundarakāṇḍa of the Vālmīki Rāmāyaṇa // Journal of
     the Oriental Institute (Baroda), vol. XLVIII, nos. 1–4 (1998–99),
@@ -1151,11 +1156,10 @@ of the Hindus 9, 1911); Katha Sarit Sagara (пер. Tawney, 1880–84;
     10 vols. London, 1924–28.
 
 
-> NB для редколлегии: позиции 21, 23, 28 — открытые позиции
-> библио-приложения досье (п. «добавить при драфте»); в корректуре
-> добираются точные выходные. Позиции 34–41 закрыты H7926
-> (09-11-2026): каждая снабжена сверенным изданием для сверки;
-> ни одна не числится «добавить при драфте».
+> NB для редколлегии: позиции 21, 23, 28 закрыты H8499 (20-11-2026) —
+> каждая снабжена сверенными выходными (квитанции URL — в PR H8499);
+> позиции 34–41 закрыты H7926 (09-11-2026): каждая снабжена сверенным
+> изданием для сверки; ни одна не числится «добавить при драфте».
 
 ---
 
