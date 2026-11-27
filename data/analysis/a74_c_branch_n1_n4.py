@@ -51,6 +51,7 @@ CANDIDATES = [
 ]
 
 IAST_FAMILY = re.compile(r"rākṣas")          # семейство rākṣasa- (вкл. rākṣasī), бакет свипа
+IAST_RAKSHASI = re.compile(r"rākṣasī")      # подстрока ж. р. — бакет переписи вульгаты (D2)
 PARSED_TAIL = re.compile(r"_parsed(\.conllu)?$")
 HEADLINE_GROUPS = ["Rāmāyaṇa", "Mahābhārata", "Kathāsaritsāgara", "Garuḍapurāṇa"]
 SIMPLE_LEMMAS = ("rākṣasa", "rākṣasī")
@@ -280,6 +281,7 @@ def main():
     strata_groups = {s: set() for s in STRATUM_ORDER}
     tokens_total = 0
     form_anusvara = form_final_m = 0
+    fem_forms, fem_substring = {}, 0
     non_epic = []
 
     proc = subprocess.Popen(["git", "-C", str(corpus), "cat-file", "--batch"],
@@ -361,6 +363,11 @@ def main():
                     if b is not None:
                         b["simple"] += 1
                         b["simple_" + pc] += 1
+                if group == "Rāmāyaṇa" and lemma == "rākṣasī":
+                    # женский род «Рамаяны» по лемме: какие формы он покрывает
+                    fem_forms[form] = fem_forms.get(form, 0) + 1
+                    if IAST_RAKSHASI.search(form):
+                        fem_substring += 1
             if group not in EPIC_GROUPS:
                 non_epic.append((f"{group}|{base}#{ordinal}", st, group, locus, form,
                                  lemma, upos, cls, pc, textline))
@@ -397,6 +404,12 @@ def main():
             "two_epics_simple_pct": round(100 * two_epics / tot["simple"], 1),
             "two_epics_simple": two_epics,
             "two_epics_form_family": two_epics_form,
+        },
+        "feminine_rāmāyaṇa": {
+            "by_lemma": groups["Rāmāyaṇa"]["simple_fem"] if "Rāmāyaṇa" in groups else 0,
+            "by_lemma_with_substring_rākṣasī": fem_substring,
+            "forms": dict(sorted(fem_forms.items(), key=lambda kv: (-kv[1], kv[0]))),
+            "note": "подстрока «rākṣasī» (бакет D2) не берёт косые формы rākṣasyaḥ / rākṣasyo / rākṣasyā / rākṣasi",
         },
         "headline_groups": {n: {k: v for k, v in groups[n].items()} for n in HEADLINE_GROUPS
                             if n in groups},
