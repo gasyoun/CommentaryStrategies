@@ -2,7 +2,7 @@
 
 _Created: 27-11-2026 · Last updated: 27-11-2026_
 
-**Статус:** стейдж-добавление к [`articles/intro_article_lp5_draft.md`](https://github.com/gasyoun/CommentaryStrategies/blob/1ad5ccd1a09209959f7743d8ea592fcd72129464/articles/intro_article_lp5_draft.md) (M02, вступительная статья тома «Литературные памятники»). **В драфт не входит:** по рулению М.Г. 20-11-2026 проза добора лендится только после вердиктов ревью. Предполагаемое место — сразу после §1.4.2; нумерация 1.4.2a условная.
+**Статус:** стейдж-добавление к [`articles/intro_article_lp5_draft.md`](https://github.com/gasyoun/CommentaryStrategies/blob/1ad5ccd1a09209959f7743d8ea592fcd72129464/articles/intro_article_lp5_draft.md) (M02, вступительная статья тома «Литературные памятники»). **В драфт не входит:** по рулению М.Г. 20-11-2026 проза добора лендится только после вердиктов ревью. Предполагаемое место — сразу после §1.4.2; нумерация 1.4.2a и таблиц 3–4 условная (в драфте уже есть таблицы 1–2).
 **Автор:** М. Ю. Гасунс (ORCID 0000-0003-4513-884X).
 **Руления, которым подчинён текст** (грилл 27-11-2026; транскрипт — `docs/GRILL_A74_RAKSHASA_27-11-2026.md` в Uprava): R2 — тезис как разделение существительного и прилагательного; R3 — «этноним» только как цитируемое чтение §1.4.1 и только для «Рамаяны»; R4 — русский язык; R6/R7 — одна статья, перепись входит в неё добором.
 **Числа:** каждое число текста → ключ [`data/analysis/a74_c_branch_n1_n4.json`](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/a74_c_branch_n1_n4.json) (пин корпуса `f6ec30f2fc0340189a39be8f47a792988f9f4784`); числовой журнал — в конце файла. Все 541 внеэпическое вхождение разобрано по контексту.
@@ -30,7 +30,7 @@ _Created: 27-11-2026 · Last updated: 27-11-2026_
 
 **Что осталось за кадром.** Кто говорит это слово кому — в корпусе нет разметки прямой речи; полная сверка рамки сарг DCS с критическим изданием; locus Айтарея-брахманы по изданию.
 
-**Таблица 2.** Слово rākṣasa- по слоям корпуса DCS (простой стем — леммы rākṣasa / rākṣasī; на 10 000 токенов)
+**Таблица 3.** Слово rākṣasa- по слоям корпуса DCS (простой стем — леммы rākṣasa / rākṣasī; на 10 000 токенов)
 
 | Слой | Текстов | Существительное | Прилагательное | Женский род | Старый стем rakṣas- | Новый / старый, на 10 000 |
 |---|---:|---:|---:|---:|---:|---|
@@ -43,7 +43,7 @@ _Created: 27-11-2026 · Last updated: 27-11-2026_
 | Эпосы («Рамаяна», «Махабхарата», Harivaṃśa) | 3 | 2 067 | 61 | 197 | 846 | 15,55 / 5,66 |
 | Прочее | 130 | 342 | 17 | 38 | 246 | 2,22 / 1,38 |
 
-**Таблица 3.** «Рамаяна» по кандам: критическая рамка (DCS) и южная вульгата (таблица 1)
+**Таблица 4.** «Рамаяна» по кандам: критическая рамка (DCS) и южная вульгата (таблица 1)
 
 | Канда | Сарг в DCS | rākṣasa- в DCS | в вульгате | Разность |
 |---|---:|---:|---:|---:|
@@ -81,9 +81,9 @@ _Created: 27-11-2026 · Last updated: 27-11-2026_
 | «Махабхарата»: 814 · 205 · 282 (163 и 119) · 148 | `n3.totals.simple` · `n3.by_parvan.3.simple` · `n3.by_parvan.7.simple` + `n3.by_parvan.6.simple` · `n3.by_parvan.1.simple` |
 | 397 · 2,2 против 0,02 · 423 и 381 | `n1.strata.other.simple` · `n2.strata_density.other.simple_per` и `….archaic_vedic.simple_per` · `n1.strata.other.form_family` и `audit.non_epic_senses.other.being` |
 | 29 · 19 из 24 · 4 | `audit.by_label.technical` · `audit.non_epic_senses.medicine.being` и `n1.strata.medicine.form_family` · `audit.non_epic_senses.medicine.label` |
-| 606 сарг · 66 · строки таблицы 3 | `n4.totals.dcs.files` · `n4.comparison` (kanda 5) `dcs_sargas` · `n4.comparison[*]` и `n4.by_kanda.7` |
+| 606 сарг · 66 · строки таблицы 4 | `n4.totals.dcs.files` · `n4.comparison` (kanda 5) `dcs_sargas` · `n4.comparison[*]` и `n4.by_kanda.7` |
 | 144 · 101 · 24 · 14 · 4 · 1 · 83 из 144 · 65 из 120 | `n1.feminine_rāmāyaṇa.by_lemma` · `….by_lemma_with_substring_rākṣasī` · `….forms` · `n4.comparison` (kanda 5) `dcs_simple_fem` · тот же элемент `vulgate_rākṣasī` и `n4.totals.vulgate.rakshasi` |
-| Таблица 2, все клетки | `n1.strata.<слой>.*` · `n2.strata_density.<слой>.*` |
+| Таблица 3, все клетки | `n1.strata.<слой>.*` · `n2.strata_density.<слой>.*` |
 
 Вне JSON: «68 сарг» вульгаты в Сундаре — `data/edition_comparison/book_summary.json` (`book_totals`); цитаты — по токенам `data/analysis/a74_c_branch_n1_n4.tokens.tsv` и `## chapter` корпуса; характеристика боевых книг «Махабхараты» — по выборке 32 контекстов (16 из Bhīṣma, 16 из Droṇa), не по сплошному аудиту.
 
