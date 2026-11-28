@@ -1,4 +1,4 @@
-_Created: 13-06-2026 · Last updated: 27-11-2026_
+_Created: 13-06-2026 · Last updated: 28-11-2026_
 
 # Changelog
 
@@ -12,7 +12,76 @@ Work not yet on `main` stays under **[Unreleased]**.
 
 ## [Unreleased]
 <!-- entries land in changelog_queue/ -- appended via tools/changelog_queue_consume.py, consumed by cut_release.py at release-cut (H3355); direct bullets here are hook-blocked -->
+## [1.28.4] - 2026-11-28
 
+- **H8579 (follow-up) — staged census add-on: table captions 3–4 and the review surface of the staged block**
+  **Fixed**
+  - **[articles/intro_article_lp5_addon_census_staged.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/intro_article_lp5_addon_census_staged.md)** —
+    таблицы стейдж-подраздела 1.4.2a перенумерованы: «Таблица 2/3» → «Таблица 3/4».
+    В драфте §1.4.2 уже есть таблицы 1–2, а стейдж-блок встаёт сразу после него;
+    подпись старого номера сталкивалась с таблицей 2 драфта. Исправлены обе подписи,
+    строка числового журнала и пометка об условной нумерации. Числа не менялись.
+  **Docs**
+  - **[articles/intro_article_lp5_draft.meta.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/articles/intro_article_lp5_draft.meta.md)** —
+    записано, где ревьюируется стейдж-блок: в том же нативном Google Doc, регулярным
+    синком, а не вставкой в Doc. Генератор ревью-копии (Uprava,
+    `papers/M02/make_review_tex.py`) добавляет стейдж-файл отмеченным приложением к
+    review .tex после «Литературы»; Doc обновляется очередным carry с Mac-лейна.
+    Руление М.Г. 27-11-2026 (вопрос о ревью-поверхности стейдж-блока).
+  Executor: GLM 5.4 (account:zai-individual-coding-plan/GLM-5.4), ZCode. Follow-up to handoff H8579 (closed 27-11-2026).
+- **H8640 — A74, угол B (рецепция): корректура пяти открытых позиций библиографии, бриф по первоисточникам B1 и план добора**
+  **Fixed**
+  - **[reports/research/RAKSHASA_HYPERRESEARCH_M02_2026-11-20_biblio.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/reports/research/RAKSHASA_HYPERRESEARCH_M02_2026-11-20_biblio.json)** —
+    пять позиций, оставленных открытыми 20-11-2026, сверены с источниками, открытыми
+    27–28-11-2026; квитанции переписаны по факту обращения, прочие 42 записи не тронуты.
+    - rec-09 (de Koning): ISBN 978-3-643-91504-7 — страница издателя LIT; серия
+      Nijmegen Buddhist and Asian Studies, Band 9; URL ведёт на издателя.
+    - rus-01: автор статьи «Ракшасы» в «Мифах народов мира» — **П. А. Гринцер**
+      (подпись в конце статьи в тексте энциклопедии), а не В. Н. Топоров; приведены
+      выходные 2-го издания (1988, т. 2, 719 с.). Страница печатного тома не сверена —
+      остаётся открытой, цифры из поисковых сводок не внесены.
+    - rus-05: ответственный редактор тома 2006 г. — **Т. Я. Елизаренкова** (было
+      «ред. В. Закревская»); полный импринт и ISBN 5-86218-454-6; URL — каталог серии
+      «Литературные памятники» (libex.ru отдаёт HTTP 500).
+    - rus-08: вместо open-candidate — вступительная статья т. 1 («Ригведа» — великое
+      начало индийской литературы и культуры, 1989, с. 426–543) и три тома серии с ISBN
+      (каталог BnF, каталог серии).
+    - ved-08 (Lubotsky): остаётся print-only — живой публичной страницы словаря нет
+      (проверены прежние адреса, Brill, Tower of Babel).
+    Типы квитанций (47 позиций): 36 search-retrieval · 5 fetch · 5 print-only ·
+    1 open-candidate → 34 · 8 · 5 · 0.
+  **Docs**
+  - **[reports/research/RAKSHASA_HYPERRESEARCH_M02_2026-11-20_receipts.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/reports/research/RAKSHASA_HYPERRESEARCH_M02_2026-11-20_receipts.md)** —
+    раздел D: таблица «до → после», список несверенного и журнал проб за два дня.
+  - **[reports/research/RAKSHASA_RECEPTION_BRIEF_B1_2026-11-28.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/reports/research/RAKSHASA_RECEPTION_BRIEF_B1_2026-11-28.md)** (новый) —
+    доказательный бриф по первоисточникам рецепции (Вималасури, Равишена, Камбан,
+    «Махавамса», Тулсидас и Рамлила, Пиллаи 1928, Перияр): язык, издание, переводы,
+    читает ли дом из первых рук; вилка B3 по языкам. Из семи источников из первых рук
+    без решения М.Г. читаются четыре.
+  - **[reports/research/RAKSHASA_RECEPTION_ADDON_OUTLINE_2026-11-28.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/reports/research/RAKSHASA_RECEPTION_ADDON_OUTLINE_2026-11-28.md)** (новый) —
+    предлагаемый план добора «рецепция глубже» к §1.4.8: девять станций, на чём стоит
+    каждая и что можно писать уже сейчас; одна страница A4.
+  Драфт M02 и его метадок не тронуты; проза добора не писалась (руление М.Г. 20-11-2026).
+  Executor: GLM 5.4 (account:zai-individual-coding-plan/GLM-5.4), ZCode. Handoff: H8640.
+- **H8641 — A74, угол A: три регистра — воспроизводимые активы для доборов §1 статьи M02**
+  **Added**
+  - **[data/analysis/a74_a_registers.py](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/a74_a_registers.py) / [.json](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/a74_a_registers.json) / [.README.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/a74_a_registers.README.md)** —
+    материал угла A (три регистра: лес · город · ярлык) для доборов §1 вступительной
+    статьи M02 («каталог стражей», «юддха-срез»), без прозы статьи. Один прогон на пине
+    FORM-свипа `f6ec30f2…` — один JSON, байт-идентичный при повторе; клон не на пине —
+    выход 3, числа не пишутся. Три актива: каталог 91 компаунда с rākṣasa- / rākṣasī-
+    (группа · локус · стих · предложение; сумма равна `n1.compound_lemmas` H8579);
+    обозначения ракшасов «Рамаяны» (49 компаундов DCS и 660 multiword-строк; 23 записи
+    эпитетов книг I–II со словом «ракшас») и стражи Ашока-рощи (Сундара 22–27 вульгаты:
+    79 вхождений по классам словоформ, 11 имён ракшаси; перепись воспроизведена по всем
+    68 саргам канды); юддха-срез канда 6 DCS по 116 саргам. Для автора отмечено: женский
+    род блока 31 — нижняя граница (с формами rākṣasyaḥ — 44, по канде 90 вместо 65);
+    DCS режет титулы Rāvaṇa на части (rākṣasendra 146, rākṣasādhipa 84), поэтому «два
+    эпитетных компаунда» §1.4.5 верно только для класса «подобный ракшасу». Драфт M02
+    и его метадок не тронуты.
+  - **[data/analysis/a74_a_registers.ADDON_MAP.md](https://github.com/gasyoun/CommentaryStrategies/blob/main/data/analysis/a74_a_registers.ADDON_MAP.md)** —
+    заметка «актив → добор»: какой актив куда встраивается в добор §1 и чего в нём нет.
+  Executor: GLM 5.4 (account:zai-individual-coding-plan/GLM-5.4), ZCode. Handoff: H8641.
 ## [1.28.3] - 2026-11-27
 
 - **H8579: A74, угол C — пересчёт rākṣasa- по леммам и частям речи по всему корпусу DCS на пине свипа (N1–N4; бакет свипа воспроизведён: 2 939), аудит смысла всех 541 внеэпического вхождения и стейдж-добавление к вступительной статье M02.** Новый воспроизводимый слой `data/analysis/a74_c_branch_n1_n4.py` / `.json` / `.tokens.tsv` / `.audit.tsv` / `.README.md`: в 46 архаических ведийских группах существительных `rākṣasa-` 0 против 939 старого стема `rakṣas-`; единственное доэпическое существо — Gopathabrāhmaṇa 2.2.5; два эпоса держат 81,2 % простого стема; в грихья-сутрах и дхарме форма — вид брака и класс обрядов, в раса-шастре — технические названия. Русский подраздел переписи — `articles/intro_article_lp5_addon_census_staged.md` (предлагаемый §1.4.2a; тезис — разделение существительного и прилагательного; «этноним» только как цитируемое чтение §1.4.1): в драфт входит только после вердиктов ревью (руление М.Г. 20-11-2026). Драфт M02 не тронут. Для автора отмечены два места: колонка женского рода в таблице 1 считается подстрокой (по лемме 144 против 101); в боевых книгах «Махабхараты» ракшасы — воюющий отряд со своим владыкой. **Ещё не сделано:** вердикт верификатора другого семейства (бесплатные места отказали — H8579 остаётся INCONCLUSIVE). Руления М.Г. 27-11-2026: одна статья (M02), три угла — три хендоффа (H8579 · H8640 · H8641). [PR #307](https://github.com/gasyoun/CommentaryStrategies/pull/307), merge `e5b81b0`. Executor: GLM 5.4 (`account:zai-individual-coding-plan/GLM-5.4`), ZCode. Handoff: H8579.
